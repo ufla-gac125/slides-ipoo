@@ -6,7 +6,8 @@ lang: pt-BR
 format: 
   clean-revealjs:
   # revealjs:
-    theme: [default, custom.scss]
+    #theme: [default, custom.scss]
+    theme: [default]
     # self-contained: true
     incremental: true
     # smaller: true
