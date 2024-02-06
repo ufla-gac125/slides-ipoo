@@ -1,0 +1,23 @@
+project:
+  output-dir: docs
+
+lang: pt-BR
+
+format: 
+  revealjs:
+    theme: [default]
+    incremental: true
+    logo: figuras/logoUFLA.png
+    auto-stretch: false
+    chalkboard: true
+
+author:
+  name: Prof. Luiz Merschmann
+  affiliation: Departamento de Computação Aplicada - UFLA
+  url: https://luiz.dac.ufla.br
+
+
+#title-block-banner: true
+
+date: last-modified
+date-format: "DD/MM/YYYY"
