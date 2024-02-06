@@ -1,3 +1,11 @@
 ---
-title: <center>Conceitos Básicos de Orientação a Objetos<br><br>Objetos e Classes</center>
+title: Conceitos Básicos de Orientação a Objetos<br><br>Objetos e Classes
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
 ---
+## Meu Primeiro slide
+
+- Item a
+- Item B
