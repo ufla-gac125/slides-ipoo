@@ -4,8 +4,7 @@ project:
 lang: pt-BR
 
 format: 
-  clean-revealjs:
-  # revealjs:
+  clean-revealjs: #plugin que tive que instalar para usar um tema "clean"
     #theme: [default, custom.scss]
     theme: [default]
     # self-contained: true
@@ -15,13 +14,22 @@ format:
     auto-stretch: false
     #chalkboard: true
 
+revealjs-plugins:
+  - pointer # Plugin instalado para permitir mudar o ponteiro durante a apresentacao (tecla q)
+
 author:
   name: Prof. Luiz Merschmann
   affiliation: Departamento de Computação Aplicada - UFLA
   url: https://luiz.dac.ufla.br
 
 
-#title-block-banner: true
+title-block-banner: true
 
 date: last-modified
 date-format: "DD/MM/YYYY"
+
+filters:
+  #- roughnotation
+  - code-fullscreen
+
+highlight-style: github
