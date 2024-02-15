@@ -10,7 +10,7 @@ format:
     # self-contained: true
     incremental: true
     # smaller: true
-    logo: imagens/logo_UFLA.png
+    logo: figuras/logoUFLA.png
     auto-stretch: false
     #chalkboard: true
 
@@ -25,8 +25,8 @@ author:
 
 title-block-banner: true
 
-date: last-modified
-date-format: "DD/MM/YYYY"
+#date: last-modified
+#date-format: "DD/MM/YYYY"
 
 filters:
   #- roughnotation
@@ -34,5 +34,6 @@ filters:
 
 highlight-style: github
 
-editor:
-  render-on-save: true
+preview: external
+externalPreview:
+  command: firefox

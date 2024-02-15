@@ -1,5 +1,5 @@
 ---
-title: Conceitos Básicos de Orientação a Objetos<br><br>Objetos e Classes
+title: Conceitos Básicos de Orientação a Objetos:<br>Objetos e Classes<br><br>
 title-slide-attributes:
     data-background-size: contain
     data-background-position-x: center
@@ -9,3 +9,5 @@ title-slide-attributes:
 
 - Item a
 - Item B
+- Item C
+- Item D
