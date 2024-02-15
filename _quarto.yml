@@ -5,8 +5,8 @@ lang: pt-BR
 
 format: 
   clean-revealjs: #plugin que tive que instalar para usar um tema "clean"
-    #theme: [default, custom.scss]
-    theme: [default]
+    theme: [default, custom.scss]
+    #theme: [default]
     # self-contained: true
     incremental: true
     # smaller: true
