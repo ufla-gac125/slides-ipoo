@@ -33,3 +33,6 @@ filters:
   - code-fullscreen
 
 highlight-style: github
+
+editor:
+  render-on-save: true
