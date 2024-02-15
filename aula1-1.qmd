@@ -10,4 +10,3 @@ title-slide-attributes:
 - Item a
 - Item B
 - Item C
-- Item D
