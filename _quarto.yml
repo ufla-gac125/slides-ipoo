@@ -14,6 +14,7 @@ format:
     auto-stretch: false
     #chalkboard: true
 
+
 revealjs-plugins:
   - pointer # Plugin instalado para permitir mudar o ponteiro durante a apresentacao (tecla q)
 

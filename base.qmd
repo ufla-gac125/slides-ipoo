@@ -1,0 +1,15 @@
+## Slide com duas colunas
+
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+
+::: {.column width="30%"}
+xxx
+:::
+
+::: {.column width="70%"}
+::: {.nonincremental}
+yyy
+:::
+:::
+
+::::

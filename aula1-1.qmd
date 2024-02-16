@@ -5,8 +5,72 @@ title-slide-attributes:
     data-background-position-x: center
     data-background-position-y: center
 ---
-## Meu Primeiro slide
 
-- Item a
-- Item B
-- Item C
+## Principais Conceitos desta Aula {}  
+
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+
+::: {.column width="30%"}
+![](figuras/professor1-1.png){fig-alt="Professor1-1" fig-align="center"}
+:::
+
+::: {.column width="70%"}
+::: {.nonincremental}
+::: {style="font-size: 120%;"}
+- Objetos 
+- Classes
+- Métodos
+- Parâmetros
+:::
+:::
+:::
+
+::::
+
+# Objetos e Classes {background-color="#fb8c0e"}
+
+## {}
+Ao escrever um [programa]{.alert} em uma [linguagem Orientada a Objetos]{.alert} (OO):
+
+- você está criando um [modelo]{.alert} de alguma parte do mundo,
+- sendo os [objetos]{.alert} as [partes desse modelo]{.alert}.
+
+. . .
+
+Considere que precisamos criar um **programa** para simular o **trânsito** em uma cidade.\
+Quais são os **objetos** que aparecem no **domínio desse problema**?
+
+. . . 
+
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+
+::: {.column width="35%"}
+![](figuras/transito.png){fig-alt="Transito" fig-align="center" width=90%}
+:::
+
+::: {.column width="65%"}
+::: {.nonincremental}
+::: {style="font-size: 110%;"}
+- Carro
+- Semáforo
+- Pedestre
+- etc.
+:::
+:::
+:::
+
+::::
+
+
+## {}
+[Portanto, [objetos]{.alert}:]{style="font-size: 120%;"}
+
+-  São [elementos computacionais]{.alert} que representam alguma [entidade]{.alert} (abstrata ou concreta) do domínio de interesse do problema sob análise.
+- Correspondem a uma [abstração]{.alert} para algo do mundo real.
+
+. . .
+
+Observe que os **objetos** dependem do **problema** que desejamos resolver. Exemplos:
+
+- No caso de um [software para uma pizzaria]{.underline} os objetos seriam: pizza, bebida, pedido, atendente etc.
+- No caso de um [software de gerenciamento acadêmico]{.underline} os objetos seriam: aluno, professor, turma, disciplina etc.

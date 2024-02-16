@@ -4,6 +4,11 @@ $h1bgcolor: #f7fad1;
 
 /*-- scss:rules --*/
 
+.underline {
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
 .alert {
     font-weight: bold;
 }
@@ -51,4 +56,3 @@ $h1bgcolor: #f7fad1;
     font-size: 90%;
     text-align: center;
 }
-
