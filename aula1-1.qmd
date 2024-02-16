@@ -29,7 +29,7 @@ title-slide-attributes:
 
 # Objetos e Classes {background-color="#fb8c0e"}
 
-## {}
+## Objetos{}
 Ao escrever um [programa]{.alert} em uma [linguagem Orientada a Objetos]{.alert} (OO):
 
 - você está criando um [modelo]{.alert} de alguma parte do mundo,
@@ -51,9 +51,9 @@ Quais são os **objetos** que aparecem no **domínio desse problema**?
 ::: {.column width="65%"}
 ::: {.nonincremental}
 ::: {style="font-size: 110%;"}
-- Carro
-- Semáforo
-- Pedestre
+- Carros
+- Semáforos
+- Pedestres
 - etc.
 :::
 :::
@@ -62,8 +62,8 @@ Quais são os **objetos** que aparecem no **domínio desse problema**?
 ::::
 
 
-## {}
-[Portanto, [objetos]{.alert}:]{style="font-size: 120%;"}
+## Objetos{}
+Portanto, [objetos]{.alert}:
 
 -  São [elementos computacionais]{.alert} que representam alguma [entidade]{.alert} (abstrata ou concreta) do domínio de interesse do problema sob análise.
 - Correspondem a uma [abstração]{.alert} para algo do mundo real.
@@ -72,5 +72,26 @@ Quais são os **objetos** que aparecem no **domínio desse problema**?
 
 Observe que os **objetos** dependem do **problema** que desejamos resolver. Exemplos:
 
-- No caso de um [software para uma pizzaria]{.underline} os objetos seriam: pizza, bebida, pedido, atendente etc.
-- No caso de um [software de gerenciamento acadêmico]{.underline} os objetos seriam: aluno, professor, turma, disciplina etc.
+- No caso de um [software para uma pizzaria]{.underline} os objetos seriam: pizzas, bebidas, pedidos, atendentes etc.
+- No caso de um [software de gerenciamento acadêmico]{.underline} os objetos seriam: alunos, professores, turmas, disciplinas etc.
+
+## Classes
+Uma [classe]{.alert} descreve, de maneira abstrata, todos os [objetos de um tipo particular]{.alert}.\
+
+. . .
+
+::::{.columns style='display: flex !important; height: 70%; align-items: top;'}
+
+::: {.column width="70%"}
+Então qual a diferença entre **classe** e **objeto**?
+
+- A classe descreve o tipo de objeto.
+- Os objetos são criados a partir das classes.
+- Resumindo, os [objetos]{.alert} representam [instanciações individuais da classe]{.alert}.
+:::
+
+::: {.column width="30%"}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=40%}
+:::
+
+::::
