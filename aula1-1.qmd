@@ -76,11 +76,22 @@ Observe que os **objetos** dependem do **problema** que desejamos resolver. Exem
 - No caso de um [software de gerenciamento acadêmico]{.underline} os objetos seriam: alunos, professores, turmas, disciplinas etc.
 
 ## Classes
-Uma [classe]{.alert} descreve, de maneira abstrata, todos os [objetos de um tipo particular]{.alert}.\
+
+::::{.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="30%"}
+![](figuras/colecao_lapis.png){fig-alt="Projeto" fig-align="center" width=60%}
+:::
+
+::: {.column width="70%"}
+Uma [classe]{.alert} descreve, de maneira abstrata, todos os [objetos de um tipo particular]{.alert}.
+:::
+
+::::
 
 . . .
 
-::::{.columns style='display: flex !important; height: 70%; align-items: top;'}
+::::{.columns style='display: flex !important; align-items: top;'}
 
 ::: {.column width="70%"}
 Então qual a diferença entre **classe** e **objeto**?
@@ -95,3 +106,9 @@ Então qual a diferença entre **classe** e **objeto**?
 :::
 
 ::::
+
+## Classe *versus* Objeto: Analogia
+
+![](figuras/projeto_com_casa.png){fig-alt="ProjetoCasa"  fig-align="center" width=60%}
+
+[Uma classe é como um “projeto” a partir do qual objetos individuais são criados.]{.caption}
