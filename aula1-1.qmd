@@ -27,6 +27,9 @@ title-slide-attributes:
 
 ::::
 
+## Orientação a Objetos
+Colocar slides explicando sobre esse paradigma de programação.
+
 # Objetos e Classes {background-color="#fb8c0e"}
 
 ## Objetos{}
@@ -98,7 +101,8 @@ Então qual a diferença entre **classe** e **objeto**?
 
 - A classe descreve o tipo de objeto.
 - Os objetos são criados a partir das classes.
-- Resumindo, os [objetos]{.alert} representam [instanciações individuais da classe]{.alert}.
+- Ou seja, os [objetos]{.alert} representam [instanciações individuais da classe]{.alert}.
+- E, por isso, um [objeto]{.alert} também é chamado de [instância]{.alert} de uma classe.
 :::
 
 ::: {.column width="30%"}
@@ -109,6 +113,134 @@ Então qual a diferença entre **classe** e **objeto**?
 
 ## Classe *versus* Objeto: Analogia
 
-![](figuras/projeto_com_casa.png){fig-alt="ProjetoCasa"  fig-align="center" width=60%}
+![](figuras/projeto_com_casa.png){fig-alt="ProjetoCasa"  fig-align="center" width=45%}
 
-[Uma classe é como um “projeto” a partir do qual objetos individuais são criados.]{.caption}
+[Uma classe é como um “projeto” a partir do qual objetos individuais são criados.]{.fontsize80}
+
+. . .
+
+:::{.callout-important title="Observação" icon=false}
+**Muitos objetos** semelhantes podem ser **criados** a partir de uma **única classe**.
+:::
+
+
+## O que há em um objeto?
+
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="15%"}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=60%}
+:::
+
+::: {.column width="85%"}
+
+- [Atributos]{.alert} (campos): são as [características]{.alert} que o definem.
+    - [Análogos às variáveis em programação estruturada.]{.fontsize80}
+
+- [Métodos]{.alert}: determinam o [comportamento]{.alert} do objeto.
+    - [Análogos às funções ou procedimentos na programação estruturada.]{.fontsize80}
+
+:::
+
+::::
+
+. . .
+
+::::{.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="20%"}
+**Exemplo:**
+:::
+
+::: {.column width="80%"}
+![](figuras/exemplo_atributos_metodos.png){fig-alt="Exemplo" fig-align="left" width=75%}
+:::
+
+::::
+
+## Objetos
+Objetos têm **estado**.
+
+- O [conjunto de valores]{.alert} de todos os [atributos]{.alert} que definem o objeto é denominado [estado do objeto]{.alert}.
+
+Colocar um exemplo aqui!
+
+## Classe *versus* Objeto
+
+Um [objeto]{.alert} constitui uma [entidade]{.alert} concreta com [tempo e espaço de existência]{.alert}, enquanto a [classe]{.alert} é somente uma [abstração]{.alert}, ou seja:
+
+- As **classes** existem no **código-fonte** do programa.
+
+- Já os **objetos** existem apenas durante a **execução do programa**.
+
+. . .
+
+:::{.callout-note title="Conceito" icon=false}
+O **código-fonte** de uma classe determina a **estrutura e o comportamento** (atributos e métodos) de cada um dos **objetos** dessa classe.
+:::
+
+
+# Métodos e Parâmetros {background-color="#fb8c0e"}
+
+
+## Métodos
+
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="75%"}
+Em OO, durante a execução de um programa, **objetos interagem** entre si por meio de **envio de mensagens**.
+
+- Uma [mensagem]{.alert} corresponde a uma [chamada de um método]{.alert} de um objeto.
+:::
+
+::: {.column width="25%"}
+![](figuras/envio_mensagem.png){fig-alt="Mensagens" fig-align="left" width=100%}
+:::
+
+::::
+
+. . .
+
+Portanto, podemos nos comunicar com objetos chamando (invocando) seus métodos.
+
+- [Em geral, objetos fazem alguma tarefa quando invocamos algum de seus métodos.]{.fontsize80}
+
+. . .
+
+Por exemplo, em um programa pode-se chamar o **método** *depósito* de um **objeto** *conta bancária* para aumentar o saldo dessa conta.
+
+## Parâmetros
+::: {.nonincremental}
+Todo [método]{.alert} definido no código-fonte de um programa [tem um cabeçalho]{.alert}, também denominado [assinatura]{.alert}. 
+
+- [A assinatura fornece as informações necessárias para invocar um método. **Exemplo:**]{.fontsize80}
+
+::: {.halfincfontsize}
+```{.java code-line-numbers="false"}
+float consultarSaldo()
+```
+:::
+:::
+. . .
+
+Além disso, métodos podem ter [parâmetros]{.alert} para [fornecer informações adicionais]{.alert} à tarefa que se deseja realizar.
+
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="20%"}
+**Exemplo:**
+:::
+
+::: {.column width="80%"}
+::: {.halfincfontsize}
+```{.java code-line-numbers="false"}
+void depositar(float valor)
+```
+:::
+:::
+::::
+
+::: {.nonincremental}
+- [A parte entre parênteses *(float valor)* contém as informações sobre o(s) parâmetro(s) requerido(s).]{.fontsize70}
+- [Cada parâmetro tem um **tipo** e um **nome**. Nessa assinatura, o método tem um parâmetro do tipo *float* chamado *valor*.]{.fontsize70}
+:::
