@@ -242,5 +242,5 @@ void depositar(float valor)
 
 ::: {.nonincremental}
 - [A parte entre parênteses *(float valor)* contém as informações sobre o(s) parâmetro(s) requerido(s).]{.fontsize70}
-- [Cada parâmetro tem um **tipo** e um **nome**. Nessa assinatura, o método tem um parâmetro do tipo *float* chamado *valor*.]{.fontsize70}
+- [Cada parâmetro tem um **tipo** e um **nome**. A partir da assinatura do exemplo podemos observar que o método *depositar* tem um parâmetro do tipo *float* chamado *valor*.]{.fontsize70}
 :::
