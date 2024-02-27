@@ -11,7 +11,7 @@
 <script src="aula1-1_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula1-1_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula1-1_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.550">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Conceitos Básicos de Orientação a Objetos: Objetos e Classes </title>
@@ -426,6 +426,7 @@
 <li>Classes</li>
 <li>Métodos</li>
 <li>Parâmetros</li>
+<li>Valores de Retorno</li>
 </ul>
 </div>
 </div>
@@ -588,7 +589,31 @@ Quais são os <strong>objetos</strong> que aparecem no <strong>domínio desse pr
 <ul>
 <li class="fragment">O <span class="alert">conjunto de valores</span> de todos os <span class="alert">atributos</span> que definem o objeto é denominado <span class="alert">estado do objeto</span>.</li>
 </ul>
-<p>Colocar um exemplo aqui!</p>
+<div class="fragment">
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:50%;">
+<p><strong>Exemplo:</strong></p>
+<div style="font-size: 80%;">
+<p>Considere que temos um objeto da classe <strong>Quadrado</strong> com os seguintes atributos:</p>
+<div>
+<ul>
+<li>tamanho</li>
+<li>posicaoX</li>
+<li>posicaoY</li>
+<li>cor</li>
+<li>estaVisivel</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/estado_objeto.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="ExemploEstadoObjeto"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="classe-versus-objeto" class="slide level2">
 <h2>Classe <em>versus</em> Objeto</h2>
@@ -611,10 +636,40 @@ Quais são os <strong>objetos</strong> que aparecem no <strong>domínio desse pr
 </div>
 </div>
 </div>
+</section>
+<section id="classe-versus-objeto-1" class="slide level2">
+<h2>Classe <em>versus</em> Objeto</h2>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:40%;">
+<p><strong>Exemplo:</strong></p>
+<div style="font-size: 80%;">
+<p>Aqui temos representada a classe <strong>Quadrado</strong> e dois objetos criados (instanciados) a partir dessa classe.</p>
+<p>Observe que o <strong>estado</strong> dos objetos é diferente!</p>
+<div title="Atenção">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Atenção</strong></p>
+</div>
+<div class="callout-content">
+<p>Neste exemplo apenas os <strong>atributos</strong> estão representados na classe. Mas lembre-se que os <strong>métodos</strong> também são definidos na classe.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/classe_objeto.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="ExemploClasseObjeto"></p>
+</figure>
+</div>
+</div>
+</div>
 </section></section>
 <section>
-<section id="métodos-e-parâmetros" class="title-slide slide level1 center" data-background-color="#fb8c0e">
-<h1>Métodos e Parâmetros</h1>
+<section id="métodos-parâmetros-e-valores-de-retorno" class="title-slide slide level1 center" data-background-color="#fb8c0e">
+<h1>Métodos, Parâmetros e Valores de Retorno</h1>
 
 </section>
 <section id="métodos" class="slide level2">
@@ -651,11 +706,11 @@ Quais são os <strong>objetos</strong> que aparecem no <strong>domínio desse pr
 <li><span class="fontsize80">A assinatura fornece as informações necessárias para invocar um método. <strong>Exemplo:</strong></span></li>
 </ul>
 <div class="halfincfontsize">
-<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> <span class="fu">consultarSaldo</span><span class="op">()</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> <span class="fu">getSaldo</span><span class="op">()</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
-<p>Além disso, métodos podem ter <span class="alert">parâmetros</span> para <span class="alert">fornecer informações adicionais</span> à tarefa que se deseja realizar.</p>
+<p>Os métodos podem ter <span class="alert">parâmetros</span> para <span class="alert">fornecer informações adicionais</span> à tarefa que se deseja realizar.</p>
 <div class="columns" style="display: flex !important; align-items: center;">
 <div class="column" style="width:20%;">
 <p><strong>Exemplo:</strong></p>
@@ -669,6 +724,73 @@ Quais são os <strong>objetos</strong> que aparecem no <strong>domínio desse pr
 <ul>
 <li><span class="fontsize70">A parte entre parênteses <em>(float valor)</em> contém as informações sobre o(s) parâmetro(s) requerido(s).</span></li>
 <li><span class="fontsize70">Cada parâmetro tem um <strong>tipo</strong> e um <strong>nome</strong>. A partir da assinatura do exemplo podemos observar que o método <em>depositar</em> tem um parâmetro do tipo <em>float</em> chamado <em>valor</em>.</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="objetos-como-parâmetros" class="slide level2">
+<h2>Objetos como Parâmetros</h2>
+<p>Mostramos anteriormente que o método <strong>depositar</strong> tem um parâmetro do tipo <em>float</em>.</p>
+<ul>
+<li class="fragment"><span class="fontsize80">Esse é somente um dos tipos de dados que a linguagem de programação <strong>Java</strong> suporta.</span></li>
+</ul>
+<div class="fragment">
+<p>É importante observar que além de valores de tipos definidos no Java, <span class="alert">objetos</span> também podem ser <span class="alert">passados como parâmetros</span> aos métodos.</p>
+</div>
+<div class="fragment">
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:20%;">
+<p><strong>Exemplo:</strong></p>
+</div><div class="column" style="width:80%;">
+<div class="halfincfontsize">
+<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">cadastrarConta</span><span class="op">(</span>Conta contaBancaria<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div>
+<ul>
+<li><span class="fontsize70">A parte entre parênteses <em>(Conta contaBancaria)</em> especifica que o método espera um objeto <em>Conta</em> como parâmetro.</span></li>
+<li><span class="fontsize70">Observe que, nesse caso, o <span class="alert">nome da classe</span> do objeto esperado é especificado como o <span class="alert">tipo do parâmetro</span> na assinatura do método.</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="valores-de-retorno" class="slide level2">
+<h2>Valores de Retorno</h2>
+<p>Os métodos podem <span class="alert">retornar um valor</span> de resultado.</p>
+<ul>
+<li class="fragment">A assinatura de cada método informa se um resultado é ou não retornado e, em caso positivo, o seu tipo.</li>
+</ul>
+<div class="fragment">
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:20%;">
+<p><strong>Exemplo 1:</strong></p>
+</div><div class="column" style="width:80%;">
+<div class="halfincfontsize">
+<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> valor<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div>
+<ul>
+<li><span class="fontsize70">Nesse caso a palavra <em>void</em> antes do nome do método indica que ele não retorna um resultado.</span></li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:20%;">
+<p><strong>Exemplo 2:</strong></p>
+</div><div class="column" style="width:80%;">
+<div class="halfincfontsize">
+<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> <span class="fu">getSaldo</span><span class="op">()</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div>
+<ul>
+<li><span class="fontsize70">Nesse caso a palavra <em>float</em> antes do nome do método especifica o seu tipo de retorno.</span></li>
+<li><span class="fontsize70">Ou seja, ao chamar esse método ele retornará um resultado do tipo <em>float</em>.</span></li>
 </ul>
 </div>
 <div class="quarto-auto-generated-content">

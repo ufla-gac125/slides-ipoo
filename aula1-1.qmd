@@ -21,6 +21,7 @@ title-slide-attributes:
 - Classes
 - Métodos
 - Parâmetros
+- Valores de Retorno
 :::
 :::
 :::
@@ -163,7 +164,34 @@ Objetos têm **estado**.
 
 - O [conjunto de valores]{.alert} de todos os [atributos]{.alert} que definem o objeto é denominado [estado do objeto]{.alert}.
 
-Colocar um exemplo aqui!
+. . .
+
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="50%"}
+**Exemplo:**
+
+::: {style="font-size: 80%;"}
+Considere que temos um objeto da classe **Quadrado** com os seguintes atributos:
+
+::: {.nonincremental}
+- tamanho
+- posicaoX
+- posicaoY
+- cor
+- estaVisivel
+:::
+:::
+:::
+
+::: {.column width="50%"}
+![](figuras/estado_objeto.png){fig-alt="ExemploEstadoObjeto" fig-align="center" width=90%}
+:::
+
+::::
+
+
+
 
 ## Classe *versus* Objeto
 
@@ -180,7 +208,33 @@ O **código-fonte** de uma classe determina a **estrutura e o comportamento** (a
 :::
 
 
-# Métodos e Parâmetros {background-color="#fb8c0e"}
+## Classe *versus* Objeto
+
+::::{.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="40%"}
+**Exemplo:**
+
+::: {style="font-size: 80%;"}
+Aqui temos representada a classe **Quadrado** e dois objetos criados (instanciados) a partir dessa classe.
+
+Observe que o **estado** dos objetos é diferente!
+
+:::{.callout-important title="Atenção" icon=false}
+Neste exemplo apenas os **atributos** estão representados na classe. Mas lembre-se que os **métodos** também são definidos na classe.
+:::
+:::
+:::
+
+::: {.column width="60%"}
+![](figuras/classe_objeto.png){fig-alt="ExemploClasseObjeto" fig-align="center" width=80%}
+:::
+
+::::
+
+
+
+# Métodos, Parâmetros e Valores de Retorno {background-color="#fb8c0e"}
 
 
 ## Métodos
@@ -217,13 +271,13 @@ Todo [método]{.alert} definido no código-fonte de um programa [tem um cabeçal
 
 ::: {.halfincfontsize}
 ```{.java code-line-numbers="false"}
-float consultarSaldo()
+float getSaldo()
 ```
 :::
 :::
 . . .
 
-Além disso, métodos podem ter [parâmetros]{.alert} para [fornecer informações adicionais]{.alert} à tarefa que se deseja realizar.
+Os métodos podem ter [parâmetros]{.alert} para [fornecer informações adicionais]{.alert} à tarefa que se deseja realizar.
 
 ::::{.columns style='display: flex !important; align-items: center;'}
 
@@ -243,4 +297,88 @@ void depositar(float valor)
 ::: {.nonincremental}
 - [A parte entre parênteses *(float valor)* contém as informações sobre o(s) parâmetro(s) requerido(s).]{.fontsize70}
 - [Cada parâmetro tem um **tipo** e um **nome**. A partir da assinatura do exemplo podemos observar que o método *depositar* tem um parâmetro do tipo *float* chamado *valor*.]{.fontsize70}
+:::
+
+
+## Objetos como Parâmetros
+
+Mostramos anteriormente que o método **depositar** tem um parâmetro do tipo *float*. 
+
+- [Esse é somente um dos tipos de dados que a linguagem de programação **Java** suporta.]{.fontsize80}
+
+. . .
+
+É importante observar que além de valores de tipos definidos no Java, [objetos]{.alert} também podem ser [passados como parâmetros]{.alert} aos métodos. 
+
+. . .
+
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="20%"}
+**Exemplo:**
+:::
+
+::: {.column width="80%"}
+::: {.halfincfontsize}
+```{.java code-line-numbers="false"}
+void cadastrarConta(Conta contaBancaria)
+```
+:::
+:::
+::::
+
+::: {.nonincremental}
+- [A parte entre parênteses *(Conta contaBancaria)* especifica que o método espera um objeto *Conta* como parâmetro.]{.fontsize70}
+- [Observe que, nesse caso, o [nome da classe]{.alert} do objeto esperado é especificado como o [tipo do parâmetro]{.alert} na assinatura do método.]{.fontsize70}
+:::
+
+
+
+## Valores de Retorno
+
+Os métodos podem [retornar um valor]{.alert} de resultado. 
+
+- A assinatura de cada método informa se um resultado é ou não retornado e, em caso positivo, o seu tipo.
+
+. . .
+
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="20%"}
+**Exemplo 1:**
+:::
+
+::: {.column width="80%"}
+::: {.halfincfontsize}
+```{.java code-line-numbers="false"}
+void depositar(float valor)
+```
+:::
+:::
+::::
+
+::: {.nonincremental}
+- [Nesse caso a palavra *void* antes do nome do método indica que ele não retorna um resultado.]{.fontsize70}
+:::
+
+. . .
+
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="20%"}
+**Exemplo 2:**
+:::
+
+::: {.column width="80%"}
+::: {.halfincfontsize}
+```{.java code-line-numbers="false"}
+float getSaldo()
+```
+:::
+:::
+::::
+
+::: {.nonincremental}
+- [Nesse caso a palavra *float* antes do nome do método especifica o seu tipo de retorno.]{.fontsize70}
+- [Ou seja, ao chamar esse método ele retornará um resultado do tipo *float*.]{.fontsize70}
 :::
