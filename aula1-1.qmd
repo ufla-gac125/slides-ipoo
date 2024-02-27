@@ -380,5 +380,5 @@ float getSaldo()
 
 ::: {.nonincremental}
 - [Nesse caso a palavra *float* antes do nome do método especifica o seu tipo de retorno.]{.fontsize70}
-- [Ou seja, ao chamar esse método ele retornará um resultado do tipo *float*]{.fontsize70}
+- [Ou seja, ao chamar esse método ele retornará um resultado do tipo *float*.]{.fontsize70}
 :::
