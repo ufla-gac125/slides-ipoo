@@ -2,7 +2,7 @@
 ::: {.nonincremental}
 
 
-<!-- This is some hidden comment -->
+<!-- This is some hidden comment 
 
 [Semana 1]{.alert}
 
@@ -12,6 +12,6 @@
 
 - [Aula Teórica 2](aula2.html)
 
-
+-->
 
 :::
