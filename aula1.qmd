@@ -114,3 +114,16 @@ Qual é o **vantagem** disso?
 :::
 
 ::::
+
+
+## Compilando um Programa 
+
+[Tendo em mãos o código fonte, o próximo passo é compilá-lo para obtermos o **bytecode** que poderá ser usado pela JVM.]{.fontsize90}
+
+![](figuras/processo_java1.png){fig-alt="Compilar_programa" fig-align="center" width=50%}
+
+. . . 
+
+[Compilando a partir de um terminal:]{.fontsize90}
+
+![](figuras/processo_compilar.png){fig-alt="Compilar_programa" fig-align="center" width=50%}
