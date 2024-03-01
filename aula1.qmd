@@ -1,0 +1,116 @@
+---
+title: Introdução à Linguagem Java<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Principais Conceitos desta Aula {}  
+
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+
+::: {.column width="30%"}
+![](figuras/professor1-1.png){fig-alt="Professor1-1" fig-align="center"}
+:::
+
+::: {.column width="70%"}
+::: {.nonincremental}
+::: {style="font-size: 120%;"}
+- Linguagem Java
+- Ambiente de Desenvolvimento Java
+- Primeiro Programa em Java
+:::
+:::
+:::
+
+::::
+
+
+## Linguagem Java {.reducelinespace}
+
+[O objetivo do [Java]{.alert} é possibilitar a escrita de programas que possam ser [executados]{.alert} em uma [grande variedade de sistemas]{.alert} computacionais e dispositivos controlados por computador.]{.fontsize90}
+
+. . .
+
+::::{.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="15%"}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=40%}
+:::
+
+
+::: {.column width="85%"}
+Qual é o **segredo**?
+
+- [Conceito de Máquina Virtual (Java Virtual Machine - JVM)!]{.fontsize90}
+:::
+
+::::
+
+. . .
+
+
+::: {.nonincremental}
+[Atualmente Java é utilizada para:]{.fontsize90}
+
+- [Desenvolver aplicativos corporativos de grande porte.]{.fontsize90}
+- [Aprimorar a funcionalidade de servidores da web.]{.fontsize90}
+- [Fornecer aplicativos para dispositivos voltados ao consumo popular.]{.fontsize90}
+- [Desenvolvimento de aplicativos Android *smartphones* e *tablets*.]{.fontsize90}
+:::
+
+
+# Ambiente de Desenvolvimento Java {background-color="#fb8c0e"}
+
+## 
+::: {.increaselinespace}
+[Passos para criação e execução de um aplicativo Java:]{.fontcolorblue}
+
+- Editar
+- Compilar
+- Executar
+:::
+
+
+## Editando um Programa
+Editar um arquivo usando um [programa editor]{.alert}.
+
+- Utilizando editores conhecidos, tais como *vi* e *emacs* (Linux) e *Bloco de Notas* (Windows).
+- Utilizando Ambientes de Desenvolvimento Integrado (*IDEs*), tais como, *Eclipse*, *NetBeans*, [*VSCode*]{.alert} etc.
+
+. . .
+
+![](figuras/editar_programa.png){fig-alt="Editar_programa" fig-align="center" width=90%}
+
+
+## Editando um Programa
+
+![](figuras/prog_basico.png){.absolute fig-alt="Editar_programa2" bottom=150px}
+
+
+## Compilando um Programa 
+
+
+[Ao compilar um programa em Java, ao invés de se gerar um executável para um sistema específico (como é o caso de *C/C++*), é gerado um arquivo chamado [bytecode]{.alert} (**.class**) que pode ser executado por uma [Máquina Virtual Java]{.alert} (*JVM*).]{.fontsize90}
+
+. . .
+
+![](figuras/compilar_programa.png){fig-alt="Compilar_programa" fig-align="center" width=80%}
+
+. . .
+
+::::{.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="15%"}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=50%}
+:::
+
+
+::: {.column width="85%"}
+Qual é o **vantagem** disso?
+
+- [Você pode [compilar]{.alert} seu código uma [única vez]{.alert} e o **bytcode** gerado pode ser [executado em qualquer sistema]{.alert} que tenha a [JVM]{.alert}.]{.fontsize90}
+:::
+
+::::

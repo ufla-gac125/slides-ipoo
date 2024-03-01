@@ -40,6 +40,18 @@ $h1bgcolor: #f7fad1;
     top: unset !important;
 }
 
+.reducelinespace {
+    line-height: 70% !important;
+}
+
+.increaselinespace {
+    line-height: 250%;
+}
+
+.fontcolorblue{
+    color: blue;
+}
+
 #title-slide .title {
     //color: #FF0000;
     text-align: center;
