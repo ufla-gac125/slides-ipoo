@@ -96,14 +96,14 @@ Editar um arquivo usando um [programa editor]{.alert}.
 
 . . .
 
-![](figuras/compilar_programa.png){fig-alt="Compilar_programa" fig-align="center" width=80%}
+![](figuras/compilar_programa.png){fig-alt="Compilar_programa1" fig-align="center" width=80%}
 
 . . .
 
 ::::{.columns style='display: flex !important; align-items: top;'}
 
 ::: {.column width="15%"}
-![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=50%}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=60%}
 :::
 
 
@@ -118,12 +118,12 @@ Qual é o **vantagem** disso?
 
 ## Compilando um Programa 
 
-[Tendo em mãos o código fonte, o próximo passo é compilá-lo para obtermos o **bytecode** que poderá ser usado pela JVM.]{.fontsize90}
+Tendo em mãos o código fonte, o próximo passo é compilá-lo para obtermos o **bytecode** que poderá ser usado pela JVM.
+![](figuras/processo_java1.png){fig-alt="Compilar_programa2" fig-align="center"}
 
-![](figuras/processo_java1.png){fig-alt="Compilar_programa" fig-align="center" width=50%}
 
-. . . 
+## Compilando um Programa 
 
-[Compilando a partir de um terminal:]{.fontsize90}
+Compilando a partir de um terminal:
 
-![](figuras/processo_compilar.png){fig-alt="Compilar_programa" fig-align="center" width=50%}
+![](figuras/processo_compilar.png){fig-alt="Compilar_programa3" fig-align="center" width=70%}
