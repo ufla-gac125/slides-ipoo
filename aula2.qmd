@@ -384,4 +384,6 @@ float getSaldo()
 :::
 
 
-## FIM
+##
+
+![](figuras/perguntas.png){fig-alt="Perguntas" fig-align="center" width=35%}
