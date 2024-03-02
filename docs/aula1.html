@@ -32,6 +32,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="aula1_files/libs/revealjs/dist/theme/quarto.css">
   <link href="aula1_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -344,8 +409,8 @@
 </div>
 
 </section>
-<section id="principais-conceitos-desta-aula" class="slide level2">
-<h2>Principais Conceitos desta Aula</h2>
+<section id="conteúdo-desta-aula" class="slide level2">
+<h2>Conteúdo desta Aula</h2>
 <div class="columns" style="display: flex !important; height: 70%; align-items: center;">
 <div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
@@ -359,15 +424,20 @@
 <ul>
 <li>Linguagem Java</li>
 <li>Ambiente de Desenvolvimento Java</li>
-<li>Primeiro Programa em Java</li>
+<li>Programa em Java</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="linguagem-java" class="slide level2 reducelinespace">
-<h2>Linguagem Java</h2>
+<section>
+<section id="linguagem-java" class="title-slide slide level1 center" data-background-color="#fb8c0e">
+<h1>Linguagem Java</h1>
+
+</section>
+<section id="section" class="slide level2 reducelinespace90">
+<h2></h2>
 <p><span class="fontsize90">O objetivo do <span class="alert">Java</span> é possibilitar a escrita de programas que possam ser <span class="alert">executados</span> em uma <span class="alert">grande variedade de sistemas</span> computacionais e dispositivos controlados por computador.</span></p>
 <div class="fragment">
 <div class="columns" style="display: flex !important; align-items: top;">
@@ -396,13 +466,13 @@
 </ul>
 </div>
 </div>
-</section>
+</section></section>
 <section>
 <section id="ambiente-de-desenvolvimento-java" class="title-slide slide level1 center" data-background-color="#fb8c0e">
 <h1>Ambiente de Desenvolvimento Java</h1>
 
 </section>
-<section id="section" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <div class="increaselinespace">
 <p><span class="fontcolorblue">Passos para criação e execução de um aplicativo Java:</span></p>
@@ -461,20 +531,122 @@
 </section>
 <section id="compilando-um-programa-1" class="slide level2">
 <h2>Compilando um Programa</h2>
-<p>Tendo em mãos o código fonte, o próximo passo é compilá-lo para obtermos o <strong>bytecode</strong> que poderá ser usado pela JVM. <img data-src="figuras/processo_java1.png" class="quarto-figure quarto-figure-center" alt="Compilar_programa2"></p>
+<p>Tendo em mãos o código fonte, o próximo passo é compilá-lo para obtermos o <strong>bytecode</strong> que poderá ser usado pela <em>JVM</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/processo_java1.png" class="quarto-figure quarto-figure-center" alt="Compilar_programa2"></p>
+</figure>
+</div>
 </section>
 <section id="compilando-um-programa-2" class="slide level2">
 <h2>Compilando um Programa</h2>
 <p>Compilando a partir de um terminal:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figuras/processo_compilar.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Compilar_programa3"></p>
+<p><img data-src="figuras/processo_compilar.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Compilar_programa3"></p>
+</figure>
+</div>
+</section>
+<section id="executando-um-programa" class="slide level2">
+<h2>Executando um Programa</h2>
+<p>Antes de executar um programa a <em>JVM</em> armazena o programa na memória (carregamento).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/carregar.png" class="quarto-figure quarto-figure-center" alt="Carregar_programa"></p>
+</figure>
+</div>
+</section>
+<section id="executando-um-programa-1" class="slide level2">
+<h2>Executando um Programa</h2>
+<p><span class="fontsize90">Após o carregamento, a <em>JVM</em> executa os <strong>bytecodes</strong> do programa, ou seja, realiza as instruções especificadas por ele.</span></p>
+<ul>
+<li class="fragment"><span class="fontsize90">Nas primeiras versões, a <em>JVM</em> era apenas um interpretador para bytecodes (execução lenta).</span></li>
+<li class="fragment"><span class="fontsize90">Atualmente as <em>JVMs</em> utilizam uma combinação de interpretação e compilação <em>Just In Time</em> (<em>JIT</em>) (execução mais rápida).</span></li>
+</ul>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="figuras/executar.png" class="quarto-figure quarto-figure-left" style="width:70.0%" alt="Executar_programa1"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="executando-um-programa-2" class="slide level2">
+<h2>Executando um Programa</h2>
+<p>Tendo em mãos o <strong>bytecode</strong>, o próximo passo é fazer a <em>JVM</em> executar nosso programa.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/processo_java2.png" class="quarto-figure quarto-figure-center" alt="Executar_programa2"></p>
+</figure>
+</div>
+</section>
+<section id="executando-um-programa-3" class="slide level2">
+<h2>Executando um Programa</h2>
+<p>Executando a partir de um terminal:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/processo_executar.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Executar_programa3"></p>
+</figure>
+</div>
+</section></section>
+<section>
+<section id="programa-em-java" class="title-slide slide level1 center" data-background-color="#fb8c0e">
+<h1>Programa em Java</h1>
+
+</section>
+<section id="começando-a-programar-em-java" class="slide level2">
+<h2>Começando a Programar em Java</h2>
+<p>Tipos primitivos e estruturas básicas:</p>
+<ul>
+<li class="fragment"><p>Os tipos primitivos em Java são similares aos de C/C++:</p>
+<ul>
+<li class="fragment"><em>int</em>, <em>float</em>, <em>double</em>, <em>char</em>.</li>
+</ul></li>
+<li class="fragment"><p>O tipo booleano é denominado <em>boolean</em>.</p></li>
+<li class="fragment"><p>As strings não são tipos primitivos, são objetos. A classe é a <em>String</em>.</p></li>
+<li class="fragment"><p>Os operadores aritméticos são iguais aos do C/C++:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(+\)</span> &nbsp;&nbsp;&nbsp;<span class="math inline">\(-\)</span> &nbsp;&nbsp;&nbsp;<span class="math inline">\(*\)</span> &nbsp;&nbsp;&nbsp;<span class="math inline">\(/\)</span> &nbsp;&nbsp;&nbsp;<span class="math inline">\(%\)</span> &nbsp;&nbsp;&nbsp;<span class="math inline">\(+=\)</span> &nbsp;&nbsp;&nbsp;<span class="math inline">\(-=\)</span> &nbsp;&nbsp;&nbsp;<span class="math inline">\(++\)</span> &nbsp;&nbsp;&nbsp;<span class="math inline">\(--\)</span></li>
+</ul></li>
+<li class="fragment"><p>Os operadores lógicos também são iguais aos do C/C++:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(==\)</span> &nbsp;&nbsp;&nbsp;<span class="math inline">\(!=\)</span> &nbsp;&nbsp;&nbsp;<span class="math inline">\(\&amp;\&amp;\)</span> &nbsp;&nbsp;&nbsp;<span class="math inline">\(||\)</span> &nbsp;&nbsp;&nbsp;<span class="math inline">\(!\)</span></li>
+</ul></li>
+<li class="fragment"><p>As sintaxes das estruturas condicionais (<em>if</em>, <em>if…else</em>) e de repetição (<em>for</em>, <em>while</em>) são iguais às do C/C++.</p></li>
+</ul>
+</section>
+<section id="nosso-primeiro-programa" class="slide level2">
+<h2>Nosso Primeiro Programa</h2>
+<div class="sourceCode" id="cb1" data-code-line-numbers="|2,|4,18,|5-6,17,|7,|8-10,|11-12,|13-14,|15-16,|1-18"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">// Programa de adição que exibe a soma de dois números</span></span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">Scanner</span><span class="op">;</span> <span class="co">//programa utiliza a classe Scanner</span></span>
+<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Adicao<span class="op">{</span></span>
+<span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Método principal inicia a execução do aplicativo Java </span></span>
+<span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
+<span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="bu">Scanner</span> entrada <span class="op">=</span> <span class="kw">new</span> <span class="bu">Scanner</span><span class="op">(</span><span class="bu">System</span><span class="op">.</span><span class="fu">in</span><span class="op">);</span><span class="co">// Cria um Scanner para obter entrada de dados   </span></span>
+<span id="cb1-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> numero1<span class="op">;</span> <span class="co">// Primeiro número</span></span>
+<span id="cb1-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> numero2<span class="op">;</span> <span class="co">// Segundo número</span></span>
+<span id="cb1-10"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> soma<span class="op">;</span> <span class="co">//Soma de numero1 e numero2</span></span>
+<span id="cb1-11"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Entre com o primeiro numero: "</span><span class="op">);</span> <span class="co">// Prompt</span></span>
+<span id="cb1-12"><a href="" aria-hidden="true" tabindex="-1"></a>    numero1 <span class="op">=</span> entrada<span class="op">.</span><span class="fu">nextInt</span><span class="op">();</span> <span class="co">// Lê do primeiro número fornecido pelo usuário</span></span>
+<span id="cb1-13"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Entre com o segundo numero: "</span><span class="op">);</span> <span class="co">// Prompt</span></span>
+<span id="cb1-14"><a href="" aria-hidden="true" tabindex="-1"></a>    numero2 <span class="op">=</span> entrada<span class="op">.</span><span class="fu">nextInt</span><span class="op">();</span> </span>
+<span id="cb1-15"><a href="" aria-hidden="true" tabindex="-1"></a>    soma <span class="op">=</span> numero1 <span class="op">+</span> numero2<span class="op">;</span> </span>
+<span id="cb1-16"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">printf</span><span class="op">(</span><span class="st">"A soma eh igual a </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> soma<span class="op">);</span> <span class="co">// Exibe a soma</span></span>
+<span id="cb1-17"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span><span class="co">//fim do método main</span></span>
+<span id="cb1-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span><span class="co">//fim da classe Adicao</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/perguntas.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Perguntas"></p>
 </figure>
 </div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
-
+<p><a href="http://luiz.dac.ufla.br">Prof.&nbsp;Luiz Merschmann</a></p>
 </div>
 </div>
 </section></section>

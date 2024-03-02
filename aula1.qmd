@@ -6,7 +6,7 @@ title-slide-attributes:
     data-background-position-y: center
 ---
 
-## Principais Conceitos desta Aula {}  
+## Conteúdo desta Aula {}  
 
 ::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
 
@@ -19,7 +19,7 @@ title-slide-attributes:
 ::: {style="font-size: 120%;"}
 - Linguagem Java
 - Ambiente de Desenvolvimento Java
-- Primeiro Programa em Java
+- Programa em Java
 :::
 :::
 :::
@@ -27,7 +27,9 @@ title-slide-attributes:
 ::::
 
 
-## Linguagem Java {.reducelinespace}
+# Linguagem Java {background-color="#fb8c0e"}
+
+## {.reducelinespace90}
 
 [O objetivo do [Java]{.alert} é possibilitar a escrita de programas que possam ser [executados]{.alert} em uma [grande variedade de sistemas]{.alert} computacionais e dispositivos controlados por computador.]{.fontsize90}
 
@@ -49,7 +51,6 @@ Qual é o **segredo**?
 ::::
 
 . . .
-
 
 ::: {.nonincremental}
 [Atualmente Java é utilizada para:]{.fontsize90}
@@ -118,7 +119,8 @@ Qual é o **vantagem** disso?
 
 ## Compilando um Programa 
 
-Tendo em mãos o código fonte, o próximo passo é compilá-lo para obtermos o **bytecode** que poderá ser usado pela JVM.
+Tendo em mãos o código fonte, o próximo passo é compilá-lo para obtermos o **bytecode** que poderá ser usado pela *JVM*.
+
 ![](figuras/processo_java1.png){fig-alt="Compilar_programa2" fig-align="center"}
 
 
@@ -126,4 +128,87 @@ Tendo em mãos o código fonte, o próximo passo é compilá-lo para obtermos o 
 
 Compilando a partir de um terminal:
 
-![](figuras/processo_compilar.png){fig-alt="Compilar_programa3" fig-align="center" width=70%}
+![](figuras/processo_compilar.png){fig-alt="Compilar_programa3" fig-align="center" width=80%}
+
+## Executando um Programa
+
+Antes de executar um programa a *JVM* armazena o programa na memória (carregamento).
+
+![](figuras/carregar.png){fig-alt="Carregar_programa" fig-align="center"}
+
+
+## Executando um Programa
+
+[Após o carregamento, a *JVM* executa os **bytecodes** do programa, ou seja, realiza as instruções especificadas por ele.]{.fontsize90}
+
+- [Nas primeiras versões, a *JVM* era apenas um interpretador para bytecodes (execução lenta).]{.fontsize90}
+- [Atualmente as *JVMs* utilizam uma combinação de interpretação e compilação *Just In Time* (*JIT*) (execução mais rápida).]{.fontsize90}
+
+. . .
+
+![](figuras/executar.png){fig-alt="Executar_programa1" fig-align="left" width=70%}
+
+
+## Executando um Programa
+
+Tendo em mãos o **bytecode**, o próximo passo é fazer a *JVM* executar nosso programa.
+
+![](figuras/processo_java2.png){fig-alt="Executar_programa2" fig-align="center"}
+
+
+## Executando um Programa
+
+Executando a partir de um terminal:
+
+![](figuras/processo_executar.png){fig-alt="Executar_programa3" fig-align="center" width=80%}
+
+
+# Programa em Java {background-color="#fb8c0e"}
+
+## Começando a Programar em Java
+
+Tipos primitivos e estruturas básicas:
+
+ - Os tipos primitivos em Java são similares aos de C/C++: 
+    - *int*, *float*, *double*, *char*.
+
+ - O tipo booleano é denominado *boolean*.
+
+ - As strings não são tipos primitivos, são objetos. A classe é a *String*.
+
+ - Os operadores aritméticos são iguais aos do C/C++:
+    -  $+$ \ \ \ $-$ \ \ \ $*$ \ \ \ $/$ \ \ \ $%$ \ \ \ $+=$ \ \ \ $-=$ \ \ \ $++$ \ \ \ $--$
+
+ - Os operadores lógicos também são iguais aos do C/C++:
+    - $==$ \ \ \ $!=$ \ \ \ $\&\&$ \ \ \ $||$ \ \ \ $!$
+
+ - As sintaxes das estruturas condicionais (*if*, *if...else*) e de repetição (*for*, *while*) são iguais às do C/C++. 
+
+
+## Nosso Primeiro Programa
+
+```{.java code-line-numbers="false" code-line-numbers="|2,|4,18,|5-6,17,|7,|8-10,|11-12,|13-14,|15-16,|1-18"}
+// Programa de adição que exibe a soma de dois números
+import java.util.Scanner; //programa utiliza a classe Scanner
+
+public class Adicao{
+  // Método principal inicia a execução do aplicativo Java 
+  public static void main(String[] args){
+    Scanner entrada = new Scanner(System.in);// Cria um Scanner para obter entrada de dados   
+    int numero1; // Primeiro número
+    int numero2; // Segundo número
+    int soma; //Soma de numero1 e numero2
+    System.out.print("Entre com o primeiro numero: "); // Prompt
+    numero1 = entrada.nextInt(); // Lê do primeiro número fornecido pelo usuário
+    System.out.print("Entre com o segundo numero: "); // Prompt
+    numero2 = entrada.nextInt(); 
+    soma = numero1 + numero2; 
+    System.out.printf("A soma eh igual a %d\n", soma); // Exibe a soma
+  }//fim do método main
+}//fim da classe Adicao
+```
+
+
+##
+
+![](figuras/perguntas.png){fig-alt="Perguntas" fig-align="center" width=35%}

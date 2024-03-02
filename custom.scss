@@ -4,6 +4,11 @@ $h1bgcolor: #f7fad1;
 
 /*-- scss:rules --*/
 
+.reveal .footer {
+    font-size: 0.40em !important;
+    text-align: center !important;
+}
+
 .underline {
     border-bottom: 1px solid black;
     padding-bottom: 5px;
@@ -40,8 +45,12 @@ $h1bgcolor: #f7fad1;
     top: unset !important;
 }
 
-.reducelinespace {
+.reducelinespace70 {
     line-height: 70% !important;
+}
+
+.reducelinespace90 {
+    line-height: 90% !important;
 }
 
 .increaselinespace {
