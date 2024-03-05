@@ -88,7 +88,7 @@ Veja que a classe **Pedido** teria como atributos objetos de outras classes (**P
 
 ## Exemplo da Pizzaria
 
-![](figuras/classes_pizzaria.png){fig-alt="Classes_pizzaria" fig-align="center" width=80%}
+![](figuras/classes_pizzaria.png){fig-alt="Classes_pizzaria" fig-align="center" width=75%}
 
 . . .
 
@@ -98,3 +98,68 @@ Podemos ter os seguintes **comportamentos**:
 - Na classe **Cliente**: alterar telefone, alterar endereço.
 - Na classe **Vendedor**: podemos considerar que os objetos não são alterados depois de criados.
 - Na classe **Pedido**: adicionar pizza, adicionar bebida, definir cliente, definir vendedor, calcular taxa de entrega, calcular total do pedido, indicar pedido pronto, indicar pedido entregue.
+
+
+## Exemplo da Pizzaria
+
+::::{.columns style='display: flex !important; height: 35%; align-items: top;'}
+::: {.column width="15%"}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=60%}
+:::
+
+::: {.column width="85%"}
+**Mas onde será criado o objeto da classe Pedido?**
+
+- Precisamos de pelo menos uma classe que **controle** o funcionamento do programa.
+:::
+::::
+
+. . .
+
+::::{.columns style='display: flex !important; height: 65%; align-items: top;'}
+::: {.column width="80%"}
+**O nosso sistema é para gerenciar o que?**
+
+- Uma pizzaria! Desse modo, vamos criar uma classe para representar a [Pizzaria]{.alert} e ser a nossa [classe de controle]{.alert}.
+- Quais seriam seus atributos e métodos dessa classe?
+    - Dica: na **classe de controle** pensamos em todas as **ações** que o **usuário** do sistema pode realizar.
+:::
+
+::: {.column width="20%"}
+::: {.fragment}
+![](figuras/classe_atributos_metodos_pizzaria.png){fig-alt="Classe_Pizzaria" fig-align="center" width=90% }
+:::
+:::
+::::
+
+
+## Exemplo da Pizzaria
+:::{.callout-important title="Observação" icon=false}
+Note que os [métodos de cadastro]{.alert} ficam em uma [classe de controle]{.alert} e **não na classe associada ao objeto que se deseja cadastrar**.
+:::
+
+. . .
+
+::::{.columns style='display: flex !important; height: 60%; align-items: center;'}
+::: {.column width="30%"}
+![](figuras/pessoa_com_problema_metade.png){fig-alt="Pessoa_Problema" fig-align="center" width=80% }
+:::
+
+::: {.column width="70%"}
+**Exemplo:** o cadastro de alunos não pode ficar na classe Aluno.
+
+- Lembre-se que um objeto da classe Aluno representa um aluno específico, por ex., o Paulo.
+
+:::{.fragment}
+:::{.nonincremental}
+- Se o cadastro de alunos fosse na classe Aluno, para cadastrar um aluno (ex: Marco), teríamos que fazer algo como:
+```{.java code-line-numbers="false" } 
+paulo.cadastrarAluno("Marco")
+```
+:::
+:::
+
+:::
+::::
+
+
