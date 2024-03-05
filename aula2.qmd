@@ -17,6 +17,7 @@ title-slide-attributes:
 ::: {.column width="70%"}
 ::: {.nonincremental}
 ::: {style="font-size: 120%;"}
+- Introdução à OO
 - Objetos 
 - Classes
 - Métodos
@@ -28,8 +29,113 @@ title-slide-attributes:
 
 ::::
 
+# Introdução à Orientação a Objetos {background-color="#fb8c0e"}
+
+## Paradigmas de Linguagens de Programação
+
+As [Linguagens de Programação]{.alert} (LPs) podem ser classificadas quanto ao [paradigma de programação]{.alert}.
+
+. . .
+
+:::: {.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="15%"}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=60%}
+:::
+
+::: {.column width="85%"}
+**O que é um paradigma?**
+
+- Um conjunto de teorias, padrões e métodos que juntos representam uma forma de organizar o conhecimento.
+- Um [paradigma]{.alert} é um [padrão de resolução de problemas]{.alert}.
+:::
+::::
+
+. . .
+
+:::{.callout-important title="Observação" icon=false}
+Algumas LPs são projetadas para suportar mais de um paradigma.
+:::
+
+
+## Paradigmas de Linguagens de Programação
+**Quais paradigmas de LPs você conhece?**
+
+. . .
+
+![](figuras/paradigmasLPs.png){fig-alt="ParadigmasLPs" fig-align="center" width=70%}
+
+
+## Paradigma Estruturado
+- [Pensamento]{.alert} de programação mais voltado ao [pensamento de máquina]{.alert}. 
+- Tem como [foco]{.alert} principal as [ações]{.alert}.
+- Os programas em linguagem estruturada usam:
+    - Variáveis.
+    - Procedimentos e funções como mecanismos de estruturação.
+
+. . .
+
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width=20%}
+**Exemplo:**
+:::
+
+::: {.column width=80%}
+```{.java code-line-numbers="false"}
+//Exemplo de variáveis
+int a,b;
+string nome;
+char sexo;
+//Exemplo de função
+int multiplicacao(int a, int b){
+    int mult;
+    mult = a * b;
+    return mult;
+}
+```
+:::
+::::
+
+
+## Paradigma Orientado a Objetos
+- [Pensamento]{.alert} de programação mais voltado ao [pensamento humano]{.alert}.
+- Conceitos envolvidos: classes, objetos, atributos, métodos, herança etc.
+- Um [programa]{.alert} é uma coleção de [objetos que interagem entre si]{.alert}, passando mensagens que transformam o seu estado.
+- Evolução da programação estruturada.
+
+. . .
+
+:::{.callout-important title="Observação" icon=false}
+Alguns autores não consideram um paradigma propriamente dito, mas sim uma extensão do paradigma estruturado.
+:::
+
+
+## Paradigmas de Linguagens de Programação
+
+![](figuras/comparacao_paradigmas.png){fig-alt="Comparacao_paradigmas" fig-align="center" width=80%}
+
+
+## Um Pouco de História
+- A Orientação a Objetos data do final da década de 60 e início da década de 70.
+    - Simula 67 (60's).
+    - Smalltalk (70's).
+    - C++ (80's).
+
+- Surgiu da necessidade de modelar sistemas mais complexos.
+
+
+## Forma do Pensamento Humano
+Como vocês descreveriam essa cena?
+
+![](figuras/cena_sala_aula.png){fig-alt="Cena_sala_aula" fig-align="center" width=60%}
+
+- Observem que nós compreendemos o mundo por meio dos objetos!
+
+
 ## Orientação a Objetos
-Colocar slides explicando sobre esse paradigma de programação.
+
+![](figuras/poo.png){fig-alt="POO" fig-align="center" width=65%}
+
 
 # Objetos e Classes {background-color="#fb8c0e"}
 

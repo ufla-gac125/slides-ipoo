@@ -422,6 +422,7 @@
 <div>
 <div style="font-size: 120%;">
 <ul>
+<li>Introdução à OO</li>
 <li>Objetos</li>
 <li>Classes</li>
 <li>Métodos</li>
@@ -433,10 +434,150 @@
 </div>
 </div>
 </section>
+<section>
+<section id="introdução-à-orientação-a-objetos" class="title-slide slide level1 center" data-background-color="#fb8c0e">
+<h1>Introdução à Orientação a Objetos</h1>
+
+</section>
+<section id="paradigmas-de-linguagens-de-programação" class="slide level2">
+<h2>Paradigmas de Linguagens de Programação</h2>
+<p>As <span class="alert">Linguagens de Programação</span> (LPs) podem ser classificadas quanto ao <span class="alert">paradigma de programação</span>.</p>
+<div class="fragment">
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:15%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div><div class="column" style="width:85%;">
+<p><strong>O que é um paradigma?</strong></p>
+<ul>
+<li class="fragment">Um conjunto de teorias, padrões e métodos que juntos representam uma forma de organizar o conhecimento.</li>
+<li class="fragment">Um <span class="alert">paradigma</span> é um <span class="alert">padrão de resolução de problemas</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div title="Observação">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Algumas LPs são projetadas para suportar mais de um paradigma.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="paradigmas-de-linguagens-de-programação-1" class="slide level2">
+<h2>Paradigmas de Linguagens de Programação</h2>
+<p><strong>Quais paradigmas de LPs você conhece?</strong></p>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/paradigmasLPs.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="ParadigmasLPs"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="paradigma-estruturado" class="slide level2">
+<h2>Paradigma Estruturado</h2>
+<ul>
+<li class="fragment"><span class="alert">Pensamento</span> de programação mais voltado ao <span class="alert">pensamento de máquina</span>.</li>
+<li class="fragment">Tem como <span class="alert">foco</span> principal as <span class="alert">ações</span>.</li>
+<li class="fragment">Os programas em linguagem estruturada usam:
+<ul>
+<li class="fragment">Variáveis.</li>
+<li class="fragment">Procedimentos e funções como mecanismos de estruturação.</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:20%;">
+<p><strong>Exemplo:</strong></p>
+</div><div class="column" style="width:80%;">
+<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Exemplo de variáveis</span></span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a<span class="op">,</span>b<span class="op">;</span></span>
+<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a>string nome<span class="op">;</span></span>
+<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> sexo<span class="op">;</span></span>
+<span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Exemplo de função</span></span>
+<span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> <span class="fu">multiplicacao</span><span class="op">(</span><span class="dt">int</span> a<span class="op">,</span> <span class="dt">int</span> b<span class="op">){</span></span>
+<span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> mult<span class="op">;</span></span>
+<span id="cb1-8"><a href="" aria-hidden="true" tabindex="-1"></a>    mult <span class="op">=</span> a <span class="op">*</span> b<span class="op">;</span></span>
+<span id="cb1-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mult<span class="op">;</span></span>
+<span id="cb1-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paradigma-orientado-a-objetos" class="slide level2">
+<h2>Paradigma Orientado a Objetos</h2>
+<ul>
+<li class="fragment"><span class="alert">Pensamento</span> de programação mais voltado ao <span class="alert">pensamento humano</span>.</li>
+<li class="fragment">Conceitos envolvidos: classes, objetos, atributos, métodos, herança etc.</li>
+<li class="fragment">Um <span class="alert">programa</span> é uma coleção de <span class="alert">objetos que interagem entre si</span>, passando mensagens que transformam o seu estado.</li>
+<li class="fragment">Evolução da programação estruturada.</li>
+</ul>
+<div class="fragment">
+<div title="Observação">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Alguns autores não consideram um paradigma propriamente dito, mas sim uma extensão do paradigma estruturado.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="paradigmas-de-linguagens-de-programação-2" class="slide level2">
+<h2>Paradigmas de Linguagens de Programação</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/comparacao_paradigmas.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Comparacao_paradigmas"></p>
+</figure>
+</div>
+</section>
+<section id="um-pouco-de-história" class="slide level2">
+<h2>Um Pouco de História</h2>
+<ul>
+<li class="fragment">A Orientação a Objetos data do final da década de 60 e início da década de 70.
+<ul>
+<li class="fragment">Simula 67 (60’s).</li>
+<li class="fragment">Smalltalk (70’s).</li>
+<li class="fragment">C++ (80’s).</li>
+</ul></li>
+<li class="fragment">Surgiu da necessidade de modelar sistemas mais complexos.</li>
+</ul>
+</section>
+<section id="forma-do-pensamento-humano" class="slide level2">
+<h2>Forma do Pensamento Humano</h2>
+<p>Como vocês descreveriam essa cena?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/cena_sala_aula.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Cena_sala_aula"></p>
+</figure>
+</div>
+<ul>
+<li class="fragment">Observem que nós compreendemos o mundo por meio dos objetos!</li>
+</ul>
+</section>
 <section id="orientação-a-objetos" class="slide level2">
 <h2>Orientação a Objetos</h2>
-<p>Colocar slides explicando sobre esse paradigma de programação.</p>
-</section>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/poo.png" class="quarto-figure quarto-figure-center" style="width:65.0%" alt="POO"></p>
+</figure>
+</div>
+</section></section>
 <section>
 <section id="objetos-e-classes" class="title-slide slide level1 center" data-background-color="#fb8c0e">
 <h1>Objetos e Classes</h1>
@@ -706,7 +847,7 @@ Quais são os <strong>objetos</strong> que aparecem no <strong>domínio desse pr
 <li><span class="fontsize80">A assinatura fornece as informações necessárias para invocar um método. <strong>Exemplo:</strong></span></li>
 </ul>
 <div class="halfincfontsize">
-<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> <span class="fu">getSaldo</span><span class="op">()</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> <span class="fu">getSaldo</span><span class="op">()</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -716,7 +857,7 @@ Quais são os <strong>objetos</strong> que aparecem no <strong>domínio desse pr
 <p><strong>Exemplo:</strong></p>
 </div><div class="column" style="width:80%;">
 <div class="halfincfontsize">
-<div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> valor<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> valor<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -743,7 +884,7 @@ Quais são os <strong>objetos</strong> que aparecem no <strong>domínio desse pr
 <p><strong>Exemplo:</strong></p>
 </div><div class="column" style="width:80%;">
 <div class="halfincfontsize">
-<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">cadastrarConta</span><span class="op">(</span>Conta contaBancaria<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">cadastrarConta</span><span class="op">(</span>Conta contaBancaria<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -767,7 +908,7 @@ Quais são os <strong>objetos</strong> que aparecem no <strong>domínio desse pr
 <p><strong>Exemplo 1:</strong></p>
 </div><div class="column" style="width:80%;">
 <div class="halfincfontsize">
-<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> valor<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> valor<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -783,7 +924,7 @@ Quais são os <strong>objetos</strong> que aparecem no <strong>domínio desse pr
 <p><strong>Exemplo 2:</strong></p>
 </div><div class="column" style="width:80%;">
 <div class="halfincfontsize">
-<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> <span class="fu">getSaldo</span><span class="op">()</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> <span class="fu">getSaldo</span><span class="op">()</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -795,12 +936,17 @@ Quais são os <strong>objetos</strong> que aparecem no <strong>domínio desse pr
 </div>
 </div>
 </section>
-<section id="fim" class="slide level2">
-<h2>FIM</h2>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/perguntas.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Perguntas"></p>
+</figure>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
-
+<p><a href="http://luiz.dac.ufla.br">Prof.&nbsp;Luiz Merschmann</a></p>
 </div>
 </div>
 </section></section>
