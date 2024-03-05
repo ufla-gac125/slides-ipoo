@@ -1,0 +1,100 @@
+---
+title: Conceitos Básicos de Orientação a Objetos:<br>Modelagem Orientada a Objetos<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Principais Conceitos desta Aula  
+
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+
+::: {.column width="30%"}
+![](figuras/professor1-1.png){fig-alt="Professor1-1" fig-align="center"}
+:::
+
+::: {.column width="70%"}
+::: {.nonincremental}
+::: {style="font-size: 120%;"}
+- Modelagem OO
+:::
+:::
+:::
+
+::::
+
+## Objetivo
+
+Considere que precisamos implementar um software para gerenciamento de uma pizzaria.
+
+- Portanto, inicialmente, precisamos definir quais **classes**, com seus respectivos **atributos** e **métodos**, irão compor esse sistema. 
+
+. . .
+
+Para este exercício de modelagem consideraremos que temos muito pouca informação sobre o funcionamento da pizzaria.
+
+- Sendo assim, as ideias das classes, atributos e métodos podem variar muito se diferentes pessoas modelarem esse software. 
+
+. . .
+
+:::{.callout-important title="Observação" icon=false}
+Em uma situação real seria feito um levantamento detalhado **das regras do negócio**. Isso certamente deixaria as coisas mais claras.
+:::
+
+## Exemplo da Pizzaria
+
+Ao começar uma modelagem, uma dúvida muito comum é não ter certeza se algo é um objeto ou só a caraterística (atributo) de um objeto.
+
+- Portanto, uma estratégia é você levantar todos os dados que se lembrar e, depois, verificar se algum dado pode ser encaixado como atributo de outro.
+
+. . .
+
+:::: {.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="15%"}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=70%}
+:::
+
+::: {.column width="85%"}
+**Quais dados podemos levantar para o caso de uma pizzaria?**
+
+- Pizzas, sabores, preços da pizza, cliente, nome, telefone e endereço de clientes, nome de vendedores, bebidas, com borda, quantidade de pizzas, quantidade de bebidas, pedidos, total do pedido, bebida, preço da bebida, taxas de entrega, pedido pronto, pedido entregue.
+:::
+::::
+
+
+## Exemplo da Pizzaria
+A partir do levantamento inicial realizado, vamos procurar o que é característica de outra coisa.
+
+- Características de [Pizza]{.alert}: sabor, preço de uma pizza, com borda.
+- Características da [Bebida]{.alert}: tipo, preço da bebida.
+- Características do [Cliente]{.alert}: nome, telefone e endereço.
+- Características do [Vendedor]{.alert}: nome.
+- Características do [Pedido]{.alert}: pizzas, quantidade de cada pizza, bebidas, quantidade de cada bebida, total do pedido, cliente, vendedor e taxa de entrega, pedido pronto, pedido entregue.
+
+
+## Exemplo da Pizzaria
+Tudo que foi identificado como [tendo características]{.alert} seriam [objetos]{.alert}, e as [características]{.alert} são seus [atributos]{.alert}. 
+
+- Portanto, definiríamos as classes Pizza, Bebida, Cliente, Vendedor e Pedido.
+
+. . .
+
+:::{.callout-important title="Observação" icon=false}
+Veja que a classe **Pedido** teria como atributos objetos de outras classes (**Pizza**, **Bebida**, **Cliente** e **Vendedor**). E realmente uma classe pode ter tanto atributos básicos (*int*, *float* ...) como também atributos que são objetos de outras classes.
+:::
+
+
+## Exemplo da Pizzaria
+
+![](figuras/classes_pizzaria.png){fig-alt="Classes_pizzaria" fig-align="center" width=80%}
+
+. . .
+
+Podemos ter os seguintes **comportamentos**:
+
+- Nas classes Pizza e Bebida: alterar preço.
+- Na classe Cliente: alterar telefone, alterar endereço.
+- Na classe Vendedor: podemos considerar que os objetos não são alterados depois de criados.
+- Na classe Pedido: adicionar pizza, adicionar bebida, definir cliente, definir vendedor, calcular taxa de entrega, calcular total do pedido, indicar pedido pronto, indicar pedido entregue.

@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR"><head>
-<script src="aula2_files/libs/clipboard/clipboard.min.js"></script>
-<script src="aula2_files/libs/quarto-html/tabby.min.js"></script>
-<script src="aula2_files/libs/quarto-html/popper.min.js"></script>
-<script src="aula2_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="aula2_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="aula2_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="aula2_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="aula2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="aula2_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
-<script src="aula2_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
-<link href="aula2_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+<script src="aula2-2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="aula2-2_files/libs/quarto-html/tabby.min.js"></script>
+<script src="aula2-2_files/libs/quarto-html/popper.min.js"></script>
+<script src="aula2-2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="aula2-2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="aula2-2_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="aula2-2_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="aula2-2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="aula2-2_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
+<script src="aula2-2_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
+<link href="aula2-2_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.550">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
-  <title>Conceitos Básicos de Orientação a Objetos: Objetos e Classes </title>
+  <title>Conceitos Básicos de Orientação a Objetos: Modelagem Orientada a Objetos </title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="aula2_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="aula2_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="aula2-2_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="aula2-2_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -32,78 +32,13 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-      }
-    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-    div.sourceCode
-      { color: #24292e;  }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #24292e; } /* Normal */
-    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
-    code span.an { color: #6a737d; } /* Annotation */
-    code span.at { color: #d73a49; } /* Attribute */
-    code span.bn { color: #005cc5; } /* BaseN */
-    code span.bu { color: #d73a49; } /* BuiltIn */
-    code span.cf { color: #d73a49; } /* ControlFlow */
-    code span.ch { color: #032f62; } /* Char */
-    code span.cn { color: #005cc5; } /* Constant */
-    code span.co { color: #6a737d; } /* Comment */
-    code span.cv { color: #6a737d; } /* CommentVar */
-    code span.do { color: #6a737d; } /* Documentation */
-    code span.dt { color: #d73a49; } /* DataType */
-    code span.dv { color: #005cc5; } /* DecVal */
-    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
-    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
-    code span.fl { color: #005cc5; } /* Float */
-    code span.fu { color: #6f42c1; } /* Function */
-    code span.im { color: #032f62; } /* Import */
-    code span.in { color: #6a737d; } /* Information */
-    code span.kw { color: #d73a49; } /* Keyword */
-    code span.op { color: #24292e; } /* Operator */
-    code span.ot { color: #6f42c1; } /* Other */
-    code span.pp { color: #d73a49; } /* Preprocessor */
-    code span.re { color: #6a737d; } /* RegionMarker */
-    code span.sc { color: #005cc5; } /* SpecialChar */
-    code span.ss { color: #032f62; } /* SpecialString */
-    code span.st { color: #032f62; } /* String */
-    code span.va { color: #e36209; } /* Variable */
-    code span.vs { color: #032f62; } /* VerbatimString */
-    code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="aula2_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="aula2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="aula2_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="aula2_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="aula2_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-  <link href="aula2_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="aula2-2_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="aula2-2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="aula2-2_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="aula2-2_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="aula2-2_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="aula2-2_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -395,7 +330,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-position-x="center" data-background-position-y="center" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Conceitos Básicos de Orientação a Objetos:<br>Objetos e Classes<br><br></h1>
+  <h1 class="title">Conceitos Básicos de Orientação a Objetos:<br>Modelagem Orientada a Objetos<br><br></h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -422,106 +357,79 @@
 <div>
 <div style="font-size: 120%;">
 <ul>
-<li>Introdução à OO</li>
-<li>Objetos</li>
-<li>Classes</li>
-<li>Métodos</li>
-<li>Parâmetros</li>
-<li>Valores de Retorno</li>
+<li>Modelagem OO</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section>
-<section id="introdução-à-orientação-a-objetos" class="title-slide slide level1 center" data-background-color="#fb8c0e">
-<h1>Introdução à Orientação a Objetos</h1>
-
+<section id="objetivo" class="slide level2">
+<h2>Objetivo</h2>
+<p>Considere que precisamos implementar um software para gerenciamento de uma pizzaria.</p>
+<ul>
+<li class="fragment">Portanto, inicialmente, precisamos definir quais <strong>classes</strong>, com seus respectivos <strong>atributos</strong> e <strong>métodos</strong>, irão compor esse sistema.</li>
+</ul>
+<div class="fragment">
+<p>Para este exercício de modelagem consideraremos que temos muito pouca informação sobre o funcionamento da pizzaria.</p>
+<ul>
+<li class="fragment">Sendo assim, as ideias das classes, atributos e métodos podem variar muito se diferentes pessoas modelarem esse software.</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="Observação">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Em uma situação real seria feito um levantamento detalhado <strong>das regras do negócio</strong>. Isso certamente deixaria as coisas mais claras.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="paradigmas-de-linguagens-de-programação" class="slide level2">
-<h2>Paradigmas de Linguagens de Programação</h2>
-<p>As <span class="alert">Linguagens de Programação</span> (LPs) podem ser classificadas quanto ao <span class="alert">paradigma de programação</span>.</p>
+<section id="exemplo-da-pizzaria" class="slide level2">
+<h2>Exemplo da Pizzaria</h2>
+<p>Ao começar uma modelagem, uma dúvida muito comum é não ter certeza se algo é um objeto ou só a caraterística (atributo) de um objeto.</p>
+<ul>
+<li class="fragment">Portanto, uma estratégia é você levantar todos os dados que se lembrar e, depois, verificar se algum dado pode ser encaixado como atributo de outro.</li>
+</ul>
 <div class="fragment">
 <div class="columns" style="display: flex !important; align-items: top;">
 <div class="column" style="width:15%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Pensando"></p>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Pensando"></p>
 </figure>
 </div>
 </div><div class="column" style="width:85%;">
-<p><strong>O que é um paradigma?</strong></p>
+<p><strong>Quais dados podemos levantar para o caso de uma pizzaria?</strong></p>
 <ul>
-<li class="fragment">Um conjunto de teorias, padrões e métodos que juntos representam uma forma de organizar o conhecimento.</li>
-<li class="fragment">Um <span class="alert">paradigma</span> é um <span class="alert">padrão de resolução de problemas</span>.</li>
+<li class="fragment">Pizzas, sabores, preços da pizza, cliente, nome, telefone e endereço de clientes, nome de vendedores, bebidas, com borda, quantidade de pizzas, quantidade de bebidas, pedidos, total do pedido, bebida, preço da bebida, taxas de entrega, pedido pronto, pedido entregue.</li>
 </ul>
 </div>
 </div>
 </div>
-<div class="fragment">
-<div title="Observação">
-<div class="callout callout-important no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Observação</strong></p>
-</div>
-<div class="callout-content">
-<p>Algumas LPs são projetadas para suportar mais de um paradigma.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
-<section id="paradigmas-de-linguagens-de-programação-1" class="slide level2">
-<h2>Paradigmas de Linguagens de Programação</h2>
-<p><strong>Quais paradigmas de LPs você conhece?</strong></p>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figuras/paradigmasLPs.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="ParadigmasLPs"></p>
-</figure>
-</div>
-</div>
-</section>
-<section id="paradigma-estruturado" class="slide level2">
-<h2>Paradigma Estruturado</h2>
+<section id="exemplo-da-pizzaria-1" class="slide level2">
+<h2>Exemplo da Pizzaria</h2>
+<p>A partir do levantamento inicial realizado, vamos procurar o que é característica de outra coisa.</p>
 <ul>
-<li class="fragment"><span class="alert">Pensamento</span> de programação mais voltado ao <span class="alert">pensamento de máquina</span>.</li>
-<li class="fragment">Tem como <span class="alert">foco</span> principal as <span class="alert">ações</span>.</li>
-<li class="fragment">Os programas em linguagem estruturada usam:
-<ul>
-<li class="fragment">Variáveis.</li>
-<li class="fragment">Procedimentos e funções como mecanismos de estruturação.</li>
-</ul></li>
+<li class="fragment">Características de <span class="alert">Pizza</span>: sabor, preço de uma pizza, com borda.</li>
+<li class="fragment">Características da <span class="alert">Bebida</span>: tipo, preço da bebida.</li>
+<li class="fragment">Características do <span class="alert">Cliente</span>: nome, telefone e endereço.</li>
+<li class="fragment">Características do <span class="alert">Vendedor</span>: nome.</li>
+<li class="fragment">Características do <span class="alert">Pedido</span>: pizzas, quantidade de cada pizza, bebidas, quantidade de cada bebida, total do pedido, cliente, vendedor e taxa de entrega, pedido pronto, pedido entregue.</li>
 </ul>
-<div class="fragment">
-<div class="columns" style="display: flex !important; align-items: top;">
-<div class="column" style="width:20%;">
-<p><strong>Exemplo:</strong></p>
-</div><div class="column" style="width:80%;">
-<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Exemplo de variáveis</span></span>
-<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a<span class="op">,</span>b<span class="op">;</span></span>
-<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a>string nome<span class="op">;</span></span>
-<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> sexo<span class="op">;</span></span>
-<span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Exemplo de função</span></span>
-<span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> <span class="fu">multiplicacao</span><span class="op">(</span><span class="dt">int</span> a<span class="op">,</span> <span class="dt">int</span> b<span class="op">){</span></span>
-<span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> mult<span class="op">;</span></span>
-<span id="cb1-8"><a href="" aria-hidden="true" tabindex="-1"></a>    mult <span class="op">=</span> a <span class="op">*</span> b<span class="op">;</span></span>
-<span id="cb1-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mult<span class="op">;</span></span>
-<span id="cb1-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
 </section>
-<section id="paradigma-orientado-a-objetos" class="slide level2">
-<h2>Paradigma Orientado a Objetos</h2>
+<section id="exemplo-da-pizzaria-2" class="slide level2">
+<h2>Exemplo da Pizzaria</h2>
+<p>Tudo que foi identificado como <span class="alert">tendo características</span> seriam <span class="alert">objetos</span>, e as <span class="alert">características</span> são seus <span class="alert">atributos</span>.</p>
 <ul>
-<li class="fragment"><span class="alert">Pensamento</span> de programação mais voltado ao <span class="alert">pensamento humano</span>.</li>
-<li class="fragment">Conceitos envolvidos: classes, objetos, atributos, métodos, herança etc.</li>
-<li class="fragment">Um <span class="alert">programa</span> é uma coleção de <span class="alert">objetos que interagem entre si</span>, passando mensagens que transformam o seu estado.</li>
-<li class="fragment">Evolução da programação estruturada.</li>
+<li class="fragment">Portanto, definiríamos as classes Pizza, Bebida, Cliente, Vendedor e Pedido.</li>
 </ul>
 <div class="fragment">
 <div title="Observação">
@@ -531,443 +439,54 @@
 <p><strong>Observação</strong></p>
 </div>
 <div class="callout-content">
-<p>Alguns autores não consideram um paradigma propriamente dito, mas sim uma extensão do paradigma estruturado.</p>
+<p>Veja que a classe <strong>Pedido</strong> teria como atributos objetos de outras classes (<strong>Pizza</strong>, <strong>Bebida</strong>, <strong>Cliente</strong> e <strong>Vendedor</strong>). E realmente uma classe pode ter tanto atributos básicos (<em>int</em>, <em>float</em> …) como também atributos que são objetos de outras classes.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="paradigmas-de-linguagens-de-programação-2" class="slide level2">
-<h2>Paradigmas de Linguagens de Programação</h2>
+<section id="exemplo-da-pizzaria-3" class="slide level2">
+<h2>Exemplo da Pizzaria</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figuras/comparacao_paradigmas.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Comparacao_paradigmas"></p>
+<p><img data-src="figuras/classes_pizzaria.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Classes_pizzaria"></p>
 </figure>
 </div>
-</section>
-<section id="um-pouco-de-história" class="slide level2">
-<h2>Um Pouco de História</h2>
-<ul>
-<li class="fragment">A Orientação a Objetos data do final da década de 60 e início da década de 70.
-<ul>
-<li class="fragment">Simula 67 (60’s).</li>
-<li class="fragment">Smalltalk (70’s).</li>
-<li class="fragment">C++ (80’s).</li>
-</ul></li>
-<li class="fragment">Surgiu da necessidade de modelar sistemas mais complexos.</li>
-</ul>
-</section>
-<section id="forma-do-pensamento-humano" class="slide level2">
-<h2>Forma do Pensamento Humano</h2>
-<p>Como vocês descreveriam essa cena?</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figuras/cena_sala_aula.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Cena_sala_aula"></p>
-</figure>
-</div>
-<ul>
-<li class="fragment">Observem que nós compreendemos o mundo por meio dos objetos!</li>
-</ul>
-</section>
-<section id="orientação-a-objetos" class="slide level2">
-<h2>Orientação a Objetos</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figuras/poo.png" class="quarto-figure quarto-figure-center" style="width:65.0%" alt="POO"></p>
-</figure>
-</div>
-</section></section>
-<section>
-<section id="objetos-e-classes" class="title-slide slide level1 center" data-background-color="#fb8c0e">
-<h1>Objetos e Classes</h1>
-
-</section>
-<section id="objetos" class="slide level2">
-<h2>Objetos</h2>
-<p>Ao escrever um <span class="alert">programa</span> em uma <span class="alert">linguagem Orientada a Objetos</span> (OO):</p>
-<ul>
-<li class="fragment">você está criando um <span class="alert">modelo</span> de alguma parte do mundo,</li>
-<li class="fragment">sendo os <span class="alert">objetos</span> as <span class="alert">partes desse modelo</span>.</li>
-</ul>
 <div class="fragment">
-<p>Considere que precisamos criar um <strong>programa</strong> para simular o <strong>trânsito</strong> em uma cidade.<br>
-Quais são os <strong>objetos</strong> que aparecem no <strong>domínio desse problema</strong>?</p>
-</div>
-<div class="fragment">
-<div class="columns" style="display: flex !important; height: 70%; align-items: center;">
-<div class="column" style="width:35%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figuras/transito.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="Transito"></p>
-</figure>
-</div>
-</div><div class="column" style="width:65%;">
-<div>
-<div style="font-size: 110%;">
+<p>Podemos ter os seguintes <strong>comportamentos</strong>:</p>
 <ul>
-<li>Carros</li>
-<li>Semáforos</li>
-<li>Pedestres</li>
-<li>etc.</li>
+<li class="fragment">Nas classes Pizza e Bebida: alterar preço.</li>
+<li class="fragment">Na classe Cliente: alterar telefone, alterar endereço.</li>
+<li class="fragment">Na classe Vendedor: podemos considerar que os objetos não são alterados depois de criados.</li>
+<li class="fragment">Na classe Pedido: adicionar pizza, adicionar bebida, definir cliente, definir vendedor, calcular taxa de entrega, calcular total do pedido, indicar pedido pronto, indicar pedido entregue.</li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="objetos-1" class="slide level2">
-<h2>Objetos</h2>
-<p>Portanto, <span class="alert">objetos</span>:</p>
-<ul>
-<li class="fragment">São <span class="alert">elementos computacionais</span> que representam alguma <span class="alert">entidade</span> (abstrata ou concreta) do domínio de interesse do problema sob análise.</li>
-<li class="fragment">Correspondem a uma <span class="alert">abstração</span> para algo do mundo real.</li>
-</ul>
-<div class="fragment">
-<p>Observe que os <strong>objetos</strong> dependem do <strong>problema</strong> que desejamos resolver. Exemplos:</p>
-<ul>
-<li class="fragment">No caso de um <u>software para uma pizzaria</u> os objetos seriam: pizzas, bebidas, pedidos, atendentes etc.</li>
-<li class="fragment">No caso de um <u>software de gerenciamento acadêmico</u> os objetos seriam: alunos, professores, turmas, disciplinas etc.</li>
-</ul>
-</div>
-</section>
-<section id="classes" class="slide level2">
-<h2>Classes</h2>
-<div class="columns" style="display: flex !important; align-items: top;">
-<div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figuras/colecao_lapis.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Projeto"></p>
-</figure>
-</div>
-</div><div class="column" style="width:70%;">
-<p>Uma <span class="alert">classe</span> descreve, de maneira abstrata, todos os <span class="alert">objetos de um tipo particular</span>.</p>
-</div>
-</div>
-<div class="fragment">
-<div class="columns" style="display: flex !important; align-items: top;">
-<div class="column" style="width:70%;">
-<p>Então qual a diferença entre <strong>classe</strong> e <strong>objeto</strong>?</p>
-<ul>
-<li class="fragment">A classe descreve o tipo de objeto.</li>
-<li class="fragment">Os objetos são criados a partir das classes.</li>
-<li class="fragment">Ou seja, os <span class="alert">objetos</span> representam <span class="alert">instanciações individuais da classe</span>.</li>
-<li class="fragment">E, por isso, um <span class="alert">objeto</span> também é chamado de <span class="alert">instância</span> de uma classe.</li>
-</ul>
-</div><div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:40.0%" alt="Pensando"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="classe-versus-objeto-analogia" class="slide level2">
-<h2>Classe <em>versus</em> Objeto: Analogia</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figuras/projeto_com_casa.png" class="quarto-figure quarto-figure-center" style="width:45.0%" alt="ProjetoCasa"></p>
-</figure>
-</div>
-<p><span class="fontsize80">Uma classe é como um “projeto” a partir do qual objetos individuais são criados.</span></p>
-<div class="fragment">
-<div title="Observação">
-<div class="callout callout-important no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Observação</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Muitos objetos</strong> semelhantes podem ser <strong>criados</strong> a partir de uma <strong>única classe</strong>.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="o-que-há-em-um-objeto" class="slide level2">
-<h2>O que há em um objeto?</h2>
-<div class="columns" style="display: flex !important; align-items: center;">
-<div class="column" style="width:15%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Pensando"></p>
-</figure>
-</div>
-</div><div class="column" style="width:85%;">
-<ul>
-<li class="fragment"><span class="alert">Atributos</span> (campos): são as <span class="alert">características</span> que o definem.
-<ul>
-<li class="fragment"><span class="fontsize80">Análogos às variáveis em programação estruturada.</span></li>
-</ul></li>
-<li class="fragment"><span class="alert">Métodos</span>: determinam o <span class="alert">comportamento</span> do objeto.
-<ul>
-<li class="fragment"><span class="fontsize80">Análogos às funções ou procedimentos na programação estruturada.</span></li>
-</ul></li>
-</ul>
-</div>
-</div>
-<div class="fragment">
-<div class="columns" style="display: flex !important; align-items: top;">
-<div class="column" style="width:20%;">
-<p><strong>Exemplo:</strong></p>
-</div><div class="column" style="width:80%;">
-<div class="quarto-figure quarto-figure-left">
-<figure>
-<p><img data-src="figuras/exemplo_atributos_metodos.png" class="quarto-figure quarto-figure-left" style="width:75.0%" alt="Exemplo"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="objetos-2" class="slide level2">
-<h2>Objetos</h2>
-<p>Objetos têm <strong>estado</strong>.</p>
-<ul>
-<li class="fragment">O <span class="alert">conjunto de valores</span> de todos os <span class="alert">atributos</span> que definem o objeto é denominado <span class="alert">estado do objeto</span>.</li>
-</ul>
-<div class="fragment">
-<div class="columns" style="display: flex !important; align-items: center;">
-<div class="column" style="width:50%;">
-<p><strong>Exemplo:</strong></p>
-<div style="font-size: 80%;">
-<p>Considere que temos um objeto da classe <strong>Quadrado</strong> com os seguintes atributos:</p>
-<div>
-<ul>
-<li>tamanho</li>
-<li>posicaoX</li>
-<li>posicaoY</li>
-<li>cor</li>
-<li>estaVisivel</li>
-</ul>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figuras/estado_objeto.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="ExemploEstadoObjeto"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="classe-versus-objeto" class="slide level2">
-<h2>Classe <em>versus</em> Objeto</h2>
-<p>Um <span class="alert">objeto</span> constitui uma <span class="alert">entidade</span> concreta com <span class="alert">tempo e espaço de existência</span>, enquanto a <span class="alert">classe</span> é somente uma <span class="alert">abstração</span>, ou seja:</p>
-<ul>
-<li class="fragment"><p>As <strong>classes</strong> existem no <strong>código-fonte</strong> do programa.</p></li>
-<li class="fragment"><p>Já os <strong>objetos</strong> existem apenas durante a <strong>execução do programa</strong>.</p></li>
-</ul>
-<div class="fragment">
-<div title="Conceito">
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Conceito</strong></p>
-</div>
-<div class="callout-content">
-<p>O <strong>código-fonte</strong> de uma classe determina a <strong>estrutura e o comportamento</strong> (atributos e métodos) de cada um dos <strong>objetos</strong> dessa classe.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="classe-versus-objeto-1" class="slide level2">
-<h2>Classe <em>versus</em> Objeto</h2>
-<div class="columns" style="display: flex !important; align-items: top;">
-<div class="column" style="width:40%;">
-<p><strong>Exemplo:</strong></p>
-<div style="font-size: 80%;">
-<p>Aqui temos representada a classe <strong>Quadrado</strong> e dois objetos criados (instanciados) a partir dessa classe.</p>
-<p>Observe que o <strong>estado</strong> dos objetos é diferente!</p>
-<div title="Atenção">
-<div class="callout callout-important no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Atenção</strong></p>
-</div>
-<div class="callout-content">
-<p>Neste exemplo apenas os <strong>atributos</strong> estão representados na classe. Mas lembre-se que os <strong>métodos</strong> também são definidos na classe.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:60%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figuras/classe_objeto.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="ExemploClasseObjeto"></p>
-</figure>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="métodos-parâmetros-e-valores-de-retorno" class="title-slide slide level1 center" data-background-color="#fb8c0e">
-<h1>Métodos, Parâmetros e Valores de Retorno</h1>
-
-</section>
-<section id="métodos" class="slide level2">
-<h2>Métodos</h2>
-<div class="columns" style="display: flex !important; align-items: center;">
-<div class="column" style="width:75%;">
-<p>Em OO, durante a execução de um programa, <strong>objetos interagem</strong> entre si por meio de <strong>envio de mensagens</strong>.</p>
-<ul>
-<li class="fragment">Uma <span class="alert">mensagem</span> corresponde a uma <span class="alert">chamada de um método</span> de um objeto.</li>
-</ul>
-</div><div class="column" style="width:25%;">
-<div class="quarto-figure quarto-figure-left">
-<figure>
-<p><img data-src="figuras/envio_mensagem.png" class="quarto-figure quarto-figure-left" style="width:100.0%" alt="Mensagens"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Portanto, podemos nos comunicar com objetos chamando (invocando) seus métodos.</p>
-<ul>
-<li class="fragment"><span class="fontsize80">Em geral, objetos fazem alguma tarefa quando invocamos algum de seus métodos.</span></li>
-</ul>
-</div>
-<div class="fragment">
-<p>Por exemplo, em um programa pode-se chamar o <strong>método</strong> <em>depósito</em> de um <strong>objeto</strong> <em>conta bancária</em> para aumentar o saldo dessa conta.</p>
-</div>
-</section>
-<section id="parâmetros" class="slide level2">
-<h2>Parâmetros</h2>
-<div>
-<p>Todo <span class="alert">método</span> definido no código-fonte de um programa <span class="alert">tem um cabeçalho</span>, também denominado <span class="alert">assinatura</span>.</p>
-<ul>
-<li><span class="fontsize80">A assinatura fornece as informações necessárias para invocar um método. <strong>Exemplo:</strong></span></li>
-</ul>
-<div class="halfincfontsize">
-<div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> <span class="fu">getSaldo</span><span class="op">()</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="fragment">
-<p>Os métodos podem ter <span class="alert">parâmetros</span> para <span class="alert">fornecer informações adicionais</span> à tarefa que se deseja realizar.</p>
-<div class="columns" style="display: flex !important; align-items: center;">
-<div class="column" style="width:20%;">
-<p><strong>Exemplo:</strong></p>
-</div><div class="column" style="width:80%;">
-<div class="halfincfontsize">
-<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> valor<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<div>
-<ul>
-<li><span class="fontsize70">A parte entre parênteses <em>(float valor)</em> contém as informações sobre o(s) parâmetro(s) requerido(s).</span></li>
-<li><span class="fontsize70">Cada parâmetro tem um <strong>tipo</strong> e um <strong>nome</strong>. A partir da assinatura do exemplo podemos observar que o método <em>depositar</em> tem um parâmetro do tipo <em>float</em> chamado <em>valor</em>.</span></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="objetos-como-parâmetros" class="slide level2">
-<h2>Objetos como Parâmetros</h2>
-<p>Mostramos anteriormente que o método <strong>depositar</strong> tem um parâmetro do tipo <em>float</em>.</p>
-<ul>
-<li class="fragment"><span class="fontsize80">Esse é somente um dos tipos de dados que a linguagem de programação <strong>Java</strong> suporta.</span></li>
-</ul>
-<div class="fragment">
-<p>É importante observar que além de valores de tipos definidos no Java, <span class="alert">objetos</span> também podem ser <span class="alert">passados como parâmetros</span> aos métodos.</p>
-</div>
-<div class="fragment">
-<div class="columns" style="display: flex !important; align-items: center;">
-<div class="column" style="width:20%;">
-<p><strong>Exemplo:</strong></p>
-</div><div class="column" style="width:80%;">
-<div class="halfincfontsize">
-<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">cadastrarConta</span><span class="op">(</span>Conta contaBancaria<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<div>
-<ul>
-<li><span class="fontsize70">A parte entre parênteses <em>(Conta contaBancaria)</em> especifica que o método espera um objeto <em>Conta</em> como parâmetro.</span></li>
-<li><span class="fontsize70">Observe que, nesse caso, o <span class="alert">nome da classe</span> do objeto esperado é especificado como o <span class="alert">tipo do parâmetro</span> na assinatura do método.</span></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="valores-de-retorno" class="slide level2">
-<h2>Valores de Retorno</h2>
-<p>Os métodos podem <span class="alert">retornar um valor</span> de resultado.</p>
-<ul>
-<li class="fragment">A assinatura de cada método informa se um resultado é ou não retornado e, em caso positivo, o seu tipo.</li>
-</ul>
-<div class="fragment">
-<div class="columns" style="display: flex !important; align-items: center;">
-<div class="column" style="width:20%;">
-<p><strong>Exemplo 1:</strong></p>
-</div><div class="column" style="width:80%;">
-<div class="halfincfontsize">
-<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> valor<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<div>
-<ul>
-<li><span class="fontsize70">Nesse caso a palavra <em>void</em> antes do nome do método indica que ele não retorna um resultado.</span></li>
-</ul>
-</div>
-</div>
-<div class="fragment">
-<div class="columns" style="display: flex !important; align-items: center;">
-<div class="column" style="width:20%;">
-<p><strong>Exemplo 2:</strong></p>
-</div><div class="column" style="width:80%;">
-<div class="halfincfontsize">
-<div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> <span class="fu">getSaldo</span><span class="op">()</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<div>
-<ul>
-<li><span class="fontsize70">Nesse caso a palavra <em>float</em> antes do nome do método especifica o seu tipo de retorno.</span></li>
-<li><span class="fontsize70">Ou seja, ao chamar esse método ele retornará um resultado do tipo <em>float</em>.</span></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figuras/perguntas.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Perguntas"></p>
-</figure>
-</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="http://luiz.dac.ufla.br">Prof.&nbsp;Luiz Merschmann</a></p>
 </div>
 </div>
-</section></section>
+</div>
+</section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="aula2_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="aula2-2_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="aula2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="aula2_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="aula2_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="aula2_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="aula2_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
-  <script src="aula2_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="aula2-2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="aula2-2_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="aula2-2_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="aula2-2_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="aula2-2_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="aula2-2_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="aula2_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="aula2_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="aula2_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="aula2_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="aula2-2_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="aula2-2_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="aula2-2_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="aula2-2_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
