@@ -1,12 +1,12 @@
 ---
-title: Conceitos Básicos de Orientação a Objetos:<br>Objetos e Classes<br><br>
+title: Conceitos Básicos de Orientação a Objetos:<br>Objetos, Classes e Métodos<br><br>
 title-slide-attributes:
     data-background-size: contain
     data-background-position-x: center
     data-background-position-y: center
 ---
 
-## Principais Conceitos desta Aula  
+## Conteúdo desta Aula  
 
 ::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
 
@@ -21,8 +21,8 @@ title-slide-attributes:
 - Objetos 
 - Classes
 - Métodos
-- Parâmetros
-- Valores de Retorno
+    - Parâmetros
+    - Valores de Retorno
 :::
 :::
 :::

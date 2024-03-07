@@ -6,7 +6,7 @@ title-slide-attributes:
     data-background-position-y: center
 ---
 
-## Principais Conceitos desta Aula  
+## Conteúdo desta Aula  
 
 ::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
 
@@ -24,17 +24,17 @@ title-slide-attributes:
 
 ::::
 
-## Objetivo
+## {}
 
-Considere que precisamos implementar um software para gerenciamento de uma pizzaria.
+[Considere que precisamos **implementar um software para gerenciamento de uma pizzaria**.]{.fontsize80}
 
-- Portanto, inicialmente, precisamos definir quais **classes**, com seus respectivos **atributos** e **métodos**, irão compor esse sistema. 
+- [Portanto, [inicialmente]{.alert}, precisamos [definir]{.alert} quais [classes]{.alert}, com seus respectivos [atributos]{.alert} e [métodos]{.alert}, irão compor esse sistema.]{.fontsize80}
 
 . . .
 
-Para este exercício de modelagem consideraremos que temos muito pouca informação sobre o funcionamento da pizzaria.
+[[Para este exercício]{.alert} de modelagem consideraremos que temos [muito pouca informação]{.alert} sobre o funcionamento da pizzaria.]{.fontsize80}
 
-- Sendo assim, as ideias das classes, atributos e métodos podem variar muito se diferentes pessoas modelarem esse software. 
+- [Sendo assim, [as ideias]{.alert} das classes, atributos e métodos [podem variar muito]{.alert} se diferentes pessoas modelarem esse sistema.]{.fontsize80}
 
 . . .
 
@@ -44,7 +44,7 @@ Em uma situação real seria feito um levantamento detalhado **das regras do neg
 
 ## Exemplo da Pizzaria
 
-Ao começar uma modelagem, uma dúvida muito comum é não ter certeza se algo é um objeto ou só a caraterística (atributo) de um objeto.
+Ao começar uma modelagem, uma dúvida muito comum é não ter certeza se algo é um **objeto** ou só a caraterística (**atributo**) de um objeto.
 
 - Portanto, uma estratégia é você levantar todos os dados que se lembrar e, depois, verificar se algum dado pode ser encaixado como atributo de outro.
 
@@ -88,16 +88,16 @@ Veja que a classe **Pedido** teria como atributos objetos de outras classes (**P
 
 ## Exemplo da Pizzaria
 
-![](figuras/classes_pizzaria.png){fig-alt="Classes_pizzaria" fig-align="center" width=75%}
+![](figuras/classes_pizzaria.png){fig-alt="Classes_pizzaria" fig-align="center" width=70%}
 
 . . .
 
-Podemos ter os seguintes **comportamentos**:
+[Podemos ter os seguintes **comportamentos**:]{.fontsize70}
 
-- Nas classes **Pizza** e **Bebida**: alterar preço.
-- Na classe **Cliente**: alterar telefone, alterar endereço.
-- Na classe **Vendedor**: podemos considerar que os objetos não são alterados depois de criados.
-- Na classe **Pedido**: adicionar pizza, adicionar bebida, definir cliente, definir vendedor, calcular taxa de entrega, calcular total do pedido, indicar pedido pronto, indicar pedido entregue.
+- [Nas classes **Pizza** e **Bebida**: alterar preço.]{.fontsize70}
+- [Na classe **Cliente**: alterar telefone, alterar endereço.]{.fontsize70}
+- [Na classe **Vendedor**: consideramos que os objetos não são alterados depois de criados.]{.fontsize70}
+- [Na classe **Pedido**: adicionar pizza, adicionar bebida, definir cliente, definir vendedor, calcular taxa de entrega, calcular total do pedido, indicar pedido pronto, indicar pedido entregue.]{.fontsize70}
 
 
 ## Exemplo da Pizzaria
@@ -141,19 +141,19 @@ Note que os [métodos de cadastro]{.alert} ficam em uma [classe de controle]{.al
 . . .
 
 ::::{.columns style='display: flex !important; height: 60%; align-items: center;'}
-::: {.column width="30%"}
-![](figuras/pessoa_com_problema_metade.png){fig-alt="Pessoa_Problema" fig-align="center" width=80% }
+::: {.column width="20%"}
+![](figuras/pessoa_com_problema_metade.png){fig-alt="Pessoa_Problema" fig-align="center" width=90% }
 :::
 
-::: {.column width="70%"}
-**Exemplo:** o cadastro de alunos não pode ficar na classe Aluno.
+::: {.column width="80%"}
+[**Exemplo:** o **cadastro de alunos** [não pode ficar]{.underline} na **classe Aluno**.]{.fontsize90}
 
-- Lembre-se que um objeto da classe Aluno representa um aluno específico, por ex., o Paulo.
+- [Lembre-se que um objeto da classe Aluno representa um aluno específico, por ex., o Paulo.]{.fontsize90}
 
 :::{.fragment}
 :::{.nonincremental}
-- Se o cadastro de alunos fosse na classe Aluno, para cadastrar um aluno (ex: Marco), teríamos que fazer algo como:
-```{.java code-line-numbers="false" } 
+- [Se o cadastro de alunos fosse na classe Aluno, para cadastrar um aluno (ex: Marco), teríamos que fazer algo como:]{.fontsize90}
+```{.java code-line-numbers="false"} 
 paulo.cadastrarAluno("Marco")
 ```
 :::
@@ -163,3 +163,12 @@ paulo.cadastrarAluno("Marco")
 ::::
 
 
+## Exemplo da Pizzaria
+![](figuras/modelo_final_pizzaria.png){fig-alt="Modelo_Pizzaria" fig-align="center" width=90% }
+
+
+
+## Exemplo da Pizzaria
+:::{.callout-important title="Observação" icon=false}
+Geralmente **separamos a interação com o usuário** (tela ou menu) da regra de negócio. Dessa forma, teríamos que fazer **mais uma classe** para representar essa **interação com o usuário** (separada da classe Pizzaria).
+:::

@@ -37,21 +37,19 @@ title-slide-attributes:
 
 ::::{.columns style='display: flex !important; align-items: top;'}
 
-::: {.column width="15%"}
+::: {.column width="15%" height="30%"}
 ![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=40%}
 :::
-
 
 ::: {.column width="85%"}
 Qual é o **segredo**?
 
 - [Conceito de Máquina Virtual (Java Virtual Machine - JVM)!]{.fontsize90}
 :::
-
 ::::
 
-. . .
 
+:::{.fragment }
 ::: {.nonincremental}
 [Atualmente Java é utilizada para:]{.fontsize90}
 
@@ -59,6 +57,7 @@ Qual é o **segredo**?
 - [Aprimorar a funcionalidade de servidores da web.]{.fontsize90}
 - [Fornecer aplicativos para dispositivos voltados ao consumo popular.]{.fontsize90}
 - [Desenvolvimento de aplicativos Android *smartphones* e *tablets*.]{.fontsize90}
+:::
 :::
 
 

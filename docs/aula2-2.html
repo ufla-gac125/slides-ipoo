@@ -11,7 +11,7 @@
 <script src="aula2-2_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula2-2_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula2-2_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Conceitos Básicos de Orientação a Objetos: Modelagem Orientada a Objetos </title>
@@ -409,8 +409,8 @@
 </div>
 
 </section>
-<section id="principais-conceitos-desta-aula" class="slide level2">
-<h2>Principais Conceitos desta Aula</h2>
+<section id="conteúdo-desta-aula" class="slide level2">
+<h2>Conteúdo desta Aula</h2>
 <div class="columns" style="display: flex !important; height: 70%; align-items: center;">
 <div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
@@ -429,16 +429,16 @@
 </div>
 </div>
 </section>
-<section id="objetivo" class="slide level2">
-<h2>Objetivo</h2>
-<p>Considere que precisamos implementar um software para gerenciamento de uma pizzaria.</p>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><span class="fontsize80">Considere que precisamos <strong>implementar um software para gerenciamento de uma pizzaria</strong>.</span></p>
 <ul>
-<li class="fragment">Portanto, inicialmente, precisamos definir quais <strong>classes</strong>, com seus respectivos <strong>atributos</strong> e <strong>métodos</strong>, irão compor esse sistema.</li>
+<li class="fragment"><span class="fontsize80">Portanto, <span class="alert">inicialmente</span>, precisamos <span class="alert">definir</span> quais <span class="alert">classes</span>, com seus respectivos <span class="alert">atributos</span> e <span class="alert">métodos</span>, irão compor esse sistema.</span></li>
 </ul>
 <div class="fragment">
-<p>Para este exercício de modelagem consideraremos que temos muito pouca informação sobre o funcionamento da pizzaria.</p>
+<p><span class="fontsize80"><span class="alert">Para este exercício</span> de modelagem consideraremos que temos <span class="alert">muito pouca informação</span> sobre o funcionamento da pizzaria.</span></p>
 <ul>
-<li class="fragment">Sendo assim, as ideias das classes, atributos e métodos podem variar muito se diferentes pessoas modelarem esse software.</li>
+<li class="fragment"><span class="fontsize80">Sendo assim, <span class="alert">as ideias</span> das classes, atributos e métodos <span class="alert">podem variar muito</span> se diferentes pessoas modelarem esse sistema.</span></li>
 </ul>
 </div>
 <div class="fragment">
@@ -458,7 +458,7 @@
 </section>
 <section id="exemplo-da-pizzaria" class="slide level2">
 <h2>Exemplo da Pizzaria</h2>
-<p>Ao começar uma modelagem, uma dúvida muito comum é não ter certeza se algo é um objeto ou só a caraterística (atributo) de um objeto.</p>
+<p>Ao começar uma modelagem, uma dúvida muito comum é não ter certeza se algo é um <strong>objeto</strong> ou só a caraterística (<strong>atributo</strong>) de um objeto.</p>
 <ul>
 <li class="fragment">Portanto, uma estratégia é você levantar todos os dados que se lembrar e, depois, verificar se algum dado pode ser encaixado como atributo de outro.</li>
 </ul>
@@ -515,16 +515,16 @@
 <h2>Exemplo da Pizzaria</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figuras/classes_pizzaria.png" class="quarto-figure quarto-figure-center" style="width:75.0%" alt="Classes_pizzaria"></p>
+<p><img data-src="figuras/classes_pizzaria.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Classes_pizzaria"></p>
 </figure>
 </div>
 <div class="fragment">
-<p>Podemos ter os seguintes <strong>comportamentos</strong>:</p>
+<p><span class="fontsize70">Podemos ter os seguintes <strong>comportamentos</strong>:</span></p>
 <ul>
-<li class="fragment">Nas classes <strong>Pizza</strong> e <strong>Bebida</strong>: alterar preço.</li>
-<li class="fragment">Na classe <strong>Cliente</strong>: alterar telefone, alterar endereço.</li>
-<li class="fragment">Na classe <strong>Vendedor</strong>: podemos considerar que os objetos não são alterados depois de criados.</li>
-<li class="fragment">Na classe <strong>Pedido</strong>: adicionar pizza, adicionar bebida, definir cliente, definir vendedor, calcular taxa de entrega, calcular total do pedido, indicar pedido pronto, indicar pedido entregue.</li>
+<li class="fragment"><span class="fontsize70">Nas classes <strong>Pizza</strong> e <strong>Bebida</strong>: alterar preço.</span></li>
+<li class="fragment"><span class="fontsize70">Na classe <strong>Cliente</strong>: alterar telefone, alterar endereço.</span></li>
+<li class="fragment"><span class="fontsize70">Na classe <strong>Vendedor</strong>: consideramos que os objetos não são alterados depois de criados.</span></li>
+<li class="fragment"><span class="fontsize70">Na classe <strong>Pedido</strong>: adicionar pizza, adicionar bebida, definir cliente, definir vendedor, calcular taxa de entrega, calcular total do pedido, indicar pedido pronto, indicar pedido entregue.</span></li>
 </ul>
 </div>
 </section>
@@ -583,23 +583,47 @@
 </div>
 <div class="fragment">
 <div class="columns" style="display: flex !important; height: 60%; align-items: center;">
-<div class="column" style="width:30%;">
+<div class="column" style="width:20%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figuras/pessoa_com_problema_metade.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Pessoa_Problema"></p>
+<p><img data-src="figuras/pessoa_com_problema_metade.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="Pessoa_Problema"></p>
 </figure>
 </div>
-</div><div class="column" style="width:70%;">
-<p><strong>Exemplo:</strong> o cadastro de alunos não pode ficar na classe Aluno.</p>
+</div><div class="column" style="width:80%;">
+<p><span class="fontsize90"><strong>Exemplo:</strong> o <strong>cadastro de alunos</strong> <u>não pode ficar</u> na <strong>classe Aluno</strong>.</span></p>
 <ul>
-<li class="fragment">Lembre-se que um objeto da classe Aluno representa um aluno específico, por ex., o Paulo.</li>
+<li class="fragment"><span class="fontsize90">Lembre-se que um objeto da classe Aluno representa um aluno específico, por ex., o Paulo.</span></li>
 </ul>
 <div class="fragment">
 <div>
 <ul>
-<li>Se o cadastro de alunos fosse na classe Aluno, para cadastrar um aluno (ex: Marco), teríamos que fazer algo como:</li>
+<li><span class="fontsize90">Se o cadastro de alunos fosse na classe Aluno, para cadastrar um aluno (ex: Marco), teríamos que fazer algo como:</span></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a>paulo<span class="op">.</span><span class="fu">cadastrarAluno</span><span class="op">(</span><span class="st">"Marco"</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exemplo-da-pizzaria-6" class="slide level2">
+<h2>Exemplo da Pizzaria</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/modelo_final_pizzaria.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="Modelo_Pizzaria"></p>
+</figure>
+</div>
+</section>
+<section id="exemplo-da-pizzaria-7" class="slide level2">
+<h2>Exemplo da Pizzaria</h2>
+<div title="Observação">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Geralmente <strong>separamos a interação com o usuário</strong> (tela ou menu) da regra de negócio. Dessa forma, teríamos que fazer <strong>mais uma classe</strong> para representar essa <strong>interação com o usuário</strong> (separada da classe Pizzaria).</p>
 </div>
 </div>
 </div>
@@ -608,7 +632,6 @@
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="http://luiz.dac.ufla.br">Prof.&nbsp;Luiz Merschmann</a></p>
-</div>
 </div>
 </div>
 </section>
