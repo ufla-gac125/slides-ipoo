@@ -77,12 +77,12 @@ A partir do levantamento inicial realizado, vamos procurar o que é característ
 ## Exemplo da Pizzaria
 Tudo que foi identificado como [tendo características]{.alert} seriam [objetos]{.alert}, e as [características]{.alert} são seus [atributos]{.alert}. 
 
-- Portanto, definiríamos as classes Pizza, Bebida, Cliente, Vendedor e Pedido.
+- Portanto, temos as classes Pizza, Bebida, Cliente, Vendedor e Pedido.
 
 . . .
 
 :::{.callout-important title="Observação" icon=false}
-Veja que a classe **Pedido** teria como atributos objetos de outras classes (**Pizza**, **Bebida**, **Cliente** e **Vendedor**). E realmente uma classe pode ter tanto atributos básicos (*int*, *float* ...) como também atributos que são objetos de outras classes.
+Veja que a classe **Pedido** tem como atributos objetos de outras classes (**Pizza**, **Bebida**, **Cliente** e **Vendedor**). E realmente uma classe pode ter tanto atributos básicos (*int*, *float* ...) como também atributos que são objetos de outras classes.
 :::
 
 
@@ -172,3 +172,11 @@ paulo.cadastrarAluno("Marco")
 :::{.callout-important title="Observação" icon=false}
 Geralmente **separamos a interação com o usuário** (tela ou menu) da regra de negócio. Dessa forma, teríamos que fazer **mais uma classe** para representar essa **interação com o usuário** (separada da classe Pizzaria).
 :::
+
+:::{.callout-tip title="Exercício" icon=false}
+Defina as **classes**, com seus respectivos **atributos** e **métodos**, para um sistema de gerenciamento de uma **imobiliária**.
+:::
+
+##
+
+![](figuras/perguntas.png){fig-alt="Perguntas" fig-align="center" width=35%}
