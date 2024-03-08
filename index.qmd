@@ -2,7 +2,7 @@
 ::: {.nonincremental}
 
 
-<!-- This is some hidden comment 
+ 
 
 [Semana 1]{.alert}
 
@@ -10,8 +10,14 @@
 
 [Semana 2]{.alert}
 
-- [Aula Teórica 2](aula2.html)
+- [Aula Teórica 2.1](aula2-1.html)
+- [Videoaula 2.1] (https://youtu.be/2xVS48sQa94)
+- [Aula Teórica 2.2](aula2-2.html)
+- [Videoaula 2.2] (https://youtu.be/e73LWtc2Uac)
+- [Aula Prática 2]
 
+
+<!-- This is some hidden comment
 -->
 
 :::
