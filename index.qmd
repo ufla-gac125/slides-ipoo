@@ -1,9 +1,6 @@
 ## GAC125 - Introdução à Programação Orientada a Objetos{.fontsize80}
 ::: {.nonincremental}
 
-
- 
-
 [Semana 1]{.alert}
 
 - [Aula Teórica 1](aula1.html)
