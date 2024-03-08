@@ -14,7 +14,6 @@
 - [Aula Prática 2]
 
 
-<!-- This is some hidden comment
--->
+<!-- This is some hidden comment-->
 
 :::
