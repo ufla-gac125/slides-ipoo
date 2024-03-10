@@ -8,12 +8,15 @@
 
 [Semana 2]{.alert}
 
-- **Aula Prática:** [Aula Prática 2](aula-pratica2.html)
+- **Aula Prática:** [Aula 2](aula-pratica2.html)
 - **Aula Teórica:** [Videoaula 2.1](https://youtu.be/2xVS48sQa94) ([Slides Aula 2.1](aula2-1.html))
 - **Aula Teórica:** [Videoaula 2.2](https://youtu.be/e73LWtc2Uac) ([Slides Aula 2.2](aula2-2.html))
 
-[Semana 3]
-- [Aula Prática 2]
+[Semana 3] {.alert}
+
+- **Aula Prática:** [Aula Prática 3](aula-pratica2.html)
+- **Aula Teórica:** [Videoaula 2.1](https://youtu.be/2xVS48sQa94) ([Slides Aula 2.1](aula2-1.html))
+- **Aula Teórica:** [Videoaula 2.2](https://youtu.be/e73LWtc2Uac) ([Slides Aula 2.2](aula2-2.html))
 
 
 <!-- This is some hidden comment-->
