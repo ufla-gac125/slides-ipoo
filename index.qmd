@@ -8,9 +8,9 @@
 [Semana 2]{.alert}
 
 - [Aula Teórica 2.1](aula2-1.html)
-- [Videoaula 2.1] (https://youtu.be/2xVS48sQa94)
+- [Videoaula 2.1] {{https://youtu.be/2xVS48sQa94}}
 - [Aula Teórica 2.2](aula2-2.html)
-- [Videoaula 2.2] (https://youtu.be/e73LWtc2Uac)
+- [Videoaula 2.2] {{https://youtu.be/e73LWtc2Uac}}
 - [Aula Prática 2]
 
 
