@@ -1,22 +1,16 @@
 ## GAC125 - Introdução à Programação Orientada a Objetos{.fontsize80}
+::: {.fontsize70}
 ::: {.nonincremental}
 
 [Semana 1]{.alert}
 
-- Aula Teórica
-    - [Aula Teórica 1](aula1.html)
+- **Aula Teórica:** [Slides Aula 1](aula1.html)
 
 [Semana 2]{.alert}
 
-- Aula Prática
-    - [Aula Prática 2](aula-pratica2.html)
-- Aula Teórica
-    - Videoaulas
-        - [Videoaula 2.1](https://youtu.be/2xVS48sQa94)
-        - [Videoaula 2.2](https://youtu.be/e73LWtc2Uac)
-    - Slides
-        - [Aula Teórica 2.1](aula2-1.html)
-        - [Aula Teórica 2.2](aula2-2.html)
+- **Aula Prática:** [Aula Prática 2](aula-pratica2.html)
+- **Aula Teórica:** [Videoaula 2.1](https://youtu.be/2xVS48sQa94) ([Slides Aula 2.1](aula2-1.html))
+- **Aula Teórica:** [Videoaula 2.2](https://youtu.be/e73LWtc2Uac) ([Slides Aula 2.2](aula2-2.html))
 
 [Semana 3]
 - [Aula Prática 2]
@@ -24,4 +18,5 @@
 
 <!-- This is some hidden comment-->
 
+:::
 :::
