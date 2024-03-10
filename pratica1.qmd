@@ -1,0 +1,123 @@
+---
+title: Aula Prática 1<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Observações Importantes {}
+::: {.fontsize80}
+::: {.nonincremental}
+
+A realização dos exercícios nas **aulas práticas é primordial** para que você consiga **consolidar os conceitos** aprendidos nas **aulas teóricas** (aulas não presenciais - ANP) e **colocá-los em prática** utilizando a linguagem de programação Java.
+
+- No entanto, para **conseguir realizar os exercícios** das aulas práticas é **fundamental** que você tenha **estudado**, [antes das aulas práticas]{.underline}, o **conteúdo** das aulas teóricas (ANP) disponibilizadas pelo professor. 
+
+Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **comparecer às aulas**, o aluno deve **realizar e entregar os exercícios** propostos nas aulas.
+
+- Portanto, **não esqueça de entregar no Campus Virtual** os exercícios **até o término das aulas práticas** (mesmo que não tenha terminado-os completamente).
+:::
+:::
+
+## Exercício 1 {.fontsize70}
+::: {.fontsize80}
+Um comerciante decidiu te contratar para fazer um software que o permita calcular o valor a ser pago pelos seus clientes. Na loja dele os produtos possuem códigos de 1 a 40 e os preços dos mesmos são dados pela tabela a seguir.
+
+| Código  | Preço     |
+|-------- |:---------:|
+| 1 a 10  | R$ 10,00  |
+| 11 a 20 | R$ 15,00  |
+| 21 a 30 | R$ 20,00  |
+| 31 a 40 | R$ 30,00  |
+
+: {tbl-colwidths="[50,50]"}
+
+Como estratégia de marketing ele oferece descontos de acordo com o valor da compra. Quanto mais um cliente compra, maior é o desconto. Ele segue a tabela de descontos dada abaixo.
+
+| Compra                 | Desconto  |
+|----------------------- |:---------:|
+| Abaixo de R$ 250,00    |    5%     |
+| R$ 250,00 a R$ 500,00  |    10%    |
+| Acima de R$ 500,00     |    15%    |
+
+: {tbl-colwidths="[60,40]"}
+
+O comerciante lhe pediu que o programa receba o código e a quantidade de um produto e exiba: o preço unitário do produto, o valor bruto da compra, o valor do desconto e o preço final a ser pago pelo cliente.
+
+*Obs:* considere que serão digitados apenas códigos de produto válidos (1 a 40) e quantidades positivas.
+:::
+
+
+## Exercício 1 (continuação){.fontsize70}
+::: {.fontsize80}
+::: {.nonincremental}
+**Entradas:**
+
+- Código do produto (1 a 40).
+- Quantidade a ser comprada do produto.
+
+**Saídas:**
+
+- Preço unitário do produto comprado.
+- Valor bruto da compra (preço unitário $x$ quantidade).
+- Valor do desconto a ser concedido.
+- Preço final a ser pago pelo consumidor.
+
+**Exemplo de Entrada:**
+
+- Entre com o codigo: 30
+- Entre com a quantidade: 25
+
+**Exemplo de Saída:**
+
+- Preco unitario: 20,00
+- Valor bruto: 500,00
+- Valor do desconto: 50,00
+- Preco final: 450,00
+:::
+:::
+
+
+## Exercício 2{.fontsize70}
+::: {.fontsize80}
+::: {.nonincremental}
+
+João e Pedro são dois amigos que resolveram realizar investimentos financeiros. João tem um perfil de investimento mais arrojado e, por isso, resolveu aplicar seu dinheiro em ações que, apesar do risco maior, apresentam rendimento mensal de 2,5%. Ou seja, se R$ 100 forem aplicados, após um mês o saldo será de R$ 102,50. Já o Pedro possui um perfil mais conservador e decidiu aplicar seu dinheiro na poupança, cujo rendimento é de 0,5% ao mês.
+
+Escreva um programa que receba como entrada os valores investidos pelo João e pelo Pedro (nessa ordem) e utilize a **estrutura de repetição *while*** para calcular a quantidade de meses necessários para que o saldo do investimento do João iguale ou ultrapasse o saldo do investimento do Pedro.
+
+**Entradas:**
+
+- Valor investido (valor maior do que zero) pelo João.
+- Valor investido (valor maior do que zero) pelo Pedro.
+
+**Saída:**
+
+- Quantidade de meses necessários para que o saldo do investimento do João iguale ou ultrapasse o saldo do investimento do Pedro.
+:::
+:::
+
+
+## Exercício 2 (continuação){.fontsize70}
+::: {.fontsize80}
+::: {.nonincremental}
+**Exemplo de Entrada:**
+
+- Entre com o valor investido pelo Joao: 3000
+- Entre com o valor investido pelo Pedro: 2000
+
+**Exemplo de Saída:**
+
+- Quantidade de meses necessarios: 0
+
+**Exemplo de Entrada:**
+
+- Entre com o valor investido pelo Joao: 1000
+- Entre com o valor investido pelo Pedro: 1800
+
+**Exemplo de Saída:**
+
+- Quantidade de meses necessarios: 30
+:::
+:::
