@@ -5,21 +5,24 @@
 [Semana 1]{.alert}
 
 - **Aula Teórica:** [Slides Aula 1](aula1.html)
-
+<!--
 [Semana 2]{.alert}
 
 - **Aula Prática:** [Aula 2](aula-pratica2.html)
 - **Aula Teórica:** [Videoaula 2.1](https://youtu.be/2xVS48sQa94) ([Slides Aula 2.1](aula2-1.html))
 - **Aula Teórica:** [Videoaula 2.2](https://youtu.be/e73LWtc2Uac) ([Slides Aula 2.2](aula2-2.html))
 
-[Semana 3] {.alert}
+[Semana 3]{.alert}
 
-- **Aula Prática:** [Aula Prática 3](aula-pratica2.html)
-- **Aula Teórica:** [Videoaula 2.1](https://youtu.be/2xVS48sQa94) ([Slides Aula 2.1](aula2-1.html))
-- **Aula Teórica:** [Videoaula 2.2](https://youtu.be/e73LWtc2Uac) ([Slides Aula 2.2](aula2-2.html))
+- **Aula Prática:** [Aula Prática 3](aula-pratica3.html)
+- **Aula Teórica:** [Videoaula 3](https://) ([Slides Aula 3](aula3.html))
 
+[Semana 4]{.alert}
 
-<!-- This is some hidden comment-->
+- **Aula Prática:** [Aula Prática 4](aula-pratica4.html)
+- **Aula Teórica:** [Videoaula 4](https://) ([Slides Aula 4](aula4.html))
+
+-->
 
 :::
 :::
