@@ -4,8 +4,10 @@
 
 [Semana 1]{.alert}
 
-- **Aula Teórica:** 
-<!-- [Slides Aula 1](aula1.html)
+- **Aula Prática:** 
+<!--
+[Apresentação do Curso](aula0.html) 
+[Slides Aula 1](aula1.html)
 
 [Semana 2]{.alert}
 

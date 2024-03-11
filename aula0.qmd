@@ -1,5 +1,5 @@
 ---
-title: Apresentação do Curso<br><br>
+title: Apresentação do Curso<br>GAC125-IPOO em 2024/1<br><br>
 title-slide-attributes:
     data-background-size: contain
     data-background-position-x: center
@@ -38,13 +38,13 @@ Ao final do curso é esperado que o aluno:
 
 - Aulas teóricas não presenciais (16 semanas): 11/03/2024 a 30/06/2024.
 - Aulas práticas presenciais (16 semanas): 11/03/2024 a 30/06/2024.
-- Avaliação adicional: 01/07/2024 a 03/07/2024.
+- Avaliação adicional (1 semana): 01/07/2024 a 03/07/2024.
 
 
 ## Avaliações
 - **Exercícios Avaliativos:** 20 pontos (2 pontos cada exercício avaliativo).
     - Teremos exercício avaliativo em **quase todos os dias de aula prática**.
-    - Serão **exercícios curtos** feitos no **início das aulas práticas**.
+    - Serão **exercícios curtos** feitos preferencialmente no **início das aulas práticas**.
     - O **conteúdo** avaliado será **todo** aquele **apresentado após o último exercício avaliativo**.
 - **Prova 1:** 22/04 a 24/04: 25 pontos.
 - **Prova 2:** 20/05 a 22/05: 25 pontos.
@@ -53,13 +53,78 @@ Ao final do curso é esperado que o aluno:
 
 
 ## Observações Importantes
+
 - A aferição de frequência será realizada por **chamada oral** uma vez em cada dia de **aula prática presencial** em qualquer momento entre o início e o término da mesma. 
     - Para ter **presença na aula prática**, além de comparecer à aula, o **aluno deve realizar e entregar o(s) exercício(s) proposto(s) na aula**.  
 - Nas **aulas não presenciais (ANP), a presença** estará condicionada ao **preenchimento de um questionário ou entrega de exercício** disponibilizado no Campus Virtual.
-- As provas poderão ter exercícios teóricos e/ou de implementação (linguagem Java).
-- As provas deverão ser realizadas individualmente. 
-- O conteúdo avaliado em cada prova é todo aquele dado até a semana anterior à da realização da prova. Observe que isso significa que o conteúdo das provas á acumulativo.
-    • Revisões de provas serão feitas no máximo até 15 dias letivos após a divulgação das notas.
-    • Qualquer entrega de material (exercícios, questionários, provas etc.) deve ser feita única e exclusivamente por meio do Campus Virtual.
-    • Exercícios, questionários e provas entregues via Campus Virtual também serão avaliados quanto a cópias e fraudes. Os alunos podem até discutir a resolução dos exercícios/questionários com os colegas, mas cada aluno deverá entregar a sua própria versão da resolução dos mesmos. As cópias/fraudes resultarão em nota zero e abertura de processo disciplinar.  
-    • Segunda chamada de atividades avaliativas: apenas para alunos com pedidos de substituição de atividades acadêmicas aprovados pela PRG.
+- As **provas** poderão ter exercícios **teóricos e de implementação** (linguagem Java).
+- As **provas** deverão ser realizadas **individualmente**. 
+
+
+## Observações Importantes
+
+- O **conteúdo** avaliado em **cada prova** é todo aquele dado até a **semana anterior** à da realização da prova. 
+    - Observe que isso significa que o **conteúdo das provas á acumulativo**.
+- **Revisões** de provas serão feitas no máximo até **15 dias** letivos após a divulgação das notas.
+- **Qualquer entrega de material** (exercícios, questionários, provas etc.) deve ser feita única e **exclusivamente** por meio do **Campus Virtual**.
+
+
+## Observações Importantes
+
+- **Exercícios, questionários e provas** entregues também **serão avaliados quanto a cópias e fraudes**. 
+    - Os alunos podem **discutir a resolução dos exercícios** com os colegas, mas essa discussão deve ser limitada ao campo das ideias, **sem o compartilhamento de implementações**.
+    - **Cada aluno** deverá **entregar a sua própria versão da resolução** dos mesmos. 
+    - As **cópias/fraudes** resultarão em **nota zero** e abertura de **processo disciplinar**.  
+- **Segunda chamada** de atividades avaliativas: **apenas** para alunos **com pedidos** de substituição de atividades acadêmicas **aprovados pela PRG**.
+
+## Plágio
+
+O que pode ser enquadrado como plágio?
+
+- Produzir individualmente uma implementação original, mas revelar sua implementação a terceiros.
+- Atividades individuais feitas em grupo.
+- Atividades de alunos diferentes [com partes]{.underline} muito semelhantes.
+- Recrutamento de outras pessoas para realizar as atividades no lugar do aluno.
+- Entregar soluções obtidas de terceiros (inclusive aquelas disponibilizadas na internet).
+
+
+## Recuperação
+
+Para os alunos que **não alcançarem 60 pontos** no final do semestre (NF), será dada uma **prova adicional** avaliando **todo o conteúdo da disciplina**. 
+
+- Para se obter a **nota final recuperada** (NFR) será calculada a **média aritmética** entre a nota da prova adicional e a nota final do semestre antes da prova adicional (NF).
+
+## Bibliografia
+::: {.nonincremental}
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="25%"}
+![](figuras/capaLivroBarnes.png){fig-alt="Livro_Barnes" fig-align="center" width=60%}
+:::
+
+::: {.column width="75%"}
+
+- BARNES, David J.; KOLING, Michael. **Programação orientada a objetos com Java: uma introdução prática usando o BlueJ**. 4. ed., Pearson, 2009.
+
+:::
+
+::::
+
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="25%"}
+![](figuras/capaLivroDeitel.png){fig-alt="Livro_Deitel" fig-align="center" width=60%}
+:::
+
+::: {.column width="75%"}
+
+- DEITEL, Paul J.; DEITEL, Harvey M. **Java: como programar**. 10. ed. São Paulo, SP: Pearson Prentice Hall, 2016.
+
+:::
+
+::::
+:::
+
+##
+
+![](figuras/perguntas.png){fig-alt="Perguntas" fig-align="center" width=35%}
