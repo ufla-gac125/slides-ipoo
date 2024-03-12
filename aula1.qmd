@@ -176,7 +176,7 @@ Tipos primitivos e estruturas básicas:
  - As strings não são tipos primitivos, são objetos. A classe é a *String*.
 
  - Os operadores aritméticos são iguais aos do C/C++:
-    -  $+$ \ \ \ $-$ \ \ \ $*$ \ \ \ $/$ \ \ \ $%$ \ \ \ $+=$ \ \ \ $-=$ \ \ \ $++$ \ \ \ $--$
+    -  $+$ \ \ \ $-$ \ \ \ $*$ \ \ \ $/$ \ \ \ % \ \ \ $+=$ \ \ \ $-=$ \ \ \ $++$ \ \ \ $--$
 
  - Os operadores lógicos também são iguais aos do C/C++:
     - $==$ \ \ \ $!=$ \ \ \ $\&\&$ \ \ \ $||$ \ \ \ $!$
