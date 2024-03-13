@@ -1,0 +1,41 @@
+---
+title: Conceitos Básicos de Orientação a Objetos:<br>Definição de Classes, Métodos, Construtores e Destrutores<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Conteúdo desta Aula  
+
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+
+::: {.column width="30%"}
+![](figuras/professor1-1.png){fig-alt="Professor1-1" fig-align="center"}
+:::
+
+::: {.column width="70%"}
+::: {.nonincremental}
+::: {style="font-size: 120%;"}
+- XXX
+:::
+:::
+:::
+
+::::
+
+## Definição de uma Classe
+
+O código-fonte de uma classe pode ser dividido em duas partes principais:
+
+- Parte externa: simplesmente nomeia a classe.
+- Parte interna: contém todo o código que define a classe.
+
+. . .
+
+A parte externa se apresenta da seguinte maneira:
+```{.java code-line-numbers="false"}
+public class NomeDaClasse{
+    //Parte interna omitida
+}
+```
