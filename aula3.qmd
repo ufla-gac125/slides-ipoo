@@ -77,3 +77,75 @@ A linguagem Java permite que o programador escolha a ordem da implementação do
 
 - Usualmente coloca-se primeiro os atributos, depois os construtores e, por fim, os métodos.
 :::
+
+
+## Utilizando um Exemplo
+
+::::{.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="25%"}
+![](figuras/maquina_bilhetes.png){fig-alt="Mensagens" fig-align="left" width=80%}
+:::
+
+::: {.column width="75%"}
+Vamos utilizar como exemplo um projeto que contém somente uma classe, a [MaquinaBilhetes]{.alert}.
+
+- Essa classe modela uma máquina de vender bilhetes simples que emite bilhetes com preço fixo.
+- O preço do bilhete é definido por meio do construtor.
+- Essa máquina considera que os clientes irão inserir a quantidade correta de dinheiro antes de tentar emitir um bilhete.
+:::
+
+::::
+
+## A Máquina de Bilhetes
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="25%"}
+![](figuras/maquina_bilhetes.png){fig-alt="Mensagens" fig-align="left" width=80%}
+:::
+
+::: {.column width="75%"}
+::: {.fontsize90}
+Funcionamento básico dessa máquina de bilhetes:
+
+- Clientes inserem dinheiro na máquina e, depois, solicitam que um bilhete seja impresso.
+- O cliente pode inserir dinheiro na máquina várias vezes para atingir o preço do bilhete que deseja comprar.
+- A máquina mantém a soma total do dinheiro inserido pelo cliente em cada operação de compra.
+- A máquina também armazena a quantidade total de dinheiro que ela coletou nas operações de compra.
+- Apesar de a máquina lidar apenas com bilhete de preço único, posso criar múltiplas instâncias dessa classe com diferentes configurações de preço.
+:::
+:::
+
+::::
+
+
+## Analisando a Classe 
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="62%"}
+```{.java code-line-numbers="false"}
+public class MaquinaBilhetes{
+    // Preço de um bilhete dessa máquina.
+    private int preco;
+    // Quantidade de dinheiro inserido pelo usuário.
+    private int saldo;
+    // Quantidade total de dinheiro coletado pela máquina.
+    private int total;
+
+    //Construtor e métodos omitidos
+}
+```
+:::
+
+::: {.column width="38%"}
+::: {.fontsize70}
+Nessa classe temos três atributos: preço, saldo e total.
+
+**Para que servem os atributos?**
+
+ - Eles são espaços dentro de um objeto que podem ser usados para armazenar valores.
+    - Cada objeto criado terá um espaço para cada atributo declarado em sua classe.
+:::
+:::
+
+::::

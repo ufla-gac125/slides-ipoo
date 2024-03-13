@@ -11,7 +11,7 @@
 <script src="aula3_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula3_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula3_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.551">
+  <meta name="generator" content="quarto-1.4.550">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Conceitos Básicos de Orientação a Objetos: Definição de Classes, Métodos, Construtores e Destrutores </title>
@@ -482,11 +482,81 @@
 <li class="fragment">Usualmente coloca-se primeiro os atributos, depois os construtores e, por fim, os métodos.</li>
 </ul>
 </div>
+</div>
+</section>
+<section id="utilizando-um-exemplo" class="slide level2">
+<h2>Utilizando um Exemplo</h2>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="figuras/maquina_bilhetes.png" class="quarto-figure quarto-figure-left" style="width:80.0%" alt="Mensagens"></p>
+</figure>
+</div>
+</div><div class="column" style="width:75%;">
+<p>Vamos utilizar como exemplo um projeto que contém somente uma classe, a <span class="alert">MaquinaBilhetes</span>.</p>
+<ul>
+<li class="fragment">Essa classe modela uma máquina de vender bilhetes simples que emite bilhetes com preço fixo.</li>
+<li class="fragment">O preço do bilhete é definido por meio do construtor.</li>
+<li class="fragment">Essa máquina considera que os clientes irão inserir a quantidade correta de dinheiro antes de tentar emitir um bilhete.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="a-máquina-de-bilhetes" class="slide level2">
+<h2>A Máquina de Bilhetes</h2>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="figuras/maquina_bilhetes.png" class="quarto-figure quarto-figure-left" style="width:80.0%" alt="Mensagens"></p>
+</figure>
+</div>
+</div><div class="column" style="width:75%;">
+<div class="fontsize90">
+<p>Funcionamento básico dessa máquina de bilhetes:</p>
+<ul>
+<li class="fragment">Clientes inserem dinheiro na máquina e, depois, solicitam que um bilhete seja impresso.</li>
+<li class="fragment">O cliente pode inserir dinheiro na máquina várias vezes para atingir o preço do bilhete que deseja comprar.</li>
+<li class="fragment">A máquina mantém a soma total do dinheiro inserido pelo cliente em cada operação de compra.</li>
+<li class="fragment">A máquina também armazena a quantidade total de dinheiro que ela coletou nas operações de compra.</li>
+<li class="fragment">Apesar de a máquina lidar apenas com bilhete de preço único, posso criar múltiplas instâncias dessa classe com diferentes configurações de preço.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="analisando-a-classe" class="slide level2">
+<h2>Analisando a Classe</h2>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:62%;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MaquinaBilhetes<span class="op">{</span></span>
+<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Preço de um bilhete dessa máquina.</span></span>
+<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> preco<span class="op">;</span></span>
+<span id="cb3-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Quantidade de dinheiro inserido pelo usuário.</span></span>
+<span id="cb3-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> saldo<span class="op">;</span></span>
+<span id="cb3-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Quantidade total de dinheiro coletado pela máquina.</span></span>
+<span id="cb3-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> total<span class="op">;</span></span>
+<span id="cb3-8"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Construtor e métodos omitidos</span></span>
+<span id="cb3-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:38%;">
+<div class="fontsize70">
+<p>Nessa classe temos três atributos: preço, saldo e total.</p>
+<p><strong>Para que servem os atributos?</strong></p>
+<ul>
+<li class="fragment">Eles são espaços dentro de um objeto que podem ser usados para armazenar valores.
+<ul>
+<li class="fragment">Cada objeto criado terá um espaço para cada atributo declarado em sua classe.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="http://luiz.dac.ufla.br">Prof.&nbsp;Luiz Merschmann</a></p>
-</div>
 </div>
 </div>
 </section>
@@ -778,24 +848,6 @@
         // clear code selection
         e.clearSelection();
       });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -832,11 +884,7 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
+          return note.innerHTML;
         });
       }
       const findCites = (el) => {
