@@ -119,10 +119,8 @@ Funcionamento básico dessa máquina de bilhetes:
 ::::
 
 
-## Analisando a Classe 
-::::{.columns style='display: flex !important; align-items: center;'}
+## Analisando a Classe: Atributos 
 
-::: {.column width="62%"}
 ```{.java code-line-numbers="false"}
 public class MaquinaBilhetes{
     // Preço de um bilhete dessa máquina.
@@ -135,9 +133,10 @@ public class MaquinaBilhetes{
     //Construtor e métodos omitidos
 }
 ```
-:::
 
-::: {.column width="38%"}
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="70%"}
 ::: {.fontsize70}
 Nessa classe temos três atributos: preço, saldo e total.
 
@@ -148,4 +147,101 @@ Nessa classe temos três atributos: preço, saldo e total.
 :::
 :::
 
+::: {.column width="30%"}
+::: {.fragment}
+![](figuras/objeto_ticket_machine.png){fig-alt="Mensagens" fig-align="left" width=80%}
+:::
+:::
+
+::::
+
+
+## Analisando a Classe: Atributos 
+:::{.callout-note title="Conceito" icon=false}
+Os atributos armazenam dados para um objeto utilizar. Eles também são conhecidos como [variáveis de instância]{.alert}.
+:::
+
+. . .
+
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="60%"}
+::: {.fontsize80}
+A definição desses três atributos indica que:
+
+- Eles são atributos **privados** ([private]{.alert}) do objeto.
+- Todos são do tipo [int]{.alert}, o que significa que cada um pode armazenar um único valor inteiro.
+:::
+:::
+
+::: {.column width="40%"}
+```{.java code-line-numbers="false"}
+public class MaquinaBilhetes{
+    private int preco;
+    private int saldo;
+    private int total;
+
+    //Construtor e métodos omitidos
+}
+```
+:::
+::::
+
+. . .
+
+::: {.fontsize80}
+Veja que os [atributos]{.alert} são conhecidos como [variáveis]{.alert}, ou seja, eles podem [variar ao longo do tempo]{.alert}.
+
+- Por exemplo, na **máquina de bilhetes**, à medida em que mais dinheiro é inserido na máquina, o **valor** armazenado no atributo **saldo** é **alterado**.
+:::
+
+
+## Construtores
+
+:::{.callout-note title="Conceito" icon=false}
+Os [construtores]{.alert} permitem colocar cada [objeto]{.alert} em um [estado previamente definido]{.alert} para ser utilizado. Ou seja, o construtor [inicializa um objeto]{.alert} para um estado adequado no [momento da sua criação]{.alert}.
+:::
+
+. . .
+
+::::{.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="25%"}
+![](figuras/construtor.png){fig-alt="Mensagens" fig-align="left" width=80%}
+:::
+
+::: {.column width="75%"}
+::: {.fontsize80}
+O construtor é um método especial que:
+
+- **Sempre** tem o **mesmo nome da classe** onde ele está definido.
+- **Não tem tipo de retorno**, pois ele retorna implicitamente a referência para o objeto.
+- Assim como qualquer método, ele **pode ter parâmetros**.
+:::
+:::
+::::
+
+
+## Analisando a Classe: Construtores
+::::{.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="50%"}
+
+:::
+
+::: {.column width="50%"}
+```{.java code-line-numbers="false"}
+public class MaquinaBilhetes{
+    //Atributos omitidos
+    
+    public MaquinaBilhetes(int custoBilhete){
+        preco = custoBilhete;
+        saldo = 0;
+        total = 0;
+    }
+    
+    //Métodos omitidos
+}
+```
+:::
 ::::
