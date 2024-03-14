@@ -223,10 +223,16 @@ O construtor é um método especial que:
 
 
 ## Analisando a Classe: Construtores
-::::{.columns style='display: flex !important; align-items: top;'}
+::::{.columns style='display: flex !important; align-items: center;'}
 
 ::: {.column width="50%"}
+::: {.fontsize70}
+No [corpo]{.alert} (tudo que está entre `{` e `}`) desse construtor [três atributos]{.alert} do objeto estão sendo [inicializados]{.alert}.
 
+- *saldo* e *total* são [inicializados com constantes]{.alert} (neste caso, com zero).
+- *preco* está sendo inicializado por um [valor passado por parâmetro]{.alert} para o construtor.
+    - ou seja, ele é [inicializado]{.alert} por valor determinado [fora da classe]{.alert} *MaquinaBilhetes*.
+:::
 :::
 
 ::: {.column width="50%"}
@@ -243,5 +249,51 @@ public class MaquinaBilhetes{
     //Métodos omitidos
 }
 ```
+:::
+::::
+
+. . .
+
+:::: {.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="15%"}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=60%}
+:::
+
+::: {.column width="85%"}
+::: {.fontsize70}
+**Mas porque o preço do bilhete é recebido de fora?**
+
+- A ideia é que possamos criar várias máquinas (objetos) a partir da classe *MaquinaBilhetes*.
+    - E que cada máquina possa operar com bilhetes de preços diferentes.
+    - Por isso, não temos como saber o preço do bilhete de uma máquina específica antes de ela ser criada.
+:::
+:::
+::::
+
+
+## Analisando a Classe: Construtores
+::: {.fontsize90}
+Em Java, todos os atributos são automaticamente inicializados com um valor padrão se não forem explicitamente inicializados.
+
+- Para atributos dos tipos *int*, *float* e *double* o valor padrão é zero.
+:::
+
+. . .
+
+:::: {.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="15%"}
+![](figuras/pessoa_com_problema1.png){fig-alt="Pensando" fig-align="center" width=100%}
+:::
+
+::: {.column width="85%"}
+::: {.fontsize90}
+**Mas então porque os atributos *preco* e *total* foram inicializados no construtor da classe *MaquinaBilhetes*?**
+
+- Porque assim documentamos que realmente queremos que esses atributos tenham valor inicial igual a zero.
+    - Ninguém pensará que esquecemos de inicializar esses atributos.
+- O leitor dessa classe não deixará de entender o código se ele não souber o valor padrão do Java para esses atributos.
+:::
 :::
 ::::

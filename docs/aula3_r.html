@@ -11,7 +11,7 @@
 <script src="aula3_r_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula3_r_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula3_r_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.550">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Conceitos Básicos de Orientação a Objetos: Definição de Classes, Métodos, Construtores e Destrutores </title>
@@ -642,9 +642,18 @@
 </section>
 <section id="analisando-a-classe-construtores" class="slide level2">
 <h2>Analisando a Classe: Construtores</h2>
-<div class="columns" style="display: flex !important; align-items: top;">
+<div class="columns" style="display: flex !important; align-items: center;">
 <div class="column" style="width:50%;">
-
+<div class="fontsize70">
+<p>No <span class="alert">corpo</span> (tudo que está entre <code>{</code> e <code>}</code>) desse construtor <span class="alert">três atributos</span> do objeto estão sendo <span class="alert">inicializados</span>.</p>
+<ul>
+<li class="fragment"><em>saldo</em> e <em>total</em> são <span class="alert">inicializados com constantes</span> (neste caso, com zero).</li>
+<li class="fragment"><em>preco</em> está sendo inicializado por um <span class="alert">valor passado por parâmetro</span> para o construtor.
+<ul>
+<li class="fragment">ou seja, ele é <span class="alert">inicializado</span> por valor determinado <span class="alert">fora da classe</span> <em>MaquinaBilhetes</em>.</li>
+</ul></li>
+</ul>
+</div>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MaquinaBilhetes<span class="op">{</span></span>
 <span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Atributos omitidos</span></span>
@@ -659,10 +668,63 @@
 <span id="cb5-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+<div class="fragment">
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:15%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div><div class="column" style="width:85%;">
+<div class="fontsize70">
+<p><strong>Mas porque o preço do bilhete é recebido de fora?</strong></p>
+<ul>
+<li class="fragment">A ideia é que possamos criar várias máquinas (objetos) a partir da classe <em>MaquinaBilhetes</em>.
+<ul>
+<li class="fragment">E que cada máquina possa operar com bilhetes de preços diferentes.</li>
+<li class="fragment">Por isso, não temos como saber o preço do bilhete de uma máquina específica antes de ela ser criada.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="analisando-a-classe-construtores-1" class="slide level2">
+<h2>Analisando a Classe: Construtores</h2>
+<div class="fontsize90">
+<p>Em Java, todos os atributos são automaticamente inicializados com um valor padrão se não forem explicitamente inicializados.</p>
+<ul>
+<li class="fragment">Para atributos dos tipos <em>int</em>, <em>float</em> e <em>double</em> o valor padrão é zero.</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:15%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pessoa_com_problema1.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div><div class="column" style="width:85%;">
+<div class="fontsize90">
+<p><strong>Mas então porque os atributos <em>preco</em> e <em>total</em> foram inicializados no construtor da classe <em>MaquinaBilhetes</em>?</strong></p>
+<ul>
+<li class="fragment">Porque assim documentamos que realmente queremos que esses atributos tenham valor inicial igual a zero.
+<ul>
+<li class="fragment">Ninguém pensará que esquecemos de inicializar esses atributos.</li>
+</ul></li>
+<li class="fragment">O leitor dessa classe não deixará de entender o código se ele não souber o valor padrão do Java para esses atributos.</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="http://luiz.dac.ufla.br">Prof.&nbsp;Luiz Merschmann</a></p>
+</div>
 </div>
 </div>
 </section>
