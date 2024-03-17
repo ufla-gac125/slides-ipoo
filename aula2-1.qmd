@@ -363,7 +363,7 @@ Em OO, durante a execução de um programa, **objetos interagem** entre si por m
 
 Portanto, podemos nos comunicar com objetos chamando (invocando) seus métodos.
 
-- [Em geral, objetos fazem alguma tarefa quando invocamos algum de seus métodos.]{.fontsize80}Ufll1u9i7z8!
+- [Em geral, objetos fazem alguma tarefa quando invocamos algum de seus métodos.]{.fontsize80}
 
 . . .
 
