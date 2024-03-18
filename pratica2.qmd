@@ -23,7 +23,7 @@ Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **c
 ## Exercício 1 {.fontsize70}
 ::: {.fontsize80}
 ::: {.nonincremental}
-Faça um programa que receba uma frase e imprima a palavra dessa frase com o maior número de vogais e a quantidade de vogais dessa palavra. Antes de ler a frase, solicite ao usuário a quantidade de palavras que a frase terá. Utilize **vetores** e a estrutura de repetição ***for*** para resolver este problema.
+Faça um programa que receba uma frase e imprima a palavra dessa frase com o maior número de vogais e a quantidade de vogais dessa palavra. Utilize **vetores** e a estrutura de repetição ***for*** para resolver este problema.
 
 **Entrada:**
 
