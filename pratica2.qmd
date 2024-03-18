@@ -25,12 +25,11 @@ Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **c
 ::: {.nonincremental}
 Faça um programa que receba uma frase e imprima a palavra dessa frase com o maior número de vogais e a quantidade de vogais dessa palavra. Antes de ler a frase, solicite ao usuário a quantidade de palavras que a frase terá. Utilize **vetores** e a estrutura de repetição ***for*** para resolver este problema.
 
-**Entradas:**
+**Entrada:**
 
-- Quantidade de palavras na frase.
 - Frase a ser analisada (toda letras minúsculas, sem pontuações e na mesma linha).
 
-**Saída:**
+**Saídas:**
 
 - Palavra com maior número de vogais e a quantidade de vogais dessa palavra (em caso de empate, use a palavra que apareceu primeiro).
 :::
@@ -40,19 +39,17 @@ Faça um programa que receba uma frase e imprima a palavra dessa frase com o mai
 ## Exercício 1 (continuação){.fontsize70}
 ::: {.fontsize80}
 ::: {.nonincremental}
-**Entradas:**
+**Exemplo de Entrada:**
 
-- Quantidade de palavras na frase: 10
 - Frase a ser analisada: uma vida sem desafios nao vale a pena ser vivida
 
-**Saídas:**
+**Exemplo de Saída:**
 
 - Palavra com mais vogais: desafios
 - Tamanho: 4
 
 **Exemplo de Entrada:**
 
-- Quantidade de palavras na frase: 8
 - Frase a ser analisada: nao vivemos para comer mas comemos para viver
 
 **Exemplo de Saída:**
