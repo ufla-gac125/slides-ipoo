@@ -297,3 +297,43 @@ Em Java, todos os atributos são automaticamente inicializados com um valor padr
 :::
 :::
 ::::
+
+
+## Passando Dados via Parâmetros
+:::{.fontsize90}
+Os [construtores]{.alert} e [métodos]{.alert} podem [receber valores]{.alert} via seus [parâmetros]{.alert}.
+
+- Os [parâmetros]{.alert} são [variáveis]{.alert} definidas na assinatura do construtor ou de um método.
+:::
+
+. . .
+
+:::: {.columns style='display: flex !important; align-items: center;' .fragment}
+
+::: {.column width="20%"}
+**Exemplo:**
+:::
+
+::: {.column width="80%" }
+```{.java code-line-numbers="false"}
+public MaquinaBilhetes(int custoBilhete)
+```
+:::
+::::
+
+:::{.fontsize90}
+- Veja nesse exemplo da classe *MaquinaBilhetes* que o **construtor** tem somente **um parâmetro** (*custoBilhete*) do tipo *int*.
+    - Do **mesmo tipo do atributo** *preco* que armazenará o valor desse parâmetro.
+
+- Vale observar que, diferentemente de um atributo, um [parâmetro]{.alert} é usado para [guardar uma informação temporária]{.alert}.
+    - Parâmetros são usados para trazer dados de fora do objeto para dentro do seu construtor ou método.
+:::
+
+
+## Passando Dados via Parâmetros
+
+Parâmetros formais x parâmetros reais (ou argumentos)
+
+Escopo
+
+Tempo de vida
