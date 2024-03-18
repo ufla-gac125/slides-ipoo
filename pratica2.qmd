@@ -1,0 +1,63 @@
+---
+title: Aula Prática 2<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Observações Importantes {}
+::: {.fontsize80}
+::: {.nonincremental}
+
+A realização dos exercícios nas **aulas práticas é primordial** para que você consiga **consolidar os conceitos** aprendidos nas **aulas teóricas** (aulas não presenciais - ANP) e **colocá-los em prática** utilizando a linguagem de programação Java.
+
+- No entanto, para **conseguir realizar os exercícios** das aulas práticas é **fundamental** que você tenha **estudado**, [antes das aulas práticas]{.underline}, o **conteúdo** das aulas teóricas (ANP) disponibilizadas pelo professor. 
+
+Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **comparecer às aulas**, o aluno deve **realizar e entregar os exercícios** propostos nas aulas.
+
+- Portanto, **não esqueça de entregar no Campus Virtual** os exercícios **até o término das aulas práticas** (mesmo que não tenha terminado-os completamente).
+:::
+:::
+
+## Exercício 1 {.fontsize70}
+::: {.fontsize80}
+::: {.nonincremental}
+Faça um programa que receba uma frase e imprima a palavra dessa frase com o maior número de vogais e a quantidade de vogais dessa palavra. Antes de ler a frase, solicite ao usuário a quantidade de palavras que a frase terá. Utilize **vetores** e a estrutura de repetição ***for*** para resolver este problema.
+
+**Entradas:**
+
+- Quantidade de palavras na frase.
+- Frase a ser analisada (toda letras minúsculas, sem pontuações e na mesma linha).
+
+**Saída:**
+
+- Palavra com maior número de vogais e a quantidade de vogais dessa palavra (em caso de empate, use a palavra que apareceu primeiro).
+:::
+:::
+
+
+## Exercício 1 (continuação){.fontsize70}
+::: {.fontsize80}
+::: {.nonincremental}
+**Entradas:**
+
+- Quantidade de palavras na frase: 10
+- Frase a ser analisada: uma vida sem desafios nao vale a pena ser vivida
+
+**Saídas:**
+
+- Palavra com mais vogais: desafios
+- Tamanho: 4
+
+**Exemplo de Entrada:**
+
+- Quantidade de palavras na frase: 8
+- Frase a ser analisada: nao vivemos para comer mas comemos para viver
+
+**Exemplo de Saída:**
+
+- Palavra com mais vogais: vivemos
+- Tamanho: 3
+:::
+:::
