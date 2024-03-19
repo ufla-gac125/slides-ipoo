@@ -331,9 +331,56 @@ public MaquinaBilhetes(int custoBilhete)
 
 
 ## Passando Dados via Parâmetros
+:::{.fontsize80}
+O nome do [parâmetro declarado na assinatura]{.alert} de um construtor ou método é denominado [parâmetro formal.]{.alert}
 
-Parâmetros formais x parâmetros reais (ou argumentos)
+- É comum chamá-lo apenas de parâmetro.
+:::
+. . .
 
-Escopo
+:::{.fontsize80}
+**Exemplo:**
+A classe *MaquinaBilhetes* apresenta a seguinte assinatura para seu construtor:
+```{.java code-line-numbers="false"}
+public MaquinaBilhetes(int custoBilhete)
+```
+- Neste caso, `custoBilhete` é o **parâmetro formal**.
+:::
+. . .
 
-Tempo de vida
+:::{.fontsize80}
+Já o [valor do parâmetro]{.alert} passado de fora do objeto é chamados de [parâmetro real]{.alert} ou [argumento]{.alert}.
+:::
+
+. . .
+
+:::{.fontsize80}
+**Exemplo:** 
+Para instanciar uma máquina de bilhetes para emitir bilhetes que custam 50 centavos,  precisamos chamar o construtor da classe *MaquinaBilhetes* da seguinte maneira:
+```{.java code-line-numbers="false"}
+maquina1 = new MaquinaBilhetes(50)
+``` 
+- Neste caso, o valor `50` é o **parâmetro real** ou **argumento**.
+:::
+
+## Passando Dados via Parâmetros
+
+:::{.callout-note title="Conceito" icon=false}
+O escopo de uma variável define a seção de código-fonte de onde ela pode ser acessada.
+:::
+
+
+::::{.columns style='display: flex !important; height: 70%; align-items: top;' .fragment}
+
+::: {.column width="70%"}
+:::{.nonincremental}
+- O **escopo** de um [parâmetro]{.alert} formal está restrito ao [corpo do construtor ou método]{.alert} onde ele foi declarado. 
+:::
+- De modo diferente, o **escopo** de um [atributo]{.alert} é o total da definição da classe, ou seja, ele pode ser acessado de [qualquer lugar dentro da classe]{.alert}.
+:::
+
+::: {.column width="30%"}
+![](figuras/escopo_variavel.png){fig-alt="Escopo_variavel" fig-align="center" width=100%}
+:::
+
+::::

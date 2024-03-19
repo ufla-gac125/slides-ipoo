@@ -750,11 +750,76 @@
 </ul></li>
 </ul>
 </div>
+</div>
+</section>
+<section id="passando-dados-via-parâmetros-1" class="slide level2">
+<h2>Passando Dados via Parâmetros</h2>
+<div class="fontsize80">
+<p>O nome do <span class="alert">parâmetro declarado na assinatura</span> de um construtor ou método é denominado <span class="alert">parâmetro formal.</span></p>
+<ul>
+<li class="fragment">É comum chamá-lo apenas de parâmetro.</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="fontsize80">
+<p><strong>Exemplo:</strong> A classe <em>MaquinaBilhetes</em> apresenta a seguinte assinatura para seu construtor:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">MaquinaBilhetes</span><span class="op">(</span><span class="dt">int</span> custoBilhete<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">Neste caso, <code>custoBilhete</code> é o <strong>parâmetro formal</strong>.</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="fontsize80">
+<p>Já o <span class="alert">valor do parâmetro</span> passado de fora do objeto é chamados de <span class="alert">parâmetro real</span> ou <span class="alert">argumento</span>.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="fontsize80">
+<p><strong>Exemplo:</strong> Para instanciar uma máquina de bilhetes para emitir bilhetes que custam 50 centavos, precisamos chamar o construtor da classe <em>MaquinaBilhetes</em> da seguinte maneira:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a>maquina1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">MaquinaBilhetes</span><span class="op">(</span><span class="dv">50</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">Neste caso, o valor <code>50</code> é o <strong>parâmetro real</strong> ou <strong>argumento</strong>.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="passando-dados-via-parâmetros-2" class="slide level2">
+<h2>Passando Dados via Parâmetros</h2>
+<div title="Conceito">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Conceito</strong></p>
+</div>
+<div class="callout-content">
+<p>O escopo de uma variável define a seção de código-fonte de onde ela pode ser acessada.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="columns fragment" style="display: flex !important; height: 70%; align-items: top;">
+<div class="column" style="width:70%;">
+<div>
+<ul>
+<li>O <strong>escopo</strong> de um <span class="alert">parâmetro</span> formal está restrito ao <span class="alert">corpo do construtor ou método</span> onde ele foi declarado.</li>
+</ul>
+</div>
+<ul>
+<li class="fragment">De modo diferente, o <strong>escopo</strong> de um <span class="alert">atributo</span> é o total da definição da classe, ou seja, ele pode ser acessado de <span class="alert">qualquer lugar dentro da classe</span>.</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/escopo_variavel.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Escopo_variavel"></p>
+</figure>
+</div>
+</div>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="http://luiz.dac.ufla.br">Prof.&nbsp;Luiz Merschmann</a></p>
-</div>
 </div>
 </div>
 </section>
