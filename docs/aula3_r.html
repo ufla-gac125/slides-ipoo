@@ -11,7 +11,7 @@
 <script src="aula3_r_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula3_r_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula3_r_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Conceitos Básicos de Orientação a Objetos: Definição de Classes, Métodos, Construtores e Destrutores </title>
@@ -724,13 +724,12 @@
 </section>
 <section id="passando-dados-via-parâmetros" class="slide level2">
 <h2>Passando Dados via Parâmetros</h2>
-<div class="fontsize90">
+<div class="fontsize80">
 <p>Os <span class="alert">construtores</span> e <span class="alert">métodos</span> podem <span class="alert">receber valores</span> via seus <span class="alert">parâmetros</span>.</p>
 <ul>
 <li class="fragment">Os <span class="alert">parâmetros</span> são <span class="alert">variáveis</span> definidas na assinatura do construtor ou de um método.</li>
 </ul>
 </div>
-<div class="fragment">
 <div class="columns fragment" style="display: flex !important; align-items: center;">
 <div class="column" style="width:20%;">
 <p><strong>Exemplo:</strong></p>
@@ -738,7 +737,7 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">MaquinaBilhetes</span><span class="op">(</span><span class="dt">int</span> custoBilhete<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div class="fontsize90">
+<div class="fontsize80">
 <ul>
 <li class="fragment">Veja nesse exemplo da classe <em>MaquinaBilhetes</em> que o <strong>construtor</strong> tem somente <strong>um parâmetro</strong> (<em>custoBilhete</em>) do tipo <em>int</em>.
 <ul>
@@ -750,34 +749,37 @@
 </ul></li>
 </ul>
 </div>
-</div>
 </section>
 <section id="passando-dados-via-parâmetros-1" class="slide level2">
 <h2>Passando Dados via Parâmetros</h2>
-<div class="fontsize80">
+<div class="fontsize75">
 <p>O nome do <span class="alert">parâmetro declarado na assinatura</span> de um construtor ou método é denominado <span class="alert">parâmetro formal.</span></p>
 <ul>
 <li class="fragment">É comum chamá-lo apenas de parâmetro.</li>
 </ul>
 </div>
 <div class="fragment">
-<div class="fontsize80">
+<div class="fontsize75">
 <p><strong>Exemplo:</strong> A classe <em>MaquinaBilhetes</em> apresenta a seguinte assinatura para seu construtor:</p>
+</div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">MaquinaBilhetes</span><span class="op">(</span><span class="dt">int</span> custoBilhete<span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fontsize75">
 <ul>
 <li class="fragment">Neste caso, <code>custoBilhete</code> é o <strong>parâmetro formal</strong>.</li>
 </ul>
 </div>
 </div>
 <div class="fragment">
-<div class="fontsize80">
+<div class="fontsize75">
 <p>Já o <span class="alert">valor do parâmetro</span> passado de fora do objeto é chamados de <span class="alert">parâmetro real</span> ou <span class="alert">argumento</span>.</p>
 </div>
 </div>
 <div class="fragment">
-<div class="fontsize80">
+<div class="fontsize75">
 <p><strong>Exemplo:</strong> Para instanciar uma máquina de bilhetes para emitir bilhetes que custam 50 centavos, precisamos chamar o construtor da classe <em>MaquinaBilhetes</em> da seguinte maneira:</p>
+</div>
 <div class="sourceCode" id="cb8"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a>maquina1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">MaquinaBilhetes</span><span class="op">(</span><span class="dv">50</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fontsize75">
 <ul>
 <li class="fragment">Neste caso, o valor <code>50</code> é o <strong>parâmetro real</strong> ou <strong>argumento</strong>.</li>
 </ul>
@@ -816,10 +818,100 @@
 </div>
 </div>
 </div>
+</section>
+<section id="passando-dados-via-parâmetros-3" class="slide level2">
+<h2>Passando Dados via Parâmetros</h2>
+<div title="Conceito">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Conceito</strong></p>
+</div>
+<div class="callout-content">
+<p>O tempo de vida de uma variável define quanto tempo uma variável continuará existindo antes de ser destruída.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="columns fragment fontsize90" style="display: flex !important; height: 70%; align-items: top;">
+<div class="column" style="width:75%;">
+<div>
+<ul>
+<li>O <strong>tempo de vida</strong> de um <span class="alert">parâmetro</span> formal está limitado a uma <span class="alert">única chamada de um construtor ou método</span>.
+<ul>
+<li>Ou seja, <span class="alert">ao finalizar a execução</span> do construtor ou método, os seus <span class="alert">parâmetros</span> formais <span class="alert">desaparecem</span> e os <span class="alert">valores</span> que eles armazenam são <span class="alert">perdidos</span>.</li>
+</ul></li>
+</ul>
+</div>
+<ul>
+<li class="fragment">De modo diferente, o <strong>tempo de vida</strong> de um <span class="alert">atributo</span> é o <span class="alert">mesmo do objeto</span> a que ele pertence.</li>
+</ul>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/tempo.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Escopo_variavel"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="analisando-a-classe-métodos-de-acesso" class="slide level2">
+<h2>Analisando a Classe: Métodos de Acesso</h2>
+<div class="fontsize90" title="Conceito">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Conceito</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Métodos de acesso</strong> retornam <strong>informações</strong> ao chamador sobre o <strong>estado de um objeto</strong>, ou seja, eles fornecem acesso ao estado do objeto. O método <code>obterPreco</code> é um exemplo de método de acesso.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="columns" style="display: flex !important; height=100%; align-items: center;">
+<div class="column" style="width:65%;">
+<div class="fontsize70">
+<p>Todo <span class="alert">método</span> tem <span class="alert">duas partes</span>: a <span class="alert">assinatura</span> e o <span class="alert">corpo</span> do método.</p>
+<ul>
+<li class="fragment">No caso do método <em>obterPreco</em>, a <strong>assinatura</strong> é <code>public int obterPreco()</code> e o <strong>corpo do método</strong> é tudo que fica entre <code>{</code> <code>}</code>, que pode conter declarações e instruções.
+<ul>
+<li class="fragment">No corpo desse método há apenas uma instrução de retorno (<code>return preco</code>).</li>
+<li class="fragment">Essa instrução é responsável por <strong>retornar um valor inteiro</strong> para <strong>corresponder ao tipo</strong> de retorno <strong>declarado na assinatura</strong> do método.</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:35%;">
+<div class="sourceCode" id="cb9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MaquinaBilhetes<span class="op">{</span></span>
+<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Atributos omitidos</span></span>
+<span id="cb9-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Construtor omitido</span></span>
+<span id="cb9-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">obterPreco</span><span class="op">(){</span></span>
+<span id="cb9-6"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> preco<span class="op">;</span></span>
+<span id="cb9-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb9-8"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Demais métodos omitidos</span></span>
+<span id="cb9-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<div class="fontsize90" title="Atenção">
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Atenção</strong></p>
+</div>
+<div class="callout-content">
+<p>Quando um método contém uma <strong>instrução de retorno</strong> (<code>return</code>), ela é sempre a <strong>instrução final</strong> desse método. Ou seja, nenhuma instrução colocada após a instrução de retorno será executada.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="http://luiz.dac.ufla.br">Prof.&nbsp;Luiz Merschmann</a></p>
+</div>
 </div>
 </div>
 </section>

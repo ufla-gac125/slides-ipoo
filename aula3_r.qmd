@@ -300,13 +300,13 @@ Em Java, todos os atributos são automaticamente inicializados com um valor padr
 
 
 ## Passando Dados via Parâmetros
-:::{.fontsize90}
+:::{.fontsize80}
 Os [construtores]{.alert} e [métodos]{.alert} podem [receber valores]{.alert} via seus [parâmetros]{.alert}.
 
 - Os [parâmetros]{.alert} são [variáveis]{.alert} definidas na assinatura do construtor ou de um método.
 :::
 
-. . .
+
 
 :::: {.columns style='display: flex !important; align-items: center;' .fragment}
 
@@ -321,7 +321,7 @@ public MaquinaBilhetes(int custoBilhete)
 :::
 ::::
 
-:::{.fontsize90}
+:::{.fontsize80}
 - Veja nesse exemplo da classe *MaquinaBilhetes* que o **construtor** tem somente **um parâmetro** (*custoBilhete*) do tipo *int*.
     - Do **mesmo tipo do atributo** *preco* que armazenará o valor desse parâmetro.
 
@@ -331,35 +331,40 @@ public MaquinaBilhetes(int custoBilhete)
 
 
 ## Passando Dados via Parâmetros
-:::{.fontsize80}
+:::{.fontsize75}
 O nome do [parâmetro declarado na assinatura]{.alert} de um construtor ou método é denominado [parâmetro formal.]{.alert}
 
 - É comum chamá-lo apenas de parâmetro.
 :::
 . . .
 
-:::{.fontsize80}
+:::{.fontsize75}
 **Exemplo:**
 A classe *MaquinaBilhetes* apresenta a seguinte assinatura para seu construtor:
+:::
 ```{.java code-line-numbers="false"}
 public MaquinaBilhetes(int custoBilhete)
 ```
+:::{.fontsize75}
 - Neste caso, `custoBilhete` é o **parâmetro formal**.
 :::
 . . .
 
-:::{.fontsize80}
+:::{.fontsize75}
 Já o [valor do parâmetro]{.alert} passado de fora do objeto é chamados de [parâmetro real]{.alert} ou [argumento]{.alert}.
 :::
 
 . . .
 
-:::{.fontsize80}
+:::{.fontsize75}
 **Exemplo:** 
 Para instanciar uma máquina de bilhetes para emitir bilhetes que custam 50 centavos,  precisamos chamar o construtor da classe *MaquinaBilhetes* da seguinte maneira:
+:::
 ```{.java code-line-numbers="false"}
 maquina1 = new MaquinaBilhetes(50)
 ``` 
+:::{.fontsize75}
+
 - Neste caso, o valor `50` é o **parâmetro real** ou **argumento**.
 :::
 
@@ -384,3 +389,69 @@ O escopo de uma variável define a seção de código-fonte de onde ela pode ser
 :::
 
 ::::
+
+
+## Passando Dados via Parâmetros
+
+:::{.callout-note title="Conceito" icon=false}
+O tempo de vida de uma variável define quanto tempo uma variável continuará existindo antes de ser destruída.
+:::
+
+
+::::{.columns style='display: flex !important; height: 70%; align-items: top;' .fragment .fontsize90}
+
+::: {.column width="75%"}
+:::{.nonincremental}
+- O **tempo de vida** de um [parâmetro]{.alert} formal está limitado a uma [única chamada de um construtor ou método]{.alert}.
+    - Ou seja, [ao finalizar a execução]{.alert} do construtor ou método, os seus [parâmetros]{.alert} formais [desaparecem]{.alert} e os [valores]{.alert} que eles armazenam são [perdidos]{.alert}. 
+:::
+- De modo diferente, o **tempo de vida** de um [atributo]{.alert} é o [mesmo do objeto]{.alert} a que ele pertence.
+:::
+
+::: {.column width="25%"}
+![](figuras/tempo.png){fig-alt="Escopo_variavel" fig-align="center" width=80%}
+:::
+
+::::
+
+
+## Analisando a Classe: Métodos de Acesso
+:::{.callout-note title="Conceito" icon=false .fontsize90}
+**Métodos de acesso** retornam **informações** ao chamador sobre o **estado de um objeto**, ou seja, eles fornecem acesso ao estado do objeto. O método `obterPreco` é um exemplo de método de acesso.
+:::
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="65%"}
+::: {.fontsize70}
+Todo [método]{.alert} tem [duas partes]{.alert}: a [assinatura]{.alert} e o [corpo]{.alert} do método.
+
+- No caso do método *obterPreco*, a **assinatura** é `public int obterPreco()` e o **corpo do método** é tudo que fica entre `{` `}`, que pode conter declarações e instruções.
+    - No corpo desse método há apenas uma instrução de retorno (`return preco`).
+    - Essa instrução é responsável por **retornar um valor inteiro** para **corresponder ao tipo** de retorno **declarado na assinatura** do método.
+
+:::
+:::
+
+::: {.column width="35%"}
+```{.java code-line-numbers="false"}
+public class MaquinaBilhetes{
+    //Atributos omitidos
+    //Construtor omitido
+
+    public int obterPreco(){
+        return preco;
+    }
+    
+    //Demais métodos omitidos
+}
+```
+:::
+::::
+
+. . .
+
+:::{.callout-warning title="Atenção" icon=false .fontsize90}
+Quando um método contém uma **instrução de retorno** (`return`), ela é sempre a **instrução final** desse método. Ou seja, nenhuma instrução colocada após a instrução de retorno será executada. 
+:::
+
+
