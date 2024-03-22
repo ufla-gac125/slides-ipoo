@@ -1,5 +1,5 @@
 ---
-title: Conceitos Básicos de Orientação a Objetos:<br>Definição de Classes, Métodos, Construtores e Destrutores<br><br>
+title: Conceitos Básicos de Orientação a Objetos:<br>Definição de Classes, Métodos e Construtores<br><br>
 title-slide-attributes:
     data-background-size: contain
     data-background-position-x: center
@@ -17,7 +17,13 @@ title-slide-attributes:
 ::: {.column width="70%"}
 ::: {.nonincremental}
 ::: {style="font-size: 120%;"}
-- XXX
+- Definição de uma Classe
+    - Atributos
+    - Construtores
+    - Métodos
+- Passagem de Dados via Parâmetros
+    - Escopo
+    - Tempo de Vida
 :::
 :::
 :::
@@ -26,22 +32,20 @@ title-slide-attributes:
 
 ## Definição de uma Classe
 ::: {.fontsize90}
-O código-fonte de uma classe pode ser dividido em duas partes principais:
+O **código-fonte** de uma **classe** pode ser dividido em **duas partes** principais:
 
-- Parte externa: simplesmente nomeia a classe.
-- Parte interna: contém todo o código que define a classe.
+- Parte **externa**: simplesmente **nomeia** a classe.
+- Parte **interna**: contém todo o código que **define a classe**.
 :::
 
 . . .
 
-::: {.fontsize90}
 A parte externa se apresenta da seguinte maneira:
 ```{.java code-line-numbers="false"}
 public class NomeDaClasse{
     //Parte interna omitida
 }
 ```
-:::
 
 . . .
 
@@ -54,26 +58,28 @@ Essa parte externa é semelhante para diferentes classes:
 :::
 
 ## Definição de uma Classe
-::: {.fontsize80}
-A parte interna das classes é onde definimos:
+::: {.fontsize75}
+A **parte interna das classes** é onde definimos:
 
-- Atributos: armazenam os dados para o uso de cada objeto.
-- Construtores: permitem que cada objeto seja configurado adequadamente quando ele é criado. 
-- Métodos: implementam o comportamento dos objetos.
+- **Atributos**: armazenam os dados para o uso de cada objeto.
+- **Construtores**: permitem que cada objeto seja configurado adequadamente quando ele é criado. 
+- **Métodos**: implementam o comportamento dos objetos.
 :::
 
 . . .
 
-::: {.fontsize80}
+::: {.segment .fontsize75}
 A parte interna se apresenta da seguinte maneira:
-```{.java code-line-numbers="false"}
+:::
+```{.java code-line-numbers="false" .fontsize90}
 public class NomeDaClasse{
     //Atributos
     //Construtores
     //Métodos
 }
 ```
-A linguagem Java permite que o programador escolha a ordem da implementação dos atributos, construtores e métodos dentro da classe.
+::: {.segment .fontsize75}
+A linguagem Java permite que o **programador escolha a ordem da implementação** dos atributos, construtores e métodos dentro da classe.
 
 - Usualmente coloca-se primeiro os atributos, depois os construtores e, por fim, os métodos.
 :::
@@ -81,7 +87,7 @@ A linguagem Java permite que o programador escolha a ordem da implementação do
 
 ## Utilizando um Exemplo
 
-::::{.columns style='display: flex !important; align-items: top;'}
+::::{.columns style='display: flex !important; align-items: top;' .fontsize90}
 
 ::: {.column width="25%"}
 ![](figuras/maquina_bilhetes.png){fig-alt="Mensagens" fig-align="left" width=80%}
@@ -212,7 +218,7 @@ Os [construtores]{.alert} permitem colocar cada [objeto]{.alert} em um [estado p
 
 ::: {.column width="75%"}
 ::: {.fontsize80}
-O construtor é um método especial que:
+O **construtor**, que é semelhante a um método, tem as **seguintes características**:
 
 - **Sempre** tem o **mesmo nome da classe** onde ele está definido.
 - **Não tem tipo de retorno**, pois ele retorna implicitamente a referência para o objeto.
@@ -377,7 +383,7 @@ O escopo de uma variável define a seção de código-fonte de onde ela pode ser
 
 ::::{.columns style='display: flex !important; height: 70%; align-items: top;' .fragment}
 
-::: {.column width="70%"}
+::: {.column width="70%" .fontsize90}
 :::{.nonincremental}
 - O **escopo** de um [parâmetro]{.alert} formal está restrito ao [corpo do construtor ou método]{.alert} onde ele foi declarado. 
 :::
@@ -400,7 +406,7 @@ O tempo de vida de uma variável define quanto tempo uma variável continuará e
 
 ::::{.columns style='display: flex !important; height: 70%; align-items: top;' .fragment .fontsize90}
 
-::: {.column width="75%"}
+::: {.column width="75%" .fontsize90}
 :::{.nonincremental}
 - O **tempo de vida** de um [parâmetro]{.alert} formal está limitado a uma [única chamada de um construtor ou método]{.alert}.
     - Ou seja, [ao finalizar a execução]{.alert} do construtor ou método, os seus [parâmetros]{.alert} formais [desaparecem]{.alert} e os [valores]{.alert} que eles armazenam são [perdidos]{.alert}. 
@@ -411,7 +417,6 @@ O tempo de vida de uma variável define quanto tempo uma variável continuará e
 ::: {.column width="25%"}
 ![](figuras/tempo.png){fig-alt="Escopo_variavel" fig-align="center" width=80%}
 :::
-
 ::::
 
 
@@ -425,9 +430,10 @@ O tempo de vida de uma variável define quanto tempo uma variável continuará e
 ::: {.fontsize70}
 Todo [método]{.alert} tem [duas partes]{.alert}: a [assinatura]{.alert} e o [corpo]{.alert} do método.
 
-- No caso do método *obterPreco*, a **assinatura** é `public int obterPreco()` e o **corpo do método** é tudo que fica entre `{` `}`, que pode conter declarações e instruções.
-    - No corpo desse método há apenas uma instrução de retorno (`return preco`).
-    - Essa instrução é responsável por **retornar um valor inteiro** para **corresponder ao tipo** de retorno **declarado na assinatura** do método.
+No caso do método *obterPreco*, a **assinatura** é `public int obterPreco()` e o **corpo do método** é tudo que fica entre `{` `}`, que pode conter declarações e instruções.
+
+- No corpo desse método há apenas uma instrução de retorno (`return preco`).
+- Essa instrução é responsável por **retornar um valor inteiro** para **corresponder ao tipo** de retorno **declarado na assinatura** do método.
 
 :::
 :::
@@ -450,8 +456,178 @@ public class MaquinaBilhetes{
 
 . . .
 
-:::{.callout-warning title="Atenção" icon=false .fontsize90}
-Quando um método contém uma **instrução de retorno** (`return`), ela é sempre a **instrução final** desse método. Ou seja, nenhuma instrução colocada após a instrução de retorno será executada. 
+:::{.fontsize70}
+**Atenção:** Quando um método contém uma **instrução de retorno** (`return`), ela é sempre a **instrução final** desse método. Ou seja, nenhuma instrução colocada após a instrução de retorno será executada. 
 :::
 
 
+## Analisando a Classe: Métodos Modificadores
+:::{.callout-note title="Conceito" icon=false .fontsize90}
+**Métodos modificadores** alteram o **estado de um objeto**. Os métodos `inserirDinheiro` e `imprimirBilhete` são exemplos de métodos modificadores.
+:::
+::::{.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="48%"}
+::: {.fontsize70}
+A partir da **assinatura** do método *inserirDinheiro* observa-se que ele tem o **tipo de retorno** `void` e um **único parâmetro** formal (`quantidade`) do **tipo** *int*.
+
+- O tipo de retorno ***void*** indica que o método [não retorna valor]{.alert} para seu chamador.
+- E no corpo do método o fato do retorno ser ***void*** faz com que [não exista]{.alert} uma instrução de [retorno]{.alert}.
+
+:::
+:::
+
+::: {.column width="52%"}
+```{.java code-line-numbers="false"}
+public class MaquinaBilhetes{
+    //Atributos omitidos
+    //Construtor omitido
+
+    public void inserirDinheiro(int quantidade){
+        saldo = saldo + quantidade;
+    }
+    
+    //Demais métodos omitidos
+}
+```
+:::
+::::
+
+. . .
+
+:::{.fontsize70}
+No **corpo** do *inserirDinheiro* há uma única **instrução para aumentar o valor do atributo** *saldo* de acordo com o **valor passado** em *quantidade*.
+:::
+
+
+## Analisando a Classe: Métodos Modificadores
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="54%" .fontsize90 }
+```{.java code-line-numbers="false"}
+public class MaquinaBilhetes{
+    //Atributos omitidos
+    //Construtor omitido
+
+    public void imprimirBilhete(){
+        // Simula a impressão de um bilhete
+        System.out.println("##################");
+        System.out.println("# Bilhetes & Cia ");
+        System.out.println("# Bilhete");
+        System.out.println("# " + preco + " centavos.");
+        System.out.println("##################");
+        System.out.println();
+        // Atualiza o total coletado com o saldo
+        total = total + saldo;
+        // Zera o saldo
+        saldo = 0;
+    }
+    
+    //Demais métodos omitidos
+}
+```
+:::
+
+::: {.column width="46%" .fontsize70}
+A **assinatura** do método *imprimirBilhete* indica que ele tem o **tipo de retorno** `void` e não recebe **nenhum parâmetro**.
+
+:::{.fragment}
+Já no **corpo do método**:
+
+- As [seis primeiras instruções]{.alert} são responsáveis por [imprimir um bilhete]{.alert} na tela.
+- A [sétima instrução adiciona]{.alert} os [valores]{.alert} inseridos pelo [cliente]{.alert} à quantidade [total de dinheiro coletado]{.alert} pela máquina.
+- Por fim, a [última instrução redefine]{.alert} o [saldo]{.alert} da máquina para [zero]{.alert}, permitindo que o próximo cliente possa começar a sua compra.
+:::
+:::
+
+::::
+
+. . .
+
+:::{.fontsize70}
+**Atenção:** quando utilizado **entre** uma **string** e **qualquer outra coisa**, `+` é um **operador de concatenação de string** em vez de um operador aritmético de adição. 
+:::
+
+
+## Variáveis Locais
+:::{.callout-note title="Conceito" icon=false .fontsize90}
+Uma **variável local** é uma variável **declarada** e **utilizada** dentro de um **único método**.
+:::
+
+:::{.fontsize70 .fragment}
+Características de uma **variável local**:
+
+- Sua **declaração** se parece com as declarações de atributos, mas ela **nunca tem** `private` ou `public` como parte dela.
+- Assim como os parâmetros formais, ela tem um [escopo limitado ao corpo do método]{.alert} ao qual pertence.
+- Assim como os parâmetros formais, seu [tempo de vida]{.alert} é o [tempo da execução do método]{.alert}. 
+    - Ou seja, ela é **criada** quando o **método é chamado** e **destruída** quando o **método termina**.
+:::
+
+:::{.callout-important title="Observação" icon=false .fragment}
+[Variáveis locais]{.alert} são frequentemente utilizadas como posições de [memória temporária]{.alert} para ajudar um método a completar sua tarefa. 
+:::
+
+
+## Código Completo da Classe *MaquinaBilhetes*
+
+```{.java code-line-numbers="false"}
+public class MaquinaBilhetes{
+    // O preço de um bilhete desta máquina.
+    private int preco;
+    // A quantidade de dinheiro que o usuário colocou até o momento.
+    private int saldo;
+    // A quantidade total de dinheiro coletado pela máquina.
+    private int total;
+    /**
+     * Cria uma máquina que emite bilhetes de um dado preço.
+     * Note que o preço deve ser maior que zero, e não tem
+     * nenhuma verificação para garantir isso.
+     */
+    public MaquinaBilhetes(int custoBilhete){
+        preco = custoBilhete;
+        saldo = 0;
+        total = 0;
+    }
+    /**
+     * Retorna o preço do bilhete.
+     */
+    public int obterPreco(){
+        return preco;
+    }
+    /**
+     * Retorna a quantidade de dinheiro já inserida para o
+     * próximo bilhete.
+     */
+    public int obterSaldo(){
+        return saldo;
+    }
+    /**
+     * Recebe uma quantidade de dinheiro de um cliente.
+     */
+    public void inserirDinheiro(int quantidade){
+        saldo = saldo + quantidade;
+    }
+    /**
+     * Imprime um bilhete.
+     * Atualiza o total coletado e reduz o saldo para zero.
+     */
+    public void imprimirBilhete(){
+        // Simula a impressão de um bilhete
+        System.out.println("##################");
+        System.out.println("# Bilhetes & Cia ");
+        System.out.println("# Bilhete");
+        System.out.println("# " + preco + " centavos.");
+        System.out.println("##################");
+        System.out.println();
+        // Atualiza o total coletado com o saldo
+        total = total + saldo;
+        // Zera o saldo
+        saldo = 0;
+    }
+}
+```
+
+
+##
+
+![](figuras/perguntas.png){fig-alt="Perguntas" fig-align="center" width=35%}

@@ -14,7 +14,7 @@
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
-  <title>Conceitos Básicos de Orientação a Objetos: Definição de Classes, Métodos, Construtores e Destrutores </title>
+  <title>Conceitos Básicos de Orientação a Objetos: Definição de Classes, Métodos e Construtores </title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -395,7 +395,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-position-x="center" data-background-position-y="center" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Conceitos Básicos de Orientação a Objetos:<br>Definição de Classes, Métodos, Construtores e Destrutores<br><br></h1>
+  <h1 class="title">Conceitos Básicos de Orientação a Objetos:<br>Definição de Classes, Métodos e Construtores<br><br></h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -422,7 +422,17 @@
 <div>
 <div style="font-size: 120%;">
 <ul>
-<li>XXX</li>
+<li>Definição de uma Classe
+<ul>
+<li>Atributos</li>
+<li>Construtores</li>
+<li>Métodos</li>
+</ul></li>
+<li>Passagem de Dados via Parâmetros
+<ul>
+<li>Escopo</li>
+<li>Tempo de Vida</li>
+</ul></li>
 </ul>
 </div>
 </div>
@@ -432,19 +442,17 @@
 <section id="definição-de-uma-classe" class="slide level2">
 <h2>Definição de uma Classe</h2>
 <div class="fontsize90">
-<p>O código-fonte de uma classe pode ser dividido em duas partes principais:</p>
+<p>O <strong>código-fonte</strong> de uma <strong>classe</strong> pode ser dividido em <strong>duas partes</strong> principais:</p>
 <ul>
-<li class="fragment">Parte externa: simplesmente nomeia a classe.</li>
-<li class="fragment">Parte interna: contém todo o código que define a classe.</li>
+<li class="fragment">Parte <strong>externa</strong>: simplesmente <strong>nomeia</strong> a classe.</li>
+<li class="fragment">Parte <strong>interna</strong>: contém todo o código que <strong>define a classe</strong>.</li>
 </ul>
 </div>
 <div class="fragment">
-<div class="fontsize90">
 <p>A parte externa se apresenta da seguinte maneira:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> NomeDaClasse<span class="op">{</span></span>
 <span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Parte interna omitida</span></span>
 <span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 <div class="fragment">
 <div class="fontsize90">
@@ -461,23 +469,25 @@
 </section>
 <section id="definição-de-uma-classe-1" class="slide level2">
 <h2>Definição de uma Classe</h2>
-<div class="fontsize80">
-<p>A parte interna das classes é onde definimos:</p>
+<div class="fontsize75">
+<p>A <strong>parte interna das classes</strong> é onde definimos:</p>
 <ul>
-<li class="fragment">Atributos: armazenam os dados para o uso de cada objeto.</li>
-<li class="fragment">Construtores: permitem que cada objeto seja configurado adequadamente quando ele é criado.</li>
-<li class="fragment">Métodos: implementam o comportamento dos objetos.</li>
+<li class="fragment"><strong>Atributos</strong>: armazenam os dados para o uso de cada objeto.</li>
+<li class="fragment"><strong>Construtores</strong>: permitem que cada objeto seja configurado adequadamente quando ele é criado.</li>
+<li class="fragment"><strong>Métodos</strong>: implementam o comportamento dos objetos.</li>
 </ul>
 </div>
 <div class="fragment">
-<div class="fontsize80">
+<div class="segment fontsize75">
 <p>A parte interna se apresenta da seguinte maneira:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> NomeDaClasse<span class="op">{</span></span>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java fontsize90 code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> NomeDaClasse<span class="op">{</span></span>
 <span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Atributos</span></span>
 <span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Construtores</span></span>
 <span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Métodos</span></span>
 <span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>A linguagem Java permite que o programador escolha a ordem da implementação dos atributos, construtores e métodos dentro da classe.</p>
+<div class="segment fontsize75">
+<p>A linguagem Java permite que o <strong>programador escolha a ordem da implementação</strong> dos atributos, construtores e métodos dentro da classe.</p>
 <ul>
 <li class="fragment">Usualmente coloca-se primeiro os atributos, depois os construtores e, por fim, os métodos.</li>
 </ul>
@@ -486,7 +496,7 @@
 </section>
 <section id="utilizando-um-exemplo" class="slide level2">
 <h2>Utilizando um Exemplo</h2>
-<div class="columns" style="display: flex !important; align-items: top;">
+<div class="columns fontsize90" style="display: flex !important; align-items: top;">
 <div class="column" style="width:25%;">
 <div class="quarto-figure quarto-figure-left">
 <figure>
@@ -629,7 +639,7 @@
 </div>
 </div><div class="column" style="width:75%;">
 <div class="fontsize80">
-<p>O construtor é um método especial que:</p>
+<p>O <strong>construtor</strong>, que é semelhante a um método, tem as <strong>seguintes características</strong>:</p>
 <ul>
 <li class="fragment"><strong>Sempre</strong> tem o <strong>mesmo nome da classe</strong> onde ele está definido.</li>
 <li class="fragment"><strong>Não tem tipo de retorno</strong>, pois ele retorna implicitamente a referência para o objeto.</li>
@@ -801,7 +811,7 @@
 </div>
 </div>
 <div class="columns fragment" style="display: flex !important; height: 70%; align-items: top;">
-<div class="column" style="width:70%;">
+<div class="column fontsize90" style="width:70%;">
 <div>
 <ul>
 <li>O <strong>escopo</strong> de um <span class="alert">parâmetro</span> formal está restrito ao <span class="alert">corpo do construtor ou método</span> onde ele foi declarado.</li>
@@ -834,7 +844,7 @@
 </div>
 </div>
 <div class="columns fragment fontsize90" style="display: flex !important; height: 70%; align-items: top;">
-<div class="column" style="width:75%;">
+<div class="column fontsize90" style="width:75%;">
 <div>
 <ul>
 <li>O <strong>tempo de vida</strong> de um <span class="alert">parâmetro</span> formal está limitado a uma <span class="alert">única chamada de um construtor ou método</span>.
@@ -869,16 +879,14 @@
 </div>
 </div>
 </div>
-<div class="columns" style="display: flex !important; height=100%; align-items: center;">
+<div class="columns" style="display: flex !important; align-items: center;">
 <div class="column" style="width:65%;">
 <div class="fontsize70">
 <p>Todo <span class="alert">método</span> tem <span class="alert">duas partes</span>: a <span class="alert">assinatura</span> e o <span class="alert">corpo</span> do método.</p>
-<ul>
-<li class="fragment">No caso do método <em>obterPreco</em>, a <strong>assinatura</strong> é <code>public int obterPreco()</code> e o <strong>corpo do método</strong> é tudo que fica entre <code>{</code> <code>}</code>, que pode conter declarações e instruções.
+<p>No caso do método <em>obterPreco</em>, a <strong>assinatura</strong> é <code>public int obterPreco()</code> e o <strong>corpo do método</strong> é tudo que fica entre <code>{</code> <code>}</code>, que pode conter declarações e instruções.</p>
 <ul>
 <li class="fragment">No corpo desse método há apenas uma instrução de retorno (<code>return preco</code>).</li>
 <li class="fragment">Essa instrução é responsável por <strong>retornar um valor inteiro</strong> para <strong>corresponder ao tipo</strong> de retorno <strong>declarado na assinatura</strong> do método.</li>
-</ul></li>
 </ul>
 </div>
 </div><div class="column" style="width:35%;">
@@ -895,23 +903,201 @@
 </div>
 </div>
 <div class="fragment">
-<div class="fontsize90" title="Atenção">
-<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="fontsize70">
+<p><strong>Atenção:</strong> Quando um método contém uma <strong>instrução de retorno</strong> (<code>return</code>), ela é sempre a <strong>instrução final</strong> desse método. Ou seja, nenhuma instrução colocada após a instrução de retorno será executada.</p>
+</div>
+</div>
+</section>
+<section id="analisando-a-classe-métodos-modificadores" class="slide level2">
+<h2>Analisando a Classe: Métodos Modificadores</h2>
+<div class="fontsize90" title="Conceito">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Atenção</strong></p>
+<p><strong>Conceito</strong></p>
 </div>
 <div class="callout-content">
-<p>Quando um método contém uma <strong>instrução de retorno</strong> (<code>return</code>), ela é sempre a <strong>instrução final</strong> desse método. Ou seja, nenhuma instrução colocada após a instrução de retorno será executada.</p>
+<p><strong>Métodos modificadores</strong> alteram o <strong>estado de um objeto</strong>. Os métodos <code>inserirDinheiro</code> e <code>imprimirBilhete</code> são exemplos de métodos modificadores.</p>
 </div>
 </div>
 </div>
+</div>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:48%;">
+<div class="fontsize70">
+<p>A partir da <strong>assinatura</strong> do método <em>inserirDinheiro</em> observa-se que ele tem o <strong>tipo de retorno</strong> <code>void</code> e um <strong>único parâmetro</strong> formal (<code>quantidade</code>) do <strong>tipo</strong> <em>int</em>.</p>
+<ul>
+<li class="fragment">O tipo de retorno <strong><em>void</em></strong> indica que o método <span class="alert">não retorna valor</span> para seu chamador.</li>
+<li class="fragment">E no corpo do método o fato do retorno ser <strong><em>void</em></strong> faz com que <span class="alert">não exista</span> uma instrução de <span class="alert">retorno</span>.</li>
+</ul>
+</div>
+</div><div class="column" style="width:52%;">
+<div class="sourceCode" id="cb10"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MaquinaBilhetes<span class="op">{</span></span>
+<span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Atributos omitidos</span></span>
+<span id="cb10-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Construtor omitido</span></span>
+<span id="cb10-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">inserirDinheiro</span><span class="op">(</span><span class="dt">int</span> quantidade<span class="op">){</span></span>
+<span id="cb10-6"><a href="" aria-hidden="true" tabindex="-1"></a>        saldo <span class="op">=</span> saldo <span class="op">+</span> quantidade<span class="op">;</span></span>
+<span id="cb10-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb10-8"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Demais métodos omitidos</span></span>
+<span id="cb10-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<div class="fontsize70">
+<p>No <strong>corpo</strong> do <em>inserirDinheiro</em> há uma única <strong>instrução para aumentar o valor do atributo</strong> <em>saldo</em> de acordo com o <strong>valor passado</strong> em <em>quantidade</em>.</p>
+</div>
+</div>
+</section>
+<section id="analisando-a-classe-métodos-modificadores-1" class="slide level2">
+<h2>Analisando a Classe: Métodos Modificadores</h2>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column fontsize90" style="width:54%;">
+<div class="sourceCode" id="cb11"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MaquinaBilhetes<span class="op">{</span></span>
+<span id="cb11-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Atributos omitidos</span></span>
+<span id="cb11-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Construtor omitido</span></span>
+<span id="cb11-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">imprimirBilhete</span><span class="op">(){</span></span>
+<span id="cb11-6"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Simula a impressão de um bilhete</span></span>
+<span id="cb11-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"##################"</span><span class="op">);</span></span>
+<span id="cb11-8"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"# Bilhetes &amp; Cia "</span><span class="op">);</span></span>
+<span id="cb11-9"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"# Bilhete"</span><span class="op">);</span></span>
+<span id="cb11-10"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"# "</span> <span class="op">+</span> preco <span class="op">+</span> <span class="st">" centavos."</span><span class="op">);</span></span>
+<span id="cb11-11"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"##################"</span><span class="op">);</span></span>
+<span id="cb11-12"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">();</span></span>
+<span id="cb11-13"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Atualiza o total coletado com o saldo</span></span>
+<span id="cb11-14"><a href="" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> total <span class="op">+</span> saldo<span class="op">;</span></span>
+<span id="cb11-15"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Zera o saldo</span></span>
+<span id="cb11-16"><a href="" aria-hidden="true" tabindex="-1"></a>        saldo <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb11-17"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb11-18"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-19"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Demais métodos omitidos</span></span>
+<span id="cb11-20"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize70" style="width:46%;">
+<p>A <strong>assinatura</strong> do método <em>imprimirBilhete</em> indica que ele tem o <strong>tipo de retorno</strong> <code>void</code> e não recebe <strong>nenhum parâmetro</strong>.</p>
+<div class="fragment">
+<p>Já no <strong>corpo do método</strong>:</p>
+<ul>
+<li class="fragment">As <span class="alert">seis primeiras instruções</span> são responsáveis por <span class="alert">imprimir um bilhete</span> na tela.</li>
+<li class="fragment">A <span class="alert">sétima instrução adiciona</span> os <span class="alert">valores</span> inseridos pelo <span class="alert">cliente</span> à quantidade <span class="alert">total de dinheiro coletado</span> pela máquina.</li>
+<li class="fragment">Por fim, a <span class="alert">última instrução redefine</span> o <span class="alert">saldo</span> da máquina para <span class="alert">zero</span>, permitindo que o próximo cliente possa começar a sua compra.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="fontsize70">
+<p><strong>Atenção:</strong> quando utilizado <strong>entre</strong> uma <strong>string</strong> e <strong>qualquer outra coisa</strong>, <code>+</code> é um <strong>operador de concatenação de string</strong> em vez de um operador aritmético de adição.</p>
+</div>
+</div>
+</section>
+<section id="variáveis-locais" class="slide level2">
+<h2>Variáveis Locais</h2>
+<div class="fontsize90" title="Conceito">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Conceito</strong></p>
+</div>
+<div class="callout-content">
+<p>Uma <strong>variável local</strong> é uma variável <strong>declarada</strong> e <strong>utilizada</strong> dentro de um <strong>único método</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fontsize70 fragment">
+<p>Características de uma <strong>variável local</strong>:</p>
+<ul>
+<li class="fragment">Sua <strong>declaração</strong> se parece com as declarações de atributos, mas ela <strong>nunca tem</strong> <code>private</code> ou <code>public</code> como parte dela.</li>
+<li class="fragment">Assim como os parâmetros formais, ela tem um <span class="alert">escopo limitado ao corpo do método</span> ao qual pertence.</li>
+<li class="fragment">Assim como os parâmetros formais, seu <span class="alert">tempo de vida</span> é o <span class="alert">tempo da execução do método</span>.
+<ul>
+<li class="fragment">Ou seja, ela é <strong>criada</strong> quando o <strong>método é chamado</strong> e <strong>destruída</strong> quando o <strong>método termina</strong>.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" title="Observação">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="alert">Variáveis locais</span> são frequentemente utilizadas como posições de <span class="alert">memória temporária</span> para ajudar um método a completar sua tarefa.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="código-completo-da-classe-maquinabilhetes" class="slide level2">
+<h2>Código Completo da Classe <em>MaquinaBilhetes</em></h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb12-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MaquinaBilhetes<span class="op">{</span></span>
+<span id="cb12-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// O preço de um bilhete desta máquina.</span></span>
+<span id="cb12-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> preco<span class="op">;</span></span>
+<span id="cb12-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// A quantidade de dinheiro que o usuário colocou até o momento.</span></span>
+<span id="cb12-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> saldo<span class="op">;</span></span>
+<span id="cb12-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// A quantidade total de dinheiro coletado pela máquina.</span></span>
+<span id="cb12-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> total<span class="op">;</span></span>
+<span id="cb12-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">/**</span></span>
+<span id="cb12-9"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> Cria uma m<span class="co">á</span>quina que emite bilhetes de um dado pre<span class="co">ç</span>o<span class="co">.</span></span>
+<span id="cb12-10"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> Note que o pre<span class="co">ç</span>o deve ser maior que zero<span class="co">,</span> e n<span class="co">ã</span>o tem</span>
+<span id="cb12-11"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> nenhuma verifica<span class="co">çã</span>o para garantir isso<span class="co">.</span></span>
+<span id="cb12-12"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*/</span></span>
+<span id="cb12-13"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">MaquinaBilhetes</span><span class="op">(</span><span class="dt">int</span> custoBilhete<span class="op">){</span></span>
+<span id="cb12-14"><a href="" aria-hidden="true" tabindex="-1"></a>        preco <span class="op">=</span> custoBilhete<span class="op">;</span></span>
+<span id="cb12-15"><a href="" aria-hidden="true" tabindex="-1"></a>        saldo <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb12-16"><a href="" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb12-17"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb12-18"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">/**</span></span>
+<span id="cb12-19"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> Retorna o pre<span class="co">ç</span>o do bilhete<span class="co">.</span></span>
+<span id="cb12-20"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*/</span></span>
+<span id="cb12-21"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">obterPreco</span><span class="op">(){</span></span>
+<span id="cb12-22"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> preco<span class="op">;</span></span>
+<span id="cb12-23"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb12-24"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">/**</span></span>
+<span id="cb12-25"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> Retorna a quantidade de dinheiro j<span class="co">á</span> inserida para o</span>
+<span id="cb12-26"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> pr<span class="co">ó</span>ximo bilhete<span class="co">.</span></span>
+<span id="cb12-27"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*/</span></span>
+<span id="cb12-28"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">obterSaldo</span><span class="op">(){</span></span>
+<span id="cb12-29"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> saldo<span class="op">;</span></span>
+<span id="cb12-30"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb12-31"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">/**</span></span>
+<span id="cb12-32"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> Recebe uma quantidade de dinheiro de um cliente<span class="co">.</span></span>
+<span id="cb12-33"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*/</span></span>
+<span id="cb12-34"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">inserirDinheiro</span><span class="op">(</span><span class="dt">int</span> quantidade<span class="op">){</span></span>
+<span id="cb12-35"><a href="" aria-hidden="true" tabindex="-1"></a>        saldo <span class="op">=</span> saldo <span class="op">+</span> quantidade<span class="op">;</span></span>
+<span id="cb12-36"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb12-37"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">/**</span></span>
+<span id="cb12-38"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> Imprime um bilhete<span class="co">.</span></span>
+<span id="cb12-39"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> Atualiza o total coletado e reduz o saldo para zero<span class="co">.</span></span>
+<span id="cb12-40"><a href="" aria-hidden="true" tabindex="-1"></a>     <span class="co">*/</span></span>
+<span id="cb12-41"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">imprimirBilhete</span><span class="op">(){</span></span>
+<span id="cb12-42"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Simula a impressão de um bilhete</span></span>
+<span id="cb12-43"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"##################"</span><span class="op">);</span></span>
+<span id="cb12-44"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"# Bilhetes &amp; Cia "</span><span class="op">);</span></span>
+<span id="cb12-45"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"# Bilhete"</span><span class="op">);</span></span>
+<span id="cb12-46"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"# "</span> <span class="op">+</span> preco <span class="op">+</span> <span class="st">" centavos."</span><span class="op">);</span></span>
+<span id="cb12-47"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"##################"</span><span class="op">);</span></span>
+<span id="cb12-48"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">();</span></span>
+<span id="cb12-49"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Atualiza o total coletado com o saldo</span></span>
+<span id="cb12-50"><a href="" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> total <span class="op">+</span> saldo<span class="op">;</span></span>
+<span id="cb12-51"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Zera o saldo</span></span>
+<span id="cb12-52"><a href="" aria-hidden="true" tabindex="-1"></a>        saldo <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb12-53"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb12-54"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/perguntas.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Perguntas"></p>
+</figure>
 </div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="http://luiz.dac.ufla.br">Prof.&nbsp;Luiz Merschmann</a></p>
-</div>
 </div>
 </div>
 </section>
