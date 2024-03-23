@@ -1,5 +1,5 @@
 ---
-title: Conceitos Básicos de Orientação a Objetos:<br>Definição de Classes, Métodos e Construtores<br><br>
+title: Conceitos Básicos de Orientação a Objetos:<br>Definição de Classes, Atributos, Métodos e Construtores<br><br>
 title-slide-attributes:
     data-background-size: contain
     data-background-position-x: center
@@ -357,7 +357,7 @@ public MaquinaBilhetes(int custoBilhete)
 . . .
 
 :::{.fontsize75}
-Já o [valor do parâmetro]{.alert} passado de fora do objeto é chamados de [parâmetro real]{.alert} ou [argumento]{.alert}.
+Já o [valor do parâmetro]{.alert} passado de fora do objeto é chamado de [parâmetro real]{.alert} ou [argumento]{.alert}.
 :::
 
 . . .
@@ -377,7 +377,7 @@ maquina1 = new MaquinaBilhetes(50)
 ## Passando Dados via Parâmetros
 
 :::{.callout-note title="Conceito" icon=false}
-O escopo de uma variável define a seção de código-fonte de onde ela pode ser acessada.
+O **escopo** de uma variável define a **seção de código-fonte** de onde ela **pode ser acessada**.
 :::
 
 
@@ -385,7 +385,7 @@ O escopo de uma variável define a seção de código-fonte de onde ela pode ser
 
 ::: {.column width="70%" .fontsize90}
 :::{.nonincremental}
-- O **escopo** de um [parâmetro]{.alert} formal está restrito ao [corpo do construtor ou método]{.alert} onde ele foi declarado. 
+- O **escopo** de um [parâmetro]{.alert} formal está restrito ao [corpo do construtor]{.alert} ou [método]{.alert} onde ele foi declarado. 
 :::
 - De modo diferente, o **escopo** de um [atributo]{.alert} é o total da definição da classe, ou seja, ele pode ser acessado de [qualquer lugar dentro da classe]{.alert}.
 :::
@@ -400,7 +400,7 @@ O escopo de uma variável define a seção de código-fonte de onde ela pode ser
 ## Passando Dados via Parâmetros
 
 :::{.callout-note title="Conceito" icon=false}
-O tempo de vida de uma variável define quanto tempo uma variável continuará existindo antes de ser destruída.
+O **tempo de vida** de uma **variável** define **quanto tempo** uma variável **continuará existindo** antes de ser destruída.
 :::
 
 
@@ -408,7 +408,7 @@ O tempo de vida de uma variável define quanto tempo uma variável continuará e
 
 ::: {.column width="75%" .fontsize90}
 :::{.nonincremental}
-- O **tempo de vida** de um [parâmetro]{.alert} formal está limitado a uma [única chamada de um construtor ou método]{.alert}.
+- O **tempo de vida** de um [parâmetro]{.alert} formal está limitado a uma [única chamada de um construtor]{.alert} ou [método]{.alert}.
     - Ou seja, [ao finalizar a execução]{.alert} do construtor ou método, os seus [parâmetros]{.alert} formais [desaparecem]{.alert} e os [valores]{.alert} que eles armazenam são [perdidos]{.alert}. 
 :::
 - De modo diferente, o **tempo de vida** de um [atributo]{.alert} é o [mesmo do objeto]{.alert} a que ele pertence.

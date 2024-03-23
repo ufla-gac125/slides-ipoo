@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR"><head>
-<script src="aula3_r_files/libs/clipboard/clipboard.min.js"></script>
-<script src="aula3_r_files/libs/quarto-html/tabby.min.js"></script>
-<script src="aula3_r_files/libs/quarto-html/popper.min.js"></script>
-<script src="aula3_r_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="aula3_r_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="aula3_r_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="aula3_r_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="aula3_r_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="aula3_r_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
-<script src="aula3_r_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
-<link href="aula3_r_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
+<script src="aula3_files/libs/clipboard/clipboard.min.js"></script>
+<script src="aula3_files/libs/quarto-html/tabby.min.js"></script>
+<script src="aula3_files/libs/quarto-html/popper.min.js"></script>
+<script src="aula3_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="aula3_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="aula3_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="aula3_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="aula3_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="aula3_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
+<script src="aula3_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
+<link href="aula3_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
-  <title>Conceitos Básicos de Orientação a Objetos: Definição de Classes, Métodos e Construtores </title>
+  <title>Conceitos Básicos de Orientação a Objetos: Definição de Classes, Atributos, Métodos e Construtores </title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="aula3_r_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="aula3_r_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="aula3_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="aula3_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -98,12 +98,12 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="aula3_r_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="aula3_r_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="aula3_r_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="aula3_r_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="aula3_r_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-  <link href="aula3_r_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="aula3_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="aula3_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="aula3_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="aula3_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="aula3_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="aula3_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -395,7 +395,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-position-x="center" data-background-position-y="center" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Conceitos Básicos de Orientação a Objetos:<br>Definição de Classes, Métodos e Construtores<br><br></h1>
+  <h1 class="title">Conceitos Básicos de Orientação a Objetos:<br>Definição de Classes, Atributos, Métodos e Construtores<br><br></h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -781,7 +781,7 @@
 </div>
 <div class="fragment">
 <div class="fontsize75">
-<p>Já o <span class="alert">valor do parâmetro</span> passado de fora do objeto é chamados de <span class="alert">parâmetro real</span> ou <span class="alert">argumento</span>.</p>
+<p>Já o <span class="alert">valor do parâmetro</span> passado de fora do objeto é chamado de <span class="alert">parâmetro real</span> ou <span class="alert">argumento</span>.</p>
 </div>
 </div>
 <div class="fragment">
@@ -805,7 +805,7 @@
 <p><strong>Conceito</strong></p>
 </div>
 <div class="callout-content">
-<p>O escopo de uma variável define a seção de código-fonte de onde ela pode ser acessada.</p>
+<p>O <strong>escopo</strong> de uma variável define a <strong>seção de código-fonte</strong> de onde ela <strong>pode ser acessada</strong>.</p>
 </div>
 </div>
 </div>
@@ -814,7 +814,7 @@
 <div class="column fontsize90" style="width:70%;">
 <div>
 <ul>
-<li>O <strong>escopo</strong> de um <span class="alert">parâmetro</span> formal está restrito ao <span class="alert">corpo do construtor ou método</span> onde ele foi declarado.</li>
+<li>O <strong>escopo</strong> de um <span class="alert">parâmetro</span> formal está restrito ao <span class="alert">corpo do construtor</span> ou <span class="alert">método</span> onde ele foi declarado.</li>
 </ul>
 </div>
 <ul>
@@ -838,7 +838,7 @@
 <p><strong>Conceito</strong></p>
 </div>
 <div class="callout-content">
-<p>O tempo de vida de uma variável define quanto tempo uma variável continuará existindo antes de ser destruída.</p>
+<p>O <strong>tempo de vida</strong> de uma <strong>variável</strong> define <strong>quanto tempo</strong> uma variável <strong>continuará existindo</strong> antes de ser destruída.</p>
 </div>
 </div>
 </div>
@@ -847,7 +847,7 @@
 <div class="column fontsize90" style="width:75%;">
 <div>
 <ul>
-<li>O <strong>tempo de vida</strong> de um <span class="alert">parâmetro</span> formal está limitado a uma <span class="alert">única chamada de um construtor ou método</span>.
+<li>O <strong>tempo de vida</strong> de um <span class="alert">parâmetro</span> formal está limitado a uma <span class="alert">única chamada de um construtor</span> ou <span class="alert">método</span>.
 <ul>
 <li>Ou seja, <span class="alert">ao finalizar a execução</span> do construtor ou método, os seus <span class="alert">parâmetros</span> formais <span class="alert">desaparecem</span> e os <span class="alert">valores</span> que eles armazenam são <span class="alert">perdidos</span>.</li>
 </ul></li>
@@ -1105,20 +1105,20 @@
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="aula3_r_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="aula3_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="aula3_r_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="aula3_r_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="aula3_r_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="aula3_r_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="aula3_r_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
-  <script src="aula3_r_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="aula3_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="aula3_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="aula3_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="aula3_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="aula3_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="aula3_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="aula3_r_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="aula3_r_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="aula3_r_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="aula3_r_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="aula3_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="aula3_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="aula3_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="aula3_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
