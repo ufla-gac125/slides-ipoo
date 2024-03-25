@@ -1,0 +1,115 @@
+---
+title: Aula Prática 4<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Observações Importantes {}
+::: {.fontsize80}
+::: {.nonincremental}
+
+A realização dos exercícios nas **aulas práticas é primordial** para que você consiga **consolidar os conceitos** aprendidos nas **aulas teóricas** (aulas não presenciais - ANP) e **colocá-los em prática** utilizando a linguagem de programação Java.
+
+- No entanto, para **conseguir realizar os exercícios** das aulas práticas é **fundamental** que você tenha **estudado**, [antes das aulas práticas]{.underline}, o **conteúdo** das aulas teóricas (ANP) disponibilizadas pelo professor. 
+
+Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **comparecer às aulas**, o aluno deve **realizar e entregar os exercícios** propostos nas aulas.
+
+- Portanto, **não esqueça de entregar no Campus Virtual** os exercícios **até o término das aulas práticas** (mesmo que não tenha terminado-os completamente).
+:::
+:::
+
+
+## Contextualização
+
+Para realização da aula de hoje é **fundamental que você já tenha trabalhado** com o projeto [Máquina de Bilhetes]{.alert} na IDE [BlueJ]{.alert}.
+
+- **Criando** pelo menos um **objeto** da classe `MaquinaBilhetes`.
+- **Chamando** os **métodos**: `inserirDinheiro`, `obterSaldo` e `imprimirBilhete`. 
+
+. . .
+
+Na aula prática de hoje trabalharemos a **criação de objetos** e **chamada de métodos** dos objetos criados **sem utilizar a IDE BlueJ**, ou seja, **não** mais **utilizaremos** a **interface gráfica da IDE BlueJ** para realização **dessas tarefas**.
+
+
+## Contextualização
+
+Na aula de hoje **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
+
+. . .
+
+:::{.nonincremental}
+Continuaremos utilizando a classe `MaquinaBilhetes` disponibilizada no arquivo [MaquinaBilhetes.java]{.alert}.
+
+- Faça o download do arquivo **MaquinaBilhetes.java**.
+:::
+
+. . .
+
+:::{.nonincremental}
+Mas agora a **criação de objetos** da classe `MaquinaBilhetes` e a **chamada de métodos** do objeto criado será **realizada na classe** `App`, cujo código-fonte está disponível no arquivo **App.java**. 
+
+- Faça o download do arquivo **App.java**.
+:::
+
+
+## Atividade
+[Após fazer o download dos arquivos **MaquinaBilhetes.java** e **App.java**, **crie um projeto Java** contendo **esses dois arquivos**.]{.fontsize70}
+
+. . .
+
+[Considerando que você **já conhece e entende** o código da classe `MaquinaBilhetes`, **agora estude** o código da **classe** `App` e **responda** as seguintes **perguntas**:]{.fontsize70}
+
+:::{.callout-note title="Pergunta 1" icon=false .fontsize90}
+Como está sendo criado um objeto da classe `MaquinaBilhetes`?
+:::
+
+. . .
+
+:::{.callout-note title="Pergunta 2" icon=false .fontsize90}
+Para que serve o método `menu`?
+:::
+
+. . .
+
+:::{.callout-note title="Pergunta 3" icon=false .fontsize90}
+Para que serve o método `escolherOpcao`?
+:::
+
+
+## Atividade
+:::{.fontsize90}
+Agora **execute** a sua implementação e **observe** que a **classe** `MaquinaBilhetes` **é deficiente** nos seguintes aspectos:
+
+- Não contém verificação que indique se o cliente inseriu dinheiro suficiente para adquirir um bilhete.
+- Não reembolsa valor se o cliente pagar a mais por um bilhete.
+- Não assegura que o cliente inseriu uma quantidade válida de dinheiro (por exemplo, o cliente pode ter inserido uma quantidade negativa).
+:::
+
+. . .
+
+[Siga as instruções dadas a seguir para **alterar** o código da **classe** `MaquinaBilhetes` para que tenhamos um software mais funcional e, portanto, **mais próximo** de uma máquina de vender bilhetes **do mundo real**.]{.fontsize90} 
+
+## 
+:::{.callout-note title="Tarefa 1" icon=false .fontsize90}
+Altere o código do método `inserirDinheiro` para verificar se a quantia inserida pelo cliente é válida (valor positivo). Caso contrário, imprima na tela a mensagem "Utilize um valor positivo!".
+:::
+
+. . .
+
+:::{.callout-note title="Tarefa 2" icon=false .fontsize90}
+Altere o código do método `imprimirBilhete` para que o bilhete seja impresso (emitido) somente se a quantia total inserida pelo cliente for maior ou igual ao preço do bilhete. Caso contrário, deve-se imprimir na tela uma mensagem infomando quanto falta ser inserido para que o bilhete possa ser emitido.
+:::
+
+. . .
+
+:::{.callout-note title="Tarefa 3" icon=false .fontsize90}
+Altere novamente o código do método `imprimirBilhete` para que, ao imprimir o bilhete, o valor do atributo `saldo` corresponda ao troco a ser entregue para o cliente. Em seguida, nesse mesmo método, se houver troco a ser entregue para o cliente, imprima na tela a mensagem "Recolha o seu troco de $x$ centavos.", onde $x$ é o valor do troco do cliente. O valor de $x$ deve ser retornado a partir da chamada de um método novo denominado `retornarTroco` que deve ser implementado por você. Ao implementar o método `retornarTroco`, lembre-se que o valor do atributo `saldo` deve ser zerado para que o próximo cliente possa começar a sua compra. Por fim, verifique se o valor do atributo `total` está sendo corretamente atualizado no método `imprimirBilhete` quando o cliente recebe troco e, em caso negativo, faça os ajustes necessários para corrigi-lo.
+:::
+
+
+## 
+:::{.callout-note title="Tarefa 4" icon=false .fontsize90}
+Execute a sua implementação e verifique se ela está funcionando corretamente após todas as alterações que você realizou na classe `MaquinaBilhetes`. **Entregue** no Campus Virtual a **versão final da implementação** obtida após **todas as alterações realizadas**.
+:::

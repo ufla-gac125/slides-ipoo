@@ -23,93 +23,79 @@ Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **c
 
 ## Contextualização
 
-Para realização da aula de hoje é **fundamental que você já tenha trabalhado** com o projeto [Máquina de Bilhetes]{.alert} na IDE [BlueJ]{.alert}.
+Para realização da aula de hoje é **fundamental que você já tenha trabalhado** com o projeto [Figuras]{.alert} na IDE [BlueJ]{.alert}.
 
-- **Criando** pelo menos um **objeto** da classe `MaquinaBilhetes`.
-- **Chamando** os **métodos**: `inserirDinheiro`, `obterSaldo` e `imprimirBilhete`. 
+- **Criando** pelo menos alguns **objetos** das classes `Quadrado`, `Circulo`, `Triangulo` e `Pessoa`.
+- **Chamando** os **métodos**: `moverVertical`, `moverHorizontal`, `mudarTamanho`, `mudarCor` e `exibir`. 
 
 . . .
 
-Na aula prática de hoje trabalharemos a **criação de objetos** e **chamada de métodos** dos objetos criados **sem utilizar a IDE BlueJ**, ou seja, **não** mais **utilizaremos** a **interface gráfica da IDE BlueJ** para realização **dessas tarefas**.
+Na aula prática de hoje, inicialmente, trabalharemos a **criação de objetos** e **chamada de métodos** dos objetos criados **utilizando** a IDE **BlueJ**. Em seguida, repetiremos todo o processo de criação de objetos e chamada de métodos **sem utilizar** a **interface gráfica** da IDE **BlueJ** para realização **das tarefas**.
 
 
-## Contextualização
+## Atividade
 
-Na aula de hoje **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
+[Na aula de hoje começaremos **utilizando** a IDE **BlueJ**.]{.fontsize90}
+
+. . .
+
+:::{.nonincremental .fontsize90}
+Vamos utilizar as classes do projeto `Figuras` disponibilizado no [Campus Virtual]{.alert}.
+
+- Faça o download do projeto `Figuras` e, em seguida, abra-o utilizando a **IDE BlueJ**.
+:::
+
+. . .
+
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="60%" .fontsize90}
+::: {.nonincremental}
+**Crie** todos os **objetos** necessários para **gerar a imagem** apresentada ao lado. Além de criar os objetos, você precisará **chamar** os seus **métodos** para gerar corretamente a imagem.
+
+- **Anote** todas as **chamadas de métodos** com seus respectivos **parâmetros**, pois você precisará dessas informações na continuação desta aula prática.
+:::
+:::
+
+::: {.column width="40%"}
+![](figuras/cena.png){fig-alt="Projeto" fig-align="center" width=100%}
+:::
+
+::::
+
+
+## Atividade
+
+Agora **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
 
 . . .
 
 :::{.nonincremental}
-Continuaremos utilizando a classe `MaquinaBilhetes` disponibilizada no arquivo [MaquinaBilhetes.java]{.alert}.
+Continuaremos utilizando as classes do projeto `Figuras` disponibilizado no [Campus Virtual]{.alert}.
 
-- Faça o download do arquivo **MaquinaBilhetes.java**.
+- Crie um projeto Java com o método **main** implementado numa classe denominada `App` e, portanto, salvo no arquivo **App.java**.
+- Acrescente neste projeto todas as classes utilizadas no projeto `Figuras`, ou seja, os arquivos: **Circulo.java**, **Pessoa.java**, **Quadrado.java**, **Tela.java** e **Triangulo.java**.
 :::
 
-. . .
+
+## Atividade
 
 :::{.nonincremental}
-Mas agora a **criação de objetos** da classe `MaquinaBilhetes` e a **chamada de métodos** do objeto criado será **realizada na classe** `App`, cujo código-fonte está disponível no arquivo **App.java**. 
+Agora acrescente no método **main** da classe `App` o código responsável pela criação de todos os objetos e as chamadas de seus métodos que resultam na criação da imagem apresentada anteriormente. 
 
-- Faça o download do arquivo **App.java**.
+- Para **cada objeto** a ser criado, você precisará **declarar uma variável** do **tipo da classe** daquele objeto. Essa **variável** irá **referenciar o objeto** criado e será **utilizada para chamada dos seus métodos**. Veja no **exemplo** a seguir o código utilizado na **criação de um objeto** do tipo `Pessoa` e a chamada do seu método `exibir`.
+
+**Exemplo**
+
+```{.java code-line-numbers="false"}
+Pessoa pessoa1 = new Pessoa(); 
+pessoa1.exibir();
+```
 :::
 
 
 ## Atividade
-[Após fazer o download dos arquivos **MaquinaBilhetes.java** e **App.java**, **crie um projeto Java** contendo **esses dois arquivos**.]{.fontsize70}
 
-. . .
-
-[Considerando que você **já conhece e entende** o código da classe `MaquinaBilhetes`, **agora estude** o código da **classe** `App` e **responda** as seguintes **perguntas**:]{.fontsize70}
-
-:::{.callout-note title="Pergunta 1" icon=false .fontsize90}
-Como está sendo criado um objeto da classe `MaquinaBilhetes`?
-:::
-
-. . .
-
-:::{.callout-note title="Pergunta 2" icon=false .fontsize90}
-Para que serve o método `menu`?
-:::
-
-. . .
-
-:::{.callout-note title="Pergunta 3" icon=false .fontsize90}
-Para que serve o método `escolherOpcao`?
-:::
-
-
-## Atividade
-:::{.fontsize90}
-Agora **execute** a sua implementação e **observe** que a **classe** `MaquinaBilhetes` **é deficiente** nos seguintes aspectos:
-
-- Não contém verificação que indique se o cliente inseriu dinheiro suficiente para adquirir um bilhete.
-- Não reembolsa valor se o cliente pagar a mais por um bilhete.
-- Não assegura que o cliente inseriu uma quantidade válida de dinheiro (por exemplo, o cliente pode ter inserido uma quantidade negativa).
-:::
-
-. . .
-
-[Siga as instruções dadas a seguir para **alterar** o código da **classe** `MaquinaBilhetes` para que tenhamos um software mais funcional e, portanto, **mais próximo** de uma máquina de vender bilhetes **do mundo real**.]{.fontsize90} 
-
-## 
-:::{.callout-note title="Tarefa 1" icon=false .fontsize90}
-Altere o código do método `inserirDinheiro` para verificar se a quantia inserida pelo cliente é válida (valor positivo). Caso contrário, imprima na tela a mensagem "Utilize um valor positivo!".
-:::
-
-. . .
-
-:::{.callout-note title="Tarefa 2" icon=false .fontsize90}
-Altere o código do método `imprimirBilhete` para que o bilhete seja impresso (emitido) somente se a quantia total inserida pelo cliente for maior ou igual ao preço do bilhete. Caso contrário, deve-se imprimir na tela uma mensagem infomando quanto falta ser inserido para que o bilhete possa ser emitido.
-:::
-
-. . .
-
-:::{.callout-note title="Tarefa 3" icon=false .fontsize90}
-Altere novamente o código do método `imprimirBilhete` para que, ao imprimir o bilhete, o valor do atributo `saldo` corresponda ao troco a ser entregue para o cliente. Em seguida, nesse mesmo método, se houver troco a ser entregue para o cliente, imprima na tela a mensagem "Recolha o seu troco de $x$ centavos.", onde $x$ é o valor do troco do cliente. O valor de $x$ deve ser retornado a partir da chamada de um método novo denominado `retornarTroco` que deve ser implementado por você. Ao implementar o método `retornarTroco`, lembre-se que o valor do atributo `saldo` deve ser zerado para que o próximo cliente possa começar a sua compra. Por fim, verifique se o valor do atributo `total` está sendo corretamente atualizado no método `imprimirBilhete` quando o cliente recebe troco e, em caso negativo, faça os ajustes necessários para corrigi-lo.
-:::
-
-
-## 
-:::{.callout-note title="Tarefa 4" icon=false .fontsize90}
-Execute a sua implementação e verifique se ela está funcionando corretamente após todas as alterações que você realizou na classe `MaquinaBilhetes`. **Entregue** no Campus Virtual a **versão final da implementação** obtida após **todas as alterações realizadas**.
+:::{.callout-note title="Entrega" icon=false}
+Execute a sua implementação e verifique se ela está funcionando corretamente após a inclusão de código na classe `App`. Não deixe de **entregar** no Campus Virtual a **versão final da sua implementação**.
 :::
