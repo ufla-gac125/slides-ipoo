@@ -1,0 +1,92 @@
+---
+title: Objetos na Memória e Sobrecarga<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Conteúdo desta Aula  
+
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+
+::: {.column width="30%"}
+![](figuras/professor1-1.png){fig-alt="Professor1-1" fig-align="center"}
+:::
+
+::: {.column width="70%"}
+::: {.nonincremental}
+::: {style="font-size: 120%;"}
+- Criação de Objetos
+- Sobrecarga
+:::
+:::
+:::
+
+::::
+
+
+## Criação de Objetos
+
+- Para criar um objeto devemos usar a palavra-chave **new**.
+- Vamos supor que temos uma classe `ContaBancaria` e desejamos criar um objeto a partir dessa classe. Como fazer?
+```{.java code-line-numbers="false"}
+ContaBancaria minhaConta;
+minhaConta = new ContaBancaria();
+```
+- O que estamos fazendo na primeira linha? Criando um objeto?
+    - Não!
+    - E também não estamos declarando um objeto, mas sim uma variável que poderá referenciar um objeto.
+- E na segunda linha, estamos criando um objeto?
+    - Sim, pois quando utilizamos o comando **new**, o construtor da classe é chamado.
+    - A atribuição (sinal =) faz com que a variável `minhaConta` referencie o objeto criado.
+
+
+## Criação de Objetos na Memória
+
+![](figuras/investigar_objeto_memoria.png){fig-alt="Objeto_memoria" fig-align="center"}
+
+
+## Criação de Objetos na Memória
+
+::::{.columns style='display: flex !important; height: 70%; align-items: top;'}
+
+::: {.column width="54%"}
+```{.java code-line-numbers="false"}
+public class ContaBancaria{
+    private int numero;//Número da conta
+    private String nome;//Nome do titular da conta
+    private float saldo;//Saldo da conta
+
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    public String getNome(){
+        return nome;
+    }
+}
+```
+:::
+
+::: {.column width="46%"}
+```{.java code-line-numbers="false"}
+public class App{
+    public static void main(String[] args){
+        ContaBancaria minhaConta;
+        minhaConta = new ContaBancaria();
+    }
+}
+```
+![](figuras/modelo_memoria1.png){fig-alt="Modelo_memoria1" fig-align="center" width=100%}
+
+![](figuras/modelo_memoria2.png){fig-alt="Modelo_memoria2" fig-align="center" width=100%}
+
+![](figuras/modelo_memoria3.png){fig-alt="Modelo_memoria3" fig-align="center" width=100%}
+
+![](figuras/modelo_memoria4.png){fig-alt="Modelo_memoria4" fig-align="center" width=100%}
+
+:::
+
+::::
+
+
