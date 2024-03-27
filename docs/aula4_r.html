@@ -468,13 +468,14 @@
 <span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span><span class="co">//Nome do titular da conta</span></span>
 <span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">float</span> saldo<span class="op">;</span><span class="co">//Saldo da conta</span></span>
 <span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">setNome</span><span class="op">(</span><span class="bu">String</span> nome<span class="op">){</span></span>
-<span id="cb2-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">nome</span> <span class="op">=</span> nome<span class="op">;</span></span>
+<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getNumero</span><span class="op">(){</span></span>
+<span id="cb2-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> numero<span class="op">;</span></span>
 <span id="cb2-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb2-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getNome</span><span class="op">(){</span></span>
 <span id="cb2-10"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> nome<span class="op">;</span></span>
 <span id="cb2-11"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb2-12"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-12"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Outros métodos omitidos</span></span>
+<span id="cb2-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:46%;">
 <div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
 <span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
@@ -504,6 +505,237 @@
 </div>
 </div>
 </div>
+</section>
+<section id="variáveis-e-objetos" class="slide level2">
+<h2>Variáveis e Objetos</h2>
+<p>No exemplo anterior existe uma variável que guarda um endereço.</p>
+<div class="fragment">
+<p>Então essa variável não seria um ponteiro?</p>
+<ul>
+<li class="fragment">Certamente! Tecnicamente as variáveis de objetos em Java são ponteiros.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Mas já ouvimos dizer que pelo fato de Java não ter ponteiros, ela é mais segura que C++. E agora?</p>
+<ul>
+<li class="fragment">Apesar de a variável ser um ponteiro, Java não permite que você faça as operações de ponteiro com a variável.</li>
+<li class="fragment">Isso ajuda a eliminar os principais riscos de uso de ponteiros.</li>
+</ul>
+</div>
+</section>
+<section id="construtor" class="slide level2">
+<h2>Construtor</h2>
+<p>Já aprendemos que quando o comando <strong>new</strong> é utilizado, além de se criar o objeto, o construtor do objeto é chamado.</p>
+<div class="fragment">
+<p>Mas o que acontece se criarmos uma classe sem um construtor? Será possível criar objetos dessa classe?</p>
+<ul>
+<li class="fragment">Sim, é possível criar objetos dessa classe.</li>
+<li class="fragment">Isso porque Java cria (internamente) um construtor padrão (sem parâmetros).</li>
+<li class="fragment">O construtor padrão inicializa os atributos dos objetos:
+<ul>
+<li class="fragment">Com valores padrões para tipos primitivos (int, float <span class="math inline">\(\ldots\)</span>).</li>
+<li class="fragment">Com <em>null</em> para tipos por referência (variáveis de objetos).</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="construtor-1" class="slide level2">
+<h2>Construtor</h2>
+<div class="columns" style="display: flex !important; height: 60%; align-items: top;">
+<div class="column fontsize80" style="width:46%;">
+<p>Se utilizássemos o construtor padrão da classe <code>ContaBancaria</code>, um objeto dessa classe teria seus atributos incializados com valores padrão do Java:</p>
+<ul>
+<li><code>numero</code> = 0</li>
+<li><code>nome</code> = <em>null</em></li>
+<li><code>saldo</code> = 0.0f</li>
+</ul>
+</div><div class="column" style="width:54%;">
+<div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
+<span id="cb4-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> numero<span class="op">;</span><span class="co">//Número da conta</span></span>
+<span id="cb4-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span><span class="co">//Nome do titular da conta</span></span>
+<span id="cb4-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">float</span> saldo<span class="op">;</span><span class="co">//Saldo da conta</span></span>
+<span id="cb4-5"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Classe sem construtor</span></span>
+<span id="cb4-7"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getNumero</span><span class="op">(){</span></span>
+<span id="cb4-9"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> numero<span class="op">;</span></span>
+<span id="cb4-10"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-11"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getNome</span><span class="op">(){</span></span>
+<span id="cb4-13"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> nome<span class="op">;</span></span>
+<span id="cb4-14"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-15"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Outros métodos omitidos</span></span>
+<span id="cb4-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="fontsize80 fragment">
+<p>Mas uma conta bancária sem um titular é uma conta válida?</p>
+<ul>
+<li class="fragment">Certamente não! Sem um número, um titular e um saldo não temos uma conta válida.</li>
+</ul>
+</div>
+<div class="fontsize80 fragment">
+<p>Portanto, o construtor precisa garantir que o estado inicial dos objetos da classe seja um estado válido.</p>
+</div>
+</section>
+<section id="construtor-padrão" class="slide level2">
+<h2>Construtor Padrão</h2>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:50.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div><div class="column" style="width:70%;">
+<p>Se a classe tiver <strong>apenas</strong> um construtor com parâmetros, posso usar o construtor padrão do Java?</p>
+<ul>
+<li class="fragment">Não, exceto se você tiver implementado um construtor igual ao construtor padrão do Java.</li>
+</ul>
+<div class="fragment">
+<p>Por que?</p>
+<ul>
+<li class="fragment">Porque se Java permitisse isso, seria impossível que o programador garantisse que os objetos tenham sempre um estado inicial válido.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="classe-contabancaria-completa" class="slide level2">
+<h2>Classe <code>ContaBancaria</code> Completa</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
+<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> numero<span class="op">;</span><span class="co">//Número da conta</span></span>
+<span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span><span class="co">//Nome do titular da conta</span></span>
+<span id="cb5-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">float</span> saldo<span class="op">;</span><span class="co">//Saldo da conta</span></span>
+<span id="cb5-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Construtor</span></span>
+<span id="cb5-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">ContaBancaria</span><span class="op">(</span><span class="dt">int</span> numero<span class="op">,</span> <span class="bu">String</span> nome<span class="op">){</span></span>
+<span id="cb5-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">numero</span> <span class="op">=</span> numero<span class="op">;</span></span>
+<span id="cb5-8"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">nome</span> <span class="op">=</span> nome<span class="op">;</span></span>
+<span id="cb5-9"><a href="" aria-hidden="true" tabindex="-1"></a>        saldo <span class="op">=</span> <span class="fl">0.0f</span><span class="op">;</span></span>
+<span id="cb5-10"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-11"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getNumero</span><span class="op">(){</span></span>
+<span id="cb5-13"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> numero<span class="op">;</span></span>
+<span id="cb5-14"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-15"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getNome</span><span class="op">(){</span></span>
+<span id="cb5-17"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> nome<span class="op">;</span></span>
+<span id="cb5-18"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-19"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">float</span> <span class="fu">getSaldo</span><span class="op">(){</span></span>
+<span id="cb5-21"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> saldo<span class="op">;</span></span>
+<span id="cb5-22"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-23"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-24"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> valor<span class="op">){</span></span>
+<span id="cb5-25"><a href="" aria-hidden="true" tabindex="-1"></a>        saldo <span class="op">+=</span> valor<span class="op">;</span></span>
+<span id="cb5-26"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-27"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">sacar</span><span class="op">(</span><span class="dt">float</span> valor<span class="op">){</span></span>
+<span id="cb5-29"><a href="" aria-hidden="true" tabindex="-1"></a>        saldo <span class="op">-=</span> valor<span class="op">;</span></span>
+<span id="cb5-30"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-31"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sobrecarga-de-métodos" class="slide level2">
+<h2>Sobrecarga de Métodos</h2>
+<div class="columns fontsize90" style="display: flex !important; align-items: top;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div><div class="column" style="width:70%;">
+<p><strong>Métodos</strong> com o <strong>mesmo nome</strong> podem ser <strong>declarados</strong> na <strong>mesma classe</strong>?</p>
+<ul>
+<li class="fragment">Sim, desde que tenham <span class="alert">diferentes conjuntos de parâmetros</span>.</li>
+<li class="fragment">Os conjuntos de parâmetros são determinados pelo <span class="alert">número</span>, <span class="alert">tipos</span> e <span class="alert">ordem</span> dos parâmetros.</li>
+</ul>
+</div>
+</div>
+<div class="columns fragment fontsize90" style="display: flex !important; align-items: center;">
+<div class="column" style="width:70%;">
+<p>Isso é o que chamamos de <strong>sobrecarga de métodos</strong>!</p>
+<ul>
+<li class="fragment">Quando um método sobregarregado é chamado, o compilador Java seleciona o método adequado examinando o <span class="alert">número</span>, os <span class="alert">tipos</span> e a <span class="alert">ordem</span> dos argumentos na chamada.</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/professor2_metade.png" class="quarto-figure quarto-figure-center" style="width:40.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sobrecarga-de-métodos-1" class="slide level2">
+<h2>Sobrecarga de Métodos</h2>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:40.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div><div class="column" style="width:70%;">
+<p><strong>Para que serve a sobrecarga de métodos?</strong></p>
+<ul>
+<li class="fragment">Ela é comumente utilizada para criar vários métodos com o <strong>mesmo nome</strong> que realizam as <strong>mesmas tarefas</strong> (ou tarefas <strong>semelhantes</strong>), mas sobre <strong>conjuntos de parâmetros diferentes</strong>.</li>
+</ul>
+</div>
+</div>
+<div class="fragment" title="Observação">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Vale ressaltar que além dos métodos, os construtores também podem ser sobrecarregados.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sobrecarga-de-métodos-2" class="slide level2">
+<h2>Sobrecarga de Métodos</h2>
+<p>Posso criar dois métodos sobrecarregados com a mesma quantidade de parâmetros, dos mesmos tipos, mas com ?</p>
+<ul>
+<li class="fragment">Exemplo:</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java fragment code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> aluguel<span class="op">);</span></span>
+<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> salario<span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">O que pode ou não ser feito em termos de sobrecarga tem a ver com o que o compilador consegue identificar.</li>
+<li class="fragment">No exemplo anterior, imagine a chamada:</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java fragment code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a>minhaConta<span class="op">.</span><span class="fu">depositar</span><span class="op">(</span><span class="fl">2000.00</span><span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">Como o compilador definiria qual dos métodos está sendo chamado?</li>
+<li class="fragment">O compilador não consegue! Portanto, não podemos criar métodos sobrecarregados desse modo.</li>
+</ul>
+</section>
+<section id="sobrecarga-de-métodos-3" class="slide level2">
+<h2>Sobrecarga de Métodos</h2>
+<p>E agora? Posso criar dois métodos sobrecarregados como os declarados a seguir?</p>
+<ul>
+<li class="fragment">Exemplo: ( , );\ ( , );</li>
+<li class="fragment"></li>
+</ul>
+</section>
+<section id="sobrecarga-de-métodos-4" class="slide level2">
+<h2>Sobrecarga de Métodos</h2>
+<p>Eu posso criar dois métodos sobrecarregados com os mesmos parâmetros, mas com diferentes?</p>
+<ul>
+<li class="fragment"><p>Exemplo: ( );\ ( );</p></li>
+<li class="fragment"></li>
+<li class="fragment"></li>
+<li class="fragment"><p>\uncover&lt;4-&gt;{Mas e se eu não usar o valor retornado por uma chamada de método?</p></li>
+<li class="fragment"><p>Por exemplo, eu poderia chamar o método da seguinte forma: .(``poupanca’’);}</p></li>
+<li class="fragment"><p>\end{itemize}</p></li>
+<li class="fragment"></li>
+</ul>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
