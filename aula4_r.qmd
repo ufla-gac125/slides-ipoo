@@ -390,50 +390,57 @@ int a = minhaConta.resgatar("poupanca");
 
 ## Identidade dos Objetos
 
-Considere o seguinte trecho de código:}
-  \textbf{ContaBancaria}  \textit{minhaConta} = \textbf{new} ContaBancaria( );\\
-  \textbf{ContaBancaria}  \textit{outraConta} = \textbf{new} ContaBancaria( );
+Considere o seguinte trecho de código:
+```{.java code-line-numbers="false"}
+ContaBancaria minhaConta = new ContaBancaria();
+ContaBancaria outraConta = new ContaBancaria();
+```
 
-   Quantos objetos existem? Qual é a identidade de cada objeto?
- 
-    \uncover<2->{Nós tendemos a pensar que a variável representa a identidade do objeto.}
-  
- 
+:::{.fontsize90}
+- Quantos objetos existem? Qual é a identidade de cada objeto?
+    - Nós tendemos a pensar que a variável representa a identidade do objeto.
+:::
 
-{Considere agora esse outro trecho de código:}<3->
-  \textbf{ContaBancaria}  \textit{minhaConta} = \textbf{new} ContaBancaria( );\\
-  \textbf{ContaBancaria}  \textit{outraConta} = \textit{minhaConta};
+:::{.fragment .fontsize90}
+Considere agora esse outro trecho de código:
+```{.java code-line-numbers="false"}
+ContaBancaria minhaConta = new ContaBancaria();
+ContaBancaria outraConta = minhaConta;
+```
+:::
 
-   Quantos objetos existem? Qual é a identidade de cada objeto?
- 
-    \uncover<4->{Esses exemplos mostram que a variável não pode ser a identidade do objeto. Veja que nesse último caso temos duas variáveis e apenas um objeto.}
-
+:::{.fontsize90}
+- Quantos objetos existem? Qual é a identidade de cada objeto?
+    - Esses exemplos mostram que a variável não pode ser a identidade do objeto. Veja que nesse último caso temos duas variáveis e apenas um objeto.
+:::
 
 ## Identidade dos Objetos
 
-Voltando ao trecho de código:}
-  \textbf{ContaBancaria}  \textit{minhaConta} = \textbf{new} ContaBancaria( );\\
-  \textbf{ContaBancaria}  \textit{outraConta} = \textbf{new} ContaBancaria( );
+[Voltando ao trecho de código:]{.fontsize90}
+```{.java code-line-numbers="false"}
+ContaBancaria minhaConta = new ContaBancaria();
+ContaBancaria outraConta = new ContaBancaria();
+```
+:::{.fontsize90}
+- Os dois **objetos** são **criados** usando o **mesmo construtor**, portanto:
+    - Eles têm os mesmos valores de atributos.
+    - Possuem os mesmos métodos.
 
-   Os dois objetos são criados usando o mesmo construtor, portanto:
- 
-    Eles têm os mesmos valores de atributos.
-    Possuem os mesmos métodos.
-  
-   \uncover<2->{Então o que define que eles são diferentes?}
- 
-    \uncover<3->{Já vimos que uma variável de objeto armazena o endereço do objeto na \textit{Heap}. 
-    Portanto, a \textbf{identidade do objeto} é dada pelo seu \textbf{endereço de memória}!
-
+- Então o que define que **eles são diferentes**?
+    - Já vimos que uma **variável de objeto** armazena o **endereço** do objeto na *Heap*. 
+    - Portanto, a [identidade do objeto]{.alert} é dada pelo seu [endereço de memória]{.alert}!
+:::
 
 ## Comparando Objetos ou Variáveis?
 
-Voltando ao nosso exemplo anterior:}
-  \textbf{ContaBancaria}  \textit{minhaConta} = \textbf{new} ContaBancaria( );\\
-  \textbf{ContaBancaria}  \textit{outraConta} = \textbf{new} ContaBancaria( );\\
-  boolean \textit{saoIguais} = (\textit{minhaConta} == \textit{outraConta});
+Voltando ao nosso exemplo anterior:
+```{.java code-line-numbers="false"}
+ContaBancaria minhaConta = new ContaBancaria();
+ContaBancaria outraConta = new ContaBancaria();
+boolean saoIguais = (minhaConta == outraConta);
+```
 
-   Qual seria o valor da variável \textit{saoIguais}? Por que?
+- Qual seria o valor da variável \textit{saoIguais}? Por que?
  
     \uncover<2->{O operador == está comparando variáveis (e não objetos)!}
     \uncover<3->{Nesse caso, está se comparando se as variáveis referenciam o mesmo objeto (mesmo endereço de memória).}

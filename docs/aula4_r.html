@@ -774,6 +774,78 @@
 <li class="fragment">Portanto, também <strong>não</strong> é possível declarar <strong>métodos sobrecarregados</strong> desse modo.</li>
 </ul>
 </div>
+</section>
+<section id="identidade-dos-objetos" class="slide level2">
+<h2>Identidade dos Objetos</h2>
+<p>Considere o seguinte trecho de código:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria minhaConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
+<span id="cb11-2"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria outraConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fontsize90">
+<ul>
+<li class="fragment">Quantos objetos existem? Qual é a identidade de cada objeto?
+<ul>
+<li class="fragment">Nós tendemos a pensar que a variável representa a identidade do objeto.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment fontsize90">
+<p>Considere agora esse outro trecho de código:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb12-1"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria minhaConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
+<span id="cb12-2"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria outraConta <span class="op">=</span> minhaConta<span class="op">;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fontsize90">
+<ul>
+<li class="fragment">Quantos objetos existem? Qual é a identidade de cada objeto?
+<ul>
+<li class="fragment">Esses exemplos mostram que a variável não pode ser a identidade do objeto. Veja que nesse último caso temos duas variáveis e apenas um objeto.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="identidade-dos-objetos-1" class="slide level2">
+<h2>Identidade dos Objetos</h2>
+<p><span class="fontsize90">Voltando ao trecho de código:</span></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb13-1"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria minhaConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
+<span id="cb13-2"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria outraConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fontsize90">
+<ul>
+<li class="fragment">Os dois <strong>objetos</strong> são <strong>criados</strong> usando o <strong>mesmo construtor</strong>, portanto:
+<ul>
+<li class="fragment">Eles têm os mesmos valores de atributos.</li>
+<li class="fragment">Possuem os mesmos métodos.</li>
+</ul></li>
+<li class="fragment">Então o que define que <strong>eles são diferentes</strong>?
+<ul>
+<li class="fragment">Já vimos que uma <strong>variável de objeto</strong> armazena o <strong>endereço</strong> do objeto na <em>Heap</em>.</li>
+<li class="fragment">Portanto, a <span class="alert">identidade do objeto</span> é dada pelo seu <span class="alert">endereço de memória</span>!</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="comparando-objetos-ou-variáveis" class="slide level2">
+<h2>Comparando Objetos ou Variáveis?</h2>
+<p>Voltando ao nosso exemplo anterior:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb14-1"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria minhaConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
+<span id="cb14-2"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria outraConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
+<span id="cb14-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">boolean</span> saoIguais <span class="op">=</span> <span class="op">(</span>minhaConta <span class="op">==</span> outraConta<span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><p>Qual seria o valor da variável ? Por que?</p>
+<p> \uncover&lt;4-&gt;{Desse modo, ainda que os objetos sejam iguais (tenham o mesmo estado), a variável recebe o valor pelo fato de as variáveis referenciarem objetos distintos.</p></li>
+</ul>
+</section>
+<section id="comparando-objetos-ou-variáveis-1" class="slide level2">
+<h2>Comparando Objetos ou Variáveis?</h2>
+<p>Seguindo o mesmo raciocínio, analise o trecho de código a seguir:} = ContaBancaria( );\ = ;\ boolean = ( == );</p>
+<p>Qual seria o valor da variável ? Por que?</p>
+<pre><code>\uncover&lt;2-&gt;{Nesse caso o resultado é \textit{true}, uma vez que as duas variáveis referenciam o mesmo objeto.</code></pre>
+</section>
+<section id="comparando-objetos-ou-variáveis-2" class="slide level2">
+<h2>Comparando Objetos ou Variáveis?</h2>
+<p>Como fazer então para comparar se dois objetos são iguais?}</p>
+<p> </p>
+<pre><code>\uncover&lt;4-&gt;{Poderíamos criar em uma classe um método denominado \textit{saoIguais} que receba por parâmetro um objeto da mesma classe.
+O corpo desse método implementa a comparação entre os atributos do objeto em questão com aqueles do objeto passado por parâmetro.}</code></pre>
+<p>\uncover&lt;5-&gt;{Como esse tipo de comparação é frequentemente necessário, a linguagem Java disponibiliza um método que implementa isso.</p>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
