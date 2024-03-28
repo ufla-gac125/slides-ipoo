@@ -11,7 +11,7 @@
 <script src="aula4_r_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula4_r_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula4_r_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Objetos na Memória e Sobrecarga </title>
@@ -692,7 +692,7 @@
 <p><strong>Observação</strong></p>
 </div>
 <div class="callout-content">
-<p>Vale ressaltar que além dos métodos, os construtores também podem ser sobrecarregados.</p>
+<p>Vale ressaltar que além dos métodos, os <strong>construtores</strong> também podem ser <strong>sobrecarregados</strong>.</p>
 </div>
 </div>
 </div>
@@ -700,42 +700,80 @@
 </section>
 <section id="sobrecarga-de-métodos-2" class="slide level2">
 <h2>Sobrecarga de Métodos</h2>
-<p>Posso criar dois métodos sobrecarregados com a mesma quantidade de parâmetros, dos mesmos tipos, mas com ?</p>
-<ul>
-<li class="fragment">Exemplo:</li>
-</ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java fragment code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> aluguel<span class="op">);</span></span>
+<p><span class="fontsize80">Posso criar dois métodos sobrecarregados com a mesma quantidade de parâmetros, dos mesmos tipos, mas com <strong>nomes diferentes</strong>?</span></p>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:15%;">
+<p><strong>Exemplo:</strong></p>
+</div><div class="column" style="width:85%;">
+<div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> aluguel<span class="op">);</span></span>
 <span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> salario<span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 <ul>
-<li class="fragment">O que pode ou não ser feito em termos de sobrecarga tem a ver com o que o compilador consegue identificar.</li>
-<li class="fragment">No exemplo anterior, imagine a chamada:</li>
+<li class="fragment"><span class="fontsize80">O que <strong>pode ou não</strong> ser feito em <strong>termos de sobrecarga</strong> tem a ver com o que o <strong>compilador consegue identificar</strong></span>.</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode java fragment code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a>minhaConta<span class="op">.</span><span class="fu">depositar</span><span class="op">(</span><span class="fl">2000.00</span><span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="columns fragment" style="display: flex !important; align-items: center;">
+<div class="column" style="width:50%;">
+<ul>
+<li><span class="fontsize80">No exemplo anterior, imagine a chamada:</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a>minhaConta<span class="op">.</span><span class="fu">depositar</span><span class="op">(</span><span class="fl">2000.00</span><span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fontsize80">
 <ul>
 <li class="fragment">Como o compilador definiria qual dos métodos está sendo chamado?</li>
-<li class="fragment">O compilador não consegue! Portanto, não podemos criar métodos sobrecarregados desse modo.</li>
+<li class="fragment">O compilador <strong>não consegue</strong>! Portanto, <strong>não podemos</strong> criar métodos sobrecarregados desse modo.</li>
 </ul>
+</div>
 </section>
 <section id="sobrecarga-de-métodos-3" class="slide level2">
 <h2>Sobrecarga de Métodos</h2>
-<p>E agora? Posso criar dois métodos sobrecarregados como os declarados a seguir?</p>
+<p><span class="fontsize90">E agora? Posso criar dois métodos sobrecarregados como os declarados a seguir?</span></p>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:15%;">
+<p><strong>Exemplo:</strong></p>
+</div><div class="column" style="width:85%;">
+<div class="sourceCode" id="cb8"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">metodoX</span><span class="op">(</span><span class="dt">int</span> a<span class="op">,</span> <span class="dt">float</span> b<span class="op">);</span></span>
+<span id="cb8-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">metodoX</span><span class="op">(</span><span class="dt">float</span> a<span class="op">,</span> <span class="dt">int</span> b<span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 <ul>
-<li class="fragment">Exemplo: ( , );\ ( , );</li>
-<li class="fragment"></li>
+<li class="fragment"><span class="fontsize90">Sim, pois a ordem dos tipos dos parâmetros é distinta!</span></li>
 </ul>
 </section>
 <section id="sobrecarga-de-métodos-4" class="slide level2">
 <h2>Sobrecarga de Métodos</h2>
-<p>Eu posso criar dois métodos sobrecarregados com os mesmos parâmetros, mas com diferentes?</p>
+<p><span class="fontsize80">Eu posso criar dois métodos sobrecarregados com os mesmos parâmetros, mas com <strong>tipos de retorno</strong> diferentes?</span></p>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:15%;">
+<p><strong>Exemplo:</strong></p>
+</div><div class="column" style="width:85%;">
+<div class="sourceCode" id="cb9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">int</span> <span class="fu">resgatar</span><span class="op">(</span><span class="bu">String</span> aplicacao<span class="op">);</span></span>
+<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">float</span> <span class="fu">resgatar</span><span class="op">(</span><span class="bu">String</span> aplicacao<span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="columns fragment" style="display: flex !important; align-items: center;">
+<div class="column fontsize80" style="width:55%;">
 <ul>
-<li class="fragment"><p>Exemplo: ( );\ ( );</p></li>
-<li class="fragment"></li>
-<li class="fragment"></li>
-<li class="fragment"><p>\uncover&lt;4-&gt;{Mas e se eu não usar o valor retornado por uma chamada de método?</p></li>
-<li class="fragment"><p>Por exemplo, eu poderia chamar o método da seguinte forma: .(``poupanca’’);}</p></li>
-<li class="fragment"><p>\end{itemize}</p></li>
-<li class="fragment"></li>
+<li>Novamente, vamos pensar em uma chamada.</li>
 </ul>
+</div><div class="column" style="width:45%;">
+<div class="sourceCode" id="cb10"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> minhaConta<span class="op">.</span><span class="fu">resgatar</span><span class="op">(</span><span class="st">"poupanca"</span><span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fontsize80">
+<ul>
+<li class="fragment">Humm… nesse caso parece que sim, pois o compilador sabe que a variável <code>a</code> é do tipo <strong>int</strong>.</li>
+<li class="fragment">Mas e se eu não usar o valor retornado por uma chamada de método?
+<ul>
+<li class="fragment"><span class="fontsize90">Por exemplo, eu poderia chamar o método da seguinte forma:</span> <span class="fontsize75">minhaConta.<code>resgatar</code>(<span style="color:darkblue;">“poupanca”</span>);</span></li>
+<li class="fragment">Nesse caso, o compilador <strong>não consegue definir</strong> qual <strong>método</strong> deverá ser <strong>chamado</strong>.</li>
+</ul></li>
+<li class="fragment">Portanto, também <strong>não</strong> é possível declarar <strong>métodos sobrecarregados</strong> desse modo.</li>
+</ul>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">

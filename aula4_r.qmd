@@ -281,49 +281,185 @@ Isso é o que chamamos de **sobrecarga de métodos**!
 ::::
 
 :::{.callout-important title="Observação" icon=false .fragment}
-Vale ressaltar que além dos métodos, os construtores também podem ser sobrecarregados.
+Vale ressaltar que além dos métodos, os **construtores** também podem ser **sobrecarregados**.
 :::
 
 
 ## Sobrecarga de Métodos
 
-Posso criar dois métodos sobrecarregados com a mesma quantidade de parâmetros, dos mesmos tipos, mas com \underline{nomes diferentes}?
- 
--  Exemplo: 
-```{.java code-line-numbers="false" .fragment}
+[Posso criar dois métodos sobrecarregados com a mesma quantidade de parâmetros, dos mesmos tipos, mas com **nomes diferentes**?]{.fontsize80}
+
+::::{.columns style='display: flex !important; align-items: center;' .nonincremental}
+
+::: {.column width="15%"}
+**Exemplo:**
+:::
+
+::: {.column width="85%"} 
+```{.java code-line-numbers="false"}
 public void depositar(float aluguel);
 public void depositar(float salario);
 ```
-- O que pode ou não ser feito em termos de sobrecarga tem a ver com o que o compilador consegue identificar.
-- No exemplo anterior, imagine a chamada:
-```{.java code-line-numbers="false" .fragment}
+:::
+
+::::
+
+- [O que **pode ou não** ser feito em **termos de sobrecarga** tem a ver com o que o **compilador consegue identificar**]{.fontsize80}.
+
+::::{.columns style='display: flex !important; align-items: center;' .fragment}
+
+::: {.column width="50%" .nonincremental}
+- [No exemplo anterior, imagine a chamada:]{.fontsize80}
+:::
+
+::: {.column width="50%"}
+```{.java code-line-numbers="false"}
 minhaConta.depositar(2000.00);
 ```
+:::
+
+::::
+
+:::{.fontsize80}
 - Como o compilador definiria qual dos métodos está sendo chamado?
-- O compilador não consegue! Portanto, não podemos criar métodos sobrecarregados desse modo.
+- O compilador **não consegue**! Portanto, **não podemos** criar métodos sobrecarregados desse modo.
+:::
 
 
 ## Sobrecarga de Métodos
 
-E agora? Posso criar dois métodos sobrecarregados como os declarados a seguir?
+[E agora? Posso criar dois métodos sobrecarregados como os declarados a seguir?]{.fontsize90}
+
+::::{.columns style='display: flex !important; align-items: center;' .nonincremental}
+
+::: {.column width="15%"}
+**Exemplo:**
+:::
+
+::: {.column width="85%"} 
+```{.java code-line-numbers="false"}
+public void metodoX(int a, float b);
+public void metodoX(float a, int b);
+```
+:::
+::::
  
--  Exemplo: \textbf{void} \textit{metodo1}(\textbf{int} \textit{a}, \textbf{float} \textit{b});\\
-\hspace{1.6cm} \textbf{void} \textit{metodo1}(\textbf{float} \textit{a}, \textbf{int} \textit{b});
--  \uncover<2->{Sim, pois a ordem dos tipos de parâmetros é distinta!}
+- [Sim, pois a ordem dos tipos dos parâmetros é distinta!]{.fontsize90}
 
 
 ## Sobrecarga de Métodos
 
-Eu posso criar dois métodos sobrecarregados com os mesmos parâmetros, mas com \underline{tipos de retorno} diferentes?
- 
--  Exemplo: \textbf{int} \textit{resgatar}(\textbf{String} \textit{aplicacao});\\
-\hspace{1.6cm} \textbf{float} \textit{resgatar}(\textbf{String} \textit{aplicacao});
--  \uncover<2->{Novamente, vamos pensar em um exemplo de chamada.\\
-\hspace{1cm} \textbf{int} \textit{a} = \textit{minhaConta}.\textit{resgatar}(``poupanca'');}
--  \uncover<3->{Hummm... nesse caso parece que sim, pois o compilador sabe que a variável \textit{a} é do tipo \textbf{int}.}
--  \uncover<4->{Mas e se eu não usar o valor retornado por uma chamada de método?
+[Eu posso criar dois métodos sobrecarregados com os mesmos parâmetros, mas com **tipos de retorno** diferentes?
+]{.fontsize80}
 
--  Por exemplo, eu poderia chamar o método da seguinte forma: \textit{minhaConta}.\textit{resgatar}(``poupanca'');}
--  \uncover<5->{Nesse caso, o compilador não consegue definir qual método deverá ser chamado.}
-\end{itemize}
--  \uncover<6->{Portanto, também não é possível declarar métodos sobrecarregados desse modo.}
+::::{.columns style='display: flex !important; align-items: center;' .nonincremental}
+
+::: {.column width="15%"}
+**Exemplo:**
+:::
+
+::: {.column width="85%"} 
+```{.java code-line-numbers="false"}
+public int resgatar(String aplicacao);
+public float resgatar(String aplicacao);
+```
+:::
+::::
+
+::::{.columns style='display: flex !important; align-items: center;' .fragment}
+
+::: {.column width="55%" .fontsize80 .nonincremental}
+- Novamente, vamos pensar em uma chamada.
+:::
+
+::: {.column width="45%"} 
+```{.java code-line-numbers="false"}
+int a = minhaConta.resgatar("poupanca");
+```
+:::
+::::
+
+:::{.fontsize80}
+- Humm... nesse caso parece que sim, pois o compilador sabe que a variável `a` é do tipo **int**.
+- Mas e se eu não usar o valor retornado por uma chamada de método?
+    - [Por exemplo, eu poderia chamar o método da seguinte forma:]{.fontsize90} [minhaConta.`resgatar`(["poupanca"]{style="color:darkblue;"});]{.fontsize75}
+    - Nesse caso, o compilador **não consegue definir** qual **método** deverá ser **chamado**.
+- Portanto, também **não** é possível declarar **métodos sobrecarregados** desse modo.
+:::
+
+
+## Identidade dos Objetos
+
+Considere o seguinte trecho de código:}
+  \textbf{ContaBancaria}  \textit{minhaConta} = \textbf{new} ContaBancaria( );\\
+  \textbf{ContaBancaria}  \textit{outraConta} = \textbf{new} ContaBancaria( );
+
+   Quantos objetos existem? Qual é a identidade de cada objeto?
+ 
+    \uncover<2->{Nós tendemos a pensar que a variável representa a identidade do objeto.}
+  
+ 
+
+{Considere agora esse outro trecho de código:}<3->
+  \textbf{ContaBancaria}  \textit{minhaConta} = \textbf{new} ContaBancaria( );\\
+  \textbf{ContaBancaria}  \textit{outraConta} = \textit{minhaConta};
+
+   Quantos objetos existem? Qual é a identidade de cada objeto?
+ 
+    \uncover<4->{Esses exemplos mostram que a variável não pode ser a identidade do objeto. Veja que nesse último caso temos duas variáveis e apenas um objeto.}
+
+
+## Identidade dos Objetos
+
+Voltando ao trecho de código:}
+  \textbf{ContaBancaria}  \textit{minhaConta} = \textbf{new} ContaBancaria( );\\
+  \textbf{ContaBancaria}  \textit{outraConta} = \textbf{new} ContaBancaria( );
+
+   Os dois objetos são criados usando o mesmo construtor, portanto:
+ 
+    Eles têm os mesmos valores de atributos.
+    Possuem os mesmos métodos.
+  
+   \uncover<2->{Então o que define que eles são diferentes?}
+ 
+    \uncover<3->{Já vimos que uma variável de objeto armazena o endereço do objeto na \textit{Heap}. 
+    Portanto, a \textbf{identidade do objeto} é dada pelo seu \textbf{endereço de memória}!
+
+
+## Comparando Objetos ou Variáveis?
+
+Voltando ao nosso exemplo anterior:}
+  \textbf{ContaBancaria}  \textit{minhaConta} = \textbf{new} ContaBancaria( );\\
+  \textbf{ContaBancaria}  \textit{outraConta} = \textbf{new} ContaBancaria( );\\
+  boolean \textit{saoIguais} = (\textit{minhaConta} == \textit{outraConta});
+
+   Qual seria o valor da variável \textit{saoIguais}? Por que?
+ 
+    \uncover<2->{O operador == está comparando variáveis (e não objetos)!}
+    \uncover<3->{Nesse caso, está se comparando se as variáveis referenciam o mesmo objeto (mesmo endereço de memória).}
+    \uncover<4->{Desse modo, ainda que os objetos sejam iguais (tenham o mesmo estado), a variável \textit{saoIguais} recebe o valor \textit{false} pelo fato de as variáveis referenciarem objetos distintos.
+
+
+## Comparando Objetos ou Variáveis?
+
+Seguindo o mesmo raciocínio, analise o trecho de código a seguir:}
+  \textbf{ContaBancaria}  \textit{minhaConta} = \textbf{new} ContaBancaria( );\\
+  \textbf{ContaBancaria}  \textit{outraConta} = \textit{minhaConta};\\
+  boolean \textit{saoIguais} = (\textit{minhaConta} == \textit{outraConta});
+
+   Qual seria o valor da variável \textit{saoIguais}? Por que?
+ 
+    \uncover<2->{Nesse caso o resultado é \textit{true}, uma vez que as duas variáveis referenciam o mesmo objeto.
+
+
+## Comparando Objetos ou Variáveis?
+
+Como fazer então para comparar se dois objetos são iguais?}
+ 
+   \uncover<2->{Poderíamos criar um método em uma classe para verificar se dois objetos são iguais?}
+   \uncover<3->{Como seria esse método?}
+ 
+    \uncover<4->{Poderíamos criar em uma classe um método denominado \textit{saoIguais} que receba por parâmetro um objeto da mesma classe.
+    O corpo desse método implementa a comparação entre os atributos do objeto em questão com aqueles do objeto passado por parâmetro.}
+  
+   \uncover<5->{Como esse tipo de comparação é frequentemente necessário, a linguagem Java disponibiliza um método que implementa isso.
