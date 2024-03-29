@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR"><head>
-<script src="aula4_r_files/libs/clipboard/clipboard.min.js"></script>
-<script src="aula4_r_files/libs/quarto-html/tabby.min.js"></script>
-<script src="aula4_r_files/libs/quarto-html/popper.min.js"></script>
-<script src="aula4_r_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="aula4_r_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="aula4_r_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="aula4_r_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="aula4_r_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="aula4_r_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
-<script src="aula4_r_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
-<link href="aula4_r_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
+<script src="aula4_files/libs/clipboard/clipboard.min.js"></script>
+<script src="aula4_files/libs/quarto-html/tabby.min.js"></script>
+<script src="aula4_files/libs/quarto-html/popper.min.js"></script>
+<script src="aula4_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="aula4_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="aula4_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="aula4_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="aula4_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="aula4_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
+<script src="aula4_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
+<link href="aula4_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
@@ -18,8 +18,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="aula4_r_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="aula4_r_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="aula4_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="aula4_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -98,12 +98,12 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="aula4_r_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="aula4_r_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="aula4_r_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="aula4_r_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="aula4_r_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-  <link href="aula4_r_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="aula4_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="aula4_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="aula4_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="aula4_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="aula4_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="aula4_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -423,126 +423,155 @@
 <div style="font-size: 120%;">
 <ul>
 <li>Criação de Objetos</li>
+<li>Construtores</li>
 <li>Sobrecarga</li>
+<li>Identidade de Objetos</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="criação-de-objetos" class="slide level2">
+<section>
+<section id="criação-de-objetos" class="title-slide slide level1 center" data-background-color="#fb8c0e">
+<h1>Criação de Objetos</h1>
+
+</section>
+<section id="criação-de-objetos-1" class="slide level2">
 <h2>Criação de Objetos</h2>
+<div class="fontsize90">
 <ul>
 <li class="fragment">Para criar um objeto devemos usar a palavra-chave <strong>new</strong>.</li>
 <li class="fragment">Vamos supor que temos uma classe <code>ContaBancaria</code> e desejamos criar um objeto a partir dessa classe. Como fazer?</li>
 </ul>
+</div>
+<div class="fragment">
 <div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria minhaConta<span class="op">;</span></span>
 <span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>minhaConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fontsize90">
 <ul>
-<li class="fragment">O que estamos fazendo na primeira linha? Criando um objeto?
+<li class="fragment">O que estamos fazendo na <strong>primeira linha</strong>? <strong>Criando um objeto</strong>?
 <ul>
-<li class="fragment">Não!</li>
-<li class="fragment">E também não estamos declarando um objeto, mas sim uma variável que poderá referenciar um objeto.</li>
+<li class="fragment"><strong>Não</strong>!</li>
+<li class="fragment">E também não estamos <strong>declarando</strong> um objeto, mas sim <strong>uma variável</strong> que poderá <strong>referenciar</strong> um objeto.</li>
 </ul></li>
-<li class="fragment">E na segunda linha, estamos criando um objeto?
+<li class="fragment">E na <strong>segunda linha</strong>, estamos <strong>criando um objeto</strong>?
 <ul>
-<li class="fragment">Sim, pois quando utilizamos o comando <strong>new</strong>, o construtor da classe é chamado.</li>
-<li class="fragment">A atribuição (sinal =) faz com que a variável <code>minhaConta</code> referencie o objeto criado.</li>
+<li class="fragment"><strong>Sim</strong>, pois quando utilizamos o comando <strong>new</strong> o objeto é criado.</li>
+<li class="fragment">A atribuição (sinal =) faz com que a <strong>variável</strong> <code>minhaConta</code> <strong>referencie o objeto</strong> criado.</li>
 </ul></li>
 </ul>
+</div>
 </section>
 <section id="criação-de-objetos-na-memória" class="slide level2">
 <h2>Criação de Objetos na Memória</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figuras/investigar_objeto_memoria.png" class="quarto-figure quarto-figure-center" alt="Objeto_memoria"></p>
+<p><img data-src="figuras/investigar_objeto_memoria.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Objeto_memoria"></p>
 </figure>
 </div>
 </section>
 <section id="criação-de-objetos-na-memória-1" class="slide level2">
 <h2>Criação de Objetos na Memória</h2>
 <div class="columns" style="display: flex !important; height: 70%; align-items: top;">
-<div class="column" style="width:54%;">
+<div class="column" style="width:35%;">
 <div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
-<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> numero<span class="op">;</span><span class="co">//Número da conta</span></span>
-<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span><span class="co">//Nome do titular da conta</span></span>
-<span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">float</span> saldo<span class="op">;</span><span class="co">//Saldo da conta</span></span>
-<span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getNumero</span><span class="op">(){</span></span>
-<span id="cb2-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> numero<span class="op">;</span></span>
-<span id="cb2-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb2-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getNome</span><span class="op">(){</span></span>
-<span id="cb2-10"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> nome<span class="op">;</span></span>
+<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Número da conta</span></span>
+<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> numero<span class="op">;</span></span>
+<span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Nome do titular da conta</span></span>
+<span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span></span>
+<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Saldo da conta</span></span>
+<span id="cb2-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">float</span> saldo<span class="op">;</span></span>
+<span id="cb2-8"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">getNumero</span><span class="op">(){</span></span>
+<span id="cb2-10"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> numero<span class="op">;</span></span>
 <span id="cb2-11"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb2-12"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Outros métodos omitidos</span></span>
-<span id="cb2-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:46%;">
+<span id="cb2-12"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getNome</span><span class="op">(){</span></span>
+<span id="cb2-13"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> nome<span class="op">;</span></span>
+<span id="cb2-14"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-15"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Outros métodos omitidos</span></span>
+<span id="cb2-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:55%;">
 <div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
 <span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
-<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a>        ContaBancaria minhaConta<span class="op">;</span></span>
+<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a>        ContaBancaria minhaConta<span class="op">;</span>    </span>
 <span id="cb3-4"><a href="" aria-hidden="true" tabindex="-1"></a>        minhaConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
 <span id="cb3-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb3-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="r-stack">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figuras/modelo_memoria1.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Modelo_memoria1"></p>
+<p><img data-src="figuras/modelo_memoria1.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" alt="Modelo_memoria1"></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figuras/modelo_memoria2.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Modelo_memoria2"></p>
+<p><img data-src="figuras/modelo_memoria2.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" alt="Modelo_memoria2"></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figuras/modelo_memoria3.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Modelo_memoria3"></p>
+<p><img data-src="figuras/modelo_memoria3.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" alt="Modelo_memoria3"></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figuras/modelo_memoria4.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Modelo_memoria4"></p>
+<p><img data-src="figuras/modelo_memoria4.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" alt="Modelo_memoria4"></p>
 </figure>
+</div>
 </div>
 </div>
 </div>
 </section>
 <section id="variáveis-e-objetos" class="slide level2">
 <h2>Variáveis e Objetos</h2>
-<p>No exemplo anterior existe uma variável que guarda um endereço.</p>
+<p><span class="fontsize90">No exemplo anterior existe uma <span class="alert">variável</span> que guarda um <span class="alert">endereço</span>.</span></p>
 <div class="fragment">
-<p>Então essa variável não seria um ponteiro?</p>
+<div class="fontsize90">
+<p>Então essa variável <strong>não seria um ponteiro</strong>?</p>
 <ul>
-<li class="fragment">Certamente! Tecnicamente as variáveis de objetos em Java são ponteiros.</li>
+<li class="fragment">Certamente! Tecnicamente as <span class="alert">variáveis de objetos</span> em Java <span class="alert">são ponteiros</span>.</li>
 </ul>
 </div>
+</div>
 <div class="fragment">
-<p>Mas já ouvimos dizer que pelo fato de Java não ter ponteiros, ela é mais segura que C++. E agora?</p>
+<div class="fontsize90">
+<p>Mas já ouvimos dizer que pelo fato de <strong>Java não ter ponteiros</strong>, ela é <strong>mais segura</strong> que C++. E agora?</p>
 <ul>
-<li class="fragment">Apesar de a variável ser um ponteiro, Java não permite que você faça as operações de ponteiro com a variável.</li>
-<li class="fragment">Isso ajuda a eliminar os principais riscos de uso de ponteiros.</li>
+<li class="fragment">Apesar de a variável ser um ponteiro, <strong>Java não permite</strong> que você faça as <strong>operações de ponteiro</strong> com a variável.</li>
+<li class="fragment">Isso ajuda a <strong>eliminar</strong> os <strong>principais riscos</strong> de uso de ponteiros.</li>
 </ul>
 </div>
+</div>
+</section></section>
+<section>
+<section id="construtores" class="title-slide slide level1 center" data-background-color="#fb8c0e">
+<h1>Construtores</h1>
+
 </section>
 <section id="construtor" class="slide level2">
 <h2>Construtor</h2>
-<p>Já aprendemos que quando o comando <strong>new</strong> é utilizado, além de se criar o objeto, o construtor do objeto é chamado.</p>
+<p><span class="fontsize90">Quando o <span class="alert">comando</span> <strong>new</strong> é utilizado, além de se <span class="alert">criar o objeto</span>, o <span class="alert">construtor</span> do objeto é <span class="alert">chamado</span>.</span></p>
 <div class="fragment">
-<p>Mas o que acontece se criarmos uma classe sem um construtor? Será possível criar objetos dessa classe?</p>
+<div class="fontsize90">
+<p>Mas o que acontece se <strong>criarmos</strong> uma <strong>classe sem um construtor</strong>? Será possível <strong>criar objetos</strong> dessa classe?</p>
 <ul>
-<li class="fragment">Sim, é possível criar objetos dessa classe.</li>
-<li class="fragment">Isso porque Java cria (internamente) um construtor padrão (sem parâmetros).</li>
-<li class="fragment">O construtor padrão inicializa os atributos dos objetos:
+<li class="fragment"><strong>Sim</strong>, é possível criar objetos dessa classe.</li>
+<li class="fragment">Isso porque <strong>Java cria</strong> (internamente) um <strong>construtor padrão</strong> (sem parâmetros).</li>
+<li class="fragment">O <strong>construtor padrão inicializa os atributos</strong> dos objetos:
 <ul>
-<li class="fragment">Com valores padrões para tipos primitivos (int, float <span class="math inline">\(\ldots\)</span>).</li>
-<li class="fragment">Com <em>null</em> para tipos por referência (variáveis de objetos).</li>
+<li class="fragment">Com <strong>valores padrões</strong> para <strong>tipos primitivos</strong> (int, float <span class="math inline">\(\ldots\)</span>).</li>
+<li class="fragment">Com <strong><em>null</em></strong> para <strong>tipos por referência</strong> (variáveis de objetos).</li>
 </ul></li>
 </ul>
+</div>
 </div>
 </section>
 <section id="construtor-1" class="slide level2">
 <h2>Construtor</h2>
 <div class="columns" style="display: flex !important; height: 60%; align-items: top;">
-<div class="column fontsize80" style="width:46%;">
+<div class="column fontsize75" style="width:46%;">
 <p>Se utilizássemos o construtor padrão da classe <code>ContaBancaria</code>, um objeto dessa classe teria seus atributos incializados com valores padrão do Java:</p>
 <ul>
 <li><code>numero</code> = 0</li>
@@ -554,30 +583,29 @@
 <div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
 <span id="cb4-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> numero<span class="op">;</span><span class="co">//Número da conta</span></span>
 <span id="cb4-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span><span class="co">//Nome do titular da conta</span></span>
-<span id="cb4-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">float</span> saldo<span class="op">;</span><span class="co">//Saldo da conta</span></span>
-<span id="cb4-5"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">float</span> saldo<span class="op">;</span><span class="co">//Saldo da conta </span></span>
+<span id="cb4-5"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb4-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Classe sem construtor</span></span>
-<span id="cb4-7"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getNumero</span><span class="op">(){</span></span>
+<span id="cb4-7"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">getNumero</span><span class="op">(){</span></span>
 <span id="cb4-9"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> numero<span class="op">;</span></span>
 <span id="cb4-10"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb4-11"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getNome</span><span class="op">(){</span></span>
-<span id="cb4-13"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> nome<span class="op">;</span></span>
-<span id="cb4-14"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb4-15"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Outros métodos omitidos</span></span>
-<span id="cb4-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-11"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getNome</span><span class="op">(){</span></span>
+<span id="cb4-12"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> nome<span class="op">;</span></span>
+<span id="cb4-13"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-14"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Outros métodos omitidos</span></span>
+<span id="cb4-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<div class="fontsize80 fragment">
-<p>Mas uma conta bancária sem um titular é uma conta válida?</p>
+<div class="fontsize75 fragment">
+<p>Mas uma <strong>conta bancária sem um titular</strong> é uma conta <strong>válida</strong>?</p>
 <ul>
-<li class="fragment">Certamente não! Sem um número, um titular e um saldo não temos uma conta válida.</li>
+<li class="fragment">Certamente <strong>não</strong>! Sem um número, um titular e um saldo não temos uma conta válida.</li>
 </ul>
 </div>
-<div class="fontsize80 fragment">
-<p>Portanto, o construtor precisa garantir que o estado inicial dos objetos da classe seja um estado válido.</p>
+<div class="fontsize75 fragment">
+<p>Portanto, o <strong>construtor</strong> precisa <strong>garantir</strong> que o <strong>estado inicial</strong> dos objetos da classe seja <strong>válido</strong>.</p>
 </div>
 </section>
 <section id="construtor-padrão" class="slide level2">
@@ -589,15 +617,15 @@
 <p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:50.0%" alt="Pensando"></p>
 </figure>
 </div>
-</div><div class="column" style="width:70%;">
-<p>Se a classe tiver <strong>apenas</strong> um construtor com parâmetros, posso usar o construtor padrão do Java?</p>
+</div><div class="column fontsize90" style="width:70%;">
+<p>Se a classe tiver <strong>apenas</strong> um construtor com parâmetros, <strong>posso usar</strong> o <strong>construtor padrão</strong> do Java?</p>
 <ul>
-<li class="fragment">Não, exceto se você tiver implementado um construtor igual ao construtor padrão do Java.</li>
+<li class="fragment"><strong>Não</strong>, <strong>exceto</strong> se você <strong>tiver implementado</strong> um <strong>construtor igual ao construtor padrão</strong> do Java.</li>
 </ul>
-<div class="fragment">
-<p>Por que?</p>
+<div class="fragment fontsize90">
+<p><span style="color:darkblue;"><strong>Por que?</strong></span></p>
 <ul>
-<li class="fragment">Porque se Java permitisse isso, seria impossível que o programador garantisse que os objetos tenham sempre um estado inicial válido.</li>
+<li class="fragment">Porque se Java permitisse isso, <strong>seria impossível</strong> que o programador garantisse que os objetos tenham sempre um <strong>estado inicial válido</strong>.</li>
 </ul>
 </div>
 </div>
@@ -616,7 +644,7 @@
 <span id="cb5-9"><a href="" aria-hidden="true" tabindex="-1"></a>        saldo <span class="op">=</span> <span class="fl">0.0f</span><span class="op">;</span></span>
 <span id="cb5-10"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb5-11"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getNumero</span><span class="op">(){</span></span>
+<span id="cb5-12"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">getNumero</span><span class="op">(){</span></span>
 <span id="cb5-13"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> numero<span class="op">;</span></span>
 <span id="cb5-14"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb5-15"><a href="" aria-hidden="true" tabindex="-1"></a></span>
@@ -636,6 +664,11 @@
 <span id="cb5-29"><a href="" aria-hidden="true" tabindex="-1"></a>        saldo <span class="op">-=</span> valor<span class="op">;</span></span>
 <span id="cb5-30"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb5-31"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="sobrecarga" class="title-slide slide level1 center" data-background-color="#fb8c0e">
+<h1>Sobrecarga</h1>
+
 </section>
 <section id="sobrecarga-de-métodos" class="slide level2">
 <h2>Sobrecarga de Métodos</h2>
@@ -646,7 +679,7 @@
 <p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Pensando"></p>
 </figure>
 </div>
-</div><div class="column" style="width:70%;">
+</div><div class="column fontsize90" style="width:70%;">
 <p><strong>Métodos</strong> com o <strong>mesmo nome</strong> podem ser <strong>declarados</strong> na <strong>mesma classe</strong>?</p>
 <ul>
 <li class="fragment">Sim, desde que tenham <span class="alert">diferentes conjuntos de parâmetros</span>.</li>
@@ -655,7 +688,7 @@
 </div>
 </div>
 <div class="columns fragment fontsize90" style="display: flex !important; align-items: center;">
-<div class="column" style="width:70%;">
+<div class="column fontsize90" style="width:70%;">
 <p>Isso é o que chamamos de <strong>sobrecarga de métodos</strong>!</p>
 <ul>
 <li class="fragment">Quando um método sobregarregado é chamado, o compilador Java seleciona o método adequado examinando o <span class="alert">número</span>, os <span class="alert">tipos</span> e a <span class="alert">ordem</span> dos argumentos na chamada.</li>
@@ -671,14 +704,14 @@
 </section>
 <section id="sobrecarga-de-métodos-1" class="slide level2">
 <h2>Sobrecarga de Métodos</h2>
-<div class="columns" style="display: flex !important; align-items: center;">
+<div class="columns" style="display: flex !important; align-items: top;">
 <div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:40.0%" alt="Pensando"></p>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Pensando"></p>
 </figure>
 </div>
-</div><div class="column" style="width:70%;">
+</div><div class="column fontsize90" style="width:70%;">
 <p><strong>Para que serve a sobrecarga de métodos?</strong></p>
 <ul>
 <li class="fragment">Ela é comumente utilizada para criar vários métodos com o <strong>mesmo nome</strong> que realizam as <strong>mesmas tarefas</strong> (ou tarefas <strong>semelhantes</strong>), mas sobre <strong>conjuntos de parâmetros diferentes</strong>.</li>
@@ -774,6 +807,11 @@
 <li class="fragment">Portanto, também <strong>não</strong> é possível declarar <strong>métodos sobrecarregados</strong> desse modo.</li>
 </ul>
 </div>
+</section></section>
+<section>
+<section id="identidade-de-objetos" class="title-slide slide level1 center" data-background-color="#fb8c0e">
+<h1>Identidade de Objetos</h1>
+
 </section>
 <section id="identidade-dos-objetos" class="slide level2">
 <h2>Identidade dos Objetos</h2>
@@ -782,7 +820,7 @@
 <span id="cb11-2"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria outraConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fontsize90">
 <ul>
-<li class="fragment">Quantos objetos existem? Qual é a identidade de cada objeto?
+<li class="fragment">Quantos objetos existem? Qual é a <strong>identidade</strong> de cada <strong>objeto</strong>?
 <ul>
 <li class="fragment">Nós tendemos a pensar que a variável representa a identidade do objeto.</li>
 </ul></li>
@@ -795,9 +833,9 @@
 </div>
 <div class="fontsize90">
 <ul>
-<li class="fragment">Quantos objetos existem? Qual é a identidade de cada objeto?
+<li class="fragment">Quantos objetos existem? Qual é a <strong>identidade</strong> de cada <strong>objeto</strong>?
 <ul>
-<li class="fragment">Esses exemplos mostram que a variável não pode ser a identidade do objeto. Veja que nesse último caso temos duas variáveis e apenas um objeto.</li>
+<li class="fragment">Esses exemplos mostram que a <span class="alert">variável não pode ser a identidade do objeto</span>. Veja que nesse último caso temos <strong>duas variáveis</strong> e apenas <strong>um objeto</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -824,53 +862,79 @@
 </section>
 <section id="comparando-objetos-ou-variáveis" class="slide level2">
 <h2>Comparando Objetos ou Variáveis?</h2>
-<p>Voltando ao nosso exemplo anterior:</p>
+<p><span class="fontsize90">Voltando ao nosso exemplo anterior:</span></p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb14-1"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria minhaConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
 <span id="cb14-2"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria outraConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
 <span id="cb14-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">boolean</span> saoIguais <span class="op">=</span> <span class="op">(</span>minhaConta <span class="op">==</span> outraConta<span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fontsize90">
+<p>Qual seria o valor da variável <code>saoIguais</code>? Por que?</p>
 <ul>
-<li class="fragment"><p>Qual seria o valor da variável ? Por que?</p>
-<p> \uncover&lt;4-&gt;{Desse modo, ainda que os objetos sejam iguais (tenham o mesmo estado), a variável recebe o valor pelo fato de as variáveis referenciarem objetos distintos.</p></li>
+<li class="fragment">O operador == está comparando variáveis (e não objetos)!</li>
+<li class="fragment">Nesse caso, está se <strong>comparando</strong> se as variáveis <strong>referenciam o mesmo objeto</strong> (mesmo endereço de memória).</li>
+<li class="fragment">Desse modo, ainda que os objetos sejam <strong>iguais</strong> (tenham o <strong>mesmo estado</strong>), a variável <code>saoIguais</code> recebe o valor <em>false</em> pelo fato de as <strong>variáveis referenciarem objetos distintos</strong>.</li>
 </ul>
+</div>
 </section>
 <section id="comparando-objetos-ou-variáveis-1" class="slide level2">
 <h2>Comparando Objetos ou Variáveis?</h2>
-<p>Seguindo o mesmo raciocínio, analise o trecho de código a seguir:} = ContaBancaria( );\ = ;\ boolean = ( == );</p>
+<p><span class="fontsize90">Seguindo o mesmo raciocínio, analise o trecho de código a seguir:</span></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb15-1"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria minhaConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
+<span id="cb15-2"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria outraConta <span class="op">=</span> minhaConta<span class="op">;</span></span>
+<span id="cb15-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">boolean</span> saoIguais <span class="op">=</span> <span class="op">(</span>minhaConta <span class="op">==</span> outraConta<span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fontsize90">
 <p>Qual seria o valor da variável ? Por que?</p>
-<pre><code>\uncover&lt;2-&gt;{Nesse caso o resultado é \textit{true}, uma vez que as duas variáveis referenciam o mesmo objeto.</code></pre>
+<ul>
+<li class="fragment">Nesse caso o resultado é <em>true</em>, uma vez que as duas <strong>variáveis referenciam o mesmo objeto</strong>.</li>
+</ul>
+</div>
 </section>
 <section id="comparando-objetos-ou-variáveis-2" class="slide level2">
 <h2>Comparando Objetos ou Variáveis?</h2>
-<p>Como fazer então para comparar se dois objetos são iguais?}</p>
-<p> </p>
-<pre><code>\uncover&lt;4-&gt;{Poderíamos criar em uma classe um método denominado \textit{saoIguais} que receba por parâmetro um objeto da mesma classe.
-O corpo desse método implementa a comparação entre os atributos do objeto em questão com aqueles do objeto passado por parâmetro.}</code></pre>
-<p>\uncover&lt;5-&gt;{Como esse tipo de comparação é frequentemente necessário, a linguagem Java disponibiliza um método que implementa isso.</p>
+<div class="fontsize90">
+<p>Como fazer então para <strong>comparar</strong> se dois <strong>objetos são iguais</strong>?</p>
+<ul>
+<li class="fragment">Poderíamos <span class="alert">criar um método</span> em uma classe para <span class="alert">verificar se dois objetos são iguais</span>.</li>
+<li class="fragment">Como seria esse método?
+<ul>
+<li class="fragment">Poderíamos criar em uma classe um <strong>método</strong> denominado <code>saoIguais</code> que <strong>receba</strong> por <strong>parâmetro</strong> um <strong>objeto da mesma classe</strong>.</li>
+<li class="fragment">O corpo desse método implementa a <strong>comparação entre os atributos</strong> do objeto em questão com aqueles do objeto passado por parâmetro.</li>
+</ul></li>
+<li class="fragment">Como esse tipo de comparação é frequentemente necessário, a <span class="alert">linguagem Java disponibiliza um método</span> que implementa isso.</li>
+</ul>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/perguntas.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Perguntas"></p>
+</figure>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="http://luiz.dac.ufla.br">Prof.&nbsp;Luiz Merschmann</a></p>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="aula4_r_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="aula4_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="aula4_r_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="aula4_r_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="aula4_r_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="aula4_r_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="aula4_r_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
-  <script src="aula4_r_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="aula4_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="aula4_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="aula4_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="aula4_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="aula4_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="aula4_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="aula4_r_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="aula4_r_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="aula4_r_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="aula4_r_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="aula4_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="aula4_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="aula4_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="aula4_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

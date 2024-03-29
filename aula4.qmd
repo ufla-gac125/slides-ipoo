@@ -18,7 +18,9 @@ title-slide-attributes:
 ::: {.nonincremental}
 ::: {style="font-size: 120%;"}
 - Criação de Objetos
+- Construtores
 - Sobrecarga
+- Identidade de Objetos
 :::
 :::
 :::
@@ -26,39 +28,50 @@ title-slide-attributes:
 ::::
 
 
-## Criação de Objetos
+# Criação de Objetos {background-color="#fb8c0e"}
 
+## Criação de Objetos
+:::{.fontsize90}
 - Para criar um objeto devemos usar a palavra-chave **new**.
 - Vamos supor que temos uma classe `ContaBancaria` e desejamos criar um objeto a partir dessa classe. Como fazer?
+:::
+
+:::{.fragment}
 ```{.java code-line-numbers="false"}
 ContaBancaria minhaConta;
 minhaConta = new ContaBancaria();
 ```
-- O que estamos fazendo na primeira linha? Criando um objeto?
-    - Não!
-    - E também não estamos declarando um objeto, mas sim uma variável que poderá referenciar um objeto.
-- E na segunda linha, estamos criando um objeto?
-    - Sim, pois quando utilizamos o comando **new**, o construtor da classe é chamado.
-    - A atribuição (sinal =) faz com que a variável `minhaConta` referencie o objeto criado.
+:::
 
+:::{.fontsize90}
+- O que estamos fazendo na **primeira linha**? **Criando um objeto**?
+    - **Não**!
+    - E também não estamos **declarando** um objeto, mas sim **uma variável** que poderá **referenciar** um objeto.
+- E na **segunda linha**, estamos **criando um objeto**?
+    - **Sim**, pois quando utilizamos o comando **new** o objeto é criado.
+    - A atribuição (sinal =) faz com que a **variável** `minhaConta` **referencie o objeto** criado.
+:::
 
 ## Criação de Objetos na Memória
 
-![](figuras/investigar_objeto_memoria.png){fig-alt="Objeto_memoria" fig-align="center"}
+![](figuras/investigar_objeto_memoria.png){fig-alt="Objeto_memoria" fig-align="center" width=70%}
 
 
 ## Criação de Objetos na Memória
 
 ::::{.columns style='display: flex !important; height: 70%; align-items: top;'}
 
-::: {.column width="54%"}
+::: {.column width="35%"}
 ```{.java code-line-numbers="false"}
 public class ContaBancaria{
-    private int numero;//Número da conta
-    private String nome;//Nome do titular da conta
-    private float saldo;//Saldo da conta
+    //Número da conta
+    private int numero;
+    //Nome do titular da conta
+    private String nome;
+    //Saldo da conta
+    private float saldo;
 
-    public String getNumero(){
+    public int getNumero(){
         return numero;
     }
     public String getNome(){
@@ -69,66 +82,75 @@ public class ContaBancaria{
 ```
 :::
 
-::: {.column width="46%"}
+::: {.column width="55%"}
 ```{.java code-line-numbers="false"}
 public class App{
     public static void main(String[] args){
-        ContaBancaria minhaConta;
+        ContaBancaria minhaConta;    
         minhaConta = new ContaBancaria();
     }
 }
 ```
-![](figuras/modelo_memoria1.png){fig-alt="Modelo_memoria1" fig-align="center" width=100%}
+::: {.r-stack}
+![](figuras/modelo_memoria1.png){fig-alt="Modelo_memoria1" fig-align="center"  .fragment .fade-in-then-out}
 
-![](figuras/modelo_memoria2.png){fig-alt="Modelo_memoria2" fig-align="center" width=100%}
+![](figuras/modelo_memoria2.png){fig-alt="Modelo_memoria2" fig-align="center" .fragment .fade-in-then-out}
 
-![](figuras/modelo_memoria3.png){fig-alt="Modelo_memoria3" fig-align="center" width=100%}
+![](figuras/modelo_memoria3.png){fig-alt="Modelo_memoria3" fig-align="center"  .fragment .fade-in-then-out}
 
-![](figuras/modelo_memoria4.png){fig-alt="Modelo_memoria4" fig-align="center" width=100%}
-
+![](figuras/modelo_memoria4.png){fig-alt="Modelo_memoria4" fig-align="center"  .fragment .fade-in-then-out}
 :::
 
+:::
 ::::
 
 
 ## Variáveis e Objetos
 
-No exemplo anterior existe uma variável que guarda um endereço.
+[No exemplo anterior existe uma [variável]{.alert} que guarda um [endereço]{.alert}.]{.fontsize90}
 
 . . .
 
-Então essa variável não seria um ponteiro?
+:::{.fontsize90}
+Então essa variável **não seria um ponteiro**?
 
-- Certamente! Tecnicamente as variáveis de objetos em Java são ponteiros.
+- Certamente! Tecnicamente as [variáveis de objetos]{.alert} em Java [são ponteiros]{.alert}.
+:::
 
 . . .
 
-Mas já ouvimos dizer que pelo fato de Java não ter ponteiros, ela é mais segura que C++. E agora?
+:::{.fontsize90}
+Mas já ouvimos dizer que pelo fato de **Java não ter ponteiros**, ela é **mais segura** que C++. E agora?
 
-- Apesar de a variável ser um ponteiro, Java não permite que você faça as operações de ponteiro com a variável.
-- Isso ajuda a eliminar os principais riscos de uso de ponteiros.
+- Apesar de a variável ser um ponteiro, **Java não permite** que você faça as **operações de ponteiro** com a variável.
+- Isso ajuda a **eliminar** os **principais riscos** de uso de ponteiros.
+:::
 
+
+# Construtores {background-color="#fb8c0e"}
 
 ## Construtor
 
-Já aprendemos que quando o comando **new** é utilizado, além de se criar o objeto, o construtor do objeto é chamado.
+[Quando o [comando]{.alert} **new** é utilizado, além de se [criar o objeto]{.alert}, o [construtor]{.alert} do objeto é [chamado]{.alert}.]{.fontsize90}
 
 . . .
 
-Mas o que acontece se criarmos uma classe sem um construtor? Será possível criar objetos dessa classe?
+:::{.fontsize90}
+Mas o que acontece se **criarmos** uma **classe sem um construtor**? Será possível **criar objetos** dessa classe?
 
-- Sim, é possível criar objetos dessa classe.
-- Isso porque Java cria (internamente) um construtor padrão (sem parâmetros).
-- O construtor padrão inicializa os atributos dos objetos:
-    - Com valores padrões para tipos primitivos (int, float $\ldots$).
-    - Com *null* para tipos por referência (variáveis de objetos).
+- **Sim**, é possível criar objetos dessa classe.
+- Isso porque **Java cria** (internamente) um **construtor padrão** (sem parâmetros).
+- O **construtor padrão inicializa os atributos** dos objetos:
+    - Com **valores padrões** para **tipos primitivos** (int, float $\ldots$).
+    - Com ***null*** para **tipos por referência** (variáveis de objetos).
+:::
 
 
 ## Construtor
 
 ::::{.columns style='display: flex !important; height: 60%; align-items: top;'}
 
-::: {.column width="46%" .nonincremental .fontsize80}
+::: {.column width="46%" .nonincremental .fontsize75}
 Se utilizássemos o construtor padrão da classe `ContaBancaria`, um objeto dessa classe teria seus atributos incializados com valores padrão do Java:
 
 - `numero` = 0
@@ -142,14 +164,13 @@ Se utilizássemos o construtor padrão da classe `ContaBancaria`, um objeto dess
 public class ContaBancaria{
     private int numero;//Número da conta
     private String nome;//Nome do titular da conta
-    private float saldo;//Saldo da conta
-
+    private float saldo;//Saldo da conta 
+    
     //Classe sem construtor
-
-    public String getNumero(){
+    
+    public int getNumero(){
         return numero;
     }
-
     public String getNome(){
         return nome;
     }
@@ -161,15 +182,14 @@ public class ContaBancaria{
 
 ::::
 
-::: {.fontsize80 .fragment}
+::: {.fontsize75 .fragment}
+Mas uma **conta bancária sem um titular** é uma conta **válida**?
 
-Mas uma conta bancária sem um titular é uma conta válida?
-
-- Certamente não! Sem um número, um titular e um saldo não temos uma conta válida.
+- Certamente **não**! Sem um número, um titular e um saldo não temos uma conta válida.
 :::
 
-::: {.fontsize80 .fragment}
-Portanto, o construtor precisa garantir que o estado inicial dos objetos da classe seja um estado válido.
+::: {.fontsize75 .fragment}
+Portanto, o **construtor** precisa **garantir** que o **estado inicial** dos objetos da classe seja **válido**.
 :::
 
 
@@ -181,15 +201,15 @@ Portanto, o construtor precisa garantir que o estado inicial dos objetos da clas
 ![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=50%}
 :::
 
-::: {.column width="70%"}
-Se a classe tiver **apenas** um construtor com parâmetros, posso usar o construtor padrão do Java?
+::: {.column width="70%" .fontsize90}
+Se a classe tiver **apenas** um construtor com parâmetros, **posso usar** o **construtor padrão** do Java?
 
-- Não, exceto se você tiver implementado um construtor igual ao construtor padrão do Java.
+- **Não**, **exceto** se você **tiver implementado** um **construtor igual ao construtor padrão** do Java.
 
-::: {.fragment}
-Por que?
+::: {.fragment .fontsize90}
+[**Por que?**]{style="color:darkblue;"}
 
-- Porque se Java permitisse isso, seria impossível que o programador garantisse que os objetos tenham sempre um estado inicial válido.
+- Porque se Java permitisse isso, **seria impossível** que o programador garantisse que os objetos tenham sempre um **estado inicial válido**.
 :::
 :::
 
@@ -210,7 +230,7 @@ public class ContaBancaria{
         saldo = 0.0f;
     }
 
-    public String getNumero(){
+    public int getNumero(){
         return numero;
     }
 
@@ -233,6 +253,8 @@ public class ContaBancaria{
 ```
 
 
+# Sobrecarga {background-color="#fb8c0e"}
+
 ## Sobrecarga de Métodos
 
 ::::{.columns style='display: flex !important; align-items: top;' .fontsize90}
@@ -241,7 +263,7 @@ public class ContaBancaria{
 ![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=35%}
 :::
 
-::: {.column width="70%"}
+::: {.column width="70%" .fontsize90}
 **Métodos** com o **mesmo nome** podem ser **declarados** na **mesma classe**?
 
 - Sim, desde que tenham [diferentes conjuntos de parâmetros]{.alert}.
@@ -252,7 +274,7 @@ public class ContaBancaria{
 
 ::::{.columns style='display: flex !important; align-items: center;' .fragment .fontsize90}
 
-::: {.column width="70%"}
+::: {.column width="70%" .fontsize90}
 Isso é o que chamamos de **sobrecarga de métodos**!
 
 - Quando um método sobregarregado é chamado, o compilador Java seleciona o método adequado examinando o [número]{.alert}, os [tipos]{.alert} e a [ordem]{.alert} dos argumentos na chamada.
@@ -266,13 +288,13 @@ Isso é o que chamamos de **sobrecarga de métodos**!
 
 ## Sobrecarga de Métodos
 
-::::{.columns style='display: flex !important; align-items: center;'}
+::::{.columns style='display: flex !important; align-items: top;'}
 
 ::: {.column width="30%"}
-![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=40%}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=35%}
 :::
 
-::: {.column width="70%"}
+::: {.column width="70%" .fontsize90}
 **Para que serve a sobrecarga de métodos?**
 
 - Ela é comumente utilizada para criar vários métodos com o **mesmo nome** que realizam as **mesmas tarefas** (ou tarefas **semelhantes**), mas sobre **conjuntos de parâmetros diferentes**.
@@ -388,6 +410,8 @@ int a = minhaConta.resgatar("poupanca");
 :::
 
 
+# Identidade de Objetos {background-color="#fb8c0e"}
+
 ## Identidade dos Objetos
 
 Considere o seguinte trecho de código:
@@ -397,7 +421,7 @@ ContaBancaria outraConta = new ContaBancaria();
 ```
 
 :::{.fontsize90}
-- Quantos objetos existem? Qual é a identidade de cada objeto?
+- Quantos objetos existem? Qual é a **identidade** de cada **objeto**?
     - Nós tendemos a pensar que a variável representa a identidade do objeto.
 :::
 
@@ -410,8 +434,8 @@ ContaBancaria outraConta = minhaConta;
 :::
 
 :::{.fontsize90}
-- Quantos objetos existem? Qual é a identidade de cada objeto?
-    - Esses exemplos mostram que a variável não pode ser a identidade do objeto. Veja que nesse último caso temos duas variáveis e apenas um objeto.
+- Quantos objetos existem? Qual é a **identidade** de cada **objeto**?
+    - Esses exemplos mostram que a [variável não pode ser a identidade do objeto]{.alert}. Veja que nesse último caso temos **duas variáveis** e apenas **um objeto**.
 :::
 
 ## Identidade dos Objetos
@@ -433,40 +457,50 @@ ContaBancaria outraConta = new ContaBancaria();
 
 ## Comparando Objetos ou Variáveis?
 
-Voltando ao nosso exemplo anterior:
+[Voltando ao nosso exemplo anterior:]{.fontsize90}
 ```{.java code-line-numbers="false"}
 ContaBancaria minhaConta = new ContaBancaria();
 ContaBancaria outraConta = new ContaBancaria();
 boolean saoIguais = (minhaConta == outraConta);
 ```
 
-- Qual seria o valor da variável \textit{saoIguais}? Por que?
- 
-    \uncover<2->{O operador == está comparando variáveis (e não objetos)!}
-    \uncover<3->{Nesse caso, está se comparando se as variáveis referenciam o mesmo objeto (mesmo endereço de memória).}
-    \uncover<4->{Desse modo, ainda que os objetos sejam iguais (tenham o mesmo estado), a variável \textit{saoIguais} recebe o valor \textit{false} pelo fato de as variáveis referenciarem objetos distintos.
+:::{.fontsize90}
+Qual seria o valor da variável `saoIguais`? Por que?
 
-
-## Comparando Objetos ou Variáveis?
-
-Seguindo o mesmo raciocínio, analise o trecho de código a seguir:}
-  \textbf{ContaBancaria}  \textit{minhaConta} = \textbf{new} ContaBancaria( );\\
-  \textbf{ContaBancaria}  \textit{outraConta} = \textit{minhaConta};\\
-  boolean \textit{saoIguais} = (\textit{minhaConta} == \textit{outraConta});
-
-   Qual seria o valor da variável \textit{saoIguais}? Por que?
- 
-    \uncover<2->{Nesse caso o resultado é \textit{true}, uma vez que as duas variáveis referenciam o mesmo objeto.
-
+- O operador == está comparando variáveis (e não objetos)!
+- Nesse caso, está se **comparando** se as variáveis **referenciam o mesmo objeto** (mesmo endereço de memória).
+- Desse modo, ainda que os objetos sejam **iguais** (tenham o **mesmo estado**), a variável `saoIguais` recebe o valor *false* pelo fato de as **variáveis referenciarem objetos distintos**.
+:::
 
 ## Comparando Objetos ou Variáveis?
 
-Como fazer então para comparar se dois objetos são iguais?}
+[Seguindo o mesmo raciocínio, analise o trecho de código a seguir:]{.fontsize90}
+```{.java code-line-numbers="false"}
+ContaBancaria minhaConta = new ContaBancaria();
+ContaBancaria outraConta = minhaConta;
+boolean saoIguais = (minhaConta == outraConta);
+```
+
+:::{.fontsize90}
+Qual seria o valor da variável \textit{saoIguais}? Por que?
+
+- Nesse caso o resultado é *true*, uma vez que as duas **variáveis referenciam o mesmo objeto**.
+:::
+
+
+## Comparando Objetos ou Variáveis?
+:::{.fontsize90}
+Como fazer então para **comparar** se dois **objetos são iguais**?
  
-   \uncover<2->{Poderíamos criar um método em uma classe para verificar se dois objetos são iguais?}
-   \uncover<3->{Como seria esse método?}
- 
-    \uncover<4->{Poderíamos criar em uma classe um método denominado \textit{saoIguais} que receba por parâmetro um objeto da mesma classe.
-    O corpo desse método implementa a comparação entre os atributos do objeto em questão com aqueles do objeto passado por parâmetro.}
+- Poderíamos [criar um método]{.alert} em uma classe para [verificar se dois objetos são iguais]{.alert}.
+- Como seria esse método?
+    - Poderíamos criar em uma classe um **método** denominado `saoIguais` que **receba** por **parâmetro** um **objeto da mesma classe**.
+    - O corpo desse método implementa a **comparação entre os atributos** do objeto em questão com aqueles do objeto passado por parâmetro.
   
-   \uncover<5->{Como esse tipo de comparação é frequentemente necessário, a linguagem Java disponibiliza um método que implementa isso.
+- Como esse tipo de comparação é frequentemente necessário, a [linguagem Java disponibiliza um método]{.alert} que implementa isso.
+:::
+
+
+##
+
+![](figuras/perguntas.png){fig-alt="Perguntas" fig-align="center" width=35%}
