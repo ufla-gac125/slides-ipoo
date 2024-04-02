@@ -74,7 +74,7 @@ Para que serve o método `menu`?
 . . .
 
 :::{.callout-note title="Pergunta 3" icon=false .fontsize90}
-Para que serve o método `escolherOpcao`?
+Para que serve o método `executarOpcao`?
 :::
 
 
