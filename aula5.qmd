@@ -51,30 +51,59 @@ Como vimos anteriormente, os [métodos servem]{.alert}:
 
 ## Encapsulamento
 
-Na Orientação a Objetos, as classes (e seus objetos) encapsulam seus dados.
-    Ou seja, elas não permitem que os dados (atributos) sejam diretamente acessados de fora da classe.
-    Nesse caso, a única maneira de acessar ou alterar um dado é por meio dos métodos definidos na própria classe.
+::::{.columns style='display: flex !important; align-items: top;' .fontsize90}
 
+::: {.column width="75%" .nonincremental}
+- Na Orientação a Objetos, as [classes]{.alert} (e seus [objetos]{.alert}) [encapsulam]{.alert} seus [dados]{.alert}.
+   - Ou seja, elas **não permitem** que os **dados** (atributos) sejam **diretamente acessados** de **fora da classe**.
+   - Nesse caso, a única maneira de **acessar ou alterar** um dado é por **meio dos métodos** definidos na própria classe.
+:::
 
-Resumindo, o objeto está no controle, ou seja, é ele que determina se e como os atributos podem ser alterados.
+::: {.column width="25%"}
+![](figuras/cadeado.png){fig-alt="Atributo_protegido" fig-align="center" width=90%}
+:::
+
+::::
+
+::::{.columns style='display: flex !important; align-items: top;' .fragment .fontsize90}
+
+::: {.column width="30%"}
+![](figuras/objeto_controle.png){fig-alt="Objeto_controle" fig-align="center" width=80%}
+
+:::
+
+::: {.column width="70%"}
+Resumindo, o **objeto está no controle**, ou seja, é ele que determina **se** e **como** os **atributos** podem ser **alterados**.
+:::
+
+::::
 
 
 ## Interface
 
-A interface de comunicação de uma classe é formada pelo seu conjunto de métodos que podem ser chamados de fora da classe.
+:::{.fontsize90}
+- A [interface de comunicação]{.alert} de uma [classe]{.alert} é formada pelo seu [conjunto de métodos]{.alert} que podem ser [chamados de fora da classe]{.alert}.
+   - Esses **métodos** formam a **interface** de um objeto com o **mundo externo**, ou seja, por meio deles conseguimos nos comunicar com um objeto.
  
-   Esses métodos formam a interface de um objeto com o mundo externo, ou seja, por meio deles conseguimos nos comunicar com um objeto.
- 
-  As interfaces permitem informar aos objetos o que fazer, mas não como fazer.
+- As **interfaces** permitem **informar** aos objetos **o que** fazer, mas **não como** fazer.
+:::
+
+[Fazendo uma analogia com uma máquina de cartão:]{.fragment style="color:darkblue;"}
+
+::::{.columns style='display: flex !important; align-items: top;' .fragment .fontsize90}
+
+::: {.column width="70%" .nonincremental}
+- Os **botões** da máquina são a **interface** entre nós e os mecanismos internos do aparelho.
+   - Ou seja, podemos usar uma máquina de cartão **pressionando** seus **botões** **sem saber** como é o seu **funcionamento interno**.
+:::
+
+::: {.column width="30%"}
+![](figuras/maquina_cartao.png){fig-alt="Maquina_cartao" fig-align="center" width=90%}
+:::
+
+::::
 
 
-
-Fazendo uma analogia com uma máquina de cartão:<3->
-
-
-  
-   Os botões da máquina são a interface entre nós e os mecanismos internos do aparelho.
-   Ou seja, podemos usar uma máquina de cartão pressionando seus botões sem saber como é o seu funcionamento interno.
 
 
 ## Interface e Encapsulamento
