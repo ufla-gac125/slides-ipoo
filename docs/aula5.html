@@ -11,7 +11,7 @@
 <script src="aula5_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula5_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula5_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.550">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Encapsulamento e Visibilidade </title>
@@ -32,6 +32,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="aula5_files/libs/revealjs/dist/theme/quarto.css">
   <link href="aula5_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -452,43 +517,204 @@
 </section>
 <section id="interface-e-encapsulamento" class="slide level2">
 <h2>Interface e Encapsulamento</h2>
-<p>O encapsulamento garante que a única maneira de acessar ou alterar dados de um objeto seja através da sua interface de comunicação. O encapsulamento garante o ocultamento de informações.</p>
-<p>O princípio da ocultação estabelece que devemos expor apenas a interface de comunicação entre os objetos.</p>
+<div class="columns fontsize90" style="display: flex !important; align-items: top;">
+<div class="column" style="width:60%;">
+<ul>
+<li>O <span class="alert">encapsulamento</span> garante que a única maneira de <span class="alert">acessar ou alterar dados</span> de um objeto seja através da sua <span class="alert">interface de comunicação</span>.
+<ul>
+<li>O <strong>encapsulamento</strong> garante o <strong>ocultamento</strong> de informações.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/interface.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Interface"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="columns fragment fontsize90" style="display: flex !important; align-items: top;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/interface1.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Interface1"></p>
+</figure>
+</div>
+</div><div class="column" style="width:70%;">
+<ul>
+<li>O princípio da ocultação estabelece que devemos <strong>expor</strong> apenas a <strong>interface de comunicação</strong> entre os objetos.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="interface-1" class="slide level2">
 <h2>Interface</h2>
-<p>Fazer com que a única forma de se comunicar com um objeto e acessar seus dados seja por meio dos métodos traz duas vantagens:</p>
-<p>Mantendo a interface de comunicação (assinaturas dos métodos), você pode alterar a representação interna dos dados sem afetar o restante do sistema.</p>
-<p>Exemplo: Inicialmente você usava vetor como um tipo de dado. Depois, por problemas de gerenciamento de memória, você troca o vetor por uma lista encadeada. Se a interface for mantida, isso não causará qualquer efeito colateral.</p>
-<p>Para alguém conseguir usar um objeto de uma classe definida por você, basta fornecer a interface de comunicação, ou seja, as assinaturas dos métodos.</p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column fontsize90" style="width:70%;">
+<p><span style="color:darkblue;">Quais as vantagens de fazer com que a única forma de se comunicar com um objeto e acessar seus dados seja por meio dos métodos?</span></p>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pensando2.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fontsize90">
+<ul>
+<li class="fragment">Mantendo a interface de comunicação (assinaturas dos métodos), você pode <strong>alterar a representação interna</strong> dos dados <strong>sem afetar o restante do sistema</strong>.
+<ul>
+<li class="fragment">Exemplo: Inicialmente você usava vetor como um tipo de dado. Depois, por problemas de gerenciamento de memória, você troca o vetor por uma lista encadeada. Se a interface for mantida, isso não causará qualquer efeito colateral.</li>
+</ul></li>
+<li class="fragment">Para <strong>alguém</strong> conseguir <strong>usar um objeto</strong> de uma <strong>classe definida por você</strong>, <strong>basta</strong> fornecer a <strong>interface de comunicação</strong>, ou seja, as assinaturas dos métodos.</li>
+</ul>
+</div>
 </section>
 <section id="encapsulamento-em-java" class="slide level2">
 <h2>Encapsulamento em Java</h2>
-<p>Uma vez que Java é uma linguagem de programação orientada a objetos, então o encapsulamento de dados está garantido? Ou seja, os atributos de uma classe em Java são inacessíveis fora dela?</p>
-<p>A princípio não.</p>
-<p>3Mas uma classe pode definir o tipo de acesso que seus membros permitirão às demais partes do sistema.</p>
+<div class="fontsize80">
+<p><span style="color:darkblue;">Uma vez que Java é uma linguagem de programação orientada a objetos, então o encapsulamento de dados está garantido? Ou seja, os atributos de uma classe em Java são inacessíveis fora dela?</span></p>
+</div>
+<div class="columns fontsize90" style="display: flex !important; align-items: top;">
+<div class="column" style="width:30%;">
+<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Número da conta</span></span>
+<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> numero<span class="op">;</span></span>
+<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Nome do titular da conta</span></span>
+<span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="bu">String</span> nome<span class="op">;</span></span>
+<span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Saldo da conta</span></span>
+<span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">float</span> saldo<span class="op">;</span></span>
+<span id="cb1-8"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Outros métodos omitidos</span></span>
+<span id="cb1-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:70%;">
+<div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
+<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
+<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a>        ContaBancaria minhaConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span>    </span>
+<span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Acessando um atributo da classe ContaBancaria fora dela</span></span>
+<span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a>        minhaConta<span class="op">.</span><span class="fu">saldo</span> <span class="op">=</span> <span class="dv">100</span><span class="op">;</span></span>
+<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co">//Imprimindo o valor do saldo</span></span>
+<span id="cb2-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Novo saldo: R$ %.2f</span><span class="sc">\n</span><span class="st">"</span><span class="op">,</span>minhaConta<span class="op">.</span><span class="fu">getSaldo</span><span class="op">());</span></span>
+<span id="cb2-8"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fontsize80">
+<ul>
+<li class="fragment">A princípio <strong>não</strong>!
+<ul>
+<li class="fragment">No exemplo acima seria impresso na tela <code>Novo saldo: R$ 100,00</code>, mostrando que é possível acessar um atributo de fora da sua classe.</li>
+</ul></li>
+<li class="fragment">Mas uma <strong>classe</strong> pode <strong>definir o tipo de acesso</strong> que seus <strong>membros permitirão</strong> às demais partes do sistema.</li>
+</ul>
+</div>
 </section>
 <section id="encapsulamento-em-java-1" class="slide level2">
 <h2>Encapsulamento em Java</h2>
-<p>Para encapsular um atributo em uma classe Java, precisamos explicitar isso no código.</p>
-<p>Os modificadores de acesso public e private controlam o acesso aos atributos da classe.</p>
-<p>A palavra-chave private é utilizada para indicar que os atributos são privados da classe. O que isso significa?</p>
-<p>Significa que a única forma de saber o valor dos atributos ou alterá-los, de fora da classe, é através dos métodos da classe.</p>
-<p>Não utilizar o modificador de acesso private para os atributos de uma classe fere o princípio do encapsulamento</p>
+<div class="fontsize80">
+<p>Para <strong>encapsular</strong> um <strong>atributo</strong> em uma classe Java, precisamos <strong>explicitar</strong> isso no <strong>código</strong>.</p>
+</div>
+<div class="columns fontsize90" style="display: flex !important; align-items: center;">
+<div class="column" style="width:35%;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
+<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Número da conta</span></span>
+<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> numero<span class="op">;</span></span>
+<span id="cb3-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Nome do titular da conta</span></span>
+<span id="cb3-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="bu">String</span> nome<span class="op">;</span></span>
+<span id="cb3-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Saldo da conta</span></span>
+<span id="cb3-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">float</span> saldo<span class="op">;</span></span>
+<span id="cb3-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Construtor e métodos omitidos</span></span>
+<span id="cb3-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/seta.png" class="quarto-figure quarto-figure-center" style="width:50.0%" alt="Seta"></p>
+</figure>
+</div>
+</div><div class="column" style="width:35%;">
+<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
+<span id="cb4-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Número da conta</span></span>
+<span id="cb4-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> numero<span class="op">;</span></span>
+<span id="cb4-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Nome do titular da conta</span></span>
+<span id="cb4-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span></span>
+<span id="cb4-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Saldo da conta</span></span>
+<span id="cb4-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">float</span> saldo<span class="op">;</span></span>
+<span id="cb4-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Construtor e métodos omitidos</span></span>
+<span id="cb4-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fontsize80">
+<ul>
+<li class="fragment">Os <span class="alert">modificadores</span> de acesso <code>public</code> e <code>private</code> <span class="alert">controlam o acesso</span> aos atributos da classe.</li>
+<li class="fragment">A palavra-chave <code>private</code> é utilizada para <strong>indicar</strong> que os <strong>atributos</strong> são <strong>privados</strong> da classe. O que isso significa?
+<ul>
+<li class="fragment">Significa que a <strong>única</strong> forma de saber o valor dos atributos ou alterá-los, de fora da classe, é <strong>através dos métodos</strong> da classe.</li>
+</ul></li>
+<li class="fragment"><strong>Não utilizar</strong> o modificador de acesso <code>private</code> para os <strong>atributos</strong> de uma classe <strong>fere</strong> o <strong>princípio do encapsulamento</strong>.</li>
+</ul>
+</div>
 </section>
 <section id="visibilidade-de-atributos-e-métodos" class="slide level2">
 <h2>Visibilidade de Atributos e Métodos</h2>
-<p>Além do modificador de acesso denominado private, existe também o public. Qual será a finalidade desse segundo modificador?</p>
-<p>Como é possível de imaginar, o public define que membro é acessível fora da sua classe. E membro significa atributo ou método.</p>
-<p>Portanto, os modificadores de acesso definem a visibilidade de um atributo ou método de uma classe.</p>
-<p>Desse modo, se desejamos que um método possa ser chamado de fora da sua classe, temos que inserir no código o modificador public.</p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column fontsize90" style="width:85%;">
+<p><span style="color:darkgreen;">Além do modificador de acesso denominado <code>private</code>, existe também o <code>public</code>. Qual será a finalidade desse segundo modificador?</span></p>
+</div><div class="column" style="width:20%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pensando2.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fontsize80">
+<ul>
+<li class="fragment">Como é possível de imaginar, o <code>public</code> define que um <strong>membro</strong> é <strong>acessível fora</strong> da sua classe.</li>
+<li class="fragment">Portanto, os <strong>modificadores de acesso</strong> definem a <strong>visibilidade</strong> de um <strong>atributo</strong> ou <strong>método</strong> de uma classe.</li>
+</ul>
+</div>
+<div class="columns fragment" style="display: flex !important; align-items: center;">
+<div class="column" style="width:40%;">
+<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
+<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> numero<span class="op">;</span></span>
+<span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span></span>
+<span id="cb5-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">float</span> saldo<span class="op">;</span></span>
+<span id="cb5-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Retorna o número da conta</span></span>
+<span id="cb5-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">getNumero</span><span class="op">(){</span></span>
+<span id="cb5-7"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> numero<span class="op">;</span></span>
+<span id="cb5-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Demais métodos omitidos</span></span>
+<span id="cb5-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize80" style="width:60%;">
+<ul>
+<li>Desse modo, se desejamos que um método possa ser <strong>chamado de fora</strong> da sua classe, temos que <strong>inserir</strong> no código o <strong>modificador</strong> <code>public</code>.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="métodos-privados" class="slide level2">
 <h2>Métodos Privados</h2>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div><div class="column fontsize90" style="width:75%;">
 <p>Mas faz algum sentido usar um método privado?</p>
-<p>Sim, métodos privados são muito interessantes por dois motivos:</p>
-<pre><code>Em algumas situações percebemos que mais de um método público de nossa classe necessita de um mesmo trecho de código. A fim de não repetir esse trecho de código em mais de um método público da classe, separa-se esse trecho em um método privado que passa a ser chamado nos métodos públicos.
-4Um método público poderia ficar muito grande, o que dificultaria a legibilidade e manutenção do código. Nesse caso, pode-se dividir esse método em partes menores fazendo-se uso de métodos privados.</code></pre>
+<div class="fontsize90">
+<ul>
+<li class="fragment">Sim, métodos privados são muito interessantes por dois motivos:
+<ul>
+<li class="fragment">Em algumas situações percebemos que mais de um método público de nossa classe necessita de um mesmo trecho de código. A fim de não repetir esse trecho de código em mais de um método público da classe, separa-se esse trecho em um método privado que passa a ser chamado nos métodos públicos.</li>
+<li class="fragment">Um método público poderia ficar muito grande, o que dificultaria a legibilidade e manutenção do código. Nesse caso, pode-se dividir esse método em partes menores fazendo-se uso de métodos privados.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="métodos-get-e-set" class="slide level2">
 <h2>Métodos Get e Set</h2>

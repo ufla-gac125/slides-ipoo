@@ -104,77 +104,208 @@ Resumindo, o **objeto está no controle**, ou seja, é ele que determina **se** 
 ::::
 
 
-
-
 ## Interface e Encapsulamento
 
-O encapsulamento garante que a única maneira de acessar ou alterar dados de um objeto seja através da sua interface de comunicação.
-    O encapsulamento garante o ocultamento de informações.
+::::{.columns style='display: flex !important; align-items: top;' .fontsize90}
 
+::: {.column width="60%" .nonincremental}
+- O [encapsulamento]{.alert} garante que a única maneira de [acessar ou alterar dados]{.alert} de um objeto seja através da sua [interface de comunicação]{.alert}.
+   - O **encapsulamento** garante o **ocultamento** de informações.
+:::
 
-   O princípio da ocultação estabelece que devemos expor apenas a interface de comunicação entre os objetos.
+::: {.column width="40%"}
+![](figuras/interface.png){fig-alt="Interface" fig-align="center" width=100%}
+:::
+::::
+
+::::{.columns style='display: flex !important; align-items: top;' .fragment .fontsize90}
+
+::: {.column width="30%"}
+![](figuras/interface1.png){fig-alt="Interface1" fig-align="center" width=80%}
+
+:::
+
+::: {.column width="70%" .nonincremental}
+- O princípio da ocultação estabelece que devemos **expor** apenas a **interface de comunicação** entre os objetos.
+:::
+::::
 
 
 ## Interface
 
-Fazer com que a única forma de se comunicar com um objeto e acessar seus dados seja por meio dos métodos traz duas vantagens:
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="70%" .fontsize90}
+[Quais as vantagens de fazer com que a única forma de se comunicar com um objeto e acessar seus dados seja por meio dos métodos?]{style="color:darkblue;"}
+:::
 
-  Mantendo a interface de comunicação (assinaturas dos métodos), você pode alterar a representação interna dos dados sem afetar o restante do sistema.
+::: {.column width="30%"}
+![](figuras/pensando2.png){fig-alt="Pensando" fig-align="center" width=70%}
+:::
+::::
+
+:::{.fontsize90}
+- Mantendo a interface de comunicação (assinaturas dos métodos), você pode **alterar a representação interna** dos dados **sem afetar o restante do sistema**.
+   - Exemplo: Inicialmente você usava vetor como um tipo de dado. Depois, por problemas de gerenciamento de memória, você troca o vetor por uma lista encadeada. Se a interface for mantida, isso não causará qualquer efeito colateral.
  
-   Exemplo: Inicialmente você usava vetor como um tipo de dado. Depois, por problemas de gerenciamento de memória, você troca o vetor por uma lista encadeada. Se a interface for mantida, isso não causará qualquer efeito colateral.
- 
-  Para alguém conseguir usar um objeto de uma classe definida por você, basta fornecer a interface de comunicação, ou seja, as assinaturas dos métodos.
+- Para **alguém** conseguir **usar um objeto** de uma **classe definida por você**, **basta** fornecer a **interface de comunicação**, ou seja, as assinaturas dos métodos.
+:::
+
+
 
 
 ## Encapsulamento em Java
+:::{.fontsize80}
+[Uma vez que Java é uma linguagem de programação orientada a objetos, então o encapsulamento de dados está garantido? Ou seja, os atributos de uma classe em Java são inacessíveis fora dela?]{style="color:darkblue;"}
+:::
 
-Uma vez que Java é uma linguagem de programação orientada a objetos, então o encapsulamento de dados está garantido? Ou seja, os atributos de uma classe em Java são inacessíveis fora dela?
+::::{.columns style='display: flex !important; align-items: top;' .fontsize90}
 
-  A princípio não.
+::: {.column width="30%"}
+```{.java code-line-numbers="false"}
+public class ContaBancaria{
+    //Número da conta
+    int numero;
+    //Nome do titular da conta
+    String nome;
+    //Saldo da conta
+    float saldo;
 
+    // Outros métodos omitidos
+}
+```
+:::
 
+::: {.column width="70%"}
+```{.java code-line-numbers="false"}
+public class App{
+    public static void main(String[] args){
+        ContaBancaria minhaConta = new ContaBancaria();    
+        // Acessando um atributo da classe ContaBancaria fora dela
+        minhaConta.saldo = 100;
+        //Imprimindo o valor do saldo
+        System.out.println("Novo saldo: R$ %.2f\n",minhaConta.getSaldo());
 
-  3Mas uma classe pode definir o tipo de acesso que seus membros permitirão às demais partes do sistema.
+    }
+}
+```
+:::
+::::
 
+:::{.fontsize80}
+- A princípio **não**!
+   - No exemplo acima seria impresso na tela `Novo saldo: R$ 100,00`, mostrando que é possível acessar um atributo de fora da sua classe.
+
+- Mas uma **classe** pode **definir o tipo de acesso** que seus **membros permitirão** às demais partes do sistema.
+:::
 
 ## Encapsulamento em Java
+:::{.fontsize80}
+Para **encapsular** um **atributo** em uma classe Java, precisamos **explicitar** isso no **código**.
+:::
 
-Para encapsular um atributo em uma classe Java, precisamos explicitar isso no código.
+::::{.columns style='display: flex !important; align-items: center;' .fontsize90}
 
-  Os modificadores de acesso public e private controlam o acesso aos atributos da classe.
+::: {.column width="35%"}
+```{.java code-line-numbers="false"}
+public class ContaBancaria{
+    //Número da conta
+    int numero;
+    //Nome do titular da conta
+    String nome;
+    //Saldo da conta
+    float saldo;
+    //Construtor e métodos omitidos
+}
+```
+:::
 
- 
+::: {.column width="30%"}
+![](figuras/seta.png){fig-alt="Seta" fig-align="center" width=50%}
+:::
 
-  A palavra-chave private é utilizada para indicar que os atributos são privados da classe. O que isso significa?
- 
-   Significa que a única forma de saber o valor dos atributos ou alterá-los, de fora da classe, é através dos métodos da classe.
- 
-  Não utilizar o modificador de acesso private para os atributos de uma classe fere o princípio do encapsulamento
+::: {.column width="35%"}
+```{.java code-line-numbers="false"}
+public class ContaBancaria{
+    //Número da conta
+    private int numero;
+    //Nome do titular da conta
+    private String nome;
+    //Saldo da conta
+    private float saldo;
+    //Construtor e métodos omitidos
+}
+```
+:::
+::::
+
+:::{.fontsize80}
+- Os [modificadores]{.alert} de acesso `public` e `private` [controlam o acesso]{.alert} aos atributos da classe.
+- A palavra-chave `private` é utilizada para **indicar** que os **atributos** são **privados** da classe. O que isso significa?
+   - Significa que a **única** forma de saber o valor dos atributos ou alterá-los, de fora da classe, é **através dos métodos** da classe.
+- **Não utilizar** o modificador de acesso `private` para os **atributos** de uma classe **fere** o **princípio do encapsulamento**.
+:::
 
 
 ## Visibilidade de Atributos e Métodos
 
-Além do modificador de acesso denominado private, existe também o public. Qual será a finalidade desse segundo modificador?
- 
-   Como é possível de imaginar, o public define que \underlineum membro é acessível fora da sua classe.
-   E membro significa atributo ou método.
- 
-   Portanto, os modificadores de acesso definem a visibilidade de um atributo ou método de uma classe.
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="85%" .fontsize90}
+[Além do modificador de acesso denominado `private`, existe também o `public`. Qual será a finalidade desse segundo modificador?]{style="color:darkgreen;"}
+:::
 
+::: {.column width="20%"}
+![](figuras/pensando2.png){fig-alt="Pensando" fig-align="center" width=100%}
+:::
+::::
 
- Desse modo, se desejamos que um método possa ser chamado de fora da sua classe, temos que inserir no código o modificador public. 
+:::{.fontsize80}
+- Como é possível de imaginar, o `public` define que um **membro** é **acessível fora** da sua classe.
+- Portanto, os **modificadores de acesso** definem a **visibilidade** de um **atributo** ou **método** de uma classe.
+:::
+
+::::{.columns style='display: flex !important; align-items: center;' .fragment}
+
+::: {.column width="40%"}
+```{.java code-line-numbers="false"}
+public class ContaBancaria{
+    private int numero;
+    private String nome;
+    private float saldo;
+    //Retorna o número da conta
+    public int getNumero(){
+      return numero;
+    }
+    //Demais métodos omitidos
+}
+```
+:::
+
+::: {.column width="60%" .fontsize80 .nonincremental}
+- Desse modo, se desejamos que um método possa ser **chamado de fora** da sua classe, temos que **inserir** no código o **modificador** `public`. 
+:::
+::::
 
 
 ## Métodos Privados
+::::{.columns style='display: flex !important; align-items: center;'}
 
+::: {.column width="25%"}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=60%}
+:::
+
+::: {.column width="75%" .fontsize90}
 Mas faz algum sentido usar um método privado?
+
+:::{.fontsize90}
+- Sim, métodos privados são muito interessantes por dois motivos:
+   - Em algumas situações percebemos que mais de um método público de nossa classe necessita de um mesmo trecho de código. A fim de não repetir esse trecho de código em mais de um método público da classe, separa-se esse trecho em um método privado que passa a ser chamado nos métodos públicos.
+   - Um método público poderia ficar muito grande, o que dificultaria a legibilidade e manutenção do código. Nesse caso, pode-se dividir esse método em partes menores fazendo-se uso de métodos privados.
+:::
+:::
+
+::::
+
  
-   Sim, métodos privados são muito interessantes por dois motivos:
-  
-    Em algumas situações percebemos que mais de um método público de nossa classe necessita de um mesmo trecho de código. A fim de não repetir esse trecho de código em mais de um método público da classe, separa-se esse trecho em um método privado que passa a ser chamado nos métodos públicos.
-    4Um método público poderia ficar muito grande, o que dificultaria a legibilidade e manutenção do código. Nesse caso, pode-se dividir esse método em partes menores fazendo-se uso de métodos privados.
-
-
 ## Métodos Get e Set
 
 Já vimos que o modificador private faz com que a única forma de saber o valor de um atributo ou alterá-lo, de fora da classe, seja através dos métodos dessa classe.
