@@ -11,7 +11,7 @@
 <script src="aula5_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula5_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula5_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Encapsulamento e Visibilidade </title>
@@ -551,7 +551,7 @@
 <h2>Interface</h2>
 <div class="columns" style="display: flex !important; align-items: top;">
 <div class="column fontsize90" style="width:70%;">
-<p><span style="color:darkblue;">Quais as vantagens de fazer com que a única forma de se comunicar com um objeto e acessar seus dados seja por meio dos métodos?</span></p>
+<p><span style="color:darkgreen;">Quais as vantagens de fazer com que a única forma de se comunicar com um objeto e acessar seus dados seja por meio dos métodos?</span></p>
 </div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -573,10 +573,10 @@
 <section id="encapsulamento-em-java" class="slide level2">
 <h2>Encapsulamento em Java</h2>
 <div class="fontsize80">
-<p><span style="color:darkblue;">Uma vez que Java é uma linguagem de programação orientada a objetos, então o encapsulamento de dados está garantido? Ou seja, os atributos de uma classe em Java são inacessíveis fora dela?</span></p>
+<p><span style="color:darkgreen;">Uma vez que Java é uma linguagem de programação orientada a objetos, então o encapsulamento de dados está garantido? Ou seja, os atributos de uma classe em Java são inacessíveis fora dela?</span></p>
 </div>
 <div class="columns fontsize90" style="display: flex !important; align-items: top;">
-<div class="column" style="width:30%;">
+<div class="column" style="width:32%;">
 <div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
 <span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Número da conta</span></span>
 <span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> numero<span class="op">;</span></span>
@@ -587,7 +587,7 @@
 <span id="cb1-8"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Outros métodos omitidos</span></span>
 <span id="cb1-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:70%;">
+</div><div class="column" style="width:72%;">
 <div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
 <span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
 <span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a>        ContaBancaria minhaConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span>    </span>
@@ -703,13 +703,13 @@
 </figure>
 </div>
 </div><div class="column fontsize90" style="width:75%;">
-<p>Mas faz algum sentido usar um método privado?</p>
+<p><span style="color:darkgreen;">Mas faz algum sentido usar um método privado?</span></p>
 <div class="fontsize90">
 <ul>
-<li class="fragment">Sim, métodos privados são muito interessantes por dois motivos:
+<li class="fragment"><strong>Sim</strong>, métodos privados são muito interessantes por <strong>dois motivos</strong>:
 <ul>
-<li class="fragment">Em algumas situações percebemos que mais de um método público de nossa classe necessita de um mesmo trecho de código. A fim de não repetir esse trecho de código em mais de um método público da classe, separa-se esse trecho em um método privado que passa a ser chamado nos métodos públicos.</li>
-<li class="fragment">Um método público poderia ficar muito grande, o que dificultaria a legibilidade e manutenção do código. Nesse caso, pode-se dividir esse método em partes menores fazendo-se uso de métodos privados.</li>
+<li class="fragment">Em algumas situações percebemos que mais de um método público de nossa classe necessita de um mesmo trecho de código. A fim de <strong>não repetir</strong> esse <strong>trecho de código</strong> em <strong>mais de um método público</strong> da classe, separa-se esse trecho em um método privado que passa a ser chamado nos métodos públicos.</li>
+<li class="fragment">Um <strong>método público</strong> poderia ficar <strong>muito grande</strong>, o que dificultaria a legibilidade e manutenção do código. Nesse caso, pode-se dividir esse método em partes menores fazendo-se uso de métodos privados.</li>
 </ul></li>
 </ul>
 </div>
@@ -717,33 +717,142 @@
 </div>
 </section>
 <section id="métodos-get-e-set" class="slide level2">
-<h2>Métodos Get e Set</h2>
-<p>Já vimos que o modificador private faz com que a única forma de saber o valor de um atributo ou alterá-lo, de fora da classe, seja através dos métodos dessa classe. Portanto, uma prática comum para acessar os atributos privados é utilizar:</p>
-<pre><code>Métodos set: são métodos modificadores, pois geralmente mudam o estado de um objeto.
-Métodos get: são métodos de acesso, que permitem consultar os valores dos atributos.</code></pre>
-<p>Comumente o nome desses métodos é dado pelo prefixo (get ou set) seguido pelo nome do atributo em questão (utilizando-se a notação camelCase).</p>
+<h2>Métodos <em>get</em> e <em>set</em></h2>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column fontsize90" style="width:70%;">
+<p>Já vimos que o modificador <code>private</code> faz com que a única forma de saber o valor de um atributo ou alterá-lo, de fora da classe, seja através dos métodos dessa classe.</p>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/private.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Private"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fontsize90">
+<ul>
+<li class="fragment">Portanto, uma <strong>prática comum</strong> para <strong>acessar</strong> os <strong>atributos privados</strong> é utilizar:
+<ul>
+<li class="fragment">Métodos <em>set</em>: são <strong>métodos modificadores</strong>, pois geralmente mudam o estado de um objeto.</li>
+<li class="fragment">Métodos <em>get</em>: são <strong>métodos de acesso</strong>, que permitem consultar os valores dos atributos.</li>
+</ul></li>
+<li class="fragment">Comumente o <strong>nome</strong> desses <strong>métodos</strong> é dado pelo <strong>prefixo</strong> (<em>get</em> ou <em>set</em>) seguido pelo nome do atributo em questão (utilizando-se a notação <strong>camelCase</strong>).</li>
+</ul>
+</div>
 </section>
-<section id="métodos-get-e-set-x-atributos-públicos" class="slide level2">
-<h2>Métodos Get e Set x Atributos Públicos</h2>
-<p>Fornecer os métodos get e set é o mesmo que tornar public os atributos da classe?</p>
-<p>Pode parecer que sim, mas há uma diferença sutil. Se o atributo for declarado private, o método get (public) permitirá o acesso ao atributo a partir de outras classes, mas ele poderá controlar como esse dado será acessado.</p>
-<pre><code>Por exemplo, o método get pode controlar o formato dos dados que ele retorna.</code></pre>
-<p>De modo semelhante, o método set (public) pode, e deve, examinar cuidadosamente as tentativas de modificar o valor de um atributo.</p>
-<pre><code>Por exemplo, tentativas de definir a idade de uma pessoa com valor negativo devem ser rejeitadas.</code></pre>
-<p>Resumindo, apesar de os métodos get e set fornecerem acesso a atributos private, esse acesso é controlado pela implementação dos métodos!</p>
+<section id="métodos-get-e-set-versus-atributos-públicos" class="slide level2">
+<h2>Métodos <em>get</em> e <em>set</em> <strong>versus</strong> Atributos Públicos</h2>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column fontsize90" style="width:70%;">
+<p><span style="color:darkgreen;">Fornecer os métodos <em>get</em> e <em>set</em> é o mesmo que tornar <code>public</code> os atributos da classe?</span></p>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pensando2.png" class="quarto-figure quarto-figure-center" style="width:50.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fontsize80">
+<p>Pode parecer que sim, mas <strong>há</strong> uma <strong>diferença</strong> sutil.</p>
+<ul>
+<li class="fragment">Se o atributo for declarado <code>private</code>, o método <em>get</em> (<code>public</code>) <strong>permitirá o acesso</strong> ao <strong>atributo</strong> a partir de outras classes, <strong>mas</strong> ele <strong>poderá controlar</strong> como esse dado será acessado.
+<ul>
+<li class="fragment">Por exemplo, o método <em>get</em> pode controlar o formato dos dados que ele retorna.</li>
+</ul></li>
+<li class="fragment">De modo semelhante, o método <em>set</em> (<code>public</code>) pode, e deve, <strong>examinar</strong> cuidadosamente as <strong>tentativas de modificar</strong> o valor de um <strong>atributo</strong>.
+<ul>
+<li class="fragment">Por exemplo, tentativas de definir a idade de uma pessoa com valor negativo devem ser rejeitadas.</li>
+</ul></li>
+<li class="fragment">Resumindo, apesar de os métodos get e set fornecerem acesso a atributos private, esse acesso é controlado pela implementação dos métodos!</li>
+</ul>
+</div>
 </section>
 <section id="métodos-get-e-set-1" class="slide level2">
-<h2>Métodos Get e Set</h2>
-<p>Devo criar métodos get e set para todos atributos (private) da classe?</p>
-<p>Analise o nosso exemplo da aula anterior, onde temos a classe ContaBancaria:</p>
-<pre><code>Os atributos dessa classe são: o nome do titular, o número da conta e o saldo da mesma.
-Além disso, ela possui métodos que permitem o cliente movimentar a sua conta (sacar e depositar).
-Faz sentido um método set para alterar o atributo saldo?
-Na vida real, como o saldo de uma conta é alterado?</code></pre>
-<p>Portanto, devemos criar métodos set e get somente quando for realmente necessário!</p>
+<h2>Métodos <em>get</em> e <em>set</em></h2>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div><div class="column fontsize90" style="width:75%;">
+<p><span style="color:darkgreen;">Devo criar métodos <em>get</em> e <em>set</em> para todos atributos (<code>private</code>) da classe?</span></p>
+<div class="fontsize90">
+<ul>
+<li class="fragment">Analise o nosso <strong>exemplo da aula anterior</strong>, onde temos a classe <code>ContaBancaria</code>:
+<ul>
+<li class="fragment">Os <strong>atributos</strong> dessa classe são: o <code>nome</code> do titular, o <code>número</code> da conta e o <code>saldo</code> da mesma.</li>
+<li class="fragment">Além disso, ela possui <strong>métodos</strong> que permitem o cliente movimentar a sua conta (<code>sacar</code> e <code>depositar</code>).</li>
+<li class="fragment">Faz sentido um método <em>set</em> para alterar o atributo <code>saldo</code>?</li>
+<li class="fragment">Na vida real, como o saldo de uma conta é alterado?</li>
+</ul></li>
+<li class="fragment">Portanto, devemos criar métodos <em>set</em> e <em>get</em> <strong>somente</strong> quando for <strong>realmente necessário</strong>!</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
-<section id="uma-falha-comum-em-oo" class="slide level2">
-<h2>Uma Falha Comum em OO</h2>
+<section id="uma-falha-comum-em-orientação-a-objetos" class="slide level2">
+<h2>Uma Falha Comum em Orientação a Objetos</h2>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Carro<span class="op">{</span></span>
+<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> cor<span class="op">;</span></span>
+<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">float</span> tamanho<span class="op">;</span></span>
+<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> Motor motor<span class="op">;</span></span>
+<span id="cb6-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Retorna o motor do carro</span></span>
+<span id="cb6-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> Motor <span class="fu">getMotor</span><span class="op">(){</span></span>
+<span id="cb6-7"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> motor<span class="op">;</span></span>
+<span id="cb6-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb6-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Demais métodos omitidos</span></span>
+<span id="cb6-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Motor<span class="op">{</span></span>
+<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> numeroValvulas<span class="op">;</span></span>
+<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">float</span> potencia<span class="op">;</span></span>
+<span id="cb7-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> tipo<span class="op">;</span></span>
+<span id="cb7-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Altera a potência do motor</span></span>
+<span id="cb7-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">mudarPotencia</span><span class="op">(</span><span class="dt">float</span> potencia<span class="op">){</span></span>
+<span id="cb7-7"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="fu">potencia</span> <span class="op">=</span> potencia<span class="op">;</span></span>
+<span id="cb7-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb7-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Demais métodos omitidos</span></span>
+<span id="cb7-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fontsize80 fragment">
+<p><span style="color:darkgreen;">O que acontece se fora da classe <code>Carro</code> eu declarar uma variável que recebe o retorno do método <code>getMotor</code> e chamar o método <code>mudarPotencia</code> usando essa variável? Isso vai alterar a potência do motor do carro?</span></p>
+</div>
+<div class="columns fragment" style="display: flex !important; align-items: top;">
+<div class="column" style="width:40%;">
+<div class="sourceCode" id="cb8"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a>pubic <span class="kw">class</span> Qualquer<span class="op">{</span></span>
+<span id="cb8-2"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">metodoQualquer</span><span class="op">(){</span></span>
+<span id="cb8-3"><a href="" aria-hidden="true" tabindex="-1"></a>      Carro c <span class="op">=</span> <span class="kw">new</span> <span class="fu">Carro</span><span class="op">();</span></span>
+<span id="cb8-4"><a href="" aria-hidden="true" tabindex="-1"></a>      Motor m <span class="op">=</span> c<span class="op">.</span><span class="fu">getMotor</span><span class="op">();</span></span>
+<span id="cb8-5"><a href="" aria-hidden="true" tabindex="-1"></a>      m<span class="op">.</span><span class="fu">mudarPotencia</span><span class="op">(</span><span class="fl">1.3f</span><span class="op">);</span></span>
+<span id="cb8-6"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb8-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize80" style="width:60%;">
+<ul>
+<li>Sim, vai alterar a potência do motor do carro. Isso acontece porque o <strong>método</strong> <code>getMotor</code> <strong>retorna</strong> uma <strong>referência</strong> (endereço) do motor do carro.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="uma-falha-comum-em-orientação-a-objetos-1" class="slide level2">
+<h2>Uma Falha Comum em Orientação a Objetos</h2>
+<p>Mas qual é o problema disso?</p>
+<ul>
+<li class="fragment"><p>Nós aprendemos com o conceito de encapsulamento que a classe deve ser a única capaz de alterar os seus dados.</p></li>
+<li class="fragment"><p>Dessa forma, se um carro possui um motor, os dados desse motor <strong>não</strong> deveriam ser <strong>alterados fora</strong> da classe <code>Motor</code>.</p></li>
+</ul>
+<p>Como evitar isso?</p>
+<ul>
+<li class="fragment">Nesses casos deve ser retornada uma cópia do objeto motor e não a referência para o objeto em si.</li>
+<li class="fragment">A linguagem Java padroniza um nome de método (clone) para retornar uma cópia para o objeto.</li>
+<li class="fragment">Mas se você precisasse implementar um método desse sem conhecer o clone, como você faria com o que já conhece da linguagem?</li>
+</ul>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">

@@ -135,7 +135,7 @@ Resumindo, o **objeto está no controle**, ou seja, é ele que determina **se** 
 
 ::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="70%" .fontsize90}
-[Quais as vantagens de fazer com que a única forma de se comunicar com um objeto e acessar seus dados seja por meio dos métodos?]{style="color:darkblue;"}
+[Quais as vantagens de fazer com que a única forma de se comunicar com um objeto e acessar seus dados seja por meio dos métodos?]{style="color:darkgreen;"}
 :::
 
 ::: {.column width="30%"}
@@ -155,12 +155,12 @@ Resumindo, o **objeto está no controle**, ou seja, é ele que determina **se** 
 
 ## Encapsulamento em Java
 :::{.fontsize80}
-[Uma vez que Java é uma linguagem de programação orientada a objetos, então o encapsulamento de dados está garantido? Ou seja, os atributos de uma classe em Java são inacessíveis fora dela?]{style="color:darkblue;"}
+[Uma vez que Java é uma linguagem de programação orientada a objetos, então o encapsulamento de dados está garantido? Ou seja, os atributos de uma classe em Java são inacessíveis fora dela?]{style="color:darkgreen;"}
 :::
 
 ::::{.columns style='display: flex !important; align-items: top;' .fontsize90}
 
-::: {.column width="30%"}
+::: {.column width="32%"}
 ```{.java code-line-numbers="false"}
 public class ContaBancaria{
     //Número da conta
@@ -175,7 +175,7 @@ public class ContaBancaria{
 ```
 :::
 
-::: {.column width="70%"}
+::: {.column width="72%"}
 ```{.java code-line-numbers="false"}
 public class App{
     public static void main(String[] args){
@@ -294,55 +294,148 @@ public class ContaBancaria{
 :::
 
 ::: {.column width="75%" .fontsize90}
-Mas faz algum sentido usar um método privado?
+[Mas faz algum sentido usar um método privado?]{style="color:darkgreen;"}
 
 :::{.fontsize90}
-- Sim, métodos privados são muito interessantes por dois motivos:
-   - Em algumas situações percebemos que mais de um método público de nossa classe necessita de um mesmo trecho de código. A fim de não repetir esse trecho de código em mais de um método público da classe, separa-se esse trecho em um método privado que passa a ser chamado nos métodos públicos.
-   - Um método público poderia ficar muito grande, o que dificultaria a legibilidade e manutenção do código. Nesse caso, pode-se dividir esse método em partes menores fazendo-se uso de métodos privados.
+- **Sim**, métodos privados são muito interessantes por **dois motivos**:
+   - Em algumas situações percebemos que mais de um método público de nossa classe necessita de um mesmo trecho de código. A fim de **não repetir** esse **trecho de código** em **mais de um método público** da classe, separa-se esse trecho em um método privado que passa a ser chamado nos métodos públicos.
+   - Um **método público** poderia ficar **muito grande**, o que dificultaria a legibilidade e manutenção do código. Nesse caso, pode-se dividir esse método em partes menores fazendo-se uso de métodos privados.
 :::
 :::
 
 ::::
 
  
-## Métodos Get e Set
+## Métodos *get* e *set*
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="70%" .fontsize90}
+Já vimos que o modificador `private` faz com que a única forma de saber o valor de um atributo ou alterá-lo, de fora da classe, seja através dos métodos dessa classe.
+:::
 
-Já vimos que o modificador private faz com que a única forma de saber o valor de um atributo ou alterá-lo, de fora da classe, seja através dos métodos dessa classe.
-   Portanto, uma prática comum para acessar os atributos privados é utilizar: 
-  
-    Métodos set: são métodos modificadores, pois geralmente mudam o estado de um objeto.
-    Métodos get: são métodos de acesso, que permitem consultar os valores dos atributos.
-  
-   Comumente o nome desses métodos é dado pelo prefixo (get ou set) seguido pelo nome do atributo em questão (utilizando-se a notação camelCase).
+::: {.column width="30%"}
+![](figuras/private.png){fig-alt="Private" fig-align="center" width=70%}
+:::
+::::
 
-## Métodos Get e Set x Atributos Públicos
-
-Fornecer os métodos get e set é o mesmo que tornar public os atributos da classe?
- 
-   Pode parecer que sim, mas há uma diferença sutil.
-   Se o atributo for declarado private, o método get (public) permitirá o acesso ao atributo a partir de outras classes, mas ele poderá controlar como esse dado será acessado.
-  
-    Por exemplo, o método get pode controlar o formato dos dados que ele retorna.
-  
-   De modo semelhante, o método set (public) pode, e deve, examinar cuidadosamente as tentativas de modificar o valor de um atributo.
-  
-    Por exemplo, tentativas de definir a idade de uma pessoa com valor negativo devem ser rejeitadas.
-  
-   Resumindo, apesar de os métodos get e set fornecerem acesso a atributos private, esse acesso é controlado pela implementação dos métodos!
+:::{.fontsize90}
+- Portanto, uma **prática comum** para **acessar** os **atributos privados** é utilizar: 
+   - Métodos *set*: são **métodos modificadores**, pois geralmente mudam o estado de um objeto.
+   - Métodos *get*: são **métodos de acesso**, que permitem consultar os valores dos atributos.
+- Comumente o **nome** desses **métodos** é dado pelo **prefixo** (*get* ou *set*) seguido pelo nome do atributo em questão (utilizando-se a notação **camelCase**).
+:::
 
 
-## Métodos Get e Set
+## Métodos *get* e *set* **versus** Atributos Públicos
+::::{.columns style='display: flex !important; align-items: center;'}
+::: {.column width="70%" .fontsize90}
+[Fornecer os métodos *get* e *set* é o mesmo que tornar `public` os atributos da classe?]{style="color:darkgreen;"}
+:::
 
-Devo criar métodos get e set para todos atributos (private) da classe?
- 
-   Analise o nosso exemplo da aula anterior, onde temos a classe ContaBancaria:
-  
-    Os atributos dessa classe são: o nome do titular, o número da conta e o saldo da mesma.
-    Além disso, ela possui métodos que permitem o cliente movimentar a sua conta (sacar e depositar).
-    Faz sentido um método set para alterar o atributo saldo?
-    Na vida real, como o saldo de uma conta é alterado?
-  
-   Portanto, devemos criar métodos set e get somente quando for realmente necessário!
+::: {.column width="30%"}
+![](figuras/pensando2.png){fig-alt="Pensando" fig-align="center" width=50%}
+:::
+::::
 
-## Uma Falha Comum em OO
+:::{.fontsize80}
+Pode parecer que sim, mas **há** uma **diferença** sutil.
+   
+- Se o atributo for declarado `private`, o método *get* (`public`) **permitirá o acesso** ao **atributo** a partir de outras classes, **mas** ele **poderá controlar** como esse dado será acessado.
+   - Por exemplo, o método *get* pode controlar o formato dos dados que ele retorna.
+- De modo semelhante, o método *set* (`public`) pode, e deve, **examinar** cuidadosamente as **tentativas de modificar** o valor de um **atributo**.
+   - Por exemplo, tentativas de definir a idade de uma pessoa com valor negativo devem ser rejeitadas.
+- Resumindo, apesar de os métodos get e set fornecerem acesso a atributos private, esse acesso é controlado pela implementação dos métodos!
+:::
+
+
+## Métodos *get* e *set*
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="25%"}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=60%}
+:::
+
+::: {.column width="75%" .fontsize90}
+[Devo criar métodos *get* e *set* para todos atributos (`private`) da classe?]{style="color:darkgreen;"}
+
+:::{.fontsize90}
+- Analise o nosso **exemplo da aula anterior**, onde temos a classe `ContaBancaria`:
+   - Os **atributos** dessa classe são: o `nome` do titular, o `número` da conta e o `saldo` da mesma.
+   - Além disso, ela possui **métodos** que permitem o cliente movimentar a sua conta (`sacar` e `depositar`).
+   - Faz sentido um método *set* para alterar o atributo `saldo`?
+   - Na vida real, como o saldo de uma conta é alterado?
+- Portanto, devemos criar métodos *set* e *get* **somente** quando for **realmente necessário**!
+:::
+:::
+
+::::
+
+
+## Uma Falha Comum em Orientação a Objetos
+
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="50%"}
+```{.java code-line-numbers="false"}
+public class Carro{
+    private String cor;
+    private float tamanho;
+    private Motor motor;
+    //Retorna o motor do carro
+    public Motor getMotor(){
+      return motor;
+    }
+    //Demais métodos omitidos
+}
+```
+:::
+
+::: {.column width="50%"}
+```{.java code-line-numbers="false"}
+public class Motor{
+    private int numeroValvulas;
+    private float potencia;
+    private String tipo;
+    //Altera a potência do motor
+    public void mudarPotencia(float potencia){
+      this.potencia = potencia;
+    }
+    //Demais métodos omitidos
+}
+```
+:::
+::::
+
+:::{.fontsize80 .fragment}
+[O que acontece se fora da classe `Carro` eu declarar uma variável que recebe o retorno do método `getMotor` e chamar o método `mudarPotencia` usando essa variável? Isso vai alterar a potência do motor do carro?]{style="color:darkgreen;"}
+:::
+
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="40%" }
+```{.java code-line-numbers="false"}
+pubic class Qualquer{
+   public void metodoQualquer(){
+      Carro c = new Carro();
+      Motor m = c.getMotor();
+      m.mudarPotencia(1.3f);
+   }
+}
+```
+:::
+
+::: {.column width="60%" .fontsize80 .nonincremental}
+- Sim, vai alterar a potência do motor do carro. Isso acontece porque o **método** `getMotor` **retorna** uma **referência** (endereço) do motor do carro.
+:::
+::::
+
+
+## Uma Falha Comum em Orientação a Objetos
+Mas qual é o problema disso?
+
+- Nós aprendemos com o conceito de encapsulamento que a classe deve ser a única capaz de alterar os seus dados. 
+
+- Dessa forma, se um carro possui um motor, os dados desse motor **não** deveriam ser **alterados fora** da classe `Motor`.
+
+Como evitar isso?
+
+- Nesses casos deve ser retornada uma cópia do objeto motor e não a referência para o objeto em si.
+- A linguagem Java padroniza um nome de método (clone) para retornar uma cópia para o objeto.
+- Mas se você precisasse implementar um método desse sem conhecer o clone, como você faria com o que já conhece da linguagem?
