@@ -1,0 +1,57 @@
+---
+title: Aula Prática 5<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Observações Importantes {}
+::: {.fontsize80}
+::: {.nonincremental}
+
+A realização dos exercícios nas **aulas práticas é primordial** para que você consiga **consolidar os conceitos** aprendidos nas **aulas teóricas** (aulas não presenciais - ANP) e **colocá-los em prática** utilizando a linguagem de programação Java.
+
+- No entanto, para **conseguir realizar os exercícios** das aulas práticas é **fundamental** que você tenha **estudado**, [antes das aulas práticas]{.underline}, o **conteúdo** das aulas não presenciais disponibilizadas pelo professor. 
+
+Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **comparecer às aulas**, o aluno deve **realizar e entregar os exercícios** propostos nas aulas.
+
+- Portanto, **não esqueça de entregar no Campus Virtual** os exercícios **até o término das aulas práticas** (mesmo que não tenha terminado-os completamente).
+:::
+:::
+
+
+## Contextualização
+
+Na aula de hoje **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
+
+. . .
+
+:::{.nonincremental}
+Diferentemente das aulas prática anteriores, **hoje** vocês farão a **implementação** **sem** que nenhum **código inicial** seja fornecido.
+:::
+
+. . .
+
+:::{.nonincremental}
+Portanto, **antes de começarem a codificar**, **leiam** o **enunciado** do exercício **com atenção** e entendam a **modelagem** do problema, ou seja, **quais** **classes** deverão implementar e **quais** serão os **atributos** e **métodos** de cada uma delas.
+:::
+
+
+## Atividade
+:::{.nonincremental .fontsize80}
+Crie uma classe `Horario` com **três atributos** inteiros: `hora`, `minuto` e `segundo`. Faça um **construtor** que **inicializa** os **três atributos**. A classe deve possuir um **método** para exibir (**imprimir na tela**) o horário em formato de números separados por dois pontos (por exemplo: 15h:05m:12s). Além disso, essa classe deverá ter **um segundo construtor** que recebe uma **quantidade de segundos por parâmetro** e converte esse valor em horas, minutos e segundos para inicializar cada um dos atributos dessa classe. Por exemplo, 3690 segundos deverá ser convertido em 1 hora, 1 minuto e 30 segundos. Uma **segunda classe** denominada `App` deve ser criada para testar a implementação da classe `Horario`. Nessa classe `App`, que conterá o método `main`, instancie 4 objetos da classe `Horario` utilizando os seguintes argumentos para os construtores: 
+
+- 10 horas, 15 minutos e 43 segundos
+- 3690 segundos
+- 3521 segundos
+- 59 segundos
+
+Por fim, chame o **método** `exibir` para cada um desses objetos.
+:::
+
+
+## 
+:::{.callout-warning title="Atenção" icon=false .fontsize90}
+Execute a sua implementação e verifique se ela está funcionando corretamente. **Entregue** no Campus Virtual a **versão final da implementação**.
+:::
