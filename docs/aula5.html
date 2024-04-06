@@ -753,7 +753,7 @@
 </div>
 </div>
 </div>
-<div class="fontsize80">
+<div class="fontsize80 fragment">
 <p>Pode parecer que sim, mas <strong>há</strong> uma <strong>diferença</strong> sutil.</p>
 <ul>
 <li class="fragment">Se o atributo for declarado <code>private</code>, o método <em>get</em> (<code>public</code>) <strong>permitirá o acesso</strong> ao <strong>atributo</strong> a partir de outras classes, <strong>mas</strong> ele <strong>poderá controlar</strong> como esse dado será acessado.
@@ -764,7 +764,7 @@
 <ul>
 <li class="fragment">Por exemplo, tentativas de definir a idade de uma pessoa com valor negativo devem ser rejeitadas.</li>
 </ul></li>
-<li class="fragment">Resumindo, apesar de os métodos get e set fornecerem acesso a atributos private, esse acesso é controlado pela implementação dos métodos!</li>
+<li class="fragment">Resumindo, apesar de os métodos <em>get</em> e <em>set</em> fornecerem acesso a atributos <code>private</code>, esse <strong>acesso é controlado</strong> pela implementação dos métodos!</li>
 </ul>
 </div>
 </section>
@@ -842,17 +842,27 @@
 </section>
 <section id="uma-falha-comum-em-orientação-a-objetos-1" class="slide level2">
 <h2>Uma Falha Comum em Orientação a Objetos</h2>
-<p>Mas qual é o problema disso?</p>
+<div class="fontsize90">
+<p><span style="color:darkgreen;">Mas qual é o problema disso?</span></p>
 <ul>
-<li class="fragment"><p>Nós aprendemos com o conceito de encapsulamento que a classe deve ser a única capaz de alterar os seus dados.</p></li>
-<li class="fragment"><p>Dessa forma, se um carro possui um motor, os dados desse motor <strong>não</strong> deveriam ser <strong>alterados fora</strong> da classe <code>Motor</code>.</p></li>
+<li class="fragment">Nós aprendemos com o conceito de <strong>encapsulamento</strong> que a <strong>classe</strong> deve ser a <strong>única</strong> capaz de <strong>alterar</strong> os seus <strong>dados</strong>.</li>
+<li class="fragment">Dessa forma, se um <strong>carro</strong> possui um <strong>motor</strong>, os dados desse motor <strong>não</strong> deveriam ser <strong>alterados fora</strong> da classe <code>Carro</code>.</li>
 </ul>
-<p>Como evitar isso?</p>
+<p><span class="fragment" style="color:darkgreen;">Como evitar isso?</span></p>
 <ul>
-<li class="fragment">Nesses casos deve ser retornada uma cópia do objeto motor e não a referência para o objeto em si.</li>
-<li class="fragment">A linguagem Java padroniza um nome de método (clone) para retornar uma cópia para o objeto.</li>
-<li class="fragment">Mas se você precisasse implementar um método desse sem conhecer o clone, como você faria com o que já conhece da linguagem?</li>
+<li class="fragment">Nesses casos deve ser retornada uma <strong>cópia do objeto</strong> motor e <strong>não</strong> a <strong>referência</strong> para o <strong>objeto</strong> em si.</li>
+<li class="fragment">A linguagem Java padroniza um nome de <strong>método</strong> (<code>clone</code>) para retornar uma cópia para o objeto.</li>
+<li class="fragment">Mas se você precisasse implementar um método desse sem conhecer o método <code>clone</code>, como você faria com o que já conhece da linguagem?</li>
 </ul>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/perguntas.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Perguntas"></p>
+</figure>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">

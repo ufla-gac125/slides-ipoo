@@ -336,14 +336,14 @@ Já vimos que o modificador `private` faz com que a única forma de saber o valo
 :::
 ::::
 
-:::{.fontsize80}
+:::{.fontsize80 .fragment}
 Pode parecer que sim, mas **há** uma **diferença** sutil.
    
 - Se o atributo for declarado `private`, o método *get* (`public`) **permitirá o acesso** ao **atributo** a partir de outras classes, **mas** ele **poderá controlar** como esse dado será acessado.
    - Por exemplo, o método *get* pode controlar o formato dos dados que ele retorna.
 - De modo semelhante, o método *set* (`public`) pode, e deve, **examinar** cuidadosamente as **tentativas de modificar** o valor de um **atributo**.
    - Por exemplo, tentativas de definir a idade de uma pessoa com valor negativo devem ser rejeitadas.
-- Resumindo, apesar de os métodos get e set fornecerem acesso a atributos private, esse acesso é controlado pela implementação dos métodos!
+- Resumindo, apesar de os métodos *get* e *set* fornecerem acesso a atributos `private`, esse **acesso é controlado** pela implementação dos métodos!
 :::
 
 
@@ -428,14 +428,20 @@ pubic class Qualquer{
 
 
 ## Uma Falha Comum em Orientação a Objetos
-Mas qual é o problema disso?
+:::{.fontsize90}
+[Mas qual é o problema disso?]{style="color:darkgreen;"}
 
-- Nós aprendemos com o conceito de encapsulamento que a classe deve ser a única capaz de alterar os seus dados. 
+- Nós aprendemos com o conceito de **encapsulamento** que a **classe** deve ser a **única** capaz de **alterar** os seus **dados**. 
+- Dessa forma, se um **carro** possui um **motor**, os dados desse motor **não** deveriam ser **alterados fora** da classe `Carro`.
 
-- Dessa forma, se um carro possui um motor, os dados desse motor **não** deveriam ser **alterados fora** da classe `Motor`.
+[Como evitar isso?]{style="color:darkgreen;" .fragment}
 
-Como evitar isso?
+- Nesses casos deve ser retornada uma **cópia do objeto** motor e **não** a **referência** para o **objeto** em si.
+- A linguagem Java padroniza um nome de **método** (`clone`) para retornar uma cópia para o objeto.
+- Mas se você precisasse implementar um método desse sem conhecer o método `clone`, como você faria com o que já conhece da linguagem?
+:::
 
-- Nesses casos deve ser retornada uma cópia do objeto motor e não a referência para o objeto em si.
-- A linguagem Java padroniza um nome de método (clone) para retornar uma cópia para o objeto.
-- Mas se você precisasse implementar um método desse sem conhecer o clone, como você faria com o que já conhece da linguagem?
+
+##
+
+![](figuras/perguntas.png){fig-alt="Perguntas" fig-align="center" width=35%}
