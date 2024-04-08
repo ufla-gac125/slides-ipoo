@@ -27,69 +27,271 @@ title-slide-attributes:
 ::::
 
 ## Atributos Estáticos
+Suponha que você está desenvolvendo um sistema para uma agência de uma instituição bancária.
+    2->{A estratégia de venda dos produtos (consórcio, seguros, planos de previdência etc.) nessa agência depende do número de contas abertas na mesma.}
+  
+ 
 
+
+ {0.3\textwidth}
+  fig15}
+ 
+
+
+
+  3->{Você definiu a classe \textbf{ContaBancaria} para tratar os comportamentos de cada uma das contas abertas.}
+  4->{Precisamos então armazenar em algum local a quantidade de contas abertas.}
+  5->{Qual a melhor forma de guardar isso?}
+ 
+   6->{Na própria classe? 
+   Em outra classe? }
+   7->{Como?
 
 ## Atributos Estáticos
+Se colocarmos essa informação em uma classe que não seja a \textbf{ContaBancaria}, teríamos que lembrar de incrementar a variável \textit{totalContas} toda vez que um novo objeto da classe \textbf{ContaBancaria} fosse criado.
+  }
+ 
 
+ {0.6\textwidth}
+  fig13}
+ 
+
+
+\vspace{0.1cm}
+
+<2->
+
+ {0.5\textwidth}
+  fig14}
+ 
+ 
+ {0.5\textwidth}
+ \footnotesize{
+  
+    2->{Então basta que a própria classe \textbf{ContaBancaria} controle essa informação no seu \textbf{construtor}!}
+    3->{Desse modo, fica garantido que toda vez que um objeto for criado, ele será contabilizado.}
+    4->{Essa solução funcionará?
 
 ## Atributos Estáticos
+O que acontece se criarmos dois objetos da classe \textbf{ContaBancaria}?}
+   
+   \hspace{0.3cm}{\footnotesize{ContaBancaria \textit{conta1} = \textbf{new} ContaBancaria();}}\\
+   \hspace{0.3cm}{\footnotesize{ContaBancaria \textit{conta2} = \textbf{new} ContaBancaria();}}\\
+   
+    \small{Qual seria o valor do atributo \textit{totalContas}?}
+  
 
+\hspace{-0.3cm}
+
+{0.33\textwidth}
+\begin{flushleft}
+  fig16}<2->
+\end{flushleft}
+
+
+
+\small{
+
+  2->{Como sabemos, cada objeto tem seus valores para seus atributos, ou seja, \textbf{o atributo é de cada objeto}!}
+  3->{Isso ocorre porque, na memória, cada objeto tem seu espaço para guardar os valores de seus atributos.}
+  4->{Portanto, a cada novo objeto da classe \textbf{ContaBancaria}, um novo espaço de memória é reservado para armazenar o valor de \textit{totalContas
 
 ## Atributos Estáticos
+E se conseguíssemos reservar um espaço de memória que fosse \textbf{compartilhado} por \textbf{todos os objetos} de uma mesma classe?
 
+{0.3\textwidth}
+ fig96}
+
+
+
+\begin{block}{Podemos fazer isso usando um \textbf{atributo estático}!}<2->
+ 
+  3->{Um \textbf{atributo estático} pertence à \textbf{classe} e não aos objetos.}
+  4->{Quando um \textbf{atributo} é declarado com \textbf{estático}, um espaço de memória (\textit{heap}) é reservado para ele \textbf{uma única vez} e pode ser acessado por todos os objetos daquela classe.}
+  5->{Desse modo, se um objeto alterar o valor de um atributo estático, todos os demais poderão acessar esse novo valor.
 
 ## Atributos Estáticos
-
+Veja que agora temos apenas uma cópia do atributo \textit{totalContas} na memória e, portanto, o incremento dentro do construtor afeta essa cópia.} 3>{Desse modo, quando um segundo objeto da classe \textbf{ContaBancaria} é criado, o atributo \textit{totalContas} que já está com o valor 1 é incrementado e passa a armazenar o valor 2.
 
 ## Atributos Estáticos
+Os atributos estáticos são denominados \textbf{variáveis de classe}, o que os diferencia das \textbf{variáveis de instância} (que correspondem às implementações dos atributos dos objetos).
+  2->{Um exemplo de atributo estático que já usamos é \textit{out}, um atributo estático público da classe \textit{System}.} 
 
+\begin{center}
+ fig31}<2->
+\end{center}
+%  
+%    Lembram-se do \textit{System.out.println}(``string'')?}
+%  
+
+  3->{Todos os atributos estáticos públicos (\textit{public static}) de uma classe podem ser acessados por meio de uma referência a qualquer objeto da classe \textbf{ou} qualificando o nome do atributo com o nome da classe e um ponto (.), ou seja, \textit{Classe}.\textit{atributo
 
 ## Constantes e Atributos Estáticos
-
+Em linguagens de programação OO não existe o conceito de variável global (acessível de qualquer parte do código).
+\begin{block}{Então como definir, por exemplo, constantes ``globais'' nessas linguagens?}<2->
+ \small{
+ 
+   3->{Em Java, já existem algumas constantes definidas em uma classe contida em um de seus pacotes. Por exemplo, a constante PI é um atributo da classe \textit{Math} definida no pacote \textit{java.lang}.}
+   4->{Como acessar o valor de \textit{pi}? Se ele é um atributo de uma classe, basta criar um objeto dessa classe para acessá-lo, correto?}
+   5->{Hummm...mas não seria um desperdício de recursos e desempenho ter que criar um objeto da classe \textit{Math} só para consultar seus valores?}
+   6->{De fato, não precisamos criar um objeto para isso uma vez que PI é um atributo \textbf{estático}, \textbf{público} e constante.
+  
+    Assim como aprendemos, podemos acessar o valor de \textit{pi} usando: \textit{Math.PI
 
 ## Constantes em Java
+Mas e se eu quiser criar uma constante em um programa Java?}
 
+  2->{Para declarar uma constante em Java você deve usar o modificador \textit{\textbf{final}}.
+ \begin{center} {\color{violet}{private final int}} INCREMENTO; \end{center}}
+  3->{Atributos constantes podem ser inicializados quando são declarados \textbf{OU} nos construtores.}
+  4->{Qual a diferença entre essas duas opções de inicialização?}
+ 
+   5->{Inicializar constantes em construtores permite que cada objeto da classe tenha um valor diferente para a constante.}
+   6->{Aliás, se a inicialização for na declaração, recomenda-se declará-lo como um atributo estático, evitando-se criar uma cópia separada do atributo para cada objeto da classe.
 
 ## Objetos Constantes
+ Usar atributos constantes de tipos primitivos (int, float etc.) é tranquilo.\\
+     Mas usar \textbf{atributos constantes do tipo objeto} exige cautela, pois objetos constantes \textbf{não são imutáveis}!
+  \end{exampleblock}
+ 
 
+\vspace{0.3cm}
+\begin{block}{Considere a declaração do seguinte atributo constante:}<2->
+\begin{center} \small{{\color{violet}{private final}} ContaBancaria \textit{minhaConta} = {\color{blue}{new}} ContaBancaria();} \end{center}
+
+  2->{Qual o significado dessa declaração?}
+ 
+   3->{Significa apenas que não posso atribuir um novo objeto à variável \textit{minhaConta} (seu endereço é constante).}
+   4->{No entanto, nada impede que eu chame os métodos desse objeto e, desse modo, altere seu estado.
 
 ## Métodos Estáticos
+Em Java, temos um método para calcular o logaritmo natural de um número. Veja como ele é chamado:}
+\begin{center} \small{{\color{violet}double} \textit{valor} = Math.log(\textit{num})};\end{center}
 
+  2->{Repare que o método \textit{log} está sendo chamado sem que nenhum objeto da classe \textit{Math} tenha sido instanciado.}
+  3->{Ele está sendo chamado utilizando-se a sintaxe: \textit{Classe.método}. 
+  Com o que isso parece?}
+  4->{Portanto, assim como os atributos, os \textbf{métodos} de uma classe também \textbf{podem ser estáticos}.
+ 
+   Nesse caso, eles são chamados de \textbf{métodos de classe}
 
 ## Métodos Estáticos
+Qual a utilidade de métodos estáticos?}
 
+  2->{Eles são interessantes para realizar operações que não dependem do estado dos objetos.}
+  3->{Por isso, eles podem ser executados sem a necessidade de se instanciar um objeto da classe.}
 
 ## Métodos Estáticos
-
+Exemplo de Método Estático}
+ 
+   Suponha que temos uma classe \textbf{ContaBancaria}.
+   2->{Essa classe possui um método que converte de R\$ para US\$.\\%(recebe um valor por parâmetro e devolve o valor convertido).
+  \begin{center} 
+  {\footnotesize{{\color{violet}{public static double}} converte({\color{violet}{double}} valorReal, {\color{violet}{double}} taxa);}} \end{center}}
+   3->{Você concorda que eu poderia desejar utilizar esse método mesmo sem ter uma conta bancária?}
+  
+    4->{Às vezes precisamos apenas realizar essa conversão e não de uma conta bancária propriamente dita.}
+  
+  5->{O que aconteceria se esse método não fosse estático?}
+ 
+   6->{O usuário seria obrigado a criar um objeto ContaBancaria só para fazer essa conversão.}
+   7->{Mas não faz sentido criar uma ``falsa'' conta bancária apenas para poder chamar um método como esse.\footnote<7->{\scriptsize{Em uma boa modelagem esse método provavelmente ficaria em uma classe utilitária (e não em ContaBancaria). No entanto, aqui vale como um exemplo didático.
 
 ## Restrições para Métodos Estáticos
-
+Como o método é estático, ou seja, é um método de classe, ele pode ser chamado sem existir nenhum objeto daquela classe.}
+  3->{Portanto, se ele for chamado diretamente -- \textit{ContaBancaria.saldoDisponivel}( ), qual seria o valor do atributo \textit{saldo}? }
+  4->{Ou se existissem vários objetos conta bancária, o saldo a \\ser usado seria de qual conta?}
 
 ## Restrições para Métodos Estáticos
-
+A questão é que um método não estático pode acessar um atributo também não estático.}
+  4->{Desse modo, se um método estático pudesse chamar um não estático, poderíamos acessar (indiretamente) atributos não estáticos (o que sabemos não ser possível
 
 ## Restrições para Métodos Estáticos
-
+Exceto se o acesso tiver sendo feito por uma instância da classe criada previamente
 
 ## O Método `main`
+Agora que já sabemos o que é um método estático, vamos recordar uma declaração que já utilizamos diversas vezes.
 
+\begin{center}
+{\color{blue}{public static void}} main(String[ ] args) 
+\end{center}
+\begin{block}{Por que o método \textit{main} precisa ser estático?}<2->
+ 
+   3->{Para responder essa pergunta vamos lembrar como executamos programas usando a JVM:\\
+  \begin{center}\textbf{java MinhaClasse}\end{center}}
+   4->{A partir desse comando, o que a JVM faz é realizar a seguinte chamada:\\
+  \begin{center}\textit{MinhaClasse.main}($\ldots$)\footnote{4->{Ao executar um programa você pode passar dados para execução do mesmo.}}\end{center}}
+   5->{Perceba que essa chamada só é possível porque o método \textit{main} é \textbf{estático}!}
 
 ## Garbage Collector
+Em um programa Java, o que acontece na memória com uma variável local (tipo primitivo) quando um método termina?}
+ 
+   2->{A variável é sempre desalocada quando o método termina.}
+   3->{Como no caso de tipos primitivos a variável armazena seu próprio valor, desalocar uma variável, significa desalocar o seu próprio valor.}
+ 
 
+\begin{block}{Mas o  que acontece se essa variável local estiver referenciando um objeto?}<4->
+ 
+   5->{No caso de variáveis que referenciam objetos, desalocar a variável significa que o local que armazena o endereço do objeto foi desalocado.}
+  
+    6->{Mas e a memória alocada para o objeto (\textit{heap}) em si, o que acontece?
 
 ## Garbage Collector
-
+Sempre que um objeto já \textbf{não é mais acessível}, ou seja, quando perdemos a referência para esse objeto: }<2->
+ 
+   2->{Ele fica disponível para o coletor de lixo (\textbf{\textit{garbage collector}}).}
+   3->{Mas atenção, o \textit{Garbage Collector} age apenas sobre objetos, nunca sobre variáveis.}
+   4->{Portanto, você não precisa se preocupar em desalocar a memória utilizada por um objeto, pois Java cuida disso para você.}
 
 ## Garbage Collector
-
+Vamos analisar a situação a seguir:
 
 ## Vazamento de Memória
+O vazamento de memória ocorre quando \textbf{deixamos} em nosso programa objetos que \textbf{não estão mais sendo usados alocados na memória}, fazendo com que o coletor de lixo não consiga reconhecê-los como objetos elegíveis para desalocação.
+ 
 
+
+\vspace{0.5cm}
+
+<2->
+
+{0.7\textwidth}
+   Como resultado, estes objetos \textbf{nunca são desalocados}, permanecem na memória indefinidamente, \textbf{reduzindo} assim a quantidade total de \textbf{memória disponível}. Num sistema que precise funcionar continuamente (nunca é desligado), isso levará a um travamento do sistema ou do computador.
 
 ## Vazamento de Memória
-
+Uma vez que o Java possui o \textit{Garbage Collector}, precisamos nos preocupar com vazamento de memória?}
+ 
+   2->{O Gabage Collector \textbf{ajuda a evitar} vazamento de memória, uma vez que ele desaloca memória ocupada por objetos que \textbf{não} estão mais sendo \textbf{referenciados}.}
+   3->{No entanto, ele \textbf{não elimina inteiramente} os vazamentos de memória! Por que?}
+  
+    4->{Ele \textbf{não} efetuará \textbf{coleta} de lixo de um objeto até que \textbf{não} haja nenhuma \textbf{referência} a ele.}
+    5->{Portanto, se você mantiver \textbf{erroneamente} referências a objetos indesejáveis, \textbf{vazamentos de memória podem ocorrer
 
 ## Destrutores
+Java não possui destrutor!}
+ 
+   Com o \textit{garbage collector}, vazamentos de memória que são comuns em outras linguagens (tais como em \textit{C} e \textit{C++}, já que a memória não é automaticamente desalocada), são menos prováveis em \textit{Java}.
+ 
 
+\vspace{-0.5cm}
+<2->
+ 
+{0.7\textwidth}
+ 
+   No entanto, além de vazamento de memória, \textbf{vazamentos de outros recursos} podem ocorrer.
 
 ## Destrutores
+Vazamento de outros recursos}
+
+\small{
+   Por exemplo, um aplicativo pode abrir um arquivo no disco para modificar seu conteúdo.
+   2->{Se o aplicativo não fechar o arquivo depois que ele não é mais necessário, pode acontecer de ele não estar disponível para uso em outros programas.}}
+
+
+\vspace{-0.3cm}
+\begin{block}{Portanto, é importante que:}<3->
+  
+  \small{
+    3->{Liberemos um recurso, como um arquivo ou uma conexão com um banco de dados, depois que eles não forem mais necessários.}
+   4->{Para isso, podemos utilizar uma cláusula chamada \textit{finally}\footnote[1]{4->{Há também, no Java 7, um recurso conhecido como \textit{try-with-resources} que permite utilizar a semântica do \textit{finally} de maneira mais simples.}} indicando o que deve ser feito para liberar um recurso.}
+   5->{Desse modo, teremos a certeza de que aquele recurso (arquivo ou conexão) será liberado, ainda que algo tenha falhado no decorrer do código.}}
