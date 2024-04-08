@@ -1,0 +1,95 @@
+---
+title: Atributos e Métodos Estáticos e Destrutores<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Conteúdo desta Aula  
+
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+
+::: {.column width="30%"}
+![](figuras/professor1-1.png){fig-alt="Professor1-1" fig-align="center"}
+:::
+
+::: {.column width="70%"}
+::: {.nonincremental}
+::: {style="font-size: 120%;"}
+- Atributos Estáticos
+- Métodos Estáticos
+- Destrutores
+:::
+:::
+:::
+
+::::
+
+## Atributos Estáticos
+
+
+## Atributos Estáticos
+
+
+## Atributos Estáticos
+
+
+## Atributos Estáticos
+
+
+## Atributos Estáticos
+
+
+## Atributos Estáticos
+
+
+## Constantes e Atributos Estáticos
+
+
+## Constantes em Java
+
+
+## Objetos Constantes
+
+
+## Métodos Estáticos
+
+
+## Métodos Estáticos
+
+
+## Métodos Estáticos
+
+
+## Restrições para Métodos Estáticos
+
+
+## Restrições para Métodos Estáticos
+
+
+## Restrições para Métodos Estáticos
+
+
+## O Método `main`
+
+
+## Garbage Collector
+
+
+## Garbage Collector
+
+
+## Garbage Collector
+
+
+## Vazamento de Memória
+
+
+## Vazamento de Memória
+
+
+## Destrutores
+
+
+## Destrutores
