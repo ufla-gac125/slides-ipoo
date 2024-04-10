@@ -27,23 +27,73 @@ title-slide-attributes:
 ::::
 
 ## Atributos Estáticos
+
+::::{.columns style='display: flex !important; align-items: top;' .fontsize90}
+
+::: {.column width="70%"}
 Suponha que você está desenvolvendo um sistema para uma agência de uma instituição bancária.
-    2A estratégia de venda dos produtos (consórcio, seguros, planos de previdência etc.) nessa agência depende do número de contas abertas na mesma.
-  
-  3Você definiu a classe ContaBancaria para tratar os comportamentos de cada uma das contas abertas.
-  4Precisamos então armazenar em algum local a quantidade de contas abertas.
-  5Qual a melhor forma de guardar isso?
- 
-   6Na própria classe? 
-   Em outra classe? 
-   7Como?
+
+- A estratégia de venda dos produtos (consórcio, seguros, planos de previdência etc.) nessa agência depende do número de contas abertas na mesma.
+:::
+
+::: {.column width="30%"}
+![](figuras/sistema_banco.png){fig-alt="Sistema_banco" fig-align="center" width=100%}
+:::
+
+::::
+
+:::{.fragment .fontsize90}
+- Você definiu a classe ContaBancaria para tratar os comportamentos de cada uma das contas abertas.
+- Precisamos então armazenar em algum local a quantidade de contas abertas.
+- Qual a melhor forma de guardar isso?
+   - Na própria classe? 
+   - Em outra classe? 
+   - Como?
+:::
+
 
 ## Atributos Estáticos
+
+::::{.columns style='display: flex !important; height: 70%; align-items: top;'}
+
+::: {.column width="50%"}
 Se colocarmos essa informação em uma classe que não seja a ContaBancaria, teríamos que lembrar de incrementar a variável totalContas toda vez que um novo objeto da classe ContaBancaria fosse criado.
+:::
+
+::: {.column width="50%"}
+```{.java code-line-numbers="false"}
+public class App{
+   public static void main(String[] args){
+      int totalContas = 0;
+
+      ContaBancaria c1 = new ContaBancaria(1234,"Luiz");
+      totalContas = totalContas + 1;
+
+      ContaBancaria c2 = new ContaBancaria(5678,"Marco");
+      totalContas = totalContas + 1;
+   }
+}
+```
+:::
+::::
+
+::::{.columns style='display: flex !important; height: 70%; align-items: top;'}
+
+::: {.column width="30%"}
+xxx
+:::
+
+::: {.column width="70%"}
+- Então basta que a própria classe ContaBancaria controle essa informação no seu construtor!
+- Desse modo, fica garantido que toda vez que um objeto for criado, ele será contabilizado.
+- Essa solução funcionará?
+:::
+
+::::
+
+
    
-    2Então basta que a própria classe ContaBancaria controle essa informação no seu construtor!
-    3Desse modo, fica garantido que toda vez que um objeto for criado, ele será contabilizado.
-    4Essa solução funcionará?
+    
 
 ## Atributos Estáticos
 O que acontece se criarmos dois objetos da classe ContaBancaria?
