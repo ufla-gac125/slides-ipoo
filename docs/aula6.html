@@ -11,7 +11,7 @@
 <script src="aula6_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula6_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula6_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.551">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Atributos e Métodos Estáticos e Destrutores </title>
@@ -32,6 +32,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="aula6_files/libs/revealjs/dist/theme/quarto.css">
   <link href="aula6_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -382,7 +447,7 @@
 </div>
 </div>
 </div>
-<div class="fragment fontsize90">
+<div class="fontsize90">
 <ul>
 <li class="fragment">Você definiu a classe ContaBancaria para tratar os comportamentos de cada uma das contas abertas.</li>
 <li class="fragment">Precisamos então armazenar em algum local a quantidade de contas abertas.</li>
@@ -397,10 +462,42 @@
 </section>
 <section id="atributos-estáticos-1" class="slide level2">
 <h2>Atributos Estáticos</h2>
+<div class="columns fontsize80" style="display: flex !important; align-items: top;">
+<div class="column" style="width:50%;">
 <p>Se colocarmos essa informação em uma classe que não seja a ContaBancaria, teríamos que lembrar de incrementar a variável totalContas toda vez que um novo objeto da classe ContaBancaria fosse criado.</p>
-<pre><code>2Então basta que a própria classe ContaBancaria controle essa informação no seu construtor!
-3Desse modo, fica garantido que toda vez que um objeto for criado, ele será contabilizado.
-4Essa solução funcionará?</code></pre>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
+<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="dt">int</span> totalContas <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a>      ContaBancaria c1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">(</span><span class="dv">1234</span><span class="op">,</span><span class="st">"Luiz"</span><span class="op">);</span></span>
+<span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a>      totalContas <span class="op">=</span> totalContas <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="" aria-hidden="true" tabindex="-1"></a>      ContaBancaria c2 <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">(</span><span class="dv">5678</span><span class="op">,</span><span class="st">"Marco"</span><span class="op">);</span></span>
+<span id="cb1-9"><a href="" aria-hidden="true" tabindex="-1"></a>      totalContas <span class="op">=</span> totalContas <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb1-10"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb1-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="columns fragment" style="display: flex !important; height: 70%; align-items: top;">
+<div class="column" style="width:40%;">
+<div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
+<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="dt">int</span> totalContas<span class="op">;</span></span>
+<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="co">// Outros atributos omitidos</span></span>
+<span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="fu">ContaBancaria</span><span class="op">(){</span></span>
+<span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="co">//Mais algum código</span></span>
+<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a>      totalContas<span class="op">++;</span></span>
+<span id="cb2-7"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb2-8"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="co">//Demais métodos omitidos</span></span>
+<span id="cb2-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize80" style="width:60%;">
+<ul>
+<li>Então basta que a própria classe ContaBancaria controle essa informação no seu construtor!</li>
+<li>Desse modo, fica garantido que toda vez que um objeto for criado, ele será contabilizado.</li>
+<li>Essa solução funcionará?</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="atributos-estáticos-2" class="slide level2">
 <h2>Atributos Estáticos</h2>
@@ -821,24 +918,6 @@
         // clear code selection
         e.clearSelection();
       });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -875,11 +954,7 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
+          return note.innerHTML;
         });
       }
       const findCites = (el) => {

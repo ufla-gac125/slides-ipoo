@@ -42,7 +42,7 @@ Suponha que você está desenvolvendo um sistema para uma agência de uma instit
 
 ::::
 
-:::{.fragment .fontsize90}
+:::{.fontsize90}
 - Você definiu a classe ContaBancaria para tratar os comportamentos de cada uma das contas abertas.
 - Precisamos então armazenar em algum local a quantidade de contas abertas.
 - Qual a melhor forma de guardar isso?
@@ -54,7 +54,7 @@ Suponha que você está desenvolvendo um sistema para uma agência de uma instit
 
 ## Atributos Estáticos
 
-::::{.columns style='display: flex !important; height: 70%; align-items: top;'}
+::::{.columns style='display: flex !important; align-items: top;' .fontsize80}
 
 ::: {.column width="50%"}
 Se colocarmos essa informação em uma classe que não seja a ContaBancaria, teríamos que lembrar de incrementar a variável totalContas toda vez que um novo objeto da classe ContaBancaria fosse criado.
@@ -77,13 +77,23 @@ public class App{
 :::
 ::::
 
-::::{.columns style='display: flex !important; height: 70%; align-items: top;'}
+::::{.columns style='display: flex !important; height: 70%; align-items: top;' .fragment}
 
-::: {.column width="30%"}
-xxx
+::: {.column width="40%"}
+```{.java code-line-numbers="false"}
+public class ContaBancaria{
+   private int totalContas;
+   // Outros atributos omitidos
+   public ContaBancaria(){
+      //Mais algum código
+      totalContas++;
+   }
+   //Demais métodos omitidos
+}
+```
 :::
 
-::: {.column width="70%"}
+::: {.column width="60%" .fontsize80  .nonincremental}
 - Então basta que a própria classe ContaBancaria controle essa informação no seu construtor!
 - Desse modo, fica garantido que toda vez que um objeto for criado, ele será contabilizado.
 - Essa solução funcionará?
