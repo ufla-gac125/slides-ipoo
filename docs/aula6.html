@@ -492,36 +492,142 @@
 <span id="cb2-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fontsize80" style="width:60%;">
 <ul>
-<li>Então basta que a própria classe ContaBancaria controle essa informação no seu construtor!</li>
-<li>Desse modo, fica garantido que toda vez que um objeto for criado, ele será contabilizado.</li>
-<li>Essa solução funcionará?</li>
+<li class="fragment">Então basta que a própria classe ContaBancaria controle essa informação no seu construtor!
+<ul>
+<li class="fragment">Desse modo, fica garantido que toda vez que um objeto for criado, ele será contabilizado.</li>
+</ul></li>
+<li class="fragment">Essa solução funcionará?</li>
 </ul>
 </div>
 </div>
 </section>
 <section id="atributos-estáticos-2" class="slide level2">
 <h2>Atributos Estáticos</h2>
-<p>O que acontece se criarmos dois objetos da classe ContaBancaria?</p>
-<p>0.3cmContaBancaria conta1 = new ContaBancaria();\ 0.3cmContaBancaria conta2 = new ContaBancaria();\</p>
-<pre><code>Qual seria o valor do atributo totalContas?</code></pre>
-<p>2Como sabemos, cada objeto tem seus valores para seus atributos, ou seja, o atributo é de cada objeto! 3Isso ocorre porque, na memória, cada objeto tem seu espaço para guardar os valores de seus atributos. 4Portanto, a cada novo objeto da classe ContaBancaria, um novo espaço de memória é reservado para armazenar o valor de totalContas</p>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column fontsize80" style="width:50%;">
+<p>O que acontece se criarmos dois objetos da classe ContaBancaria apresentada anteriormente?</p>
+<ul>
+<li>Qual seria o valor do atributo totalContas?</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria conta1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
+<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria conta2 <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="columns fragment" style="display: flex !important; align-items: top;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/modelo_memoria.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Modelo_memoria"></p>
+</figure>
+</div>
+</div><div class="column fontsize80" style="width:50%;">
+<ul>
+<li class="fragment">Como sabemos, cada objeto tem seus valores para seus atributos, ou seja, o atributo é de cada objeto!</li>
+<li class="fragment">Isso ocorre porque, na memória, cada objeto tem seu espaço para guardar os valores de seus atributos.</li>
+<li class="fragment">Portanto, a cada novo objeto da classe ContaBancaria, um novo espaço de memória é reservado para armazenar o valor de totalContas.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="atributos-estáticos-3" class="slide level2">
 <h2>Atributos Estáticos</h2>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column fontsize90" style="width:70%;">
 <p>E se conseguíssemos reservar um espaço de memória que fosse compartilhado por todos os objetos de uma mesma classe?</p>
-<p>Podemos fazer isso usando um atributo estático!&lt;2-&gt;</p>
-<p>3Um atributo estático pertence à classe e não aos objetos. 4Quando um atributo é declarado com estático, um espaço de memória (heap) é reservado para ele uma única vez e pode ser acessado por todos os objetos daquela classe. 5Desse modo, se um objeto alterar o valor de um atributo estático, todos os demais poderão acessar esse novo valor.</p>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pensando2.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Pessoa_duvida"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment fontsize90">
+<p><span style="color: darkblue;">Podemos fazer isso usando um atributo estático!</span></p>
+<ul>
+<li class="fragment">Um atributo estático pertence à classe e não aos objetos.</li>
+<li class="fragment">Quando um atributo é declarado com estático, um espaço de memória (heap) é reservado para ele uma única vez e pode ser acessado por todos os objetos daquela classe.</li>
+<li class="fragment">Desse modo, se um objeto alterar o valor de um atributo estático, todos os demais poderão acessar esse novo valor.</li>
+</ul>
+</div>
 </section>
 <section id="atributos-estáticos-4" class="slide level2">
 <h2>Atributos Estáticos</h2>
-<p>Veja que agora temos apenas uma cópia do atributo totalContas na memória e, portanto, o incremento dentro do construtor afeta essa cópia. 3&gt;{Desse modo, quando um segundo objeto da classe ContaBancaria é criado, o atributo totalContas que já está com o valor 1 é incrementado e passa a armazenar o valor 2.</p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource java number-lines code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href=""></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
+<span id="cb4-2"><a href=""></a>   <span class="kw">private</span> <span class="dt">static</span> <span class="dt">int</span> totalContas<span class="op">;</span></span>
+<span id="cb4-3"><a href=""></a>   <span class="co">// Outros atributos omitidos</span></span>
+<span id="cb4-4"><a href=""></a>   <span class="kw">public</span> <span class="fu">ContaBancaria</span><span class="op">(){</span></span>
+<span id="cb4-5"><a href=""></a>      <span class="co">//Mais algum código</span></span>
+<span id="cb4-6"><a href=""></a>      totalContas<span class="op">++;</span></span>
+<span id="cb4-7"><a href=""></a>   <span class="op">}</span></span>
+<span id="cb4-8"><a href=""></a>   <span class="co">//Demais métodos omitidos</span></span>
+<span id="cb4-9"><a href=""></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize80" style="width:45%;">
+<p>Veja a inclusão do <span class="alert">atributo estático</span> na <strong>linha 2</strong> do código!</p>
+<ul>
+<li class="fragment">A declaração de um atributo estático é realizada utilizando-se o modificador <code>static</code>.</li>
+</ul>
+</div>
+</div>
+<div class="columns fragment" style="display: flex !important; align-items: top;">
+<div class="column" style="width:55%;">
+<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
+<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
+<span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a>      ContaBancaria conta1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
+<span id="cb5-4"><a href="" aria-hidden="true" tabindex="-1"></a>      ContaBancaria conta2 <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
+<span id="cb5-5"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb5-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fontsize80">
+<p>Veja que agora temos apenas uma cópia do atributo totalContas na memória e, portanto, o incremento dentro do construtor afeta essa cópia.</p>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/modelo_atributo_estatico1.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" alt="Modelo_memoria1"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/modelo_atributo_estatico2.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" alt="Modelo_memoria2"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/modelo_atributo_estatico3.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" alt="Modelo_memoria3"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="atributos-estáticos-5" class="slide level2">
 <h2>Atributos Estáticos</h2>
-<p>Os atributos estáticos são denominados variáveis de classe, o que os diferencia das variáveis de instância (que correspondem às implementações dos atributos dos objetos). 2Um exemplo de atributo estático que já usamos é out, um atributo estático público da classe System.</p>
-<p>%<br>
-% Lembram-se do System.out.println(``string’’)? %</p>
-<p>3Todos os atributos estáticos públicos (public static) de uma classe podem ser acessados por meio de uma referência a qualquer objeto da classe ou qualificando o nome do atributo com o nome da classe e um ponto (.), ou seja, Classe.atributo</p>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column fontsize80" style="width:70%;">
+<p>Os atributos estáticos são denominados variáveis de classe, o que os diferencia das variáveis de instância (que correspondem às implementações dos atributos dos objetos).</p>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/professor2_metade.png" class="quarto-figure quarto-figure-center" style="width:30.0%" alt="Professor_metade"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fontsize80 fragment">
+<p>Um exemplo de atributo estático que já usamos é out, um atributo estático público da classe System.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/system_out.png" class="quarto-figure quarto-figure-center" style="width:40.0%" alt="System_out"></p>
+</figure>
+</div>
+</div>
+<div class="fontsize80 fragment">
+<p>Todos os atributos estáticos públicos (public static) de uma classe podem ser acessados por meio de uma referência a qualquer objeto da classe ou qualificando o nome do atributo com o nome da classe e um ponto (.), ou seja, Classe.atributo</p>
+</div>
 </section>
 <section id="constantes-e-atributos-estáticos" class="slide level2">
 <h2>Constantes e Atributos Estáticos</h2>
