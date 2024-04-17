@@ -679,10 +679,31 @@
 </section>
 <section id="objetos-constantes" class="slide level2">
 <h2>Objetos Constantes</h2>
-<p>Usar atributos constantes de tipos primitivos (int, float etc.) é tranquilo.\ Mas usar atributos constantes do tipo objeto exige cautela, pois objetos constantes não são imutáveis!</p>
-<p>Considere a declaração do seguinte atributo constante:&lt;2-&gt; private final ContaBancaria minhaConta = new ContaBancaria();</p>
-<p>2Qual o significado dessa declaração?</p>
-<p>3Significa apenas que não posso atribuir um novo objeto à variável minhaConta (seu endereço é constante). 4No entanto, nada impede que eu chame os métodos desse objeto e, desse modo, altere seu estado.</p>
+<div title="Cuidado!">
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Cuidado!</strong></p>
+</div>
+<div class="callout-content">
+<p>Usar atributos constantes de tipos primitivos (int, float etc.) é tranquilo. Mas usar <strong>atributos constantes</strong> do <strong>tipo objeto</strong> exige cautela, pois <strong>objetos constantes</strong> <strong>não</strong> são <strong>imutáveis</strong>!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><span class="fontsize90" style="color:darkblue;">Considere a declaração do seguinte atributo constante:</span></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">final</span> ContaBancaria minhaConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span> </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fontsize90">
+<ul>
+<li class="fragment">Qual o significado dessa declaração?
+<ul>
+<li class="fragment">Significa apenas que <strong>não</strong> posso <strong>atribuir</strong> um <strong>novo objeto</strong> à variável <code>minhaConta</code> (seu endereço é constante).</li>
+<li class="fragment">No entanto, <strong>nada impede</strong> que eu chame os métodos desse objeto e, desse modo, <strong>altere seu estado</strong>.</li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="métodos-estáticos" class="slide level2">
 <h2>Métodos Estáticos</h2>

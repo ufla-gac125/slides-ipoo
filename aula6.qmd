@@ -273,18 +273,25 @@ private final int INCREMENTO;
 :::
 
 ## Objetos Constantes
- Usar atributos constantes de tipos primitivos (int, float etc.) é tranquilo.\\
-     Mas usar atributos constantes do tipo objeto exige cautela, pois objetos constantes não são imutáveis!
-  
- 
 
-Considere a declaração do seguinte atributo constante:<2->
- private final ContaBancaria minhaConta = new ContaBancaria(); 
-
-  2Qual o significado dessa declaração?
+:::{.callout-warning title="Cuidado!" icon=false}
+Usar atributos constantes de tipos primitivos (int, float etc.) é tranquilo. Mas usar **atributos constantes** do **tipo objeto** exige cautela, pois **objetos constantes** **não** são **imutáveis**!
+:::
  
-   3Significa apenas que não posso atribuir um novo objeto à variável minhaConta (seu endereço é constante).
-   4No entanto, nada impede que eu chame os métodos desse objeto e, desse modo, altere seu estado.
+:::{.fragment .nonincremental}
+[Considere a declaração do seguinte atributo constante:]{style="color:darkblue;" .fontsize90}
+```{.java code-line-numbers="false"}
+private final ContaBancaria minhaConta = new ContaBancaria(); 
+```
+
+:::
+
+:::{.fontsize90}
+- Qual o significado dessa declaração?
+   - Significa apenas que **não** posso **atribuir** um **novo objeto** à variável `minhaConta` (seu endereço é constante).
+   - No entanto, **nada impede** que eu chame os métodos desse objeto e, desse modo, **altere seu estado**.
+:::
+
 
 ## Métodos Estáticos
 Em Java, temos um método para calcular o logaritmo natural de um número. Veja como ele é chamado:
