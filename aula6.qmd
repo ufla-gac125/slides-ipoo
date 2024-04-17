@@ -192,11 +192,11 @@ public class App{
 }
 ```
 :::{.fontsize80 }
-Veja que agora temos apenas uma cópia do atributo totalContas na memória e, portanto, o incremento dentro do construtor afeta essa cópia.
+Agora temos apenas uma cópia do atributo `totalContas` na memória e, portanto, o incremento dentro do construtor afeta essa cópia.
 :::
 :::
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 ::: {.r-stack}
 ![](figuras/modelo_atributo_estatico1.png){fig-alt="Modelo_memoria1" fig-align="center"  .fragment .fade-in-then-out}
 
@@ -210,7 +210,7 @@ Veja que agora temos apenas uma cópia do atributo totalContas na memória e, po
 
 
 ## Atributos Estáticos
-::::{.columns style='display: flex !important; align-items: center;'}
+::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="70%" .fontsize80}
 Os atributos estáticos são denominados variáveis de classe, o que os diferencia das variáveis de instância (que correspondem às implementações dos atributos dos objetos).
 :::
@@ -221,7 +221,7 @@ Os atributos estáticos são denominados variáveis de classe, o que os diferenc
 ::::
 
 :::{.fontsize80 .fragment}
-Um exemplo de atributo estático que já usamos é out, um atributo estático público da classe System. 
+Um exemplo que já usamos é `out`, um atributo **estático público** da classe `System`. 
 
 ![](figuras/system_out.png){fig-alt="System_out" fig-align="center" width=40%}
 :::
@@ -231,27 +231,46 @@ Todos os atributos estáticos públicos (public static) de uma classe podem ser 
 :::
 
 ## Constantes e Atributos Estáticos
+:::{.fontsize80}
 Em linguagens de programação OO não existe o conceito de variável global (acessível de qualquer parte do código).
-Então como definir, por exemplo, constantes ``globais'' nessas linguagens?<2->
+
+:::{.fragment}
+[Então como definir, por exemplo, constantes "globais" nessas linguagens?]{style="color: darkblue;"}
  
- 
-   3Em Java, já existem algumas constantes definidas em uma classe contida em um de seus pacotes. Por exemplo, a constante PI é um atributo da classe Math definida no pacote java.lang.
-   4Como acessar o valor de pi? Se ele é um atributo de uma classe, basta criar um objeto dessa classe para acessá-lo, correto?
-   5Hummm...mas não seria um desperdício de recursos e desempenho ter que criar um objeto da classe Math só para consultar seus valores?
-   6De fato, não precisamos criar um objeto para isso uma vez que PI é um atributo estático, público e constante.
-  
-    Assim como aprendemos, podemos acessar o valor de pi usando: Math.PI
+- Em Java, já **existem** algumas **constantes** **definidas** em uma **classe** contida em sua biblioteca de classes. Por exemplo, a constante **PI** é um atributo da classe `Math`.
+- Como acessar o valor de pi? Se ele é um atributo de uma classe, basta criar um objeto dessa classe para acessá-lo, correto?
+- Hummm...mas não seria um **desperdício** de recursos e desempenho ter que **criar** um **objeto** da classe `Math` só para consultar seus valores?
+- De fato, **não precisamos criar** um **objeto** para isso uma vez que **PI** é um **atributo estático**, **público** e **constante**.
+   - Assim como aprendemos, podemos acessar o valor de pi usando: `Math.PI`.
+:::
+:::
 
 ## Constantes em Java
-Mas e se eu quiser criar uma constante em um programa Java?
+::::{.columns style='display: flex !important; align-items: top;'}
 
-  2Para declarar uma constante em Java você deve usar o modificador final.
-  private final int INCREMENTO; 
-  3Atributos constantes podem ser inicializados quando são declarados OU nos construtores.
-  4Qual a diferença entre essas duas opções de inicialização?
- 
-   5Inicializar constantes em construtores permite que cada objeto da classe tenha um valor diferente para a constante.
-   6Aliás, se a inicialização for na declaração, recomenda-se declará-lo como um atributo estático, evitando-se criar uma cópia separada do atributo para cada objeto da classe.
+::: {.column width="25%"}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=35%}
+:::
+
+::: {.column width="75%"}
+[Mas e se eu quiser criar uma constante em uma classe de um programa em Java?]{style="color: darkblue;" .fontsize80}
+
+:::{.fragment .nonincremental}
+- [Para declarar uma [constante em Java]{.alert} você deve usar o [modificador final]{.alert}.]{.fontsize80}
+
+```{.java code-line-numbers="false"}
+private final int INCREMENTO; 
+```
+:::
+:::
+::::
+
+:::{.fontsize80}
+- **Atributos constantes** podem ser **inicializados** quando são **declarados** ou nos **construtores**.
+- Qual a diferença entre essas duas opções de inicialização?
+   - Inicializar constantes em **construtores** permite que **cada objeto** da classe tenha um **valor diferente** para a constante.
+   - Aliás, se a inicialização for na **declaração**, recomenda-se **declará-lo** como um **atributo estático**, evitando-se criar uma cópia separada do atributo para cada objeto da classe.
+:::
 
 ## Objetos Constantes
  Usar atributos constantes de tipos primitivos (int, float etc.) é tranquilo.\\

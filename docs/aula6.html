@@ -581,9 +581,9 @@
 <span id="cb5-5"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
 <span id="cb5-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fontsize80">
-<p>Veja que agora temos apenas uma cópia do atributo totalContas na memória e, portanto, o incremento dentro do construtor afeta essa cópia.</p>
+<p>Agora temos apenas uma cópia do atributo <code>totalContas</code> na memória e, portanto, o incremento dentro do construtor afeta essa cópia.</p>
 </div>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:50%;">
 <div class="r-stack">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -606,7 +606,7 @@
 </section>
 <section id="atributos-estáticos-5" class="slide level2">
 <h2>Atributos Estáticos</h2>
-<div class="columns" style="display: flex !important; align-items: center;">
+<div class="columns" style="display: flex !important; align-items: top;">
 <div class="column fontsize80" style="width:70%;">
 <p>Os atributos estáticos são denominados variáveis de classe, o que os diferencia das variáveis de instância (que correspondem às implementações dos atributos dos objetos).</p>
 </div><div class="column" style="width:30%;">
@@ -618,7 +618,7 @@
 </div>
 </div>
 <div class="fontsize80 fragment">
-<p>Um exemplo de atributo estático que já usamos é out, um atributo estático público da classe System.</p>
+<p>Um exemplo que já usamos é <code>out</code>, um atributo <strong>estático público</strong> da classe <code>System</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figuras/system_out.png" class="quarto-figure quarto-figure-center" style="width:40.0%" alt="System_out"></p>
@@ -626,20 +626,56 @@
 </div>
 </div>
 <div class="fontsize80 fragment">
-<p>Todos os atributos estáticos públicos (public static) de uma classe podem ser acessados por meio de uma referência a qualquer objeto da classe ou qualificando o nome do atributo com o nome da classe e um ponto (.), ou seja, Classe.atributo</p>
+<p>Todos os atributos estáticos públicos (public static) de uma classe podem ser acessados por meio de uma referência a qualquer objeto da classe ou qualificando o nome do atributo com o nome da classe e um ponto (.), ou seja, Classe.atributo.</p>
 </div>
 </section>
 <section id="constantes-e-atributos-estáticos" class="slide level2">
 <h2>Constantes e Atributos Estáticos</h2>
-<p>Em linguagens de programação OO não existe o conceito de variável global (acessível de qualquer parte do código). Então como definir, por exemplo, constantes ``globais’’ nessas linguagens?&lt;2-&gt;</p>
-<p>3Em Java, já existem algumas constantes definidas em uma classe contida em um de seus pacotes. Por exemplo, a constante PI é um atributo da classe Math definida no pacote java.lang. 4Como acessar o valor de pi? Se ele é um atributo de uma classe, basta criar um objeto dessa classe para acessá-lo, correto? 5Hummm…mas não seria um desperdício de recursos e desempenho ter que criar um objeto da classe Math só para consultar seus valores? 6De fato, não precisamos criar um objeto para isso uma vez que PI é um atributo estático, público e constante.</p>
-<pre><code>Assim como aprendemos, podemos acessar o valor de pi usando: Math.PI</code></pre>
+<div class="fontsize80">
+<p>Em linguagens de programação OO não existe o conceito de variável global (acessível de qualquer parte do código).</p>
+<div class="fragment">
+<p><span style="color: darkblue;">Então como definir, por exemplo, constantes “globais” nessas linguagens?</span></p>
+<ul>
+<li class="fragment">Em Java, já <strong>existem</strong> algumas <strong>constantes</strong> <strong>definidas</strong> em uma <strong>classe</strong> contida em sua biblioteca de classes. Por exemplo, a constante <strong>PI</strong> é um atributo da classe <code>Math</code>.</li>
+<li class="fragment">Como acessar o valor de pi? Se ele é um atributo de uma classe, basta criar um objeto dessa classe para acessá-lo, correto?</li>
+<li class="fragment">Hummm…mas não seria um <strong>desperdício</strong> de recursos e desempenho ter que <strong>criar</strong> um <strong>objeto</strong> da classe <code>Math</code> só para consultar seus valores?</li>
+<li class="fragment">De fato, <strong>não precisamos criar</strong> um <strong>objeto</strong> para isso uma vez que <strong>PI</strong> é um <strong>atributo estático</strong>, <strong>público</strong> e <strong>constante</strong>.
+<ul>
+<li class="fragment">Assim como aprendemos, podemos acessar o valor de pi usando: <code>Math.PI</code>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
 </section>
 <section id="constantes-em-java" class="slide level2">
 <h2>Constantes em Java</h2>
-<p>Mas e se eu quiser criar uma constante em um programa Java?</p>
-<p>2Para declarar uma constante em Java você deve usar o modificador final. private final int INCREMENTO; 3Atributos constantes podem ser inicializados quando são declarados OU nos construtores. 4Qual a diferença entre essas duas opções de inicialização?</p>
-<p>5Inicializar constantes em construtores permite que cada objeto da classe tenha um valor diferente para a constante. 6Aliás, se a inicialização for na declaração, recomenda-se declará-lo como um atributo estático, evitando-se criar uma cópia separada do atributo para cada objeto da classe.</p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div><div class="column" style="width:75%;">
+<p><span class="fontsize80" style="color: darkblue;">Mas e se eu quiser criar uma constante em uma classe de um programa em Java?</span></p>
+<div class="fragment">
+<ul>
+<li><span class="fontsize80">Para declarar uma <span class="alert">constante em Java</span> você deve usar o <span class="alert">modificador final</span>.</span></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">final</span> <span class="dt">int</span> INCREMENTO<span class="op">;</span> </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="fontsize80">
+<ul>
+<li class="fragment"><strong>Atributos constantes</strong> podem ser <strong>inicializados</strong> quando são <strong>declarados</strong> ou nos <strong>construtores</strong>.</li>
+<li class="fragment">Qual a diferença entre essas duas opções de inicialização?
+<ul>
+<li class="fragment">Inicializar constantes em <strong>construtores</strong> permite que <strong>cada objeto</strong> da classe tenha um <strong>valor diferente</strong> para a constante.</li>
+<li class="fragment">Aliás, se a inicialização for na <strong>declaração</strong>, recomenda-se <strong>declará-lo</strong> como um <strong>atributo estático</strong>, evitando-se criar uma cópia separada do atributo para cada objeto da classe.</li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="objetos-constantes" class="slide level2">
 <h2>Objetos Constantes</h2>
