@@ -54,11 +54,11 @@ Suponha que você está desenvolvendo um **sistema** para uma **agência** de um
 
 ## Atributos Estáticos
 
-::::{.columns style='display: flex !important; align-items: top;' .fontsize80}
-::: {.column width="50%"}
+::::{.columns style='display: flex !important; align-items: top;' }
+::: {.column width="50%" .fontsize80}
 Se colocarmos essa informação em uma **classe** que **não seja** a `ContaBancaria`, teríamos que **lembrar** de **incrementar** a variável `totalContas` toda vez que um novo objeto da classe `ContaBancaria` fosse criado.
 :::
-::: {.column width="50%"}
+::: {.column width="63%"}
 ```{.java code-line-numbers="false"}
 public class App{
    public static void main(String[] args){
@@ -75,7 +75,7 @@ public class App{
 :::
 ::::
 
-::::{.columns style='display: flex !important; height: 70%; align-items: top;' .fragment}
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
 ::: {.column width="40%"}
 ```{.java code-line-numbers="false"}
 public class ContaBancaria{
@@ -144,7 +144,7 @@ E se conseguíssemos **reservar** um **espaço de memória** que fosse **compart
 [Podemos fazer isso usando um **atributo estático**!]{style="color: darkblue;"}
  
 - Um [atributo estático]{.alert} pertence [à classe]{.alert} e não aos objetos.
-- Quando um **atributo** é declarado com **estático**, um **espaço de memória** (heap) é **reservado** para ele **uma única vez** e pode ser **acessado** por **todos** os **objetos** daquela classe.
+- Quando um **atributo** é declarado como **estático**, um **espaço de memória** (heap) é **reservado** para ele **uma única vez** e pode ser **acessado** por **todos** os **objetos** daquela classe.
 - Desse modo, se um objeto alterar o valor de um atributo estático, todos os demais poderão acessar esse novo valor.
 :::
 
@@ -184,7 +184,7 @@ public class App{
 }
 ```
 :::{.fontsize80 }
-Agora temos apenas uma cópia do atributo `totalContas` na memória e, portanto, o incremento dentro do construtor afeta essa cópia.
+Agora temos apenas **uma cópia** do atributo `totalContas` na **memória** e, portanto, o incremento dentro do construtor afeta essa cópia.
 :::
 :::
 
@@ -267,7 +267,7 @@ private final int INCREMENTO;
 ## Objetos Constantes
 
 :::{.callout-warning title="Cuidado!" icon=false}
-Usar atributos constantes de tipos primitivos (int, float etc.) é tranquilo. Mas usar **atributos constantes** do **tipo objeto** exige cautela, pois **objetos constantes** **não** são **imutáveis**!
+Usar atributos constantes de tipos primitivos (`int`, `float` etc.) é tranquilo. Mas usar **atributos constantes** do **tipo objeto** exige cautela, pois **objetos constantes** **não** são **imutáveis**!
 :::
  
 :::{.fragment .nonincremental}
@@ -280,7 +280,7 @@ private final ContaBancaria minhaConta = new ContaBancaria();
 
 :::{.fontsize90}
 - Qual o significado dessa declaração?
-   - Significa apenas que **não** posso **atribuir** um **novo objeto** à variável `minhaConta` (seu endereço é constante).
+   - Significa apenas que **não** posso **atribuir** um **novo objeto** à variável `minhaConta` (o endereço armazenado é constante).
    - No entanto, **nada impede** que eu chame os métodos desse objeto e, desse modo, **altere seu estado**.
 :::
 
@@ -293,7 +293,7 @@ double valor = Math.log(num);
 - [Repare que o método `log` está sendo **chamado** sem que **nenhum** **objeto** da classe `Math` tenha sido **instanciado**.]{.fontsize90}
 
 :::{.fragment .nonincremental .fontsize90}
-- Ele está sendo **chamado** utilizando-se a **sintaxe**: Classe.método. 
+- Ele está sendo **chamado** utilizando-se a **sintaxe**: *Classe.método*. 
 - Com o que isso parece?
 :::
 
@@ -391,7 +391,7 @@ public class ContaBancaria{
    //Demais atributos omitidos
    
    public static double saldoDisponivel(double taxa){
-      return getSaldo * taxa;
+      return getSaldo() * taxa;
    }
    public double getSaldo(){
       return saldo + limiteConta;
@@ -485,7 +485,7 @@ public static void main(String[] args)
 - Ele **fica disponível** para o [coletor de lixo]{.alert} (*garbage collector*).
 - Mas atenção, o *Garbage Collector* age **apenas** sobre **objetos**, nunca sobre variáveis.
 - Portanto, você **não precisa** se preocupar em **desalocar** a **memória** utilizada por um **objeto**, pois Java cuida disso para você.
-   - O Garbage Collector é controlado pela JVM e, por isso, não tem como saber quando exatamente um objeto será desalocado.
+   - O *Garbage Collector* é controlado pela JVM e, por isso, não tem como saber quando exatamente um objeto será desalocado.
 :::
 
 
@@ -515,7 +515,7 @@ Como resultado, estes **objetos nunca** são **desalocados**, **permanecem** na 
 ## Vazamento de Memória
 ::::{.columns style='display: flex !important; align-items: top;' .fontsize90}
 ::: {.column width="80%"}
-[Uma vez que o Java possui o Garbage Collector, precisamos nos preocupar com vazamento de memória?]{style="color:darkblue;"}
+[Uma vez que o Java possui o *Garbage Collector*, precisamos nos preocupar com vazamento de memória?]{style="color:darkblue;"}
 :::
 ::: {.column width="30%"}
 ![](figuras/pensando2.png){fig-alt="Pensando" fig-align="center" width=60%}
