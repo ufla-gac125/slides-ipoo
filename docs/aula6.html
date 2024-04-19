@@ -435,9 +435,9 @@
 <h2>Atributos Estáticos</h2>
 <div class="columns fontsize90" style="display: flex !important; align-items: top;">
 <div class="column" style="width:70%;">
-<p>Suponha que você está desenvolvendo um sistema para uma agência de uma instituição bancária.</p>
+<p>Suponha que você está desenvolvendo um <strong>sistema</strong> para uma <strong>agência</strong> de uma instituição <strong>bancária</strong>.</p>
 <ul>
-<li class="fragment">A estratégia de venda dos produtos (consórcio, seguros, planos de previdência etc.) nessa agência depende do número de contas abertas na mesma.</li>
+<li class="fragment">A <strong>estratégia</strong> de venda dos produtos (consórcio, seguros, planos de previdência etc.) nessa agência <strong>depende</strong> do <strong>número de contas abertas</strong> na mesma.</li>
 </ul>
 </div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
@@ -449,12 +449,12 @@
 </div>
 <div class="fontsize90">
 <ul>
-<li class="fragment">Você definiu a classe ContaBancaria para tratar os comportamentos de cada uma das contas abertas.</li>
-<li class="fragment">Precisamos então armazenar em algum local a quantidade de contas abertas.</li>
-<li class="fragment">Qual a melhor forma de guardar isso?
+<li class="fragment">Você definiu a classe <code>ContaBancaria</code> para tratar os comportamentos de <strong>cada</strong> uma das <strong>contas</strong> abertas.</li>
+<li class="fragment">Precisamos então <strong>armazenar</strong> em algum local a <strong>quantidade</strong> de <strong>contas abertas</strong>.</li>
+<li class="fragment"><span style="color:darkblue;">Qual a melhor forma de guardar isso?</span>
 <ul>
-<li class="fragment">Na própria classe?</li>
-<li class="fragment">Em outra classe?</li>
+<li class="fragment">Na <strong>própria</strong> classe?</li>
+<li class="fragment">Em <strong>outra</strong> classe?</li>
 <li class="fragment">Como?</li>
 </ul></li>
 </ul>
@@ -464,7 +464,7 @@
 <h2>Atributos Estáticos</h2>
 <div class="columns fontsize80" style="display: flex !important; align-items: top;">
 <div class="column" style="width:50%;">
-<p>Se colocarmos essa informação em uma classe que não seja a ContaBancaria, teríamos que lembrar de incrementar a variável totalContas toda vez que um novo objeto da classe ContaBancaria fosse criado.</p>
+<p>Se colocarmos essa informação em uma <strong>classe</strong> que <strong>não seja</strong> a <code>ContaBancaria</code>, teríamos que <strong>lembrar</strong> de <strong>incrementar</strong> a variável <code>totalContas</code> toda vez que um novo objeto da classe <code>ContaBancaria</code> fosse criado.</p>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
 <span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
@@ -492,11 +492,11 @@
 <span id="cb2-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fontsize80" style="width:60%;">
 <ul>
-<li class="fragment">Então basta que a própria classe ContaBancaria controle essa informação no seu construtor!
+<li class="fragment">Então basta que a própria classe <code>ContaBancaria</code> <strong>controle</strong> essa informação <strong>no</strong> seu <strong>construtor</strong>!
 <ul>
-<li class="fragment">Desse modo, fica garantido que toda vez que um objeto for criado, ele será contabilizado.</li>
+<li class="fragment">Desse modo, <strong>fica garantido</strong> que toda vez que um <strong>objeto</strong> for <strong>criado</strong>, ele será <strong>contabilizado</strong>.</li>
 </ul></li>
-<li class="fragment">Essa solução funcionará?</li>
+<li class="fragment"><span style="color:darkblue;">Essa solução funcionará?</span></li>
 </ul>
 </div>
 </div>
@@ -505,9 +505,9 @@
 <h2>Atributos Estáticos</h2>
 <div class="columns" style="display: flex !important; align-items: center;">
 <div class="column fontsize80" style="width:50%;">
-<p>O que acontece se criarmos dois objetos da classe ContaBancaria apresentada anteriormente?</p>
+<p>O que acontece se criarmos <strong>dois objetos</strong> da classe <code>ContaBancaria</code> apresentada anteriormente?</p>
 <ul>
-<li>Qual seria o valor do atributo totalContas?</li>
+<li><span style="color:darkblue;">Qual seria o valor do atributo totalContas?</span></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a>ContaBancaria conta1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
@@ -523,9 +523,9 @@
 </div>
 </div><div class="column fontsize80" style="width:50%;">
 <ul>
-<li class="fragment">Como sabemos, cada objeto tem seus valores para seus atributos, ou seja, o atributo é de cada objeto!</li>
-<li class="fragment">Isso ocorre porque, na memória, cada objeto tem seu espaço para guardar os valores de seus atributos.</li>
-<li class="fragment">Portanto, a cada novo objeto da classe ContaBancaria, um novo espaço de memória é reservado para armazenar o valor de totalContas.</li>
+<li class="fragment">Como sabemos, <strong>cada objeto</strong> tem seus <strong>valores</strong> para <strong>seus atributos</strong>, ou seja, o atributo é de cada objeto!</li>
+<li class="fragment">Isso ocorre porque, na memória, <strong>cada objeto</strong> tem <strong>seu espaço</strong> para <strong>guardar</strong> os <strong>valores</strong> de seus <strong>atributos</strong>.</li>
+<li class="fragment">Portanto, a cada novo objeto da classe <code>ContaBancaria</code>, um novo espaço de memória é reservado para armazenar o valor de <code>totalContas</code>.</li>
 </ul>
 </div>
 </div>
@@ -534,7 +534,7 @@
 <h2>Atributos Estáticos</h2>
 <div class="columns" style="display: flex !important; align-items: top;">
 <div class="column fontsize90" style="width:70%;">
-<p>E se conseguíssemos reservar um espaço de memória que fosse compartilhado por todos os objetos de uma mesma classe?</p>
+<p>E se conseguíssemos <strong>reservar</strong> um <strong>espaço de memória</strong> que fosse <strong>compartilhado</strong> por <strong>todos</strong> os <strong>objetos</strong> de uma mesma classe?</p>
 </div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -544,10 +544,10 @@
 </div>
 </div>
 <div class="fragment fontsize90">
-<p><span style="color: darkblue;">Podemos fazer isso usando um atributo estático!</span></p>
+<p><span style="color: darkblue;">Podemos fazer isso usando um <strong>atributo estático</strong>!</span></p>
 <ul>
-<li class="fragment">Um atributo estático pertence à classe e não aos objetos.</li>
-<li class="fragment">Quando um atributo é declarado com estático, um espaço de memória (heap) é reservado para ele uma única vez e pode ser acessado por todos os objetos daquela classe.</li>
+<li class="fragment">Um <span class="alert">atributo estático</span> pertence <span class="alert">à classe</span> e não aos objetos.</li>
+<li class="fragment">Quando um <strong>atributo</strong> é declarado com <strong>estático</strong>, um <strong>espaço de memória</strong> (heap) é <strong>reservado</strong> para ele <strong>uma única vez</strong> e pode ser <strong>acessado</strong> por <strong>todos</strong> os <strong>objetos</strong> daquela classe.</li>
 <li class="fragment">Desse modo, se um objeto alterar o valor de um atributo estático, todos os demais poderão acessar esse novo valor.</li>
 </ul>
 </div>
@@ -608,7 +608,7 @@
 <h2>Atributos Estáticos</h2>
 <div class="columns" style="display: flex !important; align-items: top;">
 <div class="column fontsize80" style="width:70%;">
-<p>Os atributos estáticos são denominados variáveis de classe, o que os diferencia das variáveis de instância (que correspondem às implementações dos atributos dos objetos).</p>
+<p>Os <span class="alert">atributos estáticos</span> são denominados <span class="alert">variáveis de classe</span>, o que os diferencia das <strong>variáveis de instância</strong> (que correspondem às implementações dos <strong>atributos</strong> dos <strong>objetos</strong>).</p>
 </div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -626,13 +626,13 @@
 </div>
 </div>
 <div class="fontsize80 fragment">
-<p>Todos os atributos estáticos públicos (public static) de uma classe podem ser acessados por meio de uma referência a qualquer objeto da classe ou qualificando o nome do atributo com o nome da classe e um ponto (.), ou seja, Classe.atributo.</p>
+<p>Todos os <strong>atributos</strong> <strong>estáticos</strong> e <strong>públicos</strong> (<code>public static</code>) de uma classe podem ser <strong>acessados</strong> por meio de uma <strong>referência</strong> a qualquer <strong>objeto</strong> da classe ou <strong>qualificando</strong> o <strong>nome</strong> do <strong>atributo</strong> com o nome da classe e um ponto (.), ou seja, <em>Classe.atributo</em>.</p>
 </div>
 </section>
 <section id="constantes-e-atributos-estáticos" class="slide level2">
 <h2>Constantes e Atributos Estáticos</h2>
 <div class="fontsize80">
-<p>Em linguagens de programação OO não existe o conceito de variável global (acessível de qualquer parte do código).</p>
+<p>Em linguagens de programação OO <strong>não</strong> existe o conceito de <strong>variável global</strong> (acessível de qualquer parte do código).</p>
 <div class="fragment">
 <p><span style="color: darkblue;">Então como definir, por exemplo, constantes “globais” nessas linguagens?</span></p>
 <ul>
@@ -959,24 +959,60 @@
 </section>
 <section id="vazamento-de-memória-1" class="slide level2">
 <h2>Vazamento de Memória</h2>
-<p>Uma vez que o Java possui o Garbage Collector, precisamos nos preocupar com vazamento de memória?</p>
-<p>2O Gabage Collector ajuda a evitar vazamento de memória, uma vez que ele desaloca memória ocupada por objetos que não estão mais sendo referenciados. 3No entanto, ele não elimina inteiramente os vazamentos de memória! Por que?</p>
-<pre><code>4Ele não efetuará coleta de lixo de um objeto até que não haja nenhuma referência a ele.
-5Portanto, se você mantiver erroneamente referências a objetos indesejáveis, vazamentos de memória podem ocorrer</code></pre>
+<div class="columns fontsize90" style="display: flex !important; align-items: top;">
+<div class="column" style="width:80%;">
+<p><span style="color:darkblue;">Uma vez que o Java possui o Garbage Collector, precisamos nos preocupar com vazamento de memória?</span></p>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pensando2.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fontsize90">
+<ul>
+<li class="fragment">O <em>Gabage Collector</em> ajuda a <strong>evitar vazamento</strong> de memória, uma vez que ele <strong>desaloca memória</strong> ocupada por <strong>objetos</strong> que <strong>não</strong> estão mais sendo <strong>referenciados</strong>.</li>
+<li class="fragment">No entanto, ele <strong>não elimina</strong> inteiramente os <strong>vazamentos de memória</strong>! Por que?
+<ul>
+<li class="fragment">Ele <strong>não</strong> efetuará <strong>coleta de lixo</strong> de um <strong>objeto</strong> até que <strong>não haja</strong> nenhuma <strong>referência</strong> a ele.</li>
+<li class="fragment">Portanto, se você <strong>mantiver</strong> erroneamente <strong>referências</strong> a objetos indesejáveis, <strong>vazamentos</strong> de memória podem <strong>ocorrer</strong>.</li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="destrutores" class="slide level2">
 <h2>Destrutores</h2>
-<p>Java não possui destrutor!</p>
-<p>Com o garbage collector, vazamentos de memória que são comuns em outras linguagens (tais como em C e C++, já que a memória não é automaticamente desalocada), são menos prováveis em Java.</p>
-<p>No entanto, além de vazamento de memória, vazamentos de outros recursos podem ocorrer.</p>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pessoa_assustada.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Pessoa_assustada"></p>
+</figure>
+</div>
+</div><div class="column" style="width:70%;">
+<p><span style="color:darkblue;">Java não possui destrutor!</span></p>
+<ul>
+<li class="fragment"><span class="fontsize80">Com o <em>garbage collector</em>, <strong>vazamentos de memória</strong> que são comuns em outras linguagens (tais como em C e C++, já que a memória não é automaticamente desalocada), são <strong>menos prováveis</strong> em <strong>Java</strong>.</span></li>
+</ul>
+</div>
+</div>
+<div class="fontsize80 fragment">
+<p>No entanto, além de vazamento de memória, <strong>vazamentos</strong> de <strong>outros recursos</strong> podem ocorrer.</p>
+<ul>
+<li class="fragment">Por exemplo, um aplicativo pode abrir um <strong>arquivo</strong> no disco para modificar seu conteúdo.</li>
+<li class="fragment">Se o <strong>aplicativo</strong> não <strong>fechar</strong> o <strong>arquivo</strong> depois que ele não é mais necessário, pode acontecer de ele <strong>não</strong> estar <strong>disponível</strong> para uso em <strong>outros programas</strong>.</li>
+<li class="fragment">Portanto, é importante que <strong>liberemos</strong> os <strong>recursos</strong>, como um <strong>arquivo</strong> ou uma <strong>conexão</strong> com um <strong>banco de dados</strong>, depois que eles não forem mais necessários.</li>
+</ul>
+</div>
 </section>
-<section id="destrutores-1" class="slide level2">
-<h2>Destrutores</h2>
-<p>Vazamento de outros recursos</p>
-<p>Por exemplo, um aplicativo pode abrir um arquivo no disco para modificar seu conteúdo. 2Se o aplicativo não fechar o arquivo depois que ele não é mais necessário, pode acontecer de ele não estar disponível para uso em outros programas.</p>
-<p>Portanto, é importante que:&lt;3-&gt;</p>
-<pre><code>3Liberemos um recurso, como um arquivo ou uma conexão com um banco de dados, depois que eles não forem mais necessários.</code></pre>
-<p>4Para isso, podemos utilizar uma cláusula chamada finally\footnote[1]{4Há também, no Java 7, um recurso conhecido como try-with-resources que permite utilizar a semântica do finally de maneira mais simples. indicando o que deve ser feito para liberar um recurso. 5Desse modo, teremos a certeza de que aquele recurso (arquivo ou conexão) será liberado, ainda que algo tenha falhado no decorrer do código.</p>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/perguntas.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Perguntas"></p>
+</figure>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">

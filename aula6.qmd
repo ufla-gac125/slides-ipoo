@@ -31,9 +31,9 @@ title-slide-attributes:
 ::::{.columns style='display: flex !important; align-items: top;' .fontsize90}
 
 ::: {.column width="70%"}
-Suponha que você está desenvolvendo um sistema para uma agência de uma instituição bancária.
+Suponha que você está desenvolvendo um **sistema** para uma **agência** de uma instituição **bancária**.
 
-- A estratégia de venda dos produtos (consórcio, seguros, planos de previdência etc.) nessa agência depende do número de contas abertas na mesma.
+- A **estratégia** de venda dos produtos (consórcio, seguros, planos de previdência etc.) nessa agência **depende** do **número de contas abertas** na mesma.
 :::
 
 ::: {.column width="30%"}
@@ -43,11 +43,11 @@ Suponha que você está desenvolvendo um sistema para uma agência de uma instit
 ::::
 
 :::{.fontsize90}
-- Você definiu a classe ContaBancaria para tratar os comportamentos de cada uma das contas abertas.
-- Precisamos então armazenar em algum local a quantidade de contas abertas.
-- Qual a melhor forma de guardar isso?
-   - Na própria classe? 
-   - Em outra classe? 
+- Você definiu a classe `ContaBancaria` para tratar os comportamentos de **cada** uma das **contas** abertas.
+- Precisamos então **armazenar** em algum local a **quantidade** de **contas abertas**.
+- [Qual a melhor forma de guardar isso?]{style="color:darkblue;"}
+   - Na **própria** classe? 
+   - Em **outra** classe? 
    - Como?
 :::
 
@@ -55,11 +55,9 @@ Suponha que você está desenvolvendo um sistema para uma agência de uma instit
 ## Atributos Estáticos
 
 ::::{.columns style='display: flex !important; align-items: top;' .fontsize80}
-
 ::: {.column width="50%"}
-Se colocarmos essa informação em uma classe que não seja a ContaBancaria, teríamos que lembrar de incrementar a variável totalContas toda vez que um novo objeto da classe ContaBancaria fosse criado.
+Se colocarmos essa informação em uma **classe** que **não seja** a `ContaBancaria`, teríamos que **lembrar** de **incrementar** a variável `totalContas` toda vez que um novo objeto da classe `ContaBancaria` fosse criado.
 :::
-
 ::: {.column width="50%"}
 ```{.java code-line-numbers="false"}
 public class App{
@@ -78,7 +76,6 @@ public class App{
 ::::
 
 ::::{.columns style='display: flex !important; height: 70%; align-items: top;' .fragment}
-
 ::: {.column width="40%"}
 ```{.java code-line-numbers="false"}
 public class ContaBancaria{
@@ -92,26 +89,21 @@ public class ContaBancaria{
 }
 ```
 :::
-
 ::: {.column width="60%" .fontsize80  }
-- Então basta que a própria classe ContaBancaria controle essa informação no seu construtor!
-   - Desse modo, fica garantido que toda vez que um objeto for criado, ele será contabilizado.
-- Essa solução funcionará?
+- Então basta que a própria classe `ContaBancaria` **controle** essa informação **no** seu **construtor**!
+   - Desse modo, **fica garantido** que toda vez que um **objeto** for **criado**, ele será **contabilizado**.
+- [Essa solução funcionará?]{style="color:darkblue;"}
 :::
-
 ::::
 
-
-   
-    
 
 ## Atributos Estáticos
 ::::{.columns style='display: flex !important; align-items: center;'}
 
 ::: {.column width="50%" .fontsize80 .nonincremental}
-O que acontece se criarmos dois objetos da classe ContaBancaria apresentada anteriormente?
+O que acontece se criarmos **dois objetos** da classe `ContaBancaria` apresentada anteriormente?
 
-- Qual seria o valor do atributo totalContas?
+- [Qual seria o valor do atributo totalContas?]{style="color:darkblue;"}
 :::
 
 ::: {.column width="50%"}
@@ -129,9 +121,9 @@ ContaBancaria conta2 = new ContaBancaria();
 :::
 
 ::: {.column width="50%" .fontsize80}
-- Como sabemos, cada objeto tem seus valores para seus atributos, ou seja, o atributo é de cada objeto!
-- Isso ocorre porque, na memória, cada objeto tem seu espaço para guardar os valores de seus atributos.
-- Portanto, a cada novo objeto da classe ContaBancaria, um novo espaço de memória é reservado para armazenar o valor de totalContas.
+- Como sabemos, **cada objeto** tem seus **valores** para **seus atributos**, ou seja, o atributo é de cada objeto!
+- Isso ocorre porque, na memória, **cada objeto** tem **seu espaço** para **guardar** os **valores** de seus **atributos**.
+- Portanto, a cada novo objeto da classe `ContaBancaria`, um novo espaço de memória é reservado para armazenar o valor de `totalContas`.
 :::
 ::::  
 
@@ -140,7 +132,7 @@ ContaBancaria conta2 = new ContaBancaria();
 ::::{.columns style='display: flex !important; align-items: top;'}
 
 ::: {.column width="70%" .fontsize90}
-E se conseguíssemos reservar um espaço de memória que fosse compartilhado por todos os objetos de uma mesma classe?
+E se conseguíssemos **reservar** um **espaço de memória** que fosse **compartilhado** por **todos** os **objetos** de uma mesma classe?
 :::
 
 ::: {.column width="30%"}
@@ -149,10 +141,10 @@ E se conseguíssemos reservar um espaço de memória que fosse compartilhado por
 ::::
 
 :::{.fragment .fontsize90}
-[Podemos fazer isso usando um atributo estático!]{style="color: darkblue;"}
+[Podemos fazer isso usando um **atributo estático**!]{style="color: darkblue;"}
  
-- Um atributo estático pertence à classe e não aos objetos.
-- Quando um atributo é declarado com estático, um espaço de memória (heap) é reservado para ele uma única vez e pode ser acessado por todos os objetos daquela classe.
+- Um [atributo estático]{.alert} pertence [à classe]{.alert} e não aos objetos.
+- Quando um **atributo** é declarado com **estático**, um **espaço de memória** (heap) é **reservado** para ele **uma única vez** e pode ser **acessado** por **todos** os **objetos** daquela classe.
 - Desse modo, se um objeto alterar o valor de um atributo estático, todos os demais poderão acessar esse novo valor.
 :::
 
@@ -212,7 +204,7 @@ Agora temos apenas uma cópia do atributo `totalContas` na memória e, portanto,
 ## Atributos Estáticos
 ::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="70%" .fontsize80}
-Os atributos estáticos são denominados variáveis de classe, o que os diferencia das variáveis de instância (que correspondem às implementações dos atributos dos objetos).
+Os [atributos estáticos]{.alert} são denominados [variáveis de classe]{.alert}, o que os diferencia das **variáveis de instância** (que correspondem às implementações dos **atributos** dos **objetos**).
 :::
 
 ::: {.column width="30%"}
@@ -227,12 +219,12 @@ Um exemplo que já usamos é `out`, um atributo **estático público** da classe
 :::
  
 :::{.fontsize80 .fragment}
-Todos os atributos estáticos públicos (public static) de uma classe podem ser acessados por meio de uma referência a qualquer objeto da classe ou qualificando o nome do atributo com o nome da classe e um ponto (.), ou seja, Classe.atributo.
+Todos os **atributos** **estáticos** e **públicos** (`public static`) de uma classe podem ser **acessados** por meio de uma **referência** a qualquer **objeto** da classe ou **qualificando** o **nome** do **atributo** com o nome da classe e um ponto (.), ou seja, *Classe.atributo*.
 :::
 
 ## Constantes e Atributos Estáticos
 :::{.fontsize80}
-Em linguagens de programação OO não existe o conceito de variável global (acessível de qualquer parte do código).
+Em linguagens de programação OO **não** existe o conceito de **variável global** (acessível de qualquer parte do código).
 
 :::{.fragment}
 [Então como definir, por exemplo, constantes "globais" nessas linguagens?]{style="color: darkblue;"}
@@ -520,34 +512,44 @@ Como resultado, estes **objetos nunca** são **desalocados**, **permanecem** na 
 :::: 
 
    
-
 ## Vazamento de Memória
-Uma vez que o Java possui o Garbage Collector, precisamos nos preocupar com vazamento de memória?
- 
-   2O Gabage Collector ajuda a evitar vazamento de memória, uma vez que ele desaloca memória ocupada por objetos que não estão mais sendo referenciados.
-   3No entanto, ele não elimina inteiramente os vazamentos de memória! Por que?
-  
-    4Ele não efetuará coleta de lixo de um objeto até que não haja nenhuma referência a ele.
-    5Portanto, se você mantiver erroneamente referências a objetos indesejáveis, vazamentos de memória podem ocorrer
+::::{.columns style='display: flex !important; align-items: top;' .fontsize90}
+::: {.column width="80%"}
+[Uma vez que o Java possui o Garbage Collector, precisamos nos preocupar com vazamento de memória?]{style="color:darkblue;"}
+:::
+::: {.column width="30%"}
+![](figuras/pensando2.png){fig-alt="Pensando" fig-align="center" width=60%}
+:::
+::::
+
+:::{.fontsize90} 
+- O *Gabage Collector* ajuda a **evitar vazamento** de memória, uma vez que ele **desaloca memória** ocupada por **objetos** que **não** estão mais sendo **referenciados**.
+- No entanto, ele **não elimina** inteiramente os **vazamentos de memória**! Por que?
+   - Ele **não** efetuará **coleta de lixo** de um **objeto** até que **não haja** nenhuma **referência** a ele.
+   - Portanto, se você **mantiver** erroneamente **referências** a objetos indesejáveis, **vazamentos** de memória podem **ocorrer**.
+:::
 
 ## Destrutores
-Java não possui destrutor!
- 
-   Com o garbage collector, vazamentos de memória que são comuns em outras linguagens (tais como em C e C++, já que a memória não é automaticamente desalocada), são menos prováveis em Java.
- 
-   No entanto, além de vazamento de memória, vazamentos de outros recursos podem ocorrer.
+::::{.columns style='display: flex !important; align-items: center;'}
+::: {.column width="40%"}
+![](figuras/pessoa_assustada.png){fig-alt="Pessoa_assustada" fig-align="center" width=70%}
+:::
+::: {.column width="70%"}
+[Java não possui destrutor!]{style="color:darkblue;"}
 
-## Destrutores
-Vazamento de outros recursos
+- [Com o *garbage collector*, **vazamentos de memória** que são comuns em outras linguagens (tais como em C e C++, já que a memória não é automaticamente desalocada), são **menos prováveis** em **Java**.]{.fontsize80}
+:::
+::::
+
+:::{.fontsize80 .fragment}
+No entanto, além de vazamento de memória, **vazamentos** de **outros recursos** podem ocorrer.
+
+- Por exemplo, um aplicativo pode abrir um **arquivo** no disco para modificar seu conteúdo.
+- Se o **aplicativo** não **fechar** o **arquivo** depois que ele não é mais necessário, pode acontecer de ele **não** estar **disponível** para uso em **outros programas**.
+- Portanto, é importante que **liberemos** os **recursos**, como um **arquivo** ou uma **conexão** com um **banco de dados**, depois que eles não forem mais necessários.
+:::
 
 
-   Por exemplo, um aplicativo pode abrir um arquivo no disco para modificar seu conteúdo.
-   2Se o aplicativo não fechar o arquivo depois que ele não é mais necessário, pode acontecer de ele não estar disponível para uso em outros programas.
+##
 
-
-Portanto, é importante que:<3->
-  
-  
-    3Liberemos um recurso, como um arquivo ou uma conexão com um banco de dados, depois que eles não forem mais necessários.
-   4Para isso, podemos utilizar uma cláusula chamada finally\footnote[1]{4Há também, no Java 7, um recurso conhecido como try-with-resources que permite utilizar a semântica do finally de maneira mais simples. indicando o que deve ser feito para liberar um recurso.
-   5Desse modo, teremos a certeza de que aquele recurso (arquivo ou conexão) será liberado, ainda que algo tenha falhado no decorrer do código.
+![](figuras/perguntas.png){fig-alt="Perguntas" fig-align="center" width=35%}
