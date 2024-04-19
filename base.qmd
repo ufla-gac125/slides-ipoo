@@ -1,7 +1,6 @@
 ## Slide com duas colunas
 
 ::::{.columns style='display: flex !important; height: 70%; align-items: top;'}
-
 ::: {.column width="30%"}
 xxx
 :::
@@ -9,7 +8,6 @@ xxx
 ::: {.column width="70%"}
 yyy
 :::
-
 ::::
 
 

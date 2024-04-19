@@ -294,92 +294,232 @@ private final ContaBancaria minhaConta = new ContaBancaria();
 
 
 ## Métodos Estáticos
-Em Java, temos um método para calcular o logaritmo natural de um número. Veja como ele é chamado:
- double valor = Math.log(num);
+[Em Java, temos um método para calcular o logaritmo natural de um número. Veja como ele é chamado:]{style="color:darkblue;" .fontsize90}
+```{.java code-line-numbers="false"}
+double valor = Math.log(num);
+```
+- [Repare que o método `log` está sendo **chamado** sem que **nenhum** **objeto** da classe `Math` tenha sido **instanciado**.]{.fontsize90}
 
-  2Repare que o método log está sendo chamado sem que nenhum objeto da classe Math tenha sido instanciado.
-  3Ele está sendo chamado utilizando-se a sintaxe: Classe.método. 
-  Com o que isso parece?
-  4Portanto, assim como os atributos, os métodos de uma classe também podem ser estáticos.
- 
-   Nesse caso, eles são chamados de métodos de classe
+:::{.fragment .nonincremental .fontsize90}
+- Ele está sendo **chamado** utilizando-se a **sintaxe**: Classe.método. 
+- Com o que isso parece?
+:::
+
+:::{.fontsize90}
+- Portanto, assim como os atributos, os [métodos]{.alert} de uma classe também [podem ser estáticos]{.alert}.
+   - Nesse caso, eles são chamados de [métodos de classe]{.alert}.
+:::
+
 
 ## Métodos Estáticos
-Qual a utilidade de métodos estáticos?
+::::{.columns style='display: flex !important; align-items: center;'}
 
-  2Eles são interessantes para realizar operações que não dependem do estado dos objetos.
-  3Por isso, eles podem ser executados sem a necessidade de se instanciar um objeto da classe.
+::: {.column width="35%"}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=40%}
+:::
 
-## Métodos Estáticos
-Exemplo de Método Estático
- 
-   Suponha que temos uma classe ContaBancaria.
-   2Essa classe possui um método que converte de R\$ para US\$.\\%(recebe um valor por parâmetro e devolve o valor convertido).
+::: {.column width="65%" .fontsize90}
+[Qual a utilidade de métodos estáticos?]{style="color: darkblue;" }
+
+- Eles são interessantes para realizar **operações** que **não dependem** do **estado dos objetos**.
+- Por isso, eles podem ser **executados** **sem** a necessidade de se **instanciar** um **objeto** da classe.
+:::
+::::
+
+
+
+
+## Exemplo de Método Estático
+:::{.fontsize80}
+- Suponha que temos uma classe `ContaBancaria`.
+:::
+
+:::{.fragment .nonincremental}
+:::{.fontsize80}
+- Essa classe possui o seguinte **método** que **converte** de **R\$** para **US\$**:
+:::
+```{.java code-line-numbers="false"}
+public static double converte(double valorReal, double taxa); 
+```
+:::
+
+:::{.fontsize80}
+- Você concorda que eu poderia **desejar utilizar** esse **método** mesmo **sem** ter uma **conta bancária**?
+   - Às vezes precisamos apenas realizar essa conversão e não de uma conta bancária propriamente dita.
+- O que **aconteceria se** esse **método** não fosse **estático**?
+   - O usuário seria **obrigado** a **criar um objeto** `ContaBancaria` só para fazer essa conversão.
+   - Mas **não faz sentido** criar uma conta bancária "falsa" apenas para poder **chamar** um **método** como esse.
+:::
+
+:::{.fragment .fontsize70}
+Obs.: Em uma boa modelagem esse método provavelmente ficaria em uma classe utilitária (e não em ContaBancaria). No entanto, aqui vale como um exemplo didático.
+:::
+
+
+## Restrições para Métodos Estáticos
+::::{.columns style='display: flex !important; align-items: top;'}
+
+::: {.column width="50%"}
+```{.java code-line-numbers="false"}
+public class ContaBancaria{
+   private double saldo;
+   private static double limiteConta;
+   //Demais atributos omitidos
    
-  public static double converte(double valorReal, double taxa); 
-   3Você concorda que eu poderia desejar utilizar esse método mesmo sem ter uma conta bancária?
-  
-    4Às vezes precisamos apenas realizar essa conversão e não de uma conta bancária propriamente dita.
-  
-  5O que aconteceria se esse método não fosse estático?
- 
-   6O usuário seria obrigado a criar um objeto ContaBancaria só para fazer essa conversão.
-   7Mas não faz sentido criar uma ``falsa'' conta bancária apenas para poder chamar um método como esse.\footnote<7\scriptsize{Em uma boa modelagem esse método provavelmente ficaria em uma classe utilitária (e não em ContaBancaria). No entanto, aqui vale como um exemplo didático.
+   public static double saldoDisponivel(){
+      return saldo + limiteConta;
+   }
+   //Demais métodos omitidos
+}
+```
+:::
+
+::: {.column width="50%" .fontsize90}
+[Existe algum problema com esse método estático?]{style="color:darkblue;"}
+
+![](figuras/pensando2.png){fig-alt="Pensando" fig-align="center" width=45%}
+:::
+::::
+
+
+:::{.fontsize90}
+- Como o método é **estático**, ou seja, é um método de classe, ele pode ser **chamado sem existir** nenhum **objeto** daquela classe.
+- Portanto, se ele for chamado diretamente -- *ContaBancaria.saldoDisponivel( )*, qual seria o valor do atributo `saldo`? 
+- Ou se existissem **vários objetos** conta bancária, o **saldo** a ser usado seria de **qual conta**?
+:::
 
 ## Restrições para Métodos Estáticos
-Como o método é estático, ou seja, é um método de classe, ele pode ser chamado sem existir nenhum objeto daquela classe.
-  3Portanto, se ele for chamado diretamente -- ContaBancaria.saldoDisponivel( ), qual seria o valor do atributo saldo? 
-  4Ou se existissem vários objetos conta bancária, o saldo a \\ser usado seria de qual conta?
+::::{.columns style='display: flex !important; align-items: center;'}
+
+::: {.column width="60%"}
+```{.java code-line-numbers="false"}
+public class ContaBancaria{
+   private double saldo;
+   private static double limiteConta;
+   //Demais atributos omitidos
+   
+   public static double saldoDisponivel(double taxa){
+      return getSaldo * taxa;
+   }
+   public double getSaldo(){
+      return saldo + limiteConta;
+   }
+   //Demais métodos omitidos
+}
+```
+:::
+
+::: {.column width="45%" .fontsize80}
+[Este programa funciona? Por que?]{style="color:darkblue;"}
+
+::: {.r-stack}
+![](figuras/pensando2.png){fig-alt="Pensando" fig-align="center" width=45% .fragment .fade-in-then-out}
+
+![](figuras/msg_erro_terminal.png){fig-alt="Modelo_memoria1" fig-align="center" .fragment .fade-in}
+:::
+- [A mensagem de erro mostra que um **método não estático** **não** pode ser **chamado** a partir de um **método estático**. Mas por qual **motivo**?]{.fontsize80}
+:::
+::::
+
+:::{.fontsize80}
+- A questão é que um **método não estático** pode **acessar** um **atributo** também **não estático**.
+- Desse modo, se um **método estático** pudesse **chamar** um **não estático**, poderíamos **acessar** (indiretamente) **atributos não estáticos** (o que sabemos não ser possível).
+:::
+
 
 ## Restrições para Métodos Estáticos
-A questão é que um método não estático pode acessar um atributo também não estático.
-  4Desse modo, se um método estático pudesse chamar um não estático, poderíamos acessar (indiretamente) atributos não estáticos (o que sabemos não ser possível
 
-## Restrições para Métodos Estáticos
-Exceto se o acesso tiver sendo feito por uma instância da classe criada previamente
+:::{ .nonincremental}
+![](figuras/limitacao_metodo_estatico.png){fig-alt="Limitacao_meto_estatico" fig-align="center" width=60%}
+
+[1. Exceto se o acesso tiver sendo feito por uma instância da classe criada previamente.]{.fontsize70}
+:::
+
 
 ## O Método `main`
-Agora que já sabemos o que é um método estático, vamos recordar uma declaração que já utilizamos diversas vezes.
+[Agora que já sabemos o que é um **método estático**, vamos recordar uma **declaração** que **já utilizamos** diversas vezes.]{.fontsize80}
 
+```{.java code-line-numbers="false"}
+public static void main(String[] args) 
+```
 
-public static void main(String[ ] args) 
-
-Por que o método main precisa ser estático?<2->
+:::{.fragment .fontsize80}
+[Por que o método main precisa ser estático?]{style="color:darkblue;"}
  
-   3Para responder essa pergunta vamos lembrar como executamos programas usando a JVM:\\
-  java MinhaClasse
-   4A partir desse comando, o que a JVM faz é realizar a seguinte chamada:\\
-  MinhaClasse.main($\ldots$)\footnote{4Ao executar um programa você pode passar dados para execução do mesmo.
-   5Perceba que essa chamada só é possível porque o método main é estático!
+- Para responder essa pergunta vamos lembrar **como executamos programas** usando a JVM: *java MinhaClasse*
+- A partir desse comando, o que a JVM faz é realizar a seguinte chamada: *MinhaClasse.main($\ldots$)*[$^1$]{style="color:#00838f;"}
+- Perceba que essa **chamada** só **é possível** porque o método `main` é **estático**!
+:::
 
-## Garbage Collector
-Em um programa Java, o que acontece na memória com uma variável local (tipo primitivo) quando um método termina?
- 
-   2A variável é sempre desalocada quando o método termina.
-   3Como no caso de tipos primitivos a variável armazena seu próprio valor, desalocar uma variável, significa desalocar o seu próprio valor.
- 
+:::{.fontsize70}
+1. Ao executar um programa você pode passar dados para execução do mesmo.
+:::
 
-Mas o  que acontece se essa variável local estiver referenciando um objeto?<4->
- 
-   5No caso de variáveis que referenciam objetos, desalocar a variável significa que o local que armazena o endereço do objeto foi desalocado.
-  
-    6Mas e a memória alocada para o objeto (heap) em si, o que acontece?
 
-## Garbage Collector
-Sempre que um objeto já não é mais acessível, ou seja, quando perdemos a referência para esse objeto: <2->
- 
-   2Ele fica disponível para o coletor de lixo (garbage collector).
-   3Mas atenção, o Garbage Collector age apenas sobre objetos, nunca sobre variáveis.
-   4Portanto, você não precisa se preocupar em desalocar a memória utilizada por um objeto, pois Java cuida disso para você.
+## *Garbage Collector*
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%"}
+![](figuras/jovem.png){fig-alt="Pensando" fig-align="center" width=30%}
+:::
 
-## Garbage Collector
-Vamos analisar a situação a seguir:
+::: {.column width="80%" .fontsize80}
+[Em um programa Java, o que acontece na memória com uma variável local (tipo primitivo) quando um método termina?]{style="color:darkblue;"}
+
+- A **variável** é sempre **desalocada** quando o método **termina**.
+- Como no caso de tipos primitivos a variável armazena seu próprio valor, **desalocar** uma variável, **significa** **desalocar** o **seu** **valor**.
+:::
+::::
+
+
+::::{.columns style='display: flex !important; align-items: top;' .fontsize80 .fragment}
+::: {.column width="70%"}
+[Mas o  que acontece se essa variável local estiver referenciando um objeto?]{style="color:darkblue;"}
+ 
+- No caso de variáveis que **referenciam** **objetos**, **desalocar** a variável **significa** que o local que armazena o **endereço** do objeto foi **desalocado**.
+- Mas e a **memória alocada** para o **objeto** (*heap*) em si, o que acontece?
+:::
+::: {.column width="40%"}
+![](figuras/pensando2.png){fig-alt="Pensando" fig-align="center" width=60%}
+:::
+::::
+
+
+## *Garbage Collector*
+![](figuras/coletor_lixo1.png){fig-alt="Coletor_lixo1" fig-align="center" width=57%}
+
+:::{.fontsize80 .fragment}
+[Sempre que um objeto já não é mais acessível, ou seja, quando perdemos a referência para esse objeto:]{style="color:darkblue;"} 
+ 
+- Ele **fica disponível** para o [coletor de lixo]{.alert} (*garbage collector*).
+- Mas atenção, o *Garbage Collector* age **apenas** sobre **objetos**, nunca sobre variáveis.
+- Portanto, você **não precisa** se preocupar em **desalocar** a **memória** utilizada por um **objeto**, pois Java cuida disso para você.
+   - O Garbage Collector é controlado pela JVM e, por isso, não tem como saber quando exatamente um objeto será desalocado.
+:::
+
 
 ## Vazamento de Memória
-O vazamento de memória ocorre quando deixamos em nosso programa objetos que não estão mais sendo usados alocados na memória, fazendo com que o coletor de lixo não consiga reconhecê-los como objetos elegíveis para desalocação.
- 
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%"}
+![](figuras/vazamento_memoria.png){fig-alt="Vazamento_memoria" fig-align="center" width=57%}
 
-   Como resultado, estes objetos nunca são desalocados, permanecem na memória indefinidamente, reduzindo assim a quantidade total de memória disponível. Num sistema que precise funcionar continuamente (nunca é desligado), isso levará a um travamento do sistema ou do computador.
+:::
+
+::: {.column width="70%" .fontsize80}
+O [vazamento de memória]{.alert} ocorre quando **deixamos** em nosso programa **objetos** que **não** estão mais sendo **usados** **alocados na memória**, fazendo com que o coletor de lixo não consiga reconhecê-los como objetos elegíveis para desalocação.
+:::
+::::
+
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="70%" .fontsize80}
+Como resultado, estes **objetos nunca** são **desalocados**, **permanecem** na memória **indefinidamente**, reduzindo assim a quantidade total de memória disponível. Num sistema que precise funcionar continuamente (nunca é desligado), isso levará a um travamento do sistema ou do computador.
+:::
+
+::: {.column width="30%"}
+![](figuras/consumo_memoria.png){fig-alt="Consumo_memoria" fig-align="center" width=70%}
+:::
+:::: 
+
+   
 
 ## Vazamento de Memória
 Uma vez que o Java possui o Garbage Collector, precisamos nos preocupar com vazamento de memória?

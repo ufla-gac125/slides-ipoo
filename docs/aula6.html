@@ -707,64 +707,255 @@
 </section>
 <section id="métodos-estáticos" class="slide level2">
 <h2>Métodos Estáticos</h2>
-<p>Em Java, temos um método para calcular o logaritmo natural de um número. Veja como ele é chamado: double valor = Math.log(num);</p>
-<p>2Repare que o método log está sendo chamado sem que nenhum objeto da classe Math tenha sido instanciado. 3Ele está sendo chamado utilizando-se a sintaxe: Classe.método. Com o que isso parece? 4Portanto, assim como os atributos, os métodos de uma classe também podem ser estáticos.</p>
-<p>Nesse caso, eles são chamados de métodos de classe</p>
+<p><span class="fontsize90" style="color:darkblue;">Em Java, temos um método para calcular o logaritmo natural de um número. Veja como ele é chamado:</span></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> valor <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span><span class="op">(</span>num<span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><span class="fontsize90">Repare que o método <code>log</code> está sendo <strong>chamado</strong> sem que <strong>nenhum</strong> <strong>objeto</strong> da classe <code>Math</code> tenha sido <strong>instanciado</strong>.</span></li>
+</ul>
+<div class="fragment fontsize90">
+<ul>
+<li>Ele está sendo <strong>chamado</strong> utilizando-se a <strong>sintaxe</strong>: Classe.método.</li>
+<li>Com o que isso parece?</li>
+</ul>
+</div>
+<div class="fontsize90">
+<ul>
+<li class="fragment">Portanto, assim como os atributos, os <span class="alert">métodos</span> de uma classe também <span class="alert">podem ser estáticos</span>.
+<ul>
+<li class="fragment">Nesse caso, eles são chamados de <span class="alert">métodos de classe</span>.</li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="métodos-estáticos-1" class="slide level2">
 <h2>Métodos Estáticos</h2>
-<p>Qual a utilidade de métodos estáticos?</p>
-<p>2Eles são interessantes para realizar operações que não dependem do estado dos objetos. 3Por isso, eles podem ser executados sem a necessidade de se instanciar um objeto da classe.</p>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:40.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div><div class="column fontsize90" style="width:65%;">
+<p><span style="color: darkblue;">Qual a utilidade de métodos estáticos?</span></p>
+<ul>
+<li class="fragment">Eles são interessantes para realizar <strong>operações</strong> que <strong>não dependem</strong> do <strong>estado dos objetos</strong>.</li>
+<li class="fragment">Por isso, eles podem ser <strong>executados</strong> <strong>sem</strong> a necessidade de se <strong>instanciar</strong> um <strong>objeto</strong> da classe.</li>
+</ul>
+</div>
+</div>
 </section>
-<section id="métodos-estáticos-2" class="slide level2">
-<h2>Métodos Estáticos</h2>
-<p>Exemplo de Método Estático</p>
-<p>Suponha que temos uma classe ContaBancaria. 2Essa classe possui um método que converte de R$ para US$.\%(recebe um valor por parâmetro e devolve o valor convertido).</p>
-<p>public static double converte(double valorReal, double taxa); 3Você concorda que eu poderia desejar utilizar esse método mesmo sem ter uma conta bancária?</p>
-<pre><code>4Às vezes precisamos apenas realizar essa conversão e não de uma conta bancária propriamente dita.</code></pre>
-<p>5O que aconteceria se esse método não fosse estático?</p>
-<p>6O usuário seria obrigado a criar um objeto ContaBancaria só para fazer essa conversão. 7Mas não faz sentido criar uma ``falsa’’ conta bancária apenas para poder chamar um método como esse.\footnote&lt;7{Em uma boa modelagem esse método provavelmente ficaria em uma classe utilitária (e não em ContaBancaria). No entanto, aqui vale como um exemplo didático.</p>
+<section id="exemplo-de-método-estático" class="slide level2">
+<h2>Exemplo de Método Estático</h2>
+<div class="fontsize80">
+<ul>
+<li class="fragment">Suponha que temos uma classe <code>ContaBancaria</code>.</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="fontsize80">
+<ul>
+<li>Essa classe possui o seguinte <strong>método</strong> que <strong>converte</strong> de <strong>R$</strong> para <strong>US$</strong>:</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">double</span> <span class="fu">converte</span><span class="op">(</span><span class="dt">double</span> valorReal<span class="op">,</span> <span class="dt">double</span> taxa<span class="op">);</span> </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fontsize80">
+<ul>
+<li class="fragment">Você concorda que eu poderia <strong>desejar utilizar</strong> esse <strong>método</strong> mesmo <strong>sem</strong> ter uma <strong>conta bancária</strong>?
+<ul>
+<li class="fragment">Às vezes precisamos apenas realizar essa conversão e não de uma conta bancária propriamente dita.</li>
+</ul></li>
+<li class="fragment">O que <strong>aconteceria se</strong> esse <strong>método</strong> não fosse <strong>estático</strong>?
+<ul>
+<li class="fragment">O usuário seria <strong>obrigado</strong> a <strong>criar um objeto</strong> <code>ContaBancaria</code> só para fazer essa conversão.</li>
+<li class="fragment">Mas <strong>não faz sentido</strong> criar uma conta bancária “falsa” apenas para poder <strong>chamar</strong> um <strong>método</strong> como esse.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment fontsize70">
+<p>Obs.: Em uma boa modelagem esse método provavelmente ficaria em uma classe utilitária (e não em ContaBancaria). No entanto, aqui vale como um exemplo didático.</p>
+</div>
 </section>
 <section id="restrições-para-métodos-estáticos" class="slide level2">
 <h2>Restrições para Métodos Estáticos</h2>
-<p>Como o método é estático, ou seja, é um método de classe, ele pode ser chamado sem existir nenhum objeto daquela classe. 3Portanto, se ele for chamado diretamente – ContaBancaria.saldoDisponivel( ), qual seria o valor do atributo saldo? 4Ou se existissem vários objetos conta bancária, o saldo a \ser usado seria de qual conta?</p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb10"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
+<span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="dt">double</span> saldo<span class="op">;</span></span>
+<span id="cb10-3"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="dt">static</span> <span class="dt">double</span> limiteConta<span class="op">;</span></span>
+<span id="cb10-4"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="co">//Demais atributos omitidos</span></span>
+<span id="cb10-5"><a href="" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb10-6"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">double</span> <span class="fu">saldoDisponivel</span><span class="op">(){</span></span>
+<span id="cb10-7"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> saldo <span class="op">+</span> limiteConta<span class="op">;</span></span>
+<span id="cb10-8"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb10-9"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="co">//Demais métodos omitidos</span></span>
+<span id="cb10-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize90" style="width:50%;">
+<p><span style="color:darkblue;">Existe algum problema com esse método estático?</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pensando2.png" class="quarto-figure quarto-figure-center" style="width:45.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fontsize90">
+<ul>
+<li class="fragment">Como o método é <strong>estático</strong>, ou seja, é um método de classe, ele pode ser <strong>chamado sem existir</strong> nenhum <strong>objeto</strong> daquela classe.</li>
+<li class="fragment">Portanto, se ele for chamado diretamente – <em>ContaBancaria.saldoDisponivel( )</em>, qual seria o valor do atributo <code>saldo</code>?</li>
+<li class="fragment">Ou se existissem <strong>vários objetos</strong> conta bancária, o <strong>saldo</strong> a ser usado seria de <strong>qual conta</strong>?</li>
+</ul>
+</div>
 </section>
 <section id="restrições-para-métodos-estáticos-1" class="slide level2">
 <h2>Restrições para Métodos Estáticos</h2>
-<p>A questão é que um método não estático pode acessar um atributo também não estático. 4Desse modo, se um método estático pudesse chamar um não estático, poderíamos acessar (indiretamente) atributos não estáticos (o que sabemos não ser possível</p>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:60%;">
+<div class="sourceCode" id="cb11"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
+<span id="cb11-2"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="dt">double</span> saldo<span class="op">;</span></span>
+<span id="cb11-3"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="dt">static</span> <span class="dt">double</span> limiteConta<span class="op">;</span></span>
+<span id="cb11-4"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="co">//Demais atributos omitidos</span></span>
+<span id="cb11-5"><a href="" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb11-6"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">double</span> <span class="fu">saldoDisponivel</span><span class="op">(</span><span class="dt">double</span> taxa<span class="op">){</span></span>
+<span id="cb11-7"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> getSaldo <span class="op">*</span> taxa<span class="op">;</span></span>
+<span id="cb11-8"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb11-9"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">double</span> <span class="fu">getSaldo</span><span class="op">(){</span></span>
+<span id="cb11-10"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> saldo <span class="op">+</span> limiteConta<span class="op">;</span></span>
+<span id="cb11-11"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb11-12"><a href="" aria-hidden="true" tabindex="-1"></a>   <span class="co">//Demais métodos omitidos</span></span>
+<span id="cb11-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize80" style="width:45%;">
+<p><span style="color:darkblue;">Este programa funciona? Por que?</span></p>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pensando2.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" style="width:45.0%" alt="Pensando"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/msg_erro_terminal.png" class="fragment fade-in quarto-figure quarto-figure-center" alt="Modelo_memoria1"></p>
+</figure>
+</div>
+</div>
+<ul>
+<li class="fragment"><span class="fontsize80">A mensagem de erro mostra que um <strong>método não estático</strong> <strong>não</strong> pode ser <strong>chamado</strong> a partir de um <strong>método estático</strong>. Mas por qual <strong>motivo</strong>?</span></li>
+</ul>
+</div>
+</div>
+<div class="fontsize80">
+<ul>
+<li class="fragment">A questão é que um <strong>método não estático</strong> pode <strong>acessar</strong> um <strong>atributo</strong> também <strong>não estático</strong>.</li>
+<li class="fragment">Desse modo, se um <strong>método estático</strong> pudesse <strong>chamar</strong> um <strong>não estático</strong>, poderíamos <strong>acessar</strong> (indiretamente) <strong>atributos não estáticos</strong> (o que sabemos não ser possível).</li>
+</ul>
+</div>
 </section>
 <section id="restrições-para-métodos-estáticos-2" class="slide level2">
 <h2>Restrições para Métodos Estáticos</h2>
-<p>Exceto se o acesso tiver sendo feito por uma instância da classe criada previamente</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/limitacao_metodo_estatico.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Limitacao_meto_estatico"></p>
+</figure>
+</div>
+<p><span class="fontsize70">1. Exceto se o acesso tiver sendo feito por uma instância da classe criada previamente.</span></p>
+</div>
 </section>
 <section id="o-método-main" class="slide level2">
 <h2>O Método <code>main</code></h2>
-<p>Agora que já sabemos o que é um método estático, vamos recordar uma declaração que já utilizamos diversas vezes.</p>
-<p>public static void main(String[ ] args)</p>
-<p>Por que o método main precisa ser estático?&lt;2-&gt;</p>
-<p>3Para responder essa pergunta vamos lembrar como executamos programas usando a JVM:\ java MinhaClasse 4A partir desse comando, o que a JVM faz é realizar a seguinte chamada:\ MinhaClasse.main(<span class="math inline">\(\ldots\)</span>)\footnote{4Ao executar um programa você pode passar dados para execução do mesmo. 5Perceba que essa chamada só é possível porque o método main é estático!</p>
+<p><span class="fontsize80">Agora que já sabemos o que é um <strong>método estático</strong>, vamos recordar uma <strong>declaração</strong> que <strong>já utilizamos</strong> diversas vezes.</span></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb12-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment fontsize80">
+<p><span style="color:darkblue;">Por que o método main precisa ser estático?</span></p>
+<ul>
+<li class="fragment">Para responder essa pergunta vamos lembrar <strong>como executamos programas</strong> usando a JVM: <em>java MinhaClasse</em></li>
+<li class="fragment">A partir desse comando, o que a JVM faz é realizar a seguinte chamada: <em>MinhaClasse.main(<span class="math inline">\(\ldots\)</span>)</em><span style="color:#00838f;"><span class="math inline">\(^1\)</span></span></li>
+<li class="fragment">Perceba que essa <strong>chamada</strong> só <strong>é possível</strong> porque o método <code>main</code> é <strong>estático</strong>!</li>
+</ul>
+</div>
+<div class="fontsize70">
+<ol type="1">
+<li class="fragment">Ao executar um programa você pode passar dados para execução do mesmo.</li>
+</ol>
+</div>
 </section>
 <section id="garbage-collector" class="slide level2">
-<h2>Garbage Collector</h2>
-<p>Em um programa Java, o que acontece na memória com uma variável local (tipo primitivo) quando um método termina?</p>
-<p>2A variável é sempre desalocada quando o método termina. 3Como no caso de tipos primitivos a variável armazena seu próprio valor, desalocar uma variável, significa desalocar o seu próprio valor.</p>
-<p>Mas o que acontece se essa variável local estiver referenciando um objeto?&lt;4-&gt;</p>
-<p>5No caso de variáveis que referenciam objetos, desalocar a variável significa que o local que armazena o endereço do objeto foi desalocado.</p>
-<pre><code>6Mas e a memória alocada para o objeto (heap) em si, o que acontece?</code></pre>
+<h2><em>Garbage Collector</em></h2>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:30.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div><div class="column fontsize80" style="width:80%;">
+<p><span style="color:darkblue;">Em um programa Java, o que acontece na memória com uma variável local (tipo primitivo) quando um método termina?</span></p>
+<ul>
+<li class="fragment">A <strong>variável</strong> é sempre <strong>desalocada</strong> quando o método <strong>termina</strong>.</li>
+<li class="fragment">Como no caso de tipos primitivos a variável armazena seu próprio valor, <strong>desalocar</strong> uma variável, <strong>significa</strong> <strong>desalocar</strong> o <strong>seu</strong> <strong>valor</strong>.</li>
+</ul>
+</div>
+</div>
+<div class="columns fontsize80 fragment" style="display: flex !important; align-items: top;">
+<div class="column" style="width:70%;">
+<p><span style="color:darkblue;">Mas o que acontece se essa variável local estiver referenciando um objeto?</span></p>
+<ul>
+<li class="fragment">No caso de variáveis que <strong>referenciam</strong> <strong>objetos</strong>, <strong>desalocar</strong> a variável <strong>significa</strong> que o local que armazena o <strong>endereço</strong> do objeto foi <strong>desalocado</strong>.</li>
+<li class="fragment">Mas e a <strong>memória alocada</strong> para o <strong>objeto</strong> (<em>heap</em>) em si, o que acontece?</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pensando2.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="garbage-collector-1" class="slide level2">
-<h2>Garbage Collector</h2>
-<p>Sempre que um objeto já não é mais acessível, ou seja, quando perdemos a referência para esse objeto: &lt;2-&gt;</p>
-<p>2Ele fica disponível para o coletor de lixo (garbage collector). 3Mas atenção, o Garbage Collector age apenas sobre objetos, nunca sobre variáveis. 4Portanto, você não precisa se preocupar em desalocar a memória utilizada por um objeto, pois Java cuida disso para você.</p>
-</section>
-<section id="garbage-collector-2" class="slide level2">
-<h2>Garbage Collector</h2>
-<p>Vamos analisar a situação a seguir:</p>
+<h2><em>Garbage Collector</em></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/coletor_lixo1.png" class="quarto-figure quarto-figure-center" style="width:57.0%" alt="Coletor_lixo1"></p>
+</figure>
+</div>
+<div class="fontsize80 fragment">
+<p><span style="color:darkblue;">Sempre que um objeto já não é mais acessível, ou seja, quando perdemos a referência para esse objeto:</span></p>
+<ul>
+<li class="fragment">Ele <strong>fica disponível</strong> para o <span class="alert">coletor de lixo</span> (<em>garbage collector</em>).</li>
+<li class="fragment">Mas atenção, o <em>Garbage Collector</em> age <strong>apenas</strong> sobre <strong>objetos</strong>, nunca sobre variáveis.</li>
+<li class="fragment">Portanto, você <strong>não precisa</strong> se preocupar em <strong>desalocar</strong> a <strong>memória</strong> utilizada por um <strong>objeto</strong>, pois Java cuida disso para você.
+<ul>
+<li class="fragment">O Garbage Collector é controlado pela JVM e, por isso, não tem como saber quando exatamente um objeto será desalocado.</li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="vazamento-de-memória" class="slide level2">
 <h2>Vazamento de Memória</h2>
-<p>O vazamento de memória ocorre quando deixamos em nosso programa objetos que não estão mais sendo usados alocados na memória, fazendo com que o coletor de lixo não consiga reconhecê-los como objetos elegíveis para desalocação.</p>
-<p>Como resultado, estes objetos nunca são desalocados, permanecem na memória indefinidamente, reduzindo assim a quantidade total de memória disponível. Num sistema que precise funcionar continuamente (nunca é desligado), isso levará a um travamento do sistema ou do computador.</p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/vazamento_memoria.png" class="quarto-figure quarto-figure-center" style="width:57.0%" alt="Vazamento_memoria"></p>
+</figure>
+</div>
+</div><div class="column fontsize80" style="width:70%;">
+<p>O <span class="alert">vazamento de memória</span> ocorre quando <strong>deixamos</strong> em nosso programa <strong>objetos</strong> que <strong>não</strong> estão mais sendo <strong>usados</strong> <strong>alocados na memória</strong>, fazendo com que o coletor de lixo não consiga reconhecê-los como objetos elegíveis para desalocação.</p>
+</div>
+</div>
+<div class="columns fragment" style="display: flex !important; align-items: top;">
+<div class="column fontsize80" style="width:70%;">
+<p>Como resultado, estes <strong>objetos nunca</strong> são <strong>desalocados</strong>, <strong>permanecem</strong> na memória <strong>indefinidamente</strong>, reduzindo assim a quantidade total de memória disponível. Num sistema que precise funcionar continuamente (nunca é desligado), isso levará a um travamento do sistema ou do computador.</p>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/consumo_memoria.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Consumo_memoria"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="vazamento-de-memória-1" class="slide level2">
 <h2>Vazamento de Memória</h2>
