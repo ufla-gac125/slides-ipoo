@@ -1,0 +1,184 @@
+---
+title: Pacotes e Visibilidade de Classes<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Conteúdo desta Aula  
+
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+::: {.column width="30%"}
+![](figuras/professor1-1.png){fig-alt="Professor1-1" fig-align="center"}
+:::
+
+::: {.column width="70%"}
+::: {.nonincremental}
+::: {style="font-size: 120%;"}
+- Pacotes
+- Visibilidade de Classes
+:::
+:::
+:::
+::::
+
+
+## Modularização
+Classes e métodos ajudam a modularizar um programa separando suas tarefas em unidades autocontidas.
+
+
+Quais são as motivações para se modularizar um programa?
+ 
+  3Abordagem dividir para conquistar: torna o desenvolvimento de programas mais gerenciável, construindo programas a partir de peças mais simples e menores.
+  4Reutilização de software: o uso de classes e métodos existentes como blocos de construção para criar novos programas.
+
+
+## Pacotes em Java
+Escrevemos programas Java combinando nossos métodos e classes com aqueles pré-definidos na Java API (biblioteca de classes) e em quaisquer outras bibliotecas de classes.
+ 
+    Classes relacionadas são agrupadas em pacotes de modo que possam ser importadas nos programas e reutilizadas.
+
+
+## Pacotes da Biblioteca de Classes do Java
+
+
+
+## Pacotes em Java
+Ao implementar uma classe podemos definir que ela pertence a um determinado pacote.
+  Como fazer isso?
+  
+   2Inserindo uma declaração package antes da definição da classe:
+     
+   package banco;
+   class ContaBancaria\{
+   ...
+   \
+  
+  import banco.ContaBancaria;
+   0.2cm
+   public class ContaBancariaTeste\{
+   0.2cm public static void main (String[ ] args)\{
+    ContaBancaria minhaConta = new ContaBancaria( ); 
+   \
+  
+   Fazendo isso, quando quisermos utilizar objetos da classe ContaBancaria em algum outro código, precisamos informar para a JVM que essa classe está no pacote banco.
+
+
+## Pacotes
+Observações importantes para se utilizar pacotes em Java:
+ 
+  Assim como uma classe em Java deve ser salva em um arquivo com o seu nome, um pacote deve ser salvo em uma pasta no sistema que possua o mesmo nome do pacote.
+  
+   Portanto, em nosso exemplo, o arquivo ContaBancaria.java deve ficar na pasta chamada banco.
+  
+  2Um pacote pode conter outros pacotes (assim como pastas podem conter subpastas).
+  
+   Por exemplo, poderíamos ter dentro do pacote banco os pacotes: nacional e estadual, por exemplo.
+   3Nesse caso, para usar a classe ContaBancaria, precisaríamos declarar por exemplo:
+   import banco.nacional.ContaBancaria;
+
+
+## Pacotes
+Observações importantes para se utilizar pacotes em Java:
+ 
+  Repare que no exemplo anterior precisamos referenciar a classe ContaBancaria com todo o nome do pacote na sua frente (nome qualificado).
+    import banco.nacional.ContaBancaria;
+  2No entanto, nesse caso, poderíamos usar também o comando:
+    import banco.nacional.*;
+    Isso indica que estamos importando todas as classes contidas no pacote banco.nacional.
+ 
+ 
+  Cuidado!
+  Com o comando import banco.* só importaremos as classes diretamente vinculadas ao pacote banco (na pasta banco), ou seja, não conseguiremos importar as classes contidas em subpacotes (subpastas de banco, como por ex., nacional).
+
+
+## Pacotes
+Observações importantes para se utilizar pacotes em Java:
+ 
+  Existe uma outra maneira de trabalhar com classes contidas em pacotes sem usar o comando import.
+  
+   Basta você qualificar totalmente o nome da classe sempre que precisar dele no seu código.
+  
+  2Por exemplo: 
+  
+   public class ContaBancariaTeste\{
+   0.2cm public static void main (String[ ] args)\{
+    banco.nacional.ContaBancaria minhaConta = new banco.nacional.ContaBancaria( ); 
+
+
+## Pacotes
+Imagine a seguinte situação...
+  Duas equipes de uma empresa que trabalham em projetos distintos criaram classes para serem reutilizadas em outros códigos.
+
+ 
+   Equipe A: está desenvolvendo um sistema para uma loja de instrumentos musicais e, por isso, criou uma classe chamada Teclado.
+ 
+  
+
+ 
+Equipe B: está desenvolvendo um sistema para uma loja de informática e, por isso, também criou uma classe denominada Teclado.
+
+
+## Pacotes
+Como evitar o conflito de nomes para essas classes criadas pelas equipes?
+
+
+ 2Se cada projeto for colocado dentro de um pacote diferente, ainda que as classes tenham nomes iguais, o sistema irá diferenciá-las pelo nome do pacote.
+ 3Portanto, poderiam ser definidos os pacotes informatica e musica.
+ 4Por exemplo, se precisarmos criar um objeto teclado musical, basta importar a classe Teclado do pacote musica:
+ import musica.Teclado;
+
+
+-
+E se os dois pacotes forem importados em algum código?
+
+Nesse caso, faz-se necessário utilizar o nome qualificado da classe no código. Por exemplo:
+   musica.Teclado inst = new musica.Teclado( );
+
+
+## Convenção de Nomeação de Pacotes
+Existe uma convenção (padrão) para nomear pacotes em Java.
+    Apesar de você não ser obrigado a seguir essa convenção, para facilitar a sua vida e a das pessoas ao seu redor, utilize-a.
+    A ideia é garantir nomes de pacotes únicos.
+
+Portanto:
+ 
+  2Use letras minúsculas para os nomes de pacotes (evita conflito com os nomes das classes).
+  3Comece-o com o nome de domínio na internet da sua empresa ou instituição na ordem inversa.
+  Exemplo: Domínio: dac.ufla.br  $\rightarrow$ Pacote: br.ufla.dac.meupacote
+  4Você ainda pode especificar partes adicionais nesse nome. 
+  Exemplo: Se a classe a ser inserida no pacote é de um projeto específico, digamos, poo, você inserir essa informação no nome: br.ufla.dac.poo.meupacote
+
+## Pacotes *versus* Visibilidade de Classes
+Já vimos que é possível definir a visibilidade de atributos e métodos. Mas e para uma classe? Será que podemos definir sua visibilidade também?
+ 
+ 
+
+
+Sim, podemos! Uma classe pode ser pública, por exemplo.
+ 
+
+   public class ContaBancaria\{
+  
+   Nesse caso, a classe é visível por qualquer outra classe do sistema. Apenas classes public podem ser reutilizadas fora do pacote em que estão declaradas!
+
+
+## Pacotes *versus* Visibilidade de Classes
+Mas e se eu não colocar nada? Qual será a visibilidade da classe?  
+   class ContaBancaria\{
+   \
+ 
+ 
+
+
+Ela será acessível por qualquer outra que esteja dentro do mesmo pacote!
+ 
+  3Mas e quando eu não eu não inseri minhas classes em pacote algum?
+  
+   4Se nenhuma instrução package for fornecida em arquivos de código-fonte Java, todas as classes declaradas nesses arquivos serão inseridas no chamado pacote padrão e só serão acessíveis a outras classes no pacote padrão que estão localizadas no mesmo diretório\footnote<4O mesmo vale para métodos e atributos que você deixou sem um modificador de visibilidade.
+
+
+## Visibilidade de Classes
+
+
