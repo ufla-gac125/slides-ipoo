@@ -25,19 +25,46 @@ title-slide-attributes:
 
 
 ## Modularização
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="70%" .fontsize90}
 Classes e métodos ajudam a modularizar um programa separando suas tarefas em unidades autocontidas.
+:::
 
+::: {.column width="40%"}
+![](figuras/dividir_conquistar.png){fig-alt="Dividir_conquistar" fig-align="center" width=80%}
 
-Quais são as motivações para se modularizar um programa?
- 
-  3Abordagem dividir para conquistar: torna o desenvolvimento de programas mais gerenciável, construindo programas a partir de peças mais simples e menores.
-  4Reutilização de software: o uso de classes e métodos existentes como blocos de construção para criar novos programas.
+:::
+::::
 
+:::{.fontsize90 .fragment}
+[Quais são as motivações para se modularizar um programa?]{style="color:darkblue;"}
+
+- Abordagem dividir para conquistar: torna o desenvolvimento de programas mais gerenciável, construindo programas a partir de peças mais simples e menores.
+- Reutilização de software: o uso de classes e métodos existentes como blocos de construção para criar novos programas.
+:::
 
 ## Pacotes em Java
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="70%" .fontsize90}
 Escrevemos programas Java combinando nossos métodos e classes com aqueles pré-definidos na Java API (biblioteca de classes) e em quaisquer outras bibliotecas de classes.
- 
-    Classes relacionadas são agrupadas em pacotes de modo que possam ser importadas nos programas e reutilizadas.
+:::
+
+::: {.column width="40%"}
+![](figuras/escrever_programa.png){fig-alt="Escrever_programa" fig-align="center" width=80%}
+
+:::
+::::
+
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="40%"}
+![](figuras/pacotes_importados.png){fig-alt="Pacotes_importandos" fig-align="center" width=80%}
+
+:::
+
+::: {.column width="70%" .fontsize90}
+Classes relacionadas são agrupadas em pacotes de modo que possam ser importadas nos programas e reutilizadas.
+:::
+::::
 
 
 ## Pacotes da Biblioteca de Classes do Java
