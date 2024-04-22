@@ -50,14 +50,14 @@ Escrevemos programas Java combinando nossos métodos e classes com aqueles pré-
 :::
 
 ::: {.column width="40%"}
-![](figuras/escrever_programa.png){fig-alt="Escrever_programa" fig-align="center" width=80%}
+![](figuras/escrever_programa.png){fig-alt="Escrever_programa" fig-align="center" width=90%}
 
 :::
 ::::
 
-::::{.columns style='display: flex !important; align-items: top;'}
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
 ::: {.column width="40%"}
-![](figuras/pacotes_importados.png){fig-alt="Pacotes_importandos" fig-align="center" width=80%}
+![](figuras/pacotes_importados.png){fig-alt="Pacotes_importandos" fig-align="center" width=70%}
 
 :::
 
@@ -68,28 +68,54 @@ Classes relacionadas são agrupadas em pacotes de modo que possam ser importadas
 
 
 ## Pacotes da Biblioteca de Classes do Java
+[Java contém muitas classes predefinidas que estão agrupadas em pacotes. A seguir temos um subconjunto de pacotes da Java API.]{style="color:darkblue;" .fontsize90}
+
+![](figuras/java_api.png){fig-alt="Java_api" fig-align="center" width=60%}
 
 
 
 ## Pacotes em Java
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%"}
+![](figuras/jovem.png){fig-alt="Jovem" fig-align="center" width=40%}
+:::
+
+::: {.column width="75%"}
+:::{.fontsize80}
 Ao implementar uma classe podemos definir que ela pertence a um determinado pacote.
-  Como fazer isso?
-  
-   2Inserindo uma declaração package antes da definição da classe:
-     
-   package banco;
-   class ContaBancaria\{
-   ...
-   \
-  
-  import banco.ContaBancaria;
-   0.2cm
-   public class ContaBancariaTeste\{
-   0.2cm public static void main (String[ ] args)\{
-    ContaBancaria minhaConta = new ContaBancaria( ); 
-   \
-  
-   Fazendo isso, quando quisermos utilizar objetos da classe ContaBancaria em algum outro código, precisamos informar para a JVM que essa classe está no pacote banco.
+
+[Como fazer isso?]{style="color:darkblue;"}
+:::
+:::{.fragment .nonincremental}
+- Inserindo uma declaração package antes da definição da classe:
+
+```{.java code-line-numbers="false"}   
+package banco;
+public class ContaBancaria{
+  //Código da classe omitido
+}
+```
+:::
+:::
+::::
+
+::::{.columns style='display: flex !important; align-items: top;'.fragment}
+::: {.column width="60%"}
+```{.java code-line-numbers="false"}   
+import banco.ContaBancaria;
+public class App{
+  public static void main (String[ ] args){
+    ContaBancaria minhaConta = new ContaBancaria();
+    //Código restante omitido
+  }
+} 
+```
+:::
+
+::: {.column width="50%" .fontsize80}
+Fazendo isso, quando quisermos utilizar objetos da classe ContaBancaria em algum outro código, precisamos informar para a JVM que essa classe está no pacote banco.
+:::
+::::
 
 
 ## Pacotes
