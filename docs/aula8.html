@@ -11,7 +11,7 @@
 <script src="aula8_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula8_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula8_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Pacotes e Visibilidade de Classes </title>
@@ -487,11 +487,11 @@
 </section>
 <section id="pacotes-em-java-1" class="slide level2">
 <h2>Pacotes em Java</h2>
-<div class="columns" style="display: flex !important; align-items: top;">
+<div class="columns" style="display: flex !important; height:50% align-items: top;">
 <div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:40.0%" alt="Jovem"></p>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:45.0%" alt="Jovem"></p>
 </figure>
 </div>
 </div><div class="column" style="width:75%;">
@@ -501,7 +501,7 @@
 </div>
 <div class="fragment">
 <ul>
-<li>Inserindo uma declaração package antes da definição da classe:</li>
+<li><span class="fontsize75">Inserindo uma declaração package antes da definição da classe:</span></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">package</span><span class="im"> banco</span><span class="op">;</span></span>
 <span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
@@ -526,65 +526,223 @@
 </section>
 <section id="pacotes" class="slide level2">
 <h2>Pacotes</h2>
-<p>Observações importantes para se utilizar pacotes em Java:</p>
-<p>Assim como uma classe em Java deve ser salva em um arquivo com o seu nome, um pacote deve ser salvo em uma pasta no sistema que possua o mesmo nome do pacote.</p>
-<p>Portanto, em nosso exemplo, o arquivo ContaBancaria.java deve ficar na pasta chamada banco.</p>
-<p>2Um pacote pode conter outros pacotes (assim como pastas podem conter subpastas).</p>
-<p>Por exemplo, poderíamos ter dentro do pacote banco os pacotes: nacional e estadual, por exemplo. 3Nesse caso, para usar a classe ContaBancaria, precisaríamos declarar por exemplo: import banco.nacional.ContaBancaria;</p>
+<div class="fontsize90">
+<p><span style="color:darkblue;">Observações importantes para se utilizar pacotes em Java:</span></p>
+<ul>
+<li class="fragment">Assim como uma classe em Java deve ser salva em um arquivo com o seu nome, um pacote deve ser salvo em uma pasta no sistema que possua o mesmo nome do pacote.
+<ul>
+<li class="fragment">Portanto, em nosso exemplo, o arquivo ContaBancaria.java deve ficar na pasta chamada banco.</li>
+</ul></li>
+<li class="fragment">Um pacote pode conter outros pacotes (assim como pastas podem conter subpastas).
+<ul>
+<li class="fragment">Por exemplo, poderíamos ter dentro do pacote banco os pacotes: nacional e estadual, por exemplo.</li>
+<li class="fragment">Nesse caso, para usar a classe ContaBancaria, precisaríamos declarar por exemplo:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">banco</span><span class="op">.</span><span class="im">nacional</span><span class="op">.</span><span class="im">ContaBancaria</span><span class="op">;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</div>
 </section>
 <section id="pacotes-1" class="slide level2">
 <h2>Pacotes</h2>
-<p>Observações importantes para se utilizar pacotes em Java:</p>
-<p>Repare que no exemplo anterior precisamos referenciar a classe ContaBancaria com todo o nome do pacote na sua frente (nome qualificado). import banco.nacional.ContaBancaria; 2No entanto, nesse caso, poderíamos usar também o comando: import banco.nacional.*; Isso indica que estamos importando todas as classes contidas no pacote banco.nacional.</p>
-<p>Cuidado! Com o comando import banco.* só importaremos as classes diretamente vinculadas ao pacote banco (na pasta banco), ou seja, não conseguiremos importar as classes contidas em subpacotes (subpastas de banco, como por ex., nacional).</p>
+<div class="fontsize80">
+<p><span style="color:darkblue;">Observações importantes para se utilizar pacotes em Java:</span></p>
+<ul>
+<li class="fragment">Repare que no exemplo anterior precisamos referenciar a classe ContaBancaria com todo o nome do pacote na sua frente (nome qualificado).</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java fragment code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">banco</span><span class="op">.</span><span class="im">nacional</span><span class="op">.</span><span class="im">ContaBancaria</span><span class="op">;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fontsize80">
+<ul>
+<li class="fragment">No entanto, nesse caso, poderíamos usar também o comando:</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java fragment code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">banco</span><span class="op">.</span><span class="im">nacional</span><span class="op">.*;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fontsize80">
+<ul>
+<li class="fragment">Isso indica que estamos importando todas as classes contidas no pacote banco.nacional.</li>
+</ul>
+</div>
+<div class="fragment" title="Cuidado!">
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Cuidado!</strong></p>
+</div>
+<div class="callout-content">
+<p>Com o comando <code>import banco.*</code> só importaremos as classes diretamente vinculadas ao pacote banco (na pasta banco), ou seja, não conseguiremos importar as classes contidas em subpacotes (subpastas de banco, como por ex., nacional).</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="pacotes-2" class="slide level2">
 <h2>Pacotes</h2>
-<p>Observações importantes para se utilizar pacotes em Java:</p>
-<p>Existe uma outra maneira de trabalhar com classes contidas em pacotes sem usar o comando import.</p>
-<p>Basta você qualificar totalmente o nome da classe sempre que precisar dele no seu código.</p>
-<p>2Por exemplo:</p>
-<p>public class ContaBancariaTeste{ 0.2cm public static void main (String[ ] args){ banco.nacional.ContaBancaria minhaConta = new banco.nacional.ContaBancaria( );</p>
+<div class="fontsize90">
+<p><span style="color:darkblue;">Observações importantes para se utilizar pacotes em Java:</span></p>
+<ul>
+<li class="fragment">Existe uma outra maneira de trabalhar com classes contidas em pacotes sem usar o comando import.
+<ul>
+<li class="fragment">Basta você qualificar totalmente o nome da classe sempre que precisar dele no seu código.</li>
+<li class="fragment">Por exemplo:</li>
+</ul></li>
+</ul>
+</div>
+<div class="columns fragment" style="display: flex !important; align-items: top;">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:90%;">
+<div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancariaTeste<span class="op">{</span></span>
+<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span> <span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
+<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a>    banco<span class="op">.</span><span class="fu">nacional</span><span class="op">.</span><span class="fu">ContaBancaria</span> minhaConta <span class="op">=</span> <span class="kw">new</span> banco<span class="op">.</span><span class="fu">nacional</span><span class="op">.</span><span class="fu">ContaBancaria</span><span class="op">();</span></span>
+<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Restante do código omitido</span></span>
+<span id="cb6-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb6-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
 <section id="pacotes-3" class="slide level2">
 <h2>Pacotes</h2>
-<p>Imagine a seguinte situação… Duas equipes de uma empresa que trabalham em projetos distintos criaram classes para serem reutilizadas em outros códigos.</p>
+<div class="fontsize90">
+<p><span style="color:darkblue;">Imagine a seguinte situação…</span></p>
+<p>Duas equipes de uma empresa que trabalham em projetos distintos criaram classes para serem reutilizadas em outros códigos.</p>
+</div>
+<div class="columns fragment" style="display: flex !important; align-items: top;">
+<div class="column fontsize90" style="width:70%;">
 <p>Equipe A: está desenvolvendo um sistema para uma loja de instrumentos musicais e, por isso, criou uma classe chamada Teclado.</p>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/teclado_musical.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Teclado_musical"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="columns fragment" style="display: flex !important; align-items: top;">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/teclado_computador.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Teclado_computador"></p>
+</figure>
+</div>
+</div><div class="column fontsize90" style="width:70%;">
 <p>Equipe B: está desenvolvendo um sistema para uma loja de informática e, por isso, também criou uma classe denominada Teclado.</p>
+</div>
+</div>
 </section>
 <section id="pacotes-4" class="slide level2">
 <h2>Pacotes</h2>
-<p>Como evitar o conflito de nomes para essas classes criadas pelas equipes?</p>
-<p>2Se cada projeto for colocado dentro de um pacote diferente, ainda que as classes tenham nomes iguais, o sistema irá diferenciá-las pelo nome do pacote. 3Portanto, poderiam ser definidos os pacotes informatica e musica. 4Por exemplo, se precisarmos criar um objeto teclado musical, basta importar a classe Teclado do pacote musica: import musica.Teclado;</p>
+<div class="fontsize80">
+<p><span style="color:darkblue;">Como evitar o conflito de nomes para essas classes criadas pelas equipes?</span></p>
 <ul>
-<li class="fragment">E se os dois pacotes forem importados em algum código?</li>
+<li class="fragment">Se cada projeto for colocado dentro de um pacote diferente, ainda que as classes tenham nomes iguais, o sistema irá diferenciá-las pelo nome do pacote.</li>
+<li class="fragment">Portanto, poderiam ser definidos os pacotes informatica e musica.</li>
+<li class="fragment">Por exemplo, se precisarmos criar um objeto teclado musical, basta importar a classe Teclado do pacote musica:</li>
 </ul>
-<p>Nesse caso, faz-se necessário utilizar o nome qualificado da classe no código. Por exemplo: musica.Teclado inst = new musica.Teclado( );</p>
+</div>
+<div class="columns fragment" style="display: flex !important; align-items: top;">
+<div class="column" style="width:5%;">
+
+</div><div class="column" style="width:95%;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">musica</span><span class="op">.</span><span class="im">Teclado</span><span class="op">;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p><span class="fragment fontsize80" style="color:darkblue;">E se os dois pacotes forem importados em algum código?</span></p>
+<div class="columns fragment" style="display: flex !important; align-items: top;">
+<div class="column" style="width:20%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/professor31_metade.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Professor_metade"></p>
+</figure>
+</div>
+</div><div class="column" style="width:80%;">
+<p><span class="fontsize80">Nesse caso, faz-se necessário utilizar o nome qualificado da classe no código. Por exemplo:</span></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a>musica<span class="op">.</span><span class="fu">Teclado</span> inst <span class="op">=</span> <span class="kw">new</span> musica<span class="op">.</span><span class="fu">Teclado</span><span class="op">(</span> <span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
 <section id="convenção-de-nomeação-de-pacotes" class="slide level2">
 <h2>Convenção de Nomeação de Pacotes</h2>
-<p>Existe uma convenção (padrão) para nomear pacotes em Java. Apesar de você não ser obrigado a seguir essa convenção, para facilitar a sua vida e a das pessoas ao seu redor, utilize-a. A ideia é garantir nomes de pacotes únicos.</p>
-<p>Portanto:</p>
-<p>2Use letras minúsculas para os nomes de pacotes (evita conflito com os nomes das classes). 3Comece-o com o nome de domínio na internet da sua empresa ou instituição na ordem inversa. Exemplo: Domínio: dac.ufla.br <span class="math inline">\(\rightarrow\)</span> Pacote: br.ufla.dac.meupacote 4Você ainda pode especificar partes adicionais nesse nome. Exemplo: Se a classe a ser inserida no pacote é de um projeto específico, digamos, poo, você inserir essa informação no nome: br.ufla.dac.poo.meupacote</p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/convencao.png" class="quarto-figure quarto-figure-center" style="width:65.0%" alt="Professor_metade"></p>
+</figure>
+</div>
+</div><div class="column fontsize80" style="width:78%;">
+<p><span style="color:darkblue;">Existe uma convenção (padrão) para nomear pacotes em Java.</span></p>
+<ul>
+<li class="fragment">Apesar de você não ser obrigado a seguir essa convenção, para facilitar a sua vida e a das pessoas ao seu redor, utilize-a.</li>
+<li class="fragment">A ideia é garantir nomes de pacotes únicos.</li>
+</ul>
+</div>
+</div>
+<div class="fontsize80 fragment">
+<p><span style="color:darkblue;">Portanto:</span></p>
+<ul>
+<li class="fragment">Use letras minúsculas para os nomes de pacotes (evita conflito com os nomes das classes).</li>
+<li class="fragment">Comece-o com o nome de domínio na internet da sua empresa ou instituição na ordem inversa. Exemplo: Domínio: dac.ufla.br <span class="math inline">\(\rightarrow\)</span> Pacote: <code>br.ufla.dac.meupacote</code></li>
+<li class="fragment">Você ainda pode especificar partes adicionais nesse nome. Exemplo: Se a classe a ser inserida no pacote é de um projeto específico, digamos, poo, você inserir essa informação no nome: <code>br.ufla.dac.ipoo.meupacote</code></li>
+</ul>
+</div>
 </section>
 <section id="pacotes-versus-visibilidade-de-classes" class="slide level2">
 <h2>Pacotes <em>versus</em> Visibilidade de Classes</h2>
-<p>Já vimos que é possível definir a visibilidade de atributos e métodos. Mas e para uma classe? Será que podemos definir sua visibilidade também?</p>
-<p>Sim, podemos! Uma classe pode ser pública, por exemplo.</p>
-<p>public class ContaBancaria{</p>
-<p>Nesse caso, a classe é visível por qualquer outra classe do sistema. Apenas classes public podem ser reutilizadas fora do pacote em que estão declaradas!</p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/visibilidade.png" class="quarto-figure quarto-figure-center" style="width:65.0%" alt="Visibilidade"></p>
+</figure>
+</div>
+</div><div class="column fontsize80" style="width:80%;">
+<p>Já vimos que é possível definir a visibilidade de atributos e métodos.<br> <br> Mas e para uma classe? Será que podemos definir sua visibilidade também?</p>
+</div>
+</div>
+<p><span class="fontsize80 fragment" style="color:darkblue;">Sim, podemos! Uma classe pode ser pública, por exemplo.</span></p>
+<div class="fragment">
+<div class="sourceCode" id="cb9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
+<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co">//Código omitido</span></span>
+<span id="cb9-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="fontsize80">Nesse caso, a classe é visível por qualquer outra classe do sistema. Apenas classes public podem ser reutilizadas fora do pacote em que estão declaradas!</span></p>
+</div>
 </section>
 <section id="pacotes-versus-visibilidade-de-classes-1" class="slide level2">
 <h2>Pacotes <em>versus</em> Visibilidade de Classes</h2>
-<p>Mas e se eu não colocar nada? Qual será a visibilidade da classe?<br>
-class ContaBancaria{<br>
-</p>
-<p>Ela será acessível por qualquer outra que esteja dentro do mesmo pacote!</p>
-<p>3Mas e quando eu não eu não inseri minhas classes em pacote algum?</p>
-<p>4Se nenhuma instrução package for fornecida em arquivos de código-fonte Java, todas as classes declaradas nesses arquivos serão inseridas no chamado pacote padrão e só serão acessíveis a outras classes no pacote padrão que estão localizadas no mesmo diretório\footnote&lt;4O mesmo vale para métodos e atributos que você deixou sem um modificador de visibilidade.</p>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pensando2.png" class="quarto-figure quarto-figure-center" style="width:65.0%" alt="Pensando"></p>
+</figure>
+</div>
+</div><div class="column" style="width:80%;">
+<p><span class="fontsize90">Mas e se eu não colocar nada? Qual será a visibilidade da classe?</span></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
+<span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co">//Código omitido</span></span>
+<span id="cb10-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p><span class="fontsize80 fragment" style="color:darkblue;">Ela será <strong>acessível</strong> por qualquer <strong>outra</strong> que esteja dentro do <strong>mesmo pacote</strong>!</span></p>
+<div class="fontsize90">
+<ul>
+<li class="fragment">Mas e quando eu não eu não inseri minhas classes em pacote algum?
+<ul>
+<li class="fragment">Se nenhuma instrução package for fornecida em arquivos de código-fonte Java, todas as classes declaradas nesses arquivos serão inseridas no chamado pacote padrão e só serão acessíveis a outras classes no pacote padrão que estão localizadas no mesmo diretório<span class="math inline">\(^1\)</span>.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fontsize70 fragment">
+<p>__________<br> 1. O mesmo vale para métodos e atributos que você deixou sem um modificador de visibilidade.</p>
+</div>
 </section>
-<section id="visibilidade-de-classes" class="slide level2">
-<h2>Visibilidade de Classes</h2>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/perguntas.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Perguntas"></p>
+</figure>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">

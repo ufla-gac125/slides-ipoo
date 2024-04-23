@@ -75,9 +75,9 @@ Classes relacionadas são agrupadas em pacotes de modo que possam ser importadas
 
 
 ## Pacotes em Java
-::::{.columns style='display: flex !important; align-items: top;'}
+::::{.columns style='display: flex !important; height:50% align-items: top;'}
 ::: {.column width="30%"}
-![](figuras/jovem.png){fig-alt="Jovem" fig-align="center" width=40%}
+![](figuras/jovem.png){fig-alt="Jovem" fig-align="center" width=45%}
 :::
 
 ::: {.column width="75%"}
@@ -87,7 +87,7 @@ Ao implementar uma classe podemos definir que ela pertence a um determinado paco
 [Como fazer isso?]{style="color:darkblue;"}
 :::
 :::{.fragment .nonincremental}
-- Inserindo uma declaração package antes da definição da classe:
+- [Inserindo uma declaração package antes da definição da classe:]{.fontsize75}
 
 ```{.java code-line-numbers="false"}   
 package banco;
@@ -119,119 +119,203 @@ Fazendo isso, quando quisermos utilizar objetos da classe ContaBancaria em algum
 
 
 ## Pacotes
-Observações importantes para se utilizar pacotes em Java:
+:::{.fontsize90}
+[Observações importantes para se utilizar pacotes em Java:]{style="color:darkblue;"}
  
-  Assim como uma classe em Java deve ser salva em um arquivo com o seu nome, um pacote deve ser salvo em uma pasta no sistema que possua o mesmo nome do pacote.
+- Assim como uma classe em Java deve ser salva em um arquivo com o seu nome, um pacote deve ser salvo em uma pasta no sistema que possua o mesmo nome do pacote.
+  - Portanto, em nosso exemplo, o arquivo ContaBancaria.java deve ficar na pasta chamada banco.
   
-   Portanto, em nosso exemplo, o arquivo ContaBancaria.java deve ficar na pasta chamada banco.
-  
-  2Um pacote pode conter outros pacotes (assim como pastas podem conter subpastas).
-  
-   Por exemplo, poderíamos ter dentro do pacote banco os pacotes: nacional e estadual, por exemplo.
-   3Nesse caso, para usar a classe ContaBancaria, precisaríamos declarar por exemplo:
-   import banco.nacional.ContaBancaria;
+- Um pacote pode conter outros pacotes (assim como pastas podem conter subpastas).
+  - Por exemplo, poderíamos ter dentro do pacote banco os pacotes: nacional e estadual, por exemplo.
+  - Nesse caso, para usar a classe ContaBancaria, precisaríamos declarar por exemplo:
+  ```{.java code-line-numbers="false"}
+  import banco.nacional.ContaBancaria;
+  ```
+:::
+
+## Pacotes
+:::{.fontsize80}
+[Observações importantes para se utilizar pacotes em Java:]{style="color:darkblue;"}
+
+- Repare que no exemplo anterior precisamos referenciar a classe ContaBancaria com todo o nome do pacote na sua frente (nome qualificado).
+:::
+```{.java code-line-numbers="false" .fragment}
+import banco.nacional.ContaBancaria;
+```
+:::{.fontsize80}
+- No entanto, nesse caso, poderíamos usar também o comando:
+:::
+```{.java code-line-numbers="false" .fragment}
+import banco.nacional.*;
+```
+:::{.fontsize80}
+  - Isso indica que estamos importando todas as classes contidas no pacote banco.nacional.
+::: 
+
+:::{.callout-warning title="Cuidado!" icon=false .fragment}
+Com o comando `import banco.*` só importaremos as classes diretamente vinculadas ao pacote banco (na pasta banco), ou seja, não conseguiremos importar as classes contidas em subpacotes (subpastas de banco, como por ex., nacional).
+:::   
 
 
 ## Pacotes
-Observações importantes para se utilizar pacotes em Java:
+:::{.fontsize90}
+[Observações importantes para se utilizar pacotes em Java:]{style="color:darkblue;"}
  
-  Repare que no exemplo anterior precisamos referenciar a classe ContaBancaria com todo o nome do pacote na sua frente (nome qualificado).
-    import banco.nacional.ContaBancaria;
-  2No entanto, nesse caso, poderíamos usar também o comando:
-    import banco.nacional.*;
-    Isso indica que estamos importando todas as classes contidas no pacote banco.nacional.
- 
- 
-  Cuidado!
-  Com o comando import banco.* só importaremos as classes diretamente vinculadas ao pacote banco (na pasta banco), ou seja, não conseguiremos importar as classes contidas em subpacotes (subpastas de banco, como por ex., nacional).
+- Existe uma outra maneira de trabalhar com classes contidas em pacotes sem usar o comando import.
+  - Basta você qualificar totalmente o nome da classe sempre que precisar dele no seu código.
+  - Por exemplo:
+::: 
+
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="10%"}
+:::
+::: {.column width="90%"}
+```{.java code-line-numbers="false"}
+public class ContaBancariaTeste{
+  public static void main (String[] args){
+    banco.nacional.ContaBancaria minhaConta = new banco.nacional.ContaBancaria();
+    //Restante do código omitido
+  }
+}
+``` 
+:::
+::::
 
 
 ## Pacotes
-Observações importantes para se utilizar pacotes em Java:
- 
-  Existe uma outra maneira de trabalhar com classes contidas em pacotes sem usar o comando import.
-  
-   Basta você qualificar totalmente o nome da classe sempre que precisar dele no seu código.
-  
-  2Por exemplo: 
-  
-   public class ContaBancariaTeste\{
-   0.2cm public static void main (String[ ] args)\{
-    banco.nacional.ContaBancaria minhaConta = new banco.nacional.ContaBancaria( ); 
+:::{.fontsize90}
+[Imagine a seguinte situação...]{style="color:darkblue;"}
 
+Duas equipes de uma empresa que trabalham em projetos distintos criaram classes para serem reutilizadas em outros códigos.
+:::
 
-## Pacotes
-Imagine a seguinte situação...
-  Duas equipes de uma empresa que trabalham em projetos distintos criaram classes para serem reutilizadas em outros códigos.
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="70%" .fontsize90}
+Equipe A: está desenvolvendo um sistema para uma loja de instrumentos musicais e, por isso, criou uma classe chamada Teclado.
+:::
 
- 
-   Equipe A: está desenvolvendo um sistema para uma loja de instrumentos musicais e, por isso, criou uma classe chamada Teclado.
- 
-  
+::: {.column width="40%"}
+![](figuras/teclado_musical.png){fig-alt="Teclado_musical" fig-align="center" width=60%}
+:::
+::::
 
- 
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="40%"}
+![](figuras/teclado_computador.png){fig-alt="Teclado_computador" fig-align="center" width=70%}
+:::
+
+::: {.column width="70%" .fontsize90}
 Equipe B: está desenvolvendo um sistema para uma loja de informática e, por isso, também criou uma classe denominada Teclado.
+:::
+::::
 
 
 ## Pacotes
-Como evitar o conflito de nomes para essas classes criadas pelas equipes?
+:::{.fontsize80}
+[Como evitar o conflito de nomes para essas classes criadas pelas equipes?]{style="color:darkblue;"}
 
+- Se cada projeto for colocado dentro de um pacote diferente, ainda que as classes tenham nomes iguais, o sistema irá diferenciá-las pelo nome do pacote.
+- Portanto, poderiam ser definidos os pacotes informatica e musica.
+- Por exemplo, se precisarmos criar um objeto teclado musical, basta importar a classe Teclado do pacote musica:
+:::
 
- 2Se cada projeto for colocado dentro de um pacote diferente, ainda que as classes tenham nomes iguais, o sistema irá diferenciá-las pelo nome do pacote.
- 3Portanto, poderiam ser definidos os pacotes informatica e musica.
- 4Por exemplo, se precisarmos criar um objeto teclado musical, basta importar a classe Teclado do pacote musica:
- import musica.Teclado;
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="5%"}
+:::
+::: {.column width="95%"}
+```{.java code-line-numbers="false"}
+import musica.Teclado;
+``` 
+:::
+::::
 
+[E se os dois pacotes forem importados em algum código?]{.fragment style="color:darkblue;" .fontsize80}
 
--
-E se os dois pacotes forem importados em algum código?
-
-Nesse caso, faz-se necessário utilizar o nome qualificado da classe no código. Por exemplo:
-   musica.Teclado inst = new musica.Teclado( );
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="20%"}
+![](figuras/professor31_metade.png){fig-alt="Professor_metade" fig-align="center" width=70%}
+:::
+::: {.column width="80%"}
+[Nesse caso, faz-se necessário utilizar o nome qualificado da classe no código. Por exemplo:]{.fontsize80}
+```{.java code-line-numbers="false"}
+musica.Teclado inst = new musica.Teclado( );
+```
+:::
+::::
 
 
 ## Convenção de Nomeação de Pacotes
-Existe uma convenção (padrão) para nomear pacotes em Java.
-    Apesar de você não ser obrigado a seguir essa convenção, para facilitar a sua vida e a das pessoas ao seu redor, utilize-a.
-    A ideia é garantir nomes de pacotes únicos.
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%"}
+![](figuras/convencao.png){fig-alt="Professor_metade" fig-align="center" width=65%}
+:::
+::: {.column width="78%" .fontsize80}
+[Existe uma convenção (padrão) para nomear pacotes em Java.]{style="color:darkblue;"}
 
-Portanto:
+- Apesar de você não ser obrigado a seguir essa convenção, para facilitar a sua vida e a das pessoas ao seu redor, utilize-a.
+- A ideia é garantir nomes de pacotes únicos.
+:::
+::::
+
+:::{.fontsize80 .fragment}
+[Portanto:]{style="color:darkblue;"}
  
-  2Use letras minúsculas para os nomes de pacotes (evita conflito com os nomes das classes).
-  3Comece-o com o nome de domínio na internet da sua empresa ou instituição na ordem inversa.
-  Exemplo: Domínio: dac.ufla.br  $\rightarrow$ Pacote: br.ufla.dac.meupacote
-  4Você ainda pode especificar partes adicionais nesse nome. 
-  Exemplo: Se a classe a ser inserida no pacote é de um projeto específico, digamos, poo, você inserir essa informação no nome: br.ufla.dac.poo.meupacote
+- Use letras minúsculas para os nomes de pacotes (evita conflito com os nomes das classes).
+- Comece-o com o nome de domínio na internet da sua empresa ou instituição na ordem inversa.
+  Exemplo: Domínio: dac.ufla.br  $\rightarrow$ Pacote: `br.ufla.dac.meupacote`
+- Você ainda pode especificar partes adicionais nesse nome. 
+  Exemplo: Se a classe a ser inserida no pacote é de um projeto específico, digamos, poo, você inserir essa informação no nome: `br.ufla.dac.ipoo.meupacote`
+:::
 
 ## Pacotes *versus* Visibilidade de Classes
-Já vimos que é possível definir a visibilidade de atributos e métodos. Mas e para uma classe? Será que podemos definir sua visibilidade também?
- 
- 
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%"}
+![](figuras/visibilidade.png){fig-alt="Visibilidade" fig-align="center" width=65%}
+:::
+::: {.column width="80%" .fontsize80}
+Já vimos que é possível definir a visibilidade de atributos e métodos.<br> <br>
+Mas e para uma classe? Será que podemos definir sua visibilidade também?
+:::
+::::
 
+[Sim, podemos! Uma classe pode ser pública, por exemplo.]{style="color:darkblue;" .fontsize80 .fragment}
 
-Sim, podemos! Uma classe pode ser pública, por exemplo.
- 
-
-   public class ContaBancaria\{
-  
-   Nesse caso, a classe é visível por qualquer outra classe do sistema. Apenas classes public podem ser reutilizadas fora do pacote em que estão declaradas!
-
+:::{.fragment}
+```{.java code-line-numbers="false"}
+public class ContaBancaria{
+  //Código omitido
+}
+```
+[Nesse caso, a classe é visível por qualquer outra classe do sistema. Apenas classes public podem ser reutilizadas fora do pacote em que estão declaradas!]{.fontsize80}
+:::
 
 ## Pacotes *versus* Visibilidade de Classes
-Mas e se eu não colocar nada? Qual será a visibilidade da classe?  
-   class ContaBancaria\{
-   \
- 
- 
+::::{.columns style='display: flex !important; align-items: center;'}
+::: {.column width="30%"}
+![](figuras/pensando2.png){fig-alt="Pensando" fig-align="center" width=65%}
+:::
+::: {.column width="80%"}
+[Mas e se eu não colocar nada? Qual será a visibilidade da classe?]{.fontsize90}
+```{.java code-line-numbers="false"}
+class ContaBancaria{
+  //Código omitido
+}
+```
+:::
+::::
+
+[Ela será **acessível** por qualquer **outra** que esteja dentro do **mesmo pacote**!]{style="color:darkblue;" .fontsize80 .fragment}
+
+:::{.fontsize90}
+- Mas e quando eu não eu não inseri minhas classes em pacote algum?
+  - Se nenhuma instrução package for fornecida em arquivos de código-fonte Java, todas as classes declaradas nesses arquivos serão inseridas no chamado pacote padrão e só serão acessíveis a outras classes no pacote padrão que estão localizadas no mesmo diretório$^1$.
+:::
+:::{.fontsize70 .fragment}
+__________<br>
+1. O mesmo vale para métodos e atributos que você deixou sem um modificador de visibilidade.
+:::
 
 
-Ela será acessível por qualquer outra que esteja dentro do mesmo pacote!
- 
-  3Mas e quando eu não eu não inseri minhas classes em pacote algum?
-  
-   4Se nenhuma instrução package for fornecida em arquivos de código-fonte Java, todas as classes declaradas nesses arquivos serão inseridas no chamado pacote padrão e só serão acessíveis a outras classes no pacote padrão que estão localizadas no mesmo diretório\footnote<4O mesmo vale para métodos e atributos que você deixou sem um modificador de visibilidade.
+##
 
-
-## Visibilidade de Classes
-
-
+![](figuras/perguntas.png){fig-alt="Perguntas" fig-align="center" width=35%}
