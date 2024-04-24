@@ -27,7 +27,7 @@ title-slide-attributes:
 ## Modularização
 ::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="70%" .fontsize90}
-Classes e métodos ajudam a modularizar um programa separando suas tarefas em unidades autocontidas.
+[Classes]{.alert} e [métodos]{.alert} ajudam a [modularizar]{.alert} um programa separando suas tarefas em unidades autocontidas.
 :::
 
 ::: {.column width="40%"}
@@ -39,14 +39,14 @@ Classes e métodos ajudam a modularizar um programa separando suas tarefas em un
 :::{.fontsize90 .fragment}
 [Quais são as motivações para se modularizar um programa?]{style="color:darkblue;"}
 
-- Abordagem dividir para conquistar: torna o desenvolvimento de programas mais gerenciável, construindo programas a partir de peças mais simples e menores.
-- Reutilização de software: o uso de classes e métodos existentes como blocos de construção para criar novos programas.
+- Abordagem [dividir para conquistar]{.alert}: torna o desenvolvimento de programas mais gerenciável, **construindo** programas a partir de **peças** **mais simples** e **menores**.
+- [Reutilização]{.alert} de software: o uso de **classes** e **métodos existentes** como blocos de construção para **criar novos** programas.
 :::
 
 ## Pacotes em Java
 ::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="70%" .fontsize90}
-Escrevemos programas Java combinando nossos métodos e classes com aqueles pré-definidos na Java API (biblioteca de classes) e em quaisquer outras bibliotecas de classes.
+**Escrevemos** programas Java **combinando** **nossos** **métodos** e **classes** com aqueles **pré-definidos** na **Java API** (biblioteca de classes) e em quaisquer outras bibliotecas de classes.
 :::
 
 ::: {.column width="40%"}
@@ -62,7 +62,7 @@ Escrevemos programas Java combinando nossos métodos e classes com aqueles pré-
 :::
 
 ::: {.column width="70%" .fontsize90}
-Classes relacionadas são agrupadas em pacotes de modo que possam ser importadas nos programas e reutilizadas.
+[Classes]{.alert} relacionadas são [agrupadas em pacotes]{.alert} de modo que possam ser **importadas** nos **programas** e **reutilizadas**.
 :::
 ::::
 
@@ -80,14 +80,14 @@ Classes relacionadas são agrupadas em pacotes de modo que possam ser importadas
 ![](figuras/jovem.png){fig-alt="Jovem" fig-align="center" width=45%}
 :::
 
-::: {.column width="75%"}
+::: {.column width="78%"}
 :::{.fontsize80}
-Ao implementar uma classe podemos definir que ela pertence a um determinado pacote.
+Ao implementar uma **classe** podemos definir que ela **pertence** a um determinado **pacote**.
 
 [Como fazer isso?]{style="color:darkblue;"}
 :::
 :::{.fragment .nonincremental}
-- [Inserindo uma declaração package antes da definição da classe:]{.fontsize75}
+- [Inserindo uma **declaração** `package` **antes** da definição da classe:]{.fontsize75}
 
 ```{.java code-line-numbers="false"}   
 package banco;
@@ -113,7 +113,7 @@ public class App{
 :::
 
 ::: {.column width="50%" .fontsize80}
-Fazendo isso, quando quisermos utilizar objetos da classe ContaBancaria em algum outro código, precisamos informar para a JVM que essa classe está no pacote banco.
+Fazendo isso, quando quisermos **utilizar** objetos da classe `ContaBancaria` em algum outro código, precisamos **informar** para a **JVM** que essa **classe** está no **pacote** `banco`.
 :::
 ::::
 
@@ -122,38 +122,58 @@ Fazendo isso, quando quisermos utilizar objetos da classe ContaBancaria em algum
 :::{.fontsize90}
 [Observações importantes para se utilizar pacotes em Java:]{style="color:darkblue;"}
  
-- Assim como uma classe em Java deve ser salva em um arquivo com o seu nome, um pacote deve ser salvo em uma pasta no sistema que possua o mesmo nome do pacote.
-  - Portanto, em nosso exemplo, o arquivo ContaBancaria.java deve ficar na pasta chamada banco.
+- Assim como uma **classe** em Java deve ser **salva** em um **arquivo** com o **seu nome**, um [pacote]{.alert} deve ser [salvo]{.alert} em uma [pasta]{.alert} no sistema que possua o [mesmo nome do pacote]{.alert}.
+  - Portanto, em nosso exemplo, o **arquivo** `ContaBancaria.java` deve ficar na **pasta** chamada `banco`.
   
-- Um pacote pode conter outros pacotes (assim como pastas podem conter subpastas).
-  - Por exemplo, poderíamos ter dentro do pacote banco os pacotes: nacional e estadual, por exemplo.
-  - Nesse caso, para usar a classe ContaBancaria, precisaríamos declarar por exemplo:
+- Um **pacote** pode **conter** outros **pacotes** (assim como pastas podem conter subpastas).
+  - Por exemplo, poderíamos ter dentro do pacote `banco` os pacotes: `nacional` e `estadual`, por exemplo.
+  - Nesse caso, para usar a **classe** `ContaBancaria`, precisaríamos declarar por exemplo:
+:::
+
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="10%"}
+:::
+::: {.column width="90%"}
   ```{.java code-line-numbers="false"}
   import banco.nacional.ContaBancaria;
   ```
 :::
+::::
 
 ## Pacotes
 :::{.fontsize80}
 [Observações importantes para se utilizar pacotes em Java:]{style="color:darkblue;"}
 
-- Repare que no exemplo anterior precisamos referenciar a classe ContaBancaria com todo o nome do pacote na sua frente (nome qualificado).
+- Repare que no exemplo anterior precisamos **referenciar** a classe `ContaBancaria` com **todo** o **nome do pacote** na sua frente (nome qualificado).
 :::
-```{.java code-line-numbers="false" .fragment}
+
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="10%"}
+:::
+::: {.column width="90%"}
+```{.java code-line-numbers="false" }
 import banco.nacional.ContaBancaria;
 ```
+:::
+::::
+
 :::{.fontsize80}
 - No entanto, nesse caso, poderíamos usar também o comando:
 :::
-```{.java code-line-numbers="false" .fragment}
+
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="10%"}
+:::
+::: {.column width="90%" .nonincremental}
+```{.java code-line-numbers="false" }
 import banco.nacional.*;
 ```
-:::{.fontsize80}
-  - Isso indica que estamos importando todas as classes contidas no pacote banco.nacional.
-::: 
+- [Agora estamos **importando** **todas** as **classes** contidas no **pacote** `banco.nacional`.]{.fontsize75}
+:::
+::::
 
 :::{.callout-warning title="Cuidado!" icon=false .fragment}
-Com o comando `import banco.*` só importaremos as classes diretamente vinculadas ao pacote banco (na pasta banco), ou seja, não conseguiremos importar as classes contidas em subpacotes (subpastas de banco, como por ex., nacional).
+Com o comando `import banco.*` só importaremos as classes **diretamente vinculadas** ao **pacote** `banco` (na pasta banco), ou seja, **não** conseguiremos importar as **classes** contidas em **subpacotes** (subpastas de `banco`, como por exemplo, `nacional`).
 :::   
 
 
@@ -161,8 +181,8 @@ Com o comando `import banco.*` só importaremos as classes diretamente vinculada
 :::{.fontsize90}
 [Observações importantes para se utilizar pacotes em Java:]{style="color:darkblue;"}
  
-- Existe uma outra maneira de trabalhar com classes contidas em pacotes sem usar o comando import.
-  - Basta você qualificar totalmente o nome da classe sempre que precisar dele no seu código.
+- Existe uma **outra** **maneira** de trabalhar com **classes** contidas em **pacotes** **sem** usar o comando `import`.
+  - Basta você **qualificar** totalmente o **nome** da **classe** sempre que precisar dele no seu código.
   - Por exemplo:
 ::: 
 
@@ -186,12 +206,12 @@ public class ContaBancariaTeste{
 :::{.fontsize90}
 [Imagine a seguinte situação...]{style="color:darkblue;"}
 
-Duas equipes de uma empresa que trabalham em projetos distintos criaram classes para serem reutilizadas em outros códigos.
+**Duas** equipes de uma empresa que trabalham em **projetos distintos** criaram **classes** para serem **reutilizadas** em outros códigos.
 :::
 
 ::::{.columns style='display: flex !important; align-items: top;' .fragment}
 ::: {.column width="70%" .fontsize90}
-Equipe A: está desenvolvendo um sistema para uma loja de instrumentos musicais e, por isso, criou uma classe chamada Teclado.
+**Equipe A**: está desenvolvendo um sistema para uma loja de **instrumentos musicais** e, por isso, criou uma classe chamada `Teclado`.
 :::
 
 ::: {.column width="40%"}
@@ -205,18 +225,18 @@ Equipe A: está desenvolvendo um sistema para uma loja de instrumentos musicais 
 :::
 
 ::: {.column width="70%" .fontsize90}
-Equipe B: está desenvolvendo um sistema para uma loja de informática e, por isso, também criou uma classe denominada Teclado.
+**Equipe B**: está desenvolvendo um sistema para uma loja de **informática** e, por isso, **também** criou uma classe denominada `Teclado`.
 :::
 ::::
 
 
 ## Pacotes
 :::{.fontsize80}
-[Como evitar o conflito de nomes para essas classes criadas pelas equipes?]{style="color:darkblue;"}
+[Como **evitar** o **conflito** de **nomes** para essas classes criadas pelas equipes?]{style="color:darkblue;"}
 
-- Se cada projeto for colocado dentro de um pacote diferente, ainda que as classes tenham nomes iguais, o sistema irá diferenciá-las pelo nome do pacote.
-- Portanto, poderiam ser definidos os pacotes informatica e musica.
-- Por exemplo, se precisarmos criar um objeto teclado musical, basta importar a classe Teclado do pacote musica:
+- Se cada projeto for colocado dentro de um **pacote diferente**, ainda que as classes tenham **nomes iguais**, o sistema irá **diferenciá-las** pelo **nome** do pacote.
+- Portanto, poderiam ser definidos os **pacotes** `informatica` e `musica`.
+- Por exemplo, se precisarmos criar um objeto **teclado musical**, basta **importar** a classe `Teclado` do **pacote** `musica`:
 :::
 
 ::::{.columns style='display: flex !important; align-items: top;' .fragment}
@@ -229,14 +249,14 @@ import musica.Teclado;
 :::
 ::::
 
-[E se os dois pacotes forem importados em algum código?]{.fragment style="color:darkblue;" .fontsize80}
+[E se os **dois pacotes** forem **importados** em algum código?]{.fragment style="color:darkblue;" .fontsize80}
 
 ::::{.columns style='display: flex !important; align-items: top;' .fragment}
 ::: {.column width="20%"}
 ![](figuras/professor31_metade.png){fig-alt="Professor_metade" fig-align="center" width=70%}
 :::
 ::: {.column width="80%"}
-[Nesse caso, faz-se necessário utilizar o nome qualificado da classe no código. Por exemplo:]{.fontsize80}
+[Nesse caso, faz-se necessário **utilizar** o **nome qualificado** da classe no código. Por exemplo:]{.fontsize80}
 ```{.java code-line-numbers="false"}
 musica.Teclado inst = new musica.Teclado( );
 ```
@@ -250,21 +270,21 @@ musica.Teclado inst = new musica.Teclado( );
 ![](figuras/convencao.png){fig-alt="Professor_metade" fig-align="center" width=65%}
 :::
 ::: {.column width="78%" .fontsize80}
-[Existe uma convenção (padrão) para nomear pacotes em Java.]{style="color:darkblue;"}
+[Existe uma **convenção** (padrão) para **nomear pacotes** em Java.]{style="color:darkblue;"}
 
-- Apesar de você não ser obrigado a seguir essa convenção, para facilitar a sua vida e a das pessoas ao seu redor, utilize-a.
-- A ideia é garantir nomes de pacotes únicos.
+- Apesar de você **não** ser **obrigado** a seguir essa convenção, para facilitar a sua vida e a das pessoas ao seu redor, **utilize-a**.
+- A **ideia** é garantir **nomes** de pacotes **únicos**.
 :::
 ::::
 
 :::{.fontsize80 .fragment}
 [Portanto:]{style="color:darkblue;"}
  
-- Use letras minúsculas para os nomes de pacotes (evita conflito com os nomes das classes).
-- Comece-o com o nome de domínio na internet da sua empresa ou instituição na ordem inversa.
+- Use **letras minúsculas** para os **nomes** de **pacotes** (evita conflito com os nomes das classes).
+- Comece-o com o **nome** de **domínio** na **internet** da sua empresa ou instituição na **ordem inversa**.
   Exemplo: Domínio: dac.ufla.br  $\rightarrow$ Pacote: `br.ufla.dac.meupacote`
-- Você ainda pode especificar partes adicionais nesse nome. 
-  Exemplo: Se a classe a ser inserida no pacote é de um projeto específico, digamos, poo, você inserir essa informação no nome: `br.ufla.dac.ipoo.meupacote`
+- Você ainda **pode** especificar **partes adicionais** nesse nome. 
+  Exemplo: Se a classe a ser inserida no pacote é de um projeto específico, digamos, **ipoo**, você inserir essa informação no nome: `br.ufla.dac.ipoo.meupacote`
 :::
 
 ## Pacotes *versus* Visibilidade de Classes
