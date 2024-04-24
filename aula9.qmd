@@ -1,0 +1,150 @@
+---
+title: Coleções$:$ Listas<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Conteúdo desta Aula  
+
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+::: {.column width="30%"}
+![](figuras/professor1-1.png){fig-alt="Professor1-1" fig-align="center"}
+:::
+
+::: {.column width="70%"}
+::: {.nonincremental}
+::: {style="font-size: 120%;"}
+- Coleções:
+    - *ArrayList*
+:::
+:::
+:::
+::::
+
+
+## Estruturas de Dados
+O que são estruturas de dados?
+
+
+ 0.2
+  47<2->
+
+0.5cm
+0.65<2->
+  Uma estrutura de dados é uma forma particular de armazenar e organizar os dados que serão utilizados por um programa de modo que eles possam ser manipulados de maneira eficiente.
+
+
+
+O que estudaremos?<3->
+0.3cm 
+Nesta disciplina veremos como utilizar em nossos programas duas importantes estruturas de dados (chamadas em Java de coleções). São elas: 
+ 
+    Listas.
+    Tabelas Hash.
+
+
+## Coleções
+O pacote java.util fornece classes que implementam as coleções. 
+ 2Mas o que é uma coleção?
+ 
+  3Podemos dizer que é um conjunto de objetos de mesma natureza.
+  3Exemplos: coleção de músicas, coleção de carros, coleção de moedas etc.
+ 
+ 4Em Java, uma coleção é representada por uma classe. Portanto, as operações sobre coleções são realizadas a partir dos métodos implementados nessas classes.
+ 5Quais operações podemos fazer em uma coleção?
+ 
+  6Adicionar um novo objeto na coleção.
+  6Remover um objeto da coleção.
+  6Organizar os objetos da coleção segundo algum critério.
+
+
+## Relembrando...
+
+
+
+## Desvantagem dos Vetores
+
+
+
+## Classe ArrayList
+A classe ArrayList implementa uma lista!
+ 2Nessa lista, a ordem dos seus elementos é a mesma da inserção e o acesso aos mesmos pode ser feito pela sua posição.
+ 3A classe de coleção ArrayList<T> fornece uma solução conveniente quando necessita-se de uma estrutura que possa alterar dinamicamente seu tamanho para acomodar mais elementos.
+ 
+   4O T\footnote<4tinyClasses que dependem de um segundo tipo são chamadas de classes genéricas.tiny corresponde ao tipo dos elementos que você deseja armazenar no ArrayList.  
+   Ex.: ArrayList<String> nomes;  
+   Nesse caso estamos declarando a variável nomes, do tipo ArrayList de strings, ou seja, para armazenar elementos do tipo String.
+
+
+## Classe ArrayList
+
+
+
+## Exemplo 1 com a Classe ArrayList
+
+
+## Percorrendo um ArrayList
+
+
+
+## Exemplo 2 com a Classe ArrayList
+
+
+
+## ArrayList de Tipos Primitivos
+Vamos supor que eu queira usar um ArrayList para armazenar uma coleção de número inteiros.
+
+  Para isso, coloco no meu programa a seguinte declaração: 
+ 2cmArrayListint> num;  
+  Isso vai funcionar?
+ 
+  2Não!
+  center
+  51<2->
+  center
+  3A classe ArrayList aceita somente tipos por referência (objetos) como elementos.
+   O int em Java é um tipo primitivo.
+ 
+ 4Como fazer então?
+
+## ArrayList de Tipos Primitivos
+Como resolver o problema?
+
+ 2O Java possui um mecanismo conhecido como boxing, que permite que valores primitivos sejam empacotados como objetos para uso com classes genéricas.
+ 3Desse modo, para armazenar inteiros em um ArrayList usamos a classe Integer. 
+ ArrayListInteger> num = new ArrayListInteger>();  
+ 4E o compilador nos ajuda com o autoboxing, ou seja:
+ 
+   Sempre que necessário, o tipo int é empacotado como um objeto Integer ou um valor int dentro de um objeto Integer é desempacotado. 
+ 
+ 5Desse modo, declaramos um ArrayList de Integer mas podemos lidar com os dados normalmente como se fossem do tipo int.
+
+
+## ArrayList de Tipos Primitivos - Exemplo
+
+
+
+## ArrayList de Tipos Primitivos
+Cada tipo primitivo tem uma classe equivalente em Java:
+
+
+  int $\longrightarrow$ Integer
+  float $\longrightarrow$ Float
+  double $\longrightarrow$ Double
+  char $\longrightarrow$ Character
+  boolean $\longrightarrow$ Boolean
+
+
+## ArrayList: Busca Usando uma "Chave"
+
+
+## ArrayList: Remoção de um Elemento
+
+
+
+## ArrayList: Remoção de um Elemento
+
+
+## Encapsulamento de Coleções
