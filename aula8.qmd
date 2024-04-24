@@ -104,7 +104,7 @@ public class ContaBancaria{
 ```{.java code-line-numbers="false"}   
 import banco.ContaBancaria;
 public class App{
-  public static void main (String[ ] args){
+  public static void main (String[] args){
     ContaBancaria minhaConta = new ContaBancaria();
     //Código restante omitido
   }
@@ -191,7 +191,7 @@ Com o comando `import banco.*` só importaremos as classes **diretamente vincula
 :::
 ::: {.column width="90%"}
 ```{.java code-line-numbers="false"}
-public class ContaBancariaTeste{
+public class App{
   public static void main (String[] args){
     banco.nacional.ContaBancaria minhaConta = new banco.nacional.ContaBancaria();
     //Restante do código omitido
@@ -293,12 +293,12 @@ musica.Teclado inst = new musica.Teclado( );
 ![](figuras/visibilidade.png){fig-alt="Visibilidade" fig-align="center" width=65%}
 :::
 ::: {.column width="80%" .fontsize80}
-Já vimos que é possível definir a visibilidade de atributos e métodos.<br> <br>
-Mas e para uma classe? Será que podemos definir sua visibilidade também?
+Já vimos que é possível definir a **visibilidade** de **atributos** e **métodos**.<br> <br>
+Mas e **para** uma **classe**? Será que podemos **definir** sua **visibilidade** também?
 :::
 ::::
 
-[Sim, podemos! Uma classe pode ser pública, por exemplo.]{style="color:darkblue;" .fontsize80 .fragment}
+[**Sim**, podemos! Uma classe pode ser **pública**, por exemplo.]{style="color:darkblue;" .fontsize80 .fragment}
 
 :::{.fragment}
 ```{.java code-line-numbers="false"}
@@ -306,7 +306,7 @@ public class ContaBancaria{
   //Código omitido
 }
 ```
-[Nesse caso, a classe é visível por qualquer outra classe do sistema. Apenas classes public podem ser reutilizadas fora do pacote em que estão declaradas!]{.fontsize80}
+[Nesse caso, a **classe** é **visível** por **qualquer** outra **classe** do sistema. Apenas classes `public` podem ser **reutilizadas** **fora** do **pacote** em que estão declaradas!]{.fontsize80}
 :::
 
 ## Pacotes *versus* Visibilidade de Classes
@@ -315,7 +315,7 @@ public class ContaBancaria{
 ![](figuras/pensando2.png){fig-alt="Pensando" fig-align="center" width=65%}
 :::
 ::: {.column width="80%"}
-[Mas e se eu não colocar nada? Qual será a visibilidade da classe?]{.fontsize90}
+[Mas e se eu **não colocar nada**? Qual será a **visibilidade** da classe?]{.fontsize90}
 ```{.java code-line-numbers="false"}
 class ContaBancaria{
   //Código omitido
@@ -327,8 +327,8 @@ class ContaBancaria{
 [Ela será **acessível** por qualquer **outra** que esteja dentro do **mesmo pacote**!]{style="color:darkblue;" .fontsize80 .fragment}
 
 :::{.fontsize90}
-- Mas e quando eu não eu não inseri minhas classes em pacote algum?
-  - Se nenhuma instrução package for fornecida em arquivos de código-fonte Java, todas as classes declaradas nesses arquivos serão inseridas no chamado pacote padrão e só serão acessíveis a outras classes no pacote padrão que estão localizadas no mesmo diretório$^1$.
+- Mas e quando eu não eu **não inseri** minhas **classes** em **pacote** algum?
+  - Se **nenhuma** instrução `package` for fornecida em arquivos de código-fonte Java, **todas** as **classes** declaradas nesses arquivos serão **inseridas** no chamado **pacote padrão** e só serão acessíveis a outras classes no pacote padrão que estão localizadas no mesmo diretório$^1$.
 :::
 :::{.fontsize70 .fragment}
 __________<br>

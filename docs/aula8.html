@@ -514,7 +514,7 @@
 <div class="column" style="width:60%;">
 <div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">banco</span><span class="op">.</span><span class="im">ContaBancaria</span><span class="op">;</span></span>
 <span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
-<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span> <span class="op">(</span><span class="bu">String</span><span class="op">[</span> <span class="op">]</span> args<span class="op">){</span></span>
+<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span> <span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
 <span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a>    ContaBancaria minhaConta <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">();</span></span>
 <span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Código restante omitido</span></span>
 <span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
@@ -607,7 +607,7 @@
 <div class="column" style="width:10%;">
 
 </div><div class="column" style="width:90%;">
-<div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancariaTeste<span class="op">{</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
 <span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span> <span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
 <span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a>    banco<span class="op">.</span><span class="fu">nacional</span><span class="op">.</span><span class="fu">ContaBancaria</span> minhaConta <span class="op">=</span> <span class="kw">new</span> banco<span class="op">.</span><span class="fu">nacional</span><span class="op">.</span><span class="fu">ContaBancaria</span><span class="op">();</span></span>
 <span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Restante do código omitido</span></span>
@@ -712,15 +712,15 @@
 </figure>
 </div>
 </div><div class="column fontsize80" style="width:80%;">
-<p>Já vimos que é possível definir a visibilidade de atributos e métodos.<br> <br> Mas e para uma classe? Será que podemos definir sua visibilidade também?</p>
+<p>Já vimos que é possível definir a <strong>visibilidade</strong> de <strong>atributos</strong> e <strong>métodos</strong>.<br> <br> Mas e <strong>para</strong> uma <strong>classe</strong>? Será que podemos <strong>definir</strong> sua <strong>visibilidade</strong> também?</p>
 </div>
 </div>
-<p><span class="fontsize80 fragment" style="color:darkblue;">Sim, podemos! Uma classe pode ser pública, por exemplo.</span></p>
+<p><span class="fontsize80 fragment" style="color:darkblue;"><strong>Sim</strong>, podemos! Uma classe pode ser <strong>pública</strong>, por exemplo.</span></p>
 <div class="fragment">
 <div class="sourceCode" id="cb9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
 <span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co">//Código omitido</span></span>
 <span id="cb9-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><span class="fontsize80">Nesse caso, a classe é visível por qualquer outra classe do sistema. Apenas classes public podem ser reutilizadas fora do pacote em que estão declaradas!</span></p>
+<p><span class="fontsize80">Nesse caso, a <strong>classe</strong> é <strong>visível</strong> por <strong>qualquer</strong> outra <strong>classe</strong> do sistema. Apenas classes <code>public</code> podem ser <strong>reutilizadas</strong> <strong>fora</strong> do <strong>pacote</strong> em que estão declaradas!</span></p>
 </div>
 </section>
 <section id="pacotes-versus-visibilidade-de-classes-1" class="slide level2">
@@ -733,7 +733,7 @@
 </figure>
 </div>
 </div><div class="column" style="width:80%;">
-<p><span class="fontsize90">Mas e se eu não colocar nada? Qual será a visibilidade da classe?</span></p>
+<p><span class="fontsize90">Mas e se eu <strong>não colocar nada</strong>? Qual será a <strong>visibilidade</strong> da classe?</span></p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
 <span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co">//Código omitido</span></span>
 <span id="cb10-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -742,9 +742,9 @@
 <p><span class="fontsize80 fragment" style="color:darkblue;">Ela será <strong>acessível</strong> por qualquer <strong>outra</strong> que esteja dentro do <strong>mesmo pacote</strong>!</span></p>
 <div class="fontsize90">
 <ul>
-<li class="fragment">Mas e quando eu não eu não inseri minhas classes em pacote algum?
+<li class="fragment">Mas e quando eu não eu <strong>não inseri</strong> minhas <strong>classes</strong> em <strong>pacote</strong> algum?
 <ul>
-<li class="fragment">Se nenhuma instrução package for fornecida em arquivos de código-fonte Java, todas as classes declaradas nesses arquivos serão inseridas no chamado pacote padrão e só serão acessíveis a outras classes no pacote padrão que estão localizadas no mesmo diretório<span class="math inline">\(^1\)</span>.</li>
+<li class="fragment">Se <strong>nenhuma</strong> instrução <code>package</code> for fornecida em arquivos de código-fonte Java, <strong>todas</strong> as <strong>classes</strong> declaradas nesses arquivos serão <strong>inseridas</strong> no chamado <strong>pacote padrão</strong> e só serão acessíveis a outras classes no pacote padrão que estão localizadas no mesmo diretório<span class="math inline">\(^1\)</span>.</li>
 </ul></li>
 </ul>
 </div>
