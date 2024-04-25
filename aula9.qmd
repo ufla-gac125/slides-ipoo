@@ -189,11 +189,53 @@ __________<br>
 
 
 ## Classe ArrayList
+:::{.fontsize80}
+Para instanciar um `ArrayList` podemos fazer da seguinte maneira:
+:::
 
+```{.java code-line-numbers="false"}
+ArrayList<String> nomes;
+nomes = new ArrayList<String>();
+```
 
+. . .
+
+[Os principais métodos são:]{.fontsize80}
+
+:::{.fontsize60 }
+|    Método   |                                        Descrição                                      |
+|:------------|:--------------------------------------------------------------------------------------|
+| add(x)      | Adiciona o elemento x ao final do ArrayList.                                          |
+| clear( )    | Remove todos os elementos do ArrayList.                                               |
+| contains(x) | Retorna true se o ArrayList contém o elemento x especificado e false, caso contrário. |
+| get(i)      | Retorna o elemento no índice i especificado.                                          |
+| remove(i)   | Remove o elemento no índice i especificado.                                           |
+| size( )     | Retorna o número de elementos armazenados em ArrayList.                               |
+: {.bordered}
+:::
 
 ## Exemplo 1 com a Classe ArrayList
+```{.java code-line-numbers="false"}
+import java.util.ArrayList; //<1>
 
+public class App{
+  public static void main(String[] args){
+  
+    ArrayList<String> nomes = new ArrayList<String>();
+    nomes.add("Luiz Henrique"); //<2>
+    nomes.add("Marco Aurélio");
+    nomes.add("Paulo Roberto");
+    
+    System.out.println(nomes.get(1)); //Saída: Marco Aurélio //<3>
+    System.out.println(nomes.contains("Paulo Roberto")); //Saída: true //<4>
+  }
+}  
+```
+
+1. [Precisamos importar a classe do pacote `java.util`.]{.fontsize70}
+2. [Adicionando elementos no final do ArrayList.]{.fontsize70}
+3. [Utilizando o método `get` para retornar o elemento da posição 1.]{.fontsize70}
+4. [Utilizando o método `contains` para verificar se o elemento "Paulo Roberto" está no ArrayList.]{.fontsize70}
 
 ## Percorrendo um ArrayList
 

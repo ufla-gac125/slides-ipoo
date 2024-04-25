@@ -11,7 +11,7 @@
 <script src="aula9_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula9_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula9_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.550">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Coleções: Listas </title>
@@ -598,9 +598,89 @@
 </section>
 <section id="classe-arraylist-1" class="slide level2">
 <h2>Classe ArrayList</h2>
+<div class="fontsize80">
+<p>Para instanciar um <code>ArrayList</code> podemos fazer da seguinte maneira:</p>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> nomes<span class="op">;</span></span>
+<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a>nomes <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p><span class="fontsize80">Os principais métodos são:</span></p>
+<div class="fontsize60">
+<table class="table-bordered">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 87%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">add(x)</td>
+<td style="text-align: left;">Adiciona o elemento x ao final do ArrayList.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">clear( )</td>
+<td style="text-align: left;">Remove todos os elementos do ArrayList.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">contains(x)</td>
+<td style="text-align: left;">Retorna true se o ArrayList contém o elemento x especificado e false, caso contrário.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">get(i)</td>
+<td style="text-align: left;">Retorna o elemento no índice i especificado.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">remove(i)</td>
+<td style="text-align: left;">Remove o elemento no índice i especificado.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">size( )</td>
+<td style="text-align: left;">Retorna o número de elementos armazenados em ArrayList.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 <section id="exemplo-1-com-a-classe-arraylist" class="slide level2">
 <h2>Exemplo 1 com a Classe ArrayList</h2>
+<div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode java code-annotation-code code-with-copy code-annotated"><code class="sourceCode java"><a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">ArrayList</span><span class="op">;</span></span>
+<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-2-3"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
+<span id="annotated-cell-2-4"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
+<span id="annotated-cell-2-5"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="annotated-cell-2-6"><a href="#annotated-cell-2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> nomes <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-2-7" class="code-annotation-target"><a href="#annotated-cell-2-7" aria-hidden="true" tabindex="-1"></a>    nomes<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="st">"Luiz Henrique"</span><span class="op">);</span></span>
+<span id="annotated-cell-2-8"><a href="#annotated-cell-2-8" aria-hidden="true" tabindex="-1"></a>    nomes<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="st">"Marco Aurélio"</span><span class="op">);</span></span>
+<span id="annotated-cell-2-9"><a href="#annotated-cell-2-9" aria-hidden="true" tabindex="-1"></a>    nomes<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="st">"Paulo Roberto"</span><span class="op">);</span></span>
+<span id="annotated-cell-2-10"><a href="#annotated-cell-2-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-2-11" class="code-annotation-target"><a href="#annotated-cell-2-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>nomes<span class="op">.</span><span class="fu">get</span><span class="op">(</span><span class="dv">1</span><span class="op">));</span> <span class="co">//Saída: Marco Aurélio</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4" onclick="event.preventDefault();" href="">4</a><span id="annotated-cell-2-12" class="code-annotation-target"><a href="#annotated-cell-2-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>nomes<span class="op">.</span><span class="fu">contains</span><span class="op">(</span><span class="st">"Paulo Roberto"</span><span class="op">));</span> <span class="co">//Saída: true</span></span>
+<span id="annotated-cell-2-13"><a href="#annotated-cell-2-13" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="annotated-cell-2-14"><a href="#annotated-cell-2-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>  </span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt class="fragment" data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1"><span class="fontsize70">Precisamos importar a classe do pacote <code>java.util</code>.</span></span>
+</dd>
+<dt class="fragment" data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-2" data-code-lines="7" data-code-annotation="2"><span class="fontsize70">Adicionando elementos no final do ArrayList.</span></span>
+</dd>
+<dt class="fragment" data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-2" data-code-lines="11" data-code-annotation="3"><span class="fontsize70">Utilizando o método <code>get</code> para retornar o elemento da posição 1.</span></span>
+</dd>
+<dt class="fragment" data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-2" data-code-lines="12" data-code-annotation="4"><span class="fontsize70">Utilizando o método <code>contains</code> para verificar se o elemento “Paulo Roberto” está no ArrayList.</span></span>
+</dd>
+</dl>
 </section>
 <section id="percorrendo-um-arraylist" class="slide level2">
 <h2>Percorrendo um ArrayList</h2>
