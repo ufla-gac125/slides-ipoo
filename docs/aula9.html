@@ -11,7 +11,7 @@
 <script src="aula9_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula9_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula9_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Coleções: Listas </title>
@@ -684,17 +684,98 @@
 </section>
 <section id="percorrendo-um-arraylist" class="slide level2">
 <h2>Percorrendo um ArrayList</h2>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/professor31_metade.png" class="quarto-figure quarto-figure-center" style="width:55.0%" alt="Professor_metade"></p>
+</figure>
+</div>
+</div><div class="column" style="width:70%;">
+<p><span class="fontsize80">Podemos percorrer um ArrayList da mesma maneira que utilizamos para percorrer um vetor (<em>array</em>), ou seja, usando uma estrutura de repetição <code>for</code>.</span></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> nomes <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span>
+<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> nomes<span class="op">.</span><span class="fu">size</span><span class="op">();</span> i<span class="op">++){</span></span>
+<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>nomes<span class="op">.</span><span class="fu">get</span><span class="op">(</span>i<span class="op">));</span></span>
+<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:70%;">
+<p><span class="fontsize80">No entanto, podemos fazer a mesma coisa usando uma “nova” estrutura de repetição denominada <strong>for-each</strong> (para cada)</span></p>
+<div class="sourceCode" id="annotated-cell-9"><pre class="sourceCode java code-annotation-code code-with-copy code-annotated"><code class="sourceCode java"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> nomes <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-9-2" class="code-annotation-target"><a href="#annotated-cell-9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(</span><span class="bu">String</span> item<span class="op">:</span> nomes<span class="op">){</span></span>
+<span id="annotated-cell-9-3"><a href="#annotated-cell-9-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>item<span class="op">);</span></span>
+<span id="annotated-cell-9-4"><a href="#annotated-cell-9-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>  </span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt class="fragment" data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-9" data-code-lines="2" data-code-annotation="1"><span class="fontsize60">Em cada iteração, essa variável <code>item</code> referencia um elemento do <code>ArrayList</code>.</span></span>
+</dd>
+</dl>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/professor2_metade.png" class="quarto-figure quarto-figure-center" style="width:50.0%" alt="Professor2_metade"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment"><span class="fontsize65">Vale observar que com o <strong>for-each</strong> não precisamos usar o índice para acessar cada posição do <code>ArrayList</code>.</span></li>
+</ul>
+</div>
 </section>
 <section id="exemplo-2-com-a-classe-arraylist" class="slide level2">
 <h2>Exemplo 2 com a Classe ArrayList</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">ArrayList</span><span class="op">;</span></span>
+<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
+<span id="cb7-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
+<span id="cb7-5"><a href="" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> nomes <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span>
+<span id="cb7-7"><a href="" aria-hidden="true" tabindex="-1"></a>    nomes<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="st">"Luiz Henrique"</span><span class="op">);</span></span>
+<span id="cb7-8"><a href="" aria-hidden="true" tabindex="-1"></a>    nomes<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="st">"Marco Aurélio"</span><span class="op">);</span></span>
+<span id="cb7-9"><a href="" aria-hidden="true" tabindex="-1"></a>    nomes<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="st">"Paulo Roberto"</span><span class="op">);</span></span>
+<span id="cb7-10"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-11"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Utilizando o for-each para percorrer o ArrayList</span></span>
+<span id="cb7-12"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span><span class="bu">String</span> e<span class="op">:</span> nomes<span class="op">){</span> </span>
+<span id="cb7-13"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>e<span class="op">);</span></span>
+<span id="cb7-14"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb7-15"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb7-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="arraylist-de-tipos-primitivos" class="slide level2">
 <h2>ArrayList de Tipos Primitivos</h2>
-<p>Vamos supor que eu queira usar um ArrayList para armazenar uma coleção de número inteiros.</p>
-<p>Para isso, coloco no meu programa a seguinte declaração: 2cmArrayListint&gt; num;<br>
-Isso vai funcionar?</p>
+<div class="fontsize80">
+<p><span style="color:darkblue">Vamos supor que eu queira usar um <code>ArrayList</code> para armazenar uma coleção de número inteiros.</span></p>
+</div>
+<div class="fragment">
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column fontsize80" style="width:70%;">
+<ul>
+<li>Para isso, coloco no meu programa a seguinte declaração:</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<div class="sourceCode" id="cb8"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> num<span class="op">;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:40.0%" alt="Jovem"></p>
+</figure>
+</div>
+</div><div class="column fontsize90" style="width:80%;">
+<p><span style="color:darkblue;">Isso vai funcionar?</span></p>
+</div>
+</div>
 <p>2Não! center 51&lt;2-&gt; center 3A classe ArrayList aceita somente tipos por referência (objetos) como elementos. O int em Java é um tipo primitivo.</p>
 <p>4Como fazer então?</p>
+</div>
 </section>
 <section id="arraylist-de-tipos-primitivos-1" class="slide level2">
 <h2>ArrayList de Tipos Primitivos</h2>

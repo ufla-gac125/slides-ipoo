@@ -238,19 +238,91 @@ public class App{
 4. [Utilizando o método `contains` para verificar se o elemento "Paulo Roberto" está no ArrayList.]{.fontsize70}
 
 ## Percorrendo um ArrayList
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%"}
+![](figuras/professor31_metade.png){fig-alt="Professor_metade" fig-align="center" width=55%}
+:::
+::: {.column width="70%"}
+[Podemos percorrer um ArrayList da mesma maneira que utilizamos para percorrer um vetor (*array*), ou seja, usando uma estrutura de repetição `for`.]{.fontsize80}
+```{.java code-line-numbers="false"}
+ArrayList<String> nomes = new ArrayList<String>();
+for(int i = 0; i < nomes.size(); i++){
+  System.out.println(nomes.get(i));
+}  
+```
+:::
+::::
 
+. . .
 
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="70%"}
+[No entanto, podemos fazer a mesma coisa usando uma "nova" estrutura de repetição denominada **for-each** (para cada)]{.fontsize80}
+```{.java code-line-numbers="false"}
+ArrayList<String> nomes = new ArrayList<String>();
+for(String item: nomes){//<1>
+  System.out.println(item);
+}  
+```
+1. [Em cada iteração, essa variável `item` referencia um elemento do `ArrayList`.]{.fontsize60}
+:::
+::: {.column width="30%"}
+![](figuras/professor2_metade.png){fig-alt="Professor2_metade" fig-align="center" width=50%}
+:::
+::::
+- [Vale observar que com o **for-each** não precisamos usar o índice para acessar cada posição do `ArrayList`.]{.fontsize65}
 
 ## Exemplo 2 com a Classe ArrayList
+```{.java code-line-numbers="false"}
+import java.util.ArrayList;
 
-
+public class App{
+  public static void main(String[] args){
+  
+    ArrayList<String> nomes = new ArrayList<String>();
+    nomes.add("Luiz Henrique");
+    nomes.add("Marco Aurélio");
+    nomes.add("Paulo Roberto");
+    
+    //Utilizando o for-each para percorrer o ArrayList
+    for(String e: nomes){ 
+      System.out.println(e);
+    }
+  }
+}  
+```
 
 ## ArrayList de Tipos Primitivos
-Vamos supor que eu queira usar um ArrayList para armazenar uma coleção de número inteiros.
+:::{.fontsize80}
+[Vamos supor que eu queira usar um `ArrayList` para armazenar uma coleção de número inteiros.]{style="color:darkblue"}
+:::
 
-  Para isso, coloco no meu programa a seguinte declaração: 
- 2cmArrayListint> num;  
-  Isso vai funcionar?
+. . .
+
+::::{.columns style='display: flex !important; align-items: top;' }
+::: {.column width="70%" .fontsize80 .nonincremental}
+- Para isso, coloco no meu programa a seguinte declaração: 
+:::
+::: {.column width="30%"}
+```{.java code-line-numbers="false"}
+ArrayList<int> num;
+```
+:::
+::::
+
+. . .
+
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%"}
+![](figuras/jovem.png){fig-alt="Jovem" fig-align="center" width=40%}
+:::
+::: {.column width="80%" .fontsize90}
+[Isso vai funcionar?]{style="color:darkblue;"}
+:::
+::::
+
+- Não
+
  
   2Não!
   center
