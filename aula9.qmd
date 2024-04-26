@@ -314,24 +314,19 @@ ArrayList<int> num;
 
 ::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="30%"}
-![](figuras/jovem.png){fig-alt="Jovem" fig-align="center" width=40%}
+![](figuras/jovem.png){fig-alt="Jovem" fig-align="center" width=48%}
 :::
-::: {.column width="80%" .fontsize90}
+::: {.column width="80%" .fontsize80}
 [Isso vai funcionar?]{style="color:darkblue;"}
+
+- Não!<br>
+![](figuras/terminal_erro_arraylist.png){fig-alt="Jovem" fig-align="center" width=70%}
+- A classe `ArrayList` aceita **somente** **tipos** por **referência** (objetos) como elementos.
+- O `int` em Java é um **tipo primitivo**.
 :::
 ::::
-
-- Não
-
  
-  2Não!
-  center
-  51<2->
-  center
-  3A classe ArrayList aceita somente tipos por referência (objetos) como elementos.
-   O int em Java é um tipo primitivo.
- 
- 4Como fazer então?
+- [Como fazer então?]{.fontsize80 style="color:darkblue;"}
 
 ## ArrayList de Tipos Primitivos
 Como resolver o problema?
