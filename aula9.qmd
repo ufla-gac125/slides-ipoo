@@ -329,34 +329,76 @@ ArrayList<int> num;
 - [Como fazer então?]{.fontsize80 style="color:darkblue;"}
 
 ## ArrayList de Tipos Primitivos
-Como resolver o problema?
+[Como resolver o problema?]{style="color:darkblue;" .fontsize90}
 
- 2O Java possui um mecanismo conhecido como boxing, que permite que valores primitivos sejam empacotados como objetos para uso com classes genéricas.
- 3Desse modo, para armazenar inteiros em um ArrayList usamos a classe Integer. 
- ArrayListInteger> num = new ArrayListInteger>();  
- 4E o compilador nos ajuda com o autoboxing, ou seja:
- 
-   Sempre que necessário, o tipo int é empacotado como um objeto Integer ou um valor int dentro de um objeto Integer é desempacotado. 
- 
- 5Desse modo, declaramos um ArrayList de Integer mas podemos lidar com os dados normalmente como se fossem do tipo int.
+- [O Java possui um mecanismo conhecido como *boxing*, que permite que valores primitivos sejam empacotados como objetos para uso com classes genéricas.]{.fontsize90}
+
+:::{.fragment .nonincremental}
+- [Desse modo, para armazenar inteiros em um ArrayList usamos a classe Integer.]{.fontsize90}
+```{.java code-line-numbers="false"}
+ArrayList<Integer> num = new ArrayListInteger>();
+```  
+:::
+
+:::{.fontsize90}
+- E o compilador nos ajuda com o autoboxing, ou seja:
+  - Sempre que necessário, o tipo int é empacotado como um objeto Integer ou um valor int dentro de um objeto Integer é desempacotado. 
+- Desse modo, declaramos um ArrayList de Integer mas podemos lidar com os dados normalmente como se fossem do tipo int.
+:::
 
 
 ## ArrayList de Tipos Primitivos - Exemplo
+```{.java code-line-numbers="false"}
+import java.util.ArrayList;
 
+public class App{
+
+  public static void main(String[] args){
+  
+    ArrayList<Integer> num = new ArrayList<Integer>();
+    int x = 20;
+    
+    num.add(3);
+    num.add(-5);
+    num.add(x);
+    
+    for(int e: num){
+      System.out.print(e + " ");
+    }
+    System.out.println();
+  }
+}
+```
+![](figuras/terminal_arraylist_integer.png){fig-alt="Terminal_arraylist_integer" fig-align="center" width=60%}
 
 
 ## ArrayList de Tipos Primitivos
-Cada tipo primitivo tem uma classe equivalente em Java:
+[Cada tipo primitivo tem uma classe equivalente em Java:]{style="color:darkblue;"}
 
-
-  int $\longrightarrow$ Integer
-  float $\longrightarrow$ Float
-  double $\longrightarrow$ Double
-  char $\longrightarrow$ Character
-  boolean $\longrightarrow$ Boolean
+:::{.nonincremental}
+- int $\rightarrow$ Integer
+- float $\rightarrow$ Float
+- double $\rightarrow$ Double
+- char $\rightarrow$ Character
+- boolean $\rightarrow$ Boolean
+:::
 
 
 ## ArrayList: Busca Usando uma "Chave"
+::::{.columns style='display: flex !important; align-items: center;'}
+::: {.column width="50%" .fontsize80}
+Já vimos que podemos usar o índice para obtermos o elemento contido numa dada posição do ArrayList.
+:::
+::: {.column width="60%"}
+```{.java code-line-numbers="false"}
+ArrayList<Integer> notas = new ArrayList<Integer>();
+int x = notas.get(2);
+System.out.printf("A nota do aluno é %d", x);
+
+```
+:::
+::::
+
 
 
 ## ArrayList: Remoção de um Elemento
