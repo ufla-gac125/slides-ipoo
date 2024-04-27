@@ -398,6 +398,31 @@ System.out.printf("A nota do aluno é %d", x);
 ```
 :::
 ::::
+[Mas e se eu desejar encontrar um elemento na lista a partir de suas características?]{.fontsize80 style="color:darkblue;"}
+
+- [Por exemplo, em uma lista de contas bancárias eu preciso encontar aquela cujo número é 1234.]{.fontsize80}
+
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="50%" .fontsize80}
+Nesse caso, podemos usar uma estrutura de repetição `for` para percorrer o ArrayList procurando por uma "chave" de busca, ou seja, pelo valor desejado (no nosso caso desejamos encontrar a conta bancária número 1234.)
+:::
+::: {.column width="50%"}
+```{.java code-line-numbers="false"}
+ArrayList<ContaBancaria> contas;
+contas = new ArrayList<ContaBancaria>();
+...
+public ContaBancaria buscarConta(int num){ //<1>
+  for(ContaBancaria c: contas){ //<2>
+    if(c.getNumero() == num) return c;
+  }
+  return null;//<3>
+}
+```
+1. Método para buscar uma conta número `num` e, se encontar, retornando o objeto `ContaBancaria` correspondente.
+2. Percorrendo a lista de contas bancárias.
+3. Se nenhuma conta da lista tiver o número `num`, o *null* será retornado para indicar que a conta não foi encontrada.
+:::
+::::
 
 
 

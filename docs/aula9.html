@@ -856,6 +856,39 @@
 <span id="cb11-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">printf</span><span class="op">(</span><span class="st">"A nota do aluno é </span><span class="sc">%d</span><span class="st">"</span><span class="op">,</span> x<span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+<p><span class="fontsize80" style="color:darkblue;">Mas e se eu desejar encontrar um elemento na lista a partir de suas características?</span></p>
+<ul>
+<li class="fragment"><span class="fontsize80">Por exemplo, em uma lista de contas bancárias eu preciso encontar aquela cujo número é 1234.</span></li>
+</ul>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column fontsize80" style="width:50%;">
+<p>Nesse caso, podemos usar uma estrutura de repetição <code>for</code> para percorrer o ArrayList procurando por uma “chave” de busca, ou seja, pelo valor desejado (no nosso caso desejamos encontrar a conta bancária número 1234.)</p>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="annotated-cell-14"><pre class="sourceCode java code-annotation-code code-with-copy code-annotated"><code class="sourceCode java"><span id="annotated-cell-14-1"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span>ContaBancaria<span class="op">&gt;</span> contas<span class="op">;</span></span>
+<span id="annotated-cell-14-2"><a href="#annotated-cell-14-2" aria-hidden="true" tabindex="-1"></a>contas <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span>ContaBancaria<span class="op">&gt;();</span></span>
+<span id="annotated-cell-14-3"><a href="#annotated-cell-14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">...</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-14-4" class="code-annotation-target"><a href="#annotated-cell-14-4" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> ContaBancaria <span class="fu">buscarConta</span><span class="op">(</span><span class="dt">int</span> num<span class="op">){</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-14-5" class="code-annotation-target"><a href="#annotated-cell-14-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span><span class="op">(</span>ContaBancaria c<span class="op">:</span> contas<span class="op">){</span></span>
+<span id="annotated-cell-14-6"><a href="#annotated-cell-14-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(</span>c<span class="op">.</span><span class="fu">getNumero</span><span class="op">()</span> <span class="op">==</span> num<span class="op">)</span> <span class="cf">return</span> c<span class="op">;</span></span>
+<span id="annotated-cell-14-7"><a href="#annotated-cell-14-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-14-8" class="code-annotation-target"><a href="#annotated-cell-14-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="annotated-cell-14-9"><a href="#annotated-cell-14-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt class="fragment" data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-14" data-code-lines="4" data-code-annotation="1">Método para buscar uma conta número <code>num</code> e, se encontar, retornando o objeto <code>ContaBancaria</code> correspondente.</span>
+</dd>
+<dt class="fragment" data-target-cell="annotated-cell-14" data-target-annotation="2">2</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-14" data-code-lines="5" data-code-annotation="2">Percorrendo a lista de contas bancárias.</span>
+</dd>
+<dt class="fragment" data-target-cell="annotated-cell-14" data-target-annotation="3">3</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-14" data-code-lines="8" data-code-annotation="3">Se nenhuma conta da lista tiver o número <code>num</code>, o <em>null</em> será retornado para indicar que a conta não foi encontrada.</span>
+</dd>
+</dl>
+</div>
+</div>
 </section>
 <section id="arraylist-remoção-de-um-elemento" class="slide level2">
 <h2>ArrayList: Remoção de um Elemento</h2>
