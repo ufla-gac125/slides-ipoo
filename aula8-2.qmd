@@ -371,7 +371,7 @@ ArrayList<int> num;
 :::{.fragment .nonincremental}
 - [Desse modo, para armazenar **inteiros** em um `ArrayList` usamos a classe `Integer`.]{.fontsize80}
 ```{.java code-line-numbers="false"}
-ArrayList<Integer> num = new ArrayListInteger>();
+ArrayList<Integer> num = new ArrayList<Integer>();
 ```  
 :::
 
@@ -542,7 +542,7 @@ Ao **removermos** **elementos** de uma **coleção** devemos estar **cientes** d
 
 
 ## *ArrayList*: Remoção de Elementos - Exemplo
-[**Por exemplo**, em uma **lista** de **contas bancárias** eu quero **remover** aquelas cujo **nome** do titular contenha a string "Silva".]{.fontsize90}
+[**Por exemplo**, em uma **lista** de **nomes**, eu quero **remover** todos aqueles que contêm a string "Silva".]{.fontsize90}
 
 . . .
 
