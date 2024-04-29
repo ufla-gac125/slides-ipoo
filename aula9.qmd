@@ -29,51 +29,56 @@ title-slide-attributes:
 
 ::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="30%"}
-xxx
+![](figuras/estruturas_de_dados.png){fig-alt="Estruturas_dados" fig-align="center" width=80%}
 :::
-::: {.column width="70%" .fontsize90}
-Uma estrutura de dados é uma forma particular de armazenar e organizar os dados que serão utilizados por um programa de modo que eles possam ser manipulados de maneira eficiente.
+::: {.column width="70%" .fontsize80}
+Uma [estrutura de dados]{.alert} é uma [forma]{.alert} particular de [armazenar]{.alert} e [organizar]{.alert} os [dados]{.alert} que serão utilizados por um programa de modo que eles possam ser [manipulados]{.alert} de maneira [eficiente]{.alert}.
 :::
 ::::
 
 [O que estudaremos?]{style="color:darkblue;" .fontsize90 .fragment}
 
-:::{.fontsize90 .fragment}
-Nesta disciplina veremos como utilizar em nossos programas uma importante estrutura de dados (chamada em Java de coleção).
+:::{.fontsize80 .fragment}
+Veremos como utilizar em nossos programas uma **importante estrutura de dados** (chamada em Java de **coleção**).
 
-- Listas.
+- **Listas**.
 :::
 
 ## Coleções
 :::{.fontsize90}
-- O pacote `java.util` fornece classes que implementam as coleções. 
-- Mas o que é uma coleção?
-  - Podemos dizer que é um conjunto de objetos de mesma natureza.
-  - Exemplos: coleção de músicas, coleção de carros, coleção de moedas etc.
+- O pacote `java.util` fornece **classes** que implementam as **coleções**. 
+- [Mas o que é uma coleção?]{style="color:darkblue;"}
+  - Podemos dizer que é um [conjunto]{.alert} de [objetos]{.alert} de [mesma natureza]{.alert}.
+  - **Exemplos:** coleção de músicas, coleção de carros, coleção de moedas etc.
  
-- Em Java, uma coleção é representada por uma classe. Portanto, as operações sobre coleções são realizadas a partir dos métodos implementados nessas classes.
-- Quais operações podemos fazer em uma coleção?
-  - Adicionar um novo objeto na coleção.
-  - Remover um objeto da coleção.
-  - Buscar os objetos na coleção.
+- Em Java, uma **coleção** é **representada** por uma **classe**. Portanto, as **operações** sobre **coleções** são realizadas a partir dos **métodos** **implementados** nessas **classes**.
+- Quais **operações** podemos fazer em uma **coleção**?
+  - **Adicionar** um novo objeto na coleção.
+  - **Remover** um objeto da coleção.
+  - **Buscar** os objetos na coleção.
 :::
 
 ## Relembrando...
-:::{.fontsize90}
-Antes de conhecer a classe que implementa a estrutura de dados, vamos recordar de algo que já utilizamos...
-
-- O que já usamos para armazenar conjuntos de dados de mesmo tipo em nossos programas?
-  - Já utilizamos os vetores (arrays)!
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+::: {.column width="30%"}
+![](figuras/professor1-1.png){fig-alt="Professor" fig-align="center" width=50%}
 :::
+::: {.column width="70%" .fontsize90}
+**Antes** de conhecer a **classe** que **implementa** a estrutura de dados, vamos **recordar** de algo que já **utilizamos**...
+
+- O que **já usamos** para **armazenar** conjuntos de **dados** de **mesmo** **tipo** em nossos programas?
+  - Já utilizamos os **vetores** (*arrays*)!
+:::
+::::
 
 
 ## Relembrando...
 :::{.fontsize70}
-Então vamos relembrar algumas coisas importantes sobre vetores:
+Então vamos **lembrar** algumas **coisas** **importantes** sobre **vetores**:
 
-- Em Java, os vetores são considerados objetos.
-- Um vetor pode conter elementos de tipos primitivos (int, float, double etc.) ou de tipos por referência (para objetos).
-- Exemplo de declaração de um vetor:
+- Em Java, os **vetores** **são** considerados **objetos**.
+- Um **vetor** pode conter elementos de **tipos primitivos** (`int`, `float`, `double` etc.) ou de **tipos por referência** (para **objetos**).
+- **Exemplo** de **declaração** de um vetor:
 :::
 
 . . .
@@ -89,7 +94,7 @@ int[] c = new int[10];
 ::::
 
 :::{.fontsize70}
-- Exemplo de modificação dos valores de um vetor de inteiros:
+- **Exemplo** de **modificação** dos valores de um vetor de inteiros:
 :::
 
 . . .
@@ -107,7 +112,7 @@ for(int i = 0; i < c.length; i++){
 ::::
 
 :::{.fontsize70}
-- Exemplo de vetor passado por parâmetro para método:
+- **Exemplo** de **vetor** passado por **parâmetro** para método:
 :::
 
 . . .
@@ -129,18 +134,18 @@ public void definirVetor(int[] c){
 
 
 ## Desvantagem dos Vetores
-[Apesar da sua utilidade, os vetores têm uma limitação: são estruturas de dados estáticas!]{.fontsize80}
+[Apesar da sua utilidade, os **vetores** têm uma **limitação**: são estruturas de dados **estáticas**!]{.fontsize80}
 
 . . .
 
 ::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="20%"}
-xxx
+![](figuras/pessoa_com_problema_metade.png){fig-alt="Pessoa_problema_metade" fig-align="center" width=70%}
 :::
 ::: {.column width="80%" .fontsize80}
-E o que isso significa?
+[E o que isso significa?]{style="color:darkblue;"}
 
-- Significa que o seu tamanho, definido no momento de sua declaração, é fixo.
+- Significa que o **seu tamanho**, definido no momento de sua declaração, **é fixo**.
 :::
 ::::
 
@@ -148,36 +153,36 @@ E o que isso significa?
 
 [Nesse caso, como eu faço se não souber quantos elementos eu terei que armazenar em um determinado vetor?]{.fontsize80 style="color:darkblue;"}
 
-::::{.columns style='display: flex !important; align-items: top;'}
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
 ::: {.column width="80%" .fontsize80}
-- Nesse caso a única opção é "estimar" o tamanho necessário do vetor, podendo resultar em duas situações:
-  - Desperdiço de memória se você estimar um tamanho maior do que é realmente necessário.
-  - Não conseguir armazenar todos os elementos se você estimar um tamanho menor do que realmente é necessário
+- Nesse caso a **única opção** é "estimar" o **tamanho** necessário do vetor, podendo resultar em **duas situações**:
+  - **Desperdiço de memória** se você estimar um tamanho maior do que é realmente necessário.
+  - **Não** conseguir **armazenar** **todos** os **elementos** se você estimar um tamanho menor do que realmente é necessário.
 :::
 ::: {.column width="20%"}
-yyy
+![](figuras/professor3_metade.png){fig-alt="Professor3_metade" fig-align="center" width=70%}
 :::
 ::::
 
 
-## Classe ArrayList
+## Classe *ArrayList*
 :::{.fontsize80}
-A classe `ArrayList` implementa uma lista!
+A **classe** `ArrayList` implementa uma **lista**!
 
-- Nessa lista, a ordem dos seus elementos é a mesma da inserção e o acesso aos mesmos pode ser feito pela sua posição.
-- A classe de coleção ArrayList$<$T$>$ fornece uma solução conveniente quando necessita-se de uma estrutura que possa alterar dinamicamente seu tamanho para acomodar mais elementos.
-  - O T$^1$ corresponde ao tipo dos elementos que você deseja armazenar no ArrayList.  
+- Nessa **lista**, a **ordem** dos seus elementos é a **mesma** da **inserção** e o **acesso** aos mesmos **pode** ser **feito** pela sua **posição**.
+- A **classe** de coleção *ArrayList*$<$T$>$ fornece uma solução conveniente quando necessita-se de uma **estrutura** que possa **alterar** **dinamicamente** seu **tamanho** para acomodar mais elementos.
+  - O T$^1$ corresponde ao **tipo** dos **elementos** que você deseja **armazenar** no `ArrayList`.  
 :::   
 
 ::::{.columns style='display: flex !important; align-items: top;' .fragment }
 ::: {.column width="20%" .fontsize80 .nonincremental}
-- Exemplo:
+- **Exemplo:**
 :::
 ::: {.column width="80%"}
 ```{.java code-line-numbers="false"}
 ArrayList<String> nomes;
 ``` 
-[Nesse caso estamos declarando a variável nomes, do tipo ArrayList de strings, ou seja, para armazenar elementos do tipo String.]{.fontsize80}
+[Nesse caso estamos **declarando** a **variável** `nomes`, do tipo `ArrayList` de **strings**, ou seja, para armazenar elementos do tipo `String`.]{.fontsize80}
 :::
 ::::   
 
@@ -188,9 +193,9 @@ __________<br>
 
 
 
-## Classe ArrayList
+## Classe *ArrayList*
 :::{.fontsize80}
-Para instanciar um `ArrayList` podemos fazer da seguinte maneira:
+Para **instanciar** um `ArrayList` podemos fazer da seguinte maneira:
 :::
 
 ```{.java code-line-numbers="false"}
@@ -200,7 +205,7 @@ nomes = new ArrayList<String>();
 
 . . .
 
-[Os principais métodos são:]{.fontsize80}
+[Os **principais** **métodos** são:]{.fontsize80}
 
 :::{.fontsize60 }
 |    Método   |                                        Descrição                                      |
@@ -214,7 +219,7 @@ nomes = new ArrayList<String>();
 : {.bordered}
 :::
 
-## Exemplo 1 com a Classe ArrayList
+## Exemplo 1 com a Classe *ArrayList*
 ```{.java code-line-numbers="false"}
 import java.util.ArrayList; //<1>
 
@@ -237,13 +242,13 @@ public class App{
 3. [Utilizando o método `get` para retornar o elemento da posição 1.]{.fontsize70}
 4. [Utilizando o método `contains` para verificar se o elemento "Paulo Roberto" está no ArrayList.]{.fontsize70}
 
-## Percorrendo um ArrayList
+## Percorrendo um *ArrayList*
 ::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="30%"}
 ![](figuras/professor31_metade.png){fig-alt="Professor_metade" fig-align="center" width=55%}
 :::
 ::: {.column width="70%"}
-[Podemos percorrer um ArrayList da mesma maneira que utilizamos para percorrer um vetor (*array*), ou seja, usando uma estrutura de repetição `for`.]{.fontsize80}
+[Podemos *percorrer* um `ArrayList` da **mesma maneira** que utilizamos para **percorrer** um **vetor** (*array*), ou seja, usando uma **estrutura de repetição** `for`.]{.fontsize80}
 ```{.java code-line-numbers="false"}
 ArrayList<String> nomes = new ArrayList<String>();
 for(int i = 0; i < nomes.size(); i++){
@@ -257,7 +262,7 @@ for(int i = 0; i < nomes.size(); i++){
 
 ::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="70%"}
-[No entanto, podemos fazer a mesma coisa usando uma "nova" estrutura de repetição denominada **for-each** (para cada)]{.fontsize80}
+[No entanto, podemos **fazer** a **mesma** **coisa** usando uma "nova" **estrutura de repetição** denominada **for-each** (para cada).]{.fontsize80}
 ```{.java code-line-numbers="false"}
 ArrayList<String> nomes = new ArrayList<String>();
 for(String item: nomes){//<1>
@@ -272,7 +277,7 @@ for(String item: nomes){//<1>
 ::::
 - [Vale observar que com o **for-each** não precisamos usar o índice para acessar cada posição do `ArrayList`.]{.fontsize65}
 
-## Exemplo 2 com a Classe ArrayList
+## Exemplo 2 com a Classe *ArrayList*
 ```{.java code-line-numbers="false"}
 import java.util.ArrayList;
 
@@ -292,16 +297,46 @@ public class App{
 }  
 ```
 
-## ArrayList de Tipos Primitivos
+
+## Percorrendo um *ArrayList* com Iterador
 :::{.fontsize80}
-[Vamos supor que eu queira usar um `ArrayList` para armazenar uma coleção de número inteiros.]{style="color:darkblue"}
+Examinar **cada** **item** de uma **coleção** é algo tão comum que a **classe** `ArrayList` fornece uma maneira "especial" de **iterar** pelo conteúdo.
+
+- O **método** `iterator` de `ArrayList` retorna um **objeto** `Iterator`.
+  - `Iterator` é um **objeto** que fornece **funcionalidade** para **iterar** por **todos** os **elementos** de uma **coleção**.
+  - `Iterator` **fornece** dois **métodos** para **iterar** por uma **coleção**: `hasNext` e `next`.
+
+- Exemplo:
+:::
+
+. . .
+
+```{.java code-line-numbers="false"}
+ArrayList<String> nomes = new ArrayList<String>();
+//Trechos de código omitidos
+Iterator<String> it = nomes.iterator();//<1>
+while(it.hasNext()){//<2>
+  System.out.println(it.next());//<3>
+}  
+```
+1. [Como `Iterator` também é tipo genérico, precisamos parametrizá-lo com o tipo de elemento da coleção.]{.fontsize60}
+2. [Utilizamos o `Iterator` repetidamente para verificar se há mais elementos na coleção.]{.fontsize60}
+3. [O método `next` é usado para obtenção do próximo elemento.]{.fontsize60}
+
+
+
+ 
+
+## *ArrayList* de Tipos Primitivos
+:::{.fontsize80}
+[Vamos supor que eu queira usar um **ArrayList** para armazenar uma coleção de números inteiros.]{style="color:darkblue"}
 :::
 
 . . .
 
 ::::{.columns style='display: flex !important; align-items: top;' }
 ::: {.column width="70%" .fontsize80 .nonincremental}
-- Para isso, coloco no meu programa a seguinte declaração: 
+- Para isso, **coloco** no meu programa a **seguinte** **declaração**: 
 :::
 ::: {.column width="30%"}
 ```{.java code-line-numbers="false"}
@@ -319,7 +354,7 @@ ArrayList<int> num;
 ::: {.column width="80%" .fontsize80}
 [Isso vai funcionar?]{style="color:darkblue;"}
 
-- Não!<br>
+- **Não!**<br>
 ![](figuras/terminal_erro_arraylist.png){fig-alt="Jovem" fig-align="center" width=70%}
 - A classe `ArrayList` aceita **somente** **tipos** por **referência** (objetos) como elementos.
 - O `int` em Java é um **tipo primitivo**.
@@ -328,33 +363,35 @@ ArrayList<int> num;
  
 - [Como fazer então?]{.fontsize80 style="color:darkblue;"}
 
-## ArrayList de Tipos Primitivos
-[Como resolver o problema?]{style="color:darkblue;" .fontsize90}
+## *ArrayList* de Tipos Primitivos
+[Como resolver o problema?]{style="color:darkblue;" .fontsize80}
 
-- [O Java possui um mecanismo conhecido como *boxing*, que permite que valores primitivos sejam empacotados como objetos para uso com classes genéricas.]{.fontsize90}
+- [O Java possui um **mecanismo** conhecido como *boxing*, que permite que **valores primitivos** sejam **empacotados** como **objetos** para uso com classes genéricas.]{.fontsize80}
 
 :::{.fragment .nonincremental}
-- [Desse modo, para armazenar inteiros em um ArrayList usamos a classe Integer.]{.fontsize90}
+- [Desse modo, para armazenar **inteiros** em um `ArrayList` usamos a classe `Integer`.]{.fontsize80}
 ```{.java code-line-numbers="false"}
 ArrayList<Integer> num = new ArrayListInteger>();
 ```  
 :::
 
-:::{.fontsize90}
-- E o compilador nos ajuda com o autoboxing, ou seja:
-  - Sempre que necessário, o tipo int é empacotado como um objeto Integer ou um valor int dentro de um objeto Integer é desempacotado. 
-- Desse modo, declaramos um ArrayList de Integer mas podemos lidar com os dados normalmente como se fossem do tipo int.
+:::{.fontsize80 .nonincremental .fragment}
+- E o compilador nos ajuda com o *autoboxing*, ou seja:
+  - **Sempre** que necessário, o tipo `int` é **empacotado** como um **objeto** `Integer` ou um **valor** `int` dentro de um **objeto** `Integer` é **desempacotado**. 
+:::
+
+:::{.fontsize80}
+- Desse modo, **declaramos** um `ArrayList` de `Integer` mas podemos **lidar** com os dados normalmente **como se fossem** do tipo `int`.
 :::
 
 
-## ArrayList de Tipos Primitivos - Exemplo
+## *ArrayList* de Tipos Primitivos - Exemplo
 ```{.java code-line-numbers="false"}
 import java.util.ArrayList;
 
 public class App{
 
   public static void main(String[] args){
-  
     ArrayList<Integer> num = new ArrayList<Integer>();
     int x = 20;
     
@@ -369,11 +406,11 @@ public class App{
   }
 }
 ```
-![](figuras/terminal_arraylist_integer.png){fig-alt="Terminal_arraylist_integer" fig-align="center" width=60%}
+![](figuras/terminal_arraylist_integer.png){fig-alt="Terminal_arraylist_integer" fig-align="center" width=50%}
 
 
-## ArrayList de Tipos Primitivos
-[Cada tipo primitivo tem uma classe equivalente em Java:]{style="color:darkblue;"}
+## *ArrayList* de Tipos Primitivos
+[Cada **tipo primitivo** tem uma **classe equivalente** em Java:]{style="color:darkblue;"}
 
 :::{.nonincremental}
 - int $\rightarrow$ Integer
@@ -384,29 +421,34 @@ public class App{
 :::
 
 
-## ArrayList: Busca Usando uma "Chave"
-::::{.columns style='display: flex !important; align-items: center;'}
-::: {.column width="50%" .fontsize80}
-Já vimos que podemos usar o índice para obtermos o elemento contido numa dada posição do ArrayList.
+## *ArrayList*: Busca Usando uma "Chave"
+::: {.fontsize90}
+Já vimos que **podemos** **usar** o **índice** para obtermos o elemento contido numa **dada** **posição** do `ArrayList`.
 :::
-::: {.column width="60%"}
 ```{.java code-line-numbers="false"}
 ArrayList<Integer> notas = new ArrayList<Integer>();
 int x = notas.get(2);
 System.out.printf("A nota do aluno é %d", x);
 
 ```
-:::
-::::
-[Mas e se eu desejar encontrar um elemento na lista a partir de suas características?]{.fontsize80 style="color:darkblue;"}
-
-- [Por exemplo, em uma lista de contas bancárias eu preciso encontar aquela cujo número é 1234.]{.fontsize80}
 
 ::::{.columns style='display: flex !important; align-items: top;'}
-::: {.column width="50%" .fontsize80}
-Nesse caso, podemos usar uma estrutura de repetição `for` para percorrer o ArrayList procurando por uma "chave" de busca, ou seja, pelo valor desejado (no nosso caso desejamos encontrar a conta bancária número 1234.)
+::: {.column width="30%"}
+![](figuras/jovem.png){fig-alt="Jovem" fig-align="center" width=35%}
 :::
-::: {.column width="50%"}
+::: {.column width="70%" .fontsize90}
+[Mas e se eu desejar **encontrar** um **elemento** na lista **a partir** de suas **características**?]{style="color:darkblue;"}
+
+- **Por exemplo**, em uma **lista** de **contas bancárias** eu preciso encontar aquela cujo **número** é 1234.
+:::
+::::
+
+
+## *ArrayList*: Busca Usando uma "Chave"
+::: {.fontsize80}
+Nesse caso, podemos **usar** uma **estrutura de repetição** `for` para **percorrer** o `ArrayList` procurando por uma "chave" de busca, ou seja, pelo **valor desejado** (no nosso caso desejamos encontrar a **conta bancária** **número** 1234.)
+:::
+
 ```{.java code-line-numbers="false"}
 ArrayList<ContaBancaria> contas;
 contas = new ArrayList<ContaBancaria>();
@@ -418,19 +460,263 @@ public ContaBancaria buscarConta(int num){ //<1>
   return null;//<3>
 }
 ```
-1. Método para buscar uma conta número `num` e, se encontar, retornando o objeto `ContaBancaria` correspondente.
-2. Percorrendo a lista de contas bancárias.
-3. Se nenhuma conta da lista tiver o número `num`, o *null* será retornado para indicar que a conta não foi encontrada.
+1. [Método para buscar uma conta número `num` e, se encontar, retornar o objeto `ContaBancaria` correspondente.]{.fontsize70}
+2. [Percorrendo a lista de contas bancárias.]{.fontsize70}
+3. [Se nenhuma conta da lista tiver o número `num`, o *null* será retornado para indicar que a conta não foi encontrada.]{.fontsize70}
+
+
+## *ArrayList*: Remoção de um Elemento
+[Também **podemos** usar o **índice** para **remover** um elemento contido numa dada posição do `ArrayList`.]{.fontsize80}
+
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="70%"}
+```{.java code-line-numbers="false"}
+import java.util.ArrayList;
+public class App{
+    public static void main(String[] args){
+        ArrayList<Integer> notas = new ArrayList<>();
+        notas.add(78);
+        notas.add(95);
+        notas.add(87);
+        notas.add(61);
+        System.out.println("Notas dos alunos:");
+        for(int n: notas){
+            System.out.println(n);
+        }
+        //Removendo o elemento da posição 1
+        notas.remove(1);
+        System.out.println("Notas dos alunos após remoção:");
+        for(int n: notas){
+            System.out.println(n);
+        }
+    }
+}
+```
+:::
+::: {.column width="40%" .fontsize80}
+Resultado obtido ao executarmos o código:
+![](figuras/saidaTela_remocao.png){fig-alt="SaidaTela_remocao" fig-align="center" width=90%}
 :::
 ::::
 
 
+## *ArrayList*: Remoção de um Elemento
+:::{.nonincremental .fontsize80}
+Mas e se eu **desejasse remover** um elemento da **lista** a **partir** de alguma de **suas características**?
 
-## ArrayList: Remoção de um Elemento
+- **Por exemplo**, em uma **lista** de **contas bancárias** eu quero **remover** aquela cujo **nome** do titular é Reginaldo.
+:::
+
+. . .
+
+[Nesse caso, podemos **usar** uma **estrutura de repetição** (**for**) para **percorrer** o **ArrayList** procurando por uma "chave" de busca, ou seja, pelo valor desejado.]{.fontsize80 style="color:darkblue;"}
+
+```{.java code-line-numbers="false"}
+ArrayList<ContaBancaria> contas = new ArrayList<ContaBancaria>();
+//Partes de código omitidas
+public boolean removerConta(String nome){ //Retorno para indicar se remoção ocorreu ou não
+  for(ContaBancaria c: contas){ //Percorrendo a lista de contas bancárias
+    if(c.getNome().equals(nome)){
+      contas.remove(c);
+      return true; //Se uma conta da lista tiver sido removida
+    }
+  }
+  return false; //Se nenhuma conta da lista tiver sido removida
+}
+```
 
 
+## *ArrayList*: Remoção de Elementos
+:::{.fontsize80}
+Ao **removermos** **elementos** de uma **coleção** devemos estar **cientes** da seguinte situação:
 
-## ArrayList: Remoção de um Elemento
+- Se **modificarmos** uma coleção usando o **método** `remove` da mesma **dentro** de um loop **for** ou **for-each**, o sistema irá informar um **erro** (no caso de **for-each**) ou poderá ficar **perdido** (no caso de **for** usando o índice).
+  - Isso acontece porque estamos **modificando** o **tamanho** da coleção ao longo **loop** que **está** sendo **executado**.
+
+[Como resolver esse problema?]{style="color: darkblue;" .fragment}
+
+- Utilzando o **objeto** `Iterator` que, assim como o `ArrayList`, possui o **método** `remove` que podemos usar para **remover** elementos **durante** a **iteração**.
+  - Note que nesse caso utilizaremos o **método** `remove` do `Iterator` (e não do `ArrayList`).
+  - Uma vez que o `Iterator` é informado da **remoção**, ele **mantém** a **iteração** apropriadamente **sincronizada** com a **coleção**.
+:::
+
+
+## *ArrayList*: Remoção de Elementos - Exemplo
+[**Por exemplo**, em uma **lista** de **contas bancárias** eu quero **remover** aquelas cujo **nome** do titular contenha a string "Silva".]{.fontsize90}
+
+. . .
+
+```{.java code-line-numbers="false"}
+ArrayList<String> nomes = new ArrayList<String>();
+//Trechos de código omitidos
+Iterator<String> it = nomes.iterator();
+while(it.hasNext()){
+  String nome = it.next();
+  if(nome.contains("Silva")){
+    it.remove();
+  }
+}  
+```
+
+## Encapsulamento de Coleções
+[**Analise** o exemplo a seguir, onde a **classe** `Agencia` possui uma **coleção** de **contas bancárias**. **Existe** algum **problema** nessa implementação?]{.fontsize80}
+
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="55%"}
+```{.java code-line-numbers="false"}
+import java.util.ArrayList;
+
+public class Agencia{
+    private int codigo;
+    private ArrayList<ContaBancaria> contas;
+    
+    public Agencia(int codigo){
+        this.codigo = codigo;
+        contas = new ArrayList<>();
+    }
+    public ArrayList<ContaBancaria> getContas(){
+        return contas;
+    }
+    public void adicionarConta(ContaBancaria cb){
+        if(!contaCadastrada(cb.getNumero())){
+            contas.add(cb);
+        }
+    }
+    public boolean contaCadastrada(int num){
+        for(ContaBancaria c: contas){
+            if(c.getNumero() == num) 
+              return true;
+        }
+        return false;
+    }
+}
+```
+:::
+::: {.column width="55%"}
+```{.java code-line-numbers="false"}
+public class ContaBancaria{
+  private int numero; 
+  private String nome;
+  private float saldo; 
+  
+  public ContaBancaria(int numero, String nome){
+    this.numero = numero;
+    this.nome = nome;
+  }
+  public int getNumero(){
+    return numero;
+  }
+  public void depositar(float valor){
+    saldo = saldo + valor;
+  }
+  public void sacar(float valor){
+    saldo = saldo - valor;
+  }
+}
+```
+:::
+:::: 
 
 
 ## Encapsulamento de Coleções
+[A classe `App` testa a implementação das classes `Agencia` e `ContaBancaria`.]{.fontsize80}
+
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="70%"}
+```{.java code-line-numbers="false"}
+import java.util.ArrayList;
+public class App{
+    public static void main(String[] args){
+        Agencia ag = new Agencia(0364);
+        ContaBancaria conta1 = new ContaBancaria(5678,"Marco");
+        ContaBancaria conta2 = new ContaBancaria(1234,"Paulo");
+        ContaBancaria conta3 = new ContaBancaria(9012,"Luiz");
+       
+        ag.adicionarConta(conta1);
+        ag.adicionarConta(conta2);
+        ag.adicionarConta(conta3);
+
+        System.out.println("Contas cadastradas:");
+        for(ContaBancaria c: ag.getContas()){
+            System.out.println(c.getNumero());
+        }
+    }
+}
+```
+:::
+::: {.column width="40%" .fontsize80}
+Veja o resultado obtido com a execução desse código:
+![](figuras/saidaTela_contas_cadastradas.png){fig-alt="SaidaTela_contas_cadastradas" fig-align="center" width=70%}
+:::
+::::
+
+
+## Encapsulamento de Coleções
+[E **se alterarmos** a **classe** `App` da maneira apresentada a seguir? Qual será o **resultado** obtido com a **execução** desse **código**?]{.fontsize80}
+
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="70%"}
+```{.java code-line-numbers="false" code-line-numbers="|13-14,|1-21"}
+import java.util.ArrayList;
+public class App{
+    public static void main(String[] args){
+        Agencia ag = new Agencia(0364);
+        ContaBancaria conta1 = new ContaBancaria(5678,"Marco");
+        ContaBancaria conta2 = new ContaBancaria(1234,"Paulo");
+        ContaBancaria conta3 = new ContaBancaria(9012,"Luiz");
+       
+        ag.adicionarConta(conta1);
+        ag.adicionarConta(conta2);
+        ag.adicionarConta(conta3);
+        
+        ArrayList<ContaBancaria> contas = ag.getContas();
+        contas.add(conta1);
+
+        System.out.println("Contas cadastradas:");
+        for(ContaBancaria c: ag.getContas()){
+            System.out.println(c.getNumero());
+        }
+    }
+}
+```
+:::
+::: {.column width="40%" .fontsize80 .fragment}
+Veja o resultado obtido com a execução desse código:
+![](figuras/saidaTela_contas_cadastradas2.png){fig-alt="SaidaTela_contas_cadastradas" fig-align="center" width=70%}
+
+Uma conta bancária foi **cadastrada** **duas vezes**!
+
+![](figuras/animal_assustado.png){fig-alt="SaidaTela_contas_cadastradas" fig-align="center" width=45%}
+:::
+::::
+
+
+## Encapsulamento de Coleções
+[Se você **precisa** de um **método** que **retorne** a **lista** de contas bancárias, a estratégia é **fornecer** uma **versão** "somente-leitura" dessa lista!]{.fontsize80}
+
+- [Isso pode ser feito utilizando-se o `unmodifiableList`, um **método estático** da **classe** `Collections`.]{.fontsize80}
+
+. . .
+
+```{.java code-line-numbers="false" code-line-numbers="|2-3,|11-13,|1-15"}
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+public class Agencia{
+    private int codigo;
+    private ArrayList<ContaBancaria> contas;
+    public Agencia(int codigo){
+        this.codigo = codigo;
+        contas = new ArrayList<>();
+    }
+    public List<ContaBancaria> getContas(){
+        return Collections.unmodifiableList(contas);
+    }
+    //Demais métodos omitidos
+}
+```
+
+
+##
+
+![](figuras/perguntas.png){fig-alt="Perguntas" fig-align="center" width=35%}

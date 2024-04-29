@@ -11,7 +11,7 @@
 <script src="aula9_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula9_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula9_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.551">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Coleções: Listas </title>
@@ -437,16 +437,20 @@
 <p><span class="fontsize90" style="color:darkblue;">O que são estruturas de dados?</span></p>
 <div class="columns" style="display: flex !important; align-items: top;">
 <div class="column" style="width:30%;">
-<p>xxx</p>
-</div><div class="column fontsize90" style="width:70%;">
-<p>Uma estrutura de dados é uma forma particular de armazenar e organizar os dados que serão utilizados por um programa de modo que eles possam ser manipulados de maneira eficiente.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/estruturas_de_dados.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Estruturas_dados"></p>
+</figure>
+</div>
+</div><div class="column fontsize80" style="width:70%;">
+<p>Uma <span class="alert">estrutura de dados</span> é uma <span class="alert">forma</span> particular de <span class="alert">armazenar</span> e <span class="alert">organizar</span> os <span class="alert">dados</span> que serão utilizados por um programa de modo que eles possam ser <span class="alert">manipulados</span> de maneira <span class="alert">eficiente</span>.</p>
 </div>
 </div>
 <p><span class="fontsize90 fragment" style="color:darkblue;">O que estudaremos?</span></p>
-<div class="fontsize90 fragment">
-<p>Nesta disciplina veremos como utilizar em nossos programas uma importante estrutura de dados (chamada em Java de coleção).</p>
+<div class="fontsize80 fragment">
+<p>Veremos como utilizar em nossos programas uma <strong>importante estrutura de dados</strong> (chamada em Java de <strong>coleção</strong>).</p>
 <ul>
-<li class="fragment">Listas.</li>
+<li class="fragment"><strong>Listas</strong>.</li>
 </ul>
 </div>
 </section>
@@ -454,42 +458,50 @@
 <h2>Coleções</h2>
 <div class="fontsize90">
 <ul>
-<li class="fragment">O pacote <code>java.util</code> fornece classes que implementam as coleções.</li>
-<li class="fragment">Mas o que é uma coleção?
+<li class="fragment">O pacote <code>java.util</code> fornece <strong>classes</strong> que implementam as <strong>coleções</strong>.</li>
+<li class="fragment"><span style="color:darkblue;">Mas o que é uma coleção?</span>
 <ul>
-<li class="fragment">Podemos dizer que é um conjunto de objetos de mesma natureza.</li>
-<li class="fragment">Exemplos: coleção de músicas, coleção de carros, coleção de moedas etc.</li>
+<li class="fragment">Podemos dizer que é um <span class="alert">conjunto</span> de <span class="alert">objetos</span> de <span class="alert">mesma natureza</span>.</li>
+<li class="fragment"><strong>Exemplos:</strong> coleção de músicas, coleção de carros, coleção de moedas etc.</li>
 </ul></li>
-<li class="fragment">Em Java, uma coleção é representada por uma classe. Portanto, as operações sobre coleções são realizadas a partir dos métodos implementados nessas classes.</li>
-<li class="fragment">Quais operações podemos fazer em uma coleção?
+<li class="fragment">Em Java, uma <strong>coleção</strong> é <strong>representada</strong> por uma <strong>classe</strong>. Portanto, as <strong>operações</strong> sobre <strong>coleções</strong> são realizadas a partir dos <strong>métodos</strong> <strong>implementados</strong> nessas <strong>classes</strong>.</li>
+<li class="fragment">Quais <strong>operações</strong> podemos fazer em uma <strong>coleção</strong>?
 <ul>
-<li class="fragment">Adicionar um novo objeto na coleção.</li>
-<li class="fragment">Remover um objeto da coleção.</li>
-<li class="fragment">Buscar os objetos na coleção.</li>
+<li class="fragment"><strong>Adicionar</strong> um novo objeto na coleção.</li>
+<li class="fragment"><strong>Remover</strong> um objeto da coleção.</li>
+<li class="fragment"><strong>Buscar</strong> os objetos na coleção.</li>
 </ul></li>
 </ul>
 </div>
 </section>
 <section id="relembrando" class="slide level2">
 <h2>Relembrando…</h2>
-<div class="fontsize90">
-<p>Antes de conhecer a classe que implementa a estrutura de dados, vamos recordar de algo que já utilizamos…</p>
+<div class="columns" style="display: flex !important; height: 70%; align-items: center;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/professor1-1.png" class="quarto-figure quarto-figure-center" style="width:50.0%" alt="Professor"></p>
+</figure>
+</div>
+</div><div class="column fontsize90" style="width:70%;">
+<p><strong>Antes</strong> de conhecer a <strong>classe</strong> que <strong>implementa</strong> a estrutura de dados, vamos <strong>recordar</strong> de algo que já <strong>utilizamos</strong>…</p>
 <ul>
-<li class="fragment">O que já usamos para armazenar conjuntos de dados de mesmo tipo em nossos programas?
+<li class="fragment">O que <strong>já usamos</strong> para <strong>armazenar</strong> conjuntos de <strong>dados</strong> de <strong>mesmo</strong> <strong>tipo</strong> em nossos programas?
 <ul>
-<li class="fragment">Já utilizamos os vetores (arrays)!</li>
+<li class="fragment">Já utilizamos os <strong>vetores</strong> (<em>arrays</em>)!</li>
 </ul></li>
 </ul>
+</div>
 </div>
 </section>
 <section id="relembrando-1" class="slide level2">
 <h2>Relembrando…</h2>
 <div class="fontsize70">
-<p>Então vamos relembrar algumas coisas importantes sobre vetores:</p>
+<p>Então vamos <strong>lembrar</strong> algumas <strong>coisas</strong> <strong>importantes</strong> sobre <strong>vetores</strong>:</p>
 <ul>
-<li class="fragment">Em Java, os vetores são considerados objetos.</li>
-<li class="fragment">Um vetor pode conter elementos de tipos primitivos (int, float, double etc.) ou de tipos por referência (para objetos).</li>
-<li class="fragment">Exemplo de declaração de um vetor:</li>
+<li class="fragment">Em Java, os <strong>vetores</strong> <strong>são</strong> considerados <strong>objetos</strong>.</li>
+<li class="fragment">Um <strong>vetor</strong> pode conter elementos de <strong>tipos primitivos</strong> (<code>int</code>, <code>float</code>, <code>double</code> etc.) ou de <strong>tipos por referência</strong> (para <strong>objetos</strong>).</li>
+<li class="fragment"><strong>Exemplo</strong> de <strong>declaração</strong> de um vetor:</li>
 </ul>
 </div>
 <div class="fragment">
@@ -502,7 +514,7 @@
 </div>
 <div class="fontsize70">
 <ul>
-<li class="fragment">Exemplo de modificação dos valores de um vetor de inteiros:</li>
+<li class="fragment"><strong>Exemplo</strong> de <strong>modificação</strong> dos valores de um vetor de inteiros:</li>
 </ul>
 </div>
 </div>
@@ -518,7 +530,7 @@
 </div>
 <div class="fontsize70">
 <ul>
-<li class="fragment">Exemplo de vetor passado por parâmetro para método:</li>
+<li class="fragment"><strong>Exemplo</strong> de <strong>vetor</strong> passado por <strong>parâmetro</strong> para método:</li>
 </ul>
 </div>
 </div>
@@ -539,45 +551,53 @@
 </section>
 <section id="desvantagem-dos-vetores" class="slide level2">
 <h2>Desvantagem dos Vetores</h2>
-<p><span class="fontsize80">Apesar da sua utilidade, os vetores têm uma limitação: são estruturas de dados estáticas!</span></p>
+<p><span class="fontsize80">Apesar da sua utilidade, os <strong>vetores</strong> têm uma <strong>limitação</strong>: são estruturas de dados <strong>estáticas</strong>!</span></p>
 <div class="fragment">
 <div class="columns" style="display: flex !important; align-items: top;">
 <div class="column" style="width:20%;">
-<p>xxx</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pessoa_com_problema_metade.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Pessoa_problema_metade"></p>
+</figure>
+</div>
 </div><div class="column fontsize80" style="width:80%;">
-<p>E o que isso significa?</p>
+<p><span style="color:darkblue;">E o que isso significa?</span></p>
 <ul>
-<li class="fragment">Significa que o seu tamanho, definido no momento de sua declaração, é fixo.</li>
+<li class="fragment">Significa que o <strong>seu tamanho</strong>, definido no momento de sua declaração, <strong>é fixo</strong>.</li>
 </ul>
 </div>
 </div>
 </div>
 <div class="fragment">
 <p><span class="fontsize80" style="color:darkblue;">Nesse caso, como eu faço se não souber quantos elementos eu terei que armazenar em um determinado vetor?</span></p>
-<div class="columns" style="display: flex !important; align-items: top;">
+<div class="columns fragment" style="display: flex !important; align-items: top;">
 <div class="column fontsize80" style="width:80%;">
 <ul>
-<li class="fragment">Nesse caso a única opção é “estimar” o tamanho necessário do vetor, podendo resultar em duas situações:
+<li class="fragment">Nesse caso a <strong>única opção</strong> é “estimar” o <strong>tamanho</strong> necessário do vetor, podendo resultar em <strong>duas situações</strong>:
 <ul>
-<li class="fragment">Desperdiço de memória se você estimar um tamanho maior do que é realmente necessário.</li>
-<li class="fragment">Não conseguir armazenar todos os elementos se você estimar um tamanho menor do que realmente é necessário</li>
+<li class="fragment"><strong>Desperdiço de memória</strong> se você estimar um tamanho maior do que é realmente necessário.</li>
+<li class="fragment"><strong>Não</strong> conseguir <strong>armazenar</strong> <strong>todos</strong> os <strong>elementos</strong> se você estimar um tamanho menor do que realmente é necessário.</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:20%;">
-<p>yyy</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/professor3_metade.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Professor3_metade"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 </section>
 <section id="classe-arraylist" class="slide level2">
-<h2>Classe ArrayList</h2>
+<h2>Classe <em>ArrayList</em></h2>
 <div class="fontsize80">
-<p>A classe <code>ArrayList</code> implementa uma lista!</p>
+<p>A <strong>classe</strong> <code>ArrayList</code> implementa uma <strong>lista</strong>!</p>
 <ul>
-<li class="fragment">Nessa lista, a ordem dos seus elementos é a mesma da inserção e o acesso aos mesmos pode ser feito pela sua posição.</li>
-<li class="fragment">A classe de coleção ArrayList<span class="math inline">\(&lt;\)</span>T<span class="math inline">\(&gt;\)</span> fornece uma solução conveniente quando necessita-se de uma estrutura que possa alterar dinamicamente seu tamanho para acomodar mais elementos.
+<li class="fragment">Nessa <strong>lista</strong>, a <strong>ordem</strong> dos seus elementos é a <strong>mesma</strong> da <strong>inserção</strong> e o <strong>acesso</strong> aos mesmos <strong>pode</strong> ser <strong>feito</strong> pela sua <strong>posição</strong>.</li>
+<li class="fragment">A <strong>classe</strong> de coleção <em>ArrayList</em><span class="math inline">\(&lt;\)</span>T<span class="math inline">\(&gt;\)</span> fornece uma solução conveniente quando necessita-se de uma <strong>estrutura</strong> que possa <strong>alterar</strong> <strong>dinamicamente</strong> seu <strong>tamanho</strong> para acomodar mais elementos.
 <ul>
-<li class="fragment">O T<span class="math inline">\(^1\)</span> corresponde ao tipo dos elementos que você deseja armazenar no ArrayList.<br>
+<li class="fragment">O T<span class="math inline">\(^1\)</span> corresponde ao <strong>tipo</strong> dos <strong>elementos</strong> que você deseja <strong>armazenar</strong> no <code>ArrayList</code>.<br>
 </li>
 </ul></li>
 </ul>
@@ -585,11 +605,11 @@
 <div class="columns fragment" style="display: flex !important; align-items: top;">
 <div class="column fontsize80" style="width:20%;">
 <ul>
-<li>Exemplo:</li>
+<li><strong>Exemplo:</strong></li>
 </ul>
 </div><div class="column" style="width:80%;">
 <div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> nomes<span class="op">;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><span class="fontsize80">Nesse caso estamos declarando a variável nomes, do tipo ArrayList de strings, ou seja, para armazenar elementos do tipo String.</span></p>
+<p><span class="fontsize80">Nesse caso estamos <strong>declarando</strong> a <strong>variável</strong> <code>nomes</code>, do tipo <code>ArrayList</code> de <strong>strings</strong>, ou seja, para armazenar elementos do tipo <code>String</code>.</span></p>
 </div>
 </div>
 <div class="fontsize70 fragment">
@@ -597,14 +617,14 @@
 </div>
 </section>
 <section id="classe-arraylist-1" class="slide level2">
-<h2>Classe ArrayList</h2>
+<h2>Classe <em>ArrayList</em></h2>
 <div class="fontsize80">
-<p>Para instanciar um <code>ArrayList</code> podemos fazer da seguinte maneira:</p>
+<p>Para <strong>instanciar</strong> um <code>ArrayList</code> podemos fazer da seguinte maneira:</p>
 </div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> nomes<span class="op">;</span></span>
 <span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a>nomes <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<p><span class="fontsize80">Os principais métodos são:</span></p>
+<p><span class="fontsize80">Os <strong>principais</strong> <strong>métodos</strong> são:</span></p>
 <div class="fontsize60">
 <table class="table-bordered">
 <colgroup>
@@ -648,7 +668,7 @@
 </div>
 </section>
 <section id="exemplo-1-com-a-classe-arraylist" class="slide level2">
-<h2>Exemplo 1 com a Classe ArrayList</h2>
+<h2>Exemplo 1 com a Classe <em>ArrayList</em></h2>
 <div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode java code-annotation-code code-with-copy code-annotated"><code class="sourceCode java"><a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">ArrayList</span><span class="op">;</span></span>
 <span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-2-3"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
@@ -683,7 +703,7 @@
 </dl>
 </section>
 <section id="percorrendo-um-arraylist" class="slide level2">
-<h2>Percorrendo um ArrayList</h2>
+<h2>Percorrendo um <em>ArrayList</em></h2>
 <div class="columns" style="display: flex !important; align-items: top;">
 <div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
@@ -692,7 +712,7 @@
 </figure>
 </div>
 </div><div class="column" style="width:70%;">
-<p><span class="fontsize80">Podemos percorrer um ArrayList da mesma maneira que utilizamos para percorrer um vetor (<em>array</em>), ou seja, usando uma estrutura de repetição <code>for</code>.</span></p>
+<p><span class="fontsize80">Podemos <em>percorrer</em> um <code>ArrayList</code> da <strong>mesma maneira</strong> que utilizamos para <strong>percorrer</strong> um <strong>vetor</strong> (<em>array</em>), ou seja, usando uma <strong>estrutura de repetição</strong> <code>for</code>.</span></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> nomes <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span>
 <span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> nomes<span class="op">.</span><span class="fu">size</span><span class="op">();</span> i<span class="op">++){</span></span>
 <span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>nomes<span class="op">.</span><span class="fu">get</span><span class="op">(</span>i<span class="op">));</span></span>
@@ -702,15 +722,15 @@
 <div class="fragment">
 <div class="columns" style="display: flex !important; align-items: top;">
 <div class="column" style="width:70%;">
-<p><span class="fontsize80">No entanto, podemos fazer a mesma coisa usando uma “nova” estrutura de repetição denominada <strong>for-each</strong> (para cada)</span></p>
-<div class="sourceCode" id="annotated-cell-10"><pre class="sourceCode java code-annotation-code code-with-copy code-annotated"><code class="sourceCode java"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> nomes <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-10-2" class="code-annotation-target"><a href="#annotated-cell-10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(</span><span class="bu">String</span> item<span class="op">:</span> nomes<span class="op">){</span></span>
-<span id="annotated-cell-10-3"><a href="#annotated-cell-10-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>item<span class="op">);</span></span>
-<span id="annotated-cell-10-4"><a href="#annotated-cell-10-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>  </span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="fontsize80">No entanto, podemos <strong>fazer</strong> a <strong>mesma</strong> <strong>coisa</strong> usando uma “nova” <strong>estrutura de repetição</strong> denominada <strong>for-each</strong> (para cada).</span></p>
+<div class="sourceCode" id="annotated-cell-16"><pre class="sourceCode java code-annotation-code code-with-copy code-annotated"><code class="sourceCode java"><span id="annotated-cell-16-1"><a href="#annotated-cell-16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> nomes <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-16" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-16-2" class="code-annotation-target"><a href="#annotated-cell-16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(</span><span class="bu">String</span> item<span class="op">:</span> nomes<span class="op">){</span></span>
+<span id="annotated-cell-16-3"><a href="#annotated-cell-16-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>item<span class="op">);</span></span>
+<span id="annotated-cell-16-4"><a href="#annotated-cell-16-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>  </span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
-<dt class="fragment" data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
+<dt class="fragment" data-target-cell="annotated-cell-16" data-target-annotation="1">1</dt>
 <dd class="fragment">
-<span data-code-cell="annotated-cell-10" data-code-lines="2" data-code-annotation="1"><span class="fontsize60">Em cada iteração, essa variável <code>item</code> referencia um elemento do <code>ArrayList</code>.</span></span>
+<span data-code-cell="annotated-cell-16" data-code-lines="2" data-code-annotation="1"><span class="fontsize60">Em cada iteração, essa variável <code>item</code> referencia um elemento do <code>ArrayList</code>.</span></span>
 </dd>
 </dl>
 </div><div class="column" style="width:30%;">
@@ -727,7 +747,7 @@
 </div>
 </section>
 <section id="exemplo-2-com-a-classe-arraylist" class="slide level2">
-<h2>Exemplo 2 com a Classe ArrayList</h2>
+<h2>Exemplo 2 com a Classe <em>ArrayList</em></h2>
 <div class="sourceCode" id="cb7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">ArrayList</span><span class="op">;</span></span>
 <span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
@@ -745,16 +765,52 @@
 <span id="cb7-15"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
 <span id="cb7-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="arraylist-de-tipos-primitivos" class="slide level2">
-<h2>ArrayList de Tipos Primitivos</h2>
+<section id="percorrendo-um-arraylist-com-iterador" class="slide level2">
+<h2>Percorrendo um <em>ArrayList</em> com Iterador</h2>
 <div class="fontsize80">
-<p><span style="color:darkblue">Vamos supor que eu queira usar um <code>ArrayList</code> para armazenar uma coleção de número inteiros.</span></p>
+<p>Examinar <strong>cada</strong> <strong>item</strong> de uma <strong>coleção</strong> é algo tão comum que a <strong>classe</strong> <code>ArrayList</code> fornece uma maneira “especial” de <strong>iterar</strong> pelo conteúdo.</p>
+<ul>
+<li class="fragment">O <strong>método</strong> <code>iterator</code> de <code>ArrayList</code> retorna um <strong>objeto</strong> <code>Iterator</code>.
+<ul>
+<li class="fragment"><code>Iterator</code> é um <strong>objeto</strong> que fornece <strong>funcionalidade</strong> para <strong>iterar</strong> por <strong>todos</strong> os <strong>elementos</strong> de uma <strong>coleção</strong>.</li>
+<li class="fragment"><code>Iterator</code> <strong>fornece</strong> dois <strong>métodos</strong> para <strong>iterar</strong> por uma <strong>coleção</strong>: <code>hasNext</code> e <code>next</code>.</li>
+</ul></li>
+<li class="fragment">Exemplo:</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode java code-annotation-code code-with-copy code-annotated"><code class="sourceCode java"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> nomes <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span>
+<span id="annotated-cell-4-2"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a><span class="co">//Trechos de código omitidos</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Iterator</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> it <span class="op">=</span> nomes<span class="op">.</span><span class="fu">iterator</span><span class="op">();</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span><span class="op">(</span>it<span class="op">.</span><span class="fu">hasNext</span><span class="op">()){</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-4-5" class="code-annotation-target"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>it<span class="op">.</span><span class="fu">next</span><span class="op">());</span></span>
+<span id="annotated-cell-4-6"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>  </span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt class="fragment" data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="1"><span class="fontsize60">Como <code>Iterator</code> também é tipo genérico, precisamos parametrizá-lo com o tipo de elemento da coleção.</span></span>
+</dd>
+<dt class="fragment" data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="2"><span class="fontsize60">Utilizamos o <code>Iterator</code> repetidamente para verificar se há mais elementos na coleção.</span></span>
+</dd>
+<dt class="fragment" data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-4" data-code-lines="5" data-code-annotation="3"><span class="fontsize60">O método <code>next</code> é usado para obtenção do próximo elemento.</span></span>
+</dd>
+</dl>
+</div>
+</section>
+<section id="arraylist-de-tipos-primitivos" class="slide level2">
+<h2><em>ArrayList</em> de Tipos Primitivos</h2>
+<div class="fontsize80">
+<p><span style="color:darkblue">Vamos supor que eu queira usar um <strong>ArrayList</strong> para armazenar uma coleção de números inteiros.</span></p>
 </div>
 <div class="fragment">
 <div class="columns" style="display: flex !important; align-items: top;">
 <div class="column fontsize80" style="width:70%;">
 <ul>
-<li>Para isso, coloco no meu programa a seguinte declaração:</li>
+<li>Para isso, <strong>coloco</strong> no meu programa a <strong>seguinte</strong> <strong>declaração</strong>:</li>
 </ul>
 </div><div class="column" style="width:30%;">
 <div class="sourceCode" id="cb8"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> num<span class="op">;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -772,7 +828,7 @@
 </div><div class="column fontsize80" style="width:80%;">
 <p><span style="color:darkblue;">Isso vai funcionar?</span></p>
 <ul>
-<li class="fragment">Não!<br> <img data-src="figuras/terminal_erro_arraylist.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Jovem"></li>
+<li class="fragment"><strong>Não!</strong><br> <img data-src="figuras/terminal_erro_arraylist.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Jovem"></li>
 <li class="fragment">A classe <code>ArrayList</code> aceita <strong>somente</strong> <strong>tipos</strong> por <strong>referência</strong> (objetos) como elementos.</li>
 <li class="fragment">O <code>int</code> em Java é um <strong>tipo primitivo</strong>.</li>
 </ul>
@@ -784,57 +840,60 @@
 </div>
 </section>
 <section id="arraylist-de-tipos-primitivos-1" class="slide level2">
-<h2>ArrayList de Tipos Primitivos</h2>
-<p><span class="fontsize90" style="color:darkblue;">Como resolver o problema?</span></p>
+<h2><em>ArrayList</em> de Tipos Primitivos</h2>
+<p><span class="fontsize80" style="color:darkblue;">Como resolver o problema?</span></p>
 <ul>
-<li class="fragment"><span class="fontsize90">O Java possui um mecanismo conhecido como <em>boxing</em>, que permite que valores primitivos sejam empacotados como objetos para uso com classes genéricas.</span></li>
+<li class="fragment"><span class="fontsize80">O Java possui um <strong>mecanismo</strong> conhecido como <em>boxing</em>, que permite que <strong>valores primitivos</strong> sejam <strong>empacotados</strong> como <strong>objetos</strong> para uso com classes genéricas.</span></li>
 </ul>
 <div class="fragment">
 <ul>
-<li><span class="fontsize90">Desse modo, para armazenar inteiros em um ArrayList usamos a classe Integer.</span></li>
+<li><span class="fontsize80">Desse modo, para armazenar <strong>inteiros</strong> em um <code>ArrayList</code> usamos a classe <code>Integer</code>.</span></li>
 </ul>
 <div class="sourceCode" id="cb9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> num <span class="op">=</span> <span class="kw">new</span> ArrayListInteger<span class="op">&gt;();</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="fontsize90">
+<div class="fontsize80 fragment">
 <ul>
-<li class="fragment">E o compilador nos ajuda com o autoboxing, ou seja:
+<li>E o compilador nos ajuda com o <em>autoboxing</em>, ou seja:
 <ul>
-<li class="fragment">Sempre que necessário, o tipo int é empacotado como um objeto Integer ou um valor int dentro de um objeto Integer é desempacotado.</li>
+<li><strong>Sempre</strong> que necessário, o tipo <code>int</code> é <strong>empacotado</strong> como um <strong>objeto</strong> <code>Integer</code> ou um <strong>valor</strong> <code>int</code> dentro de um <strong>objeto</strong> <code>Integer</code> é <strong>desempacotado</strong>.</li>
 </ul></li>
-<li class="fragment">Desse modo, declaramos um ArrayList de Integer mas podemos lidar com os dados normalmente como se fossem do tipo int.</li>
+</ul>
+</div>
+<div class="fontsize80">
+<ul>
+<li class="fragment">Desse modo, <strong>declaramos</strong> um <code>ArrayList</code> de <code>Integer</code> mas podemos <strong>lidar</strong> com os dados normalmente <strong>como se fossem</strong> do tipo <code>int</code>.</li>
 </ul>
 </div>
 </section>
 <section id="arraylist-de-tipos-primitivos---exemplo" class="slide level2">
-<h2>ArrayList de Tipos Primitivos - Exemplo</h2>
+<h2><em>ArrayList</em> de Tipos Primitivos - Exemplo</h2>
 <div class="sourceCode" id="cb10"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">ArrayList</span><span class="op">;</span></span>
 <span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
 <span id="cb10-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
-<span id="cb10-6"><a href="" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> num <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;();</span></span>
-<span id="cb10-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> x <span class="op">=</span> <span class="dv">20</span><span class="op">;</span></span>
-<span id="cb10-9"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb10-10"><a href="" aria-hidden="true" tabindex="-1"></a>    num<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">3</span><span class="op">);</span></span>
-<span id="cb10-11"><a href="" aria-hidden="true" tabindex="-1"></a>    num<span class="op">.</span><span class="fu">add</span><span class="op">(-</span><span class="dv">5</span><span class="op">);</span></span>
-<span id="cb10-12"><a href="" aria-hidden="true" tabindex="-1"></a>    num<span class="op">.</span><span class="fu">add</span><span class="op">(</span>x<span class="op">);</span></span>
-<span id="cb10-13"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb10-14"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> e<span class="op">:</span> num<span class="op">){</span></span>
-<span id="cb10-15"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span>e <span class="op">+</span> <span class="st">" "</span><span class="op">);</span></span>
-<span id="cb10-16"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb10-17"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">();</span></span>
-<span id="cb10-18"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
-<span id="cb10-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> num <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;();</span></span>
+<span id="cb10-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> x <span class="op">=</span> <span class="dv">20</span><span class="op">;</span></span>
+<span id="cb10-8"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-9"><a href="" aria-hidden="true" tabindex="-1"></a>    num<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">3</span><span class="op">);</span></span>
+<span id="cb10-10"><a href="" aria-hidden="true" tabindex="-1"></a>    num<span class="op">.</span><span class="fu">add</span><span class="op">(-</span><span class="dv">5</span><span class="op">);</span></span>
+<span id="cb10-11"><a href="" aria-hidden="true" tabindex="-1"></a>    num<span class="op">.</span><span class="fu">add</span><span class="op">(</span>x<span class="op">);</span></span>
+<span id="cb10-12"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-13"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> e<span class="op">:</span> num<span class="op">){</span></span>
+<span id="cb10-14"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span>e <span class="op">+</span> <span class="st">" "</span><span class="op">);</span></span>
+<span id="cb10-15"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb10-16"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">();</span></span>
+<span id="cb10-17"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb10-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figuras/terminal_arraylist_integer.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Terminal_arraylist_integer"></p>
+<p><img data-src="figuras/terminal_arraylist_integer.png" class="quarto-figure quarto-figure-center" style="width:50.0%" alt="Terminal_arraylist_integer"></p>
 </figure>
 </div>
 </section>
 <section id="arraylist-de-tipos-primitivos-2" class="slide level2">
-<h2>ArrayList de Tipos Primitivos</h2>
-<p><span style="color:darkblue;">Cada tipo primitivo tem uma classe equivalente em Java:</span></p>
+<h2><em>ArrayList</em> de Tipos Primitivos</h2>
+<p><span style="color:darkblue;">Cada <strong>tipo primitivo</strong> tem uma <strong>classe equivalente</strong> em Java:</span></p>
 <div>
 <ul>
 <li>int <span class="math inline">\(\rightarrow\)</span> Integer</li>
@@ -846,58 +905,295 @@
 </div>
 </section>
 <section id="arraylist-busca-usando-uma-chave" class="slide level2">
-<h2>ArrayList: Busca Usando uma “Chave”</h2>
-<div class="columns" style="display: flex !important; align-items: center;">
-<div class="column fontsize80" style="width:50%;">
-<p>Já vimos que podemos usar o índice para obtermos o elemento contido numa dada posição do ArrayList.</p>
-</div><div class="column" style="width:60%;">
+<h2><em>ArrayList</em>: Busca Usando uma “Chave”</h2>
+<div class="fontsize90">
+<p>Já vimos que <strong>podemos</strong> <strong>usar</strong> o <strong>índice</strong> para obtermos o elemento contido numa <strong>dada</strong> <strong>posição</strong> do <code>ArrayList</code>.</p>
+</div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> notas <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;();</span></span>
 <span id="cb11-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> notas<span class="op">.</span><span class="fu">get</span><span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
 <span id="cb11-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">printf</span><span class="op">(</span><span class="st">"A nota do aluno é </span><span class="sc">%d</span><span class="st">"</span><span class="op">,</span> x<span class="op">);</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<p><span class="fontsize80" style="color:darkblue;">Mas e se eu desejar encontrar um elemento na lista a partir de suas características?</span></p>
-<ul>
-<li class="fragment"><span class="fontsize80">Por exemplo, em uma lista de contas bancárias eu preciso encontar aquela cujo número é 1234.</span></li>
-</ul>
 <div class="columns" style="display: flex !important; align-items: top;">
-<div class="column fontsize80" style="width:50%;">
-<p>Nesse caso, podemos usar uma estrutura de repetição <code>for</code> para percorrer o ArrayList procurando por uma “chave” de busca, ou seja, pelo valor desejado (no nosso caso desejamos encontrar a conta bancária número 1234.)</p>
-</div><div class="column" style="width:50%;">
-<div class="sourceCode" id="annotated-cell-14"><pre class="sourceCode java code-annotation-code code-with-copy code-annotated"><code class="sourceCode java"><span id="annotated-cell-14-1"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span>ContaBancaria<span class="op">&gt;</span> contas<span class="op">;</span></span>
-<span id="annotated-cell-14-2"><a href="#annotated-cell-14-2" aria-hidden="true" tabindex="-1"></a>contas <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span>ContaBancaria<span class="op">&gt;();</span></span>
-<span id="annotated-cell-14-3"><a href="#annotated-cell-14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">...</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-14-4" class="code-annotation-target"><a href="#annotated-cell-14-4" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> ContaBancaria <span class="fu">buscarConta</span><span class="op">(</span><span class="dt">int</span> num<span class="op">){</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-14-5" class="code-annotation-target"><a href="#annotated-cell-14-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span><span class="op">(</span>ContaBancaria c<span class="op">:</span> contas<span class="op">){</span></span>
-<span id="annotated-cell-14-6"><a href="#annotated-cell-14-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(</span>c<span class="op">.</span><span class="fu">getNumero</span><span class="op">()</span> <span class="op">==</span> num<span class="op">)</span> <span class="cf">return</span> c<span class="op">;</span></span>
-<span id="annotated-cell-14-7"><a href="#annotated-cell-14-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-14-8" class="code-annotation-target"><a href="#annotated-cell-14-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">null</span><span class="op">;</span></span>
-<span id="annotated-cell-14-9"><a href="#annotated-cell-14-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/jovem.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Jovem"></p>
+</figure>
+</div>
+</div><div class="column fontsize90" style="width:70%;">
+<p><span style="color:darkblue;">Mas e se eu desejar <strong>encontrar</strong> um <strong>elemento</strong> na lista <strong>a partir</strong> de suas <strong>características</strong>?</span></p>
+<ul>
+<li class="fragment"><strong>Por exemplo</strong>, em uma <strong>lista</strong> de <strong>contas bancárias</strong> eu preciso encontar aquela cujo <strong>número</strong> é 1234.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="arraylist-busca-usando-uma-chave-1" class="slide level2">
+<h2><em>ArrayList</em>: Busca Usando uma “Chave”</h2>
+<div class="fontsize80">
+<p>Nesse caso, podemos <strong>usar</strong> uma <strong>estrutura de repetição</strong> <code>for</code> para <strong>percorrer</strong> o <code>ArrayList</code> procurando por uma “chave” de busca, ou seja, pelo <strong>valor desejado</strong> (no nosso caso desejamos encontrar a <strong>conta bancária</strong> <strong>número</strong> 1234.)</p>
+</div>
+<div class="sourceCode" id="annotated-cell-7"><pre class="sourceCode java code-annotation-code code-with-copy code-annotated"><code class="sourceCode java"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span>ContaBancaria<span class="op">&gt;</span> contas<span class="op">;</span></span>
+<span id="annotated-cell-7-2"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a>contas <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span>ContaBancaria<span class="op">&gt;();</span></span>
+<span id="annotated-cell-7-3"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">...</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-7-4" class="code-annotation-target"><a href="#annotated-cell-7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> ContaBancaria <span class="fu">buscarConta</span><span class="op">(</span><span class="dt">int</span> num<span class="op">){</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-7-5" class="code-annotation-target"><a href="#annotated-cell-7-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span><span class="op">(</span>ContaBancaria c<span class="op">:</span> contas<span class="op">){</span></span>
+<span id="annotated-cell-7-6"><a href="#annotated-cell-7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(</span>c<span class="op">.</span><span class="fu">getNumero</span><span class="op">()</span> <span class="op">==</span> num<span class="op">)</span> <span class="cf">return</span> c<span class="op">;</span></span>
+<span id="annotated-cell-7-7"><a href="#annotated-cell-7-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-7-8" class="code-annotation-target"><a href="#annotated-cell-7-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="annotated-cell-7-9"><a href="#annotated-cell-7-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
-<dt class="fragment" data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
+<dt class="fragment" data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd class="fragment">
-<span data-code-cell="annotated-cell-14" data-code-lines="4" data-code-annotation="1">Método para buscar uma conta número <code>num</code> e, se encontar, retornando o objeto <code>ContaBancaria</code> correspondente.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="4" data-code-annotation="1"><span class="fontsize70">Método para buscar uma conta número <code>num</code> e, se encontar, retornar o objeto <code>ContaBancaria</code> correspondente.</span></span>
 </dd>
-<dt class="fragment" data-target-cell="annotated-cell-14" data-target-annotation="2">2</dt>
+<dt class="fragment" data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd class="fragment">
-<span data-code-cell="annotated-cell-14" data-code-lines="5" data-code-annotation="2">Percorrendo a lista de contas bancárias.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="5" data-code-annotation="2"><span class="fontsize70">Percorrendo a lista de contas bancárias.</span></span>
 </dd>
-<dt class="fragment" data-target-cell="annotated-cell-14" data-target-annotation="3">3</dt>
+<dt class="fragment" data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
 <dd class="fragment">
-<span data-code-cell="annotated-cell-14" data-code-lines="8" data-code-annotation="3">Se nenhuma conta da lista tiver o número <code>num</code>, o <em>null</em> será retornado para indicar que a conta não foi encontrada.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="8" data-code-annotation="3"><span class="fontsize70">Se nenhuma conta da lista tiver o número <code>num</code>, o <em>null</em> será retornado para indicar que a conta não foi encontrada.</span></span>
 </dd>
 </dl>
-</div>
-</div>
 </section>
 <section id="arraylist-remoção-de-um-elemento" class="slide level2">
-<h2>ArrayList: Remoção de um Elemento</h2>
+<h2><em>ArrayList</em>: Remoção de um Elemento</h2>
+<p><span class="fontsize80">Também <strong>podemos</strong> usar o <strong>índice</strong> para <strong>remover</strong> um elemento contido numa dada posição do <code>ArrayList</code>.</span></p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:70%;">
+<div class="sourceCode" id="cb12"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb12-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">ArrayList</span><span class="op">;</span></span>
+<span id="cb12-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
+<span id="cb12-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
+<span id="cb12-4"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> notas <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb12-5"><a href="" aria-hidden="true" tabindex="-1"></a>        notas<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">78</span><span class="op">);</span></span>
+<span id="cb12-6"><a href="" aria-hidden="true" tabindex="-1"></a>        notas<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">95</span><span class="op">);</span></span>
+<span id="cb12-7"><a href="" aria-hidden="true" tabindex="-1"></a>        notas<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">87</span><span class="op">);</span></span>
+<span id="cb12-8"><a href="" aria-hidden="true" tabindex="-1"></a>        notas<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">61</span><span class="op">);</span></span>
+<span id="cb12-9"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Notas dos alunos:"</span><span class="op">);</span></span>
+<span id="cb12-10"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> n<span class="op">:</span> notas<span class="op">){</span></span>
+<span id="cb12-11"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>n<span class="op">);</span></span>
+<span id="cb12-12"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb12-13"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co">//Removendo o elemento da posição 1</span></span>
+<span id="cb12-14"><a href="" aria-hidden="true" tabindex="-1"></a>        notas<span class="op">.</span><span class="fu">remove</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
+<span id="cb12-15"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Notas dos alunos após remoção:"</span><span class="op">);</span></span>
+<span id="cb12-16"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> n<span class="op">:</span> notas<span class="op">){</span></span>
+<span id="cb12-17"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>n<span class="op">);</span></span>
+<span id="cb12-18"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb12-19"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb12-20"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize80" style="width:40%;">
+<p>Resultado obtido ao executarmos o código: <img data-src="figuras/saidaTela_remocao.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="SaidaTela_remocao"></p>
+</div>
+</div>
 </section>
 <section id="arraylist-remoção-de-um-elemento-1" class="slide level2">
-<h2>ArrayList: Remoção de um Elemento</h2>
+<h2><em>ArrayList</em>: Remoção de um Elemento</h2>
+<div class="fontsize80">
+<p>Mas e se eu <strong>desejasse remover</strong> um elemento da <strong>lista</strong> a <strong>partir</strong> de alguma de <strong>suas características</strong>?</p>
+<ul>
+<li><strong>Por exemplo</strong>, em uma <strong>lista</strong> de <strong>contas bancárias</strong> eu quero <strong>remover</strong> aquela cujo <strong>nome</strong> do titular é Reginaldo.</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="fontsize80" style="color:darkblue;">Nesse caso, podemos <strong>usar</strong> uma <strong>estrutura de repetição</strong> (<strong>for</strong>) para <strong>percorrer</strong> o <strong>ArrayList</strong> procurando por uma “chave” de busca, ou seja, pelo valor desejado.</span></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb13-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span>ContaBancaria<span class="op">&gt;</span> contas <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span>ContaBancaria<span class="op">&gt;();</span></span>
+<span id="cb13-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Partes de código omitidas</span></span>
+<span id="cb13-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">removerConta</span><span class="op">(</span><span class="bu">String</span> nome<span class="op">){</span> <span class="co">//Retorno para indicar se remoção ocorreu ou não</span></span>
+<span id="cb13-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span><span class="op">(</span>ContaBancaria c<span class="op">:</span> contas<span class="op">){</span> <span class="co">//Percorrendo a lista de contas bancárias</span></span>
+<span id="cb13-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(</span>c<span class="op">.</span><span class="fu">getNome</span><span class="op">().</span><span class="fu">equals</span><span class="op">(</span>nome<span class="op">)){</span></span>
+<span id="cb13-6"><a href="" aria-hidden="true" tabindex="-1"></a>      contas<span class="op">.</span><span class="fu">remove</span><span class="op">(</span>c<span class="op">);</span></span>
+<span id="cb13-7"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span> <span class="co">//Se uma conta da lista tiver sido removida</span></span>
+<span id="cb13-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb13-9"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb13-10"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span> <span class="co">//Se nenhuma conta da lista tiver sido removida</span></span>
+<span id="cb13-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="arraylist-remoção-de-elementos" class="slide level2">
+<h2><em>ArrayList</em>: Remoção de Elementos</h2>
+<div class="fontsize80">
+<p>Ao <strong>removermos</strong> <strong>elementos</strong> de uma <strong>coleção</strong> devemos estar <strong>cientes</strong> da seguinte situação:</p>
+<ul>
+<li class="fragment">Se <strong>modificarmos</strong> uma coleção usando o <strong>método</strong> <code>remove</code> da mesma <strong>dentro</strong> de um loop <strong>for</strong> ou <strong>for-each</strong>, o sistema irá informar um <strong>erro</strong> (no caso de <strong>for-each</strong>) ou poderá ficar <strong>perdido</strong> (no caso de <strong>for</strong> usando o índice).
+<ul>
+<li class="fragment">Isso acontece porque estamos <strong>modificando</strong> o <strong>tamanho</strong> da coleção ao longo <strong>loop</strong> que <strong>está</strong> sendo <strong>executado</strong>.</li>
+</ul></li>
+</ul>
+<p><span class="fragment" style="color: darkblue;">Como resolver esse problema?</span></p>
+<ul>
+<li class="fragment">Utilzando o <strong>objeto</strong> <code>Iterator</code> que, assim como o <code>ArrayList</code>, possui o <strong>método</strong> <code>remove</code> que podemos usar para <strong>remover</strong> elementos <strong>durante</strong> a <strong>iteração</strong>.
+<ul>
+<li class="fragment">Note que nesse caso utilizaremos o <strong>método</strong> <code>remove</code> do <code>Iterator</code> (e não do <code>ArrayList</code>).</li>
+<li class="fragment">Uma vez que o <code>Iterator</code> é informado da <strong>remoção</strong>, ele <strong>mantém</strong> a <strong>iteração</strong> apropriadamente <strong>sincronizada</strong> com a <strong>coleção</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="arraylist-remoção-de-elementos---exemplo" class="slide level2">
+<h2><em>ArrayList</em>: Remoção de Elementos - Exemplo</h2>
+<p><span class="fontsize90"><strong>Por exemplo</strong>, em uma <strong>lista</strong> de <strong>contas bancárias</strong> eu quero <strong>remover</strong> aquelas cujo <strong>nome</strong> do titular contenha a string “Silva”.</span></p>
+<div class="fragment">
+<div class="sourceCode" id="cb14"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb14-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> nomes <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span>
+<span id="cb14-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Trechos de código omitidos</span></span>
+<span id="cb14-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">Iterator</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> it <span class="op">=</span> nomes<span class="op">.</span><span class="fu">iterator</span><span class="op">();</span></span>
+<span id="cb14-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span><span class="op">(</span>it<span class="op">.</span><span class="fu">hasNext</span><span class="op">()){</span></span>
+<span id="cb14-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">String</span> nome <span class="op">=</span> it<span class="op">.</span><span class="fu">next</span><span class="op">();</span></span>
+<span id="cb14-6"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span><span class="op">(</span>nome<span class="op">.</span><span class="fu">contains</span><span class="op">(</span><span class="st">"Silva"</span><span class="op">)){</span></span>
+<span id="cb14-7"><a href="" aria-hidden="true" tabindex="-1"></a>    it<span class="op">.</span><span class="fu">remove</span><span class="op">();</span></span>
+<span id="cb14-8"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb14-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="encapsulamento-de-coleções" class="slide level2">
 <h2>Encapsulamento de Coleções</h2>
+<p><span class="fontsize80"><strong>Analise</strong> o exemplo a seguir, onde a <strong>classe</strong> <code>Agencia</code> possui uma <strong>coleção</strong> de <strong>contas bancárias</strong>. <strong>Existe</strong> algum <strong>problema</strong> nessa implementação?</span></p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:55%;">
+<div class="sourceCode" id="cb15"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb15-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">ArrayList</span><span class="op">;</span></span>
+<span id="cb15-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Agencia<span class="op">{</span></span>
+<span id="cb15-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> codigo<span class="op">;</span></span>
+<span id="cb15-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">ArrayList</span><span class="op">&lt;</span>ContaBancaria<span class="op">&gt;</span> contas<span class="op">;</span></span>
+<span id="cb15-6"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Agencia</span><span class="op">(</span><span class="dt">int</span> codigo<span class="op">){</span></span>
+<span id="cb15-8"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">codigo</span> <span class="op">=</span> codigo<span class="op">;</span></span>
+<span id="cb15-9"><a href="" aria-hidden="true" tabindex="-1"></a>        contas <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb15-10"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb15-11"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">ArrayList</span><span class="op">&lt;</span>ContaBancaria<span class="op">&gt;</span> <span class="fu">getContas</span><span class="op">(){</span></span>
+<span id="cb15-12"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> contas<span class="op">;</span></span>
+<span id="cb15-13"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb15-14"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">adicionarConta</span><span class="op">(</span>ContaBancaria cb<span class="op">){</span></span>
+<span id="cb15-15"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span><span class="op">(!</span><span class="fu">contaCadastrada</span><span class="op">(</span>cb<span class="op">.</span><span class="fu">getNumero</span><span class="op">())){</span></span>
+<span id="cb15-16"><a href="" aria-hidden="true" tabindex="-1"></a>            contas<span class="op">.</span><span class="fu">add</span><span class="op">(</span>cb<span class="op">);</span></span>
+<span id="cb15-17"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb15-18"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb15-19"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">contaCadastrada</span><span class="op">(</span><span class="dt">int</span> num<span class="op">){</span></span>
+<span id="cb15-20"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span><span class="op">(</span>ContaBancaria c<span class="op">:</span> contas<span class="op">){</span></span>
+<span id="cb15-21"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span><span class="op">(</span>c<span class="op">.</span><span class="fu">getNumero</span><span class="op">()</span> <span class="op">==</span> num<span class="op">)</span> </span>
+<span id="cb15-22"><a href="" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb15-23"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb15-24"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb15-25"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb15-26"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:55%;">
+<div class="sourceCode" id="cb16"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb16-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ContaBancaria<span class="op">{</span></span>
+<span id="cb16-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="dt">int</span> numero<span class="op">;</span> </span>
+<span id="cb16-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span></span>
+<span id="cb16-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="dt">float</span> saldo<span class="op">;</span> </span>
+<span id="cb16-5"><a href="" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-6"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">ContaBancaria</span><span class="op">(</span><span class="dt">int</span> numero<span class="op">,</span> <span class="bu">String</span> nome<span class="op">){</span></span>
+<span id="cb16-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">numero</span> <span class="op">=</span> numero<span class="op">;</span></span>
+<span id="cb16-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">nome</span> <span class="op">=</span> nome<span class="op">;</span></span>
+<span id="cb16-9"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb16-10"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">int</span> <span class="fu">getNumero</span><span class="op">(){</span></span>
+<span id="cb16-11"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numero<span class="op">;</span></span>
+<span id="cb16-12"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb16-13"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">depositar</span><span class="op">(</span><span class="dt">float</span> valor<span class="op">){</span></span>
+<span id="cb16-14"><a href="" aria-hidden="true" tabindex="-1"></a>    saldo <span class="op">=</span> saldo <span class="op">+</span> valor<span class="op">;</span></span>
+<span id="cb16-15"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb16-16"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">sacar</span><span class="op">(</span><span class="dt">float</span> valor<span class="op">){</span></span>
+<span id="cb16-17"><a href="" aria-hidden="true" tabindex="-1"></a>    saldo <span class="op">=</span> saldo <span class="op">-</span> valor<span class="op">;</span></span>
+<span id="cb16-18"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb16-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="encapsulamento-de-coleções-1" class="slide level2">
+<h2>Encapsulamento de Coleções</h2>
+<p><span class="fontsize80">A classe <code>App</code> testa a implementação das classes <code>Agencia</code> e <code>ContaBancaria</code>.</span></p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:70%;">
+<div class="sourceCode" id="cb17"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb17-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">ArrayList</span><span class="op">;</span></span>
+<span id="cb17-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
+<span id="cb17-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
+<span id="cb17-4"><a href="" aria-hidden="true" tabindex="-1"></a>        Agencia ag <span class="op">=</span> <span class="kw">new</span> <span class="fu">Agencia</span><span class="op">(</span><span class="bn">0364</span><span class="op">);</span></span>
+<span id="cb17-5"><a href="" aria-hidden="true" tabindex="-1"></a>        ContaBancaria conta1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">(</span><span class="dv">5678</span><span class="op">,</span><span class="st">"Marco"</span><span class="op">);</span></span>
+<span id="cb17-6"><a href="" aria-hidden="true" tabindex="-1"></a>        ContaBancaria conta2 <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">(</span><span class="dv">1234</span><span class="op">,</span><span class="st">"Paulo"</span><span class="op">);</span></span>
+<span id="cb17-7"><a href="" aria-hidden="true" tabindex="-1"></a>        ContaBancaria conta3 <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">(</span><span class="dv">9012</span><span class="op">,</span><span class="st">"Luiz"</span><span class="op">);</span></span>
+<span id="cb17-8"><a href="" aria-hidden="true" tabindex="-1"></a>       </span>
+<span id="cb17-9"><a href="" aria-hidden="true" tabindex="-1"></a>        ag<span class="op">.</span><span class="fu">adicionarConta</span><span class="op">(</span>conta1<span class="op">);</span></span>
+<span id="cb17-10"><a href="" aria-hidden="true" tabindex="-1"></a>        ag<span class="op">.</span><span class="fu">adicionarConta</span><span class="op">(</span>conta2<span class="op">);</span></span>
+<span id="cb17-11"><a href="" aria-hidden="true" tabindex="-1"></a>        ag<span class="op">.</span><span class="fu">adicionarConta</span><span class="op">(</span>conta3<span class="op">);</span></span>
+<span id="cb17-12"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Contas cadastradas:"</span><span class="op">);</span></span>
+<span id="cb17-14"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span><span class="op">(</span>ContaBancaria c<span class="op">:</span> ag<span class="op">.</span><span class="fu">getContas</span><span class="op">()){</span></span>
+<span id="cb17-15"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>c<span class="op">.</span><span class="fu">getNumero</span><span class="op">());</span></span>
+<span id="cb17-16"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb17-17"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb17-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize80" style="width:40%;">
+<p>Veja o resultado obtido com a execução desse código: <img data-src="figuras/saidaTela_contas_cadastradas.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="SaidaTela_contas_cadastradas"></p>
+</div>
+</div>
+</section>
+<section id="encapsulamento-de-coleções-2" class="slide level2">
+<h2>Encapsulamento de Coleções</h2>
+<p><span class="fontsize80">E <strong>se alterarmos</strong> a <strong>classe</strong> <code>App</code> da maneira apresentada a seguir? Qual será o <strong>resultado</strong> obtido com a <strong>execução</strong> desse <strong>código</strong>?</span></p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:70%;">
+<div class="sourceCode" id="cb18" data-code-line-numbers="|13-14,|1-21"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb18-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">ArrayList</span><span class="op">;</span></span>
+<span id="cb18-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> App<span class="op">{</span></span>
+<span id="cb18-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">){</span></span>
+<span id="cb18-4"><a href="" aria-hidden="true" tabindex="-1"></a>        Agencia ag <span class="op">=</span> <span class="kw">new</span> <span class="fu">Agencia</span><span class="op">(</span><span class="bn">0364</span><span class="op">);</span></span>
+<span id="cb18-5"><a href="" aria-hidden="true" tabindex="-1"></a>        ContaBancaria conta1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">(</span><span class="dv">5678</span><span class="op">,</span><span class="st">"Marco"</span><span class="op">);</span></span>
+<span id="cb18-6"><a href="" aria-hidden="true" tabindex="-1"></a>        ContaBancaria conta2 <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">(</span><span class="dv">1234</span><span class="op">,</span><span class="st">"Paulo"</span><span class="op">);</span></span>
+<span id="cb18-7"><a href="" aria-hidden="true" tabindex="-1"></a>        ContaBancaria conta3 <span class="op">=</span> <span class="kw">new</span> <span class="fu">ContaBancaria</span><span class="op">(</span><span class="dv">9012</span><span class="op">,</span><span class="st">"Luiz"</span><span class="op">);</span></span>
+<span id="cb18-8"><a href="" aria-hidden="true" tabindex="-1"></a>       </span>
+<span id="cb18-9"><a href="" aria-hidden="true" tabindex="-1"></a>        ag<span class="op">.</span><span class="fu">adicionarConta</span><span class="op">(</span>conta1<span class="op">);</span></span>
+<span id="cb18-10"><a href="" aria-hidden="true" tabindex="-1"></a>        ag<span class="op">.</span><span class="fu">adicionarConta</span><span class="op">(</span>conta2<span class="op">);</span></span>
+<span id="cb18-11"><a href="" aria-hidden="true" tabindex="-1"></a>        ag<span class="op">.</span><span class="fu">adicionarConta</span><span class="op">(</span>conta3<span class="op">);</span></span>
+<span id="cb18-12"><a href="" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb18-13"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">ArrayList</span><span class="op">&lt;</span>ContaBancaria<span class="op">&gt;</span> contas <span class="op">=</span> ag<span class="op">.</span><span class="fu">getContas</span><span class="op">();</span></span>
+<span id="cb18-14"><a href="" aria-hidden="true" tabindex="-1"></a>        contas<span class="op">.</span><span class="fu">add</span><span class="op">(</span>conta1<span class="op">);</span></span>
+<span id="cb18-15"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Contas cadastradas:"</span><span class="op">);</span></span>
+<span id="cb18-17"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span><span class="op">(</span>ContaBancaria c<span class="op">:</span> ag<span class="op">.</span><span class="fu">getContas</span><span class="op">()){</span></span>
+<span id="cb18-18"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>c<span class="op">.</span><span class="fu">getNumero</span><span class="op">());</span></span>
+<span id="cb18-19"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb18-20"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb18-21"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize80 fragment" style="width:40%;">
+<p>Veja o resultado obtido com a execução desse código: <img data-src="figuras/saidaTela_contas_cadastradas2.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="SaidaTela_contas_cadastradas"></p>
+<p>Uma conta bancária foi <strong>cadastrada</strong> <strong>duas vezes</strong>!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/animal_assustado.png" class="quarto-figure quarto-figure-center" style="width:45.0%" alt="SaidaTela_contas_cadastradas"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="encapsulamento-de-coleções-3" class="slide level2">
+<h2>Encapsulamento de Coleções</h2>
+<p><span class="fontsize80">Se você <strong>precisa</strong> de um <strong>método</strong> que <strong>retorne</strong> a <strong>lista</strong> de contas bancárias, a estratégia é <strong>fornecer</strong> uma <strong>versão</strong> “somente-leitura” dessa lista!</span></p>
+<ul>
+<li class="fragment"><span class="fontsize80">Isso pode ser feito utilizando-se o <code>unmodifiableList</code>, um <strong>método estático</strong> da <strong>classe</strong> <code>Collections</code>.</span></li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb19" data-code-line-numbers="|2-3,|11-13,|1-15"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb19-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">ArrayList</span><span class="op">;</span></span>
+<span id="cb19-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">List</span><span class="op">;</span></span>
+<span id="cb19-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">Collections</span><span class="op">;</span></span>
+<span id="cb19-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Agencia<span class="op">{</span></span>
+<span id="cb19-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> codigo<span class="op">;</span></span>
+<span id="cb19-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">ArrayList</span><span class="op">&lt;</span>ContaBancaria<span class="op">&gt;</span> contas<span class="op">;</span></span>
+<span id="cb19-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Agencia</span><span class="op">(</span><span class="dt">int</span> codigo<span class="op">){</span></span>
+<span id="cb19-8"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">codigo</span> <span class="op">=</span> codigo<span class="op">;</span></span>
+<span id="cb19-9"><a href="" aria-hidden="true" tabindex="-1"></a>        contas <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb19-10"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb19-11"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">List</span><span class="op">&lt;</span>ContaBancaria<span class="op">&gt;</span> <span class="fu">getContas</span><span class="op">(){</span></span>
+<span id="cb19-12"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">Collections</span><span class="op">.</span><span class="fu">unmodifiableList</span><span class="op">(</span>contas<span class="op">);</span></span>
+<span id="cb19-13"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb19-14"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Demais métodos omitidos</span></span>
+<span id="cb19-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/perguntas.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Perguntas"></p>
+</figure>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -1193,24 +1489,6 @@
         // clear code selection
         e.clearSelection();
       });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -1247,11 +1525,7 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
+          return note.innerHTML;
         });
       }
       const findCites = (el) => {
