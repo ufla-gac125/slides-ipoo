@@ -1,0 +1,92 @@
+---
+title: Aula Prática 8<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Observações Importantes {}
+::: {.fontsize80}
+::: {.nonincremental}
+
+A realização dos exercícios nas **aulas práticas é primordial** para que você consiga **consolidar os conceitos** aprendidos nas **aulas teóricas** (aulas não presenciais - ANP) e **colocá-los em prática** utilizando a linguagem de programação Java.
+
+- No entanto, para **conseguir realizar os exercícios** das aulas práticas é **fundamental** que você tenha **estudado**, [antes das aulas práticas]{.underline}, o **conteúdo** das aulas não presenciais disponibilizadas pelo professor. 
+
+Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **comparecer às aulas**, o aluno deve **realizar e entregar os exercícios** propostos nas aulas.
+
+- Portanto, **não esqueça de entregar no Campus Virtual** os exercícios **até o término das aulas práticas** (mesmo que não tenha terminado-os completamente).
+:::
+:::
+
+
+## Contextualização
+
+:::{.fontsize90}
+Na aula de hoje **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
+:::
+
+. . .
+
+:::{.fontsize90}
+Hoje **continuaremos** o **exercício** da **aula** **prática** **anterior**, ou seja, vamos **incrementar** o **código** implementado na última aula prática. Na aula **anterior** implementamos as **etapas** **1** e **2**. **Agora** implementaremos as **etapas** **3** e **4**.
+:::
+
+. . .
+
+:::{.fontsize90}
+**Antes de começarem a codificar**, **leiam** o **enunciado** do exercício **com atenção** e entendam a **modelagem** do problema, ou seja, **quais** **classes** deverão implementar e **quais** serão os **atributos** e **métodos** de cada uma delas. Em seguida, façam o *download* da **implementação** realizada na **última aula** para darem **continuidade** à mesma.
+:::
+
+. . .
+
+:::{.fontsize90}
+O exercício desta aula está dividido em **duas etapas**, as quais devem ser **implementadas em sequência**, uma vez que a etapa 4 é um incremento ao que foi implementado na etapa 3.  
+:::
+
+
+
+## Atividade - Etapa 3
+:::{.nonincremental .fontsize70}
+**Altere** sua **classe** `Questao` **inserindo** um **atributo** que corresponda ao **número da questão** (por exemplo, idQuestao). Além disso, **crie** um **método** para **consultar** esse atributo.
+
+Queremos tratar a **numeração** das questões de forma que ela **seja automática** (sem precisar ser informada pelo usuário). Para isso, crie um **atributo estático** na **classe** `Questao` que armazena o número da última questão criada (a numeração das questões começa com valor um). No **construtor** da **classe** `Questao` esse atributo deve ser **incrementado** e seu valor **usado** como o **número** da **questão** que está sendo **criada** (ao invés de ser recebido por parâmetro).
+
+Agora, ao **apresentar** uma **questão** para o usuário, **antes** de seu **enunciado**, **exiba** na tela uma mensagem com o **número** da questão (para que o usuário saiba qual questão ele está respondendo), como por exemplo, "Questão 1" .
+
+O próximo passo é **alterar** a implementação da **classe** `Prova` para que uma **prova** seja composta por **várias questões** (**crie** um **vetor** de questões). Desse modo, cada vez que um objeto da **classe** `Prova` for instanciado, uma prova contendo **5 questões** deve ser criada. Portanto, você terá que **alterar** o **construtor** da **classe** `Prova` para que isso aconteça. Além disso, a partir de agora, cada vez que o **método** `aplicar` (**classe** `Prova`) for chamado, devem ser **apresentadas** para o usuário **cada uma** das **5 questões** da prova. **Todas** as **mensagens** de acerto ou erro de resposta **implementadas** nas **etapas anteriores** devem **continuar** sendo **exibidas** para cada questão da prova. **Teste sua implementação!**
+:::
+
+
+## Atividade - Etapa 4 
+:::{.nonincremental .fontsize70}
+Após os alunos responderem todas as questões da prova, queremos ter a opção de **apresentar** um **relatório** com o **histórico** de seu **desempenho** ao longo da prova, como no exemplo a seguir:
+
+|  Questão  |  Situação  |  Número de Tentativas  |
+|:---------:|:----------:|:----------------------:|
+|    1      | acertou    |          1             |
+|    2      | acertou    |          1             |
+|    3      | errou      |          2             | 
+|    4      | acertou    |          1             |
+|    5      | acertou    |          2             |
+
+Para isso, **crie** uma **classe** que representa **cada linha** do **histórico**. Vamos chamá-la de `Correcao`. Essa **classe** deve **ter** **atributos** para os campos mostrados no exemplo acima e **métodos** para consultá-los. O **construtor** da **classe** `Correcao` deve receber por **parâmetros** o valor de **todos** os **atributos** e a classe **não** deve **ter** nenhum **método** de **alteração** dos atributos.
+:::
+
+
+## Atividade - Etapa 4 (continuação)
+:::{.nonincremental .fontsize70}
+
+Agora vamos **tratar** as correções na **classe** `Prova`. Ela deve passar a **possuir** um **histórico** da **correção** de cada questão. Para isso, **crie** um **atributo** para **guardar** todas as **correções** da prova, ou seja, uma **coleção** de **objetos** da classe `Correcao`. Para isso, vamos novamente **utilizar** um **vetor**. Em seguida, **altere** o **método** `aplicar` (**classe** `Prova`) para que a cada nova correção realizada, ela seja **adicionada** ao **vetor**.
+
+Feito isso, **crie** um novo **método** na **classe** `Prova` denominado `gerarRelatorio`. Quando esse **método** for **chamado**, um **relatório** (histórico), como o mostrado no exemplo anterior, deve ser **exibido** na tela. A **chamada** a esse método deve ser **feita** na **classe** `App`, logo **após** a chamada ao **método** `aplicar`. 
+
+**Teste sua implementação!**
+:::
+
+
+## 
+:::{.callout-warning title="Atenção" icon=false .fontsize90}
+Execute a sua implementação e verifique se ela está funcionando corretamente. **Entregue** no Campus Virtual a **versão final da implementação** obtida após a conclusão da [Etapa 4]{style="color:darkblue;"}.
+:::
