@@ -1,0 +1,115 @@
+---
+title: Relacionamento entre Objetos<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Conteúdo desta Aula  
+
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+::: {.column width="30%"}
+![](figuras/professor1-1.png){fig-alt="Professor1-1" fig-align="center"}
+:::
+
+::: {.column width="70%"}
+::: {.nonincremental}
+::: {style="font-size: 120%;"}
+- Tipos de Relacionamento entre Objetos:
+    - Composição
+    - Agregação
+    - Associação
+:::
+:::
+:::
+::::
+
+## Relacionamento entre Objetos
+
+
+## Relacionamento entre Objetos
+
+
+## Pensando nos Relacionamentos...
+
+
+## Pensando nos Relacionamentos...
+
+
+## Pensando nos Relacionamentos...
+
+
+## Relacionamento entre Objetos
+
+
+## Relacionamento: Banco x Agências
+
+
+## Relacionamento: Pedido x Itens
+
+
+## Relacionamento: Livro x Capítulos
+
+
+
+## Composição
+
+
+## Composição
+
+
+
+## Composição - Exemplo de Código
+
+
+
+## Composição - Exemplo de Código
+
+
+
+
+## Resumindo...
+
+
+## Relacionamento: Grupo de Estudo x Alunos
+
+
+
+
+## Agregação
+
+
+
+## Agregação -  Exemplo de Código
+
+
+## Resumindo...
+
+
+
+## Relacionamento: Carro x Pessoa
+
+
+
+## Associação
+
+
+
+## Associação - Exemplo de Código
+
+
+
+## Resumindo...
+
+
+
+## A Relatividade
+
+
+
+
+## Exemplo da Relatividade
+
+
+
