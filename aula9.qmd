@@ -16,52 +16,188 @@ title-slide-attributes:
 ::: {.column width="70%"}
 ::: {.nonincremental}
 ::: {style="font-size: 120%;"}
-- Tipos de Relacionamento entre Objetos:
-    - Composição
-    - Agregação
-    - Associação
+Tipos de Relacionamento entre Objetos:
+
+- Composição
+- Agregação
+- Associação
 :::
 :::
 :::
 ::::
 
 ## Relacionamento entre Objetos
+::::{.columns style='display: flex !important; align-items: center;'}
+::: {.column width="60%" .fontsize90}
+Na programação orientada a objetos, os objetos se relacionam, ou seja, enviam mensagens uns para os outros.
+
+- Esse envio de mensagens se dá quando um objeto faz chamadas a métodos públicos de outros objetos.
+:::
+::: {.column width="40%"}
+![](figuras/envio_mensagem.png){fig-alt="Envio_mensagem" fig-align="center" width=90%}
+:::
+::::
+
+::::{.columns style='display: flex !important; align-items: top;'.fragment}
+::: {.column width="30%"}
+![](figuras/aluno_estudando.png){fig-alt="Aluno_estudando" fig-align="center" width=70%}
+:::
+::: {.column width="70%" .fontsize90}
+Sistemas OO dependem de como os objetos se relacionam. Portanto, o planejamento (modelagem) das classes se baseia nesses relacionamentos.
+:::
+::::
+
+
+## Pensando nos Relacionamentos...
+::::{.columns style='display: flex !important; align-items: center;'}
+::: {.column width="40%"}
+![](figuras/software_pizzaria.png){fig-alt="Software_pizzaria" fig-align="center" width=90%}
+:::
+::: {.column width="70%" .nonincremental}
+[Quais objetos podem existir em um software de uma pizzaria?]{style="color:darkblue;"}
+
+:::{.fontsize90}
+- Como você acha que esses objetos se relacionam? 
+- O que cada um tem a ver com o outro? 
+- Quem envia mensagem para quem?
+:::
+:::
+::::
+
+. . .
+
+[Podemos pensar que existem, por exemplo, os objetos:]{style="color:darkblue;"}
+
+:::{.fontsize90}
+- Pizza, Bebida, Vendedor, Cliente etc.
+- Um pedido pode ser formado por um conjunto de itens (pizza e bebida) e estar vinculado a um cliente e um vendedor.
+:::
+
+
+## Pensando nos Relacionamentos...
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="40%"}
+![](figuras/sig_ufla.png){fig-alt="Sig_ufla" fig-align="center" width=80%}
+:::
+::: {.column width="70%" .nonincremental}
+[Quais objetos podem existir em um software como o SIG-UFLA?]{style="color:darkblue;"}
+
+:::{.fontsize90}
+Pense novamente como os objetos se relacionam. 
+
+- O que cada um tem a ver com o outro?
+:::
+:::
+::::
+
+. . .
+
+[Podemos pensar que existem, por exemplo, os objetos:]{style="color:darkblue;"}
+
+:::{.fontsize90}
+- Aluno, Turma, Professor, Disciplina etc.
+- Uma turma pode ser formada por um conjunto de alunos e estar vinculada a uma disciplina.
+:::
+
+
+## Pensando nos Relacionamentos...
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="40%"}
+![](figuras/interior_banco.png){fig-alt="Interior_banco" fig-align="center" width=100%}
+:::
+::: {.column width="70%" .nonincremental}
+[Por fim, quais objetos podem existir em um software de um banco?]{style="color:darkblue;"}
+
+:::{.fontsize90}
+E nesse caso, como os objetos se relacionam? 
+
+- O que cada um tem a ver com o outro?
+
+:::
+:::
+::::
+
+. . .
+
+[Podemos pensar que existem, por exemplo, os objetos:]{style="color:darkblue;"}
+
+:::{.fontsize90}
+- Agência, Cliente, Funcionário, Contas etc.
+- Um banco pode ter diversas agências.
+- Um cliente pode ter várias contas (corrente, poupança...) e estar vinculado a uma agência.
+:::
 
 
 ## Relacionamento entre Objetos
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="60%" .fontsize90}
+Com os exemplos anteriores, podemos perceber que os softwares orientados a objetos dependem em grande parte de como os objetos se relacionam.
 
-
-## Pensando nos Relacionamentos...
-
-
-## Pensando nos Relacionamentos...
-
-
-## Pensando nos Relacionamentos...
-
-
-## Relacionamento entre Objetos
-
+:::{.fragment}
+Portanto, temos que entender agora os tipos de relacionamento que podem existir entre objetos:
+    
+- Composição.
+- Agregação.
+- Associação.
+:::
+:::
+::: {.column width="40%"}
+![](figuras/relacionamento_objetos.png){fig-alt="Relacionamento_objetos" fig-align="center" width=90%}
+:::
+::::
+    
 
 ## Relacionamento: Banco x Agências
+![](figuras/banco_agencias.png){fig-alt="Banca_agencias" fig-align="center" width=100%}
 
 
 ## Relacionamento: Pedido x Itens
+![](figuras/pedido_itens.png){fig-alt="Pedido_itens" fig-align="center" width=100%}
 
 
 ## Relacionamento: Livro x Capítulos
-
-
-
-## Composição
+![](figuras/livro_capitulos.png){fig-alt="Livro_capitulos" fig-align="center" width=100%}
 
 
 ## Composição
+![](figuras/exemplo_composicao.png){fig-alt="Exemplo_composicao" fig-align="center" width=90%}
 
+[O que esses três exemplos têm em comum?]{style="color:darkblue;"}
+
+:::{.fontsize90} 
+- O fato de que um objeto tem (um ou mais) objetos de outra classe.
+
+[Esse tipo de relacionamento é denominado composição.]{.fragment}
+:::
+
+
+## Composição
+A composição se caracteriza por ser um relacionamento: Todo/Parte
+  Ou seja, há uma classe representando o todo e classes ``satélites'' funcionando como partes.
+
+
+ 
+Além disso, há outra característica importante:
+ 
+  Nos exemplos vistos:
+  
+    Se eu não tenho um banco, não preciso das agências.
+    Se não há um pedido, não faz sentido pensar em itens de pedido.
+    Se eu destruir um livro, não faz sentido os capítulos existirem. 
+  
+  4Resumindo: o objeto contido não faz sentido sem o objeto que o contém.
+ 
+ Ou seja, o todo controla o tempo de vida das partes
 
 
 ## Composição - Exemplo de Código
+Suponha que precisamos implementar em Java um sistema que tenha as classes Carro, Motor e Porta.
+ 
+   Podemos dizer que um carro tem um motor.
+   Um carro tem 4 portas.
+ 
 
+Como isso pode ser implementado?
 
 
 ## Composição - Exemplo de Código
@@ -78,7 +214,19 @@ title-slide-attributes:
 
 
 ## Agregação
+Essa também é uma relação todo/parte, porém, nesse caso dizemos que a parte não é exclusiva do todo.
+ 
+  2Ou seja, não é o grupo de estudo que controla o tempo de vida dos alunos.
+  3Dizendo de outro modo, não é o todo que controla o tempo de vida das partes.
+ 
 
+
+ 
+Repare:
+ 
+  Os alunos continuam existindo ainda que o grupo de estudo termine! Ufa...ainda bem.
+ 
+ Esse tipo de relacionamento é denominado agregação.
 
 
 ## Agregação -  Exemplo de Código
@@ -93,7 +241,17 @@ title-slide-attributes:
 
 
 ## Associação
+A pessoa utiliza o carro e o carro transporta a pessoa.
+ 
+  Não faz sentido dizer que pessoa é parte do carro ou que carro é formado por pessoas, concorda?
+  Ou seja, não é um relacionamento todo/parte.
+ 
 
+
+ 
+
+Em outras palavras, temos duas classes distintas onde uma faz uso da outra. 
+Esse tipo de relacionamento é denominado associação.
 
 
 ## Associação - Exemplo de Código
