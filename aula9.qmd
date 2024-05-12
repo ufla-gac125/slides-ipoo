@@ -172,45 +172,106 @@ Portanto, temos que entender agora os tipos de relacionamento que podem existir 
 
 
 ## Composição
-A composição se caracteriza por ser um relacionamento: Todo/Parte
-  Ou seja, há uma classe representando o todo e classes ``satélites'' funcionando como partes.
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%"}
+![](figuras/corpo_humano.png){fig-alt="Corpo_humano" fig-align="center" width=90%}
+:::
+::: {.column width="70%" .fontsize90}
+[A composição se caracteriza por ser um relacionamento: Todo/Parte.]{style="color:darkblue;"}
 
+- Ou seja, há uma classe representando o todo e classes ``satélites'' funcionando como partes.
+:::
+::::
 
- 
-Além disso, há outra característica importante:
- 
-  Nos exemplos vistos:
+[Além disso, há outra característica importante:]{style="color:darkblue;" .fragment .fontsize90}
+
+:::{.fontsize90}
+- Nos exemplos vistos:
+  - Se eu não tenho um banco, não preciso das agências.
+  - Se não há um pedido, não faz sentido pensar em itens de pedido.
+  - Se eu destruir um livro, não faz sentido os capítulos existirem. 
   
-    Se eu não tenho um banco, não preciso das agências.
-    Se não há um pedido, não faz sentido pensar em itens de pedido.
-    Se eu destruir um livro, não faz sentido os capítulos existirem. 
-  
-  4Resumindo: o objeto contido não faz sentido sem o objeto que o contém.
- 
- Ou seja, o todo controla o tempo de vida das partes
+- Resumindo: o objeto contido não faz sentido sem o objeto que o contém.
+- Ou seja, o todo controla o tempo de vida das partes.
+:::
 
 
 ## Composição - Exemplo de Código
-Suponha que precisamos implementar em Java um sistema que tenha as classes Carro, Motor e Porta.
- 
-   Podemos dizer que um carro tem um motor.
-   Um carro tem 4 portas.
- 
+::::{.columns style='display: flex !important; align-items: center;'}
+::: {.column width="30%"}
+![](figuras/professor1-1.png){fig-alt="Professor1-1" fig-align="center" width=60%}
 
-Como isso pode ser implementado?
+:::
+::: {.column width="70%".nonincremental .fontsize90}
+[Suponha que precisamos implementar em Java um sistema que tenha as classes Carro, Motor e Porta.]{style="color:darkblue;"}
+ 
+- Podemos dizer que um carro tem um motor.
+- Um carro tem 4 portas.
+
+[Como isso pode ser implementado?]{style="color:darkblue;"}
+:::
+::::
+
 
 
 ## Composição - Exemplo de Código
+:::{.fontsize95}
+```{.java code-line-numbers="false"}
+public class Carro{
+  private Motor motor;//<1>
+  private Porta[] portas;
+  public Carro(){
+    motor = new Motor();//<2>
+    portas = new Porta[4];
+    for(int i = 0; i < 4; i++){
+      portas[i] = new Porta();
+    }
+  }
+  public Motor getMotor(){//<3>
+    return motor.clone();
+  }
+  public Porta[] getPortas(){//<4>
+    return portas.clone();
+  }
+}
+```
 
+1. [Como o motor e as portas são partes do carro, eles devem ser atributos do mesmo.]{.fontsize70}
+2. [O carro controla o tempo de vida do motor e das portas e, portanto, é ele que cria esses objetos.]{.fontsize70}
+3. [A classe não deve ter um método `get` que retorne a referência do objeto (quebra o encapsulamento).]{.fontsize70}
+4. [Como ninguém tem referência para os objetos porta e motor, esses objetos só podem ser destruídos junto com o carro. Portanto, o tempo de vida está completamente controlado.]{.fontsize70}
+:::
 
 
 
 ## Resumindo...
+![](figuras/resumo_composicao.png){fig-alt="Resumo_composicao" fig-align="center" width=90%}
 
 
 ## Relacionamento: Grupo de Estudo x Alunos
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%"}
+![](figuras/grupo_estudantes.png){fig-alt="Grupo_estudantes" fig-align="center" width=70%}
+:::
+::: {.column width="60%" .fontsize90}
+[Qual é o relacionamento entre um grupo de estudo e os alunos?]{style="color:darkblue;"}
 
+- Um grupo de alunos tem vários alunos. Desse modo, um aluno é parte de um grupo de estudo.
 
+[Então isso é uma composição, certo?]{style="color:darkblue;" .fragment}
+:::
+::::
+
+. . .
+
+::::{.columns style='display: flex !important; align-items: center;'}
+::: {.column width="60%" .fontsize90}
+Quando um grupo de estudos acaba, os alunos deixam de existir?
+:::
+::: {.column width="40%"}
+![](figuras/briga_grupo.png){fig-alt="Briga_grupo" fig-align="center" width=60%}
+:::
+::::
 
 
 ## Agregação
