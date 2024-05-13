@@ -620,9 +620,9 @@
 </figure>
 </div>
 </div><div class="column fontsize90" style="width:70%;">
-<p><span style="color:darkblue;">A composição se caracteriza por ser um relacionamento: Todo/Parte.</span></p>
+<p><span style="color:darkblue;">A composição se caracteriza por ser um relacionamento todo/parte.</span></p>
 <ul>
-<li class="fragment">Ou seja, há uma classe representando o todo e classes ``satélites’’ funcionando como partes.</li>
+<li class="fragment">Ou seja, há uma classe representando o todo e classes “satélites” funcionando como partes.</li>
 </ul>
 </div>
 </div>
@@ -808,7 +808,7 @@
 </figure>
 </div>
 </div><div class="column fontsize90" style="width:60%;">
-<p><span style="color:darkblue;">Suponha que uma locadora de veículos resolva criar um sistema para controlar suas atividades</span></p>
+<p><span style="color:darkblue;">Suponha que uma locadora de veículos resolva criar um sistema para controlar suas atividades.</span></p>
 <ul>
 <li class="fragment">Para esse sistema foram criadas as classes Carro e Pessoa.</li>
 </ul>
@@ -825,21 +825,134 @@
 </section>
 <section id="associação" class="slide level2">
 <h2>Associação</h2>
-<p>A pessoa utiliza o carro e o carro transporta a pessoa.</p>
-<p>Não faz sentido dizer que pessoa é parte do carro ou que carro é formado por pessoas, concorda? Ou seja, não é um relacionamento todo/parte.</p>
-<p>Em outras palavras, temos duas classes distintas onde uma faz uso da outra. Esse tipo de relacionamento é denominado associação.</p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/dirigindo_carro.png" class="quarto-figure quarto-figure-center" style="width:85.0%" alt="Dirigindo_carro"></p>
+</figure>
+</div>
+</div><div class="column fontsize90" style="width:60%;">
+<p><span style="color:darkblue;">A pessoa utiliza o carro e o carro transporta a pessoa.</span></p>
+<ul>
+<li class="fragment">Não faz sentido dizer que pessoa é parte do carro ou que carro é formado por pessoas, concorda?</li>
+<li class="fragment">Ou seja, não é um relacionamento todo/parte.</li>
+</ul>
+</div>
+</div>
+<div class="fragment fontsize90">
+<p>Em outras palavras, temos duas classes distintas onde uma faz uso da outra.</p>
+</div>
+<div class="fragment fontsize90">
+<p><span style="color:darkblue;">Esse tipo de relacionamento é denominado associação.</span></p>
+</div>
 </section>
 <section id="associação---exemplo-de-código" class="slide level2">
 <h2>Associação - Exemplo de Código</h2>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:60%;">
+<div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode java code-annotation-code code-with-copy"><code class="sourceCode java"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Pessoa<span class="op">{</span></span>
+<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> CarteiraMotorista cnh<span class="op">;</span></span>
+<span id="annotated-cell-3-3"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">//Demais atributos omitidos</span></span>
+<span id="annotated-cell-3-4"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">Pessoa</span><span class="op">(){</span></span>
+<span id="annotated-cell-3-6"><a href="#annotated-cell-3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Código omitido</span></span>
+<span id="annotated-cell-3-7"><a href="#annotated-cell-3-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="annotated-cell-3-8"><a href="#annotated-cell-3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-3-9"><a href="#annotated-cell-3-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">obterCarteira</span><span class="op">(</span>CarteiraMotorista cnh<span class="op">){</span></span>
+<span id="annotated-cell-3-10"><a href="#annotated-cell-3-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">cnh</span> <span class="op">=</span> cnh<span class="op">;</span></span>
+<span id="annotated-cell-3-11"><a href="#annotated-cell-3-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="annotated-cell-3-12"><a href="#annotated-cell-3-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="annotated-cell-3-13"><a href="#annotated-cell-3-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">viajar</span><span class="op">(</span>Carro carro<span class="op">,</span> <span class="dt">int</span> distancia<span class="op">){</span></span>
+<span id="annotated-cell-3-14"><a href="#annotated-cell-3-14" aria-hidden="true" tabindex="-1"></a>    carro<span class="op">.</span><span class="fu">acelerar</span><span class="op">();</span></span>
+<span id="annotated-cell-3-15"><a href="#annotated-cell-3-15" aria-hidden="true" tabindex="-1"></a>    carro<span class="op">.</span><span class="fu">frear</span><span class="op">();</span></span>
+<span id="annotated-cell-3-16"><a href="#annotated-cell-3-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Restante do código omitido</span></span>
+<span id="annotated-cell-3-17"><a href="#annotated-cell-3-17" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="annotated-cell-3-18"><a href="#annotated-cell-3-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize70" style="width:50%;">
+<ul>
+<li class="fragment">Carteira de motorista não é parte de uma pessoa e nem o contrário. Portanto, temos uma associação.
+<ul>
+<li class="fragment">Mas existe um relacionamento de propriedade, ou seja, um motorista possui uma CNH.</li>
+</ul></li>
+<li class="fragment">Do mesmo modo, carro não é parte de pessoa e nem o contrário. Então, é uma associação também.
+<ul>
+<li class="fragment">Mas existe um relacionamento, ou seja, uma pessoa viaja em um carro.</li>
+</ul></li>
+<li class="fragment">Repare que temos duas formas de implementação aqui. Uma com atributo e outra não.
+<ul>
+<li class="fragment">O que importa de fato é que, na associação, um objeto chama métodos de outros.</li>
+</ul></li>
+</ul>
+</div>
+</div>
 </section>
 <section id="resumindo-2" class="slide level2">
 <h2>Resumindo…</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/resumo_composicao_agregacao_associacao.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Resumo_composicao_agregacao_associacao"></p>
+</figure>
+</div>
 </section>
 <section id="a-relatividade" class="slide level2">
 <h2>A Relatividade</h2>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/relatividade.png" class="quarto-figure quarto-figure-center" style="width:85.0%" alt="Relatividade"></p>
+</figure>
+</div>
+</div><div class="column fontsize90" style="display: flex;  align-items: center; text-align: center;">
+<p>A classificação do relacionamento entre objetos é relativa.</p>
+</div>
+</div>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column fontsize90" style="width:70%;">
+<p>Ou seja, para definirmos se é uma composição, agregação ou associação temos que analisar o contexto.</p>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/professor3_metade.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Professor3_metade"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="exemplo-da-relatividade" class="slide level2">
 <h2>Exemplo da Relatividade</h2>
+<p><span class="fontsize80" style="color:darkblue;">Anteriormente usamos como exemplo de composição a relação entre carro e motor.</span></p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column" style="display: flex;  align-items: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/carro_formula1.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Carro_f1"></p>
+</figure>
+</div>
+</div><div class="column fontsize80" style="width:70%;">
+<p>Mas o que podemos dizer ao ler a notícia a seguir?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/noticia_f1.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="Noticia_f1"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment fontsize80">
+<p>Neste caso, percebemos que o motor existe independentemente do carro, ou seja, não é o carro que controla o tempo de vida do motor.</p>
+<ul>
+<li class="fragment">Portanto, agora temos uma agregação!</li>
+</ul>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/perguntas.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Perguntas"></p>
+</figure>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">

@@ -177,9 +177,9 @@ Portanto, temos que entender agora os tipos de relacionamento que podem existir 
 ![](figuras/corpo_humano.png){fig-alt="Corpo_humano" fig-align="center" width=90%}
 :::
 ::: {.column width="70%" .fontsize90}
-[A composição se caracteriza por ser um relacionamento: Todo/Parte.]{style="color:darkblue;"}
+[A composição se caracteriza por ser um relacionamento todo/parte.]{style="color:darkblue;"}
 
-- Ou seja, há uma classe representando o todo e classes ``satélites'' funcionando como partes.
+- Ou seja, há uma classe representando o todo e classes "satélites" funcionando como partes.
 :::
 ::::
 
@@ -328,7 +328,7 @@ public class GrupoEstudo{
 ![](figuras/locadora_carros.png){fig-alt="Locadora_carros" fig-align="center" width=85%}
 :::
 ::: {.column width="60%" .fontsize90}
-[Suponha que uma locadora de veículos resolva criar um sistema para controlar suas atividades]{style="color:darkblue;"}
+[Suponha que uma locadora de veículos resolva criar um sistema para controlar suas atividades.]{style="color:darkblue;"}
 
 - Para esse sistema foram criadas as classes Carro e Pessoa.
 :::
@@ -341,36 +341,107 @@ public class GrupoEstudo{
 :::
 
 
-
-
 ## Associação
-A pessoa utiliza o carro e o carro transporta a pessoa.
- 
-  Não faz sentido dizer que pessoa é parte do carro ou que carro é formado por pessoas, concorda?
-  Ou seja, não é um relacionamento todo/parte.
- 
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%"}
+![](figuras/dirigindo_carro.png){fig-alt="Dirigindo_carro" fig-align="center" width=85%}
+:::
+::: {.column width="60%" .fontsize90}
+[A pessoa utiliza o carro e o carro transporta a pessoa.]{style="color:darkblue;"}
 
+- Não faz sentido dizer que pessoa é parte do carro ou que carro é formado por pessoas, concorda?
+- Ou seja, não é um relacionamento todo/parte.
+:::
+::::
 
- 
+:::{.fragment .fontsize90}
+Em outras palavras, temos duas classes distintas onde uma faz uso da outra.
+:::
 
-Em outras palavras, temos duas classes distintas onde uma faz uso da outra. 
-Esse tipo de relacionamento é denominado associação.
+:::{.fragment .fontsize90}
+[Esse tipo de relacionamento é denominado associação.]{style="color:darkblue;"}
+:::
 
 
 ## Associação - Exemplo de Código
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="60%"}
+```{.java code-line-numbers="false"}
+public class Pessoa{
+  private CarteiraMotorista cnh;
+  //Demais atributos omitidos
+  
+  public Pessoa(){
+    //Código omitido
+  }
 
+  public void obterCarteira(CarteiraMotorista cnh){ //<2>
+    this.cnh = cnh;
+  }
+  
+  public void viajar(Carro carro, int distancia){
+    carro.acelerar();
+    carro.frear();
+    //Restante do código omitido
+  }
+}
+```
+:::
+::: {.column width="50%" .fontsize70}
+- Carteira de motorista não é parte de uma pessoa e nem o contrário. Portanto, temos uma associação.
+  - Mas existe um relacionamento de propriedade, ou seja, um motorista possui uma CNH.
+- Do mesmo modo, carro não é parte de pessoa e nem o contrário. Então, é uma associação também.
+  - Mas existe um relacionamento, ou seja, uma pessoa viaja em um carro.
+- Repare que temos duas formas de implementação aqui. Uma com atributo e outra não.
+  - O que importa de fato é que, na associação, um objeto chama métodos de outros.
+:::
+::::
 
 
 ## Resumindo...
-
+![](figuras/resumo_composicao_agregacao_associacao.png){fig-alt="Resumo_composicao_agregacao_associacao" fig-align="center" width=80%}
 
 
 ## A Relatividade
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="50%"}
+![](figuras/relatividade.png){fig-alt="Relatividade" fig-align="center" width=85%}
+:::
+::: {.column width="50%" .fontsize90 style='display: flex;  align-items: center; text-align: center;'}
+A classificação do relacionamento entre objetos é relativa.
+:::
+::::
 
 
-
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="70%" .fontsize90}
+Ou seja, para definirmos se é uma composição, agregação ou associação temos que analisar o contexto.
+:::
+::: {.column width="30%" }
+![](figuras/professor3_metade.png){fig-alt="Professor3_metade" fig-align="center" width=60%}
+:::
+::::
 
 ## Exemplo da Relatividade
+[Anteriormente usamos como exemplo de composição a relação entre carro e motor.]{style="color:darkblue;" .fontsize80}
+
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%" style='display: flex;  align-items: center;'}
+![](figuras/carro_formula1.png){fig-alt="Carro_f1" fig-align="center" width=100%}
+:::
+::: {.column width="70%" .fontsize80}
+Mas o que podemos dizer ao ler a notícia a seguir?
+
+![](figuras/noticia_f1.png){fig-alt="Noticia_f1" fig-align="center" width=90%}
+:::
+::::
+
+:::{.fragment .fontsize80}
+Neste caso, percebemos que o motor existe independentemente do carro, ou seja, não é o carro que controla o tempo de vida do motor.
+
+- Portanto, agora temos uma agregação!
+:::
 
 
-
+##
+![](figuras/perguntas.png){fig-alt="Perguntas" fig-align="center" width=35%}
