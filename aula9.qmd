@@ -275,29 +275,71 @@ Quando um grupo de estudos acaba, os alunos deixam de existir?
 
 
 ## Agregação
-Essa também é uma relação todo/parte, porém, nesse caso dizemos que a parte não é exclusiva do todo.
- 
-  2Ou seja, não é o grupo de estudo que controla o tempo de vida dos alunos.
-  3Dizendo de outro modo, não é o todo que controla o tempo de vida das partes.
- 
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%"}
+![](figuras/eu_existo.png){fig-alt="Eu_existo" fig-align="center" width=90%}
+:::
+::: {.column width="70%" .fontsize90}
+[Essa também é uma relação todo/parte, porém, nesse caso dizemos que a parte não é exclusiva do todo.]{style="color:darkblue;"}
 
+- Ou seja, não é o grupo de estudo que controla o tempo de vida dos alunos.
+- Dizendo de outro modo, não é o todo que controla o tempo de vida das partes.
+:::
+::::
 
+. . .
+
+:::{.fontsize90}
+[Repare:]{style="color:darkblue;"}
  
-Repare:
- 
-  Os alunos continuam existindo ainda que o grupo de estudo termine! Ufa...ainda bem.
- 
- Esse tipo de relacionamento é denominado agregação.
+- Os alunos continuam existindo ainda que o grupo de estudo termine. Ufa...ainda bem!
+:::
+
+[Esse tipo de relacionamento é denominado agregação.]{style="color:darkblue;" .fragment .fontsize90}
 
 
 ## Agregação -  Exemplo de Código
+```{.java code-line-numbers="false"}
+public class GrupoEstudo{
+  private ArrayList<Aluno> alunos; //<1>
+  
+  public GrupoEstudo(){
+    alunos = new ArrayList<Aluno>();
+  }
+
+  public void cadastrarAluno(Aluno aluno){ //<2>
+    alunos.add(aluno);
+  }
+  // Demais métodos omitidos
+}
+```
+1. [Como o grupo de estudo tem alunos, os alunos devem ser atributo do grupo de estudo.]{.fontsize70}
+2. [Na agregação o todo não controla do tempo de vida das partes. Portanto, uma maneira de tratar isso é o grupo de estudo não criar alunos (e sim recebê-los de outro lugar).]{.fontsize70}
 
 
 ## Resumindo...
+![](figuras/resumo_agregacao.png){fig-alt="Resumo_composicao" fig-align="center" width=80%}
 
 
 
 ## Relacionamento: Carro x Pessoa
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%"}
+![](figuras/locadora_carros.png){fig-alt="Locadora_carros" fig-align="center" width=85%}
+:::
+::: {.column width="60%" .fontsize90}
+[Suponha que uma locadora de veículos resolva criar um sistema para controlar suas atividades]{style="color:darkblue;"}
+
+- Para esse sistema foram criadas as classes Carro e Pessoa.
+:::
+::::
+
+:::{.fragment}
+[Qual é o relacionamento entre essas classes?]{style="color:darkblue;"}
+
+![](figuras/carro_pessoa.png){fig-alt="Carro_pessoa" fig-align="center" width=40%}
+:::
+
 
 
 
