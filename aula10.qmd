@@ -85,32 +85,38 @@ Esse jogo, no estilo Adventure, foi inspirado em um jogo criado na década de 70
 :::
 
 ## Design de Classes
-O Jogo World-of-Zuul
- 
-   Em seu formato original, o jogo ainda não está muito interessante.
-  
-    Ele está incompleto!
-  
-  2Desse modo, veremos como estender a sua implementação, discutindo os apectos do design de classes existente.
-  3Perceberemos que essa versão original tem exemplos de decisões de design ruins.
-  
-    Veremos como isso influencia nossas tarefas e como corrigi-las.
-  
-  4O problema de um design ruim normalmente não está relacionado com a complexidade do problema que se deseja solucionar.
-  
-    O design ruim está mais relacionado com as decisões que tomamos durante a solução do problema.
+[O Jogo World-of-Zuul]{.fontsize90 style="color:darkblue;"}
+
+:::{.fontsize90} 
+- Em seu formato original, o jogo ainda não está muito interessante.
+    - Ele está incompleto!
+- Desse modo, veremos como estender a sua implementação, discutindo os apectos do design de classes existente.
+- Perceberemos que essa versão original tem exemplos de decisões de design ruins.
+    - Veremos como isso influencia nossas tarefas e como corrigi-las.
+- O problema de um design ruim normalmente não está relacionado com a complexidade do problema que se deseja solucionar.
+    - O design ruim está mais relacionado com as decisões que tomamos durante a solução do problema.
+:::
 
 ## Entendendo a Modelagem do Jogo
+![](figuras/modelagem_inicial_jogo.png){fig-alt="Modelagem_inicial_jogo" fig-align="center" width=85%}
 
 
 
 ## Design de Classes
-Como avaliar se um design de classe é bom ou ruim?
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="30%"}
+![](figuras/jovem.png){fig-alt="Jovem" fig-align="center" width=50%}
+:::
+::: {.column width="70%"}
+[Como avaliar se um design de classe é bom ou ruim?]{style="color:darkblue;"}
 
- 2Dois parâmetros são fundamentais para isso:
- 
-   Acoplamento.
-   Coesão.
+- Dois parâmetros são fundamentais para isso:
+    - Acoplamento.
+    - Coesão.
+:::
+::::
+
+
 
 ## Acoplamento
 O que é acoplamento (coupling)?
