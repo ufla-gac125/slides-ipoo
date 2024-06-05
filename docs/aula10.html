@@ -32,6 +32,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="aula10_files/libs/revealjs/dist/theme/quarto.css">
   <link href="aula10_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -493,49 +558,209 @@
 </section>
 <section id="acoplamento" class="slide level2">
 <h2>Acoplamento</h2>
-<p>O que é acoplamento (coupling)?</p>
-<p>2Refere-se à interconectabilidade das classes. 3Lembre-se que as classes se relacionam quando seus objetos se comunicam. 4Quanto mais as classes se relacionam umas com as outras, mais forte é o acoplamento.</p>
-<p>O que desejamos em termos de acoplamento?&lt;5</p>
-<p>6Trabalhamos para enfraquecer o acoplamento em um sistema.</p>
-<pre><code>Ou seja, cada classe deve ser o mais independente possível e se comunicar com outras por meio de uma interface pequena e bem definida.</code></pre>
+<p><span style="color:darkblue;">O que é acoplamento (coupling)?</span></p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column fontsize90" style="width:80%;">
+<ul>
+<li class="fragment">Refere-se à interconectabilidade das classes.</li>
+<li class="fragment">Lembre-se que as classes se relacionam quando seus objetos se comunicam.</li>
+<li class="fragment">Quanto mais as classes se relacionam umas com as outras, mais forte é o acoplamento.</li>
+</ul>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/acoplamento.png" class="quarto-figure quarto-figure-center" style="width:30.0%" alt="Acoplamento"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><span class="fragment" style="color:darkblue;">O que desejamos em termos de acoplamento?</span></p>
+<div class="fontsize90">
+<ul>
+<li class="fragment">Trabalhamos para enfraquecer o acoplamento em um sistema.
+<ul>
+<li class="fragment">Ou seja, cada classe deve ser o mais independente possível e se comunicar com outras por meio de uma interface pequena e bem definida.</li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="acoplamento-1" class="slide level2">
 <h2>Acoplamento</h2>
-<p>Por que devemos buscar o acoplamento fraco?</p>
-<p>2Em uma estrutura de classe fortemente acoplada, uma alteração em uma classe pode obrigar a alteração em várias outras classes.</p>
-<pre><code> Ou seja, uma pequena alteração em uma classe pode se propagar pela aplicação toda.</code></pre>
-<p>Resumindo, quanto mais acopladas forem as classes, mais difícil se torna realizar alterações em um sistema.</p>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pensando2.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Acoplamento"></p>
+</figure>
+</div>
+</div><div class="column fontsize90" style="width:70%;">
+<p><span style="color:darkblue;">Por que devemos buscar o acoplamento fraco?</span></p>
+<ul>
+<li class="fragment">Em uma estrutura de classe fortemente acoplada, uma alteração em uma classe pode obrigar a alteração em várias outras classes.
+<ul>
+<li class="fragment">Ou seja, uma pequena alteração em uma classe pode se propagar pela aplicação toda.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p><span class="fontsize90 fragment" style="color:darkblue;">Resumindo, quanto mais acopladas forem as classes, mais difícil se torna realizar alterações em um sistema.</span></p>
 </section>
 <section id="coesão" class="slide level2">
 <h2>Coesão</h2>
-<p>O que é coesão?</p>
-<p>2Refere-se à quantidade e diversidade de tarefas sob responsabilidade de uma unidade de uma aplicação. 3Uma unidade pode ser:</p>
-<pre><code>Um método.
-Uma classe.
-Um conjunto de classes (pacote).</code></pre>
-<p>0.2</p>
-<p>O que se espera em termos de coesão?</p>
-<p>5Um bom design de classe exibe um grau elevado de coesão. 6Em um sistema com alto grau de coesão:</p>
-<pre><code>Cada método é responsável por apenas uma tarefa bem definida (deve implementar uma operação lógica).</code></pre>
-<p>7Uma classe deve representar um tipo de entidade.</p>
+<p><span style="color:darkblue;">O que é coesão?</span></p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column fontsize90" style="width:80%;">
+<ul>
+<li class="fragment">Refere-se à quantidade e diversidade de tarefas sob responsabilidade de uma unidade de uma aplicação.</li>
+<li class="fragment">Uma unidade pode ser: um método, uma classe ou um conjunto de classes (pacote).</li>
+</ul>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/multitarefas.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="Acoplamento"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><span class="fragment" style="color:darkblue;">O que se espera em termos de coesão?</span></p>
+<div class="fontsize90">
+<ul>
+<li class="fragment">Um bom design de classe exibe um grau elevado de coesão.</li>
+<li class="fragment">Em um sistema com alto grau de coesão:
+<ul>
+<li class="fragment">Cada método é responsável por apenas uma tarefa bem definida (deve implementar uma operação lógica).</li>
+<li class="fragment">Uma classe deve representar um tipo de entidade.</li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="coesão-1" class="slide level2">
 <h2>Coesão</h2>
-<p>Para que buscamos um alto grau de coesão?</p>
-<p>2Para maximizarmos a reutilização de código. 3Se um método é responsável por apenas uma tarefa bem definida, é muito mais provável que ele possa ser reutilizado. 4Se uma classe representa uma única entidade, maior é a chance de ela ser reaproveitada em um contexto diferente.</p>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/pensando2.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Acoplamento"></p>
+</figure>
+</div>
+</div><div class="column fontsize90" style="width:70%;">
+<p><span style="color:darkblue;">Para que buscamos um alto grau de coesão?</span></p>
+<ul>
+<li class="fragment">Para maximizarmos a reutilização de código.</li>
+<li class="fragment">Se um método é responsável por apenas uma tarefa bem definida, é muito mais provável que ele possa ser reutilizado.</li>
+<li class="fragment">Se uma classe representa uma única entidade, maior é a chance de ela ser reaproveitada em um contexto diferente.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="duplicação-de-código" class="slide level2">
 <h2>Duplicação de Código</h2>
-<p>Duplicação de código é um indicador de design ruim!</p>
-<p>2A duplicação ocorre quando em uma aplicação um mesmo segmento de código aparece mais de uma vez em diferentes pontos do código.</p>
-<p>Por que a duplicação deve ser evitada?</p>
-<p>4Porque qualquer alteração realizada em um trecho de código duplicado, terá que ser realizada em mais de um ponto do código. 5Se a pessoa responsável pela manutenção não perceber a duplicação e fizer alterações em apenas um ponto do código, o sistema se torna inconsistente (bug). 6Além disso, a duplicação leva ao desperdício de tempo durante a fase de implementação do sistema.</p>
+<div class="fontsize90">
+<p><span style="color:darkblue">Duplicação de código é um indicador de design ruim!</span></p>
+<ul>
+<li class="fragment">A duplicação ocorre quando em uma aplicação um mesmo segmento de código aparece mais de uma vez em diferentes pontos do código.</li>
+</ul>
+<p><span class="fragment" style="color:darkblue">Por que a duplicação deve ser evitada?</span></p>
+<ul>
+<li class="fragment">Porque qualquer alteração realizada em um trecho de código duplicado, terá que ser realizada em mais de um ponto do código.</li>
+<li class="fragment">Se a pessoa responsável pela manutenção não perceber a duplicação e fizer alterações em apenas um ponto do código, o sistema se torna inconsistente (bug).</li>
+<li class="fragment">Além disso, a duplicação leva ao desperdício de tempo durante a fase de implementação do sistema.</li>
+</ul>
+</div>
 </section>
 <section id="duplicação-de-código-no-jogo" class="slide level2">
 <h2>Duplicação de Código no Jogo</h2>
+<p><span class="fontsize70">Veja esses dois métodos da classe <code>Jogo</code>: ambos imprimem informações sobre a localização atual.</span></p>
+<div class="columns fontsize80" style="display: flex !important; align-items: top;">
+<div class="column" style="width:59%;">
+<div class="sourceCode" id="cb1" data-code-line-numbers="|8-22"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">void</span> <span class="fu">irParaAmbiente</span><span class="op">(</span>Comando comando<span class="op">){</span></span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co">//Código inicial omitido...</span></span>
+<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span>proximoAmbiente <span class="op">==</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Nao ha passagem!"</span><span class="op">);</span></span>
+<span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a>      ambienteAtual <span class="op">=</span> proximoAmbiente<span class="op">;</span></span>
+<span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Voce esta "</span> <span class="op">+</span> </span>
+<span id="cb1-8"><a href="" aria-hidden="true" tabindex="-1"></a>      ambienteAtual<span class="op">.</span><span class="fu">getDescricao</span><span class="op">());</span></span>
+<span id="cb1-9"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Saidas: "</span><span class="op">);</span></span>
+<span id="cb1-10"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span><span class="op">(</span>ambienteAtual<span class="op">.</span><span class="fu">saidaNorte</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-11"><a href="" aria-hidden="true" tabindex="-1"></a>          <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"norte "</span><span class="op">);</span></span>
+<span id="cb1-12"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb1-13"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span><span class="op">(</span>ambienteAtual<span class="op">.</span><span class="fu">saidaLeste</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-14"><a href="" aria-hidden="true" tabindex="-1"></a>          <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"leste "</span><span class="op">);</span></span>
+<span id="cb1-15"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb1-16"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span><span class="op">(</span>ambienteAtual<span class="op">.</span><span class="fu">saidaSul</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-17"><a href="" aria-hidden="true" tabindex="-1"></a>          <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"sul "</span><span class="op">);</span></span>
+<span id="cb1-18"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb1-19"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span><span class="op">(</span>ambienteAtual<span class="op">.</span><span class="fu">saidaOeste</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-20"><a href="" aria-hidden="true" tabindex="-1"></a>          <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"oeste "</span><span class="op">);</span></span>
+<span id="cb1-21"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb1-22"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">();</span></span>
+<span id="cb1-23"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb1-24"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:56%;">
+<div class="sourceCode" id="cb2" data-code-line-numbers="|3-17"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">void</span> <span class="fu">imprimirBoasVindas</span><span class="op">(){</span></span>
+<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co">//Código inicial omitido...</span></span>
+<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Voce esta "</span> <span class="op">+</span> ambienteAtual<span class="op">.</span><span class="fu">getDescricao</span><span class="op">());</span></span>
+<span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Saidas: "</span><span class="op">);</span></span>
+<span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span><span class="op">(</span>ambienteAtual<span class="op">.</span><span class="fu">saidaNorte</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"norte "</span><span class="op">);</span></span>
+<span id="cb2-7"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb2-8"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span><span class="op">(</span>ambienteAtual<span class="op">.</span><span class="fu">saidaLeste</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-9"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"leste "</span><span class="op">);</span></span>
+<span id="cb2-10"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb2-11"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span><span class="op">(</span>ambienteAtual<span class="op">.</span><span class="fu">saidaSul</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-12"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"sul "</span><span class="op">);</span></span>
+<span id="cb2-13"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb2-14"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span><span class="op">(</span>ambienteAtual<span class="op">.</span><span class="fu">saidaOeste</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-15"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"oeste "</span><span class="op">);</span></span>
+<span id="cb2-16"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb2-17"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">();</span></span>
+<span id="cb2-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fontsize70">
+<p><span class="fragment"><strong>O problema é a falta de coesão dos métodos!</strong> Os dois métodos fazem duas coisas:</span></p>
+<ul>
+<li class="fragment"><em>irParaAmbiente</em>: altera localização e <u>exibe localização atual</u>.</li>
+<li class="fragment"><em>imprimirBoasVindas</em>: imprime boas vindas e <u>exibe localização atual</u>.</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="como-corrigir-a-duplicação-de-código" class="slide level2">
 <h2>Como Corrigir a Duplicação de Código?</h2>
+<div class="columns fontsize90" style="display: flex !important; align-items: center;">
+<div class="column fontsize80" style="width:50%;">
+<p>Criaremos um método cuja única tarefa será imprimir as informações da localização atual.</p>
+<ul>
+<li class="fragment">Com isso, os dois métodos anteriores podem fazer chamada a este método quando precisarem imprimir a localização atual.</li>
+</ul>
+</div><div class="column" style="width:65%;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">void</span> <span class="fu">imprimirLocalizacaoAtual</span><span class="op">(){</span></span>
+<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Voce esta "</span> <span class="op">+</span> ambienteAtual<span class="op">.</span><span class="fu">getDescricao</span><span class="op">());</span></span>
+<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Saidas: "</span><span class="op">);</span></span>
+<span id="cb3-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span><span class="op">(</span>ambienteAtual<span class="op">.</span><span class="fu">saidaNorte</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-5"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"norte "</span><span class="op">);</span></span>
+<span id="cb3-6"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb3-7"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span><span class="op">(</span>ambienteAtual<span class="op">.</span><span class="fu">saidaLeste</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-8"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"leste "</span><span class="op">);</span></span>
+<span id="cb3-9"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb3-10"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span><span class="op">(</span>ambienteAtual<span class="op">.</span><span class="fu">saidaSul</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-11"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"sul "</span><span class="op">);</span></span>
+<span id="cb3-12"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb3-13"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span><span class="op">(</span>ambienteAtual<span class="op">.</span><span class="fu">saidaOeste</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-14"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"oeste "</span><span class="op">);</span></span>
+<span id="cb3-15"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb3-16"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">();</span></span>
+<span id="cb3-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fontsize75">
+<p><span class="fragment">Suponha que precisemos alterar o nosso sistema porque um ambiente passou a ter saídas para cima e para baixo.</span></p>
+<ul>
+<li class="fragment">Na configuração anterior precisaríamos alterar dois pontos do código.</li>
+<li class="fragment">Agora precisaremos alterar apenas o método <code>imprimirLocalizacaoAtual</code>.</li>
+</ul>
+</div>
 </section>
 <section id="atributos-públicos" class="slide level2">
 <h2>Atributos Públicos</h2>

@@ -119,81 +119,193 @@ Esse jogo, no estilo Adventure, foi inspirado em um jogo criado na década de 70
 
 
 ## Acoplamento
-O que é acoplamento (coupling)?
- 
-  2Refere-se à interconectabilidade das classes.
-  3Lembre-se que as classes se relacionam quando seus objetos se comunicam.
-  4Quanto mais as classes se relacionam umas com as outras, mais forte é o acoplamento.
- 
-O que desejamos em termos de acoplamento?<5
- 
-  6Trabalhamos para enfraquecer o acoplamento em um sistema.
+[O que é acoplamento (coupling)?]{style="color:darkblue;"}
+
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="80%" .fontsize90}
+- Refere-se à interconectabilidade das classes.
+- Lembre-se que as classes se relacionam quando seus objetos se comunicam.
+- Quanto mais as classes se relacionam umas com as outras, mais forte é o acoplamento.
+:::
+::: {.column width="25%"}
+![](figuras/acoplamento.png){fig-alt="Acoplamento" fig-align="center" width=30%}
+:::
+::::
+
+[O que desejamos em termos de acoplamento?]{style="color:darkblue;" .fragment}
+
+:::{.fontsize90}
+- Trabalhamos para enfraquecer o acoplamento em um sistema.
+  - Ou seja, cada classe deve ser o mais independente possível e se comunicar com outras por meio de uma interface pequena e bem definida.
+::: 
   
-    Ou seja, cada classe deve ser o mais independente possível e se comunicar com outras por meio de uma interface pequena e bem definida.
 
 ## Acoplamento
-Por que devemos buscar o acoplamento fraco?
- 
-   2Em uma estrutura de classe fortemente acoplada, uma alteração em uma classe pode obrigar a alteração em várias outras classes.
-   
-     Ou seja, uma pequena alteração em uma classe pode se propagar pela aplicação toda.
-   
- 
+::::{.columns style='display: flex !important; align-items: center;'}
+::: {.column width="30%"}
+![](figuras/pensando2.png){fig-alt="Acoplamento" fig-align="center" width=80%}
+:::
+::: {.column width="70%" .fontsize90}
+[Por que devemos buscar o acoplamento fraco?]{style="color:darkblue;"}
 
+- Em uma estrutura de classe fortemente acoplada, uma alteração em uma classe pode obrigar a alteração em várias outras classes.
+  - Ou seja, uma pequena alteração em uma classe pode se propagar pela aplicação toda.
+:::
+::::
 
-
-Resumindo, quanto mais acopladas forem as classes, mais difícil se torna realizar alterações em um sistema.
-
-## Coesão
-O que é coesão?
-
-  2Refere-se à quantidade e diversidade de tarefas sob responsabilidade de uma unidade de uma aplicação.
-  3Uma unidade pode ser:
-  
-    Um método.
-    Uma classe.
-    Um conjunto de classes (pacote).
-  
-
-
-
-0.2
-
-
-O que se espera em termos de coesão?
- 
-  5Um bom design de classe exibe um grau elevado de coesão.
-  6Em um sistema com alto grau de coesão:
-  
-    Cada método é responsável por apenas uma tarefa bem definida (deve implementar uma operação lógica).
-   7Uma classe deve representar um tipo de entidade. 
+[Resumindo, quanto mais acopladas forem as classes, mais difícil se torna realizar alterações em um sistema.]{style="color:darkblue;" .fontsize90 .fragment}
 
 ## Coesão
-Para que buscamos um alto grau de coesão?
- 
-  2Para maximizarmos a reutilização de código.
-  3Se um método é responsável por apenas uma tarefa bem definida, é muito mais provável que ele possa ser reutilizado.
-  4Se uma classe representa uma única entidade, maior é a chance de ela ser reaproveitada em um contexto diferente.
+[O que é coesão?]{style="color:darkblue;"}
+
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="80%" .fontsize90}
+- Refere-se à quantidade e diversidade de tarefas sob responsabilidade de uma unidade de uma aplicação.
+- Uma unidade pode ser: um método, uma classe ou um conjunto de classes (pacote).
+:::
+::: {.column width="25%"}
+![](figuras/multitarefas.png){fig-alt="Acoplamento" fig-align="center" width=90%}
+:::
+::::
+
+[O que se espera em termos de coesão?]{style="color:darkblue;" .fragment}
+
+:::{.fontsize90}
+- Um bom design de classe exibe um grau elevado de coesão.
+- Em um sistema com alto grau de coesão:
+  - Cada método é responsável por apenas uma tarefa bem definida (deve implementar uma operação lógica).
+  - Uma classe deve representar um tipo de entidade. 
+::: 
+
+
+## Coesão
+::::{.columns style='display: flex !important; align-items: center;'}
+::: {.column width="30%"}
+![](figuras/pensando2.png){fig-alt="Acoplamento" fig-align="center" width=80%}
+:::
+::: {.column width="70%" .fontsize90}
+[Para que buscamos um alto grau de coesão?]{style="color:darkblue;"}
+
+- Para maximizarmos a reutilização de código.
+- Se um método é responsável por apenas uma tarefa bem definida, é muito mais provável que ele possa ser reutilizado.
+- Se uma classe representa uma única entidade, maior é a chance de ela ser reaproveitada em um contexto diferente.
+:::
+::::
+
 
 ## Duplicação de Código
-Duplicação de código é um indicador de design ruim!
- 
-  2A duplicação ocorre quando em uma aplicação um mesmo segmento de código aparece mais de uma vez em diferentes pontos do código.
+:::{.fontsize90}
+[Duplicação de código é um indicador de design ruim!]{style="color:darkblue"}
+
+- A duplicação ocorre quando em uma aplicação um mesmo segmento de código aparece mais de uma vez em diferentes pontos do código.
  
 
-Por que a duplicação deve ser evitada?
+[Por que a duplicação deve ser evitada?]{style="color:darkblue" .fragment}
  
-  4Porque qualquer alteração realizada em um trecho de código duplicado, terá que ser realizada em mais de um ponto do código.
-  5Se a pessoa responsável pela manutenção não perceber a duplicação e fizer alterações em apenas um ponto do código, o sistema se torna inconsistente (bug).
-  6Além disso, a duplicação leva ao desperdício de tempo durante a fase de implementação do sistema.
+- Porque qualquer alteração realizada em um trecho de código duplicado, terá que ser realizada em mais de um ponto do código.
+- Se a pessoa responsável pela manutenção não perceber a duplicação e fizer alterações em apenas um ponto do código, o sistema se torna inconsistente (bug).
+- Além disso, a duplicação leva ao desperdício de tempo durante a fase de implementação do sistema.
+:::
 
 ## Duplicação de Código no Jogo
+[Veja esses dois métodos da classe `Jogo`: ambos imprimem informações sobre a localização atual.]{.fontsize70}
 
+::::{.columns style='display: flex !important; align-items: top;' .fontsize80}
+::: {.column width="59%"}
+```{.java code-line-numbers="false" code-line-numbers="|8-22"}
+private void irParaAmbiente(Comando comando){
+  //Código inicial omitido...
+  if (proximoAmbiente == null) {
+      System.out.println("Nao ha passagem!");
+  } else {
+      ambienteAtual = proximoAmbiente;
+      System.out.println("Voce esta " + 
+      ambienteAtual.getDescricao());
+      System.out.print("Saidas: ");
+      if(ambienteAtual.saidaNorte != null) {
+          System.out.print("norte ");
+      }
+      if(ambienteAtual.saidaLeste != null) {
+          System.out.print("leste ");
+      }
+      if(ambienteAtual.saidaSul != null) {
+          System.out.print("sul ");
+      }
+      if(ambienteAtual.saidaOeste != null) {
+          System.out.print("oeste ");
+      }
+      System.out.println();
+  }
+}
+```
+:::
+::: {.column width="56%"}
+```{.java code-line-numbers="false" code-line-numbers="|3-17"}
+private void imprimirBoasVindas(){
+  //Código inicial omitido...
+  System.out.println("Voce esta " + ambienteAtual.getDescricao());
+  System.out.print("Saidas: ");
+  if(ambienteAtual.saidaNorte != null) {
+      System.out.print("norte ");
+  }
+  if(ambienteAtual.saidaLeste != null) {
+      System.out.print("leste ");
+  }
+  if(ambienteAtual.saidaSul != null) {
+      System.out.print("sul ");
+  }
+  if(ambienteAtual.saidaOeste != null) {
+      System.out.print("oeste ");
+  }
+  System.out.println();
+}
+```
 
+:::{.fontsize70}
+[**O problema é a falta de coesão dos métodos!** Os dois métodos fazem duas coisas:]{.fragment}
+
+- *irParaAmbiente*: altera localização e [exibe localização atual]{.underline}.
+- *imprimirBoasVindas*: imprime boas vindas e [exibe localização atual]{.underline}.
+:::
+:::
+::::
 
 ## Como Corrigir a Duplicação de Código?
+::::{.columns style='display: flex !important; align-items: center;' .fontsize90}
+::: {.column width="50%" .fontsize80}
+Criaremos um método cuja única tarefa será imprimir as informações da localização atual.
 
+- Com isso, os dois métodos anteriores podem fazer chamada a este método quando precisarem imprimir a localização atual.
+:::
+::: {.column width="65%"}
+```{.java code-line-numbers="false"}
+private void imprimirLocalizacaoAtual(){
+  System.out.println("Voce esta " + ambienteAtual.getDescricao());
+  System.out.print("Saidas: ");
+  if(ambienteAtual.saidaNorte != null) {
+      System.out.print("norte ");
+  }
+  if(ambienteAtual.saidaLeste != null) {
+      System.out.print("leste ");
+  }
+  if(ambienteAtual.saidaSul != null) {
+      System.out.print("sul ");
+  }
+  if(ambienteAtual.saidaOeste != null) {
+      System.out.print("oeste ");
+  }
+  System.out.println();
+}
+```
+:::
+::::
 
+:::{.fontsize75}
+[Suponha que precisemos alterar o nosso sistema porque um ambiente passou a ter saídas para cima e para baixo.]{.fragment}
+
+- Na configuração anterior precisaríamos alterar dois pontos do código.
+- Agora precisaremos alterar apenas o método `imprimirLocalizacaoAtual`.
+:::
 
 ## Atributos Públicos
 Atributos públicos significam design ruim!
