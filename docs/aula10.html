@@ -764,38 +764,172 @@
 </section>
 <section id="atributos-públicos" class="slide level2">
 <h2>Atributos Públicos</h2>
-<p>Atributos públicos significam design ruim!</p>
-<p>Já vimos que atributos de uma classe devem ser privados. 2Agora entenderemos o que acarreta a escolha de se utilizar atributos públicos.</p>
-<p>Por que o uso de atributos públicos resulta num design de classes ruim?</p>
-<p>4Porque aumenta o grau de acoplamento entre as classes! 5De que forma isso acontece?</p>
-<p>6Se precisarmos alterar a forma ou estratégia de representação dos dados de uma classe com atributos públicos, essa alteração precisará ser realizada em todos os lugares onde os atributos públicos são utilizados. \alert{Certamente isso não é desejado!</p>
+<div class="fontsize90">
+<p><span style="color:darkblue;">Atributos públicos significam design ruim!</span></p>
+<ul>
+<li class="fragment">Já vimos que atributos de uma classe devem ser privados.</li>
+<li class="fragment">Agora entenderemos o que acarreta a escolha de se utilizar atributos públicos.</li>
+</ul>
+<p><span class="fragment" style="color:darkblue;">Por que o uso de atributos públicos resulta num design de classes ruim?</span></p>
+<ul>
+<li class="fragment">Porque aumenta o grau de acoplamento entre as classes!</li>
+<li class="fragment">De que forma isso acontece?
+<ul>
+<li class="fragment">Se precisarmos alterar a forma ou estratégia de representação dos dados de uma classe com atributos públicos, essa alteração precisará ser realizada em todos os lugares onde os atributos públicos são utilizados. <span class="alert">Certamente isso não é desejado!</span></li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="atributos-públicos-no-jogo" class="slide level2">
 <h2>Atributos Públicos no Jogo</h2>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column fontsize80" style="width:60%;">
+<p>No nosso jogo, a classe <code>Ambiente</code> possui atributos públicos, os quais são acessados diretamente na classe <code>Jogo</code>.</p>
+</div><div class="column" style="width:40%;">
+<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Ambiente <span class="op">{</span></span>
+<span id="cb4-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">String</span> descricao<span class="op">;</span></span>
+<span id="cb4-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> Ambiente saidaNorte<span class="op">;</span></span>
+<span id="cb4-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> Ambiente saidaSul<span class="op">;</span></span>
+<span id="cb4-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> Ambiente saidaLeste<span class="op">;</span></span>
+<span id="cb4-6"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> Ambiente saidaOeste<span class="op">;</span></span>
+<span id="cb4-7"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Restante do código omitido</span></span>
+<span id="cb4-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="columns fragment" style="display: flex !important; align-items: center;">
+<div class="column" style="width:48%;">
+<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Código da classe Jogo</span></span>
+<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>direcao<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"norte"</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a>  proximoAmbiente <span class="op">=</span> ambienteAtual<span class="op">.</span><span class="fu">saidaNorte</span><span class="op">;</span></span>
+<span id="cb5-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb5-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>direcao<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"leste"</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb5-6"><a href="" aria-hidden="true" tabindex="-1"></a>  proximoAmbiente <span class="op">=</span> ambienteAtual<span class="op">.</span><span class="fu">saidaLeste</span><span class="op">;</span></span>
+<span id="cb5-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb5-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>direcao<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"sul"</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb5-9"><a href="" aria-hidden="true" tabindex="-1"></a>  proximoAmbiente <span class="op">=</span> ambienteAtual<span class="op">.</span><span class="fu">saidaSul</span><span class="op">;</span></span>
+<span id="cb5-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb5-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>direcao<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"oeste"</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb5-12"><a href="" aria-hidden="true" tabindex="-1"></a>  proximoAmbiente <span class="op">=</span> ambienteAtual<span class="op">.</span><span class="fu">saidaOeste</span><span class="op">;</span></span>
+<span id="cb5-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize75" style="width:60%;">
+<p><span style="color:darkblue;">O que acontece se quisermos incrementar nosso jogo adicionando duas novas saídas: para cima e para baixo?</span></p>
+<ul>
+<li class="fragment">Para fazer essa alteração teríamos que alterar a classe <code>Ambiente</code> e modificar a classe <code>Jogo</code> para ajustar os <em>if’s</em> que tratam os ambientes.</li>
+<li class="fragment">Isso ocorre porque a classe <code>Jogo</code> está conhecendo como a classe <code>Ambiente</code> trata os dados, sendo que ela deveria conhecer apenas o que a classe <code>Ambiente</code> faz.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="como-corrigir-os-atributos-públicos" class="slide level2">
 <h2>Como Corrigir os Atributos Públicos?</h2>
+<div class="columns" style="display: flex !important; align-items: center;">
+<div class="column fontsize80" style="width:40%;">
+<div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Ambiente<span class="op">{</span></span>
+<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="bu">String</span> descricao<span class="op">;</span></span>
+<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> Ambiente saidaNorte<span class="op">;</span></span>
+<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> Ambiente saidaSul<span class="op">;</span></span>
+<span id="cb6-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> Ambiente saidaLeste<span class="op">;</span></span>
+<span id="cb6-6"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> Ambiente saidaOeste<span class="op">;</span></span>
+<span id="cb6-7"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> Ambiente <span class="fu">getAmbiente</span><span class="op">(</span><span class="bu">String</span> direcao<span class="op">){</span></span>
+<span id="cb6-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(</span>direcao<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"norte"</span><span class="op">))</span> <span class="cf">return</span> saidaNorte<span class="op">;</span></span>
+<span id="cb6-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(</span>direcao<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"sul"</span><span class="op">))</span> <span class="cf">return</span> saidaSul<span class="op">;</span></span>
+<span id="cb6-10"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(</span>direcao<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"leste"</span><span class="op">))</span> <span class="cf">return</span> saidaLeste<span class="op">;</span></span>
+<span id="cb6-11"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(</span>direcao<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"oeste"</span><span class="op">))</span> <span class="cf">return</span> saidaOeste<span class="op">;</span></span>
+<span id="cb6-12"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span><span class="co">//Restante do código omitido</span></span>
+<span id="cb6-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize80" style="width:45%;">
+<ul>
+<li class="fragment">Primeiro vamos esconder (private) os atributos da classe <code>Ambiente</code>.</li>
+<li class="fragment">Em seguida, criamos um método <code>getAmbiente</code> que recebe por parâmetro a direção e retorna o ambiente correspondente.</li>
+</ul>
+</div>
+</div>
+<div class="columns fragment" style="display: flex !important;  align-items: top;">
+<div class="column fontsize80" style="width:30%;">
+<p>O que isso muda na classe <code>Jogo</code>?</p>
+<ul>
+<li class="fragment">Na classe <code>Jogo</code>, ao invés de acessarmos diretamente os atributos da classe <code>Ambiente</code>, agora chamamos o método <code>getAmbiente</code>.</li>
+</ul>
+</div><div class="column fontsize80" style="width:40%;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Código da classe Jogo</span></span>
+<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>direcao<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"norte"</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a>  proximoAmbiente <span class="op">=</span> ambienteAtual<span class="op">.</span><span class="fu">getAmbiente</span><span class="op">(</span><span class="st">"norte"</span><span class="op">);</span></span>
+<span id="cb7-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb7-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>direcao<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"leste"</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb7-6"><a href="" aria-hidden="true" tabindex="-1"></a>  proximoAmbiente <span class="op">=</span> ambienteAtual<span class="op">.</span><span class="fu">getAmbiente</span><span class="op">(</span><span class="st">"leste"</span><span class="op">);</span></span>
+<span id="cb7-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb7-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>direcao<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"sul"</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb7-9"><a href="" aria-hidden="true" tabindex="-1"></a>  proximoAmbiente <span class="op">=</span> ambienteAtual<span class="op">.</span><span class="fu">getAmbiente</span><span class="op">(</span><span class="st">"sul"</span><span class="op">);</span></span>
+<span id="cb7-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb7-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>direcao<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"oeste"</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb7-12"><a href="" aria-hidden="true" tabindex="-1"></a>  proximoAmbiente <span class="op">=</span> ambienteAtual<span class="op">.</span><span class="fu">getAmbiente</span><span class="op">(</span><span class="st">"oeste"</span><span class="op">);</span></span>
+<span id="cb7-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
 <section id="incrementando-o-jogo" class="slide level2">
 <h2>Incrementando o Jogo</h2>
-<p>Agora desejamos acrescentar opções de saídas nos ambientes.</p>
-<p>Gostaríamos de acrescentar as saídas \underline{para cima e \underline{para baixo. Inicialmente poderíamos pensar e colocar mais dois atributos na classe Ambiente.</p>
-<p>Mas e se no futuro eu decidir adicionar ainda mais opções de saída?&lt;2</p>
-<p>3Se estamos definindo um conjunto de dados que pode aumentar, deveríamos trabalhar com atributos compostos (vetores/coleções). 4Portanto, vamos usar uma coleção denominada HashMap.</p>
-<pre><code>Um objeto dessa classe é como um dicionário que possui uma chave e um valor.</code></pre>
-<p>5Esse tipo de estrutura permite buscarmos o valor a partir da chave.</p>
+<div class="fontsize90">
+<p><span style="color:darkblue;">Agora desejamos acrescentar opções de saídas nos ambientes.</span></p>
+<ul>
+<li class="fragment">Gostaríamos de acrescentar as saídas <u>para cima</u> e <u>para baixo</u>.</li>
+<li class="fragment">Inicialmente poderíamos pensar e colocar mais dois atributos na classe <code>Ambiente</code>.</li>
+</ul>
+<p><span class="fragment" style="color:darkblue;">Mas e se no futuro eu decidir adicionar ainda mais opções de saída?</span></p>
+<ul>
+<li class="fragment"><p>Se estamos definindo um conjunto de dados que pode aumentar, deveríamos trabalhar com atributos compostos (vetores/coleções).</p></li>
+<li class="fragment"><p>Portanto, vamos usar uma coleção denominada HashMap.</p>
+<ul>
+<li class="fragment">Um objeto dessa classe é como um dicionário que possui uma chave e um valor.</li>
+<li class="fragment">Esse tipo de estrutura permite buscarmos o valor a partir da chave.</li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="incrementando-o-jogo-1" class="slide level2">
 <h2>Incrementando o Jogo</h2>
+<div class="fontsize90">
+<div class="sourceCode" id="cb8"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">HashMap</span><span class="op">;</span></span>
+<span id="cb8-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Ambiente<span class="op">{</span></span>
+<span id="cb8-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="bu">String</span> descricao<span class="op">;</span></span>
+<span id="cb8-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="bu">HashMap</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">,</span> Ambiente<span class="op">&gt;</span> saidas<span class="op">;</span> <span class="co">//Armazena os ambientes que são saídas do ambiente atual</span></span>
+<span id="cb8-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">Ambiente</span><span class="op">(</span><span class="bu">String</span> descricao<span class="op">){</span></span>
+<span id="cb8-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">descricao</span> <span class="op">=</span> descricao<span class="op">;</span></span>
+<span id="cb8-7"><a href="" aria-hidden="true" tabindex="-1"></a>    saidas <span class="op">=</span> <span class="kw">new</span> <span class="bu">HashMap</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">,</span>Ambiente<span class="op">&gt;();</span> <span class="co">//A chave (String) representa a direção e o valor é o ambiente</span></span>
+<span id="cb8-8"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb8-9"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">ajustarSaida</span><span class="op">(</span>Ambiente norte<span class="op">,</span> Ambiente sul<span class="op">,</span> Ambiente leste<span class="op">,</span> Ambiente oeste<span class="op">){</span></span>
+<span id="cb8-10"><a href="" aria-hidden="true" tabindex="-1"></a>      saidas<span class="op">.</span><span class="fu">put</span><span class="op">(</span><span class="st">"norte"</span><span class="op">,</span> norte<span class="op">);</span> <span class="co">//Adicionamos cada ambiente no HashMap com seu respectivo valor</span></span>
+<span id="cb8-11"><a href="" aria-hidden="true" tabindex="-1"></a>      saidas<span class="op">.</span><span class="fu">put</span><span class="op">(</span><span class="st">"sul"</span><span class="op">,</span> sul<span class="op">);</span></span>
+<span id="cb8-12"><a href="" aria-hidden="true" tabindex="-1"></a>      saidas<span class="op">.</span><span class="fu">put</span><span class="op">(</span><span class="st">"leste"</span><span class="op">,</span> leste<span class="op">);</span></span>
+<span id="cb8-13"><a href="" aria-hidden="true" tabindex="-1"></a>      saidas<span class="op">.</span><span class="fu">put</span><span class="op">(</span><span class="st">"oeste"</span><span class="op">,</span> oeste<span class="op">);</span></span>
+<span id="cb8-14"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb8-15"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getDescricao</span><span class="op">(){</span></span>
+<span id="cb8-16"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> descricao<span class="op">;</span></span>
+<span id="cb8-17"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb8-18"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> Ambiente <span class="fu">getAmbiente</span><span class="op">(</span><span class="bu">String</span> direcao<span class="op">){</span></span>
+<span id="cb8-19"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> saidas<span class="op">.</span><span class="fu">get</span><span class="op">(</span>direcao<span class="op">);</span> <span class="co">//Para obter um elemento do HashMap basta fornecer a chave correspondente</span></span>
+<span id="cb8-20"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb8-21"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="incrementando-o-jogo-2" class="slide level2">
 <h2>Incrementando o Jogo</h2>
-<p>Adicionando as saídas para cima e para baixo.</p>
-<p>Para adicionarmos as saídas para cima e para baixo basta acrescentarmos parâmetros ao método ajustarSaidas da classe Ambiente.</p>
-<p>Pensando no futuro…&lt;2</p>
-<p>2Mas e se no futuro eu desejar ter ainda mais saídas? 2Como podemos deixar nossa classe Ambiente mais genérica?</p>
-<p>3Podemos alterar o método ajustarSaidas de modo que se permita ajustar uma saída por vez. 4Desse modo, o usuário da classe pode definir a direção que ele quiser.</p>
-<p>Um bom design de classes tenta antecipar possíveis necessidades futuras de alterações no código!</p>
+<div class="fontsize90">
+<p><span style="color:darkblue;">Adicionando as saídas para cima e para baixo.</span></p>
+<ul>
+<li class="fragment">Para adicionarmos as saídas para cima e para baixo basta acrescentarmos parâmetros ao método ajustarSaidas da classe Ambiente.</li>
+</ul>
+<p><span class="fragment" style="color:darkblue;">Pensando no futuro…</span></p>
+<ul>
+<li class="fragment">Mas e se no futuro eu desejar ter ainda mais saídas?</li>
+<li class="fragment">Como podemos deixar nossa classe <code>Ambiente</code> mais genérica?
+<ul>
+<li class="fragment">Podemos alterar o método <code>ajustarSaidas</code> de modo que se permita ajustar uma saída por vez.</li>
+<li class="fragment">Desse modo, o usuário da classe pode definir a direção que ele quiser.</li>
+</ul></li>
+</ul>
+<p><span class="fragment" style="color:darkblue;">Um bom design de classes tenta antecipar possíveis necessidades futuras de alterações no código!</span></p>
+</div>
 </section>
 <section id="pensando-no-futuro" class="slide level2">
 <h2>Pensando no Futuro…</h2>
