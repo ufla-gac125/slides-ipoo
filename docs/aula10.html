@@ -559,12 +559,12 @@
 <section id="acoplamento" class="slide level2">
 <h2>Acoplamento</h2>
 <p><span style="color:darkblue;">O que é acoplamento (coupling)?</span></p>
-<div class="columns" style="display: flex !important; align-items: top;">
+<div class="columns fragment" style="display: flex !important; align-items: top;">
 <div class="column fontsize90" style="width:80%;">
 <ul>
-<li class="fragment">Refere-se à interconectabilidade das classes.</li>
-<li class="fragment">Lembre-se que as classes se relacionam quando seus objetos se comunicam.</li>
-<li class="fragment">Quanto mais as classes se relacionam umas com as outras, mais forte é o acoplamento.</li>
+<li>Refere-se à interconectabilidade das classes.</li>
+<li>Lembre-se que as classes se relacionam quando seus objetos se comunicam.</li>
+<li>Quanto mais as classes se relacionam umas com as outras, mais forte é o acoplamento.</li>
 </ul>
 </div><div class="column" style="width:25%;">
 <div class="quarto-figure quarto-figure-center">
@@ -608,11 +608,11 @@
 <section id="coesão" class="slide level2">
 <h2>Coesão</h2>
 <p><span style="color:darkblue;">O que é coesão?</span></p>
-<div class="columns" style="display: flex !important; align-items: top;">
+<div class="columns fragment" style="display: flex !important; align-items: top;">
 <div class="column fontsize90" style="width:80%;">
 <ul>
-<li class="fragment">Refere-se à quantidade e diversidade de tarefas sob responsabilidade de uma unidade de uma aplicação.</li>
-<li class="fragment">Uma unidade pode ser: um método, uma classe ou um conjunto de classes (pacote).</li>
+<li>Refere-se à quantidade e diversidade de tarefas sob responsabilidade de uma unidade de uma aplicação.</li>
+<li>Uma unidade pode ser: um método, uma classe ou um conjunto de classes (pacote).</li>
 </ul>
 </div><div class="column" style="width:25%;">
 <div class="quarto-figure quarto-figure-center">
@@ -914,7 +914,7 @@
 </section>
 <section id="incrementando-o-jogo-2" class="slide level2">
 <h2>Incrementando o Jogo</h2>
-<div class="fontsize90">
+<div class="fontsize85">
 <p><span style="color:darkblue;">Adicionando as saídas para cima e para baixo.</span></p>
 <ul>
 <li class="fragment">Para adicionarmos as saídas para cima e para baixo basta acrescentarmos parâmetros ao método ajustarSaidas da classe Ambiente.</li>
@@ -933,6 +933,32 @@
 </section>
 <section id="pensando-no-futuro" class="slide level2">
 <h2>Pensando no Futuro…</h2>
+<div class="fontsize80">
+<div class="sourceCode" id="cb9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Ambiente<span class="op">{</span></span>
+<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="bu">String</span> descricao<span class="op">;</span></span>
+<span id="cb9-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="bu">HashMap</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">,</span> Ambiente<span class="op">&gt;</span> saidas<span class="op">;</span></span>
+<span id="cb9-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">Ambiente</span><span class="op">(</span><span class="bu">String</span> descricao<span class="op">){</span></span>
+<span id="cb9-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">descricao</span> <span class="op">=</span> descricao<span class="op">;</span></span>
+<span id="cb9-6"><a href="" aria-hidden="true" tabindex="-1"></a>    saidas <span class="op">=</span> <span class="kw">new</span> <span class="bu">HashMap</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">,</span>Ambiente<span class="op">&gt;();</span></span>
+<span id="cb9-7"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb9-8"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">ajustarSaida</span><span class="op">(</span><span class="bu">String</span> direcao<span class="op">,</span> Ambiente ambiente<span class="op">){</span></span>
+<span id="cb9-9"><a href="" aria-hidden="true" tabindex="-1"></a>    saidas<span class="op">.</span><span class="fu">put</span><span class="op">(</span>direcao<span class="op">,</span> ambiente<span class="op">);</span> <span class="co">//Agora podemos definir a direção desejada e o ambiente correspondente</span></span>
+<span id="cb9-10"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb9-11"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getDescricao</span><span class="op">(){</span></span>
+<span id="cb9-12"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> descricao<span class="op">;</span></span>
+<span id="cb9-13"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb9-14"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> Ambiente <span class="fu">getAmbiente</span><span class="op">(</span><span class="bu">String</span> direcao<span class="op">){</span></span>
+<span id="cb9-15"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> saidas<span class="op">.</span><span class="fu">get</span><span class="op">(</span>direcao<span class="op">);</span></span>
+<span id="cb9-16"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb9-17"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getSaidas</span><span class="op">(){</span> <span class="co">//Método que gera uma string com todas direções de saída exsitentes    </span></span>
+<span id="cb9-18"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="bu">String</span> textoSaidas <span class="op">=</span> <span class="st">""</span><span class="op">;</span></span>
+<span id="cb9-19"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="bu">String</span> direcao <span class="op">:</span> saidas<span class="op">.</span><span class="fu">keySet</span><span class="op">()){</span> <span class="co">//KeySet retorna uma coleção com as chaves do HashMap</span></span>
+<span id="cb9-20"><a href="" aria-hidden="true" tabindex="-1"></a>      textoSaidas <span class="op">=</span> textoSaidas <span class="op">+</span> direcao <span class="op">+</span> <span class="st">" "</span><span class="op">;</span>  </span>
+<span id="cb9-21"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb9-22"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> textoSaidas<span class="op">;</span></span>
+<span id="cb9-23"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb9-24"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="design-baseado-na-responsabilidade" class="slide level2">
 <h2>Design Baseado na Responsabilidade</h2>

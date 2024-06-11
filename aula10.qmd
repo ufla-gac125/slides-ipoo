@@ -121,8 +121,8 @@ Esse jogo, no estilo Adventure, foi inspirado em um jogo criado na década de 70
 ## Acoplamento
 [O que é acoplamento (coupling)?]{style="color:darkblue;"}
 
-::::{.columns style='display: flex !important; align-items: top;'}
-::: {.column width="80%" .fontsize90}
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="80%" .fontsize90 .nonincremental}
 - Refere-se à interconectabilidade das classes.
 - Lembre-se que as classes se relacionam quando seus objetos se comunicam.
 - Quanto mais as classes se relacionam umas com as outras, mais forte é o acoplamento.
@@ -158,8 +158,8 @@ Esse jogo, no estilo Adventure, foi inspirado em um jogo criado na década de 70
 ## Coesão
 [O que é coesão?]{style="color:darkblue;"}
 
-::::{.columns style='display: flex !important; align-items: top;'}
-::: {.column width="80%" .fontsize90}
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="80%" .fontsize90 .nonincremental}
 - Refere-se à quantidade e diversidade de tarefas sob responsabilidade de uma unidade de uma aplicação.
 - Uma unidade pode ser: um método, uma classe ou um conjunto de classes (pacote).
 :::
@@ -465,11 +465,10 @@ public class Ambiente{
 
 
 ## Incrementando o Jogo
-:::{.fontsize90}
+:::{.fontsize85}
 [Adicionando as saídas para cima e para baixo.]{style="color:darkblue;"}
  
 - Para adicionarmos as saídas para cima e para baixo basta acrescentarmos parâmetros ao método ajustarSaidas da classe Ambiente.
- 
 
 [Pensando no futuro...]{style="color:darkblue;" .fragment}
  
@@ -482,22 +481,49 @@ public class Ambiente{
 :::
 
 ## Pensando no Futuro...
-
+:::{.fontsize80}
+```{.java code-line-numbers="false"}
+public class Ambiente{
+  private String descricao;
+  private HashMap<String, Ambiente> saidas;
+  public Ambiente(String descricao){
+    this.descricao = descricao;
+    saidas = new HashMap<String,Ambiente>();
+  }
+  public void ajustarSaida(String direcao, Ambiente ambiente){
+    saidas.put(direcao, ambiente); //Agora podemos definir a direção desejada e o ambiente correspondente
+  }
+  public String getDescricao(){
+    return descricao;
+  }
+  public Ambiente getAmbiente(String direcao){
+    return saidas.get(direcao);
+  }
+  public String getSaidas(){ //Método que gera uma string com todas direções de saída exsitentes  	
+    String textoSaidas = "";
+    for (String direcao : saidas.keySet()){ //KeySet retorna uma coleção com as chaves do HashMap
+      textoSaidas = textoSaidas + direcao + " ";  
+    }
+    return textoSaidas;
+  }
+}
+```
+:::
 
 ## Design Baseado na Responsabilidade
-O grau de acoplamento também é influenciado pelo design baseado na responsabilidade.
+:::{.fontsize90}
+[O grau de acoplamento também é influenciado pelo design baseado na responsabilidade.]{style="color:darkblue;"}
 
-  Mas o que significa design baseado na responsabilidade?
+Mas o que significa design baseado na responsabilidade?
  
-  2É o processo de projetar classes atribuindo responsabilidades bem definidas a cada classe.
-  3A ideia é que cada classe deve ser responsável por tratar seus próprios dados.
-  4Ou seja, quem deve manipular um dado é a classe que o contém!
+- É o processo de projetar classes atribuindo responsabilidades bem definidas a cada classe.
+- A ideia é que cada classe deve ser responsável por tratar seus próprios dados.
+- Ou seja, quem deve manipular um dado é a classe que o contém!
  
-
-
-Quando precisamos adicionar uma nova funcionalidade em uma aplicação, em qual classe devemos adicionar o método que implementa essa nova funcionalidade?<5
+[Quando precisamos adicionar uma nova funcionalidade em uma aplicação, em qual classe devemos adicionar o método que implementa essa nova funcionalidade?]<5
  
   6Na classe responsável pelos dados que serão manipulados por esse novo método.
+:::
 
 ## Design Baseado na Responsabilidade - Jogo
 Suponha que queiramos adicionar um porão embaixo do escritório.
