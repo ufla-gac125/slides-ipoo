@@ -11,7 +11,7 @@
 <script src="aula10_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula10_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula10_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.550">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Design de Classes: Coesão e Acoplamento </title>
@@ -962,42 +962,100 @@
 </section>
 <section id="design-baseado-na-responsabilidade" class="slide level2">
 <h2>Design Baseado na Responsabilidade</h2>
-<p>O grau de acoplamento também é influenciado pelo design baseado na responsabilidade.</p>
+<div class="fontsize85">
+<p><span style="color:darkblue;">O grau de acoplamento também é influenciado pelo design baseado na responsabilidade.</span></p>
 <p>Mas o que significa design baseado na responsabilidade?</p>
-<p>2É o processo de projetar classes atribuindo responsabilidades bem definidas a cada classe. 3A ideia é que cada classe deve ser responsável por tratar seus próprios dados. 4Ou seja, quem deve manipular um dado é a classe que o contém!</p>
-<p>Quando precisamos adicionar uma nova funcionalidade em uma aplicação, em qual classe devemos adicionar o método que implementa essa nova funcionalidade?&lt;5</p>
-<p>6Na classe responsável pelos dados que serão manipulados por esse novo método.</p>
+<ul>
+<li class="fragment">É o processo de projetar classes atribuindo responsabilidades bem definidas a cada classe.</li>
+<li class="fragment">A ideia é que cada classe deve ser responsável por tratar seus próprios dados.</li>
+<li class="fragment">Ou seja, quem deve manipular um dado é a classe que o contém!</li>
+</ul>
+<p><span class="fragment" style="color:darkblue;">Quando precisamos adicionar uma nova funcionalidade em uma aplicação, em qual classe devemos adicionar o método que implementa essa nova funcionalidade?</span></p>
+<ul>
+<li class="fragment">Na classe responsável pelos dados que serão manipulados por esse novo método.</li>
+</ul>
+</div>
 </section>
 <section id="design-baseado-na-responsabilidade---jogo" class="slide level2">
 <h2>Design Baseado na Responsabilidade - Jogo</h2>
-<p>Suponha que queiramos adicionar um porão embaixo do escritório.</p>
+<p><span style="color:darkblue;">Suponha que queiramos adicionar um porão embaixo do escritório.</span></p>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column fontsize80" style="width:45%;">
 <p>Como podemos adicionar esse novo ambiente no jogo?</p>
-<p>2Para isso, precisamos alterar apenas o método criarAmbientes na classe Jogo. 3Essa inclusão de ambiente ficou simples de ser feita devido às alterações realizadas na classe Ambiente, que tornaram as responsabilidades mais bem divididas.</p>
+<ul>
+<li class="fragment">Para isso, precisamos alterar apenas o método <code>criarAmbientes</code> na classe <code>Jogo</code>.</li>
+</ul>
+</div><div class="column" style="width:65%;">
+<div class="sourceCode" id="cb10"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Código da classe Jogo</span></span>
+<span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">void</span> <span class="fu">criarAmbientes</span><span class="op">(){</span></span>
+<span id="cb10-3"><a href="" aria-hidden="true" tabindex="-1"></a>  Ambiente fora<span class="op">,</span>anfiteatro<span class="op">,</span>cantina<span class="op">,</span>lab<span class="op">,</span>escritorio<span class="op">,</span>porao<span class="op">;</span></span>
+<span id="cb10-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Cria outros ambientes...</span></span>
+<span id="cb10-6"><a href="" aria-hidden="true" tabindex="-1"></a>  porao <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ambiente</span><span class="op">(</span><span class="st">"porao abaixo do escritorio"</span><span class="op">);</span></span>
+<span id="cb10-7"><a href="" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-8"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Inicializa as outras saidas dos ambientes...</span></span>
+<span id="cb10-9"><a href="" aria-hidden="true" tabindex="-1"></a>  escritorio<span class="op">.</span><span class="fu">ajustarSaida</span><span class="op">(</span><span class="st">"baixo"</span><span class="op">,</span> porao<span class="op">);</span></span>
+<span id="cb10-10"><a href="" aria-hidden="true" tabindex="-1"></a>  porao<span class="op">.</span><span class="fu">ajustarSaida</span><span class="op">(</span><span class="st">"cima"</span><span class="op">,</span>escritorio<span class="op">);</span></span>
+<span id="cb10-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p><span class="fontsize85 fragment">Essa inclusão de ambiente ficou simples de ser feita devido às alterações realizadas na classe <code>Ambiente</code>, que tornaram as responsabilidades mais bem divididas.</span></p>
 </section>
 <section id="design-baseado-na-responsabilidade---jogo-1" class="slide level2">
 <h2>Design Baseado na Responsabilidade - Jogo</h2>
-<p>Suponha que queiramos adicionar itens aos ambientes.</p>
+<div class="fontsize80">
+<p><span style="color:darkblue;">Suponha que queiramos adicionar itens aos ambientes.</span></p>
 <p>Qual o melhor lugar para acrescentá-los?</p>
-<p>2Na classe Ambiente, afinal eles farão parte do ambiente.</p>
-<p>3Para isso, precisamos alterar outras classes além da classe Ambiente?</p>
-<p>4Sim, a classe Jogo também precisará ser alterada para passar a chamar um método da classe Ambiente que permita a exibição dos itens.</p>
-<p>5Como poderíamos evitar a alteração da classe Jogo a cada novidade inserida no ambiente?</p>
-<pre><code>6Criando um método na classe Ambiente (p.ex., getDescricaoLonga) que retorna um texto descrevendo tudo que existe no ambiente.
-7Desse modo, futuras inclusões de elementos nos ambientes resultariam em alterações apenas na classe Ambiente.</code></pre>
+<ul>
+<li class="fragment">Na classe <code>Ambiente</code>, afinal eles farão parte do ambiente.</li>
+</ul>
+<p><span class="fragment">Para isso, precisamos alterar outras classes além da classe <code>Ambiente</code>?</span></p>
+<ul>
+<li class="fragment">Sim, a classe <code>Jogo</code> também precisará ser alterada para passar a chamar um método da classe <code>Ambiente</code> que permita a exibição dos itens.</li>
+</ul>
+<p><span class="fragment">Como poderíamos evitar a alteração da classe <code>Jogo</code> a cada novidade inserida no ambiente?</span></p>
+<ul>
+<li class="fragment">Criando um método na classe <code>Ambiente</code> (p.ex., getDescricaoLonga) que retorna um texto descrevendo tudo que existe no ambiente.</li>
+<li class="fragment">Desse modo, futuras inclusões de elementos nos ambientes resultariam em alterações apenas na classe <code>Ambiente</code>.</li>
+</ul>
+</div>
 </section>
 <section id="minimizando-alterações" class="slide level2">
 <h2>Minimizando Alterações</h2>
+<div class="fontsize90">
 <p>Devemos criar um design de classe que facilite alterações futuras localizando os efeitos de uma alteração.</p>
-<p>Ou seja, idealmente apenas uma classe precisa ser alterada para se fazer uma modificação.</p>
-<p>2Ocasionalmente, pode acontecer de alterações serem necessárias em mais de uma classe ao se fazer uma modificação no sistema.</p>
-<p>Nesses casos, as alterações necessárias em outras classes devem ser óbvias, fáceis de detectar e executar.</p>
+<ul>
+<li class="fragment">Ou seja, idealmente apenas uma classe precisa ser alterada para se fazer uma modificação.</li>
+</ul>
+<p><span class="fragment">Ocasionalmente, pode acontecer de alterações serem necessárias em mais de uma classe ao se fazer uma modificação no sistema.</span></p>
+<ul>
+<li class="fragment">Nesses casos, as alterações necessárias em outras classes devem ser óbvias, fáceis de detectar e executar.</li>
+</ul>
+</div>
 </section>
 <section id="acoplamento-implícito" class="slide level2">
 <h2>Acoplamento Implícito</h2>
-<p>Vimos que o uso de atributos públicos pode aumentar o grau de acoplamento entre classes.</p>
-<p>2Isso significa que pode ser necessário fazer alterações em mais de uma classe por causa de uma simples modificação no código. 3Portanto, sabemos que atributos públicos devem ser evitados.</p>
-<p>Mas há uma forma de acoplamento ainda pior. Você sabe qual?&lt;4</p>
-<p>5O acoplamento implícito!%colocar um figura aqui</p>
+<div class="fontsize90">
+<p><span style="color:darkblue;">Vimos que o uso de atributos públicos pode aumentar o grau de acoplamento entre classes.</span></p>
+<ul>
+<li class="fragment">Isso significa que pode ser necessário fazer alterações em mais de uma classe por causa de uma simples modificação no código.</li>
+<li class="fragment">Portanto, sabemos que atributos públicos devem ser evitados.</li>
+</ul>
+<p><span class="fragment" style="color:darkblue;">Mas há uma forma de acoplamento ainda pior. Você sabe qual?</span></p>
+<div class="columns fragment" style="display: flex !important; align-items: top;">
+<div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/animal_assustado.png" class="quarto-figure quarto-figure-center" style="width:50.0%" alt="Acoplamento"></p>
+</figure>
+</div>
+</div><div class="column" style="width:75%;">
+<ul>
+<li>O acoplamento implícito!</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="acoplamento-implícito-1" class="slide level2">
 <h2>Acoplamento Implícito</h2>

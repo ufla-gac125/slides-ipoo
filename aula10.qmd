@@ -511,7 +511,7 @@ public class Ambiente{
 :::
 
 ## Design Baseado na Responsabilidade
-:::{.fontsize90}
+:::{.fontsize85}
 [O grau de acoplamento também é influenciado pelo design baseado na responsabilidade.]{style="color:darkblue;"}
 
 Mas o que significa design baseado na responsabilidade?
@@ -520,55 +520,91 @@ Mas o que significa design baseado na responsabilidade?
 - A ideia é que cada classe deve ser responsável por tratar seus próprios dados.
 - Ou seja, quem deve manipular um dado é a classe que o contém!
  
-[Quando precisamos adicionar uma nova funcionalidade em uma aplicação, em qual classe devemos adicionar o método que implementa essa nova funcionalidade?]<5
+[Quando precisamos adicionar uma nova funcionalidade em uma aplicação, em qual classe devemos adicionar o método que implementa essa nova funcionalidade?]{style="color:darkblue;" .fragment}
  
-  6Na classe responsável pelos dados que serão manipulados por esse novo método.
+- Na classe responsável pelos dados que serão manipulados por esse novo método.
 :::
 
 ## Design Baseado na Responsabilidade - Jogo
-Suponha que queiramos adicionar um porão embaixo do escritório.
+[Suponha que queiramos adicionar um porão embaixo do escritório.]{style="color:darkblue;"}
 
-  Como podemos adicionar esse novo ambiente no jogo?
- 
-  2Para isso, precisamos alterar apenas o método criarAmbientes na classe Jogo.
-  3Essa inclusão de ambiente ficou simples de ser feita devido às alterações realizadas na classe Ambiente, que tornaram as responsabilidades mais bem divididas.
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="45%" .fontsize80}
+Como podemos adicionar esse novo ambiente no jogo?
+
+- Para isso, precisamos alterar apenas o método `criarAmbientes` na classe `Jogo`.
+:::
+::: {.column width="65%"}
+```{.java code-line-numbers="false"}
+//Código da classe Jogo
+private void criarAmbientes(){
+  Ambiente fora,anfiteatro,cantina,lab,escritorio,porao;
+
+  // Cria outros ambientes...
+  porao = new Ambiente("porao abaixo do escritorio");
+  
+  // Inicializa as outras saidas dos ambientes...
+  escritorio.ajustarSaida("baixo", porao);
+  porao.ajustarSaida("cima",escritorio);
+}
+```
+:::
+::::
+
+[Essa inclusão de ambiente ficou simples de ser feita devido às alterações realizadas na classe `Ambiente`, que tornaram as responsabilidades mais bem divididas.]{.fontsize85 .fragment}
 
 ## Design Baseado na Responsabilidade - Jogo
-Suponha que queiramos adicionar itens aos ambientes.
+:::{.fontsize80}
+[Suponha que queiramos adicionar itens aos ambientes.]{style="color:darkblue;"}
  
-   Qual o melhor lugar para acrescentá-los?
+Qual o melhor lugar para acrescentá-los?
   
-   2Na classe Ambiente, afinal eles farão parte do ambiente.
+- Na classe `Ambiente`, afinal eles farão parte do ambiente.
   
-  3Para isso, precisamos alterar outras classes além da classe Ambiente?
+[Para isso, precisamos alterar outras classes além da classe `Ambiente`?]{.fragment}
   
-   4Sim, a classe Jogo também precisará ser alterada para passar a chamar um método da classe Ambiente que permita a exibição dos itens.
+- Sim, a classe `Jogo` também precisará ser alterada para passar a chamar um método da classe `Ambiente` que permita a exibição dos itens.
   
-   5Como poderíamos evitar a alteração da classe Jogo a cada novidade inserida no ambiente?
+[Como poderíamos evitar a alteração da classe `Jogo` a cada novidade inserida no ambiente?]{.fragment}
    
-    6Criando um método na classe Ambiente (p.ex., getDescricaoLonga) que retorna um texto descrevendo tudo que existe no ambiente.
-    7Desse modo, futuras inclusões de elementos nos ambientes resultariam em alterações apenas na classe Ambiente.
+- Criando um método na classe `Ambiente` (p.ex., getDescricaoLonga) que retorna um texto descrevendo tudo que existe no ambiente.
+- Desse modo, futuras inclusões de elementos nos ambientes resultariam em alterações apenas na classe `Ambiente`.
+:::
+
 
 ## Minimizando Alterações
+:::{.fontsize90}
 Devemos criar um design de classe que facilite alterações futuras localizando os efeitos de uma alteração.
  
-   Ou seja, idealmente apenas uma classe precisa ser alterada para se fazer uma modificação.
+- Ou seja, idealmente apenas uma classe precisa ser alterada para se fazer uma modificação.
  
- 2Ocasionalmente, pode acontecer de alterações serem necessárias em mais de uma classe ao se fazer uma modificação no sistema.
+[Ocasionalmente, pode acontecer de alterações serem necessárias em mais de uma classe ao se fazer uma modificação no sistema.]{.fragment}
  
-   Nesses casos, as alterações necessárias em outras classes devem ser óbvias, fáceis de detectar e executar.
+- Nesses casos, as alterações necessárias em outras classes devem ser óbvias, fáceis de detectar e executar.
+:::
 
 
 ## Acoplamento Implícito
-Vimos que o uso de atributos públicos pode aumentar o grau de acoplamento entre classes.
+:::{.fontsize90}
+[Vimos que o uso de atributos públicos pode aumentar o grau de acoplamento entre classes.]{style="color:darkblue;"}
  
-  2Isso significa que pode ser necessário fazer alterações em mais de uma classe por causa de uma simples modificação no código.
-  3Portanto, sabemos que atributos públicos devem ser evitados.
+- Isso significa que pode ser necessário fazer alterações em mais de uma classe por causa de uma simples modificação no código.
+- Portanto, sabemos que atributos públicos devem ser evitados.
  
 
-Mas há uma forma de acoplamento ainda pior. Você sabe qual?<4
- 
-  5O acoplamento implícito!%colocar um figura aqui
+[Mas há uma forma de acoplamento ainda pior. Você sabe qual?]{style="color:darkblue;" .fragment}
+
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="25%" }
+![](figuras/animal_assustado.png){fig-alt="Acoplamento" fig-align="center" width=50%}
+:::
+::: {.column width="75%" .nonincremental}
+- O acoplamento implícito!
+:::
+::::
+
+:::
+
 
 ## Acoplamento Implícito
 O que é o acoplamento implícito?
