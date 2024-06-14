@@ -11,7 +11,7 @@
 <script src="aula10_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula10_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula10_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Design de Classes: Coesão e Acoplamento </title>
@@ -1059,19 +1059,49 @@
 </section>
 <section id="acoplamento-implícito-1" class="slide level2">
 <h2>Acoplamento Implícito</h2>
-<p>O que é o acoplamento implícito?</p>
-<p>2Ele ocorre quando uma classe depende de informações internas de outra, mas essa dependência não é obvia.</p>
-<p>Qual a consequência do acoplamento implícito?&lt;3</p>
-<p>4No caso dos atributos públicos, se eles forem alterados somente na classe que os define, a aplicação deixará de compilar corretamente e o erro será apontado. 5No entanto, nos casos de acoplamento implícito, a omissão de uma alteração necessária pode não ser detectada pelo compilador.</p>
-<pre><code>Com isso, o código compila corretamente, mas a aplicação deixa de funcionar corretamente, ou seja, ela não faz o que deveria ser feito.</code></pre>
+<div class="fontsize90">
+<p><span style="color:darkblue;">O que é o acoplamento implícito?</span></p>
+<ul>
+<li class="fragment">Ele ocorre quando uma classe depende de informações internas de outra, mas essa dependência não é obvia.</li>
+</ul>
+<p><span class="fragment" style="color:darkblue;">Qual a consequência do acoplamento implícito?</span></p>
+<ul>
+<li class="fragment"><p>No caso dos atributos públicos, se eles forem alterados somente na classe que os define, a aplicação deixará de compilar corretamente e o erro será apontado.</p></li>
+<li class="fragment"><p>No entanto, nos casos de acoplamento implícito, a omissão de uma alteração necessária pode não ser detectada pelo compilador.</p>
+<ul>
+<li class="fragment">Com isso, o código compila corretamente, mas a aplicação deixa de funcionar corretamente, ou seja, ela não faz o que deveria ser feito.</li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="acoplamento-implícito-no-jogo" class="slide level2">
 <h2>Acoplamento Implícito no Jogo</h2>
-<p>Suponha que queiramos adicionar o comando observar ao conjunto de comandos válidos do jogo.</p>
-<p>O objetivo desse novo comando é permitir ao usuário visualizar a descrição do ambiente atual, pois podemos não nos lembrar mais das saídas possíveis para aquele ambiente.%colocar uma figura com a tela do jogo mostrando a necessidade desse comando…. Onde devemos fazer essa alteração?</p>
-<p>2Na classe PalavrasComando, adicionando ao vetor de palavras conhecidas o comando observar.</p>
-<p>3O que acontecerá ao testarmos essa alteração?</p>
-<p>4Quando executamos o jogo e digitamos o comando observar, nada acontece. Por que?</p>
+<div class="fontsize80">
+<p><span style="color:darkblue;">Suponha que queiramos adicionar o comando observar ao conjunto de comandos válidos do jogo.</span></p>
+<ul>
+<li><p>O objetivo desse novo comando é permitir ao usuário visualizar a descrição do ambiente atual, pois podemos não nos lembrar mais das saídas possíveis para aquele ambiente.</p></li>
+<li><p>Onde devemos fazer essa alteração?</p></li>
+</ul>
+</div>
+<div class="columns fragment" style="display: flex !important; align-items: center;">
+<div class="column fontsize80" style="width:50%;">
+<p>Na classe <code>PalavrasComando</code>, adicionando ao vetor de palavras conhecidas o comando observar.</p>
+<ul>
+<li class="fragment"><p>O que acontecerá ao testarmos essa alteração?</p>
+<ul>
+<li class="fragment">Quando executamos o jogo e digitamos o comando observar, nada acontece. Por que?</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:55%;">
+<div class="sourceCode" id="cb11"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> PalavrasComando<span class="op">{</span></span>
+<span id="cb11-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co">//Um vetor constante que guarda todas </span></span>
+<span id="cb11-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co">//as palavras de comandos válidas</span></span>
+<span id="cb11-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span> <span class="dt">static</span> <span class="dt">final</span> <span class="bu">String</span><span class="op">[]</span> comandosValidos <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb11-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ir"</span><span class="op">,</span> <span class="st">"sair"</span><span class="op">,</span> <span class="st">"ajuda"</span><span class="op">,</span> <span class="st">"observar"</span><span class="op">};</span></span>
+<span id="cb11-6"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co">//Restante do código omitido</span></span>
+<span id="cb11-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
 <section id="acoplamento-implícito-no-jogo-1" class="slide level2">
 <h2>Acoplamento Implícito no Jogo</h2>

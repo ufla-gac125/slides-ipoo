@@ -607,32 +607,51 @@ Devemos criar um design de classe que facilite alterações futuras localizando 
 
 
 ## Acoplamento Implícito
-O que é o acoplamento implícito?
- 
-  2Ele ocorre quando uma classe depende de informações internas de outra, mas essa dependência não é obvia.
+:::{.fontsize90}
+[O que é o acoplamento implícito?]{style="color:darkblue;"}
+
+- Ele ocorre quando uma classe depende de informações internas de outra, mas essa dependência não é obvia.
  
 
-Qual a consequência do acoplamento implícito?<3
+[Qual a consequência do acoplamento implícito?]{style="color:darkblue;" .fragment}
  
-  4No caso dos atributos públicos, se eles forem alterados somente na classe que os define, a aplicação deixará de compilar corretamente e o erro será apontado.
-  5No entanto, nos casos de acoplamento implícito, a omissão de uma alteração necessária pode não ser detectada pelo compilador.
+- No caso dos atributos públicos, se eles forem alterados somente na classe que os define, a aplicação deixará de compilar corretamente e o erro será apontado.
+
+- No entanto, nos casos de acoplamento implícito, a omissão de uma alteração necessária pode não ser detectada pelo compilador.
   
-    Com isso, o código compila corretamente, mas a aplicação deixa de funcionar corretamente, ou seja, ela não faz o que deveria ser feito.
+  - Com isso, o código compila corretamente, mas a aplicação deixa de funcionar corretamente, ou seja, ela não faz o que deveria ser feito.
+:::
 
 ## Acoplamento Implícito no Jogo
-Suponha que queiramos adicionar o comando observar ao conjunto de comandos válidos do jogo.
+:::{.fontsize80 .nonincremental}
+[Suponha que queiramos adicionar o comando observar ao conjunto de comandos válidos do jogo.]{style="color:darkblue;"}
  
-   O objetivo desse novo comando é permitir ao usuário visualizar a descrição do ambiente atual, pois podemos não nos lembrar mais das saídas possíveis para aquele ambiente.%colocar uma figura com a tela do jogo mostrando a necessidade desse comando....
-   Onde devemos fazer essa alteração?
+- O objetivo desse novo comando é permitir ao usuário visualizar a descrição do ambiente atual, pois podemos não nos lembrar mais das saídas possíveis para aquele ambiente.
+
+- Onde devemos fazer essa alteração?
+:::
+
+::::{.columns style='display: flex !important; align-items: center;' .fragment}
+::: {.column width="50%" .fontsize80}
+Na classe `PalavrasComando`, adicionando ao vetor de palavras conhecidas o comando observar.
   
-   2Na classe PalavrasComando, adicionando ao vetor de palavras conhecidas o comando observar.
-  
-   
-  
+- O que acontecerá ao testarmos essa alteração?
  
- 3O que acontecerá ao testarmos essa alteração?
- 
-  4Quando executamos o jogo e digitamos o comando observar, nada acontece. Por que?
+  - Quando executamos o jogo e digitamos o comando observar, nada acontece. Por que?
+:::
+::: {.column width="55%"}
+```{.java code-line-numbers="false"}
+public class PalavrasComando{
+  //Um vetor constante que guarda todas 
+  //as palavras de comandos válidas
+  private static final String[] comandosValidos = {
+    "ir", "sair", "ajuda", "observar"};
+  //Restante do código omitido
+}
+```
+:::
+::::
+
 
 ## Acoplamento Implícito no Jogo
 
