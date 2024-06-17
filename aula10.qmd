@@ -748,6 +748,17 @@ public String getComandos(){
 :::
 ::::
 
+::::{.columns style='display: flex !important; align-items: top;' .fragment}
+::: {.column width="50%"}
+![](figuras/diagrama_Jogo.png){fig-alt="Diagrama Jogo" fig-align="center" width=100%}
+:::
+::: {.column width="50%" .fontsize80 }
+- Humm... Mas veja que a classe `Jogo` não tem uma referência para a classe `PalavrasComando`!
+  - Acrescentar essa referência significa **aumentar o acoplamento**.
+- Como resolver isso sem aumentar o grau de acoplamento?
+:::
+::::
+
 ## Resolvendo o Acoplamento Implícito no Jogo
 
 
