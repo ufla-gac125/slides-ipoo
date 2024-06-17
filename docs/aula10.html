@@ -1105,16 +1105,94 @@
 </section>
 <section id="acoplamento-implícito-no-jogo-1" class="slide level2">
 <h2>Acoplamento Implícito no Jogo</h2>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column fontsize80" style="width:70%;">
+<div class="sourceCode" id="cb12" data-code-line-numbers="|15-17,21-23"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb12-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Classe Jogo</span></span>
+<span id="cb12-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">boolean</span> <span class="fu">processarComando</span><span class="op">(</span>Comando comando<span class="op">){</span></span>
+<span id="cb12-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="dt">boolean</span> querSair <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb12-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span><span class="op">(</span>comando<span class="op">.</span><span class="fu">ehDesconhecido</span><span class="op">()){</span></span>
+<span id="cb12-5"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Eu nao entendi o que voce disse..."</span><span class="op">);</span></span>
+<span id="cb12-6"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb12-7"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb12-8"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">String</span> palavraDeComando <span class="op">=</span> comando<span class="op">.</span><span class="fu">getPalavraDeComando</span><span class="op">();</span></span>
+<span id="cb12-9"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span>palavraDeComando<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"ajuda"</span><span class="op">)){</span></span>
+<span id="cb12-10"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="fu">imprimirAjuda</span><span class="op">();</span></span>
+<span id="cb12-11"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span><span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>palavraDeComando<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"ir"</span><span class="op">)){</span></span>
+<span id="cb12-12"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="fu">irParaAmbiente</span><span class="op">(</span>comando<span class="op">);</span></span>
+<span id="cb12-13"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span><span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>palavraDeComando<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"sair"</span><span class="op">)){</span></span>
+<span id="cb12-14"><a href="" aria-hidden="true" tabindex="-1"></a>      querSair <span class="op">=</span> <span class="fu">sair</span><span class="op">(</span>comando<span class="op">);</span></span>
+<span id="cb12-15"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span><span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>palavraDeComando<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"observar"</span><span class="op">)){</span> <span class="co">// 1</span></span>
+<span id="cb12-16"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="fu">observar</span><span class="op">();</span></span>
+<span id="cb12-17"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb12-18"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> querSair<span class="op">;</span></span>
+<span id="cb12-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb12-20"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">void</span> <span class="fu">observar</span><span class="op">(){</span> <span class="co">// 2</span></span>
+<span id="cb12-22"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">imprimirLocalizacaoAtual</span><span class="op">();</span>       </span>
+<span id="cb12-23"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize75" style="width:30%;">
+<p>Precisamos de mais algumas alterações para o código funcionar:</p>
+<ol type="1">
+<li class="fragment">Alterar o método <code>processarComando</code> para que ele considere o comando <em>observar</em>.</li>
+<li class="fragment">Inserir o método <code>observar</code> para que as informações sobre a localização atual sejam exibidas.</li>
+</ol>
+</div>
+</div>
 </section>
 <section id="acoplamento-implícito-no-jogo-2" class="slide level2">
 <h2>Acoplamento Implícito no Jogo</h2>
-<p>Após as alterações anteriores, o jogo funcionará corretamente?</p>
-<p>2Não! Por que? 3Para responder essa pergunta pense no que acontecerá se digitarmos o comando ajuda.</p>
-<p>4Veja que o comando observar não é listado. 5Isso acontece porque a classe Jogo depende dos dados da classe PalavrasComando.</p>
-<pre><code>Mas isso está implícito e não deu erro de compilação!</code></pre>
+<div class="fontsize80">
+<p><span style="color:darkblue;">Após as alterações anteriores, o jogo funcionará corretamente?</span></p>
+<p><span class="fragment">Não! Por que?</span></p>
+<ul>
+<li class="fragment">Para responder essa pergunta pense no que acontecerá se digitarmos o comando <em>ajuda</em>.</li>
+</ul>
+</div>
+<div class="columns fragment" style="display: flex !important; align-items: center;">
+<div class="column" style="width:70%;">
+<div class="sourceCode" id="cb13" data-code-line-numbers="|7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb13-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Classe Jogo</span></span>
+<span id="cb13-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">void</span> <span class="fu">imprimirAjuda</span><span class="op">(){</span></span>
+<span id="cb13-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Voce esta perdido. Voce esta sozinho..."</span><span class="op">);</span></span>
+<span id="cb13-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"pela universidade."</span><span class="op">);</span></span>
+<span id="cb13-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">();</span></span>
+<span id="cb13-6"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Suas palavras de comando sao:"</span><span class="op">);</span></span>
+<span id="cb13-7"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"ir sair ajuda"</span><span class="op">);</span></span>
+<span id="cb13-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fontsize70" style="width:30%;">
+<ul>
+<li class="fragment">Veja que o comando <em>observar</em> não é listado.</li>
+<li class="fragment">Aqui ocorre o <strong>acomplamento implícito!</strong></li>
+</ul>
+</div>
+</div>
+<div class="fontsize80">
+<ul>
+<li class="fragment">Isso acontece porque a classe <code>Jogo</code> depende dos dados da classe <code>PalavrasComando</code>.
+<ul>
+<li class="fragment">Mas isso está implícito e não deu erro de compilação!</li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="resolvendo-o-acoplamento-implícito-no-jogo" class="slide level2">
 <h2>Resolvendo o Acoplamento Implícito no Jogo</h2>
+<div class="columns" style="display: flex !important; align-items: top;">
+<div class="column fontsize80" style="width:50%;">
+<p>Vamos colocar um método na classe <code>PalavrasComando</code> que retorna uma string com todos os comandos válidos.</p>
+<ul>
+<li class="fragment">Agora basta que a classe <code>Jogo</code> chame esse método <code>getComandos</code>, correto?</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb14"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb14-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Classe PalavrasComando</span></span>
+<span id="cb14-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">String</span> <span class="fu">getComandos</span><span class="op">(){</span></span>
+<span id="cb14-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="bu">String</span> comandos <span class="op">=</span> <span class="st">""</span><span class="op">;</span></span>
+<span id="cb14-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="bu">String</span> comando <span class="op">:</span> comandosValidos<span class="op">){</span></span>
+<span id="cb14-5"><a href="" aria-hidden="true" tabindex="-1"></a>    comandos <span class="op">=</span> comandos <span class="op">+</span> comando <span class="op">+</span> <span class="st">" "</span><span class="op">;</span></span>
+<span id="cb14-6"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb14-7"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> comandos<span class="op">;</span></span>
+<span id="cb14-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
 <section id="resolvendo-o-acoplamento-implícito-no-jogo-1" class="slide level2">
 <h2>Resolvendo o Acoplamento Implícito no Jogo</h2>

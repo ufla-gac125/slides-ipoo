@@ -654,23 +654,99 @@ public class PalavrasComando{
 
 
 ## Acoplamento Implícito no Jogo
+::::{.columns style='display: flex !important; align-items: top;' }
+::: {.column width="70%" .fontsize80}
+```{.java code-line-numbers="false" code-line-numbers="|15-17,21-23"}
+//Classe Jogo
+private boolean processarComando(Comando comando){
+  boolean querSair = false;
+  if(comando.ehDesconhecido()){
+      System.out.println("Eu nao entendi o que voce disse...");
+      return false;
+  }
+  String palavraDeComando = comando.getPalavraDeComando();
+  if (palavraDeComando.equals("ajuda")){
+      imprimirAjuda();
+  }else if (palavraDeComando.equals("ir")){
+      irParaAmbiente(comando);
+  }else if (palavraDeComando.equals("sair")){
+      querSair = sair(comando);
+  }else if (palavraDeComando.equals("observar")){ // 1
+      observar();
+  }
+  return querSair;
+}
+
+private void observar(){ // 2
+  imprimirLocalizacaoAtual();		
+}
+```
+:::
+::: {.column width="30%" .fontsize75}
+Precisamos de mais algumas alterações para o código funcionar:
+
+1. Alterar o método `processarComando` para que ele considere o comando *observar*.
+2. Inserir o método `observar` para que as informações sobre a localização atual sejam exibidas.
+:::
+::::
+
+
 
 
 ## Acoplamento Implícito no Jogo
-Após as alterações anteriores, o jogo funcionará corretamente?
+:::{.fontsize80}
+[Após as alterações anteriores, o jogo funcionará corretamente?]{style="color:darkblue;"}
  
-  2Não! Por que?
-  3Para responder essa pergunta pense no que acontecerá se digitarmos o comando ajuda.
- 
+[Não! Por que?]{.fragment}
 
-   
-   4Veja que o comando observar não é listado.
-   5Isso acontece porque a classe Jogo depende dos dados da classe PalavrasComando.
-  
-    Mas isso está implícito e não deu erro de compilação!
+- Para responder essa pergunta pense no que acontecerá se digitarmos o comando *ajuda*.
+:::
+
+::::{.columns style='display: flex !important; align-items: center;' .fragment}
+::: {.column width="70%"}
+```{.java code-line-numbers="false" code-line-numbers="|7"}
+//Classe Jogo
+private void imprimirAjuda(){
+  System.out.println("Voce esta perdido. Voce esta sozinho...");
+  System.out.println("pela universidade.");
+  System.out.println();
+  System.out.println("Suas palavras de comando sao:");
+  System.out.println("ir sair ajuda");
+}
+```
+:::
+::: {.column width="30%" .fontsize70}
+- Veja que o comando *observar* não é listado.
+- Aqui ocorre o **acomplamento implícito!**
+:::
+::::
+
+:::{.fontsize80}
+- Isso acontece porque a classe `Jogo` depende dos dados da classe `PalavrasComando`.
+  - Mas isso está implícito e não deu erro de compilação!
+:::
+
 
 ## Resolvendo o Acoplamento Implícito no Jogo
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="50%" .fontsize80}
+Vamos colocar um método na classe `PalavrasComando` que retorna uma string com todos os comandos válidos.
 
+- Agora basta que a classe `Jogo` chame esse método `getComandos`, correto?
+:::
+::: {.column width="50%"}
+```{.java code-line-numbers="false"}
+//Classe PalavrasComando
+public String getComandos(){
+  String comandos = "";
+  for (String comando : comandosValidos){
+    comandos = comandos + comando + " ";
+  }
+  return comandos;
+}
+```
+:::
+::::
 
 ## Resolvendo o Acoplamento Implícito no Jogo
 
