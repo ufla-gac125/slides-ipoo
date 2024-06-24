@@ -793,7 +793,7 @@ Desse modo, fazemos o que precisamos [sem aumentar]{.underline} **o grau de acom
 ::::
 
 ## Coesão de Classes
-:::{.fontsize90 .nonincremental}
+:::{.fontsize85 .nonincremental}
 [Incrementando nosso jogo...]{style="color:darkblue;"}
  
 - Imagine que agora queremos adicionar itens aos ambientes de nosso jogo.
@@ -801,14 +801,14 @@ Desse modo, fazemos o que precisamos [sem aumentar]{.underline} **o grau de acom
   - Cada **item** tem uma *descrição* e um *peso*.
 :::
 
-:::{.fontsize90 .fragment} 
+:::{.fontsize85 .fragment} 
 [Qual a solução?]{style="color:darkblue;"}
 
-- Uma solução simples seria adicionarmos dois atributos à classe Ambiente: descricaoItem e pesoItem.
+- Uma solução simples seria adicionarmos dois atributos à classe `Ambiente`: *descricaoItem* e *pesoItem*.
 - Essa solução funcionaria?
   - Sim, mas ela fere o princípio da coesão. Por que?
   - Um item é uma entidade (ele tem os atributos descrição e peso) e, por isso, deveria ter sua própria classe.
-- Portanto, a melhor solução é criar uma classe separada para itens e a classe Ambiente passar a ter objetos do tipo Item.
+- Portanto, a melhor solução é criar uma classe separada para itens e a classe `Ambiente` passar a ter objetos do tipo Item.
 :::
 
 ## Refatoração

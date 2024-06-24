@@ -1247,7 +1247,7 @@
 </section>
 <section id="coesão-de-classes" class="slide level2">
 <h2>Coesão de Classes</h2>
-<div class="fontsize90">
+<div class="fontsize85">
 <p><span style="color:darkblue;">Incrementando nosso jogo…</span></p>
 <ul>
 <li>Imagine que agora queremos adicionar itens aos ambientes de nosso jogo.
@@ -1257,16 +1257,16 @@
 </ul></li>
 </ul>
 </div>
-<div class="fontsize90 fragment">
+<div class="fontsize85 fragment">
 <p><span style="color:darkblue;">Qual a solução?</span></p>
 <ul>
-<li class="fragment">Uma solução simples seria adicionarmos dois atributos à classe Ambiente: descricaoItem e pesoItem.</li>
+<li class="fragment">Uma solução simples seria adicionarmos dois atributos à classe <code>Ambiente</code>: <em>descricaoItem</em> e <em>pesoItem</em>.</li>
 <li class="fragment">Essa solução funcionaria?
 <ul>
 <li class="fragment">Sim, mas ela fere o princípio da coesão. Por que?</li>
 <li class="fragment">Um item é uma entidade (ele tem os atributos descrição e peso) e, por isso, deveria ter sua própria classe.</li>
 </ul></li>
-<li class="fragment">Portanto, a melhor solução é criar uma classe separada para itens e a classe Ambiente passar a ter objetos do tipo Item.</li>
+<li class="fragment">Portanto, a melhor solução é criar uma classe separada para itens e a classe <code>Ambiente</code> passar a ter objetos do tipo Item.</li>
 </ul>
 </div>
 </section>
