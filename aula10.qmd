@@ -760,27 +760,56 @@ public String getComandos(){
 ::::
 
 ## Resolvendo o Acoplamento Implícito no Jogo
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="50%" .fontsize75}
+Basta a classe `Analisador` ter um **método** que faça a **intermediação** entre as classes `Jogo` e `PalavrasComando`.
 
+- Agora basta que a classe `Jogo` chame esse método *getComandos* da classe Analisador, que por sua vez chamará o método *getComandos* da classe `PalavrasComando`.
+:::
+::: {.column width="50%"}
+```{.java code-line-numbers="false"}
+public class Analisador{
+  //Partes do código foram omitidas
+  private PalavrasComando palavrasDeComando;
+  
+  public Analisador(){
+    palavraDeComando = new PalavrasComando();
+  }
+  public String getComandos(){
+    return palavraDeComando.getComandos();
+  }
+}
+```
+:::
+::::
+
+::::{.columns style='display: flex !important; align-items: center;' .fragment}
+::: {.column width="50%"}
+![](figuras/diagrama_Jogo.png){fig-alt="Diagrama Jogo" fig-align="center" width=100%}
+:::
+::: {.column width="50%" .fontsize80 }
+Desse modo, fazemos o que precisamos [sem aumentar]{.underline} **o grau de acomplamento** entre as classes.
+:::
+::::
 
 ## Coesão de Classes
-Incrementando nosso jogo...
+:::{.fontsize90 .nonincremental}
+[Incrementando nosso jogo...]{style="color:darkblue;"}
  
-   Imagine que agora queremos adicionar itens aos ambientes de nosso jogo.
-  
-    Cada ambiente pode conter um item.
-    Cada item tem uma descrição e um peso.
-  
- 
+- Imagine que agora queremos adicionar itens aos ambientes de nosso jogo.
+  - Cada ambiente pode conter um **item**.
+  - Cada **item** tem uma *descrição* e um *peso*.
+:::
 
-Qual a solução?
+:::{.fontsize90 .fragment} 
+[Qual a solução?]{style="color:darkblue;"}
 
- 3Uma solução simples seria adicionarmos dois atributos à classe Ambiente: descricaoItem e pesoItem.
- 4Essa solução funcionaria?
- 
-  5Sim, mas ela fere o princípio da coesão. Por que?
-  6Um item é uma entidade (ele tem os atributos descrição e peso) e, por isso, deveria ter sua própria classe.
- 
- 7Portanto, a melhor solução é criar uma classe separada para itens e a classe Ambiente passar a ter objetos do tipo Item.
+- Uma solução simples seria adicionarmos dois atributos à classe Ambiente: descricaoItem e pesoItem.
+- Essa solução funcionaria?
+  - Sim, mas ela fere o princípio da coesão. Por que?
+  - Um item é uma entidade (ele tem os atributos descrição e peso) e, por isso, deveria ter sua própria classe.
+- Portanto, a melhor solução é criar uma classe separada para itens e a classe Ambiente passar a ter objetos do tipo Item.
+:::
 
 ## Refatoração
 Apesar de tentarmos projetar aplicações pensando nas possíveis alterações futuras, nem sempre conseguimos prever todas as adaptações futuras.
