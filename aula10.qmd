@@ -761,10 +761,10 @@ public String getComandos(){
 
 ## Resolvendo o Acoplamento Implícito no Jogo
 ::::{.columns style='display: flex !important; align-items: top;'}
-::: {.column width="50%" .fontsize75}
+::: {.column width="55%" .fontsize75}
 Basta a classe `Analisador` ter um **método** que faça a **intermediação** entre as classes `Jogo` e `PalavrasComando`.
 
-- Agora basta que a classe `Jogo` chame esse método *getComandos* da classe Analisador, que por sua vez chamará o método *getComandos* da classe `PalavrasComando`.
+- Agora basta que a classe `Jogo` chame esse método *getComandos* da classe `Analisador`, que por sua vez chamará o método *getComandos* da classe `PalavrasComando`.
 :::
 ::: {.column width="50%"}
 ```{.java code-line-numbers="false"}
@@ -793,7 +793,7 @@ Desse modo, fazemos o que precisamos [sem aumentar]{.underline} **o grau de acom
 ::::
 
 ## Coesão de Classes
-:::{.fontsize85 .nonincremental}
+:::{.fontsize80 .nonincremental}
 [Incrementando nosso jogo...]{style="color:darkblue;"}
  
 - Imagine que agora queremos adicionar itens aos ambientes de nosso jogo.
@@ -801,42 +801,55 @@ Desse modo, fazemos o que precisamos [sem aumentar]{.underline} **o grau de acom
   - Cada **item** tem uma *descrição* e um *peso*.
 :::
 
-:::{.fontsize85 .fragment} 
+:::{.fontsize80 .fragment} 
 [Qual a solução?]{style="color:darkblue;"}
 
 - Uma solução simples seria adicionarmos dois atributos à classe `Ambiente`: *descricaoItem* e *pesoItem*.
 - Essa solução funcionaria?
   - Sim, mas ela fere o princípio da coesão. Por que?
   - Um item é uma entidade (ele tem os atributos descrição e peso) e, por isso, deveria ter sua própria classe.
-- Portanto, a melhor solução é criar uma classe separada para itens e a classe `Ambiente` passar a ter objetos do tipo Item.
+- Portanto, a melhor solução é criar uma classe separada para itens e a classe `Ambiente` passar a ter objetos do tipo `Item`.
 :::
 
 ## Refatoração
-Apesar de tentarmos projetar aplicações pensando nas possíveis alterações futuras, nem sempre conseguimos prever todas as adaptações futuras.
- 2E é aí que entra a refatoração!
+:::{.fontsize85}
+[Apesar de tentarmos projetar aplicações pensando nas possíveis alterações futuras, nem sempre conseguimos prever todas as adaptações futuras.]{style="color:darkblue;"}
 
-O que é refatoração?<3
+- É aí que entra a refatoração!
+
+[O que é refatoração?]{style="color:darkblue;" .fragment}
  
-  4É a atividade de reestruturação de classes e métodos existentes para adaptá-los a alterações de funcionalidades e requisitos.
+- É a atividade de reestruturação de classes e métodos existentes para adaptá-los a alterações de funcionalidades e requisitos.
  
 
-Ao longo do tempo...<5
+[Ao longo do tempo...]{style="color:darkblue;" .fragment}
  
-  5É muito comum precisarmos adicionar mais código a uma classe ou um método.
-  6Fazendo isso, a coesão pode começar a ficar ruim, fazendo sentido dividir a classe/método em outras classes/métodos.
-  7Se isto não for feito, mais tarde as alterações podem se tornar mais complicadas.
+- É muito comum precisarmos adicionar mais código a uma classe ou um método.
+- Fazendo isso, a coesão pode começar a ficar ruim, fazendo sentido dividir a classe e/ou método em outras classes e/ou métodos.
+- Se isto não for feito, mais tarde as alterações podem se tornar mais complicadas.
+:::
 
-## Refatoração
-Nunca refatore sem escrever testes antes!
- 
-   A realização de testes é fundamental nesse processo de refatoração.
-  2Ao refatorarmos um sistema que já está em uso, estamos realizando alterações potencialmente grandes, o que atesta a importância da realização de novos testes.
-  3Se os testes não são feitos, um cliente que reclamava de um problema, pode passar a reclamar de vários outros após a refatoração.
 
 ## Refatoração
-Recomendações:
+:::{.fontsize90}
+[Nunca refatore sem escrever testes antes!]{style="color:darkblue;"}
  
-   O sistema deve ter um conjunto de testes adequado para suas funcionalidades. Se eles não existem, devem ser criados antes das atividades de refatoração.
-  2A refatoração deve ser feita primeiro mantendo as funcionalidades que já existiam (sem acrescentar nenhuma funcionalidade nova).
-  3O sistema refatorado deve passar pelo conjunto de testes para garantir que não foram criados novos bugs em coisas que já funcionavam.
-  4Somente depois disso é que devem ser acrescentadas as novas funcionalidades e, inclusive, os novos testes para elas.
+- A realização de **testes** é fundamental nesse **processo de refatoração**.
+- Ao **refatorarmos** um sistema que **já está em uso**, estamos realizando **alterações potencialmente grandes**, o que atesta a **importância** da realização de novos **testes**.
+- Se os testes não são feitos, um cliente que reclamava de um problema, pode passar a reclamar de vários outros após a refatoração.
+:::
+
+
+## Refatoração
+:::{.fontsize90}
+[Recomendações:]{style="color:darkblue;"}
+ 
+- O **sistema** deve **ter** um **conjunto de testes** adequado para suas funcionalidades. Se eles não existem, devem ser **criados antes** das atividades de **refatoração**.
+- A **refatoração** deve ser feita **primeiro** mantendo as funcionalidades que já existiam (**sem acrescentar** nenhuma f**uncionalidade nova**).
+- O sistema **refatorado** deve **passar** pelo **conjunto de testes** para garantir que não foram criados novos *bugs* em coisas que já funcionavam.
+- **Somente depois** disso é que devem ser **acrescentadas** as **novas funcionalidades** e, inclusive, os **novos testes** para elas.
+:::
+
+
+##
+![](figuras/perguntas.png){fig-alt="Perguntas" fig-align="center" width=35%}

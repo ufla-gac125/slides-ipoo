@@ -11,7 +11,7 @@
 <script src="aula10_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="aula10_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="aula10_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.550">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Design de Classes: Coesão e Acoplamento </title>
@@ -1214,10 +1214,10 @@
 <section id="resolvendo-o-acoplamento-implícito-no-jogo-1" class="slide level2">
 <h2>Resolvendo o Acoplamento Implícito no Jogo</h2>
 <div class="columns" style="display: flex !important; align-items: top;">
-<div class="column fontsize75" style="width:50%;">
+<div class="column fontsize75" style="width:55%;">
 <p>Basta a classe <code>Analisador</code> ter um <strong>método</strong> que faça a <strong>intermediação</strong> entre as classes <code>Jogo</code> e <code>PalavrasComando</code>.</p>
 <ul>
-<li class="fragment">Agora basta que a classe <code>Jogo</code> chame esse método <em>getComandos</em> da classe Analisador, que por sua vez chamará o método <em>getComandos</em> da classe <code>PalavrasComando</code>.</li>
+<li class="fragment">Agora basta que a classe <code>Jogo</code> chame esse método <em>getComandos</em> da classe <code>Analisador</code>, que por sua vez chamará o método <em>getComandos</em> da classe <code>PalavrasComando</code>.</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb15"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb15-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Analisador<span class="op">{</span></span>
@@ -1247,7 +1247,7 @@
 </section>
 <section id="coesão-de-classes" class="slide level2">
 <h2>Coesão de Classes</h2>
-<div class="fontsize85">
+<div class="fontsize80">
 <p><span style="color:darkblue;">Incrementando nosso jogo…</span></p>
 <ul>
 <li>Imagine que agora queremos adicionar itens aos ambientes de nosso jogo.
@@ -1257,7 +1257,7 @@
 </ul></li>
 </ul>
 </div>
-<div class="fontsize85 fragment">
+<div class="fontsize80 fragment">
 <p><span style="color:darkblue;">Qual a solução?</span></p>
 <ul>
 <li class="fragment">Uma solução simples seria adicionarmos dois atributos à classe <code>Ambiente</code>: <em>descricaoItem</em> e <em>pesoItem</em>.</li>
@@ -1266,27 +1266,59 @@
 <li class="fragment">Sim, mas ela fere o princípio da coesão. Por que?</li>
 <li class="fragment">Um item é uma entidade (ele tem os atributos descrição e peso) e, por isso, deveria ter sua própria classe.</li>
 </ul></li>
-<li class="fragment">Portanto, a melhor solução é criar uma classe separada para itens e a classe <code>Ambiente</code> passar a ter objetos do tipo Item.</li>
+<li class="fragment">Portanto, a melhor solução é criar uma classe separada para itens e a classe <code>Ambiente</code> passar a ter objetos do tipo <code>Item</code>.</li>
 </ul>
 </div>
 </section>
 <section id="refatoração" class="slide level2">
 <h2>Refatoração</h2>
-<p>Apesar de tentarmos projetar aplicações pensando nas possíveis alterações futuras, nem sempre conseguimos prever todas as adaptações futuras. 2E é aí que entra a refatoração!</p>
-<p>O que é refatoração?&lt;3</p>
-<p>4É a atividade de reestruturação de classes e métodos existentes para adaptá-los a alterações de funcionalidades e requisitos.</p>
-<p>Ao longo do tempo…&lt;5</p>
-<p>5É muito comum precisarmos adicionar mais código a uma classe ou um método. 6Fazendo isso, a coesão pode começar a ficar ruim, fazendo sentido dividir a classe/método em outras classes/métodos. 7Se isto não for feito, mais tarde as alterações podem se tornar mais complicadas.</p>
+<div class="fontsize85">
+<p><span style="color:darkblue;">Apesar de tentarmos projetar aplicações pensando nas possíveis alterações futuras, nem sempre conseguimos prever todas as adaptações futuras.</span></p>
+<ul>
+<li class="fragment">É aí que entra a refatoração!</li>
+</ul>
+<p><span class="fragment" style="color:darkblue;">O que é refatoração?</span></p>
+<ul>
+<li class="fragment">É a atividade de reestruturação de classes e métodos existentes para adaptá-los a alterações de funcionalidades e requisitos.</li>
+</ul>
+<p><span class="fragment" style="color:darkblue;">Ao longo do tempo…</span></p>
+<ul>
+<li class="fragment">É muito comum precisarmos adicionar mais código a uma classe ou um método.</li>
+<li class="fragment">Fazendo isso, a coesão pode começar a ficar ruim, fazendo sentido dividir a classe e/ou método em outras classes e/ou métodos.</li>
+<li class="fragment">Se isto não for feito, mais tarde as alterações podem se tornar mais complicadas.</li>
+</ul>
+</div>
 </section>
 <section id="refatoração-1" class="slide level2">
 <h2>Refatoração</h2>
-<p>Nunca refatore sem escrever testes antes!</p>
-<p>A realização de testes é fundamental nesse processo de refatoração. 2Ao refatorarmos um sistema que já está em uso, estamos realizando alterações potencialmente grandes, o que atesta a importância da realização de novos testes. 3Se os testes não são feitos, um cliente que reclamava de um problema, pode passar a reclamar de vários outros após a refatoração.</p>
+<div class="fontsize90">
+<p><span style="color:darkblue;">Nunca refatore sem escrever testes antes!</span></p>
+<ul>
+<li class="fragment">A realização de <strong>testes</strong> é fundamental nesse <strong>processo de refatoração</strong>.</li>
+<li class="fragment">Ao <strong>refatorarmos</strong> um sistema que <strong>já está em uso</strong>, estamos realizando <strong>alterações potencialmente grandes</strong>, o que atesta a <strong>importância</strong> da realização de novos <strong>testes</strong>.</li>
+<li class="fragment">Se os testes não são feitos, um cliente que reclamava de um problema, pode passar a reclamar de vários outros após a refatoração.</li>
+</ul>
+</div>
 </section>
 <section id="refatoração-2" class="slide level2">
 <h2>Refatoração</h2>
-<p>Recomendações:</p>
-<p>O sistema deve ter um conjunto de testes adequado para suas funcionalidades. Se eles não existem, devem ser criados antes das atividades de refatoração. 2A refatoração deve ser feita primeiro mantendo as funcionalidades que já existiam (sem acrescentar nenhuma funcionalidade nova). 3O sistema refatorado deve passar pelo conjunto de testes para garantir que não foram criados novos bugs em coisas que já funcionavam. 4Somente depois disso é que devem ser acrescentadas as novas funcionalidades e, inclusive, os novos testes para elas.</p>
+<div class="fontsize90">
+<p><span style="color:darkblue;">Recomendações:</span></p>
+<ul>
+<li class="fragment">O <strong>sistema</strong> deve <strong>ter</strong> um <strong>conjunto de testes</strong> adequado para suas funcionalidades. Se eles não existem, devem ser <strong>criados antes</strong> das atividades de <strong>refatoração</strong>.</li>
+<li class="fragment">A <strong>refatoração</strong> deve ser feita <strong>primeiro</strong> mantendo as funcionalidades que já existiam (<strong>sem acrescentar</strong> nenhuma f<strong>uncionalidade nova</strong>).</li>
+<li class="fragment">O sistema <strong>refatorado</strong> deve <strong>passar</strong> pelo <strong>conjunto de testes</strong> para garantir que não foram criados novos <em>bugs</em> em coisas que já funcionavam.</li>
+<li class="fragment"><strong>Somente depois</strong> disso é que devem ser <strong>acrescentadas</strong> as <strong>novas funcionalidades</strong> e, inclusive, os <strong>novos testes</strong> para elas.</li>
+</ul>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figuras/perguntas.png" class="quarto-figure quarto-figure-center" style="width:35.0%" alt="Perguntas"></p>
+</figure>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="figuras/logoUFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
