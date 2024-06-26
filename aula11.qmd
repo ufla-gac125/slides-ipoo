@@ -1,0 +1,296 @@
+---
+title: Herança<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Conteúdo desta Aula  
+
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+::: {.column width="30%"}
+![](figuras/professor1-1.png){fig-alt="Professor1-1" fig-align="center"}
+:::
+
+::: {.column width="70%"}
+::: {.nonincremental}
+::: {style="font-size: 120%;"}
+- Herança
+- Superclasse e Subclasse
+- Hierarquia de Herança
+- Especialização e Generalização
+- Sobrescrição de Método
+:::
+:::
+:::
+::::
+
+
+## Criando o Programa GEM
+Queremos desenvolver um programa Gerenciador de Entretenimento Mutimídia -- GEM
+  
+    Funcionalidades desejadas:
+    
+     Permitir a inserção de informações sobre CDs (música) e DVDs (filme).
+     Permitir a remoção de informações.
+     Permitir imprimir as listas de CDs e DVDs.
+     Obter informações sobre os CDs e DVDs.
+    
+
+Para isso vamos criar:
+ 
+  Uma classe para representar os CDs.
+  Uma classe para representar os DVDs.
+  Uma classe para controlar os itens (CDs e DVDs) presentes no nosso programa.
+
+## Classes Iniciais do Programa GEM
+
+## Problemas com as Classes Iniciais do GEM
+
+## Ainda Mais Problemas...
+
+## Resolvendo o Problema
+Quanto mais classes semelhantes adicionamos no nosso programa, mais aumenta o problema de duplicação de código.
+
+Como resolver o problema?
+
+    Utilizando um recurso que é muito útil em programas que envolvem conjuntos de classes semelhantes: Herança!
+
+## Herança
+
+## Usando Herança
+
+## Usando Herança
+
+## Usando Herança
+Utilizamos herança para resolver o problema de duplicação de código relacionado aos atributos, mas...
+
+ 
+  E como ficam os métodos?
+  
+   A boa notícia é que também podemos reduzir a duplicação de código relacionada aos métodos.
+   Ou seja, a herança vale tanto para os atributos quanto para os métodos
+
+## Usando Herança
+
+## Adicionando a Classe Videogame
+
+## Superclasses e Subclasses
+Utilizando herança nós podemos:
+ 
+  Criar novas classes a partir de classes existentes, onde:
+  
+   Essas novas classes absorvem as características e os comportamentos da classe herdada.
+   E novas características e/ou comportamentos são adicionados.
+  
+ 
+
+
+Superclasse
+ 
+  É a classe a partir da qual outras herdam seus atributos e métodos (classe pai).
+  
+   No nosso exemplo anterior, Item é uma superclasse.
+  
+ 
+
+Subclasse
+ 
+  É a classe que herda todos os atributos e métodos de outra classe (classe filha).
+  
+   No nosso exemplo anterior, Cd, Dvd e Videogame são subclasses
+
+## Vantagens da Herança
+Aumenta a produtividade
+
+ Evita-se a necessidade de escrever duas ou mais vezes códigos iguais ou muito semelhantes.
+
+
+
+Melhora a reutilização
+
+ Códigos existentes podem ser reutilizados mais facilmente.
+
+
+
+Facilita a manutenção4
+
+ Uma alteração em um atributo ou método compartilhado entre diferentes subclasses precisa ser feita apenas uma vez.
+
+
+
+Facilita a extensão5
+
+ A criação de novas classes torna-se mais fácil com a utilização de herança.
+
+
+
+Melhora a robustez6
+
+ Códigos já testados/validados podem ser reutilizados, reduzindo o risco de criação de novos códigos que possam conter erros.
+
+## Adicionando Mais Uma Classe...
+
+## Adicionando Mais Uma Classe...
+
+## Adicionando Mais Uma Classe...
+
+## Hierarquia de Herança
+
+## Hierarquia de Herança
+
+## Herança: Relacionamento "é um"
+Herança é chamada de relacionamento do tipo ``é um''.
+
+ Veja alguns exemplos que usamos:
+
+
+  
+   Item x Cd.
+   Item x Dvd.
+   Item x Jogo.
+   Mamífero x Cachorro.
+   Felino x Leão.
+  
+ 
+ 
+  
+   Todo cd é um item.
+   Todo dvd é um item.
+   Todo jogo é um item.
+   Todo cachorro é um mamífero.
+   Todo leão é um felino.
+  
+ 
+
+
+
+Portanto, um objeto de uma subclasse também é um objeto da superclasse.
+ Mais adiante veremos a importância disso em polimorfismo.
+
+## Observações Sobre Modelagens de Sistemas OO
+No início da disciplina dissemos que a modelagem envolve:
+ 
+  Identificar os objetos do problema a ser resolvido.
+  Identificar suas características (atributos) e comportamentos (métodos).
+ 
+
+
+Após a aula de hoje, devemos acrescentar o seguinte passo:
+ 
+  Identificar objetos com características e comportamentos comuns.
+  Se existir entre eles uma relaçao ``é um'', devemos modelá-los usando herança.
+ 
+
+
+Apesar de parecer simples, às vezes na prática as superclasses não aparecem explicitamente.
+ 
+  Você deve ter o trabalho de avaliar os objetos existentes para verificar se existem superclasses.
+
+## Herança em Java
+
+## Herança em Java - Exemplo com GEM
+
+## Herança em Java - Exemplo com GEM
+
+## Herança em Java - Exemplo com GEM
+
+## Herança em Java - Exemplo com GEM
+
+## Herança em Java - Exemplo com GEM
+Observações Importantes:
+ 
+  Na classe Cd definimos apenas os atributos e métodos que são específicos de um cd.
+  
+   Os atributos e métodos comuns a vários itens foram definidos na classe Item.
+  
+  Ao instanciar um objeto cd, os métodos públicos de Item também estão disponíveis.
+  Dentro da classe Cd, os atributos e métodos públicos de Item estão disponíveis.
+  
+   E não é necessário usar a notação objeto.método( ), pois um cd é um item.
+   Por exemplo, no método getDescricaoCd( ) chamamos o método getDescricaoItem( ) utilizando a seguinte expressão:\\ String descricao = getDescricaoItem( ); 
+  
+  4O construtor de uma subclasse (Cd) deve chamar o construtor da sua superclasse (Item).
+
+## Exercício - Herança em Java / Sistema GEM
+
+## Acessando Atributos da Superclasse
+Suponha que na classe Cd queiramos retornar na sua descrição apenas o \underlinecomentário e o \underlinenome do artista.
+
+
+
+
+  String getDescricaoCd()
+  String descricao = comentario;
+  descricao+= ``$\backslash$tArtista: '' + artista;
+  return descricao;
+  
+  
+ 
+ 
+ 
+ Esse código funciona?
+ 
+  Não, pois o atributo comentario está declarado como private na classe Item. Desse modo, ele não pode ser acessado na classe Cd.
+
+Atenção 
+   O atributo comentario está inacessível na classe Cd. No entanto, um objeto da classe Cd possui o atributo  comentario. Portanto, uma coisa é o objeto ter o atributo e outra coisa é ele estar acessível na classe.
+
+## Acessando Atributos da Superclasse
+
+## Especialização e Generalização
+Quem é mais geral? Um objeto da superclasse ou da subclasse?
+ 
+  As superclasses são ``mais gerais'' e as subclasses mais ``específicas''.
+  
+   Pois a subclasse tem tudo o que a superclasse tem e ainda acrescenta mais coisas.
+  
+  A subclasse representa um conjunto menor de objetos possíveis.
+  
+   Por exemplo: a classe Item pode representar qualquer tipo de multimídia (cd, dvd, videogame etc.), enquanto a classe Cd representa um tipo específico de item (cd).
+  
+ 
+
+
+Portanto:
+ 
+  A subclasse é uma especialização da superclasse.
+  A superclasse é uma generalização da subclasse.
+
+## Sobrescrita de Método
+
+## Sobrescrita de Método
+
+## Observações de Sobrescrita de Método
+Suponha o seguinte código:
+ Cd cd =  new Cd(``Pensamento'',55,true,``Zé Pedro'',10);
+ String descricao = cd.getDescricao( ); 
+  
+  Ao executar a chamada cd.getDescricao( ), o sistema irá procurar primeiro o método getDescricao na classe da variável cd (Cd) e, caso não encontre, passa a procurar na classe Item.
+ 
+
+A palavra-chave super
+ 
+  Podemos chamar um método de uma superclasse indireta usando, por exemplo, o código a seguir? super.super.metodoX( );
+  
+   Não. É permitido apenas acessar a superclasse imediata.
+
+## Cuidado ao Sobrescrever Métodos
+
+## Cuidado ao Sobrescrever Métodos
+
+## Visibilidade em Java com 'protected'
+Já vimos que:
+ 
+  Membros de uma classe (atributos e métodos) com visibilidade privada não são acessíveis fora da classe onde estão declarados, nem mesmo por suas subclasses.
+  Métodos públicos podem ser acessados a partir de qualquer classe, incluindo, obviamente, as subclasses.
+ 
+
+E os membros com visibilidade protected (em Java)?
+ 
+  Membros protegidos podem ser acessados dentro da sua própria classe e de todas as suas subclasses.
+  Membros protegidos também podem ser acessados por qualquer classe dentro do mesmo pacote.
+
+## Visibilidade Java - Resumo
+
