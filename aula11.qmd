@@ -28,21 +28,30 @@ title-slide-attributes:
 
 
 ## Criando o Programa GEM
-Queremos desenvolver um programa Gerenciador de Entretenimento Mutimídia -- GEM
-  
-    Funcionalidades desejadas:
-    
-     Permitir a inserção de informações sobre CDs (música) e DVDs (filme).
-     Permitir a remoção de informações.
-     Permitir imprimir as listas de CDs e DVDs.
-     Obter informações sobre os CDs e DVDs.
-    
+[Queremos desenvolver um programa Gerenciador de Entretenimento Mutimídia - GEM]{style="color:darkblue;" .fontsize80}  
 
-Para isso vamos criar:
+::::{.columns style='display: flex !important; align-items: center;' .fragment}
+::: {.column width="70%" .fontsize80}
+Funcionalidades desejadas:
+    
+- Permitir a [inserção]{.alert} de informações sobre CDs (música) e DVDs (filme).
+- Permitir a [remoção]{.alert} de informações.
+- Permitir [imprimir]{.alert} as listas de CDs e DVDs.
+- [Obter]{.alert} informações sobre os CDs e DVDs.
+:::
+::: {.column width="35%"}
+![](figuras/multimedia.png){fig-alt="GEM" fig-align="center" width=120%}
+:::
+::::
+
+:::{.fontsize80 .fragment}
+[Para isso vamos criar:]{style="color:darkblue;"}
  
-  Uma classe para representar os CDs.
-  Uma classe para representar os DVDs.
-  Uma classe para controlar os itens (CDs e DVDs) presentes no nosso programa.
+- Uma classe para representar os CDs.
+- Uma classe para representar os DVDs.
+- Uma classe para controlar os itens (CDs e DVDs) presentes no nosso programa.
+:::
+
 
 ## Classes Iniciais do Programa GEM
 
