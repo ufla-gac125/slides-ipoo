@@ -436,9 +436,9 @@
 <h2>Relacionamento entre Objetos</h2>
 <div class="columns" style="display: flex !important; align-items: center;">
 <div class="column fontsize90" style="width:60%;">
-<p>Na programação orientada a objetos, os objetos se relacionam, ou seja, enviam mensagens uns para os outros.</p>
+<p>Na programação orientada a objetos, os <strong>objetos se relacionam</strong>, ou seja, <strong>enviam mensagens</strong> uns para os outros.</p>
 <ul>
-<li class="fragment">Esse envio de mensagens se dá quando um objeto faz chamadas a métodos públicos de outros objetos.</li>
+<li class="fragment">Esse envio de <span class="alert">mensagens</span> se dá quando um objeto faz <span class="alert">chamadas a métodos públicos de outros objetos</span>.</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
@@ -456,7 +456,7 @@
 </figure>
 </div>
 </div><div class="column fontsize90" style="width:70%;">
-<p>Sistemas OO dependem de como os objetos se relacionam. Portanto, o planejamento (modelagem) das classes se baseia nesses relacionamentos.</p>
+<p>Sistemas OO dependem de como os objetos se relacionam. Portanto, o planejamento (<strong>modelagem</strong>) das classes <strong>se baseia nesses relacionamentos</strong>.</p>
 </div>
 </div>
 </section>
@@ -485,7 +485,7 @@
 <div class="fontsize90">
 <ul>
 <li class="fragment">Pizza, Bebida, Vendedor, Cliente etc.</li>
-<li class="fragment">Um pedido pode ser formado por um conjunto de itens (pizza e bebida) e estar vinculado a um cliente e um vendedor.</li>
+<li class="fragment">Um pedido pode ser formado por um conjunto de itens (<strong>pizza</strong> e <strong>bebida</strong>) e estar vinculado a um <strong>cliente</strong> e um <strong>vendedor</strong>.</li>
 </ul>
 </div>
 </div>
@@ -514,7 +514,7 @@
 <div class="fontsize90">
 <ul>
 <li class="fragment">Aluno, Turma, Professor, Disciplina etc.</li>
-<li class="fragment">Uma turma pode ser formada por um conjunto de alunos e estar vinculada a uma disciplina.</li>
+<li class="fragment">Uma <strong>turma</strong> pode ser formada por um conjunto de <strong>alunos</strong> e estar vinculada a uma <strong>disciplina</strong>.</li>
 </ul>
 </div>
 </div>
@@ -543,8 +543,8 @@
 <div class="fontsize90">
 <ul>
 <li class="fragment">Agência, Cliente, Funcionário, Contas etc.</li>
-<li class="fragment">Um banco pode ter diversas agências.</li>
-<li class="fragment">Um cliente pode ter várias contas (corrente, poupança…) e estar vinculado a uma agência.</li>
+<li class="fragment">Um <strong>banco</strong> pode ter diversas <strong>agências</strong>.</li>
+<li class="fragment">Um <strong>cliente</strong> pode ter várias <strong>contas</strong> (corrente, poupança…) e estar vinculado a uma <strong>agência</strong>.</li>
 </ul>
 </div>
 </div>
@@ -552,10 +552,10 @@
 <section id="relacionamento-entre-objetos-1" class="slide level2">
 <h2>Relacionamento entre Objetos</h2>
 <div class="columns" style="display: flex !important; align-items: top;">
-<div class="column fontsize90" style="width:60%;">
-<p>Com os exemplos anteriores, podemos perceber que os softwares orientados a objetos dependem em grande parte de como os objetos se relacionam.</p>
+<div class="column fontsize90" style="width:65%;">
+<p>Com os exemplos anteriores, podemos perceber que os softwares <strong>orientados a objetos dependem</strong> em grande parte de <strong>como os objetos se relacionam</strong>.</p>
 <div class="fragment">
-<p>Portanto, temos que entender agora os tipos de relacionamento que podem existir entre objetos:</p>
+<p>Portanto, temos que entender agora os <span class="alert">tipos de relacionamento</span> que podem existir <span class="alert">entre objetos</span>:</p>
 <ul>
 <li class="fragment">Composição.</li>
 <li class="fragment">Agregação.</li>
@@ -605,9 +605,9 @@
 <p><span style="color:darkblue;">O que esses três exemplos têm em comum?</span></p>
 <div class="fontsize90">
 <ul>
-<li class="fragment">O fato de que um objeto tem (um ou mais) objetos de outra classe.</li>
+<li class="fragment">O fato de que um <u>objeto</u> <strong>tem</strong> (um ou mais) <u>objeto(s)</u> de outra classe.</li>
 </ul>
-<p><span class="fragment">Esse tipo de relacionamento é denominado composição.</span></p>
+<p><span class="fragment">Esse tipo de relacionamento é denominado <span class="alert">composição</span>.</span></p>
 </div>
 </section>
 <section id="composição-1" class="slide level2">
@@ -620,9 +620,9 @@
 </figure>
 </div>
 </div><div class="column fontsize90" style="width:70%;">
-<p><span style="color:darkblue;">A composição se caracteriza por ser um relacionamento todo/parte.</span></p>
+<p><span style="color:darkblue;">A composição se caracteriza por ser um relacionamento <strong>todo/parte</strong>.</span></p>
 <ul>
-<li class="fragment">Ou seja, há uma classe representando o todo e classes “satélites” funcionando como partes.</li>
+<li class="fragment">Ou seja, há uma <strong>classe</strong> representando o <strong>todo</strong> e <strong>classes</strong> “satélites” funcionando como <strong>partes</strong>.</li>
 </ul>
 </div>
 </div>
@@ -635,8 +635,8 @@
 <li class="fragment">Se não há um pedido, não faz sentido pensar em itens de pedido.</li>
 <li class="fragment">Se eu destruir um livro, não faz sentido os capítulos existirem.</li>
 </ul></li>
-<li class="fragment">Resumindo: o objeto contido não faz sentido sem o objeto que o contém.</li>
-<li class="fragment">Ou seja, o todo controla o tempo de vida das partes.</li>
+<li class="fragment"><strong>Resumindo:</strong> o objeto contido <strong>não faz sentido</strong> sem o objeto que o contém.</li>
+<li class="fragment">Ou seja, o <span class="alert">todo controla o tempo de vida das partes</span>.</li>
 </ul>
 </div>
 </section>
@@ -652,8 +652,8 @@
 </div><div class="column fontsize90" style="width:70%;">
 <p><span style="color:darkblue;">Suponha que precisamos implementar em Java um sistema que tenha as classes Carro, Motor e Porta.</span></p>
 <ul>
-<li>Podemos dizer que um carro tem um motor.</li>
-<li>Um carro tem 4 portas.</li>
+<li>Podemos dizer que um <strong>carro</strong> <u>tem</u> um <strong>motor</strong>.</li>
+<li>Um <strong>carro</strong> <u>tem</u> 4 <strong>portas</strong>.</li>
 </ul>
 <p><span style="color:darkblue;">Como isso pode ser implementado?</span></p>
 </div>
@@ -719,7 +719,7 @@
 </div><div class="column fontsize90" style="width:60%;">
 <p><span style="color:darkblue;">Qual é o relacionamento entre um grupo de estudo e os alunos?</span></p>
 <ul>
-<li class="fragment">Um grupo de alunos tem vários alunos. Desse modo, um aluno é parte de um grupo de estudo.</li>
+<li class="fragment">Um <strong>grupo de estudo</strong> <u>tem</u> vários <strong>alunos</strong>. Desse modo, um aluno é parte de um grupo de estudo.</li>
 </ul>
 <p><span class="fragment" style="color:darkblue;">Então isso é uma composição, certo?</span></p>
 </div>
@@ -748,9 +748,9 @@
 </figure>
 </div>
 </div><div class="column fontsize90" style="width:70%;">
-<p><span style="color:darkblue;">Essa também é uma relação todo/parte, porém, nesse caso dizemos que a parte não é exclusiva do todo.</span></p>
+<p><span style="color:darkblue;">Essa também é uma relação <strong>todo/parte</strong>, porém, nesse caso dizemos que a parte <strong>não é exclusiva</strong> do todo.</span></p>
 <ul>
-<li class="fragment">Ou seja, não é o grupo de estudo que controla o tempo de vida dos alunos.</li>
+<li class="fragment">Ou seja, <strong>não</strong> é o grupo de estudo <strong>que controla</strong> o <strong>tempo de vida</strong> dos alunos.</li>
 <li class="fragment">Dizendo de outro modo, não é o todo que controla o tempo de vida das partes.</li>
 </ul>
 </div>
@@ -762,7 +762,7 @@
 <li class="fragment">Os alunos continuam existindo ainda que o grupo de estudo termine. Ufa…ainda bem!</li>
 </ul>
 </div>
-<p><span class="fragment fontsize90" style="color:darkblue;">Esse tipo de relacionamento é denominado agregação.</span></p>
+<p><span class="fragment fontsize90">Esse tipo de relacionamento é denominado <span class="alert">agregação</span>.</span></p>
 </div>
 </section>
 <section id="agregação---exemplo-de-código" class="slide level2">
@@ -810,7 +810,7 @@
 </div><div class="column fontsize90" style="width:60%;">
 <p><span style="color:darkblue;">Suponha que uma locadora de veículos resolva criar um sistema para controlar suas atividades.</span></p>
 <ul>
-<li class="fragment">Para esse sistema foram criadas as classes Carro e Pessoa.</li>
+<li class="fragment">Para esse sistema foram criadas as classes <strong>Carro</strong> e <strong>Pessoa</strong>.</li>
 </ul>
 </div>
 </div>
@@ -835,8 +835,8 @@
 </div><div class="column fontsize90" style="width:60%;">
 <p><span style="color:darkblue;">A pessoa utiliza o carro e o carro transporta a pessoa.</span></p>
 <ul>
-<li class="fragment">Não faz sentido dizer que pessoa é parte do carro ou que carro é formado por pessoas, concorda?</li>
-<li class="fragment">Ou seja, não é um relacionamento todo/parte.</li>
+<li class="fragment"><strong>Não faz sentido</strong> dizer que pessoa <strong>é parte</strong> do carro ou que carro <strong>é formado</strong> por pessoas, concorda?</li>
+<li class="fragment">Ou seja, <strong>não é</strong> um relacionamento <strong>todo/parte</strong>.</li>
 </ul>
 </div>
 </div>
@@ -844,7 +844,7 @@
 <p>Em outras palavras, temos duas classes distintas onde uma faz uso da outra.</p>
 </div>
 <div class="fragment fontsize90">
-<p><span style="color:darkblue;">Esse tipo de relacionamento é denominado associação.</span></p>
+<p>Esse tipo de relacionamento é denominado <span class="alert">associação</span>.</p>
 </div>
 </section>
 <section id="associação---exemplo-de-código" class="slide level2">
@@ -905,12 +905,12 @@
 </figure>
 </div>
 </div><div class="column fontsize90" style="display: flex;  align-items: center; text-align: center;">
-<p>A classificação do relacionamento entre objetos é relativa.</p>
+<p>A <strong>classificação</strong> do <strong>relacionamento</strong> entre objetos <strong>é relativa</strong>.</p>
 </div>
 </div>
 <div class="columns" style="display: flex !important; align-items: top;">
 <div class="column fontsize90" style="width:70%;">
-<p>Ou seja, para definirmos se é uma composição, agregação ou associação temos que analisar o contexto.</p>
+<p>Ou seja, <strong>para definirmos</strong> se é uma composição, agregação ou associação temos que <strong>analisar o contexto</strong>.</p>
 </div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -942,7 +942,7 @@
 <div class="fragment fontsize80">
 <p>Neste caso, percebemos que o motor existe independentemente do carro, ou seja, não é o carro que controla o tempo de vida do motor.</p>
 <ul>
-<li class="fragment">Portanto, agora temos uma agregação!</li>
+<li class="fragment">Portanto, agora temos uma <strong>agregação</strong>!</li>
 </ul>
 </div>
 </section>

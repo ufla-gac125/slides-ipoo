@@ -29,9 +29,9 @@ Tipos de Relacionamento entre Objetos:
 ## Relacionamento entre Objetos
 ::::{.columns style='display: flex !important; align-items: center;'}
 ::: {.column width="60%" .fontsize90}
-Na programação orientada a objetos, os objetos se relacionam, ou seja, enviam mensagens uns para os outros.
+Na programação orientada a objetos, os **objetos se relacionam**, ou seja, **enviam mensagens** uns para os outros.
 
-- Esse envio de mensagens se dá quando um objeto faz chamadas a métodos públicos de outros objetos.
+- Esse envio de [mensagens]{.alert} se dá quando um objeto faz [chamadas a métodos públicos de outros objetos]{.alert}.
 :::
 ::: {.column width="40%"}
 ![](figuras/envio_mensagem.png){fig-alt="Envio_mensagem" fig-align="center" width=90%}
@@ -43,7 +43,7 @@ Na programação orientada a objetos, os objetos se relacionam, ou seja, enviam 
 ![](figuras/aluno_estudando.png){fig-alt="Aluno_estudando" fig-align="center" width=70%}
 :::
 ::: {.column width="70%" .fontsize90}
-Sistemas OO dependem de como os objetos se relacionam. Portanto, o planejamento (modelagem) das classes se baseia nesses relacionamentos.
+Sistemas OO dependem de como os objetos se relacionam. Portanto, o planejamento (**modelagem**) das classes **se baseia nesses relacionamentos**.
 :::
 ::::
 
@@ -70,7 +70,7 @@ Sistemas OO dependem de como os objetos se relacionam. Portanto, o planejamento 
 
 :::{.fontsize90}
 - Pizza, Bebida, Vendedor, Cliente etc.
-- Um pedido pode ser formado por um conjunto de itens (pizza e bebida) e estar vinculado a um cliente e um vendedor.
+- Um pedido pode ser formado por um conjunto de itens (**pizza** e **bebida**) e estar vinculado a um **cliente** e um **vendedor**.
 :::
 
 
@@ -96,7 +96,7 @@ Pense novamente como os objetos se relacionam.
 
 :::{.fontsize90}
 - Aluno, Turma, Professor, Disciplina etc.
-- Uma turma pode ser formada por um conjunto de alunos e estar vinculada a uma disciplina.
+- Uma **turma** pode ser formada por um conjunto de **alunos** e estar vinculada a uma **disciplina**.
 :::
 
 
@@ -123,18 +123,18 @@ E nesse caso, como os objetos se relacionam?
 
 :::{.fontsize90}
 - Agência, Cliente, Funcionário, Contas etc.
-- Um banco pode ter diversas agências.
-- Um cliente pode ter várias contas (corrente, poupança...) e estar vinculado a uma agência.
+- Um **banco** pode ter diversas **agências**.
+- Um **cliente** pode ter várias **contas** (corrente, poupança...) e estar vinculado a uma **agência**.
 :::
 
 
 ## Relacionamento entre Objetos
 ::::{.columns style='display: flex !important; align-items: top;'}
-::: {.column width="60%" .fontsize90}
-Com os exemplos anteriores, podemos perceber que os softwares orientados a objetos dependem em grande parte de como os objetos se relacionam.
+::: {.column width="65%" .fontsize90}
+Com os exemplos anteriores, podemos perceber que os softwares **orientados a objetos dependem** em grande parte de **como os objetos se relacionam**.
 
 :::{.fragment}
-Portanto, temos que entender agora os tipos de relacionamento que podem existir entre objetos:
+Portanto, temos que entender agora os [tipos de relacionamento]{.alert} que podem existir [entre objetos]{.alert}:
     
 - Composição.
 - Agregação.
@@ -165,9 +165,9 @@ Portanto, temos que entender agora os tipos de relacionamento que podem existir 
 [O que esses três exemplos têm em comum?]{style="color:darkblue;"}
 
 :::{.fontsize90} 
-- O fato de que um objeto tem (um ou mais) objetos de outra classe.
+- O fato de que um [objeto]{.underline} **tem** (um ou mais) [objeto(s)]{.underline} de outra classe.
 
-[Esse tipo de relacionamento é denominado composição.]{.fragment}
+[Esse tipo de relacionamento é denominado [composição]{.alert}.]{.fragment}
 :::
 
 
@@ -177,9 +177,9 @@ Portanto, temos que entender agora os tipos de relacionamento que podem existir 
 ![](figuras/corpo_humano.png){fig-alt="Corpo_humano" fig-align="center" width=90%}
 :::
 ::: {.column width="70%" .fontsize90}
-[A composição se caracteriza por ser um relacionamento todo/parte.]{style="color:darkblue;"}
+[A composição se caracteriza por ser um relacionamento **todo/parte**.]{style="color:darkblue;"}
 
-- Ou seja, há uma classe representando o todo e classes "satélites" funcionando como partes.
+- Ou seja, há uma **classe** representando o **todo** e **classes** "satélites" funcionando como **partes**.
 :::
 ::::
 
@@ -191,8 +191,8 @@ Portanto, temos que entender agora os tipos de relacionamento que podem existir 
   - Se não há um pedido, não faz sentido pensar em itens de pedido.
   - Se eu destruir um livro, não faz sentido os capítulos existirem. 
   
-- Resumindo: o objeto contido não faz sentido sem o objeto que o contém.
-- Ou seja, o todo controla o tempo de vida das partes.
+- **Resumindo:** o objeto contido **não faz sentido** sem o objeto que o contém.
+- Ou seja, o [todo controla o tempo de vida das partes]{.alert}.
 :::
 
 
@@ -205,8 +205,8 @@ Portanto, temos que entender agora os tipos de relacionamento que podem existir 
 ::: {.column width="70%".nonincremental .fontsize90}
 [Suponha que precisamos implementar em Java um sistema que tenha as classes Carro, Motor e Porta.]{style="color:darkblue;"}
  
-- Podemos dizer que um carro tem um motor.
-- Um carro tem 4 portas.
+- Podemos dizer que um **carro** [tem]{.underline} um **motor**.
+- Um **carro** [tem]{.underline} 4 **portas**.
 
 [Como isso pode ser implementado?]{style="color:darkblue;"}
 :::
@@ -256,7 +256,7 @@ public class Carro{
 ::: {.column width="60%" .fontsize90}
 [Qual é o relacionamento entre um grupo de estudo e os alunos?]{style="color:darkblue;"}
 
-- Um grupo de alunos tem vários alunos. Desse modo, um aluno é parte de um grupo de estudo.
+- Um **grupo de estudo** [tem]{.underline} vários **alunos**. Desse modo, um aluno é parte de um grupo de estudo.
 
 [Então isso é uma composição, certo?]{style="color:darkblue;" .fragment}
 :::
@@ -280,9 +280,9 @@ Quando um grupo de estudos acaba, os alunos deixam de existir?
 ![](figuras/eu_existo.png){fig-alt="Eu_existo" fig-align="center" width=90%}
 :::
 ::: {.column width="70%" .fontsize90}
-[Essa também é uma relação todo/parte, porém, nesse caso dizemos que a parte não é exclusiva do todo.]{style="color:darkblue;"}
+[Essa também é uma relação **todo/parte**, porém, nesse caso dizemos que a parte **não é exclusiva** do todo.]{style="color:darkblue;"}
 
-- Ou seja, não é o grupo de estudo que controla o tempo de vida dos alunos.
+- Ou seja, **não** é o grupo de estudo **que controla** o **tempo de vida** dos alunos.
 - Dizendo de outro modo, não é o todo que controla o tempo de vida das partes.
 :::
 ::::
@@ -295,7 +295,7 @@ Quando um grupo de estudos acaba, os alunos deixam de existir?
 - Os alunos continuam existindo ainda que o grupo de estudo termine. Ufa...ainda bem!
 :::
 
-[Esse tipo de relacionamento é denominado agregação.]{style="color:darkblue;" .fragment .fontsize90}
+[Esse tipo de relacionamento é denominado [agregação]{.alert}.]{.fragment .fontsize90}
 
 
 ## Agregação -  Exemplo de Código
@@ -330,7 +330,7 @@ public class GrupoEstudo{
 ::: {.column width="60%" .fontsize90}
 [Suponha que uma locadora de veículos resolva criar um sistema para controlar suas atividades.]{style="color:darkblue;"}
 
-- Para esse sistema foram criadas as classes Carro e Pessoa.
+- Para esse sistema foram criadas as classes **Carro** e **Pessoa**.
 :::
 ::::
 
@@ -349,8 +349,8 @@ public class GrupoEstudo{
 ::: {.column width="60%" .fontsize90}
 [A pessoa utiliza o carro e o carro transporta a pessoa.]{style="color:darkblue;"}
 
-- Não faz sentido dizer que pessoa é parte do carro ou que carro é formado por pessoas, concorda?
-- Ou seja, não é um relacionamento todo/parte.
+- **Não faz sentido** dizer que pessoa **é parte** do carro ou que carro **é formado** por pessoas, concorda?
+- Ou seja, **não é** um relacionamento **todo/parte**.
 :::
 ::::
 
@@ -359,7 +359,7 @@ Em outras palavras, temos duas classes distintas onde uma faz uso da outra.
 :::
 
 :::{.fragment .fontsize90}
-[Esse tipo de relacionamento é denominado associação.]{style="color:darkblue;"}
+Esse tipo de relacionamento é denominado [associação]{.alert}.
 :::
 
 
@@ -408,14 +408,14 @@ public class Pessoa{
 ![](figuras/relatividade.png){fig-alt="Relatividade" fig-align="center" width=85%}
 :::
 ::: {.column width="50%" .fontsize90 style='display: flex;  align-items: center; text-align: center;'}
-A classificação do relacionamento entre objetos é relativa.
+A **classificação** do **relacionamento** entre objetos **é relativa**.
 :::
 ::::
 
 
 ::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="70%" .fontsize90}
-Ou seja, para definirmos se é uma composição, agregação ou associação temos que analisar o contexto.
+Ou seja, **para definirmos** se é uma composição, agregação ou associação temos que **analisar o contexto**.
 :::
 ::: {.column width="30%" }
 ![](figuras/professor3_metade.png){fig-alt="Professor3_metade" fig-align="center" width=60%}
@@ -439,7 +439,7 @@ Mas o que podemos dizer ao ler a notícia a seguir?
 :::{.fragment .fontsize80}
 Neste caso, percebemos que o motor existe independentemente do carro, ou seja, não é o carro que controla o tempo de vida do motor.
 
-- Portanto, agora temos uma agregação!
+- Portanto, agora temos uma **agregação**!
 :::
 
 
