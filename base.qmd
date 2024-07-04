@@ -27,3 +27,11 @@ XXXXXXXX
 ```{.java code-line-numbers="false" code-line-numbers="|2-3,|11-13,|1-15"}
 // Colocar o código aqui
 ```
+
+## Slide com nota de rodapé
+
+Aqui vai um texto[$^1$]{style="color:#00838f;"}.
+
+:::{.fontsize70}
+1. Aqui colocamos a nota.
+:::

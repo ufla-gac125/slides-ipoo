@@ -1,0 +1,120 @@
+---
+title: Aula Prática 9<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Observações Importantes {}
+::: {.fontsize80}
+::: {.nonincremental}
+
+A realização dos exercícios nas **aulas práticas é primordial** para que você consiga **consolidar os conceitos** aprendidos nas **aulas teóricas** (aulas não presenciais - ANP) e **colocá-los em prática** utilizando a linguagem de programação Java.
+
+- No entanto, para **conseguir realizar os exercícios** das aulas práticas é **fundamental** que você tenha **estudado**, [antes das aulas práticas]{.underline}, o **conteúdo** das aulas não presenciais disponibilizadas pelo professor. 
+
+Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **comparecer às aulas**, o aluno deve **realizar e entregar os exercícios** propostos nas aulas.
+
+- Portanto, **não esqueça de entregar no Campus Virtual** os exercícios **até o término das aulas práticas** (mesmo que não tenha terminado-os completamente).
+:::
+:::
+
+
+## Contextualização
+
+:::{.fontsize90}
+Na aula de hoje **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
+:::
+
+. . .
+
+:::{.fontsize90}
+Hoje o **exercício** da **aula** **prática** tem como foco o uso de **coleções em Java**, mais especificamente o uso de **listas**. Para isso utilizaremos a classe `ArrayList`.
+:::
+
+. . .
+
+:::{.fontsize90}
+**Antes de começarem a codificar**, **leiam** o **enunciado** do exercício **com atenção** e entendam a **modelagem** do problema, ou seja, **quais** **classes** deverão implementar e **quais** serão os **atributos** e **métodos** de cada uma delas.
+:::
+
+
+## Atividade 
+:::{.nonincremental .fontsize70}
+Uma cafeteria possui um setor responsável pela automatização das **vendas de diferentes tipos de cafés**. Você foi contratado para implementar um sistema que auxilie o vendedor dessa cafeteria na geração da nota fiscal.
+Seguindo as boas práticas em programação orientada a objetos, implemente em Java um programa que **receba o tipo de café** (Expresso, Americano, Sem Cafeína) **e os complementos** desejados para o mesmo (leite e/ou chocolate e/ou canela) **e permita a impressão da nota fiscal** incluindo o preço do café e dos complementos escolhidos. Para isso, **crie** uma classe denominada `Cafe` que contenha somente um **atributo** para armazenar o **tipo do café** (String) e um **ArrayList** para armazenar os **códigos** (valores inteiros) dos **complementos** escolhidos para o café. Essa classe deve ter um **único construtor** responsável por inicializar o tipo do café e instanciar o ArrayList dos complementos. A classe `Cafe` também deve ter **um método** para **cada** uma das seguintes tarefas[$^1$]{style="color:#00838f;"}:
+
+- Retornar o tipo do café.
+- Retornar a quantidade de complementos escolhidos para o café.
+- Retornar o código de um complemento armazenado em uma posição específica do ArrayList.
+- Inserir no ArrayList de complementos o código de um complemento escolhido para o café. 
+- Remover do ArrayList de complementos todos os códigos de um complemento previamente  inserido.
+
+Vale observar que nenhum método da classe `Cafe` pode imprimir dados na tela.
+
+:::{.fontsize70}
+1. Utilize os métodos `add`, `get` e `size` da classe `ArrayList`.
+:::
+:::
+
+
+## Atividade
+:::{.nonincremental .fontsize70}
+Além disso, implemente uma classe denominada `Menu` responsável por fazer toda a interação com o usuário da aplicação.  Nessa classe, além de outros atributos, [crie quatro vetores estáticos]{.underline} (arrays) para armazenar: os tipos de café (Americano, Expresso, Sem cafeína), o preço de cada tipo de café (Americano = R$ 7.50, Expresso = R$ 4.30, Sem cafeína = R$ 10.00), os complementos (Leite, Chocolate, Canela) e o preço de cada complemento (Leite = R$ 5.00, Chocolate = R$ 8.00, Canela = R$ 2.00). A **inicialização desses vetores** deve ser **realizada no construtor** da classe `Menu`. Além disso, fazendo uso dos dados inseridos nesses vetores (exceto para o menu de opções), crie nessa classe **um método para** imprimir **cada** um dos **menus** apresentados a seguir:
+
+
+::::{.columns style='display: flex !important; align-items: top;'}
+::: {.column width="33%"}
+**Menu dos Tipos de Café**<br><br>
+&num;&num;&num; Tipos de Café &num;&num;&num;<br>
+1. Americano<br>
+2. Expresso<br>
+3. Sem cafeína<br>
+Escolha o número da opção:
+:::
+::: {.column width="33%"}
+**Menu de Opções do Sistema**<br><br>
+&num;&num; Opções &num;&num;<br>
+1. Adicionar complemento<br>
+2. Remover complemento<br>
+3. Gerar nota fiscal<br>
+4. Sair<br>
+Escolha o número da opção:
+:::
+::: {.column width="33%"}
+**Menu de Complementos**<br><br>
+&num; Complementos &num;<br>
+1. Leite<br>
+2. Chocolate<br>
+3. Canela<br>
+Escolha o número da opção:
+:::
+::::
+
+:::
+
+
+## Atividade
+:::{.nonincremental .fontsize70}
+A classe `Menu` também deve ter um método denominado `executar` que faça todo o **controle de apresentação de menus** para o usuário. O **primeiro menu** a ser apresentado é o que permite o usuário escolher o **tipo de café** desejado. Depois disso, **enquanto** o usuário **não solicitar sair** do sistema, o **menu de opções** deve ser **repetidamente apresentado** ao usuário. Ao apresentar o menu de opções, **cada vez** que o **usuário escolher** as **opções 1 ou 2** (adicionar ou remover complemento), o **menu de complementos** deve ser **apresentado** para que o mesmo escolha o complemento a ser adicionado ou removido. Vale ressaltar que o usuário **pode escolher repetidamente o mesmo complemento** para ser inserido em seu café. Nesse caso, ao solicitar a **remoção** de um complemento já inserido, o código de **todas as inserções** realizadas no ArrayList deve ser **removido**. Vale ressaltar que a geração da nota fiscal pode ser realizada a qualquer momento e, se necessário, repetidas vezes, após a escolha do tipo do café. Portanto, **crie** na classe `Menu` um **método que imprima na tela uma nota fiscal** como exemplificado a seguir: 
+
+&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num; NOTA FISCAL &num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;
+<br>Café: Americano<br>
+Preço do café - R$ 7,50<br>
+Complementos:<br>
+&emsp;Leite - R$ 5,00<br>
+Total - R$ 12,50<br>
+&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;
+:::
+
+## Atividade
+:::{.nonincremental .fontsize70}
+Observe que o **valor total** da nota fiscal corresponde à **soma do preço do café com os valores dos complementos** escolhidos. Vale ressaltar que **todos os métodos** implementados na classe `Cafe` **devem ser chamados** pelo menos uma vez ao longo do seu código.
+
+Por fim, crie uma classe denominada `App` que contenha o **método main** onde será **inicializada a execução** desse sistema.
+
+:::{.callout-warning title="Atenção" icon=false .fontsize90}
+Execute a sua implementação e verifique se ela está funcionando corretamente. **Entregue** no Campus Virtual a **versão final da implementação**.
+:::
+:::
