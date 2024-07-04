@@ -439,12 +439,12 @@
 </section>
 <section id="design-de-classes" class="slide level2">
 <h2>Design de Classes</h2>
-<p><span style="color:darkblue;">O que torna o design de uma classe bom ou ruim?</span></p>
+<p><span style="color:darkblue;">O que torna o <em>design</em> de uma classe <strong>bom</strong> ou <strong>ruim</strong>?</span></p>
 <div class="columns" style="display: flex !important; align-items: top;">
 <div class="column fontsize90" style="width:70%;">
-<p>É possível implementar uma aplicação que funcione, mas onde as classes estão mal projetadas.</p>
+<p>É <strong>possível</strong> implementar uma aplicação que <strong>funcione</strong>, mas onde as classes estão <strong>mal projetadas</strong>.</p>
 <ul>
-<li class="fragment">O fato de uma aplicação executar corretamente não significa que ela esteja internamente bem estruturada.</li>
+<li class="fragment">O fato de uma aplicação <strong>executar</strong> corretamente <strong>não significa</strong> que ela esteja internamente <strong>bem estruturada</strong>.</li>
 </ul>
 </div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
@@ -455,7 +455,7 @@
 </div>
 </div>
 <div class="fragment fontsize90">
-<p>Nesta aula, veremos alguns princípios de que devem ser seguidos para termos um bom design de classes.</p>
+<p>Hoje veremos alguns <strong>princípios</strong> de que devem ser seguidos para termos um <strong>bom</strong> <em>design</em> de classes.</p>
 </div>
 </section>
 <section id="design-de-classes-1" class="slide level2">
@@ -470,11 +470,11 @@
 </div>
 </div><div class="column fontsize80" style="width:70%;">
 <ul>
-<li class="fragment">Geralmente os problemas surgem durante a manutenção.
+<li class="fragment">Geralmente os <strong>problemas</strong> surgem durante a <strong>manutenção</strong>.
 <ul>
 <li class="fragment">Quando se deseja fazer alterações em uma aplicação existente.</li>
 </ul></li>
-<li class="fragment">Mas os problemas podem aparecer ainda durante a implementação.
+<li class="fragment">Mas os problemas podem aparecer <strong>ainda</strong> durante a <strong>implementação</strong>.
 <ul>
 <li class="fragment">Uma implementação com estrutura inicial ruim pode tornar o desenvolvimento mais complexo, dificultando ou impossibilitando a sua conclusão.</li>
 </ul></li>
@@ -482,18 +482,18 @@
 </div>
 </div>
 <div class="fragment fontsize80">
-<p>Lembre-se que frequentemente uma empresa mantém, estende e vende uma aplicação por vários anos.</p>
+<p>Lembre-se que frequentemente uma empresa <strong>mantém</strong>, <strong>estende</strong> e <strong>vende</strong> uma aplicação por <strong>vários anos</strong>.</p>
 <ul>
-<li class="fragment">Portanto, se ele for mal projetado, os custos de manutenção ao longo desses vários anos podem ser muito maiores do que o necessário.</li>
+<li class="fragment">Portanto, se ela for <strong>mal projetada</strong>, os <strong>custos</strong> de manutenção ao longo desses vários anos podem ser <strong>muito maiores</strong> do que o necessário.</li>
 </ul>
 </div>
 </section>
 <section id="design-de-classes-2" class="slide level2">
 <h2>Design de Classes</h2>
-<p><span class="fontsize75" style="color:darkblue;">Usaremos um jogo chamado World of Zuul para ilustrar os conceitos que discutiremos a seguir.</span></p>
+<p><span class="fontsize75" style="color:darkblue;">Usaremos um <strong>jogo</strong> chamado <strong>World of Zuul</strong> para ilustrar os conceitos que discutiremos a seguir.</span></p>
 <div class="columns" style="display: flex !important; align-items: top;">
 <div class="column fontsize75" style="width:30%;">
-<p>Ele é um jogo de exploração de ambientes e aventura, mas sem interface gráfica. Basicamente deve-se ler a descrição de um abiente e escrever textos que representam comandos a serem realizados no jogo.</p>
+<p>Ele é um <strong>jogo</strong> de <strong>exploração de ambientes</strong> e aventura, mas <strong>sem interface gráfica</strong>. Basicamente deve-se ler a descrição de um abiente e escrever textos que representam comandos a serem realizados no jogo.</p>
 </div><div class="column" style="width:70%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -511,18 +511,18 @@
 <p><span class="fontsize90" style="color:darkblue;">O Jogo World-of-Zuul</span></p>
 <div class="fontsize90">
 <ul>
-<li class="fragment">Em seu formato original, o jogo ainda não está muito interessante.
+<li class="fragment">Em seu <strong>formato original</strong>, o jogo ainda não está muito interessante.
 <ul>
-<li class="fragment">Ele está incompleto!</li>
+<li class="fragment">Ele <strong>está incompleto</strong>!</li>
 </ul></li>
-<li class="fragment">Desse modo, veremos como estender a sua implementação, discutindo os apectos do design de classes existente.</li>
-<li class="fragment">Perceberemos que essa versão original tem exemplos de decisões de design ruins.
+<li class="fragment">Desse modo, veremos <strong>como estender</strong> a sua implementação, discutindo os apectos do <em>design</em> de classes existente.</li>
+<li class="fragment">Perceberemos que essa <strong>versão original</strong> tem <strong>exemplos</strong> de decisões de <em>design</em> <strong>ruins</strong>.
 <ul>
 <li class="fragment">Veremos como isso influencia nossas tarefas e como corrigi-las.</li>
 </ul></li>
-<li class="fragment">O problema de um design ruim normalmente não está relacionado com a complexidade do problema que se deseja solucionar.
+<li class="fragment">O problema de um <em>design</em> ruim normalmente não está relacionado com a complexidade do problema que se deseja solucionar.
 <ul>
-<li class="fragment">O design ruim está mais relacionado com as decisões que tomamos durante a solução do problema.</li>
+<li class="fragment">O <em>design</em> ruim está mais <strong>relacionado</strong> com as <strong>decisões</strong> que <strong>tomamos</strong> durante a resolução do problema.</li>
 </ul></li>
 </ul>
 </div>
@@ -545,12 +545,12 @@
 </figure>
 </div>
 </div><div class="column" style="width:70%;">
-<p><span style="color:darkblue;">Como avaliar se um design de classe é bom ou ruim?</span></p>
+<p><span style="color:darkblue;">Como avaliar se um <em>design</em> de classe é <strong>bom</strong> ou <strong>ruim</strong>?</span></p>
 <ul>
 <li class="fragment">Dois parâmetros são fundamentais para isso:
 <ul>
-<li class="fragment">Acoplamento.</li>
-<li class="fragment">Coesão.</li>
+<li class="fragment"><strong>Acoplamento</strong>.</li>
+<li class="fragment"><strong>Coesão</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -558,13 +558,13 @@
 </section>
 <section id="acoplamento" class="slide level2">
 <h2>Acoplamento</h2>
-<p><span style="color:darkblue;">O que é acoplamento (coupling)?</span></p>
+<p><span style="color:darkblue;">O que é acoplamento (<em>coupling</em>)?</span></p>
 <div class="columns fragment" style="display: flex !important; align-items: top;">
 <div class="column fontsize90" style="width:80%;">
 <ul>
-<li>Refere-se à interconectabilidade das classes.</li>
-<li>Lembre-se que as classes se relacionam quando seus objetos se comunicam.</li>
-<li>Quanto mais as classes se relacionam umas com as outras, mais forte é o acoplamento.</li>
+<li>Refere-se à <strong>interconectabilidade</strong> das <strong>classes</strong>.</li>
+<li>Lembre-se que as classes se <strong>relacionam</strong> quando seus objetos se <strong>comunicam</strong>.</li>
+<li>Quanto <strong>mais</strong> as <strong>classes</strong> se <strong>relacionam</strong> umas com as outras, <strong>mais forte</strong> é o <strong>acoplamento</strong>.</li>
 </ul>
 </div><div class="column" style="width:25%;">
 <div class="quarto-figure quarto-figure-center">
@@ -577,9 +577,9 @@
 <p><span class="fragment" style="color:darkblue;">O que desejamos em termos de acoplamento?</span></p>
 <div class="fontsize90">
 <ul>
-<li class="fragment">Trabalhamos para enfraquecer o acoplamento em um sistema.
+<li class="fragment">Trabalhamos para <strong>enfraquecer o acoplamento</strong> em um sistema.
 <ul>
-<li class="fragment">Ou seja, cada classe deve ser o mais independente possível e se comunicar com outras por meio de uma interface pequena e bem definida.</li>
+<li class="fragment">Ou seja, <strong>cada classe</strong> deve ser o mais <strong>independente</strong> possível e se <strong>comunicar</strong> com outras por meio de uma <strong>interface pequena</strong> e bem definida.</li>
 </ul></li>
 </ul>
 </div>
@@ -594,16 +594,16 @@
 </figure>
 </div>
 </div><div class="column fontsize90" style="width:70%;">
-<p><span style="color:darkblue;">Por que devemos buscar o acoplamento fraco?</span></p>
+<p><span style="color:darkblue;">Por que devemos buscar o acoplamento <strong>fraco</strong>?</span></p>
 <ul>
-<li class="fragment">Em uma estrutura de classe fortemente acoplada, uma alteração em uma classe pode obrigar a alteração em várias outras classes.
+<li class="fragment">Em uma <strong>estrutura</strong> de classe <strong>fortemente acoplada</strong>, uma <strong>alteração</strong> em uma classe pode <strong>obrigar</strong> a <strong>alteração em várias</strong> outras classes.
 <ul>
-<li class="fragment">Ou seja, uma pequena alteração em uma classe pode se propagar pela aplicação toda.</li>
+<li class="fragment">Ou seja, <strong>uma pequena alteração</strong> em uma classe <strong>pode se propagar</strong> pela aplicação toda.</li>
 </ul></li>
 </ul>
 </div>
 </div>
-<p><span class="fontsize90 fragment" style="color:darkblue;">Resumindo, quanto mais acopladas forem as classes, mais difícil se torna realizar alterações em um sistema.</span></p>
+<p><span class="fontsize90 fragment" style="color:darkblue;">Resumindo, quanto <strong>mais acopladas</strong> forem as classes, <strong>mais difícil</strong> se torna realizar <strong>alterações</strong> em um sistema.</span></p>
 </section>
 <section id="coesão" class="slide level2">
 <h2>Coesão</h2>
@@ -611,8 +611,8 @@
 <div class="columns fragment" style="display: flex !important; align-items: top;">
 <div class="column fontsize90" style="width:80%;">
 <ul>
-<li>Refere-se à quantidade e diversidade de tarefas sob responsabilidade de uma unidade de uma aplicação.</li>
-<li>Uma unidade pode ser: um método, uma classe ou um conjunto de classes (pacote).</li>
+<li>Refere-se à <strong>quantidade</strong> e <strong>diversidade</strong> de <strong>tarefas</strong> sob responsabilidade de <strong>uma unidade</strong> de uma aplicação.</li>
+<li>Uma <strong>unidade</strong> pode ser: um método, uma classe ou um conjunto de classes (pacote).</li>
 </ul>
 </div><div class="column" style="width:25%;">
 <div class="quarto-figure quarto-figure-center">
@@ -625,11 +625,11 @@
 <p><span class="fragment" style="color:darkblue;">O que se espera em termos de coesão?</span></p>
 <div class="fontsize90">
 <ul>
-<li class="fragment">Um bom design de classe exibe um grau elevado de coesão.</li>
-<li class="fragment">Em um sistema com alto grau de coesão:
+<li class="fragment">Um <strong>bom</strong> <em>design</em> de classe exibe um <strong>grau elevado de coesão</strong>.</li>
+<li class="fragment">Em um sistema com <strong>alto grau de coesão</strong>:
 <ul>
-<li class="fragment">Cada método é responsável por apenas uma tarefa bem definida (deve implementar uma operação lógica).</li>
-<li class="fragment">Uma classe deve representar um tipo de entidade.</li>
+<li class="fragment">Cada <strong>método</strong> é responsável por <strong>apenas uma tarefa</strong> bem definida (deve implementar uma operação lógica).</li>
+<li class="fragment">Uma <strong>classe</strong> deve representar <strong>um tipo</strong> de <strong>entidade</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -644,11 +644,11 @@
 </figure>
 </div>
 </div><div class="column fontsize90" style="width:70%;">
-<p><span style="color:darkblue;">Para que buscamos um alto grau de coesão?</span></p>
+<p><span style="color:darkblue;">Para que buscamos um <strong>alto grau</strong> de coesão?</span></p>
 <ul>
-<li class="fragment">Para maximizarmos a reutilização de código.</li>
-<li class="fragment">Se um método é responsável por apenas uma tarefa bem definida, é muito mais provável que ele possa ser reutilizado.</li>
-<li class="fragment">Se uma classe representa uma única entidade, maior é a chance de ela ser reaproveitada em um contexto diferente.</li>
+<li class="fragment">Para <strong>maximizarmos</strong> a <strong>reutilização de código</strong>.</li>
+<li class="fragment">Se um <strong>método</strong> é responsável por <strong>apenas uma tarefa</strong> bem definida, é muito mais <strong>provável</strong> que ele possa ser <strong>reutilizado</strong>.</li>
+<li class="fragment">Se uma <strong>classe</strong> representa uma <strong>única entidade</strong>, <strong>maior</strong> é a <strong>chance</strong> de ela ser <strong>reaproveitada</strong> em um contexto diferente.</li>
 </ul>
 </div>
 </div>
@@ -656,21 +656,21 @@
 <section id="duplicação-de-código" class="slide level2">
 <h2>Duplicação de Código</h2>
 <div class="fontsize90">
-<p><span style="color:darkblue">Duplicação de código é um indicador de design ruim!</span></p>
+<p><span style="color:darkblue"><strong>Duplicação</strong> de código é um indicador de <em>design</em> <strong>ruim</strong>!</span></p>
 <ul>
-<li class="fragment">A duplicação ocorre quando em uma aplicação um mesmo segmento de código aparece mais de uma vez em diferentes pontos do código.</li>
+<li class="fragment">A <strong>duplicação</strong> ocorre quando em uma aplicação um <strong>mesmo segmento</strong> de código <strong>aparece mais de uma vez</strong> em diferentes pontos do código.</li>
 </ul>
 <p><span class="fragment" style="color:darkblue">Por que a duplicação deve ser evitada?</span></p>
 <ul>
-<li class="fragment">Porque qualquer alteração realizada em um trecho de código duplicado, terá que ser realizada em mais de um ponto do código.</li>
-<li class="fragment">Se a pessoa responsável pela manutenção não perceber a duplicação e fizer alterações em apenas um ponto do código, o sistema se torna inconsistente (bug).</li>
-<li class="fragment">Além disso, a duplicação leva ao desperdício de tempo durante a fase de implementação do sistema.</li>
+<li class="fragment">Porque qualquer <strong>alteração</strong> realizada em <strong>um trecho</strong> de código <strong>duplicado</strong>, terá que <strong>ser realizada</strong> em <strong>mais de um ponto</strong> do código.</li>
+<li class="fragment">Se a <strong>pessoa</strong> responsável pela manutenção <strong>não perceber a duplicação</strong> e fizer alterações em apenas um ponto do código, o <strong>sistema se torna inconsistente</strong> (<em>bug</em>).</li>
+<li class="fragment">Além disso, a <strong>duplicação</strong> leva ao <strong>desperdício</strong> de <strong>tempo</strong> durante a fase de implementação do sistema.</li>
 </ul>
 </div>
 </section>
 <section id="duplicação-de-código-no-jogo" class="slide level2">
 <h2>Duplicação de Código no Jogo</h2>
-<p><span class="fontsize70">Veja esses dois métodos da classe <code>Jogo</code>: ambos imprimem informações sobre a localização atual.</span></p>
+<p><span class="fontsize70">Veja esses <strong>dois métodos</strong> da classe <code>Jogo</code>: <strong>ambos imprimem informações</strong> sobre a localização atual.</span></p>
 <div class="columns fontsize80" style="display: flex !important; align-items: top;">
 <div class="column" style="width:59%;">
 <div class="sourceCode" id="cb1" data-code-line-numbers="|8-22"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">void</span> <span class="fu">irParaAmbiente</span><span class="op">(</span>Comando comando<span class="op">){</span></span>
@@ -730,7 +730,7 @@
 <h2>Como Corrigir a Duplicação de Código?</h2>
 <div class="columns fontsize90" style="display: flex !important; align-items: center;">
 <div class="column fontsize80" style="width:50%;">
-<p>Criaremos um método cuja única tarefa será imprimir as informações da localização atual.</p>
+<p>Criaremos um <strong>método</strong> cuja <strong>única tarefa</strong> será imprimir as informações da localização atual.</p>
 <ul>
 <li class="fragment">Com isso, os dois métodos anteriores podem fazer chamada a este método quando precisarem imprimir a localização atual.</li>
 </ul>
@@ -765,14 +765,14 @@
 <section id="atributos-públicos" class="slide level2">
 <h2>Atributos Públicos</h2>
 <div class="fontsize90">
-<p><span style="color:darkblue;">Atributos públicos significam design ruim!</span></p>
+<p><span style="color:darkblue;">Atributos públicos significam <em>design</em> <strong>ruim</strong>!</span></p>
 <ul>
 <li class="fragment">Já vimos que atributos de uma classe devem ser privados.</li>
 <li class="fragment">Agora entenderemos o que acarreta a escolha de se utilizar atributos públicos.</li>
 </ul>
-<p><span class="fragment" style="color:darkblue;">Por que o uso de atributos públicos resulta num design de classes ruim?</span></p>
+<p><span class="fragment" style="color:darkblue;">Por que o uso de atributos públicos resulta num <em>design</em> de classes ruim?</span></p>
 <ul>
-<li class="fragment">Porque aumenta o grau de acoplamento entre as classes!</li>
+<li class="fragment">Porque <strong>aumenta o grau de acoplamento</strong> entre as classes!</li>
 <li class="fragment">De que forma isso acontece?
 <ul>
 <li class="fragment">Se precisarmos alterar a forma ou estratégia de representação dos dados de uma classe com atributos públicos, essa alteração precisará ser realizada em todos os lugares onde os atributos públicos são utilizados. <span class="alert">Certamente isso não é desejado!</span></li>

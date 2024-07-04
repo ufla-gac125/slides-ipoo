@@ -29,13 +29,13 @@ title-slide-attributes:
 ::::
 
 ## Design de Classes
-[O que torna o design de uma classe bom ou ruim?]{style="color:darkblue;"}
+[O que torna o *design* de uma classe **bom** ou **ruim**?]{style="color:darkblue;"}
 
 ::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="70%" .fontsize90}
-É possível implementar uma aplicação que funcione, mas onde as classes estão mal projetadas.
+É **possível** implementar uma aplicação que **funcione**, mas onde as classes estão **mal projetadas**.
 
-- O fato de uma aplicação executar corretamente não significa que ela esteja internamente bem estruturada.
+- O fato de uma aplicação **executar** corretamente **não significa** que ela esteja internamente **bem estruturada**.
 :::
 ::: {.column width="30%"}
 ![](figuras/projeto_ruim.png){fig-alt="Projeto_ruim" fig-align="center" width=100%}
@@ -43,7 +43,7 @@ title-slide-attributes:
 ::::
 
 :::{.fragment .fontsize90}   
-Nesta aula, veremos alguns princípios de que devem ser seguidos para termos um bom design de classes.
+Hoje veremos alguns **princípios** de que devem ser seguidos para termos um **bom** *design* de classes.
 :::
 
 ## Design de Classes
@@ -54,26 +54,26 @@ Nesta aula, veremos alguns princípios de que devem ser seguidos para termos um 
 ![](figuras/manutencao.png){fig-alt="Manutenção" fig-align="center" width=85%}
 :::
 ::: {.column width="70%" .fontsize80}
-- Geralmente os problemas surgem durante a manutenção.
+- Geralmente os **problemas** surgem durante a **manutenção**.
     - Quando se deseja fazer alterações em uma aplicação existente.
-- Mas os problemas podem aparecer ainda durante a implementação.
+- Mas os problemas podem aparecer **ainda** durante a **implementação**.
     - Uma implementação com estrutura inicial ruim pode tornar o desenvolvimento mais complexo, dificultando ou impossibilitando a sua conclusão.
 :::
 ::::
 
 :::{.fragment .fontsize80}   
-Lembre-se que frequentemente uma empresa mantém, estende e vende uma aplicação por vários anos.
+Lembre-se que frequentemente uma empresa **mantém**, **estende** e **vende** uma aplicação por **vários anos**.
  
-- Portanto, se ele for mal projetado, os custos de manutenção ao longo desses vários anos podem ser muito maiores do que o necessário.
+- Portanto, se ela for **mal projetada**, os **custos** de manutenção ao longo desses vários anos podem ser **muito maiores** do que o necessário.
 :::
 
 
 ## Design de Classes
-[Usaremos um jogo chamado World of Zuul para ilustrar os conceitos que discutiremos a seguir.]{.fontsize75 style="color:darkblue;"}
+[Usaremos um **jogo** chamado **World of Zuul** para ilustrar os conceitos que discutiremos a seguir.]{.fontsize75 style="color:darkblue;"}
 
 ::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="30%" .fontsize75}
-Ele é um jogo de exploração de ambientes e aventura, mas sem interface gráfica. Basicamente deve-se ler a descrição de um abiente e escrever textos que representam comandos a serem realizados no jogo.
+Ele é um **jogo** de **exploração de ambientes** e aventura, mas **sem interface gráfica**. Basicamente deve-se ler a descrição de um abiente e escrever textos que representam comandos a serem realizados no jogo.
 :::
 ::: {.column width="70%"}
 ![](figuras/world_zuul1.png){fig-alt="Tela_jogo" fig-align="center" width=85%}
@@ -88,13 +88,13 @@ Esse jogo, no estilo Adventure, foi inspirado em um jogo criado na década de 70
 [O Jogo World-of-Zuul]{.fontsize90 style="color:darkblue;"}
 
 :::{.fontsize90} 
-- Em seu formato original, o jogo ainda não está muito interessante.
-    - Ele está incompleto!
-- Desse modo, veremos como estender a sua implementação, discutindo os apectos do design de classes existente.
-- Perceberemos que essa versão original tem exemplos de decisões de design ruins.
+- Em seu **formato original**, o jogo ainda não está muito interessante.
+    - Ele **está incompleto**!
+- Desse modo, veremos **como estender** a sua implementação, discutindo os apectos do *design* de classes existente.
+- Perceberemos que essa **versão original** tem **exemplos** de decisões de *design* **ruins**.
     - Veremos como isso influencia nossas tarefas e como corrigi-las.
-- O problema de um design ruim normalmente não está relacionado com a complexidade do problema que se deseja solucionar.
-    - O design ruim está mais relacionado com as decisões que tomamos durante a solução do problema.
+- O problema de um *design* ruim normalmente não está relacionado com a complexidade do problema que se deseja solucionar.
+    - O *design* ruim está mais **relacionado** com as **decisões** que **tomamos** durante a resolução do problema.
 :::
 
 ## Entendendo a Modelagem do Jogo
@@ -108,24 +108,24 @@ Esse jogo, no estilo Adventure, foi inspirado em um jogo criado na década de 70
 ![](figuras/jovem.png){fig-alt="Jovem" fig-align="center" width=50%}
 :::
 ::: {.column width="70%"}
-[Como avaliar se um design de classe é bom ou ruim?]{style="color:darkblue;"}
+[Como avaliar se um *design* de classe é **bom** ou **ruim**?]{style="color:darkblue;"}
 
 - Dois parâmetros são fundamentais para isso:
-    - Acoplamento.
-    - Coesão.
+    - **Acoplamento**.
+    - **Coesão**.
 :::
 ::::
 
 
 
 ## Acoplamento
-[O que é acoplamento (coupling)?]{style="color:darkblue;"}
+[O que é acoplamento (*coupling*)?]{style="color:darkblue;"}
 
 ::::{.columns style='display: flex !important; align-items: top;' .fragment}
 ::: {.column width="80%" .fontsize90 .nonincremental}
-- Refere-se à interconectabilidade das classes.
-- Lembre-se que as classes se relacionam quando seus objetos se comunicam.
-- Quanto mais as classes se relacionam umas com as outras, mais forte é o acoplamento.
+- Refere-se à **interconectabilidade** das **classes**.
+- Lembre-se que as classes se **relacionam** quando seus objetos se **comunicam**.
+- Quanto **mais** as **classes** se **relacionam** umas com as outras, **mais forte** é o **acoplamento**.
 :::
 ::: {.column width="25%"}
 ![](figuras/acoplamento.png){fig-alt="Acoplamento" fig-align="center" width=30%}
@@ -135,8 +135,8 @@ Esse jogo, no estilo Adventure, foi inspirado em um jogo criado na década de 70
 [O que desejamos em termos de acoplamento?]{style="color:darkblue;" .fragment}
 
 :::{.fontsize90}
-- Trabalhamos para enfraquecer o acoplamento em um sistema.
-  - Ou seja, cada classe deve ser o mais independente possível e se comunicar com outras por meio de uma interface pequena e bem definida.
+- Trabalhamos para **enfraquecer o acoplamento** em um sistema.
+  - Ou seja, **cada classe** deve ser o mais **independente** possível e se **comunicar** com outras por meio de uma **interface pequena** e bem definida.
 ::: 
   
 
@@ -146,22 +146,22 @@ Esse jogo, no estilo Adventure, foi inspirado em um jogo criado na década de 70
 ![](figuras/pensando2.png){fig-alt="Acoplamento" fig-align="center" width=80%}
 :::
 ::: {.column width="70%" .fontsize90}
-[Por que devemos buscar o acoplamento fraco?]{style="color:darkblue;"}
+[Por que devemos buscar o acoplamento **fraco**?]{style="color:darkblue;"}
 
-- Em uma estrutura de classe fortemente acoplada, uma alteração em uma classe pode obrigar a alteração em várias outras classes.
-  - Ou seja, uma pequena alteração em uma classe pode se propagar pela aplicação toda.
+- Em uma **estrutura** de classe **fortemente acoplada**, uma **alteração** em uma classe pode **obrigar** a **alteração em várias** outras classes.
+  - Ou seja, **uma pequena alteração** em uma classe **pode se propagar** pela aplicação toda.
 :::
 ::::
 
-[Resumindo, quanto mais acopladas forem as classes, mais difícil se torna realizar alterações em um sistema.]{style="color:darkblue;" .fontsize90 .fragment}
+[Resumindo, quanto **mais acopladas** forem as classes, **mais difícil** se torna realizar **alterações** em um sistema.]{style="color:darkblue;" .fontsize90 .fragment}
 
 ## Coesão
 [O que é coesão?]{style="color:darkblue;"}
 
 ::::{.columns style='display: flex !important; align-items: top;' .fragment}
 ::: {.column width="80%" .fontsize90 .nonincremental}
-- Refere-se à quantidade e diversidade de tarefas sob responsabilidade de uma unidade de uma aplicação.
-- Uma unidade pode ser: um método, uma classe ou um conjunto de classes (pacote).
+- Refere-se à **quantidade** e **diversidade** de **tarefas** sob responsabilidade de **uma unidade** de uma aplicação.
+- Uma **unidade** pode ser: um método, uma classe ou um conjunto de classes (pacote).
 :::
 ::: {.column width="25%"}
 ![](figuras/multitarefas.png){fig-alt="Acoplamento" fig-align="center" width=90%}
@@ -171,10 +171,10 @@ Esse jogo, no estilo Adventure, foi inspirado em um jogo criado na década de 70
 [O que se espera em termos de coesão?]{style="color:darkblue;" .fragment}
 
 :::{.fontsize90}
-- Um bom design de classe exibe um grau elevado de coesão.
-- Em um sistema com alto grau de coesão:
-  - Cada método é responsável por apenas uma tarefa bem definida (deve implementar uma operação lógica).
-  - Uma classe deve representar um tipo de entidade. 
+- Um **bom** *design* de classe exibe um **grau elevado de coesão**.
+- Em um sistema com **alto grau de coesão**:
+  - Cada **método** é responsável por **apenas uma tarefa** bem definida (deve implementar uma operação lógica).
+  - Uma **classe** deve representar **um tipo** de **entidade**. 
 ::: 
 
 
@@ -184,31 +184,31 @@ Esse jogo, no estilo Adventure, foi inspirado em um jogo criado na década de 70
 ![](figuras/pensando2.png){fig-alt="Acoplamento" fig-align="center" width=80%}
 :::
 ::: {.column width="70%" .fontsize90}
-[Para que buscamos um alto grau de coesão?]{style="color:darkblue;"}
+[Para que buscamos um **alto grau** de coesão?]{style="color:darkblue;"}
 
-- Para maximizarmos a reutilização de código.
-- Se um método é responsável por apenas uma tarefa bem definida, é muito mais provável que ele possa ser reutilizado.
-- Se uma classe representa uma única entidade, maior é a chance de ela ser reaproveitada em um contexto diferente.
+- Para **maximizarmos** a **reutilização de código**.
+- Se um **método** é responsável por **apenas uma tarefa** bem definida, é muito mais **provável** que ele possa ser **reutilizado**.
+- Se uma **classe** representa uma **única entidade**, **maior** é a **chance** de ela ser **reaproveitada** em um contexto diferente.
 :::
 ::::
 
 
 ## Duplicação de Código
 :::{.fontsize90}
-[Duplicação de código é um indicador de design ruim!]{style="color:darkblue"}
+[**Duplicação** de código é um indicador de *design* **ruim**!]{style="color:darkblue"}
 
-- A duplicação ocorre quando em uma aplicação um mesmo segmento de código aparece mais de uma vez em diferentes pontos do código.
+- A **duplicação** ocorre quando em uma aplicação um **mesmo segmento** de código **aparece mais de uma vez** em diferentes pontos do código.
  
 
 [Por que a duplicação deve ser evitada?]{style="color:darkblue" .fragment}
  
-- Porque qualquer alteração realizada em um trecho de código duplicado, terá que ser realizada em mais de um ponto do código.
-- Se a pessoa responsável pela manutenção não perceber a duplicação e fizer alterações em apenas um ponto do código, o sistema se torna inconsistente (bug).
-- Além disso, a duplicação leva ao desperdício de tempo durante a fase de implementação do sistema.
+- Porque qualquer **alteração** realizada em **um trecho** de código **duplicado**, terá que **ser realizada** em **mais de um ponto** do código.
+- Se a **pessoa** responsável pela manutenção **não perceber a duplicação** e fizer alterações em apenas um ponto do código, o **sistema se torna inconsistente** (*bug*).
+- Além disso, a **duplicação** leva ao **desperdício** de **tempo** durante a fase de implementação do sistema.
 :::
 
 ## Duplicação de Código no Jogo
-[Veja esses dois métodos da classe `Jogo`: ambos imprimem informações sobre a localização atual.]{.fontsize70}
+[Veja esses **dois métodos** da classe `Jogo`: **ambos imprimem informações** sobre a localização atual.]{.fontsize70}
 
 ::::{.columns style='display: flex !important; align-items: top;' .fontsize80}
 ::: {.column width="59%"}
@@ -273,7 +273,7 @@ private void imprimirBoasVindas(){
 ## Como Corrigir a Duplicação de Código?
 ::::{.columns style='display: flex !important; align-items: center;' .fontsize90}
 ::: {.column width="50%" .fontsize80}
-Criaremos um método cuja única tarefa será imprimir as informações da localização atual.
+Criaremos um **método** cuja **única tarefa** será imprimir as informações da localização atual.
 
 - Com isso, os dois métodos anteriores podem fazer chamada a este método quando precisarem imprimir a localização atual.
 :::
@@ -309,14 +309,14 @@ private void imprimirLocalizacaoAtual(){
 
 ## Atributos Públicos
 :::{.fontsize90}
-[Atributos públicos significam design ruim!]{style="color:darkblue;"}
+[Atributos públicos significam *design* **ruim**!]{style="color:darkblue;"}
 
 - Já vimos que atributos de uma classe devem ser privados.
 - Agora entenderemos o que acarreta a escolha de se utilizar atributos públicos.
  
-[Por que o uso de atributos públicos resulta num design de classes ruim?]{style="color:darkblue;" .fragment}
+[Por que o uso de atributos públicos resulta num *design* de classes ruim?]{style="color:darkblue;" .fragment}
  
-- Porque aumenta o grau de acoplamento entre as classes!
+- Porque **aumenta o grau de acoplamento** entre as classes!
 - De que forma isso acontece?
   - Se precisarmos alterar a forma ou estratégia de representação dos dados de uma classe com atributos públicos, essa alteração precisará ser realizada em todos os lugares onde os atributos públicos são utilizados. [Certamente isso não é desejado!]{.alert}
 :::
