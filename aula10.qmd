@@ -318,7 +318,7 @@ private void imprimirLocalizacaoAtual(){
  
 - Porque **aumenta o grau de acoplamento** entre as classes!
 - De que forma isso acontece?
-  - Se precisarmos alterar a forma ou estratégia de representação dos dados de uma classe com atributos públicos, essa alteração precisará ser realizada em todos os lugares onde os atributos públicos são utilizados. [Certamente isso não é desejado!]{.alert}
+  - Se precisarmos alterar a forma ou estratégia de representação dos dados de uma classe com atributos públicos, essa alteração precisará ser realizada em todos os lugares onde os atributos públicos são utilizados. **Certamente isso não é desejado!**
 :::
 
 
@@ -363,7 +363,7 @@ if(direcao.equals("oeste")) {
 [O que acontece se quisermos incrementar nosso jogo adicionando duas novas saídas: para cima e para baixo?]{style="color:darkblue;"}
 
 - Para fazer essa alteração teríamos que alterar a classe `Ambiente` e modificar a classe `Jogo` para ajustar os *if's* que tratam os ambientes.
-- Isso ocorre porque a classe `Jogo` está conhecendo como a classe `Ambiente` trata os dados, sendo que ela deveria conhecer apenas o que a classe `Ambiente` faz.
+- Isso ocorre porque a classe `Jogo` está conhecendo **como** a classe `Ambiente` trata os **dados**, sendo que ela deveria conhecer apenas **o que** a classe `Ambiente` **faz**.
 :::
 ::::
 
@@ -387,7 +387,7 @@ public class Ambiente{
 ```
 :::
 ::: {.column width="45%" .fontsize80}
-- Primeiro vamos esconder (private) os atributos da classe `Ambiente`. 
+- Primeiro vamos "esconder" (`private`) os atributos da classe `Ambiente`. 
 - Em seguida, criamos um método `getAmbiente` que recebe por parâmetro a direção e retorna o ambiente correspondente.
 :::
 ::::
@@ -428,11 +428,11 @@ if(direcao.equals("oeste")) {
 
 [Mas e se no futuro eu decidir adicionar ainda mais opções de saída?]{style="color:darkblue;" .fragment}
  
-- Se estamos definindo um conjunto de dados que pode aumentar, deveríamos trabalhar com atributos compostos (vetores/coleções).
-- Portanto, vamos usar uma coleção denominada HashMap.
+- Se estamos definindo um conjunto de **dados** que **pode aumentar**, deveríamos trabalhar com **atributos compostos** (vetores/coleções).
+- Portanto, vamos usar uma **coleção** denominada *HashMap*.
   
-  - Um objeto dessa classe é como um dicionário que possui uma chave e um valor.
-  - Esse tipo de estrutura permite buscarmos o valor a partir da chave.
+  - Um **objeto** dessa classe é como um **dicionário** que possui uma **chave** e um **valor**.
+  - Esse tipo de estrutura permite buscarmos o **valor** a partir da **chave**.
 :::
 
 
@@ -466,15 +466,15 @@ public class Ambiente{
 
 ## Incrementando o Jogo
 :::{.fontsize85}
-[Adicionando as saídas para cima e para baixo.]{style="color:darkblue;"}
+[Adicionando as saídas para **cima** e para **baixo**.]{style="color:darkblue;"}
  
-- Para adicionarmos as saídas para cima e para baixo basta acrescentarmos parâmetros ao método ajustarSaidas da classe Ambiente.
+- Para adicionarmos as saídas **para cima** e **para baixo** basta acrescentarmos parâmetros ao método `ajustarSaidas` da classe `Ambiente`.
 
 [Pensando no futuro...]{style="color:darkblue;" .fragment}
  
 - Mas e se no futuro eu desejar ter ainda mais saídas?
 - Como podemos deixar nossa classe `Ambiente` mais genérica?
-  - Podemos alterar o método `ajustarSaidas` de modo que se permita ajustar uma saída por vez.
+  - Podemos alterar o método `ajustarSaidas` de modo que se permita ajustar **uma saída por vez**.
   - Desse modo, o usuário da classe pode definir a direção que ele quiser.
   
 [Um bom design de classes tenta antecipar possíveis necessidades futuras de alterações no código!]{style="color:darkblue;" .fragment}
@@ -512,15 +512,15 @@ public class Ambiente{
 
 ## Design Baseado na Responsabilidade
 :::{.fontsize85}
-[O grau de acoplamento também é influenciado pelo design baseado na responsabilidade.]{style="color:darkblue;"}
+[O grau de **acoplamento** também é influenciado pelo *design* **baseado na responsabilidade**.]{style="color:darkblue;"}
 
-Mas o que significa design baseado na responsabilidade?
+Mas o que significa *design* baseado na responsabilidade?
  
-- É o processo de projetar classes atribuindo responsabilidades bem definidas a cada classe.
-- A ideia é que cada classe deve ser responsável por tratar seus próprios dados.
+- É o processo de projetar classes atribuindo **responsabilidades bem definidas** a cada classe.
+- A ideia é que **cada classe** deve ser **responsável** por tratar **seus próprios dados**.
 - Ou seja, quem deve manipular um dado é a classe que o contém!
  
-[Quando precisamos adicionar uma nova funcionalidade em uma aplicação, em qual classe devemos adicionar o método que implementa essa nova funcionalidade?]{style="color:darkblue;" .fragment}
+[Quando precisamos adicionar uma nova funcionalidade em uma aplicação, em qual classe devemos adicionar o **método** que **implementa** essa **nova funcionalidade**?]{style="color:darkblue;" .fragment}
  
 - Na classe responsável pelos dados que serão manipulados por esse novo método.
 :::
@@ -530,9 +530,9 @@ Mas o que significa design baseado na responsabilidade?
 
 ::::{.columns style='display: flex !important; align-items: top;'}
 ::: {.column width="45%" .fontsize80}
-Como podemos adicionar esse novo ambiente no jogo?
+Como podemos **adicionar** esse **novo ambiente** no jogo?
 
-- Para isso, precisamos alterar apenas o método `criarAmbientes` na classe `Jogo`.
+- Para isso, precisamos alterar **apenas** o método `criarAmbientes` na classe `Jogo`.
 :::
 ::: {.column width="65%"}
 ```{.java code-line-numbers="false"}
@@ -551,13 +551,13 @@ private void criarAmbientes(){
 :::
 ::::
 
-[Essa inclusão de ambiente ficou simples de ser feita devido às alterações realizadas na classe `Ambiente`, que tornaram as responsabilidades mais bem divididas.]{.fontsize85 .fragment}
+[Essa **inclusão** de ambiente ficou **simples** de ser feita devido às **alterações realizadas** na classe `Ambiente`, que tornaram as responsabilidades mais bem divididas.]{.fontsize85 .fragment}
 
 ## Design Baseado na Responsabilidade - Jogo
 :::{.fontsize80}
-[Suponha que queiramos adicionar itens aos ambientes.]{style="color:darkblue;"}
+[Suponha que queiramos adicionar **itens** aos ambientes.]{style="color:darkblue;"}
  
-Qual o melhor lugar para acrescentá-los?
+Qual o **melhor lugar** para acrescentá-los?
   
 - Na classe `Ambiente`, afinal eles farão parte do ambiente.
   
@@ -565,22 +565,22 @@ Qual o melhor lugar para acrescentá-los?
   
 - Sim, a classe `Jogo` também precisará ser alterada para passar a chamar um método da classe `Ambiente` que permita a exibição dos itens.
   
-[Como poderíamos evitar a alteração da classe `Jogo` a cada novidade inserida no ambiente?]{.fragment}
+[Como poderíamos **evitar** a **alteração** da classe `Jogo` **a cada novidade** inserida no ambiente?]{.fragment}
    
-- Criando um método na classe `Ambiente` (p.ex., getDescricaoLonga) que retorna um texto descrevendo tudo que existe no ambiente.
+- Criando um método na classe `Ambiente` (p.ex., `getDescricaoLonga`) que retorna um texto descrevendo tudo que existe no ambiente.
 - Desse modo, futuras inclusões de elementos nos ambientes resultariam em alterações apenas na classe `Ambiente`.
 :::
 
 
 ## Minimizando Alterações
 :::{.fontsize90}
-Devemos criar um design de classe que facilite alterações futuras localizando os efeitos de uma alteração.
+Devemos criar um *design* de classe que **facilite** alterações futuras **localizando os efeitos** de uma alteração.
  
-- Ou seja, idealmente apenas uma classe precisa ser alterada para se fazer uma modificação.
+- Ou seja, **idealmente** apenas **uma** classe precisa ser alterada para se fazer **uma modificação**.
  
 [Ocasionalmente, pode acontecer de alterações serem necessárias em mais de uma classe ao se fazer uma modificação no sistema.]{.fragment}
  
-- Nesses casos, as alterações necessárias em outras classes devem ser óbvias, fáceis de detectar e executar.
+- Nesses casos, as **alterações** necessárias em **outras** classes devem ser **óbvias**, fáceis de detectar e executar.
 :::
 
 
@@ -588,18 +588,18 @@ Devemos criar um design de classe que facilite alterações futuras localizando 
 :::{.fontsize90}
 [Vimos que o uso de atributos públicos pode aumentar o grau de acoplamento entre classes.]{style="color:darkblue;"}
  
-- Isso significa que pode ser necessário fazer alterações em mais de uma classe por causa de uma simples modificação no código.
+- Isso significa que pode ser necessário fazer **alterações em mais de uma classe** por causa de uma **simples modificação** no código.
 - Portanto, sabemos que atributos públicos devem ser evitados.
  
 
-[Mas há uma forma de acoplamento ainda pior. Você sabe qual?]{style="color:darkblue;" .fragment}
+[Mas há uma forma de **acoplamento** ainda **pior**. Você sabe qual?]{style="color:darkblue;" .fragment}
 
 ::::{.columns style='display: flex !important; align-items: top;' .fragment}
 ::: {.column width="25%" }
 ![](figuras/animal_assustado.png){fig-alt="Acoplamento" fig-align="center" width=50%}
 :::
 ::: {.column width="75%" .nonincremental}
-- O acoplamento implícito!
+- O acoplamento **implícito**!
 :::
 ::::
 
@@ -608,23 +608,23 @@ Devemos criar um design de classe que facilite alterações futuras localizando 
 
 ## Acoplamento Implícito
 :::{.fontsize90}
-[O que é o acoplamento implícito?]{style="color:darkblue;"}
+[O que é o **acoplamento implícito**?]{style="color:darkblue;"}
 
-- Ele ocorre quando uma classe depende de informações internas de outra, mas essa dependência não é obvia.
+- Ele ocorre quando uma **classe depende** de **informações internas** de **outra**, mas essa dependência **não é obvia**.
  
 
 [Qual a consequência do acoplamento implícito?]{style="color:darkblue;" .fragment}
  
 - No caso dos atributos públicos, se eles forem alterados somente na classe que os define, a aplicação deixará de compilar corretamente e o erro será apontado.
 
-- No entanto, nos casos de acoplamento implícito, a omissão de uma alteração necessária pode não ser detectada pelo compilador.
+- No entanto, nos casos de **acoplamento implícito**, a **omissão de uma alteração** necessária pode **não ser detectada** pelo compilador.
   
-  - Com isso, o código compila corretamente, mas a aplicação deixa de funcionar corretamente, ou seja, ela não faz o que deveria ser feito.
+  - Com isso, o código **compila corretamente**, **mas** a aplicação **deixa de funcionar corretamente**, ou seja, ela não faz o que deveria ser feito.
 :::
 
 ## Acoplamento Implícito no Jogo
 :::{.fontsize80 .nonincremental}
-[Suponha que queiramos adicionar o comando observar ao conjunto de comandos válidos do jogo.]{style="color:darkblue;"}
+[Suponha que queiramos **adicionar** o **comando observar** ao conjunto de comandos válidos do jogo.]{style="color:darkblue;"}
  
 - O objetivo desse novo comando é permitir ao usuário visualizar a descrição do ambiente atual, pois podemos não nos lembrar mais das saídas possíveis para aquele ambiente.
 
@@ -633,11 +633,11 @@ Devemos criar um design de classe que facilite alterações futuras localizando 
 
 ::::{.columns style='display: flex !important; align-items: center;' .fragment}
 ::: {.column width="50%" .fontsize80}
-Na classe `PalavrasComando`, adicionando ao vetor de palavras conhecidas o comando observar.
+Na classe `PalavrasComando`, **adicionando ao vetor** de palavras conhecidas o comando **observar**.
   
 - O que acontecerá ao testarmos essa alteração?
  
-  - Quando executamos o jogo e digitamos o comando observar, nada acontece. Por que?
+  - Quando **executamos** o jogo e digitamos o comando **observar**, **nada** acontece. Por que?
 :::
 ::: {.column width="55%"}
 ```{.java code-line-numbers="false"}
@@ -683,9 +683,9 @@ private void observar(){ // 2
 ```
 :::
 ::: {.column width="30%" .fontsize75}
-Precisamos de mais algumas alterações para o código funcionar:
+Precisamos de **mais** algumas **alterações** para o código funcionar:
 
-1. Alterar o método `processarComando` para que ele considere o comando *observar*.
+1. Alterar o método `processarComando` para que ele considere o comando **observar**.
 2. Inserir o método `observar` para que as informações sobre a localização atual sejam exibidas.
 :::
 ::::
@@ -697,9 +697,9 @@ Precisamos de mais algumas alterações para o código funcionar:
 :::{.fontsize80}
 [Após as alterações anteriores, o jogo funcionará corretamente?]{style="color:darkblue;"}
  
-[Não! Por que?]{.fragment}
+[**Não!** Por que?]{.fragment}
 
-- Para responder essa pergunta pense no que acontecerá se digitarmos o comando *ajuda*.
+- Para responder essa pergunta **pense** no que **acontecerá** se digitarmos o comando **ajuda**.
 :::
 
 ::::{.columns style='display: flex !important; align-items: center;' .fragment}
@@ -716,13 +716,13 @@ private void imprimirAjuda(){
 ```
 :::
 ::: {.column width="30%" .fontsize70}
-- Veja que o comando *observar* não é listado.
+- Veja que o comando **observar** não é listado.
 - Aqui ocorre o **acomplamento implícito!**
 :::
 ::::
 
 :::{.fontsize80}
-- Isso acontece porque a classe `Jogo` depende dos dados da classe `PalavrasComando`.
+- Isso acontece porque a classe `Jogo` **depende** dos **dados** da classe `PalavrasComando`.
   - Mas isso está implícito e não deu erro de compilação!
 :::
 
@@ -753,9 +753,9 @@ public String getComandos(){
 ![](figuras/diagrama_Jogo.png){fig-alt="Diagrama Jogo" fig-align="center" width=100%}
 :::
 ::: {.column width="50%" .fontsize80 }
-- Humm... Mas veja que a classe `Jogo` não tem uma referência para a classe `PalavrasComando`!
-  - Acrescentar essa referência significa **aumentar o acoplamento**.
-- Como resolver isso sem aumentar o grau de acoplamento?
+- Humm... Mas veja que a classe `Jogo` **não tem** uma **referência** para a classe `PalavrasComando`!
+  - **Acrescentar** essa referência significa **aumentar o acoplamento**.
+- Como resolver isso **sem aumentar** o grau de **acoplamento**?
 :::
 ::::
 
@@ -764,7 +764,7 @@ public String getComandos(){
 ::: {.column width="55%" .fontsize75}
 Basta a classe `Analisador` ter um **método** que faça a **intermediação** entre as classes `Jogo` e `PalavrasComando`.
 
-- Agora basta que a classe `Jogo` chame esse método *getComandos* da classe `Analisador`, que por sua vez chamará o método *getComandos* da classe `PalavrasComando`.
+- Agora basta que a classe `Jogo` chame esse método `getComandos` da classe `Analisador`, que por sua vez chamará o método `getComandos` da classe `PalavrasComando`.
 :::
 ::: {.column width="50%"}
 ```{.java code-line-numbers="false"}
@@ -797,8 +797,8 @@ Desse modo, fazemos o que precisamos [sem aumentar]{.underline} **o grau de acom
 [Incrementando nosso jogo...]{style="color:darkblue;"}
  
 - Imagine que agora queremos adicionar itens aos ambientes de nosso jogo.
-  - Cada ambiente pode conter um **item**.
-  - Cada **item** tem uma *descrição* e um *peso*.
+  - Cada **ambiente** pode conter um **item**.
+  - Cada **item** tem uma **descrição** e um **peso**.
 :::
 
 :::{.fontsize80 .fragment} 
@@ -806,33 +806,33 @@ Desse modo, fazemos o que precisamos [sem aumentar]{.underline} **o grau de acom
 
 - Uma solução simples seria adicionarmos dois atributos à classe `Ambiente`: *descricaoItem* e *pesoItem*.
 - Essa solução funcionaria?
-  - Sim, mas ela fere o princípio da coesão. Por que?
-  - Um item é uma entidade (ele tem os atributos descrição e peso) e, por isso, deveria ter sua própria classe.
-- Portanto, a melhor solução é criar uma classe separada para itens e a classe `Ambiente` passar a ter objetos do tipo `Item`.
+  - Sim, mas ela **fere o princípio da coesão**. Por que?
+  - Um item **é uma entidade** (ele tem os atributos descrição e peso) e, por isso, deveria ter sua **própria classe**.
+- Portanto, a **melhor solução** é criar uma **classe separada** para itens e a classe `Ambiente` passar a ter objetos do tipo `Item`.
 :::
 
 ## Refatoração
 :::{.fontsize85}
 [Apesar de tentarmos projetar aplicações pensando nas possíveis alterações futuras, nem sempre conseguimos prever todas as adaptações futuras.]{style="color:darkblue;"}
 
-- É aí que entra a refatoração!
+- É aí que entra a **refatoração**!
 
 [O que é refatoração?]{style="color:darkblue;" .fragment}
  
-- É a atividade de reestruturação de classes e métodos existentes para adaptá-los a alterações de funcionalidades e requisitos.
+- É a **atividade de reestruturação de classes e métodos** existentes para adaptá-los a alterações de funcionalidades e requisitos.
  
 
 [Ao longo do tempo...]{style="color:darkblue;" .fragment}
  
 - É muito comum precisarmos adicionar mais código a uma classe ou um método.
-- Fazendo isso, a coesão pode começar a ficar ruim, fazendo sentido dividir a classe e/ou método em outras classes e/ou métodos.
+- Fazendo isso, a **coesão** pode começar a ficar **ruim**, fazendo sentido **dividir** a classe e/ou método em outras classes e/ou métodos.
 - Se isto não for feito, mais tarde as alterações podem se tornar mais complicadas.
 :::
 
 
 ## Refatoração
 :::{.fontsize90}
-[Nunca refatore sem escrever testes antes!]{style="color:darkblue;"}
+[Nunca refatore sem escrever **testes** antes!]{style="color:darkblue;"}
  
 - A realização de **testes** é fundamental nesse **processo de refatoração**.
 - Ao **refatorarmos** um sistema que **já está em uso**, estamos realizando **alterações potencialmente grandes**, o que atesta a **importância** da realização de novos **testes**.

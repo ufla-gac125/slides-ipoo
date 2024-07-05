@@ -775,7 +775,7 @@
 <li class="fragment">Porque <strong>aumenta o grau de acoplamento</strong> entre as classes!</li>
 <li class="fragment">De que forma isso acontece?
 <ul>
-<li class="fragment">Se precisarmos alterar a forma ou estratégia de representação dos dados de uma classe com atributos públicos, essa alteração precisará ser realizada em todos os lugares onde os atributos públicos são utilizados. <span class="alert">Certamente isso não é desejado!</span></li>
+<li class="fragment">Se precisarmos alterar a forma ou estratégia de representação dos dados de uma classe com atributos públicos, essa alteração precisará ser realizada em todos os lugares onde os atributos públicos são utilizados. <strong>Certamente isso não é desejado!</strong></li>
 </ul></li>
 </ul>
 </div>
@@ -815,7 +815,7 @@
 <p><span style="color:darkblue;">O que acontece se quisermos incrementar nosso jogo adicionando duas novas saídas: para cima e para baixo?</span></p>
 <ul>
 <li class="fragment">Para fazer essa alteração teríamos que alterar a classe <code>Ambiente</code> e modificar a classe <code>Jogo</code> para ajustar os <em>if’s</em> que tratam os ambientes.</li>
-<li class="fragment">Isso ocorre porque a classe <code>Jogo</code> está conhecendo como a classe <code>Ambiente</code> trata os dados, sendo que ela deveria conhecer apenas o que a classe <code>Ambiente</code> faz.</li>
+<li class="fragment">Isso ocorre porque a classe <code>Jogo</code> está conhecendo <strong>como</strong> a classe <code>Ambiente</code> trata os <strong>dados</strong>, sendo que ela deveria conhecer apenas <strong>o que</strong> a classe <code>Ambiente</code> <strong>faz</strong>.</li>
 </ul>
 </div>
 </div>
@@ -839,7 +839,7 @@
 <span id="cb6-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fontsize80" style="width:45%;">
 <ul>
-<li class="fragment">Primeiro vamos esconder (private) os atributos da classe <code>Ambiente</code>.</li>
+<li class="fragment">Primeiro vamos “esconder” (<code>private</code>) os atributos da classe <code>Ambiente</code>.</li>
 <li class="fragment">Em seguida, criamos um método <code>getAmbiente</code> que recebe por parâmetro a direção e retorna o ambiente correspondente.</li>
 </ul>
 </div>
@@ -877,11 +877,11 @@
 </ul>
 <p><span class="fragment" style="color:darkblue;">Mas e se no futuro eu decidir adicionar ainda mais opções de saída?</span></p>
 <ul>
-<li class="fragment"><p>Se estamos definindo um conjunto de dados que pode aumentar, deveríamos trabalhar com atributos compostos (vetores/coleções).</p></li>
-<li class="fragment"><p>Portanto, vamos usar uma coleção denominada HashMap.</p>
+<li class="fragment"><p>Se estamos definindo um conjunto de <strong>dados</strong> que <strong>pode aumentar</strong>, deveríamos trabalhar com <strong>atributos compostos</strong> (vetores/coleções).</p></li>
+<li class="fragment"><p>Portanto, vamos usar uma <strong>coleção</strong> denominada <em>HashMap</em>.</p>
 <ul>
-<li class="fragment">Um objeto dessa classe é como um dicionário que possui uma chave e um valor.</li>
-<li class="fragment">Esse tipo de estrutura permite buscarmos o valor a partir da chave.</li>
+<li class="fragment">Um <strong>objeto</strong> dessa classe é como um <strong>dicionário</strong> que possui uma <strong>chave</strong> e um <strong>valor</strong>.</li>
+<li class="fragment">Esse tipo de estrutura permite buscarmos o <strong>valor</strong> a partir da <strong>chave</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -915,16 +915,16 @@
 <section id="incrementando-o-jogo-2" class="slide level2">
 <h2>Incrementando o Jogo</h2>
 <div class="fontsize85">
-<p><span style="color:darkblue;">Adicionando as saídas para cima e para baixo.</span></p>
+<p><span style="color:darkblue;">Adicionando as saídas para <strong>cima</strong> e para <strong>baixo</strong>.</span></p>
 <ul>
-<li class="fragment">Para adicionarmos as saídas para cima e para baixo basta acrescentarmos parâmetros ao método ajustarSaidas da classe Ambiente.</li>
+<li class="fragment">Para adicionarmos as saídas <strong>para cima</strong> e <strong>para baixo</strong> basta acrescentarmos parâmetros ao método <code>ajustarSaidas</code> da classe <code>Ambiente</code>.</li>
 </ul>
 <p><span class="fragment" style="color:darkblue;">Pensando no futuro…</span></p>
 <ul>
 <li class="fragment">Mas e se no futuro eu desejar ter ainda mais saídas?</li>
 <li class="fragment">Como podemos deixar nossa classe <code>Ambiente</code> mais genérica?
 <ul>
-<li class="fragment">Podemos alterar o método <code>ajustarSaidas</code> de modo que se permita ajustar uma saída por vez.</li>
+<li class="fragment">Podemos alterar o método <code>ajustarSaidas</code> de modo que se permita ajustar <strong>uma saída por vez</strong>.</li>
 <li class="fragment">Desse modo, o usuário da classe pode definir a direção que ele quiser.</li>
 </ul></li>
 </ul>
@@ -963,14 +963,14 @@
 <section id="design-baseado-na-responsabilidade" class="slide level2">
 <h2>Design Baseado na Responsabilidade</h2>
 <div class="fontsize85">
-<p><span style="color:darkblue;">O grau de acoplamento também é influenciado pelo design baseado na responsabilidade.</span></p>
-<p>Mas o que significa design baseado na responsabilidade?</p>
+<p><span style="color:darkblue;">O grau de <strong>acoplamento</strong> também é influenciado pelo <em>design</em> <strong>baseado na responsabilidade</strong>.</span></p>
+<p>Mas o que significa <em>design</em> baseado na responsabilidade?</p>
 <ul>
-<li class="fragment">É o processo de projetar classes atribuindo responsabilidades bem definidas a cada classe.</li>
-<li class="fragment">A ideia é que cada classe deve ser responsável por tratar seus próprios dados.</li>
+<li class="fragment">É o processo de projetar classes atribuindo <strong>responsabilidades bem definidas</strong> a cada classe.</li>
+<li class="fragment">A ideia é que <strong>cada classe</strong> deve ser <strong>responsável</strong> por tratar <strong>seus próprios dados</strong>.</li>
 <li class="fragment">Ou seja, quem deve manipular um dado é a classe que o contém!</li>
 </ul>
-<p><span class="fragment" style="color:darkblue;">Quando precisamos adicionar uma nova funcionalidade em uma aplicação, em qual classe devemos adicionar o método que implementa essa nova funcionalidade?</span></p>
+<p><span class="fragment" style="color:darkblue;">Quando precisamos adicionar uma nova funcionalidade em uma aplicação, em qual classe devemos adicionar o <strong>método</strong> que <strong>implementa</strong> essa <strong>nova funcionalidade</strong>?</span></p>
 <ul>
 <li class="fragment">Na classe responsável pelos dados que serão manipulados por esse novo método.</li>
 </ul>
@@ -981,9 +981,9 @@
 <p><span style="color:darkblue;">Suponha que queiramos adicionar um porão embaixo do escritório.</span></p>
 <div class="columns" style="display: flex !important; align-items: top;">
 <div class="column fontsize80" style="width:45%;">
-<p>Como podemos adicionar esse novo ambiente no jogo?</p>
+<p>Como podemos <strong>adicionar</strong> esse <strong>novo ambiente</strong> no jogo?</p>
 <ul>
-<li class="fragment">Para isso, precisamos alterar apenas o método <code>criarAmbientes</code> na classe <code>Jogo</code>.</li>
+<li class="fragment">Para isso, precisamos alterar <strong>apenas</strong> o método <code>criarAmbientes</code> na classe <code>Jogo</code>.</li>
 </ul>
 </div><div class="column" style="width:65%;">
 <div class="sourceCode" id="cb10"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Código da classe Jogo</span></span>
@@ -999,13 +999,13 @@
 <span id="cb10-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p><span class="fontsize85 fragment">Essa inclusão de ambiente ficou simples de ser feita devido às alterações realizadas na classe <code>Ambiente</code>, que tornaram as responsabilidades mais bem divididas.</span></p>
+<p><span class="fontsize85 fragment">Essa <strong>inclusão</strong> de ambiente ficou <strong>simples</strong> de ser feita devido às <strong>alterações realizadas</strong> na classe <code>Ambiente</code>, que tornaram as responsabilidades mais bem divididas.</span></p>
 </section>
 <section id="design-baseado-na-responsabilidade---jogo-1" class="slide level2">
 <h2>Design Baseado na Responsabilidade - Jogo</h2>
 <div class="fontsize80">
-<p><span style="color:darkblue;">Suponha que queiramos adicionar itens aos ambientes.</span></p>
-<p>Qual o melhor lugar para acrescentá-los?</p>
+<p><span style="color:darkblue;">Suponha que queiramos adicionar <strong>itens</strong> aos ambientes.</span></p>
+<p>Qual o <strong>melhor lugar</strong> para acrescentá-los?</p>
 <ul>
 <li class="fragment">Na classe <code>Ambiente</code>, afinal eles farão parte do ambiente.</li>
 </ul>
@@ -1013,9 +1013,9 @@
 <ul>
 <li class="fragment">Sim, a classe <code>Jogo</code> também precisará ser alterada para passar a chamar um método da classe <code>Ambiente</code> que permita a exibição dos itens.</li>
 </ul>
-<p><span class="fragment">Como poderíamos evitar a alteração da classe <code>Jogo</code> a cada novidade inserida no ambiente?</span></p>
+<p><span class="fragment">Como poderíamos <strong>evitar</strong> a <strong>alteração</strong> da classe <code>Jogo</code> <strong>a cada novidade</strong> inserida no ambiente?</span></p>
 <ul>
-<li class="fragment">Criando um método na classe <code>Ambiente</code> (p.ex., getDescricaoLonga) que retorna um texto descrevendo tudo que existe no ambiente.</li>
+<li class="fragment">Criando um método na classe <code>Ambiente</code> (p.ex., <code>getDescricaoLonga</code>) que retorna um texto descrevendo tudo que existe no ambiente.</li>
 <li class="fragment">Desse modo, futuras inclusões de elementos nos ambientes resultariam em alterações apenas na classe <code>Ambiente</code>.</li>
 </ul>
 </div>
@@ -1023,13 +1023,13 @@
 <section id="minimizando-alterações" class="slide level2">
 <h2>Minimizando Alterações</h2>
 <div class="fontsize90">
-<p>Devemos criar um design de classe que facilite alterações futuras localizando os efeitos de uma alteração.</p>
+<p>Devemos criar um <em>design</em> de classe que <strong>facilite</strong> alterações futuras <strong>localizando os efeitos</strong> de uma alteração.</p>
 <ul>
-<li class="fragment">Ou seja, idealmente apenas uma classe precisa ser alterada para se fazer uma modificação.</li>
+<li class="fragment">Ou seja, <strong>idealmente</strong> apenas <strong>uma</strong> classe precisa ser alterada para se fazer <strong>uma modificação</strong>.</li>
 </ul>
 <p><span class="fragment">Ocasionalmente, pode acontecer de alterações serem necessárias em mais de uma classe ao se fazer uma modificação no sistema.</span></p>
 <ul>
-<li class="fragment">Nesses casos, as alterações necessárias em outras classes devem ser óbvias, fáceis de detectar e executar.</li>
+<li class="fragment">Nesses casos, as <strong>alterações</strong> necessárias em <strong>outras</strong> classes devem ser <strong>óbvias</strong>, fáceis de detectar e executar.</li>
 </ul>
 </div>
 </section>
@@ -1038,10 +1038,10 @@
 <div class="fontsize90">
 <p><span style="color:darkblue;">Vimos que o uso de atributos públicos pode aumentar o grau de acoplamento entre classes.</span></p>
 <ul>
-<li class="fragment">Isso significa que pode ser necessário fazer alterações em mais de uma classe por causa de uma simples modificação no código.</li>
+<li class="fragment">Isso significa que pode ser necessário fazer <strong>alterações em mais de uma classe</strong> por causa de uma <strong>simples modificação</strong> no código.</li>
 <li class="fragment">Portanto, sabemos que atributos públicos devem ser evitados.</li>
 </ul>
-<p><span class="fragment" style="color:darkblue;">Mas há uma forma de acoplamento ainda pior. Você sabe qual?</span></p>
+<p><span class="fragment" style="color:darkblue;">Mas há uma forma de <strong>acoplamento</strong> ainda <strong>pior</strong>. Você sabe qual?</span></p>
 <div class="columns fragment" style="display: flex !important; align-items: top;">
 <div class="column" style="width:25%;">
 <div class="quarto-figure quarto-figure-center">
@@ -1051,7 +1051,7 @@
 </div>
 </div><div class="column" style="width:75%;">
 <ul>
-<li>O acoplamento implícito!</li>
+<li>O acoplamento <strong>implícito</strong>!</li>
 </ul>
 </div>
 </div>
@@ -1060,16 +1060,16 @@
 <section id="acoplamento-implícito-1" class="slide level2">
 <h2>Acoplamento Implícito</h2>
 <div class="fontsize90">
-<p><span style="color:darkblue;">O que é o acoplamento implícito?</span></p>
+<p><span style="color:darkblue;">O que é o <strong>acoplamento implícito</strong>?</span></p>
 <ul>
-<li class="fragment">Ele ocorre quando uma classe depende de informações internas de outra, mas essa dependência não é obvia.</li>
+<li class="fragment">Ele ocorre quando uma <strong>classe depende</strong> de <strong>informações internas</strong> de <strong>outra</strong>, mas essa dependência <strong>não é obvia</strong>.</li>
 </ul>
 <p><span class="fragment" style="color:darkblue;">Qual a consequência do acoplamento implícito?</span></p>
 <ul>
 <li class="fragment"><p>No caso dos atributos públicos, se eles forem alterados somente na classe que os define, a aplicação deixará de compilar corretamente e o erro será apontado.</p></li>
-<li class="fragment"><p>No entanto, nos casos de acoplamento implícito, a omissão de uma alteração necessária pode não ser detectada pelo compilador.</p>
+<li class="fragment"><p>No entanto, nos casos de <strong>acoplamento implícito</strong>, a <strong>omissão de uma alteração</strong> necessária pode <strong>não ser detectada</strong> pelo compilador.</p>
 <ul>
-<li class="fragment">Com isso, o código compila corretamente, mas a aplicação deixa de funcionar corretamente, ou seja, ela não faz o que deveria ser feito.</li>
+<li class="fragment">Com isso, o código <strong>compila corretamente</strong>, <strong>mas</strong> a aplicação <strong>deixa de funcionar corretamente</strong>, ou seja, ela não faz o que deveria ser feito.</li>
 </ul></li>
 </ul>
 </div>
@@ -1077,7 +1077,7 @@
 <section id="acoplamento-implícito-no-jogo" class="slide level2">
 <h2>Acoplamento Implícito no Jogo</h2>
 <div class="fontsize80">
-<p><span style="color:darkblue;">Suponha que queiramos adicionar o comando observar ao conjunto de comandos válidos do jogo.</span></p>
+<p><span style="color:darkblue;">Suponha que queiramos <strong>adicionar</strong> o <strong>comando observar</strong> ao conjunto de comandos válidos do jogo.</span></p>
 <ul>
 <li><p>O objetivo desse novo comando é permitir ao usuário visualizar a descrição do ambiente atual, pois podemos não nos lembrar mais das saídas possíveis para aquele ambiente.</p></li>
 <li><p>Onde devemos fazer essa alteração?</p></li>
@@ -1085,11 +1085,11 @@
 </div>
 <div class="columns fragment" style="display: flex !important; align-items: center;">
 <div class="column fontsize80" style="width:50%;">
-<p>Na classe <code>PalavrasComando</code>, adicionando ao vetor de palavras conhecidas o comando observar.</p>
+<p>Na classe <code>PalavrasComando</code>, <strong>adicionando ao vetor</strong> de palavras conhecidas o comando <strong>observar</strong>.</p>
 <ul>
 <li class="fragment"><p>O que acontecerá ao testarmos essa alteração?</p>
 <ul>
-<li class="fragment">Quando executamos o jogo e digitamos o comando observar, nada acontece. Por que?</li>
+<li class="fragment">Quando <strong>executamos</strong> o jogo e digitamos o comando <strong>observar</strong>, <strong>nada</strong> acontece. Por que?</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:55%;">
@@ -1131,9 +1131,9 @@
 <span id="cb12-22"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">imprimirLocalizacaoAtual</span><span class="op">();</span>       </span>
 <span id="cb12-23"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fontsize75" style="width:30%;">
-<p>Precisamos de mais algumas alterações para o código funcionar:</p>
+<p>Precisamos de <strong>mais</strong> algumas <strong>alterações</strong> para o código funcionar:</p>
 <ol type="1">
-<li class="fragment">Alterar o método <code>processarComando</code> para que ele considere o comando <em>observar</em>.</li>
+<li class="fragment">Alterar o método <code>processarComando</code> para que ele considere o comando <strong>observar</strong>.</li>
 <li class="fragment">Inserir o método <code>observar</code> para que as informações sobre a localização atual sejam exibidas.</li>
 </ol>
 </div>
@@ -1143,9 +1143,9 @@
 <h2>Acoplamento Implícito no Jogo</h2>
 <div class="fontsize80">
 <p><span style="color:darkblue;">Após as alterações anteriores, o jogo funcionará corretamente?</span></p>
-<p><span class="fragment">Não! Por que?</span></p>
+<p><span class="fragment"><strong>Não!</strong> Por que?</span></p>
 <ul>
-<li class="fragment">Para responder essa pergunta pense no que acontecerá se digitarmos o comando <em>ajuda</em>.</li>
+<li class="fragment">Para responder essa pergunta <strong>pense</strong> no que <strong>acontecerá</strong> se digitarmos o comando <strong>ajuda</strong>.</li>
 </ul>
 </div>
 <div class="columns fragment" style="display: flex !important; align-items: center;">
@@ -1160,14 +1160,14 @@
 <span id="cb13-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fontsize70" style="width:30%;">
 <ul>
-<li class="fragment">Veja que o comando <em>observar</em> não é listado.</li>
+<li class="fragment">Veja que o comando <strong>observar</strong> não é listado.</li>
 <li class="fragment">Aqui ocorre o <strong>acomplamento implícito!</strong></li>
 </ul>
 </div>
 </div>
 <div class="fontsize80">
 <ul>
-<li class="fragment">Isso acontece porque a classe <code>Jogo</code> depende dos dados da classe <code>PalavrasComando</code>.
+<li class="fragment">Isso acontece porque a classe <code>Jogo</code> <strong>depende</strong> dos <strong>dados</strong> da classe <code>PalavrasComando</code>.
 <ul>
 <li class="fragment">Mas isso está implícito e não deu erro de compilação!</li>
 </ul></li>
@@ -1202,11 +1202,11 @@
 </div>
 </div><div class="column fontsize80" style="width:50%;">
 <ul>
-<li class="fragment">Humm… Mas veja que a classe <code>Jogo</code> não tem uma referência para a classe <code>PalavrasComando</code>!
+<li class="fragment">Humm… Mas veja que a classe <code>Jogo</code> <strong>não tem</strong> uma <strong>referência</strong> para a classe <code>PalavrasComando</code>!
 <ul>
-<li class="fragment">Acrescentar essa referência significa <strong>aumentar o acoplamento</strong>.</li>
+<li class="fragment"><strong>Acrescentar</strong> essa referência significa <strong>aumentar o acoplamento</strong>.</li>
 </ul></li>
-<li class="fragment">Como resolver isso sem aumentar o grau de acoplamento?</li>
+<li class="fragment">Como resolver isso <strong>sem aumentar</strong> o grau de <strong>acoplamento</strong>?</li>
 </ul>
 </div>
 </div>
@@ -1217,7 +1217,7 @@
 <div class="column fontsize75" style="width:55%;">
 <p>Basta a classe <code>Analisador</code> ter um <strong>método</strong> que faça a <strong>intermediação</strong> entre as classes <code>Jogo</code> e <code>PalavrasComando</code>.</p>
 <ul>
-<li class="fragment">Agora basta que a classe <code>Jogo</code> chame esse método <em>getComandos</em> da classe <code>Analisador</code>, que por sua vez chamará o método <em>getComandos</em> da classe <code>PalavrasComando</code>.</li>
+<li class="fragment">Agora basta que a classe <code>Jogo</code> chame esse método <code>getComandos</code> da classe <code>Analisador</code>, que por sua vez chamará o método <code>getComandos</code> da classe <code>PalavrasComando</code>.</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb15"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb15-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Analisador<span class="op">{</span></span>
@@ -1252,8 +1252,8 @@
 <ul>
 <li>Imagine que agora queremos adicionar itens aos ambientes de nosso jogo.
 <ul>
-<li>Cada ambiente pode conter um <strong>item</strong>.</li>
-<li>Cada <strong>item</strong> tem uma <em>descrição</em> e um <em>peso</em>.</li>
+<li>Cada <strong>ambiente</strong> pode conter um <strong>item</strong>.</li>
+<li>Cada <strong>item</strong> tem uma <strong>descrição</strong> e um <strong>peso</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -1263,10 +1263,10 @@
 <li class="fragment">Uma solução simples seria adicionarmos dois atributos à classe <code>Ambiente</code>: <em>descricaoItem</em> e <em>pesoItem</em>.</li>
 <li class="fragment">Essa solução funcionaria?
 <ul>
-<li class="fragment">Sim, mas ela fere o princípio da coesão. Por que?</li>
-<li class="fragment">Um item é uma entidade (ele tem os atributos descrição e peso) e, por isso, deveria ter sua própria classe.</li>
+<li class="fragment">Sim, mas ela <strong>fere o princípio da coesão</strong>. Por que?</li>
+<li class="fragment">Um item <strong>é uma entidade</strong> (ele tem os atributos descrição e peso) e, por isso, deveria ter sua <strong>própria classe</strong>.</li>
 </ul></li>
-<li class="fragment">Portanto, a melhor solução é criar uma classe separada para itens e a classe <code>Ambiente</code> passar a ter objetos do tipo <code>Item</code>.</li>
+<li class="fragment">Portanto, a <strong>melhor solução</strong> é criar uma <strong>classe separada</strong> para itens e a classe <code>Ambiente</code> passar a ter objetos do tipo <code>Item</code>.</li>
 </ul>
 </div>
 </section>
@@ -1275,16 +1275,16 @@
 <div class="fontsize85">
 <p><span style="color:darkblue;">Apesar de tentarmos projetar aplicações pensando nas possíveis alterações futuras, nem sempre conseguimos prever todas as adaptações futuras.</span></p>
 <ul>
-<li class="fragment">É aí que entra a refatoração!</li>
+<li class="fragment">É aí que entra a <strong>refatoração</strong>!</li>
 </ul>
 <p><span class="fragment" style="color:darkblue;">O que é refatoração?</span></p>
 <ul>
-<li class="fragment">É a atividade de reestruturação de classes e métodos existentes para adaptá-los a alterações de funcionalidades e requisitos.</li>
+<li class="fragment">É a <strong>atividade de reestruturação de classes e métodos</strong> existentes para adaptá-los a alterações de funcionalidades e requisitos.</li>
 </ul>
 <p><span class="fragment" style="color:darkblue;">Ao longo do tempo…</span></p>
 <ul>
 <li class="fragment">É muito comum precisarmos adicionar mais código a uma classe ou um método.</li>
-<li class="fragment">Fazendo isso, a coesão pode começar a ficar ruim, fazendo sentido dividir a classe e/ou método em outras classes e/ou métodos.</li>
+<li class="fragment">Fazendo isso, a <strong>coesão</strong> pode começar a ficar <strong>ruim</strong>, fazendo sentido <strong>dividir</strong> a classe e/ou método em outras classes e/ou métodos.</li>
 <li class="fragment">Se isto não for feito, mais tarde as alterações podem se tornar mais complicadas.</li>
 </ul>
 </div>
