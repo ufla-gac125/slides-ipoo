@@ -363,7 +363,7 @@ if(direcao.equals("oeste")) {
 [O que acontece se quisermos incrementar nosso jogo adicionando duas novas saídas: para cima e para baixo?]{style="color:darkblue;"}
 
 - Para fazer essa alteração teríamos que alterar a classe `Ambiente` e modificar a classe `Jogo` para ajustar os *if's* que tratam os ambientes.
-- Isso ocorre porque a classe `Jogo` está conhecendo **como** a classe `Ambiente` trata os **dados**, sendo que ela deveria conhecer apenas **o que** a classe `Ambiente` **faz**.
+- Aqui ocorre que a classe `Jogo` está conhecendo **como** a classe `Ambiente` trata os **dados**, sendo que ela deveria conhecer apenas **o que** a classe `Ambiente` **faz**.
 :::
 ::::
 
@@ -386,17 +386,20 @@ public class Ambiente{
 }
 ```
 :::
-::: {.column width="45%" .fontsize80}
+::: {.column width="45%" .fontsize75}
 - Primeiro vamos "esconder" (`private`) os atributos da classe `Ambiente`. 
 - Em seguida, criamos um método `getAmbiente` que recebe por parâmetro a direção e retorna o ambiente correspondente.
 :::
 ::::
 
 ::::{.columns style='display: flex !important;  align-items: top;' .fragment}
-::: {.column width="30%" .fontsize80}
+::: {.column width="30%" .fontsize70}
 O que isso muda na classe `Jogo`?
 
 - Na classe `Jogo`, ao invés de acessarmos diretamente os atributos da classe `Ambiente`, agora chamamos o método `getAmbiente`.
+- E para ficar melhor ainda, podemos substituir todo o código ao lado por:
+[**proximoAmbiente = ambienteAtual.[getAmbiente]{style="color:darkblue;"}(direcao)**;]{.fontsize75}
+
 :::
 ::: {.column width="40%" .fontsize80}
 ```{.java code-line-numbers="false"}

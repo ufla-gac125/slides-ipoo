@@ -815,7 +815,7 @@
 <p><span style="color:darkblue;">O que acontece se quisermos incrementar nosso jogo adicionando duas novas saídas: para cima e para baixo?</span></p>
 <ul>
 <li class="fragment">Para fazer essa alteração teríamos que alterar a classe <code>Ambiente</code> e modificar a classe <code>Jogo</code> para ajustar os <em>if’s</em> que tratam os ambientes.</li>
-<li class="fragment">Isso ocorre porque a classe <code>Jogo</code> está conhecendo <strong>como</strong> a classe <code>Ambiente</code> trata os <strong>dados</strong>, sendo que ela deveria conhecer apenas <strong>o que</strong> a classe <code>Ambiente</code> <strong>faz</strong>.</li>
+<li class="fragment">Aqui ocorre que a classe <code>Jogo</code> está conhecendo <strong>como</strong> a classe <code>Ambiente</code> trata os <strong>dados</strong>, sendo que ela deveria conhecer apenas <strong>o que</strong> a classe <code>Ambiente</code> <strong>faz</strong>.</li>
 </ul>
 </div>
 </div>
@@ -837,7 +837,7 @@
 <span id="cb6-11"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(</span>direcao<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">"oeste"</span><span class="op">))</span> <span class="cf">return</span> saidaOeste<span class="op">;</span></span>
 <span id="cb6-12"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span><span class="co">//Restante do código omitido</span></span>
 <span id="cb6-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column fontsize80" style="width:45%;">
+</div><div class="column fontsize75" style="width:45%;">
 <ul>
 <li class="fragment">Primeiro vamos “esconder” (<code>private</code>) os atributos da classe <code>Ambiente</code>.</li>
 <li class="fragment">Em seguida, criamos um método <code>getAmbiente</code> que recebe por parâmetro a direção e retorna o ambiente correspondente.</li>
@@ -845,10 +845,11 @@
 </div>
 </div>
 <div class="columns fragment" style="display: flex !important;  align-items: top;">
-<div class="column fontsize80" style="width:30%;">
+<div class="column fontsize70" style="width:30%;">
 <p>O que isso muda na classe <code>Jogo</code>?</p>
 <ul>
 <li class="fragment">Na classe <code>Jogo</code>, ao invés de acessarmos diretamente os atributos da classe <code>Ambiente</code>, agora chamamos o método <code>getAmbiente</code>.</li>
+<li class="fragment">E para ficar melhor ainda, podemos substituir todo o código ao lado por: <span class="fontsize75"><strong>proximoAmbiente = ambienteAtual.<span style="color:darkblue;">getAmbiente</span>(direcao)</strong>;</span></li>
 </ul>
 </div><div class="column fontsize80" style="width:40%;">
 <div class="sourceCode" id="cb7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">//Código da classe Jogo</span></span>
@@ -1292,7 +1293,7 @@
 <section id="refatoração-1" class="slide level2">
 <h2>Refatoração</h2>
 <div class="fontsize90">
-<p><span style="color:darkblue;">Nunca refatore sem escrever testes antes!</span></p>
+<p><span style="color:darkblue;">Nunca refatore sem escrever <strong>testes</strong> antes!</span></p>
 <ul>
 <li class="fragment">A realização de <strong>testes</strong> é fundamental nesse <strong>processo de refatoração</strong>.</li>
 <li class="fragment">Ao <strong>refatorarmos</strong> um sistema que <strong>já está em uso</strong>, estamos realizando <strong>alterações potencialmente grandes</strong>, o que atesta a <strong>importância</strong> da realização de novos <strong>testes</strong>.</li>
