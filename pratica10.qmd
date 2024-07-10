@@ -1,0 +1,100 @@
+---
+title: Aula Prática 10<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Observações Importantes {}
+::: {.fontsize80}
+::: {.nonincremental}
+
+A realização dos exercícios nas **aulas práticas é primordial** para que você consiga **consolidar os conceitos** aprendidos nas **aulas teóricas** (aulas não presenciais - ANP) e **colocá-los em prática** utilizando a linguagem de programação Java.
+
+- No entanto, para **conseguir realizar os exercícios** das aulas práticas é **fundamental** que você tenha **estudado**, [antes das aulas práticas]{.underline}, o **conteúdo** das aulas não presenciais disponibilizadas pelo professor. 
+
+Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **comparecer às aulas**, o aluno deve **realizar e entregar os exercícios** propostos nas aulas.
+
+- Portanto, **não esqueça de entregar no Campus Virtual** os exercícios **até o término das aulas práticas** (mesmo que não tenha terminado-os completamente).
+:::
+:::
+
+
+## Contextualização
+
+:::{.fontsize90}
+Na aula de hoje **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
+:::
+
+. . .
+
+:::{.fontsize90}
+Hoje o **exercício** da **aula** **prática** tem como foco o uso de **coleções em Java (listas)** e a **análise do tipo de relacionamento entre os objetos**. 
+:::
+
+. . .
+
+:::{.fontsize90}
+**Antes de começarem a codificar**, **leiam** o **enunciado** do exercício **com atenção** e entendam a **modelagem** do problema, ou seja, **quais** **classes** deverão implementar e **quais** serão os **atributos** e **métodos** de cada uma delas.
+:::
+
+
+## Atividade 
+:::{.nonincremental .fontsize70}
+Uma imobiliária precisa de um sistema para gerenciar as visitas agendadas por pessoas que desejam comprar seus imóveis. Seguindo as boas práticas em programação orientada a objetos, implemente em Java a parte desse sistema responsável pelo agendamento das visitas e pela geração de um relatório das visitas agendadas pelas pessoas de modo que a classe `App` apresentada a seguir funcione corretamente.
+
+Nesse sistema, a agenda da imobiliária é caracterizada apenas pelo nome da imobiliária (String) e pela lista de visitas agendadas pelas pessoas que desejam comprar imóveis. Já uma visita é caracterizada pelo cpf da pessoa (String) que deseja visitar o imóvel, pelo identificador do imóvel (int) a ser visitado e pela data desejada para realização da visita (String).
+
+Para facilitar o gerenciamento das visitas, esse sistema deve imprimir na tela a agenda de visitas como o exemplo apresentado a seguir (seguindo exatamente essa formatação):
+
+Imobiliaria: Virtual Imoveis<br>
+&num;&num;&num; Agenda de Visitas &num;&num;&num;<br>
+
+:::: {.columns}
+::: {.column width="50%" .fontsize80}
+|  CPF        | Id Imóvel  |  Data        |
+|:-----------:|:----------:|:------------:|
+|123.456.789-0|     27     |   25/09/23   |
+|345.678.901-2|     11     |   30/09/23   |
+|456.789.012-3|     27     |   02/10/23   |
+: {.primary}
+:::     
+::::
+
+:::
+
+## Atividade
+:::{.nonincremental .fontsize70}
+Vale observar que a classe `App` apresentada a seguir, que contém o método `main` e é responsável por instanciar os objetos e chamar os métodos necessários para impressão da agenda do exemplo dado anteriormente, não pode sofrer qualquer alteração.
+
+Os seguintes requisitos também devem ser atendidos para essa implementação:
+
+- Faça uso da classe `ArrayList` e seu método `add`.
+- Devem existir métodos que permitam adicionar e remover uma visita na lista de visitas. Vale ressaltar que a remoção de uma visita deve ser feita a partir da informação do cpf da pessoa que agendou a visita e do identificador do imóvel a ser visitado. Observe que o método responsável por essa remoção deve ter como tipo de retorno o `void`. Considere que uma pessoa nunca irá agendar mais de uma visita para o mesmo imóvel.
+:::
+
+
+## Atividade
+
+```{.java code-line-numbers="false"}
+public class App {
+    public static void main(String[] args) {
+        Agenda im = new Agenda("Virtual Imoveis");
+        im.adicionarVisita(new Visita("123.456.789-0", 27, "25/09/23"));
+        im.adicionarVisita(new Visita("234.567.890-1", 48, "26/09/23"));
+        im.adicionarVisita(new Visita("345.678.901-2", 11, "30/09/23"));
+        im.adicionarVisita(new Visita("456.789.012-3", 27, "02/10/23"));
+        im.removerVisita("234.567.890-1", 48);
+        im.imprimirAgenda();
+    }
+}
+```
+
+:::{.callout-note title="Questão" icon=false}
+**Responda:** Qual é o tipo de relacionamento entre os objetos `Agenda` e `Visita`? Justifique a sua resposta.
+:::
+
+:::{.callout-warning title="Atenção" icon=false .fontsize90}
+Execute a sua implementação e verifique se ela está funcionando corretamente. **Entregue** no Campus Virtual a **versão final da implementação**.
+:::
