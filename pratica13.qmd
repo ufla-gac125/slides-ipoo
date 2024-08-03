@@ -1,0 +1,81 @@
+---
+title: Aula Prática 13<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Observações Importantes {}
+::: {.fontsize80}
+::: {.nonincremental}
+
+A realização dos exercícios nas **aulas práticas é primordial** para que você consiga **consolidar os conceitos** aprendidos nas **aulas teóricas** (aulas não presenciais - ANP) e **colocá-los em prática** utilizando a linguagem de programação Java.
+
+- No entanto, para **conseguir realizar os exercícios** das aulas práticas é **fundamental** que você tenha **estudado**, [antes das aulas práticas]{.underline}, o **conteúdo** das aulas não presenciais disponibilizadas pelo professor. 
+
+Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **comparecer às aulas**, o aluno deve **realizar e entregar os exercícios** propostos nas aulas.
+
+- Portanto, **não esqueça de entregar no Campus Virtual** os exercícios **até o término das aulas práticas** (mesmo que não tenha terminado-os completamente).
+:::
+:::
+
+
+## Contextualização
+
+:::{.fontsize90}
+Na aula de hoje **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
+:::
+
+. . .
+
+:::{.fontsize90}
+Hoje o **exercício** da **aula** **prática** tem como foco o tema **herança**. 
+:::
+
+. . .
+
+:::{.fontsize90}
+**Antes de começarem a codificar**, **leiam** o **enunciado** do exercício **com atenção** e entendam a **modelagem** do problema, ou seja, **quais** **classes** deverão implementar e **quais** serão os **atributos** e **métodos** de cada uma delas. Além disso, **verifiquem** se exite algum **relacionamento de herança** entre as classes.
+:::
+
+
+## Atividade - Etapa 1
+:::{.nonincremental .fontsize85}
+Este exercício será feito a partir de um **código inicial** (com **vários problemas de design de classes**) do jogo **World of Zuul**, apresentado na aula sobre **Design de Classes** e discutido no livro do Barnes e Kolling (da bibliografia da disciplina). O propósito deste exercício é **corrigir** e **expandir** a implementação do jogo visando um **bom design de classes**. 
+
+Na classe `Jogo` temos o problema da **falta de coesão** de alguns métodos. **Corrija** esse problema no código.
+:::
+
+
+
+## Atividade - Etapa 2
+:::{.nonincremental .fontsize85}
+A classe `Ambiente` está projetada de uma forma que **aumenta o grau de acoplamento** entre as classes. **Por que**? **Corrija** esse problema no código.
+
+A resposta da pergunta deve ser colocada na forma de comentário juntamente com o código da classe `Ambiente`.
+:::
+
+## Atividade - Etapa 3
+:::{.nonincremental .fontsize85}
+Atualmente a classe `Ambiente` contém quatro atributos, cada um representando uma possível saída para um ambiente do jogo. Considere que essa **quantidade de saídas** de cada ambiente **poderá aumentar** no futuro. Da forma como está a implementação atual, esse tipo de extensão  resultaria em acréscimo de atributos e alterações de métodos da classe `Ambiente`. **Altere** a classe `Ambiente` criando uma coleção (**HashMap**) para armazenar as possíveis saídas de modo a evitar que, a cada nova saída a ser inserida no jogo, tenha que se fazer acréscimo de atributos e alterações de métodos nessa classe. Além disso, **adicione** na classe `Ambiente` um **método** que retorne uma **string** com todas as saídas possíveis para um ambiente. Esse método deverá ser chamado quando for necessário exibir as possíveis saídas para o ambiente em que o jogador se encontra num determinado momento do jogo.
+:::
+
+## Atividade - Etapa 4
+:::{.nonincremental .fontsize85}
+**Adicione** um novo **ambiente** no jogo, um **sótão**. Esse ambiente ficará localizado acima do anfiteatro e poderá ser acessado a partir do mesmo. 
+:::
+
+
+## Atividade - Etapa 5
+
+:::{.nonincremental .fontsize85}
+**Acrescente** ao jogo o **comando observar**, de modo que, quando o jogador digitar esse comando, deverão ser exibidas na tela as informações do ambiente atual (descrição e saídas possíveis). 
+:::
+
+
+
+:::{.callout-warning title="Atenção" icon=false .fontsize90}
+Execute a sua implementação e verifique se ela está funcionando corretamente. **Entregue** no Campus Virtual a **versão final da implementação** após implementar **todas** as etapas.
+:::
+ 
