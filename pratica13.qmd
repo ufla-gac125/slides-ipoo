@@ -36,46 +36,71 @@ Hoje o **exercício** da **aula** **prática** tem como foco o tema **herança**
 . . .
 
 :::{.fontsize90}
-**Antes de começarem a codificar**, **leiam** o **enunciado** do exercício **com atenção** e entendam a **modelagem** do problema, ou seja, **quais** **classes** deverão implementar e **quais** serão os **atributos** e **métodos** de cada uma delas. Além disso, **verifiquem** se exite algum **relacionamento de herança** entre as classes.
+**Antes de começarem a codificar**, **leiam** o **enunciado** do exercício **com atenção** e entendam a **modelagem** do problema, ou seja, **quais** **classes** deverão implementar e **quais** serão os **atributos** e **métodos** de cada uma delas. E a partir de agora, lembrem-se que é necessário **verificar** se existe algum **relacionamento de herança** entre as classes!
 :::
 
 
-## Atividade - Etapa 1
+## Atividade
 :::{.nonincremental .fontsize85}
-Este exercício será feito a partir de um **código inicial** (com **vários problemas de design de classes**) do jogo **World of Zuul**, apresentado na aula sobre **Design de Classes** e discutido no livro do Barnes e Kolling (da bibliografia da disciplina). O propósito deste exercício é **corrigir** e **expandir** a implementação do jogo visando um **bom design de classes**. 
+Seguindo as boas práticas em programação orientada a objetos, implemente em Java um sistema gerenciador de frota de veículos de uma empresa que possui na sua frota carros e caminhões. 
 
-Na classe `Jogo` temos o problema da **falta de coesão** de alguns métodos. **Corrija** esse problema no código.
+Esse sistema engloba dois conceitos principais: frota e veículo. A frota é caracterizada pelas listas de veículos. Já os veículos são caracterizados pela sua marca (String), ano de fabricação (String), cor (String) e por dois atributos adicionais que variam de acordo com o tipo do veículo, conforme descrito a seguir. Enquanto um carro também é caracterizado pela sua capacidade do porta malas (int) e pelo número de portas (int), um caminhão também é caracterizado pelo seu número de eixos (int) e pela sua capacidade de carga (int). 
 :::
 
 
 
-## Atividade - Etapa 2
+## Atividade
 :::{.nonincremental .fontsize85}
-A classe `Ambiente` está projetada de uma forma que **aumenta o grau de acoplamento** entre as classes. **Por que**? **Corrija** esse problema no código.
+Implemente o esse sistema atendendo os seguintes requisitos:
 
-A resposta da pergunta deve ser colocada na forma de comentário juntamente com o código da classe `Ambiente`.
+- A classe `App` fornecida deve ser utilizada da forma como está, ou seja, sem sofrer qualquer alteração.
+- Todas as classes relacionadas com veículos devem ter um método denominado `exibirDetalhesVeiculo` para retornar uma string contendo as informações das características dos veículos, as quais deverão ser impressas na tela a partir de um método denominado `exibirInformacoesVeiculos` que deve ser implementado na classe `Frota`. No slide a seguir tem-se um exemplo de como as informações devem ser impressas na tela. 
 :::
 
-## Atividade - Etapa 3
-:::{.nonincremental .fontsize85}
-Atualmente a classe `Ambiente` contém quatro atributos, cada um representando uma possível saída para um ambiente do jogo. Considere que essa **quantidade de saídas** de cada ambiente **poderá aumentar** no futuro. Da forma como está a implementação atual, esse tipo de extensão  resultaria em acréscimo de atributos e alterações de métodos da classe `Ambiente`. **Altere** a classe `Ambiente` criando uma coleção (**HashMap**) para armazenar as possíveis saídas de modo a evitar que, a cada nova saída a ser inserida no jogo, tenha que se fazer acréscimo de atributos e alterações de métodos nessa classe. Além disso, **adicione** na classe `Ambiente` um **método** que retorne uma **string** com todas as saídas possíveis para um ambiente. Esse método deverá ser chamado quando for necessário exibir as possíveis saídas para o ambiente em que o jogador se encontra num determinado momento do jogo.
+## Atividade
+
+:::{.callout-note title="Exemplo de saída de dados na tela gerado a partir do código da classe App" icon=false .fontsize70}
+Marca: VW<br>
+Ano: 2016<br>
+Cor: branca<br>
+Capacidade do Porta Malas: 280<br>
+Número de Portas: 4
+
+Marca: Fiat<br>
+Ano: 2023<br>
+Cor: preta<br>
+Capacidade do Porta Malas: 300<br>
+Número de Portas: 4
+
+Marca: Mercedes<br>
+Ano: 2001<br>
+Cor: azul<br>
+Número de Eixos: 4<br>
+Capacidade de Carga: 1500
+
+Marca: Iveco<br>
+Ano: 2020<br>
+Cor: cinza<br>
+Número de Eixo: 5<br>
+Capacidade de Carga: 2000
 :::
 
-## Atividade - Etapa 4
-:::{.nonincremental .fontsize85}
-**Adicione** um novo **ambiente** no jogo, um **sótão**. Esse ambiente ficará localizado acima do anfiteatro e poderá ser acessado a partir do mesmo. 
-:::
 
+## Atividade
 
-## Atividade - Etapa 5
-
-:::{.nonincremental .fontsize85}
-**Acrescente** ao jogo o **comando observar**, de modo que, quando o jogador digitar esse comando, deverão ser exibidas na tela as informações do ambiente atual (descrição e saídas possíveis). 
-:::
-
-
+```{.java code-line-numbers="false"}
+public class App {
+    public static void main(String[] args) throws Exception {
+        Frota frota = new Frota();
+        frota.adicionarCarro(new Carro("VW", "2016", "branca", 280, 4));
+        frota.adicionarCarro(new Carro("Fiat", "2023", "preta", 300, 4));
+        frota.adicionarCaminhao(new Caminhao("Mercedes", "2001", "azul", 4, 1500));
+        frota.adicionarCaminhao(new Caminhao("Iveco", "2020", "cinza", 5, 2000));
+        frota.exibirInformacoesVeiculos();
+    }
+}
+```
 
 :::{.callout-warning title="Atenção" icon=false .fontsize90}
-Execute a sua implementação e verifique se ela está funcionando corretamente. **Entregue** no Campus Virtual a **versão final da implementação** após implementar **todas** as etapas.
+Execute a sua implementação e verifique se ela está funcionando corretamente. **Entregue** no Campus Virtual a **versão final da implementação**.
 :::
- 
