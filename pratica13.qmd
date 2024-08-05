@@ -54,7 +54,7 @@ Esse sistema engloba dois conceitos principais: frota e veículo. A frota é car
 Implemente o esse sistema atendendo os seguintes requisitos:
 
 - A classe `App` fornecida deve ser utilizada da forma como está, ou seja, sem sofrer qualquer alteração.
-- Todas as classes relacionadas com veículos devem ter um método denominado `exibirDetalhesVeiculo` para retornar uma string contendo as informações das características dos veículos, as quais deverão ser impressas na tela a partir de um método denominado `exibirInformacoesVeiculos` que deve ser implementado na classe `Frota`. No slide a seguir tem-se um exemplo de como as informações devem ser impressas na tela. 
+- Todas as classes relacionadas com veículos devem ter um método para retornar uma string contendo as informações das características dos veículos, as quais deverão ser impressas na tela a partir de um método denominado `exibirInformacoesVeiculos` que deve ser implementado na classe `Frota`. No slide a seguir tem-se um exemplo de como as informações devem ser impressas na tela. 
 :::
 
 ## Atividade
