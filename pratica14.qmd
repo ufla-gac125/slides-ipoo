@@ -1,0 +1,120 @@
+ ---
+title: Aula Prática 14<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Observações Importantes {}
+::: {.fontsize80}
+::: {.nonincremental}
+
+A realização dos exercícios nas **aulas práticas é primordial** para que você consiga **consolidar os conceitos** aprendidos nas **aulas teóricas** (aulas não presenciais - ANP) e **colocá-los em prática** utilizando a linguagem de programação Java.
+
+- No entanto, para **conseguir realizar os exercícios** das aulas práticas é **fundamental** que você tenha **estudado**, [antes das aulas práticas]{.underline}, o **conteúdo** das aulas não presenciais disponibilizadas pelo professor. 
+
+Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **comparecer às aulas**, o aluno deve **realizar e entregar os exercícios** propostos nas aulas.
+
+- Portanto, **não esqueça de entregar no Campus Virtual** os exercícios **até o término das aulas práticas** (mesmo que não tenha terminado-os completamente).
+:::
+:::
+
+
+## Contextualização
+
+:::{.fontsize90}
+Na aula de hoje **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
+:::
+
+. . .
+
+:::{.fontsize90}
+Hoje o **exercício** da **aula** **prática** tem como foco o tema **herança**. 
+:::
+
+. . .
+
+:::{.fontsize90}
+**Antes de começarem a codificar**, **leiam** o **enunciado** do exercício **com atenção** e realizem a **modelagem** do problema, ou seja, definam **quais** **classes** deverão ser implementadas e **quais** serão os **atributos** e **métodos** de cada uma delas. E a partir de agora, lembrem-se que é necessário **verificar** se existe algum **relacionamento de herança** entre as classes!
+:::
+
+
+## Atividade
+:::{.nonincremental .fontsize85}
+Seguindo as boas práticas em programação orientada a objetos, implemente em Java um sistema de gerenciamento de funcionários para uma empresa que contrata funcionários em duas modalidades: funcionário horista e funcionário comissionado. 
+
+A empresa é caracterizada pelo seu cnpj (String) e pelas listas de funcionários. Já um funcionário da empresa é caracterizado pelo seu nome (String), nível de formação (String) – médio ou superior -- e quantidade de anos (int) que ele trabalha na empresa. Além disso, se ele for um funcionário horista, ele também possui como características  a quantidade de horas trabalhadas por mês (float) e bônus salarial que rebece por hora trabalhada (float). Já para o funcionário comissionado, as características adicionais são a quantidade de produtos vendidos no mês (int) e a comissão a ser recebida (float) por unidade de produto vendido.
+:::
+
+
+
+## Atividade
+:::{.nonincremental .fontsize85}
+O salário de um funcionário depende, dentre outras coisas, do seu nível de formação e o tempo que ele trabalha na empresa. Além disso, no caso do funcionário horista, seu salário é acrescido de um bônus que é pago por hora trabalhada, sendo o cálculo final dado por: 
+
+- $1500  + 500 * anosTrabalhados + bônus * horasTrabalhadas$ (se formação for nível médio)
+- $1500 * 3+ 500 * anosTrabalhados + bônus * horasTrabalhadas$ (se formação for nível superior)  
+
+Já no caso do funcionário comissionado, seu salário é acrescido por uma comissão paga por quantidade de vendas, sendo o cálculo final dado por:
+
+- $1500  + 500 * anosTrabalhados + comissão * totalVendas$ (se formação for nível médio)
+- $1500 * 3+ 500 * anosTrabalhados + comissão * totalVendas$ (se formação for nível superior)
+:::
+
+## Atividade
+:::{.nonincremental .fontsize85}
+A classe `App` fornecida a seguir deve ser utilizada da forma como está, ou seja, sem sofrer qualquer alteração. Nessa classe foram criados: um objeto que representa o funcionário Luiz, que possui nível superior, trabalha na empresa há 2 anos, tem um valor do salário/hora igual R$ 100,00 e a quantidade de horas trabalhadas por mês igual a 80,0; e um objeto que representa o funcionário Paulo, que possui nível médio, trabalha na empresa há 1 ano, tem um valor de comissão/produto vendido igual R$ 200,00 e a quantidade de produtos vendidos igual a 5. 
+:::
+
+:::{.nonincremental .fontsize90}
+
+```{.java code-line-numbers="false"}
+public class App {
+  public static void main(String[] args) {
+      Empresa empresa = new Empresa("123456789/0001-98");
+      FuncionarioHorista func1 = new FuncionarioHorista("Luiz","superior",2,100.0f,80.0f);
+	  FuncionarioComissionado func2 = new FuncionarioComissionado("Paulo","medio",1,200.0f,5);
+	  empresa.admitirFuncionarioHorista(func1);
+	  empresa.admitirFuncionarioComissionado(func2);
+	  empresa.gerarRelatorio();
+	  System.out.println("\nFuncionário 1 é igual ao Funcionário 2?: " + func1.equals(func2));
+    }
+}
+```
+:::
+
+
+
+## Atividade
+:::{.nonincremental .fontsize85}
+Além disso, a chamada ao método `gerarRelatorio` no método `main` deve resultar na seguinte saída:
+:::
+
+:::{.callout-note title="Exemplo de saída de dados na tela gerado a partir do código da classe App" icon=false .fontsize85}
+CNPJ: 123456789/0001-98<br>
+
+Nome: Luiz<br>
+Nível: superior<br>
+Tempo(anos): 2<br>
+Salario: 13500,00<br>
+
+Nome: Paulo<br>
+Nível: medio<br>
+Tempo(anos): 1<br>
+Salario: 3000,00
+:::
+
+
+
+
+## Atividade
+:::{.nonincremental .fontsize85}
+Considerando que dois funcionários horistas são considerados iguais se possuem o mesmo nome e trabalham a mesma quantidade de horas no mês, implemente o método `equals` para comparar funcionários horistas. 
+
+Ao implementar esse sistema faça uso de `ArrayList`, método `toString` e sobrescrição de método.
+:::
+
+:::{.callout-warning title="Atenção" icon=false .fontsize90}
+Execute a sua implementação e verifique se ela está funcionando corretamente. **Entregue** no Campus Virtual a **versão final da implementação**.
+:::
