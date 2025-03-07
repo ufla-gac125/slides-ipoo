@@ -54,10 +54,59 @@ Funcionalidades desejadas:
 
 
 ## Classes Iniciais do Programa GEM
+[Quais são os problemas desta solução?]{style="color:darkblue;"}
+
+::::{.columns style='display: flex !important; height: 70%; align-items: center;'}
+::: {.column width="30%"}
+![](figuras/jovem.png){fig-alt="Jovem" fig-align="center"}
+:::
+
+::: {.column width="70%"}
+::: {.nonincremental}
+![](figuras/classes_iniciais1.png){fig-alt="Classes Iniciais 1" fig-align="center"}
+:::
+:::
+::::
+
+
 
 ## Problemas com as Classes Iniciais do GEM
+![](figuras/classes_iniciais2.png){fig-alt="Classes Iniciais 2" fig-align="center" width=85%}
+
 
 ## Ainda Mais Problemas...
+::::{.columns style='display: flex !important; height: 60%; align-items: center;'}
+::: {.column width="25%"}
+![](figuras/pessoa_com_problema1.png){fig-alt="Pessoa Com Problema 1" fig-align="center" width=60%}
+:::
+
+::: {.column width="60%" .fontsize90}
+[E a classe **Controle**? Ela também apresenta problemas?]{style="color:darkblue;"}
+
+::: {style="margin-top: 30px;" .fontsize90 .fragment}
+Humm... O pior é que apresenta!
+
+- Existem **duas coleções** (listas) de itens.
+- Existem **dois métodos** para **adicionar** itens.
+- Existem **dois métodos** para **remover** itens.
+:::
+:::
+
+::: {.column width="20%"}
+::: {.nonincremental}
+![](figuras/classes_iniciais3.png){fig-alt="Classes Iniciais 3" fig-align="center"}
+:::
+:::
+::::
+
+::: {style="background-color: lemonchiffon; border-radius: 15px; border: 3px solid goldenrod; display: flex; align-items: center; justify-content: center; height: 60px; width: 900px; margin: auto;" .fontsize80 .fragment}
+E se quiséssemos **incluir** nesse programa o item **Videogame**?
+:::
+
+::: {style="background-color: aliceblue; border-radius: 15px; border: 3px solid darkblue; display: flex; align-items: center; justify-content: center; height: 90px; width: 900px; margin: auto; margin-top: 30px;" .fontsize80 .nonincremental .fragment}
+- Teríamos mais uma classe com **mais código replicado**.
+- Estaríamos incluindo **mais replicações** também na classe **Controle**.
+:::
 
 ## Resolvendo o Problema
 Quanto mais classes semelhantes adicionamos no nosso programa, mais aumenta o problema de duplicação de código.
