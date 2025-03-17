@@ -1,5 +1,5 @@
 ---
-title: Apresentação do Curso<br>GAC125-IPOO em 2024/1<br><br>
+title: Apresentação do Curso<br><br>GAC125<br>Introdução à Programação Orientada a Objetos<br><br>2025/1<br><br>
 title-slide-attributes:
     data-background-size: contain
     data-background-position-x: center
@@ -28,34 +28,34 @@ title-slide-attributes:
 ## Objetivos
 Ao final do curso é esperado que o aluno:
 
-- Tenha uma visão geral do paradigma de programação orientada a objetos.
-- Seja capaz de implementar algoritmos para a solução de problemas computacionais em uma linguagem de programação orientada a objetos. 
+- Tenha uma **visão gera**l do paradigma de **programação orientada a objetos**.
+- Seja capaz de **implementar** algoritmos para a solução de problemas computacionais **em uma linguagem de programação orientada a objetos**. 
 
 
-## GAC125 em 2024/1
+## GAC125 em 2025/1
 
 17 semanas de curso:
 
-- Aulas teóricas não presenciais (16 semanas): 11/03/2024 a 30/06/2024.
-- Aulas práticas presenciais (16 semanas): 11/03/2024 a 30/06/2024.
-- Avaliação adicional (1 semana): 01/07/2024 a 03/07/2024.
+- Aulas teóricas não presenciais (17 semanas): 17/03/2025 a 12/07/2025.
+- Aulas práticas presenciais (17 semanas): 17/03/2025 a 12/07/2025.
+- Avaliação adicional (1 semana): 14/07/2025 a 16/07/2025 (data a ser combinada).
 
 
 ## Avaliações
-- **Exercícios Avaliativos:** 20 pontos (2 pontos cada exercício avaliativo).
+- **Exercícios Avaliativos:** 24 pontos (3 pontos cada exercício avaliativo).
     - Teremos exercício avaliativo em **quase todos os dias de aula prática**.
     - Serão **exercícios curtos** feitos preferencialmente no **início das aulas práticas**.
     - O **conteúdo** avaliado será **todo** aquele **apresentado após o último exercício avaliativo**.
-- **Prova 1:** 22/04 a 24/04: 25 pontos.
-- **Prova 2:** 20/05 a 22/05: 25 pontos.
-- **Prova 3:** 24/06 a 26/06: 30 pontos.
+- **Prova 1:** 25 pontos.
+- **Prova 2:** 25 pontos.
+- **Prova 3:** 26 pontos.
 
 
 
 ## Observações Importantes
 
 - A aferição de frequência será realizada por **chamada oral** uma vez em cada dia de **aula prática presencial** em qualquer momento entre o início e o término da mesma. 
-    - Para ter **presença na aula prática**, além de comparecer à aula, o **aluno deve realizar e entregar o(s) exercício(s) proposto(s) na aula**.  
+    - Para ter **presença na aula prática**, além de comparecer à aula, o **aluno deve fazer e entregar o(s) exercício(s) proposto(s) na aula**.  
 - Nas **aulas não presenciais (ANP), a presença** estará condicionada ao **preenchimento de um questionário ou entrega de exercício** disponibilizado no Campus Virtual.
 - As **provas** poderão ter exercícios **teóricos e de implementação** (linguagem Java).
 - As **provas** deverão ser realizadas **individualmente**. 
@@ -66,7 +66,7 @@ Ao final do curso é esperado que o aluno:
 - O **conteúdo** avaliado em **cada prova** é todo aquele dado até a **semana anterior** à da realização da prova. 
     - Observe que isso significa que o **conteúdo das provas á acumulativo**.
 - **Revisões** de provas serão feitas no máximo até **15 dias** letivos após a divulgação das notas.
-- **Qualquer entrega de material** (exercícios, questionários, provas etc.) deve ser feita única e **exclusivamente** por meio do **Campus Virtual**.
+- **Qualquer entrega de material** (exercícios, questionários etc.) deve ser feita única e **exclusivamente** por meio do **Campus Virtual**.
 
 
 ## Observações Importantes
