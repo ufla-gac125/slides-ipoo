@@ -14,7 +14,7 @@ A realização dos exercícios nas **aulas práticas é primordial** para que vo
 
 - No entanto, para **conseguir realizar os exercícios** das aulas práticas é **fundamental** que você tenha **estudado**, [antes das aulas práticas]{.underline}, o **conteúdo** das aulas teóricas (ANP) disponibilizadas pelo professor. 
 
-Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **comparecer às aulas**, o aluno deve **realizar e entregar os exercícios** propostos nas aulas.
+Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **comparecer às aulas**, o aluno deve **fazer e entregar os exercícios** propostos nas aulas.
 
 - Portanto, **não esqueça de entregar no Campus Virtual** os exercícios **até o término das aulas práticas** (mesmo que não tenha terminado-os completamente).
 :::
@@ -119,5 +119,58 @@ Escreva um programa que receba como entrada os valores investidos pelo João e p
 **Exemplo de Saída:**
 
 - Quantidade de meses necessarios: 30
+:::
+:::
+
+## Exercício 3{.fontsize70}
+::: {.fontsize80}
+::: {.nonincremental}
+
+Existem diversos métodos aproximativos para calcular a raiz quadrada de um número. Um deles é conhecido como método de Newton-Raphson. Nesse método iterativo, a raiz quadrada de $S$ é calculada por uma sequência de aproximações, ou seja, a partir de um valor $x_n$, calcula-se uma nova aproximação $x_{n+1}$ utilizando-se a seguinte equação:
+$$
+x_{n+1} = \frac{x_n + \frac{S}{x_n}}{2}
+$$
+
+Essa equação é aplicada iterativamente enquanto $|x_n - x_{n+1}| > tolerancia$, onde $tolerancia$ representa a quantidade de erro aceita no cálculo que está sendo realizado. 
+
+Escreva um programa que receba como entrada o valor para o qual se deseja calcular a sua raiz quadrada ($S$) e, utilizando a **estrutura de repetição do-while**, implemente o método de Newton-Raphson explicado anteriormente para calcular e imprimir na tela o valor da $\sqrt{S}$. Para resolver este exercício, adote $x_0 = \frac{S}{2}$ e $tolerancia = 0.0001$.
+
+**Entrada:**
+
+- Valor para o qual se deseja calcular a sua raiz quadrada.
+  
+**Saída:**
+
+- Raiz quadrada do valor de entrada.
+:::
+:::
+
+
+## Exercício 3 (continuação){.fontsize70}
+::: {.fontsize80}
+::: {.nonincremental}
+**Exemplo de Entrada:**
+
+- Entre com um valor positivo: 2
+
+**Exemplo de Saída:**
+
+- A raiz quadrada de 2.0 é igual a 1.4142135623746899
+
+**Exemplo de Entrada:**
+
+- Entre com um valor positivo: 25
+
+**Exemplo de Saída:**
+
+- A raiz quadrada de 25.0 é igual a 5.000000000016778
+
+**Exemplo de Entrada:**
+
+- Entre com um valor positivo: 8.9
+
+**Exemplo de Saída:**
+
+- A raiz quadrada de 8.9 é igual a 2.9832867780667627
 :::
 :::
