@@ -66,7 +66,7 @@ Vamos utilizar as classes do projeto `Figuras` disponibilizado no [Campus Virtua
 
 ## Atividade
 
-Agora **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
+Agora **utilizaremos** a IDE **Visual Studio Code (VSCode)**.
 
 . . .
 
@@ -75,6 +75,7 @@ Continuaremos utilizando as classes do projeto `Figuras` disponibilizado no [Cam
 
 - Crie um projeto Java com o método **main** implementado numa classe denominada `App` e, portanto, salvo no arquivo **App.java**.
 - Acrescente neste projeto todas as classes utilizadas no projeto `Figuras`, ou seja, os arquivos: **Circulo.java**, **Pessoa.java**, **Quadrado.java**, **Tela.java** e **Triangulo.java**.
+  - Para isso, copie os arquivos **Circulo.java**, **Pessoa.java**, **Quadrado.java**, **Tela.java** e **Triangulo.java** na pasta **src** do projeto inicialmente criado no **VSCode**.
 :::
 
 
