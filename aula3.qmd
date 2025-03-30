@@ -233,7 +233,7 @@ O **construtor**, que é semelhante a um método, tem as **seguintes caracterís
 
 ::: {.column width="50%"}
 ::: {.fontsize70}
-No [corpo]{.alert} (tudo que está entre `{` e `}`) desse construtor [três atributos]{.alert} do objeto estão sendo [inicializados]{.alert}.
+No [corpo]{.alert} (tudo que está entre `{` e `}`) desse construtor, [três atributos]{.alert} do objeto estão sendo [inicializados]{.alert}.
 
 - *saldo* e *total* são [inicializados com constantes]{.alert} (neste caso, com zero).
 - *preco* está sendo inicializado por um [valor passado por parâmetro]{.alert} para o construtor.
