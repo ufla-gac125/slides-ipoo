@@ -35,7 +35,7 @@ Na aula prática de hoje trabalharemos a **criação de objetos** e **chamada de
 
 ## Contextualização
 
-Na aula de hoje **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
+Na aula de hoje **utilizaremos** a IDE **Visual Studio Code**.
 
 . . .
 
