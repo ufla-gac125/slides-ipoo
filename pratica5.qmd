@@ -28,17 +28,17 @@ Na aula de hoje **utilizaremos** a IDE **Visual Studio Code**.
 . . .
 
 :::{.nonincremental}
-Diferentemente das aulas práticas anteriores, **hoje** vocês farão a **implementação** **sem** que nenhum **código inicial** seja fornecido.
+Diferentemente das aulas práticas anteriores, **hoje** vocês farão as **implementações** **sem** que nenhum **código inicial** seja fornecido.
 :::
 
 . . .
 
 :::{.nonincremental}
-Portanto, **antes de começarem a codificar**, **leiam** o **enunciado** do exercício **com atenção** e entendam a **modelagem** do problema, ou seja, **quais** **classes** deverão implementar e **quais** serão os **atributos** e **métodos** de cada uma delas.
+Portanto, **antes de começarem a codificar**, **leiam** os **enunciados** dos exercícios **com atenção** e entendam a **modelagem** dos problemas, ou seja, **quais** **classes** deverão implementar e **quais** serão os **atributos** e **métodos** de cada uma delas.
 :::
 
 
-## Atividade
+## Atividade 1
 :::{.nonincremental .fontsize80}
 Crie uma classe `Horario` com **três atributos** inteiros: `hora`, `minuto` e `segundo`. Faça um **construtor** que **inicializa** os **três atributos**. A classe deve possuir um **método** para exibir (**imprimir na tela**) o horário em formato de números separados por dois pontos (por exemplo: 15h:05m:12s). Além disso, essa classe deverá ter **um segundo construtor** que recebe uma **quantidade de segundos por parâmetro** e converte esse valor em horas, minutos e segundos para inicializar cada um dos atributos dessa classe. Por exemplo, 3690 segundos deverá ser convertido em 1 hora, 1 minuto e 30 segundos. Uma **segunda classe** denominada `App` deve ser criada para testar a implementação da classe `Horario`. Nessa classe `App`, que conterá o método `main`, instancie 4 objetos da classe `Horario` utilizando os seguintes argumentos para os construtores: 
 
@@ -50,8 +50,17 @@ Crie uma classe `Horario` com **três atributos** inteiros: `hora`, `minuto` e `
 Por fim, chame o **método** `exibir` para cada um desses objetos.
 :::
 
+## Atividade 2
+:::{.nonincremental .fontsize80}
+
+Implemente em Java uma classe `Ponto` para representar um ponto no plano cartesiano. Essa classe deve possuir os **atributos** reais, `x` e `y`, que correspondem às coordenadas do ponto no plano cartesiano. Implemente um **construtor** que **inicializa** os **dois atributos**. Além disso, essa classe deve ter um **método** `getPonto` que retorne uma String no formato do seguinte exemplo: "As coordenadas (x,y) do ponto são: (1,7; 3,4)". Crie também o **método** `calcularDistancia` para **calcular** e **retornar** a distância euclidiana entre o ponto em questão e um segundo ponto cujas **coordenadas são passadas por parâmetro**. 
+
+Por fim, implemente a classe `App` para testar a implementação da classe `Ponto`. Nessa classe, que contém o método main, **instancie um objeto** da classe `Ponto` (x = 1,5 e y = 2,5), **chame o método** `getPonto` para esse objeto e imprima na tela o valor da distância entre o objeto (ponto) criado e um segundo ponto (x=3,5 e y = 5,5) no formato do seguinte exemplo: "A distância entre os pontos é: 3,61".
+
+:::
+
 
 ## 
 :::{.callout-warning title="Atenção" icon=false .fontsize90}
-Execute a sua implementação e verifique se ela está funcionando corretamente. **Entregue** no Campus Virtual a **versão final da implementação**.
+Execute as suas implementações e verifique se elas estão funcionando corretamente. **Entregue** no Campus Virtual a **versão final das implementações**.
 :::

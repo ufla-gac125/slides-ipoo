@@ -11,7 +11,7 @@
 <script src="pratica5_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="pratica5_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="pratica5_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.551">
 
   <meta name="author" content="Prof.&nbsp;Luiz Merschmann">
   <title>Aula Prática 5 </title>
@@ -364,17 +364,17 @@
 <p>Na aula de hoje <strong>utilizaremos</strong> a IDE <strong>Visual Studio Code</strong>.</p>
 <div class="fragment">
 <div>
-<p>Diferentemente das aulas práticas anteriores, <strong>hoje</strong> vocês farão a <strong>implementação</strong> <strong>sem</strong> que nenhum <strong>código inicial</strong> seja fornecido.</p>
+<p>Diferentemente das aulas práticas anteriores, <strong>hoje</strong> vocês farão as <strong>implementações</strong> <strong>sem</strong> que nenhum <strong>código inicial</strong> seja fornecido.</p>
 </div>
 </div>
 <div class="fragment">
 <div>
-<p>Portanto, <strong>antes de começarem a codificar</strong>, <strong>leiam</strong> o <strong>enunciado</strong> do exercício <strong>com atenção</strong> e entendam a <strong>modelagem</strong> do problema, ou seja, <strong>quais</strong> <strong>classes</strong> deverão implementar e <strong>quais</strong> serão os <strong>atributos</strong> e <strong>métodos</strong> de cada uma delas.</p>
+<p>Portanto, <strong>antes de começarem a codificar</strong>, <strong>leiam</strong> os <strong>enunciados</strong> dos exercícios <strong>com atenção</strong> e entendam a <strong>modelagem</strong> dos problemas, ou seja, <strong>quais</strong> <strong>classes</strong> deverão implementar e <strong>quais</strong> serão os <strong>atributos</strong> e <strong>métodos</strong> de cada uma delas.</p>
 </div>
 </div>
 </section>
-<section id="atividade" class="slide level2">
-<h2>Atividade</h2>
+<section id="atividade-1" class="slide level2">
+<h2>Atividade 1</h2>
 <div class="fontsize80">
 <p>Crie uma classe <code>Horario</code> com <strong>três atributos</strong> inteiros: <code>hora</code>, <code>minuto</code> e <code>segundo</code>. Faça um <strong>construtor</strong> que <strong>inicializa</strong> os <strong>três atributos</strong>. A classe deve possuir um <strong>método</strong> para exibir (<strong>imprimir na tela</strong>) o horário em formato de números separados por dois pontos (por exemplo: 15h:05m:12s). Além disso, essa classe deverá ter <strong>um segundo construtor</strong> que recebe uma <strong>quantidade de segundos por parâmetro</strong> e converte esse valor em horas, minutos e segundos para inicializar cada um dos atributos dessa classe. Por exemplo, 3690 segundos deverá ser convertido em 1 hora, 1 minuto e 30 segundos. Uma <strong>segunda classe</strong> denominada <code>App</code> deve ser criada para testar a implementação da classe <code>Horario</code>. Nessa classe <code>App</code>, que conterá o método <code>main</code>, instancie 4 objetos da classe <code>Horario</code> utilizando os seguintes argumentos para os construtores:</p>
 <ul>
@@ -386,6 +386,13 @@
 <p>Por fim, chame o <strong>método</strong> <code>exibir</code> para cada um desses objetos.</p>
 </div>
 </section>
+<section id="atividade-2" class="slide level2">
+<h2>Atividade 2</h2>
+<div class="fontsize80">
+<p>Implemente em Java uma classe <code>Ponto</code> para representar um ponto no plano cartesiano. Essa classe deve possuir os <strong>atributos</strong> reais, <code>x</code> e <code>y</code>, que correspondem às coordenadas do ponto no plano cartesiano. Implemente um <strong>construtor</strong> que <strong>inicializa</strong> os <strong>dois atributos</strong>. Além disso, essa classe deve ter um <strong>método</strong> <code>getPonto</code> que retorne uma String no formato do seguinte exemplo: “As coordenadas (x,y) do ponto são: (1,7; 3,4)”. Crie também o <strong>método</strong> <code>calcularDistancia</code> para <strong>calcular</strong> e <strong>retornar</strong> a distância euclidiana entre o ponto em questão e um segundo ponto cujas <strong>coordenadas são passadas por parâmetro</strong>.</p>
+<p>Por fim, implemente a classe <code>App</code> para testar a implementação da classe <code>Ponto</code>. Nessa classe, que contém o método main, <strong>instancie um objeto</strong> da classe <code>Ponto</code> (x = 1,5 e y = 2,5), <strong>chame o método</strong> <code>getPonto</code> para esse objeto e imprima na tela o valor da distância entre o objeto (ponto) criado e um segundo ponto (x=3,5 e y = 5,5) no formato do seguinte exemplo: “A distância entre os pontos é: 3,61”.</p>
+</div>
+</section>
 <section id="section" class="slide level2">
 <h2></h2>
 <div class="fontsize90" title="Atenção">
@@ -395,7 +402,7 @@
 <p><strong>Atenção</strong></p>
 </div>
 <div class="callout-content">
-<p>Execute a sua implementação e verifique se ela está funcionando corretamente. <strong>Entregue</strong> no Campus Virtual a <strong>versão final da implementação</strong>.</p>
+<p>Execute as suas implementações e verifique se elas estão funcionando corretamente. <strong>Entregue</strong> no Campus Virtual a <strong>versão final das implementações</strong>.</p>
 </div>
 </div>
 </div>
@@ -695,6 +702,24 @@
         // clear code selection
         e.clearSelection();
       });
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -731,7 +756,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
