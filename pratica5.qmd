@@ -23,12 +23,12 @@ Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **c
 
 ## Contextualização
 
-Na aula de hoje **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
+Na aula de hoje **utilizaremos** a IDE **Visual Studio Code**.
 
 . . .
 
 :::{.nonincremental}
-Diferentemente das aulas prática anteriores, **hoje** vocês farão a **implementação** **sem** que nenhum **código inicial** seja fornecido.
+Diferentemente das aulas práticas anteriores, **hoje** vocês farão a **implementação** **sem** que nenhum **código inicial** seja fornecido.
 :::
 
 . . .
