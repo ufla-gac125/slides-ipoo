@@ -24,7 +24,7 @@ Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **c
 ## Contextualização
 
 :::{.fontsize90}
-Na aula de hoje **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
+Na aula de hoje **utilizaremos** a IDE **Visual Studio Code**.
 :::
 
 . . .
