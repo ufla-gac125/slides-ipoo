@@ -24,7 +24,7 @@ Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **c
 ## Contextualização
 
 :::{.fontsize90}
-Na aula de hoje **utilizaremos** a IDE **Visual Studio Code** ou **qualquer outra** de sua preferência (**exceto BlueJ**).
+Na aula de hoje **utilizaremos** a IDE **Visual Studio Code**.
 :::
 
 . . .
@@ -97,7 +97,7 @@ Escolha o número da opção:
 
 ## Atividade
 :::{.nonincremental .fontsize70}
-A classe `Menu` também deve ter um método denominado `executar` que faça todo o **controle de apresentação de menus** para o usuário. O **primeiro menu** a ser apresentado é o que permite o usuário escolher o **tipo de café** desejado. Depois disso, **enquanto** o usuário **não solicitar sair** do sistema, o **menu de opções** deve ser **repetidamente apresentado** ao usuário. Ao apresentar o menu de opções, **cada vez** que o **usuário escolher** as **opções 1 ou 2** (adicionar ou remover complemento), o **menu de complementos** deve ser **apresentado** para que o mesmo escolha o complemento a ser adicionado ou removido. Vale ressaltar que o usuário **pode escolher repetidamente o mesmo complemento** para ser inserido em seu café. Nesse caso, ao solicitar a **remoção** de um complemento já inserido, o código de **todas as inserções** realizadas no ArrayList deve ser **removido**. Vale ressaltar que a geração da nota fiscal pode ser realizada a qualquer momento e, se necessário, repetidas vezes, após a escolha do tipo do café. Portanto, **crie** na classe `Menu` um **método que imprima na tela uma nota fiscal** como exemplificado a seguir: 
+A classe `Menu` também deve ter um método denominado `executar` que faça todo o **controle de apresentação de menus** para o usuário. O **primeiro menu** a ser apresentado é o que permite o usuário escolher o **tipo de café** desejado. Depois disso, **enquanto** o usuário **não solicitar sair** do sistema, o **menu de opções** deve ser **repetidamente apresentado** ao usuário. Ao apresentar o menu de opções, **cada vez** que o **usuário escolher** as **opções 1 ou 2** (adicionar ou remover complemento), o **menu de complementos** deve ser **apresentado** para que o mesmo escolha o complemento a ser adicionado ou removido. Vale ressaltar que o usuário **pode escolher repetidamente o mesmo complemento** para ser inserido em seu café. Nesse caso, ao solicitar a **remoção** de um complemento já inserido, **todas as inserções** daquele complemento existentes no ArrayList devem ser **removidas**. Vale ressaltar que a geração da nota fiscal pode ser realizada a qualquer momento e, se necessário, repetidas vezes, após a escolha do tipo do café. Portanto, **crie** na classe `Menu` um **método que imprima na tela uma nota fiscal** como exemplificado a seguir: 
 
 &num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num; NOTA FISCAL &num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;&num;
 <br>Café: Americano<br>
