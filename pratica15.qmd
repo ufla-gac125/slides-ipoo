@@ -1,0 +1,115 @@
+ ---
+title: Aula Prática 15<br><br>
+title-slide-attributes:
+    data-background-size: contain
+    data-background-position-x: center
+    data-background-position-y: center
+---
+
+## Observações Importantes {}
+::: {.fontsize80}
+::: {.nonincremental}
+
+A realização dos exercícios nas **aulas práticas é primordial** para que você consiga **consolidar os conceitos** aprendidos nas **aulas teóricas** (aulas não presenciais - ANP) e **colocá-los em prática** utilizando a linguagem de programação Java.
+
+- No entanto, para **conseguir realizar os exercícios** das aulas práticas é **fundamental** que você tenha **estudado**, [antes das aulas práticas]{.underline}, o **conteúdo** das aulas não presenciais disponibilizadas pelo professor. 
+
+Vale ressaltar que, **para ter presença** nas **aulas práticas**, além de **comparecer às aulas**, o aluno deve **realizar e entregar os exercícios** propostos nas aulas.
+
+- Portanto, **não esqueça de entregar no Campus Virtual** os exercícios **até o término das aulas práticas** (mesmo que não tenha terminado-os completamente).
+:::
+:::
+
+
+## Contextualização
+
+:::{.fontsize90}
+Na aula de hoje **utilizaremos** a IDE **Visual Studio Code**.
+:::
+
+. . .
+
+:::{.fontsize90}
+Hoje o **exercício** da **aula** **prática** tem como foco o tema **herança**. 
+:::
+
+. . .
+
+:::{.fontsize90}
+**Antes de começarem a codificar**, **leiam** o **enunciado** do exercício **com atenção** e realizem a **modelagem** do problema, ou seja, definam **quais** **classes** deverão ser implementadas e **quais** serão os **atributos** e **métodos** de cada uma delas. E a partir de agora, lembrem-se que é necessário **verificar** se existe algum **relacionamento de herança** entre as classes!
+:::
+
+
+## Atividade
+:::{.nonincremental .fontsize85}
+Seguindo as boas práticas em programação orientada a objetos, implemente em Java um **sistema de catálogo de instrumentos musicais** para uma escola de música. O sistema deve representar **diferentes tipos de instrumentos**, com informações gerais e específicas. Além disso, os instrumentos devem ser **armazenados e gerenciados** por meio de **listas**.
+
+O **catálogo de instrumentos** é caracterizado pelas **listas de instrumentos**. Já um **instrumento** é caracterizado pela sua **marca** (String) e **material de fabricação** (String). Além disso, se ele for um **violão**, ele também possui como característica  a **quantidade de cordas** (int). Já se ele for um **teclado**, a característica adicional é a **quantidade de teclas** (int).
+:::
+
+
+
+## Atividade
+:::{.nonincremental .fontsize85}
+Além dos **métodos** que permitem **adicionar** instrumentos (violão e teclado) ao catálogo de instrumentos, a sua implementação deve incluir um método denominado `existeViolao` que retorna um `boolean` indicando se um determinado violão (que o método recebe por parâmetro) existe ou não na **lista de violões**.
+
+Além disso, implemente também o **método** `listarInstrumentos` que deve ser responsável por **imprimir** na tela **todas as características** de cada um dos **instrumentos** contidos nas **listas do catálogo** de instrumentos.
+:::
+
+## Atividade
+:::{.nonincremental .fontsize75}
+A classe `App` fornecida a seguir deve ser utilizada da forma como está, ou seja, sem sofrer qualquer alteração. Nessa classe, foram criados três objetos que representam violões e um objeto que representa um teclado. Desses objetos, somente um violão e um teclado foram adicionados ao catálogo de instrumentos utilizando-se os métodos `adicionarViolao` e `adicionarTeclado`, respectivamente. Além disso, foram chamados os métodos `existeViolao`, para verificar a existência de violões na lista do catálogo, e o método `listarInstrumentos`, para mostrar na tela as características dos instrumentos existentes no catálogo.
+:::
+
+:::{.nonincremental .fontsize90}
+
+```{.java code-line-numbers="false"}
+public class App {
+    public static void main(String[] args) {
+        CatalogoInstrumentos ci = new CatalogoInstrumentos();
+        Violao v1 = new Violao("Yamaha", "madeira", 6);
+        Violao v2 = new Violao("Yamaha", "madeira", 6);
+        Violao v3 = new Violao("Yamaha", "plástico", 6);
+        ci.adicionarViolao(v1);
+        System.out.println(ci.existeViolao(v2)); 
+        System.out.println(ci.existeViolao(v3)); 
+        Teclado t1 = new Teclado("Cassio", "metal", 61);
+        ci.adicionarTeclado(t1);
+        ci.listarInstrumentos();
+    }
+}
+```
+:::
+
+
+
+## Atividade
+:::{.nonincremental .fontsize85}
+Além disso, a chamada ao método `listarInstrumentos` no método `main` deve resultar na seguinte saída:
+:::
+
+:::{.callout-note title="Exemplo de saída de dados na tela gerado a partir do código da classe App" icon=false .fontsize85}
+true<br>
+false<br>
+Marca: Yamaha<br>
+Material: madeira<br>
+Numero de Cordas: 6<br>
+
+Marca: Cassio<br>
+Material: metal<br>
+Numero de teclas: 61
+:::
+
+
+
+
+## Atividade
+:::{.nonincremental .fontsize85}
+Dois violões devem ser considerados iguais se possuírem a mesma marca, forem feitos do mesmo material e tiverem o mesmo número de cordas. 
+
+Ao implementar esse sistema faça uso de `ArrayList`, método `toString` e sobrescrição de método.
+:::
+
+:::{.callout-warning title="Atenção" icon=false .fontsize90}
+Execute a sua implementação e verifique se ela está funcionando corretamente. **Entregue** no Campus Virtual a **versão final da implementação**.
+:::
