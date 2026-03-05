@@ -1,5 +1,5 @@
 ---
-title: Apresentação do Curso<br><br>GAC125<br>Introdução à Programação Orientada a Objetos<br><br>2025/1<br><br>
+title: Apresentação do Curso<br><br>GAC125<br>Introdução à Programação Orientada a Objetos<br><br>2026/1<br><br>
 title-slide-attributes:
     data-background-size: contain
     data-background-position-x: center
@@ -28,22 +28,22 @@ title-slide-attributes:
 ## Objetivos
 Ao final do curso é esperado que o aluno:
 
-- Tenha uma **visão gera**l do paradigma de **programação orientada a objetos**.
+- Tenha uma **visão geral** do paradigma de **programação orientada a objetos**.
 - Seja capaz de **implementar** algoritmos para a solução de problemas computacionais **em uma linguagem de programação orientada a objetos**. 
 
 
-## GAC125 em 2025/1
+## GAC125 em 2026/1
 
 17 semanas de curso:
 
-- Aulas teóricas não presenciais (17 semanas): 17/03/2025 a 12/07/2025.
-- Aulas práticas presenciais (17 semanas): 17/03/2025 a 12/07/2025.
-- Avaliação adicional (1 semana): 14/07/2025 a 16/07/2025 (data a ser combinada).
+- Aulas teóricas não presenciais (17 semanas): 09/03/2026 a 04/07/2026.
+- Aulas práticas presenciais (17 semanas): 09/03/2026 a 04/07/2026.
+- Avaliação adicional (1 semana): 06/07/2026.
 
 
 ## Avaliações
-- **Exercícios Avaliativos:** 24 pontos (3 pontos cada exercício avaliativo).
-    - Teremos exercício avaliativo em **quase todos os dias de aula prática**.
+- **Exercícios Avaliativos:** 24 pontos (4 pontos cada exercício avaliativo).
+    - Teremos exercício avaliativo em **6 dias de aula prática**.
     - Serão **exercícios curtos** feitos preferencialmente no **início das aulas práticas**.
     - O **conteúdo** avaliado será **todo** aquele **apresentado após o último exercício avaliativo**.
 - **Prova 1:** 25 pontos.
