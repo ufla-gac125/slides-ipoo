@@ -12,16 +12,15 @@
 
 - **Aula Teórica 5:** [Slides Aula 5](aula5.html)
 
-- **Aula Teórica 6:** [Slides Aula 6](aula6.html)
+- **Aula Teórica 6:** [Slides Aula 6](aula7.html)
 
-- **Aula Teórica 7:** [Slides Aula 7](aula7.html)
+- **Aula Teórica 7:** [Slides Aula 7.1](aula8.html) e [Slides Aula 7.2](aula8-2.html)
 
-- **Aula Teórica 8:** [Slides Aula 8.1](aula8-1.html) e [Slides Aula 8.2](aula8-2.html)
+- **Aula Teórica 8:** [Slides Aula 8](aula9.html) 
 
-- **Aula Teórica 9:** [Slides Aula 9](aula9.html)
+- **Aula Teórica 9:** [Slides Aula 9](aula10.html)
 
-- **Aula Teórica 10:** [Slides Aula 10](aula10.html)
+- **Aula Teórica 10:** [Slides Aula 10](aula11.html)
 
-- **Aula Teórica 11:** [Slides Aula 11](aula11.html)
 :::
 :::
