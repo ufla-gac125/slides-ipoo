@@ -5,7 +5,7 @@
 [Semana 1]{.alert}
 
 - **Aula Teórica:** 
-<!--
+
 [Apresentação do Curso](aula0.html) 
 [Slides Aula 1](aula1.html)
 
@@ -25,7 +25,7 @@
 - **Aula Prática:** [Aula Prática 4](aula-pratica4.html)
 - **Aula Teórica:** [Videoaula 4](https://) ([Slides Aula 4](aula4.html))
 
--->
+
 
 :::
 :::
