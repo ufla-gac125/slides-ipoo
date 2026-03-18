@@ -4,7 +4,7 @@
 
 [Semana 1]{.alert}
 
-- **Aula Prática:** 
+- **Aula Teórica:** 
 <!--
 [Apresentação do Curso](aula0.html) 
 [Slides Aula 1](aula1.html)
