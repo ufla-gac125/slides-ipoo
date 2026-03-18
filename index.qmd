@@ -14,7 +14,7 @@
 
 - **Aula Teórica 6:** [Slides Aula 6](aula7.html)
 
-- **Aula Teórica 7:** [Slides Aula 7.1](aula8.html) e [Slides Aula 7.2](aula8-2.html)
+- **Aula Teórica 7:** [Slides Aula 7.1](aula8-1.html) e [Slides Aula 7.2](aula8-2.html)
 
 - **Aula Teórica 8:** [Slides Aula 8](aula9.html) 
 
