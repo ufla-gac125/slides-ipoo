@@ -2,30 +2,26 @@
 ::: {.fontsize70}
 ::: {.nonincremental}
 
-[Semana 1]{.alert}
+- **Aula Teórica 1:** [Apresentação do Curso](aula0.html) e [Slides Aula 1](aula1.html)
 
-- **Aula Teórica:** 
+- **Aula Teórica 2:** [Slides Aula 2.1](aula2-1.html) e [Slides Aula 2.2](aula2-2.html)
 
-[Apresentação do Curso](aula0.html) 
-[Slides Aula 1](aula1.html)
+- **Aula Teórica 3:** [Slides Aula 3](aula3.html)
 
-[Semana 2]{.alert}
+- **Aula Teórica 4:** [Slides Aula 4](aula4.html)
 
-- **Aula Prática:** [Aula 2](aula-pratica2.html)
-- **Aula Teórica:** [Videoaula 2.1](https://youtu.be/2xVS48sQa94) ([Slides Aula 2.1](aula2-1.html))
-- **Aula Teórica:** [Videoaula 2.2](https://youtu.be/e73LWtc2Uac) ([Slides Aula 2.2](aula2-2.html))
+- **Aula Teórica 5:** [Slides Aula 5](aula5.html)
 
-[Semana 3]{.alert}
+- **Aula Teórica 6:** [Slides Aula 6](aula6.html)
 
-- **Aula Prática:** [Aula Prática 3](aula-pratica3.html)
-- **Aula Teórica:** [Videoaula 3](https://) ([Slides Aula 3](aula3.html))
+- **Aula Teórica 7:** [Slides Aula 7](aula7.html)
 
-[Semana 4]{.alert}
+- **Aula Teórica 8:** [Slides Aula 8.1](aula8-1.html) e [Slides Aula 8.2](aula8-2.html)
 
-- **Aula Prática:** [Aula Prática 4](aula-pratica4.html)
-- **Aula Teórica:** [Videoaula 4](https://) ([Slides Aula 4](aula4.html))
+- **Aula Teórica 9:** [Slides Aula 9](aula9.html)
 
+- **Aula Teórica 10:** [Slides Aula 10](aula10.html)
 
-
+- **Aula Teórica 11:** [Slides Aula 11](aula11.html)
 :::
 :::
