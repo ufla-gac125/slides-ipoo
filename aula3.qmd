@@ -81,7 +81,7 @@ public class NomeDaClasse{
 ::: {.segment .fontsize75}
 A linguagem Java permite que o **programador escolha a ordem da implementação** dos atributos, construtores e métodos dentro da classe.
 
-- Usualmente coloca-se primeiro os atributos, depois os construtores e, por fim, os métodos.
+- Usualmente colocam-se primeiro os atributos, depois os construtores e, por fim, os métodos.
 :::
 
 
