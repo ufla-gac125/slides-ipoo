@@ -564,7 +564,7 @@ Características de uma **variável local**:
 :::
 
 :::{.callout-important title="Observação" icon=false .fragment}
-[Variáveis locais]{.alert} são frequentemente utilizadas como posições de [memória temporária]{.alert} para ajudar um método a completar sua tarefa. 
+[Variáveis locais]{.alert} são frequentemente utilizadas como posições de [memória temporárias]{.alert} para ajudar um método a completar sua tarefa. 
 :::
 
 
